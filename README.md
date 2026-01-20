@@ -3,6 +3,11 @@
 A Qt-based application for visualizing S-parameter data.
 
 Online documentation: https://andresmmera.github.io/qucs-s-spar-viewer/
+
+**Latest release** https://github.com/andresmmera/qucs-s-spar-viewer/releases/tag/v2026.01.20
+
+Release page: https://github.com/andresmmera/qucs-s-spar-viewer/releases/
+
 ## Features
 
 ### Data Import
