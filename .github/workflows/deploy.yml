@@ -1,0 +1,594 @@
+name: deploy
+
+on:
+  push:
+    branches: [ "main", "current", "release/*" ]
+    tags:
+        - '[0-9]+.[0-9]+.[0-9]+*'
+  pull_request:
+    branches: [ "master", "current", "release/*" ]
+  workflow_dispatch:
+
+env:
+  APP_NAME: "qucs-s-spar-viewer"
+  EXECUTABLE_NAME: "qucs-sspar-viewer"  # This matches what CMake creates
+  PUBLISHER_NAME: "The Qucs-S Team"
+  BUILD_TYPE: Release
+  QT_VERSION: 6.10.1
+
+ 
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.read_version.outputs.version }}
+      short_hash: ${{ steps.read_version.outputs.short_hash }}
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Read version from file
+      id: read_version
+      run: |
+        if [ "${{ github.ref_type }}" == "tag" ]; then
+          VERSION=${{ github.ref_name }}
+          SHORT_HASH=""
+        else
+          MAJOR_MINOR=$(cut -d. -f1-2 VERSION)
+          VERSION="${MAJOR_MINOR}.99"
+          COMMIT_HASH=$(echo ${{ github.sha }} | cut -c1-7)
+          SHORT_HASH="-$COMMIT_HASH"
+        fi
+
+        echo "VERSION=$VERSION" >> $GITHUB_ENV
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
+        echo "SHORT_HASH=$SHORT_HASH" >> $GITHUB_ENV
+        echo "short_hash=$SHORT_HASH" >> $GITHUB_OUTPUT
+
+    - name: Print version and hash
+      run: |
+        echo "qucs-s-spar-viewer version is ${{ env.VERSION }}"
+        echo "qucs-s-spar-viewer short hash is ${{ env.SHORT_HASH }}"
+
+  build-linux-appimage-qt6:
+    runs-on: ubuntu-22.04
+    needs: setup
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Set version environment variable
+      run: |
+        echo "VERSION=${{ needs.setup.outputs.version }}" >> $GITHUB_ENV
+        echo "SHORT_HASH=${{ needs.setup.outputs.short_hash }}" >> $GITHUB_ENV
+
+    - name: Print version and hash
+      run: |
+        echo "qucs-s-spar-viewer version is ${{ env.VERSION }}"
+        echo "qucs-s-spar-viewer short hash is ${{ env.SHORT_HASH }}"
+
+    - name: Install Dependencies
+      run: |
+          sudo apt-get update
+          sudo apt-get install -y libglx-dev libgl1-mesa-dev flex bison gperf dos2unix cups libcups2-dev
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12
+
+    - name: 'Install Qt6'
+      uses: jurplel/install-qt-action@v4
+      with:
+        version: ${{env.QT_VERSION}}
+        host: 'linux'
+        target: 'desktop'
+        cache: true
+        arch: 'linux_gcc_64'
+        install-deps: 'true'
+        modules: 'qtcharts'
+
+    - name: 'Install CMake'
+      uses: lukka/get-cmake@latest
+
+    - name: 'Create desktop file and icon'
+      run: |
+        # Create desktop file matching the executable name
+        cat > qucs-s-spar-viewer.desktop << 'EOF'
+        [Desktop Entry]
+        Name=Qucs-S S-Parameter Viewer
+        GenericName=S-Parameter Viewer
+        Comment=S-Parameter Data Viewer and Analysis Tool
+        Exec=qucs-sspar-viewer
+        Icon=qucs-s-spar-viewer
+        Terminal=false
+        Type=Application
+        Categories=Engineering;Electronics;Science;
+        EOF
+        
+        # Copy icon from bitmaps if it exists, otherwise create a placeholder
+        if [ -f bitmaps/qucs-s-spar-viewer.png ]; then
+          cp bitmaps/qucs-s-spar-viewer.png qucs-s-spar-viewer.png
+        else
+          echo "Warning: No icon found at bitmaps/qucs-s-spar-viewer.png"
+          # You'll need to add an actual icon file to your repo
+        fi
+
+    - name: 'Configure CMake'
+      run: |
+          cmake -B ${{github.workspace}}/build -G 'Ninja' \
+                -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} \
+                -DCMAKE_INSTALL_PREFIX=${{github.workspace}}/AppDir/usr \
+                -DCI_VERSION="${{env.VERSION}}"
+
+    - name: 'Build'
+      run: |
+          cmake --build ${{github.workspace}}/build -j`nproc` --config ${{env.BUILD_TYPE}}
+          cmake --build ${{github.workspace}}/build --target install
+
+    - name: 'Install linuxdeploy'
+      run: |
+          wget -q --tries=3 --wait=5 \
+                https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+          wget -q --tries=3 --wait=5 \
+                https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+          sudo apt-get install fuse libfuse2
+          chmod +x linuxdeploy-x86_64.AppImage
+          chmod +x linuxdeploy-plugin-qt-x86_64.AppImage
+
+    - name: 'Create AppImage'
+      run: |
+          ./linuxdeploy-x86_64.AppImage --appdir ${{github.workspace}}/AppDir \
+                                        --desktop-file=${{github.workspace}}/qucs-s-spar-viewer.desktop \
+                                        --icon-file=${{github.workspace}}/qucs-s-spar-viewer.png \
+                                        --plugin=qt --output appimage
+          rm linuxdeploy-x86_64.AppImage
+          rm linuxdeploy-plugin-qt-x86_64.AppImage
+          mv *.AppImage ${{ env.APP_NAME }}-${{env.VERSION}}${{env.SHORT_HASH}}-linux-x86_64.AppImage
+
+    - name: 'Upload artifact: AppImage'
+      uses: actions/upload-artifact@v4
+      with:
+          name: ${{ env.APP_NAME }}-${{env.VERSION}}${{env.SHORT_HASH}}-linux-x86_64
+          path: ${{ env.APP_NAME }}-${{env.VERSION}}${{env.SHORT_HASH}}-linux-x86_64.AppImage
+
+  build-mac:
+    needs: setup
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        arch:
+          - x86_64
+          - universal
+        include:
+          - arch: x86_64
+            os: macos-15-intel
+            cmake_arch: x86_64
+            dmg_suffix: macOSX-x86_64
+            deployment_target: 10.14
+            qt_version: 6.2.4
+            xcode-ver: '16.2'
+          - arch: universal
+            os: macos-15
+            cmake_arch: arm64;x86_64
+            dmg_suffix: macOS
+            deployment_target: 13.0
+            qt_version: ""
+            xcode-ver: latest-stable
+
+    steps:
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: ${{ matrix.xcode-ver }}
+
+      - name: Set version environment variable
+        run: |
+          echo "VERSION=${{ needs.setup.outputs.version }}" >> $GITHUB_ENV
+          echo "SHORT_HASH=${{ needs.setup.outputs.short_hash }}" >> $GITHUB_ENV
+
+      - name: Print version and hash
+        run: |
+          echo "qucs-s-spar-viewer version is ${{ env.VERSION }}"
+          echo "qucs-s-spar-viewer short hash is ${{ env.SHORT_HASH }}"
+
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set QT_VERSION if not defined in matrix
+        run: echo "QT_VERSION=${{ matrix.qt_version != '' && matrix.qt_version || env.QT_VERSION }}" >> $GITHUB_ENV
+
+      - name: 'Install Qt6'
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: ${{ env.QT_VERSION }}
+          host: 'mac'
+          target: 'desktop'
+          cache: true
+          arch: 'clang_64'
+          install-deps: 'true'
+          modules: 'qtcharts'
+
+      - name: 'Install Dependencies'
+        shell: bash
+        run: |
+          brew install gperf dos2unix bison flex graphicsmagick imagemagick
+          echo 'export PATH="$(brew --prefix bison)/bin:$PATH"' >> /Users/runner/.bashrc
+          export LDFLAGS="-L$(brew --prefix bison)/lib"
+          source ~/.bashrc
+          brew link bison --force
+
+      - name: 'Configure CMake'
+        run: |
+          cmake -B ${{ github.workspace }}/build -G 'Ninja' \
+            -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
+            -DCMAKE_OSX_DEPLOYMENT_TARGET=${{ matrix.deployment_target }} \
+            -DCMAKE_OSX_ARCHITECTURES="${{ matrix.cmake_arch }}" \
+            -DCI_VERSION="${{ env.VERSION }}"
+
+      - name: 'Build RF-Designer'
+        run: |
+          cmake --build ${{ github.workspace }}/build --parallel --config=${{ env.BUILD_TYPE }}
+
+      - name: 'List build directory to verify app bundle location'
+        run: |
+          echo "Listing build directory:"
+          ls -la ${{ github.workspace }}/build/
+          echo "Looking for .app bundles:"
+          find ${{ github.workspace }}/build -name "*.app" -type d
+
+      - name: 'Package App Bundle'
+        run: |
+          # The CMakeLists.txt creates qucs-sspar-viewer.app (note: double 's')
+          BUNDLE_PATH="${{ github.workspace }}/build/qucs-sspar-viewer.app"
+          
+          # Verify the bundle exists
+          if [ ! -d "$BUNDLE_PATH" ]; then
+            echo "ERROR: Bundle not found at $BUNDLE_PATH"
+            echo "Contents of build directory:"
+            ls -la ${{ github.workspace }}/build/
+            exit 1
+          fi
+          
+          echo "Found bundle at: $BUNDLE_PATH"
+          
+          # Deploy Qt dependencies to the bundle (without -dmg first)
+          echo "Running macdeployqt with verbose output..."
+          macdeployqt "$BUNDLE_PATH" -verbose=2
+          
+          # Check if macdeployqt succeeded
+          if [ $? -ne 0 ]; then
+            echo "ERROR: macdeployqt failed"
+            exit 1
+          fi
+          
+          echo "macdeployqt completed successfully"
+          
+          # Create DMG manually using hdiutil
+          echo "Creating DMG manually with hdiutil..."
+          DMG_FILE="${{ github.workspace }}/build/qucs-sspar-viewer.dmg"
+          VOLUME_NAME="Qucs-S S-Parameter Viewer"
+          
+          # Create a temporary directory for DMG contents
+          mkdir -p "${{ github.workspace }}/build/dmg_temp"
+          cp -R "$BUNDLE_PATH" "${{ github.workspace }}/build/dmg_temp/"
+          
+          # Create the DMG
+          hdiutil create -volname "$VOLUME_NAME" \
+                         -srcfolder "${{ github.workspace }}/build/dmg_temp" \
+                         -ov -format UDZO \
+                         "$DMG_FILE"
+          
+          # Clean up temp directory
+          rm -rf "${{ github.workspace }}/build/dmg_temp"
+          
+          if [ -f "$DMG_FILE" ]; then
+            echo "DMG created successfully at $DMG_FILE"
+            # Sign the DMG
+            codesign --force --sign - "$DMG_FILE"
+            # Copy with the correct name
+            cp "$DMG_FILE" "${{ github.workspace }}/${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.dmg_suffix }}.dmg"
+            echo "Final DMG: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.dmg_suffix }}.dmg"
+          else
+            echo "ERROR: Failed to create DMG at $DMG_FILE"
+            echo "Checking build directory contents:"
+            ls -la "${{ github.workspace }}/build/"
+            exit 1
+          fi
+
+      - name: 'Upload build artifacts'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.dmg_suffix }}
+          path: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.dmg_suffix }}.dmg
+
+  build-windows-msvc:
+    runs-on: windows-2022
+    needs: setup
+    strategy:
+      fail-fast: false
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+    - name: Disable autocrlf in Git
+      run: |
+        git config --global core.autocrlf false
+        git config --global core.eol lf
+
+    - name: Set version environment variable
+      run: |
+        echo "VERSION=${{ needs.setup.outputs.version }}" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        echo "SHORT_HASH=${{ needs.setup.outputs.short_hash }}" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+    - name: Print version and hash
+      run: |
+        echo "qucs-s-spar-viewer version is ${{ env.VERSION }}"
+        echo "qucs-s-spar-viewer short hash is ${{ env.SHORT_HASH }}"
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: 'Install Qt6'
+      uses: jurplel/install-qt-action@v4
+      with:
+        version: ${{env.QT_VERSION}}
+        host: 'windows'
+        target: 'desktop'
+        cache: true
+        arch: 'win64_msvc2022_64'
+        install-deps: 'true'
+        modules: 'qtcharts'
+
+    - name: 'Install CMake'
+      uses: lukka/get-cmake@latest
+
+    - name: 'Setup MSVC Development Environment'
+      uses: TheMrMilchmann/setup-msvc-dev@v3
+      with:
+        arch: x64
+
+    - name: 'Configure CMake'
+      run: |
+        cmake -B ${{github.workspace}}\build -G 'Ninja'  `
+              -DCMAKE_INSTALL_PREFIX=${{github.workspace}}\build\rf-designer-suite  `
+              -DCMAKE_CXX_COMPILER=cl -DCMAKE_C_COMPILER=cl  `
+              -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}   `
+              -DCI_VERSION="${{env.VERSION}}"
+
+    - name: 'Build RF-Designer'
+      run: |
+        cmake --build ${{github.workspace}}\build --parallel --config=${{env.BUILD_TYPE}}
+
+    - name: 'Cmake install'
+      run: |
+        cmake --build ${{github.workspace}}\build --target install
+
+    - name: 'Deploy Qt6 dependencies'
+      run: |
+        $suite_bin_dir = "${{github.workspace}}\build\rf-designer-suite\bin"
+        $executable = "qucs-sspar-viewer.exe"
+        
+        if (Test-Path "$suite_bin_dir\$executable") {
+          windeployqt "$suite_bin_dir\$executable" --no-translations --no-opengl-sw --no-system-d3d-compiler --no-network --no-compiler-runtime
+        } else {
+          Write-Error "Executable not found: $suite_bin_dir\$executable"
+          Get-ChildItem -Path "$suite_bin_dir" -Recurse
+          exit 1
+        }
+
+    - name: 'Create zip archive for release'
+      run: |
+        $suite_dir = "${{github.workspace}}\build\rf-designer-suite"
+        
+        cd $suite_dir
+        $zipName = "${env:APP_NAME}-${env:VERSION}${env:SHORT_HASH}-MSVC-x64.zip"
+        
+        # Check what directories exist and only include those
+        $itemsToCompress = @()
+        if (Test-Path "./bin") { $itemsToCompress += "./bin" }
+        if (Test-Path "./share") { $itemsToCompress += "./share" }
+        if (Test-Path "./lib") { $itemsToCompress += "./lib" }
+        
+        if ($itemsToCompress.Count -eq 0) {
+          Write-Error "No directories to compress found"
+          Get-ChildItem -Path $suite_dir -Recurse
+          exit 1
+        }
+        
+        Compress-Archive -Path $itemsToCompress -DestinationPath "${{github.workspace}}\$zipName"
+        cd ${{github.workspace}}
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-MSVC-x64
+        path: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-MSVC-x64.zip
+
+  build-windows:
+    runs-on: ${{ matrix.config.os }}
+    continue-on-error: true
+    needs: setup
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - os: windows-2022
+            msystem: ucrt64
+            platform_tag: win64
+          - os: windows-11-arm
+            msystem: clangarm64
+            platform_tag: win-arm64
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+    - name: Disable autocrlf in Git
+      shell: pwsh
+      run: |
+        git config --global core.autocrlf false
+        git config --global core.eol lf
+
+    - name: Set version environment variable
+      shell: pwsh
+      run: |
+        echo "VERSION=${{ needs.setup.outputs.version }}" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        echo "SHORT_HASH=${{ needs.setup.outputs.short_hash }}" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+    - name: Print version and hash
+      shell: pwsh
+      run: |
+        echo "qucs-s-spar-viewer version is ${{ env.VERSION }}"
+        echo "qucs-s-spar-viewer short hash is ${{ env.SHORT_HASH }}"
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Set up MSYS2 environment
+      uses: msys2/setup-msys2@v2
+      with:
+        msystem: ${{ matrix.config.msystem }}
+        cache: true
+        update: true
+        install: bison flex dos2unix curl zip p7zip
+        pacboy: cmake:p gcc:p qt6-base:p qt6-tools:p qt6-svg:p qt6-multimedia:p make:p ninja:p python:p gperf:p github-cli:p
+
+    - name: Build project with CMake
+      run: |
+        cmake.exe -B build/ -G 'Ninja' \
+                  -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} \
+                  -DCMAKE_INSTALL_PREFIX=build/rf-designer-suite  \
+                  -DCI_VERSION="${{env.VERSION}}"
+        cmake.exe --build build/ --parallel --config ${{env.BUILD_TYPE}}
+
+    - name: Make install
+      run: |
+        cmake --build build/ --target install
+        strip build/rf-designer-suite/bin/*.exe
+
+    - name: Deploy Qt6 dependencies
+      run: |
+        deploy_tool="windeployqt.exe"
+        bin_dir="build/rf-designer-suite/bin"
+        options="--svg --no-translations --no-system-d3d-compiler --no-network"
+
+        # Only deploy for the executable that exists
+        if [ -f "$bin_dir/qucs-sspar-viewer.exe" ]; then
+          $deploy_tool "$bin_dir/qucs-sspar-viewer.exe" $options
+        fi
+
+    - name: Copy non-Qt DLLs to bin directory
+      run: |
+        shopt -s extglob
+        EXE_FILE="build/rf-designer-suite/bin/qucs-sspar-viewer.exe"
+        if [ -f "$EXE_FILE" ]; then
+          FILES=$(ldd "$EXE_FILE" | awk '($3 ~ /\/${{ matrix.config.msystem }}\/bin\//) {print $3}')
+          for file in $FILES; do
+            if [[ $(basename "$file") != Qt6* ]]; then
+              cp -r "$file" build/rf-designer-suite/bin
+            fi
+          done
+        fi
+
+    - name: Create zip archive for release
+      run: |
+        cd build/rf-designer-suite
+        zip -r ../../${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}.zip ./bin ./share ./lib
+        cd ../..
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}
+        path: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}.zip
+
+  create-release:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    needs: [setup, build-linux-appimage-qt6, build-mac, build-windows, build-windows-msvc]
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set version environment variable
+      run: |
+        echo "VERSION=${{ needs.setup.outputs.version }}" >> $GITHUB_ENV
+        echo "SHORT_HASH=${{ needs.setup.outputs.short_hash }}" >> $GITHUB_ENV
+
+    - name: Print version and hash
+      run: |
+        echo "qucs-s-spar-viewer version is ${{ env.VERSION }}"
+        echo "qucs-s-spar-viewer short hash is ${{ env.SHORT_HASH }}"
+
+    - name: Download build artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: ~/artifacts
+        merge-multiple: true
+
+    - name: Calculate SHA-256 checksums
+      run: |
+        cd ~/artifacts
+        > hashes.sha256
+        for file in $(find . -type f \( -name "*.zip" -o -name "*.dmg" -o -name "*.AppImage" \)); do
+          filename=$(basename "$file")
+          sha256sum "$file" | awk -v fname="$filename" '{print $1 " *" fname}' >> hashes.sha256
+        done
+        cd ..
+        echo "Contents of artifacts directory:"
+        tree ~/artifacts || ls -R ~/artifacts
+
+    - name: Setup Release Information
+      run: |
+        if [ "${{github.ref_type}}" == "tag" ]; then
+          echo "PRERELEASE=" >> $GITHUB_ENV
+          echo "RELEASE_NAME=Qucs-S S-Parameter Viewer ${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "TAG_NAME=${{ github.ref_name }}" >> $GITHUB_ENV
+          echo "RELEASE_NOTES=--generate-notes" >> $GITHUB_ENV
+        else
+          echo "PRERELEASE=-p" >> $GITHUB_ENV
+          echo "RELEASE_NAME=Continuous Build" >> $GITHUB_ENV
+          echo "TAG_NAME=continuous_build" >> $GITHUB_ENV
+          echo "RELEASE_NOTES=--notes \"Automated release for commit ${{ github.sha }}\"" >> $GITHUB_ENV
+        fi
+
+    - name: Create GitHub Release
+      continue-on-error: false
+      run: |
+        # Find existing artifact files
+        hash_files=$(find ~/artifacts -name "*.sha256" -print0 | xargs -0 echo)
+        zip_files=$(find ~/artifacts -name "*.zip"  -print0 | xargs -0 echo)
+        dmg_files=$(find ~/artifacts -name "*.dmg" -print0 | xargs -0 echo)
+        appimage_files=$(find ~/artifacts -name "*.AppImage" -print0 | xargs -0 echo)
+
+        # Check existing release and delete if it exists
+        if gh release view ${{ env.TAG_NAME }} --repo $GITHUB_REPOSITORY &> /dev/null; then
+          if [ "${{ env.TAG_NAME }}" == "continuous_build" ]; then
+            gh release delete ${{ env.TAG_NAME }} --repo $GITHUB_REPOSITORY --cleanup-tag --yes
+          else
+            gh release delete ${{ env.TAG_NAME }} --repo $GITHUB_REPOSITORY
+          fi
+          echo "${{ env.TAG_NAME }} deleted!"
+        fi
+
+        if [ -n "$zip_files" ] || [ -n "$dmg_files" ] || [ -n "$appimage_files" ]; then
+          gh release create ${{ env.TAG_NAME }} \
+                            $zip_files \
+                            $dmg_files \
+                            $appimage_files \
+                            $hash_files \
+                            ${{ env.PRERELEASE }} \
+                            --repo $GITHUB_REPOSITORY \
+                            --title "${{ env.RELEASE_NAME }}" \
+                            ${{ env.RELEASE_NOTES }}
+
+            echo "${{ env.TAG_NAME }} release created!"
+        else
+          echo "No artifacts to upload."
+          exit 1
+        fi
+
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: #f7f9fb;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #24292e;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .logo {
+      margin: 0 auto 1rem;
+    }
+
+    .logo img {
+      width: 150px;
+      height: 150px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    .card p {
+      line-height: 1.6;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: white;
+      background-color: #0366d6;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .card a:hover {
+      background-color: #024ea2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+  </div>
+  <h1>Qucs-S S-parameter Viewer & RF Synthesis Tools Documentation</h1>
+  <p>API docs and user help</p>
+</header>
+
+<main>
+  <section class="cards">
+
+    <div class="card">
+      <h2>📘 API Reference (Doxygen)</h2>
+      <p>
+        Complete API documentation generated from the source code using Doxygen.
+        Browse classes, files, and detailed descriptions.
+      </p>
+      <a href="doxygen/html/index.html">Open API Docs</a>
+    </div>
+
+    <div class="card">
+      <h2>🆘 Help</h2>
+      <p>
+        User help to get started with the program
+      </p>
+      <a href="help/build/html/index.html">Open Help</a>
+    </div>
+
+  </section>
+</main>
+
+<footer style="text-align: center"> Copyright &copy; <script>document.write(new Date().getFullYear())</script> Andrés Martínez Mera - <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU Public License Version 3</a></footer>
+</body>
+
+</html>
