@@ -1,12 +1,13 @@
-# Qucs-S S-Parameter Viewer
+# Qucs-S S-Parameter Viewer & RF Synthesis Tools
 
-A Qt-based application for visualizing S-parameter data.
+A S-parameter data viewer with tools to RF circuit design.
+This tool is part of the Qucs-S project.
 
-Online documentation: https://andresmmera.github.io/qucs-s-spar-viewer/
+**Online documentation** https://andresmmera.github.io/qucs-s-spar-viewer/
 
-**Latest release** https://github.com/andresmmera/qucs-s-spar-viewer/releases/tag/v2026.01.20
+**Release page** https://github.com/andresmmera/qucs-s-spar-viewer/releases/
 
-Release page: https://github.com/andresmmera/qucs-s-spar-viewer/releases/
+**Qucs-S Project** https://github.com/ra3xdh/qucs_s
 
 ## Features
 
