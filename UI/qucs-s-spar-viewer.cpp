@@ -32,7 +32,7 @@ Qucs_S_SPAR_Viewer::Qucs_S_SPAR_Viewer() {
   setCentralWidget(centralWidget);
   centralWidget->setMaximumWidth(0); // Minimize central widget size
 
-  setWindowIcon(QPixmap(":/bitmaps/big.qucs.xpm"));
+  setWindowIcon(QPixmap(":/bitmaps/qucs-s-spar-viewer.xpm"));
   setWindowTitle(
       "Qucs S-parameter Viewer & RF Circuit Synthesis " PACKAGE_VERSION);
 

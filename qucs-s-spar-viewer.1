@@ -1,41 +1,107 @@
-.TH QucsAttenuator "1" "July 2006" "Debian/GNU Linux" "User Commands"
+.TH qucs-s-spar-viewer "1" "January 2026" "Qucs-S" "User Commands"
 .SH NAME
-QucsAttenuator \- An attenuator synthesis application.
+qucs-s-spar-viewer \- S-parameter data viewer with RF circuit synthesis tools
 .SH SYNOPSIS
-.B qucsattenuator
+.B qucs-s-spar-viewer
 [\fIOPTION\fR] ...
 .SH DESCRIPTION
 
-\fBQucs\fR is an integrated circuit simulator which means you will be
-able to setup a circuit with a graphical user interface (GUI) and
-simulate the large-signal, small-signal and noise behaviour of the
-circuit.  After that simulation has finished you will be able to
-present the simulation results on a presentation page or window.
+\fBqucs-s-spar-viewer\fR is an S-parameter data viewer with RF 
+circuit design tools. It is part of the Qucs-S project.
 
-The software aims to support all kinds of circuit simulation types,
-e.g. DC, AC, S-parameter, harmonic balance analysis, noise analysis,
-etc.
+The application supports visualization of S-parameter data from Touchstone 
+files and Qucs datasets, offering multiple plot types including rectangular 
+plots, Smith charts, and polar plots. It includes comprehensive synthesis 
+tools for filter design, matching networks, power combiners, and attenuators.
 
-\fBQucsAttenuator\fR is the attenuator synthesis tool used by Qucs.
-By use of an input dialog the user can create an attenuator which is
-then copied into the system-wide clipboard.  In \fBQucs\fR the user
-opens an empty schematic and presses CTRL-V (paste from
-clipboard). The attenuator schematic is now inserted and can be
-simulated.
+.SH FEATURES
 
-Available attenuator topologies types are: Tee, Pi and Bridged-Tee.
+.SS Data Import
+.TP
+\fBTouchstone Files\fR
+Read standard .snp files (S1P, S2P, S3P, etc.) supporting frequency sweeps 
+in MA (Magnitude-Angle), RI (Real-Imaginary), and DB (dB-Angle) formats.
+.TP
+\fBQucs Datasets\fR
+Import data from both Qucsator (S[i,j] matrix notation) and NGspice 
+(ac.v(s_j_i) voltage source notation) formats.
+
+.SS Visualization
+.TP
+\fBPlot Types\fR
+Rectangular plots (Magnitude/Phase, Impedance, Stability, VSWR, Group Delay), 
+Smith Charts (Z and Y chart options), and Polar plots.
+.TP
+\fBTrace Management\fR
+Add, remove, and customize traces with adjustable color, width, and line style.
+.TP
+\fBMarkers\fR
+Place frequency markers with automatic value readout for precise measurements.
+.TP
+\fBLimit Lines\fR
+Define pass/fail criteria with frequency-dependent limits displayed as shaded 
+regions on plots.
+
+.SS Synthesis Tools
+.TP
+\fBFilter Design\fR
+Canonical and Direct-Coupled LC filters, transmission line filters.
+.TP
+\fBMatching Networks\fR
+L-section, stub-matching, and impedance transformers.
+.TP
+\fBPower Combiners\fR
+Various topologies including Wilkinson, Bagley, Gysel, and Lim-Eom.
+.TP
+\fBAttenuators\fR
+Pi, Tee, Bridged-Tee and tuned attenuators with power dissipation calculations.
+.TP
+\fBNetlist Scratchpad\fR
+Text-based tool to simulate S-parameters of a netlist as you type.
+
+All synthesis tools can export circuits to Qucs-S via clipboard for immediate 
+schematic integration.
+
+.SS Session Management
+Save and load complete workspaces including all loaded datasets, plot 
+configurations, trace properties, markers, limits, and notes. Session files 
+use the .spar XML-based format.
+
+.SH FILES
+.TP
+\fB*.snp\fR
+Touchstone S-parameter data files (S1P, S2P, S3P, etc.)
+.TP
+\fB*.dat\fR
+Qucs dataset files (Qucsator and NGspice formats)
+.TP
+\fB*.spar\fR
+Session files storing complete application state
 
 .SH AVAILABILITY
-The latest version of Qucs can always be obtained from
-\fBwww.sourceforge.net\fR or \fBwww.freshmeat.net\fR
+The latest version can be obtained from:
+.br
+\fBhttps://github.com/andresmmera/qucs-s-spar-viewer/releases/\fR
+.br
+Online documentation: \fBhttps://andresmmera.github.io/qucs-s-spar-viewer/\fR
+.br
+Qucs-S Project: \fBhttps://github.com/ra3xdh/qucs_s\fR
+
 .SH "REPORTING BUGS"
-Known bugs are documented within the BUGS file.  Report bugs to
-<qucs-bugs@lists.sourceforge.net>.
+Report bugs to the project issue tracker on GitHub or contact the author 
+directly at <andresmmera@protonmail.com>.
+
 .SH COPYRIGHT
-Copyright \(co 2006 Michael Margraf <michael.margraf@alumni.tu-berlin.de>
+Copyright \(co 2026 Andrés Martínez Mera
 .PP
-This is free software; see the source for copying conditions.  There is NO
+This is free software; see the source for copying conditions. There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-.SH AUTHORS
-Written by Toyoyuki Ishikawa <toyoishi@gmail.com> and Michael
-Margraf <michael.margraf@alumni.tu-berlin.de>.
+.PP
+Licensed under the GNU General Public License v3.0 or later.
+
+.SH AUTHOR
+Written by Andrés Martínez Mera <andresmmera@protonmail.com>.
+
+.SH "SEE ALSO"
+.BR qucs (1),
+.BR qucs-s (1)
