@@ -25,6 +25,7 @@
 #include "../SPAR/SParameterCalculator.h"
 
 #include "../Misc/general.h"
+#include "aboutdialog.h"
 
 #include <QCheckBox>
 #include <QColorDialog>
@@ -184,10 +185,13 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
     /// @brief Licensing and author credits
     /// @note This tool uses QCustomPlot, developed by Emanuel Eichhammer.
     /// https://www.qcustomplot.com
-    void slotHelpAbout();
+    void slotHelpAbout() {
+        AboutDialog dlg(this);
+        dlg.exec();
+    }
 
     /// @brief Information regarding the Qt libraries
-    void slotHelpAboutQt();
+    void slotHelpAboutQt() { QMessageBox::aboutQt(this, tr("About Qt")); }
 
     /// @brief Close the program
     void slotQuit() { qApp->quit(); }
