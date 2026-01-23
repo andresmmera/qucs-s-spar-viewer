@@ -1,16 +1,18 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Qucs
-Comment=A Universal Circuit Simulator
-Comment[es]=Un simulador universal de circuitos
-Comment[de]=Ein universeller Schaltkreissimulator
-Comment[pt]=Simulador universal de circuitos
-Comment[fr]=Simulateur universel de circuits
-Comment[it]=Simulatore universale di circuiti
-Exec=qucs %U
-Icon=qucs
-Terminal=false
+Name=Qucs-S S-parameter Viewer
+GenericName=S-parameter Viewer and Synthesis Tool
+Comment=View S-parameters and synthesize RF matching networks
+Comment[es]=Visor de parámetros S y herramienta de síntesis de circuitos RF
+Comment[de]=S-Parameter-Viewer und Werkzeug zur Synthese von HF-Schaltungen
+Comment[pt]=Visualizador de parâmetros S e ferramenta de síntese de circuitos RF
+Comment[fr]=Visualisateur de paramètres S et outil de synthèse de circuits RF
+Comment[it]=Visualizzatore di parametri S e strumento di sintesi di circuiti RF
 
+Exec=qucs-s-spar-viewer %U
+Icon=qucs-s-spar-viewer
+Terminal=false
 Type=Application
-Categories=Education;Electronics
+
+Categories=Science;Electronics;Engineering;
 StartupNotify=false
