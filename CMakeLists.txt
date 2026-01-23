@@ -225,6 +225,7 @@ ADD_EXECUTABLE( ${QUCS_NAME}spar-viewer MACOSX_BUNDLE WIN32
   ${spar_viewer_moc_sources}
   ${RESOURCES_SRCS}
   Misc/readTouchstone.cpp
+  UI/aboutdialog.h UI/aboutdialog.cpp
 )
 
 TARGET_LINK_LIBRARIES( ${QUCS_NAME}spar-viewer Qt6::Core Qt6::Gui Qt6::Widgets Qt6::PrintSupport)
