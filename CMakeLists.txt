@@ -1,4 +1,4 @@
-PROJECT(RF-Designer CXX C)
+PROJECT(qucs-s-spar-viewer CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 cmake_policy(VERSION 3.10)
 
