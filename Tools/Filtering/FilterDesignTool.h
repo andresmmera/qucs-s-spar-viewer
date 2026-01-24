@@ -7,6 +7,8 @@
 
 #ifndef FILTERDESIGNTOOL_H
 #define FILTERDESIGNTOOL_H
+
+#include "./../../UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
 #include <QGridLayout>
@@ -113,10 +115,10 @@ private:
   /// @{
   QComboBox* FilterResponseTypeCombo;       ///< Response type (Butterworth, Chebyshev, etc.)
   QLabel* RippleLabel;                      ///< Ripple parameter label
-  QDoubleSpinBox* RippleSpinbox;            ///< Passband ripple in dB
+  CustomDoubleSpinBox* RippleSpinbox;            ///< Passband ripple in dB
   QLabel* RippledBLabel;                    ///< Ripple unit label
   QLabel* StopbandAttLabel;                 ///< Stopband attenuation label
-  QDoubleSpinBox* StopbandAttSpinbox;       ///< Stopband attenuation in dB
+  CustomDoubleSpinBox* StopbandAttSpinbox;       ///< Stopband attenuation in dB
   QLabel* StopbandAttdBLabel;               ///< Stopband attenuation unit
   QComboBox* EllipticType;                  ///< Elliptic filter variant selector
   QLabel* EllipticTypeLabel;                ///< Elliptic type label
@@ -133,10 +135,10 @@ private:
   /// @name UI Components - Frequency Specifications
   /// @{
   QLabel* FC_Label;                         ///< Cutoff/center frequency label
-  QDoubleSpinBox* FCSpinbox;                ///< Frequency value
+  CustomDoubleSpinBox* FCSpinbox;                ///< Frequency value
   QComboBox* FC_ScaleCombobox;              ///< Frequency scale (GHz/MHz/kHz/Hz)
   QLabel* BW_Label;                         ///< Bandwidth label
-  QDoubleSpinBox* BWSpinbox;                ///< Bandwidth value
+  CustomDoubleSpinBox* BWSpinbox;                ///< Bandwidth value
   QComboBox* BW_ScaleCombobox;              ///< Bandwidth scale
   /// @}
 
@@ -144,13 +146,13 @@ private:
  /// @{
   QLineEdit* SourceImpedanceLineEdit;       ///< Source impedance (typically 50Ω)
   QLabel* MinimumZLabel;                    ///< Minimum impedance label
-  QDoubleSpinBox* MinimumZ_Spinbox;         ///< Minimum realizable impedance
+  CustomDoubleSpinBox* MinimumZ_Spinbox;         ///< Minimum realizable impedance
   QLabel* MinimumZ_Unit_Label;              ///< Minimum Z unit
   QLabel* MaximumZLabel;                    ///< Maximum impedance label
-  QDoubleSpinBox* MaximumZ_Spinbox;         ///< Maximum realizable impedance
+  CustomDoubleSpinBox* MaximumZ_Spinbox;         ///< Maximum realizable impedance
   QLabel* MaximumZ_Unit_Label;              ///< Maximum Z unit
   QLabel* ImpedanceRatio_Label;             ///< SIR impedance ratio label
-  QDoubleSpinBox* ImpedanceRatio_Spinbox;   ///< Impedance ratio K
+  CustomDoubleSpinBox* ImpedanceRatio_Spinbox;   ///< Impedance ratio K
   /// @}
 
   /// @name UI Components - Direct-Coupled Filters
@@ -160,7 +162,7 @@ private:
   QPushButton* ResonatorValuesButton_DC;    ///< Open resonator adjustment dialog
   std::vector<double> resonatorValues;      ///< Resonator component values
   std::vector<QString> resonatorScaleValues; ///< Resonator component scales
-  std::vector<QDoubleSpinBox*> ResonatorSpinboxes;   ///< Resonator value inputs
+  std::vector<CustomDoubleSpinBox*> ResonatorSpinboxes;   ///< Resonator value inputs
   std::vector<QComboBox*> ResonatorScaleComboboxes;  ///< Resonator scale selectors
   /// @}
 

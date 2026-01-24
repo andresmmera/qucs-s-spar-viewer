@@ -7,9 +7,9 @@
 #ifndef MATCHINGNETWORKPARAMETERSWIDGET_H
 #define MATCHINGNETWORKPARAMETERSWIDGET_H
 
+#include "./../../UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
-#include <QDoubleSpinBox>
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QHBoxLayout>
@@ -126,7 +126,7 @@ private:
   QGroupBox* Weighting_GroupBox;
   QComboBox* Weighting_Combo;
   QLabel* Ripple_Label;
-  QDoubleSpinBox* Ripple_SpinBox;
+  CustomDoubleSpinBox* Ripple_SpinBox;
   /// @}
 
   /// @name Number of sections
@@ -138,7 +138,7 @@ private:
   /// @name Reference impedance
   /// @{
   QLabel* Zin_Label;
-  QDoubleSpinBox* ZinRSpinBox;
+  CustomDoubleSpinBox* ZinRSpinBox;
   QLabel* Ohm_Zin_Label;
   /// @}
 

@@ -44,7 +44,7 @@ AttenuatorDesignTool::AttenuatorDesignTool(QWidget *parent) : QWidget(parent) {
   // Attenuation
   layout_row++;
   Attenuation_Label = new QLabel("Attenuation");
-  AttenuationSpinBox = new QDoubleSpinBox();
+  AttenuationSpinBox = new CustomDoubleSpinBox();
   AttenuationSpinBox->setMinimum(0.5);
   AttenuationSpinBox->setMaximum(60);
   AttenuationSpinBox->setSingleStep(0.5);
@@ -57,7 +57,7 @@ AttenuatorDesignTool::AttenuatorDesignTool(QWidget *parent) : QWidget(parent) {
   // Input impedance
   layout_row++;
   Zin_Label = new QLabel("Zin");
-  ZinSpinBox = new QDoubleSpinBox();
+  ZinSpinBox = new CustomDoubleSpinBox();
   ZinSpinBox->setMinimum(0.5);
   ZinSpinBox->setMaximum(1000);
   ZinSpinBox->setSingleStep(0.5);
@@ -70,7 +70,7 @@ AttenuatorDesignTool::AttenuatorDesignTool(QWidget *parent) : QWidget(parent) {
   // Output impedance
   layout_row++;
   Zout_Label = new QLabel("Zout");
-  ZoutSpinBox = new QDoubleSpinBox();
+  ZoutSpinBox = new CustomDoubleSpinBox();
   ZoutSpinBox->setMinimum(0.5);
   ZoutSpinBox->setMaximum(1000);
   ZoutSpinBox->setSingleStep(0.5);
@@ -83,7 +83,7 @@ AttenuatorDesignTool::AttenuatorDesignTool(QWidget *parent) : QWidget(parent) {
   // Input power
   layout_row++;
   Pin_Label = new QLabel("Input power");
-  Pin_SpinBox = new QDoubleSpinBox();
+  Pin_SpinBox = new CustomDoubleSpinBox();
   Pin_SpinBox->setMinimum(-150);   // dBm
   Pin_SpinBox->setMaximum(200);    // dBm
   Pin_SpinBox->setSingleStep(0.1); // dB
@@ -105,7 +105,7 @@ AttenuatorDesignTool::AttenuatorDesignTool(QWidget *parent) : QWidget(parent) {
   // Frequency. Tuned attenuators only
   layout_row++;
   freqLabel = new QLabel("Frequency");
-  freqSpinBox = new QDoubleSpinBox();
+  freqSpinBox = new CustomDoubleSpinBox();
   freqSpinBox->setMinimum(0.5);
   freqSpinBox->setMaximum(10000);
   freqSpinBox->setValue(1000);
@@ -173,15 +173,15 @@ AttenuatorDesignTool::AttenuatorDesignTool(QWidget *parent) : QWidget(parent) {
           &AttenuatorDesignTool::on_TopoCombo_currentIndexChanged);
   connect(TL_Implementation_Combo, &QComboBox::currentIndexChanged, this,
           &AttenuatorDesignTool::UpdateDesignParameters);
-  connect(AttenuationSpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(AttenuationSpinBox, &CustomDoubleSpinBox::valueChanged, this,
           &AttenuatorDesignTool::UpdateDesignParameters);
-  connect(ZinSpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(ZinSpinBox, &CustomDoubleSpinBox::valueChanged, this,
           &AttenuatorDesignTool::UpdateDesignParameters);
-  connect(ZoutSpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(ZoutSpinBox, &CustomDoubleSpinBox::valueChanged, this,
           &AttenuatorDesignTool::UpdateDesignParameters);
-  connect(freqSpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(freqSpinBox, &CustomDoubleSpinBox::valueChanged, this,
           &AttenuatorDesignTool::UpdateDesignParameters);
-  connect(Pin_SpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(Pin_SpinBox, &CustomDoubleSpinBox::valueChanged, this,
           &AttenuatorDesignTool::UpdateDesignParameters);
   connect(FreqScaleCombo, &QComboBox::currentIndexChanged, this,
           &AttenuatorDesignTool::UpdateDesignParameters);

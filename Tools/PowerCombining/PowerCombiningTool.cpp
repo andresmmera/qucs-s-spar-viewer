@@ -58,7 +58,7 @@ PowerCombiningTool::PowerCombiningTool(QWidget *parent) : QWidget(parent) {
   // Ref impedance
   layout_row++;
   RefImp = new QLabel("Z0");
-  RefImpSpinbox = new QDoubleSpinBox();
+  RefImpSpinbox = new CustomDoubleSpinBox();
   RefImpSpinbox->setMinimum(1);
   RefImpSpinbox->setValue(50);
   RefImpSpinbox->setSingleStep(1); // 1 Ohm step
@@ -71,7 +71,7 @@ PowerCombiningTool::PowerCombiningTool(QWidget *parent) : QWidget(parent) {
   // Frequency
   layout_row++;
   FreqLabel = new QLabel("Frequency");
-  FreqSpinbox = new QDoubleSpinBox();
+  FreqSpinbox = new CustomDoubleSpinBox();
   FreqSpinbox->setMinimum(1);
   FreqSpinbox->setMaximum(1e6);
   FreqSpinbox->setDecimals(0);
@@ -92,20 +92,20 @@ PowerCombiningTool::PowerCombiningTool(QWidget *parent) : QWidget(parent) {
   K1Label = new QLabel("Output Power ratio");
 
   QHBoxLayout *hbox = new QHBoxLayout();
-  K1Spinbox = new QDoubleSpinBox();
+  K1Spinbox = new CustomDoubleSpinBox();
   K1Spinbox->setValue(0); // Equal split ratio
   K1Spinbox->setMinimum(-20);
   K1Spinbox->setMaximum(20);
   K1Spinbox->setSingleStep(0.1); // 0.1dB step
 
-  K2Spinbox = new QDoubleSpinBox();
+  K2Spinbox = new CustomDoubleSpinBox();
   K2Spinbox->setValue(0); // Equal split ratio
   K2Spinbox->setMinimum(-20);
   K2Spinbox->setMaximum(20);
   K2Spinbox->setSingleStep(0.1); // 0.1dB step
   K2Spinbox->setVisible(false);
 
-  K3Spinbox = new QDoubleSpinBox();
+  K3Spinbox = new CustomDoubleSpinBox();
   K3Spinbox->setValue(0); // Equal split ratio
   K3Spinbox->setMinimum(-20);
   K3Spinbox->setMaximum(20);
@@ -136,7 +136,7 @@ PowerCombiningTool::PowerCombiningTool(QWidget *parent) : QWidget(parent) {
   // Ideal transmission line attenuation coeffient
   layout_row++;
   AlphaLabel = new QLabel("Attenuation coefficient");
-  AlphaSpinbox = new QDoubleSpinBox();
+  AlphaSpinbox = new CustomDoubleSpinBox();
   AlphaSpinbox->setValue(0);        // Initial value: 0 dB/m
   AlphaSpinbox->setSingleStep(0.1); // 0.1dB
   AlphadBLabel = new QLabel("dB/m");
@@ -178,25 +178,25 @@ PowerCombiningTool::PowerCombiningTool(QWidget *parent) : QWidget(parent) {
   connect(BranchesCombo, &QComboBox::currentIndexChanged, this,
           [this](int) { UpdateDesignParameters(); });
 
-  connect(RefImpSpinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(RefImpSpinbox, &CustomDoubleSpinBox::valueChanged, this,
           [this](double) { UpdateDesignParameters(); });
 
-  connect(FreqSpinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(FreqSpinbox, &CustomDoubleSpinBox::valueChanged, this,
           [this](double) { UpdateDesignParameters(); });
 
   connect(FreqScaleCombo, &QComboBox::currentIndexChanged, this,
           [this](int) { UpdateDesignParameters(); });
 
-  connect(K1Spinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(K1Spinbox, &CustomDoubleSpinBox::valueChanged, this,
           [this](double) { UpdateDesignParameters(); });
 
-  connect(K2Spinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(K2Spinbox, &CustomDoubleSpinBox::valueChanged, this,
           [this](double) { UpdateDesignParameters(); });
 
   connect(NStagesSpinbox, &QSpinBox::valueChanged, this,
           [this](int) { UpdateDesignParameters(); });
 
-  connect(AlphaSpinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(AlphaSpinbox, &CustomDoubleSpinBox::valueChanged, this,
           [this](double) { UpdateDesignParameters(); });
 
   connect(UnitsCombo, &QComboBox::currentIndexChanged, this,

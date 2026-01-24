@@ -33,7 +33,7 @@ MatchingNetworkDesignTool::MatchingNetworkDesignTool(QWidget *parent)
 
   // Frequency range. Start
   f_match_Label = new QLabel("freq");
-  f_match_Spinbox = new QDoubleSpinBox();
+  f_match_Spinbox = new CustomDoubleSpinBox();
   f_match_Spinbox->setMinimum(1);
   f_match_Spinbox->setMaximum(1e6);
   f_match_Spinbox->setDecimals(0);
@@ -64,18 +64,18 @@ MatchingNetworkDesignTool::MatchingNetworkDesignTool(QWidget *parent)
           &MatchingNetworkDesignTool::UpdateDesignParameters);
 
   // Use this while Qt < 6.7
-  connect(TwoPortCheckBox,
-          &QCheckBox::stateChanged,
-          this,
-          &MatchingNetworkDesignTool::AdjustOneTwoPortMatchingWidgetsVisibility);
+  connect(
+      TwoPortCheckBox, &QCheckBox::stateChanged, this,
+      &MatchingNetworkDesignTool::AdjustOneTwoPortMatchingWidgetsVisibility);
   /*
    * Use this when all the builds are Qt > 6.7
   connect(
       TwoPortCheckBox, &QCheckBox::checkStateChanged, this,
       &MatchingNetworkDesignTool::AdjustOneTwoPortMatchingWidgetsVisibility);*/
 
-  connect(f_match_Spinbox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
-          this, &MatchingNetworkDesignTool::UpdateDesignParameters);
+  connect(f_match_Spinbox,
+          QOverload<double>::of(&CustomDoubleSpinBox::valueChanged), this,
+          &MatchingNetworkDesignTool::UpdateDesignParameters);
 
   connect(f_match_Scale_Combo, &QComboBox::currentIndexChanged, this,
           &MatchingNetworkDesignTool::UpdateDesignParameters);

@@ -139,7 +139,7 @@ void FilterDesignTool::openResonatorValuesDialog() {
     layout->addWidget(new QLabel(QString("%1%2").arg(label).arg(i + 1)), i + 2,
                       0);
 
-    QDoubleSpinBox *ResonatorSpinbox = new QDoubleSpinBox();
+    CustomDoubleSpinBox *ResonatorSpinbox = new CustomDoubleSpinBox();
     ResonatorSpinbox->setDecimals(1);
     ResonatorSpinbox->setMinimum(0.01);
     ResonatorSpinbox->setMaximum(100000);
@@ -173,7 +173,7 @@ void FilterDesignTool::openResonatorValuesDialog() {
     ResonatorSpinbox->setValue(resonatorValues[i]);
 
     // Connect value change to trigger design update
-    connect(ResonatorSpinbox, &QDoubleSpinBox::valueChanged, this,
+    connect(ResonatorSpinbox, &CustomDoubleSpinBox::valueChanged, this,
             [this, i](double value) {
               resonatorValues[i] = value;
               UpdateDesignParameters();

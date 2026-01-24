@@ -7,6 +7,8 @@
 
 #ifndef POWERCOMBININGTOOL_H
 #define POWERCOMBININGTOOL_H
+
+#include "./../../UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
 #include <QGridLayout>
@@ -108,8 +110,8 @@ private:
   QLabel *OhmLabel, *K1LabeldB, *NStagesLabel, *K1Label, *FreqLabel, *RefImp,
       *TopoLabel;
   QLabel *AlphaLabel, *AlphadBLabel, *UnitsLabel;
-  QDoubleSpinBox *RefImpSpinbox, *FreqSpinbox, *AlphaSpinbox;
-  QDoubleSpinBox *K1Spinbox, *K2Spinbox, *K3Spinbox;
+  CustomDoubleSpinBox *RefImpSpinbox, *FreqSpinbox, *AlphaSpinbox;
+  CustomDoubleSpinBox *K1Spinbox, *K2Spinbox, *K3Spinbox;
   QSpinBox* NStagesSpinbox;
   QComboBox* BranchesCombo;
   QLabel* number_Output_Label;
