@@ -363,20 +363,22 @@ QGridLayout *PolarPlotWidget::setupAxisSettings() {
   axisLayout->addWidget(FreqLabel, 0, 0);
 
   // Create frequency controls
-  fMinSpinBox = new QDoubleSpinBox;
+  fMinSpinBox = new CustomDoubleSpinBox;
   fMinSpinBox->setRange(0, 1e12);
   fMinSpinBox->setSingleStep(10);
   fMinSpinBox->setToolTip("Minimum frequency");
-  connect(fMinSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
-          this, &PolarPlotWidget::onFMinChanged);
+  connect(fMinSpinBox,
+          QOverload<double>::of(&CustomDoubleSpinBox::valueChanged), this,
+          &PolarPlotWidget::onFMinChanged);
   axisLayout->addWidget(fMinSpinBox, 0, 1);
 
-  fMaxSpinBox = new QDoubleSpinBox;
+  fMaxSpinBox = new CustomDoubleSpinBox;
   fMaxSpinBox->setRange(0, 1e12);
   fMaxSpinBox->setSingleStep(10);
   fMaxSpinBox->setToolTip("Maximum frequency");
-  connect(fMaxSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
-          this, &PolarPlotWidget::onFMaxChanged);
+  connect(fMaxSpinBox,
+          QOverload<double>::of(&CustomDoubleSpinBox::valueChanged), this,
+          &PolarPlotWidget::onFMaxChanged);
   axisLayout->addWidget(fMaxSpinBox, 0, 2);
 
   fUnitComboBox = new QComboBox;
@@ -391,37 +393,37 @@ QGridLayout *PolarPlotWidget::setupAxisSettings() {
   QLabel *rAxisLabel = new QLabel("<b>Radius</b>");
   axisLayout->addWidget(rAxisLabel, 1, 0);
 
-  rAxisMin = new QDoubleSpinBox();
+  rAxisMin = new CustomDoubleSpinBox();
   rAxisMin->setMinimum(0.0); // Ensure minimum cannot be set below 0
   rAxisMin->setMaximum(1000000);
   rAxisMin->setValue(0.0);
   rAxisMin->setDecimals(2);
   rAxisMin->setSingleStep(0.1);
   rAxisMin->setToolTip("Minimum radius");
-  connect(rAxisMin, QOverload<double>::of(&QDoubleSpinBox::valueChanged), this,
-          &PolarPlotWidget::updateRAxis);
+  connect(rAxisMin, QOverload<double>::of(&CustomDoubleSpinBox::valueChanged),
+          this, &PolarPlotWidget::updateRAxis);
   axisLayout->addWidget(rAxisMin, 1, 1);
 
-  rAxisMax = new QDoubleSpinBox();
+  rAxisMax = new CustomDoubleSpinBox();
   rAxisMax->setMinimum(0.1); // Ensure maximum is always positive
   rAxisMax->setMaximum(1000000);
   rAxisMax->setValue(1.0);
   rAxisMax->setDecimals(2);
   rAxisMax->setSingleStep(0.1);
   rAxisMax->setToolTip("Maximum radius");
-  connect(rAxisMax, QOverload<double>::of(&QDoubleSpinBox::valueChanged), this,
-          &PolarPlotWidget::updateRAxis);
+  connect(rAxisMax, QOverload<double>::of(&CustomDoubleSpinBox::valueChanged),
+          this, &PolarPlotWidget::updateRAxis);
   axisLayout->addWidget(rAxisMax, 1, 2);
 
-  rAxisDiv = new QDoubleSpinBox();
+  rAxisDiv = new CustomDoubleSpinBox();
   rAxisDiv->setMinimum(0.1);
   rAxisDiv->setMaximum(1000000);
   rAxisDiv->setValue(0.2);
   rAxisDiv->setDecimals(2);
   rAxisDiv->setSingleStep(0.1);
   rAxisDiv->setToolTip("Radius step");
-  connect(rAxisDiv, QOverload<double>::of(&QDoubleSpinBox::valueChanged), this,
-          &PolarPlotWidget::updateRAxis);
+  connect(rAxisDiv, QOverload<double>::of(&CustomDoubleSpinBox::valueChanged),
+          this, &PolarPlotWidget::updateRAxis);
   axisLayout->addWidget(rAxisDiv, 1, 3);
 
   // Display mode

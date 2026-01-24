@@ -9,9 +9,9 @@
 #define RECTANGULARPLOTWIDGET_H
 
 #include "./QCustomPlot/qcustomplot.h"
+#include "./../UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
-#include <QDoubleSpinBox>
 #include <QGridLayout>
 #include <QLabel>
 #include <QMap>
@@ -347,19 +347,19 @@ private slots:
 private:
   QCustomPlot* plotWidget;           ///< Main plot widget
 
-  QDoubleSpinBox* xAxisMin;          ///< X-axis minimum control
-  QDoubleSpinBox* xAxisMax;          ///< X-axis maximum control
-  QDoubleSpinBox* xAxisDiv;          ///< X-axis division control
+  CustomDoubleSpinBox* xAxisMin;          ///< X-axis minimum control
+  CustomDoubleSpinBox* xAxisMax;          ///< X-axis maximum control
+  CustomDoubleSpinBox* xAxisDiv;          ///< X-axis division control
   QComboBox* xAxisUnits;             ///< Frequency unit selector
 
-  QDoubleSpinBox* yAxisMin;          ///< Left Y-axis minimum control
-  QDoubleSpinBox* yAxisMax;          ///< Left Y-axis maximum control
-  QDoubleSpinBox* yAxisDiv;          ///< Left Y-axis division control
+  CustomDoubleSpinBox* yAxisMin;          ///< Left Y-axis minimum control
+  CustomDoubleSpinBox* yAxisMax;          ///< Left Y-axis maximum control
+  CustomDoubleSpinBox* yAxisDiv;          ///< Left Y-axis division control
   QLabel* yAxisUnits;                ///< Left Y-axis unit label
 
-  QDoubleSpinBox* y2AxisMin;         ///< Right Y-axis minimum control
-  QDoubleSpinBox* y2AxisMax;         ///< Right Y-axis maximum control
-  QDoubleSpinBox* y2AxisDiv;         ///< Right Y-axis division control
+  CustomDoubleSpinBox* y2AxisMin;         ///< Right Y-axis minimum control
+  CustomDoubleSpinBox* y2AxisMax;         ///< Right Y-axis maximum control
+  CustomDoubleSpinBox* y2AxisDiv;         ///< Right Y-axis division control
   QLabel* y2AxisUnits;               ///< Right Y-axis unit label
   QLabel* y2AxisLabel;               ///< Right Y-axis title label
 

@@ -8,9 +8,9 @@
 #ifndef SMITHCHARTWIDGET_H
 #define SMITHCHARTWIDGET_H
 
+#include "./../UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
-#include <QDoubleSpinBox>
 #include <QLabel>
 #include <QMap>
 #include <QMouseEvent>
@@ -262,8 +262,8 @@ private:
 
 private:
   // Frequency range controls
-  QDoubleSpinBox* m_minFreqSpinBox;///< Widget that controls the minimum frequency to be displayed
-  QDoubleSpinBox* m_maxFreqSpinBox;///< Widget that controls the maximum frequency to be displayed
+  CustomDoubleSpinBox* m_minFreqSpinBox;///< Widget that controls the minimum frequency to be displayed
+  CustomDoubleSpinBox* m_maxFreqSpinBox;///< Widget that controls the maximum frequency to be displayed
   QComboBox* m_freqUnitComboBox;   ///< Widget that controls the frequency scaling units
   double m_minFreq;                ///< Actual value of the minimum frequency [Hz]
   double m_maxFreq;                ///< Actual value of the maximum frequency [Hz]

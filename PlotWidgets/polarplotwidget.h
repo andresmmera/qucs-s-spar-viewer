@@ -9,9 +9,9 @@
 #define POLARPLOTWIDGET_H
 
 #include "./QCustomPlot/qcustomplot.h"
+#include "./../UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
-#include <QDoubleSpinBox>
 #include <QGridLayout>
 #include <QLabel>
 #include <QMap>
@@ -222,13 +222,13 @@ private:
   QCPPolarAxisAngular* angularAxis;
   QCPPolarAxisRadial* radialAxis;
 
-  QDoubleSpinBox* rAxisMin;
-  QDoubleSpinBox* rAxisMax;
-  QDoubleSpinBox* rAxisDiv;
+  CustomDoubleSpinBox* rAxisMin;
+  CustomDoubleSpinBox* rAxisMax;
+  CustomDoubleSpinBox* rAxisDiv;
   QComboBox* displayModeCombo;
 
-  QDoubleSpinBox* fMinSpinBox;
-  QDoubleSpinBox* fMaxSpinBox;
+  CustomDoubleSpinBox* fMinSpinBox;
+  CustomDoubleSpinBox* fMaxSpinBox;
   QComboBox* fUnitComboBox;
   double fMin;
   double fMax;
