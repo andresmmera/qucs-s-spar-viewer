@@ -413,13 +413,13 @@ void Qucs_S_SPAR_Viewer::addMarker(double freq, QString Freq_Marker_Scale) {
   this->MarkersGrid->addWidget(new_marker_label, n_markers, 0);
 
   QString SpinBox_name = QStringLiteral("Mkr_SpinBox%1").arg(n_markers);
-  QDoubleSpinBox *new_marker_Spinbox = new QDoubleSpinBox();
+  CustomDoubleSpinBox *new_marker_Spinbox = new CustomDoubleSpinBox();
   new_marker_Spinbox->setObjectName(SpinBox_name);
   new_marker_Spinbox->setMinimum(Magnitude_PhaseChart->getXmin());
   new_marker_Spinbox->setMaximum(Magnitude_PhaseChart->getXmax());
   new_marker_Spinbox->setDecimals(1);
   new_marker_Spinbox->setValue(f_marker);
-  connect(new_marker_Spinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(new_marker_Spinbox, &CustomDoubleSpinBox::valueChanged, this,
           &Qucs_S_SPAR_Viewer::updateMarkerTable);
   props.freqSpinBox = new_marker_Spinbox;
   this->MarkersGrid->addWidget(new_marker_Spinbox, n_markers, 1);

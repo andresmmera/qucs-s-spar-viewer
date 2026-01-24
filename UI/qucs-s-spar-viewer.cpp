@@ -636,7 +636,8 @@ void Qucs_S_SPAR_Viewer::setLimitManagementDock() {
   QGroupBox *LimitSettings = new QGroupBox("Settings");
   QGridLayout *LimitsSettingLayout = new QGridLayout(LimitSettings);
   QLabel *LimitsOffsetLabel = new QLabel("<b>Limits Offset</>");
-  Limits_Offset = new QDoubleSpinBox();
+  Limits_Offset = new CustomDoubleSpinBox();
+  Limits_Offset->setObjectName("LimitOffset");
   Limits_Offset->setValue(0);
   Limits_Offset->setSingleStep(0.1);
   Limits_Offset->setMaximum(1e4);
