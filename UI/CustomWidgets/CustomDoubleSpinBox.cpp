@@ -8,15 +8,30 @@
 
 #include "CustomDoubleSpinBox.h"
 
+CustomDoubleSpinBox::CustomDoubleSpinBox(QWidget *parent)
+    : QDoubleSpinBox(parent) {
+  // The base class handles initialization
+}
+
 void CustomDoubleSpinBox::contextMenuEvent(QContextMenuEvent *event) {
   QMenu menu(this);
 
+  // Configure min, max and step
   QAction *configAction = menu.addAction("Configure Range && Step...");
+  menu.addSeparator();
+
+  // Block / unblock the data entry
+  QAction *blockAction =
+      menu.addAction(isEnabled() ? "Block Widget" : "Unblock Widget");
 
   QAction *selectedAction = menu.exec(event->globalPos());
 
   if (selectedAction == configAction) {
     openConfigDialog();
+  } else if (selectedAction == blockAction) {
+    bool newReadOnlyState = !isReadOnly();
+    setReadOnly(newReadOnlyState);
+    updateReadOnlyStyle();
   }
 }
 
@@ -73,5 +88,15 @@ void CustomDoubleSpinBox::openConfigDialog() {
       setRange(newMin, newMax);
       setSingleStep(newStep);
     }
+  }
+}
+
+void CustomDoubleSpinBox::updateReadOnlyStyle() {
+  if (isReadOnly()) {
+    // Set dark orange text color to indicate read-only state
+    setStyleSheet("QDoubleSpinBox { color: #FF8C00; }");
+  } else {
+    // Clear the style sheet to restore default appearance
+    setStyleSheet("");
   }
 }

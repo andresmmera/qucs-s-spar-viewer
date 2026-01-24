@@ -32,7 +32,7 @@ public:
 
     /// @brief Constructs a CustomDoubleSpinBox
     /// @param parent The parent widget (optional)
-    explicit CustomDoubleSpinBox(QWidget *parent = nullptr) {}
+    explicit CustomDoubleSpinBox(QWidget *parent = nullptr);
 
 protected:
     /// @brief Handles context menu events (right-click)
@@ -49,6 +49,11 @@ private slots:
     /// minimum value, maximum value, and single step increment. Changes
     /// are validated and applied only if the user accepts the dialog.
     void openConfigDialog();
+
+private:
+
+    /// @brief Updates the visual style based on read-only state
+    void updateReadOnlyStyle();
 };
 
 #endif // CUSTOMDOUBLESPINBOX_H
