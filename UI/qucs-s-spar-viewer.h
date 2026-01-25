@@ -548,6 +548,10 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
     /// @note Numbers start from 1 for display purposes
     void updateLimitNames();
 
+    /// @brief Applies a new offset value to the limits displayed in the rectangular plot and forces update
+    /// @param newOffset Offset value to be applied
+    void onLimitsOffsetChanged(double newOffset);
+
     /// @brief Get the total number of limits
     /// \return int Number of limits
     int getNumberOfLimits() { return limitsMap.keys().size(); }
