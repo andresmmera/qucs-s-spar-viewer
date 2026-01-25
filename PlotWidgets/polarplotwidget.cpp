@@ -490,6 +490,10 @@ void PolarPlotWidget::drawCustomMarkers() {
   // Clear existing marker graphics items
   clearGraphicsItems();
 
+  // Get the current radial range for better positioning
+  double rMin = radialAxis->range().lower;
+  double rMax = radialAxis->range().upper;
+
   // Iterate through each trace
   for (auto traceIt = traces.constBegin(); traceIt != traces.constEnd();
        ++traceIt) {
@@ -539,23 +543,24 @@ void PolarPlotWidget::drawCustomMarkers() {
                            value.imag() * value.imag());
       }
 
+      // Use QCustomPlot's built-in coordinate transformation for polar plots
+      // coordToPixel for polar axes takes both angle and radius
+      QPointF pixelPos = angularAxis->coordToPixel(angle, radius);
+      double xPixel = pixelPos.x();
+      double yPixel = pixelPos.y();
+
       // Create a marker point using QCPItemEllipse
       QCPItemEllipse *markerPoint = new QCPItemEllipse(plot);
 
-      // Set position using polar coordinates - QCustomPlot handles the
-      // conversion
-      double angleRad = angle * M_PI / 180.0;
-      double xTopLeft = radius * cos(angleRad);
-      double yTopLeft = radius * sin(angleRad);
+      // Set marker point size in pixels
+      double markerSize = 3.0; // pixels
 
-      double xBottomRight = (radius - 0.02) * cos((angle + 2) * M_PI / 180.0);
-      double yBottomRight = (radius - 0.02) * sin((angle + 2) * M_PI / 180.0);
+      markerPoint->topLeft->setType(QCPItemPosition::ptAbsolute);
+      markerPoint->topLeft->setCoords(xPixel - markerSize, yPixel - markerSize);
 
-      markerPoint->topLeft->setType(QCPItemPosition::ptPlotCoords);
-      markerPoint->topLeft->setCoords(xTopLeft, yTopLeft);
-
-      markerPoint->bottomRight->setType(QCPItemPosition::ptPlotCoords);
-      markerPoint->bottomRight->setCoords(xBottomRight, yBottomRight);
+      markerPoint->bottomRight->setType(QCPItemPosition::ptAbsolute);
+      markerPoint->bottomRight->setCoords(xPixel + markerSize,
+                                          yPixel + markerSize);
 
       // Set marker appearance
       markerPoint->setPen(marker.pen);
@@ -582,7 +587,7 @@ void PolarPlotWidget::drawCustomMarkers() {
       if (displayMode == 0) {
         // Magnitude/Phase format
         labelText =
-            QString("%1 [%2]: %3 %4\n%5∠%6°")
+            QString("%1 [%2]: %3 %4\n%5∠ %6°")
                 .arg(markerId, traceName, QString::number(freqValue, 'g', 3),
                      freqUnit, QString::number(radius, 'f', 2),
                      QString::number(angle, 'f', 2));
@@ -599,18 +604,70 @@ void PolarPlotWidget::drawCustomMarkers() {
       // Create and position the label using QCPItemText
       QCPItemText *markerLabel = new QCPItemText(plot);
 
-      double xLabel = radius * cos(angleRad);
-      double yLabel = radius * sin(angleRad);
+      // Calculate label offset in pixels
+      double labelOffset = 10.0; // pixels away from marker
 
-      markerLabel->position->setType(QCPItemPosition::ptPlotCoords);
-      markerLabel->position->setCoords(xLabel, yLabel + 0.1);
+      // Determine label position based on angle to avoid edges
+      double labelXPixel = xPixel;
+      double labelYPixel = yPixel;
+      Qt::Alignment alignment = Qt::AlignCenter;
 
+      // Position label based on quadrant
+      if (angle >= 45 && angle < 135) {
+        // Top quadrant - label above
+        labelYPixel = yPixel - labelOffset;
+        alignment = Qt::AlignBottom | Qt::AlignHCenter;
+      } else if (angle >= 135 && angle < 225) {
+        // Left quadrant - label to left
+        labelXPixel = xPixel - labelOffset;
+        alignment = Qt::AlignVCenter | Qt::AlignRight;
+      } else if (angle >= 225 && angle < 315) {
+        // Bottom quadrant - label below
+        labelYPixel = yPixel + labelOffset;
+        alignment = Qt::AlignTop | Qt::AlignHCenter;
+      } else {
+        // Right quadrant - label to right
+        labelXPixel = xPixel + labelOffset;
+        alignment = Qt::AlignVCenter | Qt::AlignLeft;
+      }
+
+      // If marker is near the outer edge, move label inward
+      double normalizedRadius = (radius - rMin) / (rMax - rMin);
+      if (normalizedRadius > 0.8) {
+        if (angle >= 45 && angle < 135) {
+          labelYPixel = yPixel + labelOffset / 2;
+          alignment = Qt::AlignTop | Qt::AlignHCenter;
+        } else if (angle >= 135 && angle < 225) {
+          labelXPixel = xPixel + labelOffset / 2;
+          alignment = Qt::AlignVCenter | Qt::AlignLeft;
+        } else if (angle >= 225 && angle < 315) {
+          labelYPixel = yPixel - labelOffset / 2;
+          alignment = Qt::AlignBottom | Qt::AlignHCenter;
+        } else {
+          labelXPixel = xPixel - labelOffset / 2;
+          alignment = Qt::AlignVCenter | Qt::AlignRight;
+        }
+      }
+
+      markerLabel->position->setType(QCPItemPosition::ptAbsolute);
+      markerLabel->position->setCoords(labelXPixel, labelYPixel);
+      markerLabel->setPositionAlignment(alignment);
+
+      // Label text
       markerLabel->setText(labelText);
-      markerLabel->setFont(QFont("Arial", 9, QFont::Bold));
-      markerLabel->setColor(Qt::black);
-      markerLabel->setBrush(QBrush(QColor(255, 255, 255, 200)));
-      markerLabel->setPen(QPen(Qt::black));
-      markerLabel->setPadding(QMargins(6, 6, 6, 6));
+
+      // Set text font
+      QFont font("Arial");
+      font.setPointSize(8);
+      font.setBold(true);
+      font.setWeight(QFont::Normal);
+      markerLabel->setFont(font);
+
+      markerLabel->setBrush(QBrush(QColor(255, 255, 255, 230)));
+
+      // Outer frame of the label
+      markerLabel->setPen(QPen(Qt::black, 2));
+      markerLabel->setPadding(QMargins(4, 4, 4, 4));
 
       markerLabels.append(markerLabel);
     }
