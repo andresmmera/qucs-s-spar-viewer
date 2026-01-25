@@ -641,8 +641,8 @@ void Qucs_S_SPAR_Viewer::setLimitManagementDock() {
   Limits_Offset->setSingleStep(0.1);
   Limits_Offset->setMaximum(1e4);
   Limits_Offset->setMinimum(-1e4);
-  connect(Limits_Offset, &QDoubleSpinBox::valueChanged, this,
-          &Qucs_S_SPAR_Viewer::updateLimits);
+  connect(Limits_Offset, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
+          this, &Qucs_S_SPAR_Viewer::onLimitsOffsetChanged);
 
   LimitsSettingLayout->addWidget(LimitsOffsetLabel, 0, 0);
   LimitsSettingLayout->addWidget(Limits_Offset, 0, 1);

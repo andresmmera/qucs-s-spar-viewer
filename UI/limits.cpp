@@ -343,8 +343,10 @@ void Qucs_S_SPAR_Viewer::updateLimits() {
 
   limit_props.f1 = f1;
   limit_props.f2 = f2;
-  limit_props.y1 = limitsMap[limit_name].Start_Value->value();
-  limit_props.y2 = limitsMap[limit_name].Stop_Value->value();
+  limit_props.y1 =
+      limitsMap[limit_name].Start_Value->value() + Limits_Offset->value();
+  limit_props.y2 =
+      limitsMap[limit_name].Stop_Value->value() + Limits_Offset->value();
   limit_props.y_axis = limitsMap[limit_name].axis->currentIndex();
   limit_props.pen = QPen(Qt::black, 2, Qt::SolidLine);
 
@@ -484,4 +486,30 @@ void Qucs_S_SPAR_Viewer::updateLimitNames() {
 
     limit_props.LimitLabel->setText(QStringLiteral("Limit %1").arg(i + 1));
   }
+}
+
+void Qucs_S_SPAR_Viewer::onLimitsOffsetChanged(double newOffset) {
+
+  int n_limits = getNumberOfLimits();
+  for (int i = 0; i < n_limits; ++i) {
+    QString limit_name;
+    LimitProperties limit_props;
+    if (!getLimitByPosition(i, limit_name, limit_props))
+      continue;
+
+    // Re‑build the limit with the offset applied
+    RectangularPlotWidget::Limit lim;
+    double f1 = limit_props.Start_Freq->value();
+    double f2 = limit_props.Stop_Freq->value();
+    QString scale1 = limit_props.Start_Freq_Scale->currentText();
+    QString scale2 = limit_props.Stop_Freq_Scale->currentText();
+    lim.f1 = f1 / getFreqScale(scale1);
+    lim.f2 = f2 / getFreqScale(scale2);
+    lim.y1 = limit_props.Start_Value->value() + newOffset;
+    lim.y2 = limit_props.Stop_Value->value() + newOffset;
+    lim.pen = QPen(Qt::black, 2, Qt::SolidLine);
+
+    Magnitude_PhaseChart->updateLimit(limit_name, lim);
+  }
+  Magnitude_PhaseChart->update();
 }
