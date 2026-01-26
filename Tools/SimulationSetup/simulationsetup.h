@@ -11,9 +11,10 @@
 
 #include "../../Misc/general.h"
 #include "../../Schematic/infoclasses.h"
+
+#include "./../../UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QButtonGroup>
 #include <QComboBox>
-#include <QDoubleSpinBox>
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QHBoxLayout>
@@ -116,8 +117,8 @@ class SimulationSetup : public QWidget {
 
     /// @name Frequency‑sweep widgets
     /// @{
-    QDoubleSpinBox   *fstartSpinBox;
-    QDoubleSpinBox   *fstopSpinBox;
+    CustomDoubleSpinBox   *fstartSpinBox;
+    CustomDoubleSpinBox   *fstopSpinBox;
     QComboBox        *fstartScaleComboBox;
     QComboBox        *fstopScaleComboBox;
     QSpinBox         *npointsSpinBox;
@@ -126,12 +127,12 @@ class SimulationSetup : public QWidget {
     /// @name Substrate‑property widgets
     /// @{
     QComboBox        *transmissionLineComboBox;
-    QDoubleSpinBox   *substrateThicknessSpinBox;
-    QDoubleSpinBox   *substratePermittivitySpinBox;
-    QDoubleSpinBox   *substrateLossTangentSpinBox;
-    QDoubleSpinBox   *conductorThicknessSpinBox;
-    QDoubleSpinBox   *conductorConductivitySpinBox;
-    QDoubleSpinBox   *groundPlaneThicknessSpinBox;
+    CustomDoubleSpinBox   *substrateThicknessSpinBox;
+    CustomDoubleSpinBox   *substratePermittivitySpinBox;
+    CustomDoubleSpinBox   *substrateLossTangentSpinBox;
+    CustomDoubleSpinBox   *conductorThicknessSpinBox;
+    CustomDoubleSpinBox   *conductorConductivitySpinBox;
+    CustomDoubleSpinBox   *groundPlaneThicknessSpinBox;
     QLabel           *imageLabel;
     /// }@
 

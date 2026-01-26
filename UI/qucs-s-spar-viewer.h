@@ -14,6 +14,7 @@
 
 #include "../UI/CustomWidgets/codeeditor.h"
 #include "../UI/CustomWidgets/matrixcombopopup.h"
+#include "../UI/CustomWidgets/CustomDoubleSpinBox.h"
 
 #include "../Tools/AttenuatorDesign/AttenuatorDesignTool.h"
 #include "../Tools/Filtering/FilterDesignTool.h"
@@ -773,7 +774,7 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
     QGridLayout* LimitsGrid;                 ///< Grid layout for limits
     QPushButton *Button_add_Limit;           ///< Button to add limit
     QPushButton *Button_Remove_All_Limits;   ///< Button to remove all limits
-    QDoubleSpinBox* Limits_Offset;           ///< Spin box for limit offset
+    CustomDoubleSpinBox* Limits_Offset;           ///< Spin box for limit offset
 
     /// @brief Groups the widgets related to the traces. They are accessible by name (map key)
     QMap<QString, LimitProperties> limitsMap;

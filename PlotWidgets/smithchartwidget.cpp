@@ -97,25 +97,25 @@ SmithChartWidget::SmithChartWidget(QWidget *parent)
 
   // Min frequency label and spinbox
   QLabel *minFreqLabel = new QLabel("Min:", this);
-  m_minFreqSpinBox = new QDoubleSpinBox(this);
+  m_minFreqSpinBox = new CustomDoubleSpinBox(this);
   m_minFreqSpinBox->setDecimals(1);
   m_minFreqSpinBox->setRange(0.0, 1000.0);
   m_minFreqSpinBox->setValue(0.0);
   m_minFreqSpinBox->setSingleStep(1);
   m_minFreqSpinBox->setMaximumWidth(70);
   connect(m_minFreqSpinBox,
-          QOverload<double>::of(&QDoubleSpinBox::valueChanged), this,
+          QOverload<double>::of(&CustomDoubleSpinBox::valueChanged), this,
           &SmithChartWidget::onMinFreqChanged);
 
   // Max frequency label and spinbox
   QLabel *maxFreqLabel = new QLabel("Max:", this);
-  m_maxFreqSpinBox = new QDoubleSpinBox(this);
+  m_maxFreqSpinBox = new CustomDoubleSpinBox(this);
   m_maxFreqSpinBox->setDecimals(1);
   m_maxFreqSpinBox->setRange(0.1, 1000.0);
   m_maxFreqSpinBox->setValue(20.0);
   m_maxFreqSpinBox->setSingleStep(1);
   m_maxFreqSpinBox->setMaximumWidth(70);
-  connect(m_maxFreqSpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(m_maxFreqSpinBox, &CustomDoubleSpinBox::valueChanged, this,
           &SmithChartWidget::onMaxFreqChanged);
 
   // Min frequency label and spinbox
@@ -156,14 +156,10 @@ SmithChartWidget::SmithChartWidget(QWidget *parent)
   // Connect the signals
 
   // This work in Qt 6.2. Remove when moving to a later Qt version in all builds
-  connect(m_ShowAdmittanceChartCheckBox,
-          &QCheckBox::stateChanged,
-          this,
+  connect(m_ShowAdmittanceChartCheckBox, &QCheckBox::stateChanged, this,
           &SmithChartWidget::onShowAdmittanceChartChanged);
 
-  connect(m_ShowConstantCurvesCheckBox,
-          &QCheckBox::stateChanged,
-          this,
+  connect(m_ShowConstantCurvesCheckBox, &QCheckBox::stateChanged, this,
           &SmithChartWidget::onShowConstantCurvesChanged);
 
   /*

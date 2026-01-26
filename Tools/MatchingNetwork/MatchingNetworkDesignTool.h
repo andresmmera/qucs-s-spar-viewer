@@ -8,9 +8,9 @@
 #ifndef MATCHINGNETWORKDESIGNTOOL_H
 #define MATCHINGNETWORKDESIGNTOOL_H
 
+#include "./../../UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
-#include <QDoubleSpinBox>
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QLabel>
@@ -62,7 +62,7 @@ private:
   LoadSpecificationWidget* LoadSpecWidget; ///< Load specification widget
 
   QLabel *Zout_Label, *Ohm_Zout_Label, *Zout_J;
-  QDoubleSpinBox *ZoutISpinBox, *ZoutRSpinBox;
+  CustomDoubleSpinBox *ZoutISpinBox, *ZoutRSpinBox;
 
   QLabel* f_match_Label; ///< Matching frequency label
 
@@ -86,13 +86,13 @@ private:
 
   /// @name S-parameter spinboxes
   /// @{
-  QDoubleSpinBox *S11_A_SpinBox, *S11_B_SpinBox;
-  QDoubleSpinBox *S12_A_SpinBox, *S12_B_SpinBox;
-  QDoubleSpinBox *S21_A_SpinBox, *S21_B_SpinBox;
-  QDoubleSpinBox *S22_A_SpinBox, *S22_B_SpinBox;
+  CustomDoubleSpinBox *S11_A_SpinBox, *S11_B_SpinBox;
+  CustomDoubleSpinBox *S12_A_SpinBox, *S12_B_SpinBox;
+  CustomDoubleSpinBox *S21_A_SpinBox, *S21_B_SpinBox;
+  CustomDoubleSpinBox *S22_A_SpinBox, *S22_B_SpinBox;
   /// @}
 
-  QDoubleSpinBox *f_match_Spinbox, *FreqEnd_Spinbox;
+  CustomDoubleSpinBox *f_match_Spinbox, *FreqEnd_Spinbox;
   QComboBox *f_match_Scale_Combo, *FreqEnd_Scale_Combo,
       *StubTermination_ComboBox;
 

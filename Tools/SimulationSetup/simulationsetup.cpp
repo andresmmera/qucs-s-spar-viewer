@@ -24,13 +24,14 @@ SimulationSetup::SimulationSetup(QWidget *parent) : QWidget(parent) {
   this->setLayout(mainLayout);
 
   // Connect all widgets to trigger simulation updates
-  connect(fstartSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
-          this, [this]() { update(); });
+  connect(fstartSpinBox,
+          QOverload<double>::of(&CustomDoubleSpinBox::valueChanged), this,
+          [this]() { update(); });
 
   connect(fstartScaleComboBox, &QComboBox::currentIndexChanged, this,
           [this]() { updateFrequencySweep(); });
 
-  connect(fstopSpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(fstopSpinBox, &CustomDoubleSpinBox::valueChanged, this,
           [this]() { updateFrequencySweep(); });
 
   connect(fstopScaleComboBox, &QComboBox::currentIndexChanged, this,
@@ -42,22 +43,22 @@ SimulationSetup::SimulationSetup(QWidget *parent) : QWidget(parent) {
   connect(transmissionLineComboBox, &QComboBox::currentIndexChanged, this,
           [this]() { onTransmissionLineTypeChanged(); });
 
-  connect(substrateThicknessSpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(substrateThicknessSpinBox, &CustomDoubleSpinBox::valueChanged, this,
           [this]() { updateSubstrateDefinition(); });
 
-  connect(substratePermittivitySpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(substratePermittivitySpinBox, &CustomDoubleSpinBox::valueChanged,
+          this, [this]() { updateSubstrateDefinition(); });
+
+  connect(substrateLossTangentSpinBox, &CustomDoubleSpinBox::valueChanged, this,
           [this]() { updateSubstrateDefinition(); });
 
-  connect(substrateLossTangentSpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(conductorThicknessSpinBox, &CustomDoubleSpinBox::valueChanged, this,
           [this]() { updateSubstrateDefinition(); });
 
-  connect(conductorThicknessSpinBox, &QDoubleSpinBox::valueChanged, this,
-          [this]() { updateSubstrateDefinition(); });
+  connect(conductorConductivitySpinBox, &CustomDoubleSpinBox::valueChanged,
+          this, [this]() { updateSubstrateDefinition(); });
 
-  connect(conductorConductivitySpinBox, &QDoubleSpinBox::valueChanged, this,
-          [this]() { updateSubstrateDefinition(); });
-
-  connect(groundPlaneThicknessSpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(groundPlaneThicknessSpinBox, &CustomDoubleSpinBox::valueChanged, this,
           [this]() { updateSubstrateDefinition(); });
 }
 
@@ -67,7 +68,7 @@ QWidget *SimulationSetup::createFrequencySweepTab() {
 
   // Start frequency
   QLabel *fstartLabel = new QLabel("<b>Start freq<\b>");
-  fstartSpinBox = new QDoubleSpinBox();
+  fstartSpinBox = new CustomDoubleSpinBox();
   fstartSpinBox->setMinimum(0);
   fstartSpinBox->setMaximum(1e7);
   fstartSpinBox->setValue(10);
@@ -85,7 +86,7 @@ QWidget *SimulationSetup::createFrequencySweepTab() {
 
   // Stop frequency
   QLabel *fstopLabel = new QLabel("<b>Stop freq<\b>");
-  fstopSpinBox = new QDoubleSpinBox();
+  fstopSpinBox = new CustomDoubleSpinBox();
   fstopSpinBox->setMinimum(0);
   fstopSpinBox->setMaximum(1e7);
   fstopSpinBox->setValue(2000);
@@ -149,7 +150,7 @@ QWidget *SimulationSetup::createSubstratePropertiesTab() {
 
   // Substrate thickness
   QLabel *thicknessLabel = new QLabel("Substrate thickness (H) (mm)");
-  substrateThicknessSpinBox = new QDoubleSpinBox();
+  substrateThicknessSpinBox = new CustomDoubleSpinBox();
   substrateThicknessSpinBox->setMinimum(0.1);
   substrateThicknessSpinBox->setMaximum(20);
   substrateThicknessSpinBox->setDecimals(3);
@@ -161,7 +162,7 @@ QWidget *SimulationSetup::createSubstratePropertiesTab() {
 
   // Relative permittivity
   QLabel *permittivityLabel = new QLabel("Relative permittivity (εᵣ)");
-  substratePermittivitySpinBox = new QDoubleSpinBox();
+  substratePermittivitySpinBox = new CustomDoubleSpinBox();
   substratePermittivitySpinBox->setMinimum(1.0);
   substratePermittivitySpinBox->setMaximum(20.0);
   substratePermittivitySpinBox->setDecimals(2);
@@ -173,7 +174,7 @@ QWidget *SimulationSetup::createSubstratePropertiesTab() {
 
   // Loss tangent
   QLabel *lossTangentLabel = new QLabel("Loss tangent (tan δ)");
-  substrateLossTangentSpinBox = new QDoubleSpinBox();
+  substrateLossTangentSpinBox = new CustomDoubleSpinBox();
   substrateLossTangentSpinBox->setMinimum(0.0);
   substrateLossTangentSpinBox->setMaximum(1.0);
   substrateLossTangentSpinBox->setDecimals(4);
@@ -185,7 +186,7 @@ QWidget *SimulationSetup::createSubstratePropertiesTab() {
 
   // Conductor thickness
   QLabel *conductorThicknessLabel = new QLabel("Conductor thickness (T) (μm)");
-  conductorThicknessSpinBox = new QDoubleSpinBox();
+  conductorThicknessSpinBox = new CustomDoubleSpinBox();
   conductorThicknessSpinBox->setMinimum(0.1);
   conductorThicknessSpinBox->setMaximum(1000.0);
   conductorThicknessSpinBox->setDecimals(1);
@@ -198,7 +199,7 @@ QWidget *SimulationSetup::createSubstratePropertiesTab() {
   // Conductor conductivity
   QLabel *conductorConductivityLabel =
       new QLabel("Conductor conductivity (S/m)");
-  conductorConductivitySpinBox = new QDoubleSpinBox();
+  conductorConductivitySpinBox = new CustomDoubleSpinBox();
   conductorConductivitySpinBox->setMinimum(1e6);
   conductorConductivitySpinBox->setMaximum(1e8);
   conductorConductivitySpinBox->setValue(5.8e7);
@@ -210,7 +211,7 @@ QWidget *SimulationSetup::createSubstratePropertiesTab() {
 
   // Ground plane thickness (for stripline)
   QLabel *groundPlaneThicknessLabel = new QLabel("Ground plane thickness (μm)");
-  groundPlaneThicknessSpinBox = new QDoubleSpinBox();
+  groundPlaneThicknessSpinBox = new CustomDoubleSpinBox();
   groundPlaneThicknessSpinBox->setMinimum(0.1);
   groundPlaneThicknessSpinBox->setMaximum(1000.0);
   groundPlaneThicknessSpinBox->setValue(35.0);
@@ -230,32 +231,32 @@ QWidget *SimulationSetup::createSubstratePropertiesTab() {
   // SimulationSetup – Qt 6 style connections (no lambdas)
 
   connect(substrateThicknessSpinBox,
-          QOverload<double>::of(&QDoubleSpinBox::valueChanged), this,
+          QOverload<double>::of(&CustomDoubleSpinBox::valueChanged), this,
           static_cast<void (SimulationSetup::*)()>(
               &SimulationSetup::updateSubstrateDefinition));
 
   connect(substratePermittivitySpinBox,
-          QOverload<double>::of(&QDoubleSpinBox::valueChanged), this,
+          QOverload<double>::of(&CustomDoubleSpinBox::valueChanged), this,
           static_cast<void (SimulationSetup::*)()>(
               &SimulationSetup::updateSubstrateDefinition));
 
   connect(substrateLossTangentSpinBox,
-          QOverload<double>::of(&QDoubleSpinBox::valueChanged), this,
+          QOverload<double>::of(&CustomDoubleSpinBox::valueChanged), this,
           static_cast<void (SimulationSetup::*)()>(
               &SimulationSetup::updateSubstrateDefinition));
 
   connect(conductorThicknessSpinBox,
-          QOverload<double>::of(&QDoubleSpinBox::valueChanged), this,
+          QOverload<double>::of(&CustomDoubleSpinBox::valueChanged), this,
           static_cast<void (SimulationSetup::*)()>(
               &SimulationSetup::updateSubstrateDefinition));
 
   connect(conductorConductivitySpinBox,
-          QOverload<double>::of(&QDoubleSpinBox::valueChanged), this,
+          QOverload<double>::of(&CustomDoubleSpinBox::valueChanged), this,
           static_cast<void (SimulationSetup::*)()>(
               &SimulationSetup::updateSubstrateDefinition));
 
   connect(groundPlaneThicknessSpinBox,
-          QOverload<double>::of(&QDoubleSpinBox::valueChanged), this,
+          QOverload<double>::of(&CustomDoubleSpinBox::valueChanged), this,
           static_cast<void (SimulationSetup::*)()>(
               &SimulationSetup::updateSubstrateDefinition));
 

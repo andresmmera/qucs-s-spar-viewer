@@ -125,12 +125,25 @@ int main(int argc, char** argv) {
   qucs->move(QucsSettings.x, QucsSettings.y); // position before "show" !!!
   qucs->show();
 
-  QScreen* primaryScreen = QGuiApplication::screens().constFirst();
+  // Window size
+  // In initially, the window's size was proportional to the screen size, but after testing the program in
+  // big screens, it seemed more convenient to have a fixed, small size
+  QSize initialWindowSize(900, 650); // width x height in pixels
 
-  qucs->resize(primaryScreen->availableGeometry().size() * 0.9);
-  qucs->setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter,
-                                        qucs->size(),
-                                        primaryScreen->availableGeometry()));
+  qucs->resize(initialWindowSize);
+
+  // Center the window on the primary screen
+  QScreen* primaryScreen = QGuiApplication::primaryScreen();
+  if (primaryScreen) {
+      QRect screenGeometry = primaryScreen->availableGeometry();
+
+      // Get the window's frame geometry
+      QRect frameGeom = qucs->frameGeometry();
+
+      // Move the top-left corner to center the frame on the screen
+      frameGeom.moveCenter(screenGeometry.center());
+      qucs->move(frameGeom.topLeft());
+  }
 
   int result = a.exec();
   saveApplSettings(qucs);

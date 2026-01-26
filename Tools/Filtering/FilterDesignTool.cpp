@@ -103,7 +103,7 @@ FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
   //******* Cutoff freq (Lowpass and Highpass) *********
   //****** Central freq (Bandpass and Bandstop) *********
   layout_row++;
-  FCSpinbox = new QDoubleSpinBox();
+  FCSpinbox = new CustomDoubleSpinBox();
   FCSpinbox->setMinimum(1);
   FCSpinbox->setMaximum(1e6);
   FCSpinbox->setDecimals(0);
@@ -122,7 +122,7 @@ FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
 
   //************* Bandwidth ***********
   layout_row++;
-  BWSpinbox = new QDoubleSpinBox();
+  BWSpinbox = new CustomDoubleSpinBox();
   BWSpinbox->setMinimum(1);
   BWSpinbox->setMaximum(1e6);
   BWSpinbox->setDecimals(0);
@@ -141,7 +141,7 @@ FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
 
   //************** Ripple ****************
   layout_row++;
-  RippleSpinbox = new QDoubleSpinBox();
+  RippleSpinbox = new CustomDoubleSpinBox();
   RippleSpinbox->setMinimum(0.01);
   RippleSpinbox->setMaximum(2);
   RippleSpinbox->setValue(0.01);
@@ -154,7 +154,7 @@ FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
 
   //************** Stopband attenuation ****************
   layout_row++;
-  StopbandAttSpinbox = new QDoubleSpinBox();
+  StopbandAttSpinbox = new CustomDoubleSpinBox();
   StopbandAttSpinbox->setMinimum(5);
   StopbandAttSpinbox->setMaximum(150);
   StopbandAttSpinbox->setValue(30);
@@ -185,7 +185,7 @@ FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
   //**************
   layout_row++;
   MinimumZLabel = new QLabel("Minimum Z");
-  MinimumZ_Spinbox = new QDoubleSpinBox();
+  MinimumZ_Spinbox = new CustomDoubleSpinBox();
   MinimumZ_Spinbox->setMinimum(1);
   MinimumZ_Spinbox->setMaximum(40);
   MinimumZ_Spinbox->setValue(10);
@@ -202,7 +202,7 @@ FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
   //**************
   layout_row++;
   MaximumZLabel = new QLabel("Maximum Z");
-  MaximumZ_Spinbox = new QDoubleSpinBox();
+  MaximumZ_Spinbox = new CustomDoubleSpinBox();
   MaximumZ_Spinbox->setMinimum(50);
   MaximumZ_Spinbox->setMaximum(400);
   MaximumZ_Spinbox->setValue(200);
@@ -231,7 +231,7 @@ FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
   // Coupled line SIR BPF type
   layout_row++;
   ImpedanceRatio_Label = new QLabel(QString("Impedance ratio, K"));
-  ImpedanceRatio_Spinbox = new QDoubleSpinBox();
+  ImpedanceRatio_Spinbox = new CustomDoubleSpinBox();
   ImpedanceRatio_Spinbox->setMinimum(0.1);
   ImpedanceRatio_Spinbox->setMaximum(10);
   ImpedanceRatio_Spinbox->setValue(0.5);
@@ -279,13 +279,13 @@ FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
   connect(OrderSpinBox, &QSpinBox::valueChanged, this,
           &FilterDesignTool::UpdateDesignParameters);
 
-  connect(FCSpinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(FCSpinbox, &CustomDoubleSpinBox::valueChanged, this,
           &FilterDesignTool::UpdateDesignParameters);
 
   connect(FC_ScaleCombobox, &QComboBox::currentIndexChanged, this,
           &FilterDesignTool::UpdateDesignParameters);
 
-  connect(BWSpinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(BWSpinbox, &CustomDoubleSpinBox::valueChanged, this,
           &FilterDesignTool::UpdateDesignParameters);
 
   connect(BW_ScaleCombobox, &QComboBox::currentIndexChanged, this,
@@ -294,25 +294,25 @@ FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
   connect(SourceImpedanceLineEdit, &QLineEdit::textChanged, this,
           &FilterDesignTool::UpdateDesignParameters);
 
-  connect(RippleSpinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(RippleSpinbox, &CustomDoubleSpinBox::valueChanged, this,
           &FilterDesignTool::UpdateDesignParameters);
 
-  connect(StopbandAttSpinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(StopbandAttSpinbox, &CustomDoubleSpinBox::valueChanged, this,
           &FilterDesignTool::UpdateDesignParameters);
 
   connect(DC_CouplingTypeCombo, &QComboBox::currentIndexChanged, this,
           &FilterDesignTool::setAdjustableResonatorVariables_DirectCoupled);
 
-  connect(MinimumZ_Spinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(MinimumZ_Spinbox, &CustomDoubleSpinBox::valueChanged, this,
           &FilterDesignTool::UpdateDesignParameters);
 
-  connect(MaximumZ_Spinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(MaximumZ_Spinbox, &CustomDoubleSpinBox::valueChanged, this,
           &FilterDesignTool::UpdateDesignParameters);
 
   connect(SemiLumpedImplementationCombo, &QComboBox::currentIndexChanged, this,
           &FilterDesignTool::UpdateDesignParameters);
 
-  connect(ImpedanceRatio_Spinbox, &QDoubleSpinBox::valueChanged, this,
+  connect(ImpedanceRatio_Spinbox, &CustomDoubleSpinBox::valueChanged, this,
           &FilterDesignTool::UpdateDesignParameters);
 
   ImplementationComboChanged(LC_LADDER);

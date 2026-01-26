@@ -8,9 +8,9 @@
 #ifndef ATTENUATORDESIGNTOOL_H
 #define ATTENUATORDESIGNTOOL_H
 
+#include "./../../UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
-#include <QDoubleSpinBox>
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QLabel>
@@ -83,34 +83,34 @@ private:
   ///@{
   QLabel* Attenuation_Label;
   QLabel* dBLabelAtt;
-  QDoubleSpinBox* AttenuationSpinBox;
+  CustomDoubleSpinBox* AttenuationSpinBox;
   ///@}
 
   /// @name Input impedance widgets
   ///@{
   QLabel* Zin_Label;
   QLabel* Ohm_Zin_Label;
-  QDoubleSpinBox* ZinSpinBox;
+  CustomDoubleSpinBox* ZinSpinBox;
   ///@}
 
   /// @name Output impedance widgets
   ///@{
   QLabel* Zout_Label;
   QLabel* Ohm_Zout_Label;
-  QDoubleSpinBox* ZoutSpinBox;
+  CustomDoubleSpinBox* ZoutSpinBox;
   ///@}
 
   /// @name Input power widgets
   ///@{
   QLabel* Pin_Label;
-  QDoubleSpinBox* Pin_SpinBox;
+  CustomDoubleSpinBox* Pin_SpinBox;
   QComboBox* Pin_units_Combo;
   ///@}
 
   /// @name Frequency widgets
   ///@{
   QLabel* freqLabel;
-  QDoubleSpinBox* freqSpinBox;
+  CustomDoubleSpinBox* freqSpinBox;
   QComboBox* FreqScaleCombo;
   ///@}
 

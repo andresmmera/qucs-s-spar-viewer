@@ -106,7 +106,7 @@ void MatchingNetworkParametersWidget::setupUI() {
 
   // Ripple parameter
   Ripple_Label = new QLabel(tr("Ripple"));
-  Ripple_SpinBox = new QDoubleSpinBox();
+  Ripple_SpinBox = new CustomDoubleSpinBox();
   Ripple_SpinBox->setRange(0.001, 1.0);
   Ripple_SpinBox->setSingleStep(0.01);
   Ripple_SpinBox->setDecimals(3);
@@ -132,7 +132,7 @@ void MatchingNetworkParametersWidget::setupUI() {
   // Input impedance
   layout_row++;
   Zin_Label = new QLabel("Z0");
-  ZinRSpinBox = new QDoubleSpinBox();
+  ZinRSpinBox = new CustomDoubleSpinBox();
   ZinRSpinBox->setMinimum(0.5);
   ZinRSpinBox->setMaximum(10000);
   ZinRSpinBox->setSingleStep(0.5);
@@ -172,7 +172,7 @@ void MatchingNetworkParametersWidget::connectSignals() {
   connect(StubTermination_ComboBox, &QComboBox::currentIndexChanged, this,
           &MatchingNetworkParametersWidget::onParameterChanged);
 
-  connect(ZinRSpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(ZinRSpinBox, &CustomDoubleSpinBox::valueChanged, this,
           &MatchingNetworkParametersWidget::onParameterChanged);
 
   connect(Solution1_RB, &QRadioButton::clicked, this,
@@ -184,7 +184,7 @@ void MatchingNetworkParametersWidget::connectSignals() {
   connect(Weighting_Combo, &QComboBox::currentIndexChanged, this,
           &MatchingNetworkParametersWidget::adjustChebyshevRippleVisibility);
 
-  connect(Ripple_SpinBox, &QDoubleSpinBox::valueChanged, this,
+  connect(Ripple_SpinBox, &CustomDoubleSpinBox::valueChanged, this,
           &MatchingNetworkParametersWidget::onParameterChanged);
 
   connect(Sections_SpinBox, &QSpinBox::valueChanged, this,
