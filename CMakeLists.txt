@@ -4,7 +4,7 @@ cmake_policy(VERSION 3.10)
 
 SET(QUCS_NAME "qucs-s")
 
-# use top VERSION file
+#use top VERSION file
 file (STRINGS ${PROJECT_SOURCE_DIR}/VERSION QUCS_VERSION)
 
 if(DEFINED CI_VERSION)
@@ -24,7 +24,7 @@ set(PROJECT_DOMAIN_SECOND "org")
 add_compile_definitions(HAVE_CONFIG_H)
 SET(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-# configure the header config.h
+#configure the header config.h
 CONFIGURE_FILE (
     "${PROJECT_SOURCE_DIR}/config.h.cmake"
     "${PROJECT_BINARY_DIR}/config.h"
@@ -172,6 +172,14 @@ file(GLOB TOOLS_HEADERS
      Tools/TransmissionLineSynthesis/*.h
 )
 
+## CALCULATORS
+file(GLOB CALCULATORS_SOURCES
+    Tools/Calculators/ReflectionCalculators/*.cpp
+)
+
+file(GLOB CALCULATORS_HEADERS
+    Tools/Calculators/ReflectionCalculators/*.h
+)
 
 set(spar_viewer_sources
     main.cpp
@@ -183,6 +191,7 @@ set(spar_viewer_sources
     ${SPAR_SPECIAL_COMPONENTS}
     ${MISC_SOURCES}
     ${TOOLS_SOURCES}
+    ${CALCULATORS_SOURCES}
     ${QCUSTOMPLOT_SOURCE}
 )
 
@@ -194,6 +203,7 @@ set(spar_viewer_moc_headers
     ${SPAR_HEADERS}
     ${MISC_HEADERS}
     ${TOOLS_HEADERS}
+    ${CALCULATORS_HEADERS}
     ${QCUSTOMPLOT_HEADER}
 )
 

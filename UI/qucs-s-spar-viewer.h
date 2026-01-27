@@ -28,6 +28,7 @@
 #include "../Misc/general.h"
 #include "aboutdialog.h"
 
+
 #include <QCheckBox>
 #include <QColorDialog>
 #include <QDoubleSpinBox>
@@ -40,6 +41,8 @@
 #include <complex>
 #include <utility> // std::as_const()
 
+
+
 class QComboBox;
 class QTableWidget;
 class QLineEdit;
@@ -47,6 +50,8 @@ class QIntValidator;
 class QDoubleValidator;
 class QLabel;
 class QPushButton;
+
+class GammaCalculatorDialog;
 
 /// @struct tQucsSettings
 /// @brief Structure to hold Qucs application settings
@@ -970,6 +975,11 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
     QStringList filePaths; // Full path of the files in the progrom. It's used for
                            // file monitoring.
 
+
+    /// @brief Create the Calculators menu with all calculator tools
+    /// @return Pointer to the Calculators menu
+    QMenu *CreateCalculatorsMenu();
+
   private slots:
     /// @brief Update simulation traces
     /// @param SI Schematic description
@@ -983,6 +993,9 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
 
     /// @brief Export schematic (as text) to Qucs-S
     void exportSchematic();
+
+    /// @brief Gamma -> Z / SWR / S11
+    void slotGammaCalculator();
 };
 
 #endif
