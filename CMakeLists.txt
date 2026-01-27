@@ -174,11 +174,13 @@ file(GLOB TOOLS_HEADERS
 
 ## CALCULATORS
 file(GLOB CALCULATORS_SOURCES
-    Tools/Calculators/ReflectionCalculators/*.cpp
+    Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.cpp
+    Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.cpp
 )
 
 file(GLOB CALCULATORS_HEADERS
-    Tools/Calculators/ReflectionCalculators/*.h
+    Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.h
+    Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.h
 )
 
 set(spar_viewer_sources

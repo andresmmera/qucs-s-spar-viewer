@@ -10,7 +10,7 @@
 
 #include <QDialog>
 #include <complex>
-#include "./../../../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "./../../../../../UI/CustomWidgets/CustomDoubleSpinBox.h"
 
 class CustomDoubleSpinBox;
 class QLabel;
@@ -45,7 +45,7 @@ private slots:
     void on_inputChanged();
 
 private:
-    // Inputs
+    // ========== Input Widgets ==========
 
     /// @brief Spin box for reflection coefficient magnitude |Γ|
     CustomDoubleSpinBox *spinMag;
@@ -53,10 +53,10 @@ private:
     /// @brief Spin box for reflection coefficient angle ∠Γ in degrees
     CustomDoubleSpinBox *spinAngle;
 
-    /// @brief Spin box for characteristic impedance Z₀ in ohms
+    /// @brief Spin box for characteristic impedance Z₀ (in Ohms)
     CustomDoubleSpinBox *spinZ0;
 
-    // Outputs
+    // Output
     /// @brief Table widget displaying calculated results
     /// @details Output rows:
     /// - Row 0: Re{Z} (Ω) - Real part of impedance

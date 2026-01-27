@@ -5,7 +5,8 @@
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
-#include "./../Tools/Calculators/ReflectionCalculators/gamma_calculator.h"
+#include "./../Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h"
+#include "./../Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/impedance_calculator.h"
 #include "qucs-s-spar-viewer.h"
 
 QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
@@ -18,10 +19,17 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
   QMenu *reflectionMenu = new QMenu(tr("Reflection Coefficient"), this);
 
   // Gamma → Impedance / SWR / S11 calculator
-  QAction *gammaToolAction = new QAction("Gamma → Z / SWR / S11 (dB)", this);
+  QAction *gammaToolAction = new QAction("Γ → Z / SWR / S11 (dB)", this);
   reflectionMenu->addAction(gammaToolAction);
   connect(gammaToolAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotGammaCalculator);
+
+  // Impedance → Gamma / SWR / S11 calculator
+  QAction *impedanceToolAction =
+      new QAction(tr("Z → Γ / SWR / S11 (dB)"), this);
+  reflectionMenu->addAction(impedanceToolAction);
+  connect(impedanceToolAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotImpedanceCalculator);
 
   // Build RF menu hierarchy
   rfMenu->addMenu(reflectionMenu);
@@ -34,7 +42,12 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
 
 // Gamma → Z / SWR / S11 (dB)
 void Qucs_S_SPAR_Viewer::slotGammaCalculator() {
-  // Show modal dialog with fields: mag(gamma), angle(gamma) [deg], Z0 [ohm]
   GammaCalculatorDialog dlg(this);
+  dlg.exec();
+}
+
+// Z → Γ / SWR / S11 (dB)
+void Qucs_S_SPAR_Viewer::slotImpedanceCalculator() {
+  ImpedanceCalculatorDialog dlg(this);
   dlg.exec();
 }
