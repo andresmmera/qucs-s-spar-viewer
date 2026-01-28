@@ -3,7 +3,7 @@
 /// (implementation)
 /// @author Andrés Martínez Mera - andresmmera@protonmail.com
 /// @date Jan 27, 2026
-/// @copyright Copyright (C) 2019-2025 Andrés Martínez Mera
+/// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
 #include "gamma_calculator.h"

@@ -994,11 +994,17 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
     /// @brief Export schematic (as text) to Qucs-S
     void exportSchematic();
 
+
+    // Dialog calculators
+private slots:
     /// @brief Handler to show the Gamma -> Z / SWR / S11 calculator
     void slotGammaCalculator();
 
     /// @brief Handler to show the Z → Γ / SWR / S11 (dB) calculator
     void slotImpedanceCalculator();
+
+    /// @brief Handler to show the VSWR ↔ S11 ↔ |Γ| calculator
+    void slotSwrS11Calculator();
 };
 
 #endif

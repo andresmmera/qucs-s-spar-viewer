@@ -2,7 +2,7 @@
 /// @brief Simple calculator: Impedance (Z) to Γ, VSWR and S11 (definition)
 /// @author Andrés Martínez Mera - andresmmera@protonmail.com
 /// @date Jan 27, 2026
-/// @copyright Copyright (C) 2019-2025 Andrés Martínez Mera
+/// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 ///
 #ifndef IMPEDANCE_CALCULATOR_H
