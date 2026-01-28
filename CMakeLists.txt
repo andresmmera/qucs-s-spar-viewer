@@ -177,12 +177,14 @@ file(GLOB CALCULATORS_SOURCES
     Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.cpp
     Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.cpp
     Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.cpp
+    Tools/Calculators/RF/octaveBW_calculator/*.cpp
 )
 
 file(GLOB CALCULATORS_HEADERS
     Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.h
     Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.h
     Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.h
+    Tools/Calculators/RF/octaveBW_calculator/*.h
 )
 
 set(spar_viewer_sources

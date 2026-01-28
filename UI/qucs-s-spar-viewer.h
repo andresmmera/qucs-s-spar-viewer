@@ -1005,6 +1005,9 @@ private slots:
 
     /// @brief Handler to show the VSWR ↔ S11 ↔ |Γ| calculator
     void slotSwrS11Calculator();
+
+    /// @brief Handler to show the octave bandwidth calculator
+    void slotOctaveBWCalculator();
 };
 
 #endif

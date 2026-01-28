@@ -8,6 +8,7 @@
 #include "./../Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/swr_s11_calculator.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/impedance_calculator.h"
+#include "./../Tools/Calculators/RF/octaveBW_calculator/octaveBW_calculator.h"
 
 #include "qucs-s-spar-viewer.h"
 
@@ -38,8 +39,14 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
   connect(swrS11ToolAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotSwrS11Calculator);
 
-  // Build RF menu hierarchy
+  // Add reflection tools to RF calculator menu
   rfMenu->addMenu(reflectionMenu);
+
+  // 2) Octaves and decades from corner frequencies
+  QAction *OctaveBWAction = new QAction("Octaves and decades from BW", this);
+  rfMenu->addAction(OctaveBWAction);
+  connect(OctaveBWAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotOctaveBWCalculator);
 
   // Add RF menu to Calculators
   calculatorsMenu->addMenu(rfMenu);
@@ -62,5 +69,11 @@ void Qucs_S_SPAR_Viewer::slotImpedanceCalculator() {
 // 1.3) VSWR ↔ S11 ↔ |Γ|
 void Qucs_S_SPAR_Viewer::slotSwrS11Calculator() {
   SwrS11CalculatorDialog dlg(this);
+  dlg.exec();
+}
+
+// 2) Octaves abd decades from corner frequencies
+void Qucs_S_SPAR_Viewer::slotOctaveBWCalculator() {
+  OctaveBWCalculatorDialog dlg(this);
   dlg.exec();
 }
