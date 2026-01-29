@@ -1008,6 +1008,9 @@ private slots:
 
     /// @brief Handler to show the octave bandwidth calculator
     void slotOctaveBWCalculator();
+
+    /// @brief Handler to show the RF power unit conversion calculator
+    void slotRFPowerUnitCalculator();
 };
 
 #endif

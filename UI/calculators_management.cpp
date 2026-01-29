@@ -9,6 +9,7 @@
 #include "./../Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/impedance_calculator.h"
 #include "./../Tools/Calculators/RF/octaveBW_calculator/octaveBW_calculator.h"
+#include "./../Tools/Calculators/RF/power_converter/RF_power_converter.h"
 
 #include "qucs-s-spar-viewer.h"
 
@@ -48,6 +49,13 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
   connect(OctaveBWAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotOctaveBWCalculator);
 
+  // 3) RF power unit converter
+  QAction *RFPowerUnitConverterAction =
+      new QAction("RF power unit converter", this);
+  rfMenu->addAction(RFPowerUnitConverterAction);
+  connect(RFPowerUnitConverterAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotRFPowerUnitCalculator);
+
   // Add RF menu to Calculators
   calculatorsMenu->addMenu(rfMenu);
 
@@ -75,5 +83,11 @@ void Qucs_S_SPAR_Viewer::slotSwrS11Calculator() {
 // 2) Octaves abd decades from corner frequencies
 void Qucs_S_SPAR_Viewer::slotOctaveBWCalculator() {
   OctaveBWCalculatorDialog dlg(this);
+  dlg.exec();
+}
+
+// 3) RF power unit converter
+void Qucs_S_SPAR_Viewer::slotRFPowerUnitCalculator() {
+  RFPowerConverterDialog dlg(this);
   dlg.exec();
 }
