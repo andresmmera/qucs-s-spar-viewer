@@ -5,6 +5,7 @@
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
+#include "./../Tools/Calculators/General/VoltageDivider/voltage_divider.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/swr_s11_calculator.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/impedance_calculator.h"
@@ -71,11 +72,25 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
   connect(FreeSpaceLossCalaculatorAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotFreeSpaceLossCalculator);
 
-  // Add RF menu to Calculators
+  // Add RF menu to Calculators menu option
   calculatorsMenu->addMenu(rfMenu);
+
+  // General electronics
+  QMenu *GeneralElectronicsMenu = new QMenu(tr("General"), this);
+
+  // Add RF menu to Calculators menu option
+  calculatorsMenu->addMenu(GeneralElectronicsMenu);
+
+  // 1) Voltage divider
+  QAction *VoltageDividerAction = new QAction("Voltage Divider", this);
+  GeneralElectronicsMenu->addAction(VoltageDividerAction);
+  connect(VoltageDividerAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotVoltageDividerCalculator);
 
   return calculatorsMenu;
 }
+
+// RF calculators
 
 // 1.1) Gamma → Z / SWR / S11 (dB)
 void Qucs_S_SPAR_Viewer::slotGammaCalculator() {
@@ -116,5 +131,12 @@ void Qucs_S_SPAR_Viewer::slotFrequencyToWavelengthCalculator() {
 // 5) Free space loss calculator
 void Qucs_S_SPAR_Viewer::slotFreeSpaceLossCalculator() {
   FreeSpaceAttenuationDialog dlg(this);
+  dlg.exec();
+}
+
+// General electronics calculators
+// 5) Free space loss calculator
+void Qucs_S_SPAR_Viewer::slotVoltageDividerCalculator() {
+  VoltageDividerDialog dlg(this);
   dlg.exec();
 }

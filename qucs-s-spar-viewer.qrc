@@ -4,5 +4,6 @@
         <file>bitmaps/trash.png</file>
         <file>Tools/SimulationSetup/bitmaps/microstrip.png</file>
         <file>Tools/SimulationSetup/bitmaps/stripline.png</file>
+        <file>Tools/Calculators/General/VoltageDivider/VoltageDivider.png</file>
     </qresource>
 </RCC>

@@ -997,6 +997,7 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
 
     // Dialog calculators
 private slots:
+    // ***** RF calculators *****
     /// @brief Handler to show the Gamma -> Z / SWR / S11 calculator
     void slotGammaCalculator();
 
@@ -1017,6 +1018,10 @@ private slots:
 
     /// @brief Handler to show the free space loss conversion calculator
     void slotFreeSpaceLossCalculator();
+
+    // ***** General electronics calculators *****
+    /// @brief Handler to show the voltage divider calculator
+    void slotVoltageDividerCalculator();
 };
 
 #endif

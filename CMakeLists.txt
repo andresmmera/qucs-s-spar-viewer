@@ -181,6 +181,7 @@ file(GLOB CALCULATORS_SOURCES
     Tools/Calculators/RF/power_converter/*.cpp
     Tools/Calculators/RF/frequency_to_wavelength/*.cpp
     Tools/Calculators/RF/free_space_loss/*.cpp
+    Tools/Calculators/General/VoltageDivider/*.cpp
 )
 
 file(GLOB CALCULATORS_HEADERS
@@ -191,6 +192,7 @@ file(GLOB CALCULATORS_HEADERS
     Tools/Calculators/RF/power_converter/*.h
     Tools/Calculators/RF/frequency_to_wavelength/*.h
     Tools/Calculators/RF/free_space_loss/*.h
+    Tools/Calculators/General/VoltageDivider/*.h
 )
 
 set(spar_viewer_sources
