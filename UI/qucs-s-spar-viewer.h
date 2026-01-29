@@ -1011,6 +1011,9 @@ private slots:
 
     /// @brief Handler to show the RF power unit conversion calculator
     void slotRFPowerUnitCalculator();
+
+    /// @brief Handler to show the Frequency to wavelength conversion calculator
+    void slotFrequencyToWavelengthCalculator();
 };
 
 #endif

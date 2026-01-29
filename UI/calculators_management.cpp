@@ -8,6 +8,7 @@
 #include "./../Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/swr_s11_calculator.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/impedance_calculator.h"
+#include "./../Tools/Calculators/RF/frequency_to_wavelength/freq_wavelength_converter.h"
 #include "./../Tools/Calculators/RF/octaveBW_calculator/octaveBW_calculator.h"
 #include "./../Tools/Calculators/RF/power_converter/RF_power_converter.h"
 
@@ -56,6 +57,12 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
   connect(RFPowerUnitConverterAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotRFPowerUnitCalculator);
 
+  // 4) Frequency to wavelength converter
+  QAction *FreqtoLambdaConverterAction = new QAction("Frequency ↔ λ", this);
+  rfMenu->addAction(FreqtoLambdaConverterAction);
+  connect(FreqtoLambdaConverterAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotFrequencyToWavelengthCalculator);
+
   // Add RF menu to Calculators
   calculatorsMenu->addMenu(rfMenu);
 
@@ -89,5 +96,11 @@ void Qucs_S_SPAR_Viewer::slotOctaveBWCalculator() {
 // 3) RF power unit converter
 void Qucs_S_SPAR_Viewer::slotRFPowerUnitCalculator() {
   RFPowerConverterDialog dlg(this);
+  dlg.exec();
+}
+
+// 4) Frequency to wavelength converter
+void Qucs_S_SPAR_Viewer::slotFrequencyToWavelengthCalculator() {
+  FreqWavelengthConverterDialog dlg(this);
   dlg.exec();
 }

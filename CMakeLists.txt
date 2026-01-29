@@ -179,6 +179,7 @@ file(GLOB CALCULATORS_SOURCES
     Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.cpp
     Tools/Calculators/RF/octaveBW_calculator/*.cpp
     Tools/Calculators/RF/power_converter/*.cpp
+    Tools/Calculators/RF/frequency_to_wavelength/*.cpp
 )
 
 file(GLOB CALCULATORS_HEADERS
@@ -187,6 +188,7 @@ file(GLOB CALCULATORS_HEADERS
     Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.h
     Tools/Calculators/RF/octaveBW_calculator/*.h
     Tools/Calculators/RF/power_converter/*.h
+    Tools/Calculators/RF/frequency_to_wavelength/*.h
 )
 
 set(spar_viewer_sources
