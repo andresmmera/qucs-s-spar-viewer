@@ -86,52 +86,48 @@ void Qucs_S_SPAR_Viewer::CreateMenuBar() {
   QAction *fileQuit = new QAction(tr("&Quit"), this);
   fileQuit->setShortcut(QKeySequence::Quit);
   connect(fileQuit, &QAction::triggered, this, &Qucs_S_SPAR_Viewer::slotQuit);
-
   QAction *fileOpenSession = new QAction(tr("&Open session file"), this);
   fileOpenSession->setShortcut(QKeySequence::Open);
   connect(fileOpenSession, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotLoadSession);
-
   QAction *fileSaveAsSession = new QAction(tr("&Save session as ..."), this);
   fileSaveAsSession->setShortcut(QKeySequence::SaveAs);
   connect(fileSaveAsSession, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotSaveAs);
-
   QAction *fileSaveSession = new QAction(tr("&Save session"), this);
   fileSaveSession->setShortcut(QKeySequence::Save);
   connect(fileSaveSession, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotSave);
-
   recentFilesMenu = fileMenu->addMenu("Recent Files");
   connect(recentFilesMenu, &QMenu::aboutToShow, this,
           &Qucs_S_SPAR_Viewer::updateRecentFilesMenu);
-
   fileMenu->addAction(fileOpenSession);
   fileMenu->addAction(fileSaveSession);
   fileMenu->addAction(fileSaveAsSession);
   fileMenu->addAction(fileQuit);
 
-  QMenu *helpMenu = new QMenu(tr("&Help"));
+  // Create calculators menu
+  QMenu *calculatorsMenu = CreateCalculatorsMenu();
 
+  QMenu *helpMenu = new QMenu(tr("&Help"));
   QAction *helpHelp = new QAction(tr("&Help"), this);
   helpHelp->setShortcut(Qt::Key_F1);
   helpMenu->addAction(helpHelp);
   connect(helpHelp, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotHelpIntro);
-
   QAction *helpAbout = new QAction(tr("&About"), this);
   helpMenu->addAction(helpAbout);
   connect(helpAbout, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotHelpAbout);
-
   helpMenu->addSeparator();
-
   QAction *helpAboutQt = new QAction(tr("About Qt..."), this);
   helpMenu->addAction(helpAboutQt);
   connect(helpAboutQt, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotHelpAboutQt);
 
   menuBar()->addMenu(fileMenu);
+  menuBar()->addSeparator();
+  menuBar()->addMenu(calculatorsMenu);
   menuBar()->addSeparator();
   menuBar()->addMenu(helpMenu);
 }
