@@ -1014,6 +1014,9 @@ private slots:
 
     /// @brief Handler to show the Frequency to wavelength conversion calculator
     void slotFrequencyToWavelengthCalculator();
+
+    /// @brief Handler to show the free space loss conversion calculator
+    void slotFreeSpaceLossCalculator();
 };
 
 #endif

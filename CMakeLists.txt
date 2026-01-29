@@ -180,6 +180,7 @@ file(GLOB CALCULATORS_SOURCES
     Tools/Calculators/RF/octaveBW_calculator/*.cpp
     Tools/Calculators/RF/power_converter/*.cpp
     Tools/Calculators/RF/frequency_to_wavelength/*.cpp
+    Tools/Calculators/RF/free_space_loss/*.cpp
 )
 
 file(GLOB CALCULATORS_HEADERS
@@ -189,6 +190,7 @@ file(GLOB CALCULATORS_HEADERS
     Tools/Calculators/RF/octaveBW_calculator/*.h
     Tools/Calculators/RF/power_converter/*.h
     Tools/Calculators/RF/frequency_to_wavelength/*.h
+    Tools/Calculators/RF/free_space_loss/*.h
 )
 
 set(spar_viewer_sources

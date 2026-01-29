@@ -8,6 +8,7 @@
 #include "./../Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/swr_s11_calculator.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/impedance_calculator.h"
+#include "./../Tools/Calculators/RF/free_space_loss/free_space_loss.h"
 #include "./../Tools/Calculators/RF/frequency_to_wavelength/freq_wavelength_converter.h"
 #include "./../Tools/Calculators/RF/octaveBW_calculator/octaveBW_calculator.h"
 #include "./../Tools/Calculators/RF/power_converter/RF_power_converter.h"
@@ -63,6 +64,13 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
   connect(FreqtoLambdaConverterAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotFrequencyToWavelengthCalculator);
 
+  // 5) Free space loss calculator
+  QAction *FreeSpaceLossCalaculatorAction =
+      new QAction("Free Space Loss", this);
+  rfMenu->addAction(FreeSpaceLossCalaculatorAction);
+  connect(FreeSpaceLossCalaculatorAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotFreeSpaceLossCalculator);
+
   // Add RF menu to Calculators
   calculatorsMenu->addMenu(rfMenu);
 
@@ -102,5 +110,11 @@ void Qucs_S_SPAR_Viewer::slotRFPowerUnitCalculator() {
 // 4) Frequency to wavelength converter
 void Qucs_S_SPAR_Viewer::slotFrequencyToWavelengthCalculator() {
   FreqWavelengthConverterDialog dlg(this);
+  dlg.exec();
+}
+
+// 5) Free space loss calculator
+void Qucs_S_SPAR_Viewer::slotFreeSpaceLossCalculator() {
+  FreeSpaceAttenuationDialog dlg(this);
   dlg.exec();
 }
