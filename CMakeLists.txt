@@ -183,6 +183,7 @@ file(GLOB CALCULATORS_SOURCES
     Tools/Calculators/RF/free_space_loss/*.cpp
     Tools/Calculators/General/VoltageDivider/*.cpp
     Tools/Calculators/General/ParallelResistors/*.cpp
+    Tools/Calculators/General/SeriesCapacitors/*.cpp
 )
 
 file(GLOB CALCULATORS_HEADERS
@@ -195,6 +196,7 @@ file(GLOB CALCULATORS_HEADERS
     Tools/Calculators/RF/free_space_loss/*.h
     Tools/Calculators/General/VoltageDivider/*.h
     Tools/Calculators/General/ParallelResistors/*.h
+    Tools/Calculators/General/SeriesCapacitors/*.h
 )
 
 set(spar_viewer_sources

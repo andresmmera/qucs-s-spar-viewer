@@ -6,6 +6,7 @@
 /// @license GPL-3.0-or-later
 
 #include "./../Tools/Calculators/General/ParallelResistors/parallel_resistors.h"
+#include "./../Tools/Calculators/General/SeriesCapacitors/series_capacitors.h"
 #include "./../Tools/Calculators/General/VoltageDivider/voltage_divider.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/swr_s11_calculator.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h"
@@ -20,25 +21,25 @@
 QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
   QMenu *calculatorsMenu = new QMenu(tr("Calculators"), this);
 
-  // ========== RF Calculators ==========
+  // 1) RF Calculators
   QMenu *rfMenu = new QMenu(tr("RF"), this);
 
-  // 1) Reflection Coefficient submenu
+  // 1.1) Reflection Coefficient submenu
   QMenu *reflectionMenu = new QMenu(tr("Reflection Coefficient"), this);
 
-  // 1.1) Gamma → Impedance / SWR / S11 calculator
+  // 1.1.1) Gamma → Impedance / SWR / S11 calculator
   QAction *gammaToolAction = new QAction("Γ → Z / SWR / S11 (dB)", this);
   reflectionMenu->addAction(gammaToolAction);
   connect(gammaToolAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotGammaCalculator);
 
-  // 1.2) Impedance → Gamma / SWR / S11 calculator
+  // 1.1.2) Impedance → Gamma / SWR / S11 calculator
   QAction *impedanceToolAction = new QAction("Z → Γ / SWR / S11 (dB)", this);
   reflectionMenu->addAction(impedanceToolAction);
   connect(impedanceToolAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotImpedanceCalculator);
 
-  // 1.3) VSWR ↔ S11 ↔ |Γ| bidirectional calculator
+  // 1.1.3) VSWR ↔ S11 ↔ |Γ| bidirectional calculator
   QAction *swrS11ToolAction = new QAction("VSWR ↔ S11 ↔ |Γ|", this);
   reflectionMenu->addAction(swrS11ToolAction);
   connect(swrS11ToolAction, &QAction::triggered, this,
@@ -47,26 +48,26 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
   // Add reflection tools to RF calculator menu
   rfMenu->addMenu(reflectionMenu);
 
-  // 2) Octaves and decades from corner frequencies
+  // 1.2) Octaves and decades from corner frequencies
   QAction *OctaveBWAction = new QAction("Octaves and decades from BW", this);
   rfMenu->addAction(OctaveBWAction);
   connect(OctaveBWAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotOctaveBWCalculator);
 
-  // 3) RF power unit converter
+  // 1.3) RF power unit converter
   QAction *RFPowerUnitConverterAction =
       new QAction("RF power unit converter", this);
   rfMenu->addAction(RFPowerUnitConverterAction);
   connect(RFPowerUnitConverterAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotRFPowerUnitCalculator);
 
-  // 4) Frequency to wavelength converter
+  // 1.4) Frequency to wavelength converter
   QAction *FreqtoLambdaConverterAction = new QAction("Frequency ↔ λ", this);
   rfMenu->addAction(FreqtoLambdaConverterAction);
   connect(FreqtoLambdaConverterAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotFrequencyToWavelengthCalculator);
 
-  // 5) Free space loss calculator
+  // 1.5) Free space loss calculator
   QAction *FreeSpaceLossCalaculatorAction =
       new QAction("Free Space Loss", this);
   rfMenu->addAction(FreeSpaceLossCalaculatorAction);
@@ -76,22 +77,34 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
   // Add RF menu to Calculators menu option
   calculatorsMenu->addMenu(rfMenu);
 
-  // General electronics
+  // 2) General electronics
   QMenu *GeneralElectronicsMenu = new QMenu(tr("General"), this);
 
-  // Add RF menu to Calculators menu option
-  calculatorsMenu->addMenu(GeneralElectronicsMenu);
-
-  // 1) Voltage divider
+  // 2.1) Voltage divider
   QAction *VoltageDividerAction = new QAction("Voltage Divider", this);
   GeneralElectronicsMenu->addAction(VoltageDividerAction);
   connect(VoltageDividerAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotVoltageDividerCalculator);
 
+  // 2.2) Equivalent parallel R, L and series C
+  QMenu *EquivalentCalculatorsMenu =
+      new QMenu(tr("Equivalent Calculators"), this);
+  // 2.2.1) Parallel resistors equivalent
   QAction *ParallelResistorsAction = new QAction("Parallel Resistors", this);
-  GeneralElectronicsMenu->addAction(ParallelResistorsAction);
+  EquivalentCalculatorsMenu->addAction(ParallelResistorsAction);
   connect(ParallelResistorsAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotParallelResistorsCalculator);
+
+  // 2.2.2) Parallel capacitors equivalent
+  QAction *ParallelCapacitorsAction = new QAction("Parallel Capacitors", this);
+  EquivalentCalculatorsMenu->addAction(ParallelCapacitorsAction);
+  connect(ParallelCapacitorsAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotParallelCapacitorsCalculator);
+
+  // Add equivalent calculators to "General"
+  GeneralElectronicsMenu->addMenu(EquivalentCalculatorsMenu);
+  // Add "General" menu to Calculators menu option
+  calculatorsMenu->addMenu(GeneralElectronicsMenu);
 
   return calculatorsMenu;
 }
@@ -150,5 +163,11 @@ void Qucs_S_SPAR_Viewer::slotVoltageDividerCalculator() {
 // 2) Parallel resistors equivalent
 void Qucs_S_SPAR_Viewer::slotParallelResistorsCalculator() {
   ParallelResistorsDialog dlg(this);
+  dlg.exec();
+}
+
+// 3) Parallel capacitors equivalent
+void Qucs_S_SPAR_Viewer::slotParallelCapacitorsCalculator() {
+  SeriesCapacitorsDialog dlg(this);
   dlg.exec();
 }
