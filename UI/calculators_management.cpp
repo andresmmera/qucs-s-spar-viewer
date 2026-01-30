@@ -5,6 +5,7 @@
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
+#include "./../Tools/Calculators/General/ParallelResistors/parallel_resistors.h"
 #include "./../Tools/Calculators/General/VoltageDivider/voltage_divider.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/swr_s11_calculator.h"
 #include "./../Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h"
@@ -87,6 +88,11 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
   connect(VoltageDividerAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotVoltageDividerCalculator);
 
+  QAction *ParallelResistorsAction = new QAction("Parallel Resistors", this);
+  GeneralElectronicsMenu->addAction(ParallelResistorsAction);
+  connect(ParallelResistorsAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotParallelResistorsCalculator);
+
   return calculatorsMenu;
 }
 
@@ -135,8 +141,14 @@ void Qucs_S_SPAR_Viewer::slotFreeSpaceLossCalculator() {
 }
 
 // General electronics calculators
-// 5) Free space loss calculator
+// 1) Free space loss calculator
 void Qucs_S_SPAR_Viewer::slotVoltageDividerCalculator() {
   VoltageDividerDialog dlg(this);
+  dlg.exec();
+}
+
+// 2) Parallel resistors equivalent
+void Qucs_S_SPAR_Viewer::slotParallelResistorsCalculator() {
+  ParallelResistorsDialog dlg(this);
   dlg.exec();
 }

@@ -1022,6 +1022,9 @@ private slots:
     // ***** General electronics calculators *****
     /// @brief Handler to show the voltage divider calculator
     void slotVoltageDividerCalculator();
+
+    /// @brief Handler to show the parallel resistors calculator
+    void slotParallelResistorsCalculator();
 };
 
 #endif
