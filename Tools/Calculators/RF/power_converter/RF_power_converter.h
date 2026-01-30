@@ -9,7 +9,7 @@
 #define RF_POWER_CONVERTER_H
 
 #include <QDialog>
-#include "./../../../../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 
 class CustomDoubleSpinBox;
 class QLabel;

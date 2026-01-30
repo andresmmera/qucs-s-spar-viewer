@@ -5,7 +5,7 @@
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
-#include "./../QucsS/QucsSExporter.h"
+#include "Schematic/Export/QucsS/QucsSExporter.h"
 
 QString QucsSExporter::parseTerm_QucsS(ComponentInfo Comp) {
   // Format: <Pac ID status x y text_x text_y Num Num_visibility Z0

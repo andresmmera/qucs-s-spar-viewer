@@ -8,7 +8,7 @@
 #ifndef FILTERDESIGNTOOL_H
 #define FILTERDESIGNTOOL_H
 
-#include "./../../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
 #include <QGridLayout>
@@ -21,8 +21,8 @@
 #include <QSpinBox>
 #include <QWidget>
 
-#include "../../Schematic/Network.h"
-#include "../../Misc/general.h" // Get scale function
+#include "Schematic/Network.h"
+#include "Misc/general.h" // Get scale function
 
 #include "CanonicalFilter.h"
 #include "CapacitivelyCoupledShuntResonatorsFilter.h"

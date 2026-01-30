@@ -8,8 +8,8 @@
 #ifndef LSECTION_H
 #define LSECTION_H
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
 
 /// @class Lsection
 /// @brief L-section matching network synthesis

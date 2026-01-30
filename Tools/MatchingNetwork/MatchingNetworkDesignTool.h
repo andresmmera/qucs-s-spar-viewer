@@ -8,7 +8,7 @@
 #ifndef MATCHINGNETWORKDESIGNTOOL_H
 #define MATCHINGNETWORKDESIGNTOOL_H
 
-#include "./../../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
 #include <QGridLayout>
@@ -19,9 +19,9 @@
 #include <QRadioButton>
 #include <QWidget>
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/SchematicContent.h"
-#include "../../Schematic/component.h"
+#include "Schematic/Network.h"
+#include "Schematic/SchematicContent.h"
+#include "Schematic/component.h"
 
 #include "LoadSpecificationWidget.h"
 #include "MatchingNetworkDesigner.h" // Class to create the matching network

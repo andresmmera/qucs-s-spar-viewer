@@ -9,10 +9,10 @@
 #ifndef ENDCOUPLED_H
 #define ENDCOUPLED_H
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
-#include "LowpassPrototypeCoeffs.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
+#include "Tools/Filtering/LowpassPrototypeCoeffs.h"
 
 /// @class EndCoupled
 /// @brief Implements an end-coupled resonator bandpass filter.

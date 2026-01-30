@@ -8,7 +8,7 @@
 #ifndef ATTENUATORDESIGNTOOL_H
 #define ATTENUATORDESIGNTOOL_H
 
-#include "./../../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
 #include <QGridLayout>
@@ -18,7 +18,7 @@
 #include <QRadioButton>
 #include <QWidget>
 
-#include "../../Schematic/Network.h"
+#include "Schematic/Network.h"
 
 #include "BridgedTeeAttenuator.h"
 #include "LPadFirstSeries.h"

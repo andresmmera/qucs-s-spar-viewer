@@ -27,7 +27,7 @@
 #include <vector>
 #include <utility> // std::as_const()
 
-#include "../Misc/general.h"
+#include "Misc/general.h"
 
 using namespace std;
 using Complex = complex<double>;

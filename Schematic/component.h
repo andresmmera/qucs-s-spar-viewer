@@ -18,7 +18,7 @@
 #include <cmath>
 #include <qdebug.h>
 
-#include "../Misc/general.h"
+#include "Misc/general.h"
 #include "graphwidget.h"
 #include "infoclasses.h"
 #include "structures.h"

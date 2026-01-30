@@ -8,7 +8,7 @@
 #ifndef SMITHCHARTWIDGET_H
 #define SMITHCHARTWIDGET_H
 
-#include "./../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
 #include <QLabel>

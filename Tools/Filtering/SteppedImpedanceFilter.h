@@ -8,10 +8,10 @@
 #ifndef STEPPEDIMPEDANCEFILTER_H
 #define STEPPEDIMPEDANCEFILTER_H
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
-#include "LowpassPrototypeCoeffs.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
+#include "Tools/Filtering/LowpassPrototypeCoeffs.h"
 
 /// @class SteppedImpedanceFilter
 /// @brief Implements a stepped-impedance lowpass filter.

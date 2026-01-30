@@ -8,10 +8,10 @@
 #ifndef QUARTERWAVEFILTERS_H
 #define QUARTERWAVEFILTERS_H
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
-#include "../Filtering/LowpassPrototypeCoeffs.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
+#include "Tools/Filtering/LowpassPrototypeCoeffs.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
 
 
 /// @class QuarterWaveFilters

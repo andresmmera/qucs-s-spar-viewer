@@ -8,8 +8,8 @@
 #ifndef L_PAD_1ST_SHUNT_H
 #define L_PAD_1ST_SHUNT_H
 
-#include "../../Misc/general.h"
-#include "../../Schematic/component.h"
+#include "Misc/general.h"
+#include "Schematic/component.h"
 #include "AttenuatorBase.h"
 #include <QPen>
 

@@ -18,7 +18,7 @@
 #ifndef SCHEMATICEXPORTER_H
 #define SCHEMATICEXPORTER_H
  
-#include "../SchematicContent.h"
+#include "Schematic/SchematicContent.h"
 
 class SchematicContent;
 

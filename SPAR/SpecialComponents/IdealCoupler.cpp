@@ -6,7 +6,7 @@
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
-#include "./../SParameterCalculator.h"
+#include "SPAR/SParameterCalculator.h"
 
 vector<vector<Complex>>
 SParameterCalculator::calculateIdealCouplerYMatrix(double k, double phase_deg,

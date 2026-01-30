@@ -6,7 +6,7 @@
 /// @copyright Copyright (C) 2019-2025 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
-#include "FilterDesignTool.h"
+#include "Tools/Filtering/FilterDesignTool.h"
 
 FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
 

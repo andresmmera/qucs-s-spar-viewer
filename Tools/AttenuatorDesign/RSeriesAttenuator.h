@@ -8,8 +8,8 @@
 #ifndef RSERIESATTENUATOR_H
 #define RSERIESATTENUATOR_H
 
-#include "../../Misc/general.h"
-#include "../../Schematic/component.h"
+#include "Misc/general.h"
+#include "Schematic/component.h"
 #include "AttenuatorBase.h"
 #include <QPen>
 

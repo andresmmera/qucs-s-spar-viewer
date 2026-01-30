@@ -14,11 +14,11 @@
 #include <QMessageBox> // Needed to show warnings during export process
 #include <utility> // std::as_const()
 
-#include "../Misc/general.h"
-#include "infoclasses.h"
-#include "structures.h"
+#include "Misc/general.h"
+#include "Schematic/infoclasses.h"
+#include "Schematic/structures.h"
 
-#include "Export/QucsS/QucsSExporter.h"
+#include "Schematic/Export/QucsS/QucsSExporter.h"
 
 class Component;
 

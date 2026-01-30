@@ -8,10 +8,10 @@
 #ifndef RECOMBINANT3WAYWILKINSON_H
 #define RECOMBINANT3WAYWILKINSON_H
 
-#include "../../Misc/general.h"
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
+#include "Misc/general.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
 #include <QPen>
 
 /// @class Recombinant3WayWilkinson

@@ -9,10 +9,10 @@
 #ifndef COUPLEDLINEBANDPASSFILTER_H
 #define COUPLEDLINEBANDPASSFILTER_H
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
-#include "LowpassPrototypeCoeffs.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
+#include "Tools/Filtering/LowpassPrototypeCoeffs.h"
 
 /// @class CoupledLineBandpassFilter
 /// @brief Implements a coupled-line bandpass filter.

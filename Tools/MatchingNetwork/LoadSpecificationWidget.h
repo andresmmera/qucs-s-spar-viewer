@@ -28,7 +28,7 @@
 #include <cmath>
 #include <complex>
 
-#include "../../Misc/general.h"
+#include "Misc/general.h"
 
 /// @class LoadSpecificationWidget
 /// @brief Widget for entering the load impedance data

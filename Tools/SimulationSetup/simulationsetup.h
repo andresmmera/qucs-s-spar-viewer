@@ -9,10 +9,10 @@
 #ifndef SIMULATIONSETUP_H
 #define SIMULATIONSETUP_H
 
-#include "../../Misc/general.h"
-#include "../../Schematic/infoclasses.h"
+#include "Misc/general.h"
+#include "Schematic/infoclasses.h"
 
-#include "./../../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QButtonGroup>
 #include <QComboBox>
 #include <QGridLayout>
@@ -27,7 +27,7 @@
 
 // Needed for having the substrate structures for each transmission line
 // implementation
-#include "../TransmissionLineSynthesis/Microstrip.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
 
 /// @class SimulationSetup
 /// @brief UI component to set the simulation settings

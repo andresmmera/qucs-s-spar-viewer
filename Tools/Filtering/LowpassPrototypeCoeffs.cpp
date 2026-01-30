@@ -6,7 +6,7 @@
 /// @copyright Copyright (C) 2019-2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
-#include "LowpassPrototypeCoeffs.h"
+#include "Tools/Filtering/LowpassPrototypeCoeffs.h"
 
 LowpassPrototypeCoeffs::LowpassPrototypeCoeffs(FilterSpecifications SP) {
   Specification = SP;

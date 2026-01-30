@@ -9,7 +9,7 @@
 #define RECTANGULARPLOTWIDGET_H
 
 #include "./QCustomPlot/qcustomplot.h"
-#include "./../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
 #include <QGridLayout>

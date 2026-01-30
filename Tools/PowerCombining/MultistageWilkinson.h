@@ -8,10 +8,10 @@
 #ifndef MULTISTAGE_WILKINSON_H
 #define MULTISTAGE_WILKINSON_H
 
-#include "../../Misc/general.h"
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
+#include "Misc/general.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
 #include <QPen>
 #include <complex>
 #include <deque>

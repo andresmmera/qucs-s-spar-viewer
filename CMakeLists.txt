@@ -30,6 +30,7 @@ CONFIGURE_FILE (
     "${PROJECT_BINARY_DIR}/config.h"
 )
 
+
 INCLUDE_DIRECTORIES("${PROJECT_BINARY_DIR}")
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets PrintSupport)
@@ -254,6 +255,11 @@ ADD_EXECUTABLE( ${QUCS_NAME}spar-viewer MACOSX_BUNDLE WIN32
   ${spar_viewer_sources}
   ${spar_viewer_moc_sources}
   ${RESOURCES_SRCS}
+)
+
+target_include_directories(${QUCS_NAME}spar-viewer
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 TARGET_LINK_LIBRARIES( ${QUCS_NAME}spar-viewer Qt6::Core Qt6::Gui Qt6::Widgets Qt6::PrintSupport)

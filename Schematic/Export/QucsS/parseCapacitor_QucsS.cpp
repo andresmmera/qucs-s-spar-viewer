@@ -5,7 +5,7 @@
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
-#include "./../QucsS/QucsSExporter.h"
+#include "Schematic/Export/QucsS/QucsSExporter.h"
 
 QString QucsSExporter::parseCapacitor_QucsS(ComponentInfo Comp) {
   // Format: <C ID status x y text_x text_y C C_visibility>

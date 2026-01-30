@@ -8,9 +8,9 @@
 #ifndef MULTISECTIONQUARTERWAVE_H
 #define MULTISECTIONQUARTERWAVE_H
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
 
 /// @class MultisectionQuarterWave
 /// @brief Quarterwave multisection transformer matching

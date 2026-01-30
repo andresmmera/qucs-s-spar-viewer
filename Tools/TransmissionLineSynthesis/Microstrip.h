@@ -9,7 +9,7 @@
 #ifndef MICROSTRIP_H
 #define MICROSTRIP_H
 
-#include "../../Schematic/structures.h"
+#include "Schematic/structures.h"
 #include <cmath>
 #include <iostream>
 #include <string>

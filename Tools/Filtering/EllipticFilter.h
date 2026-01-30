@@ -8,9 +8,9 @@
 #ifndef ELLIPTICFILTER_H
 #define ELLIPTICFILTER_H
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
 
 class ComponentInfo;
 class WireInfo;

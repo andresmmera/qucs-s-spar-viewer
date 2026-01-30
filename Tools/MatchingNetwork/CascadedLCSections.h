@@ -10,8 +10,8 @@
 #define CASCADEDLCSECTIONS_H
 
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
 
 
 /// @class CascadedLCSections

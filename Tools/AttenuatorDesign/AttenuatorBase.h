@@ -8,8 +8,8 @@
 #ifndef ATTENUATORBASE_H
 #define ATTENUATORBASE_H
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
 
 ///
 /// @brief Abstract base class for RF attenuator implementations

@@ -1,5 +1,5 @@
 /// @file swr_s11_calculator.h
-/// @brief Calculator: Conversion between SWR, S11 and |Γ| (definition)
+/// @brief Calculator:  (definition)
 /// @author Andrés Martínez Mera - andresmmera@protonmail.com
 /// @date Jan 28, 2026
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
@@ -9,7 +9,7 @@
 #define SWR_S11_CALCULATOR_H
 
 #include <QDialog>
-#include "./../../../../../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 
 class CustomDoubleSpinBox;
 class QLabel;
@@ -82,7 +82,7 @@ private:
     /// @brief Form layout for input widgets
     QFormLayout *inputForm;
 
-    // ========== Output Widgets ==========
+    // ========== Output Widget ==========
 
     /// @brief Table widget displaying calculated results
     QTableWidget *resultsTable;

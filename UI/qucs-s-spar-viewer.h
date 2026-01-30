@@ -8,24 +8,24 @@
 #ifndef QUCSSPARVIEWER_H
 #define QUCSSPARVIEWER_H
 
-#include "../PlotWidgets/polarplotwidget.h"
-#include "../PlotWidgets/rectangularplotwidget.h"
-#include "../PlotWidgets/smithchartwidget.h"
+#include "PlotWidgets/polarplotwidget.h"
+#include "PlotWidgets/rectangularplotwidget.h"
+#include "PlotWidgets/smithchartwidget.h"
 
-#include "../UI/CustomWidgets/codeeditor.h"
-#include "../UI/CustomWidgets/matrixcombopopup.h"
-#include "../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/codeeditor.h"
+#include "UI/CustomWidgets/matrixcombopopup.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 
-#include "../Tools/AttenuatorDesign/AttenuatorDesignTool.h"
-#include "../Tools/Filtering/FilterDesignTool.h"
-#include "../Tools/MatchingNetwork/MatchingNetworkDesignTool.h"
-#include "../Tools/NetlistScratchPad/netlistscratchpad.h"
-#include "../Tools/PowerCombining/PowerCombiningTool.h"
-#include "../Tools/SimulationSetup/simulationsetup.h"
+#include "Tools/AttenuatorDesign/AttenuatorDesignTool.h"
+#include "Tools/Filtering/FilterDesignTool.h"
+#include "Tools/MatchingNetwork/MatchingNetworkDesignTool.h"
+#include "Tools/NetlistScratchPad/netlistscratchpad.h"
+#include "Tools/PowerCombining/PowerCombiningTool.h"
+#include "Tools/SimulationSetup/simulationsetup.h"
 
-#include "../SPAR/SParameterCalculator.h"
+#include "SPAR/SParameterCalculator.h"
 
-#include "../Misc/general.h"
+#include "Misc/general.h"
 #include "aboutdialog.h"
 
 

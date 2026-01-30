@@ -9,7 +9,7 @@
 #define FREE_SPACE_ATTENUATION_H
 
 #include <QDialog>
-#include "./../../../../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "./UI/CustomWidgets/CustomDoubleSpinBox.h"
 
 class CustomDoubleSpinBox;
 class QLabel;

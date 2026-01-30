@@ -8,9 +8,9 @@
 #ifndef QW_SERIESATTENUATOR_H
 #define QW_SERIESATTENUATOR_H
 
-#include "../../Misc/general.h"
-#include "../../Schematic/component.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
+#include "Misc/general.h"
+#include "Schematic/component.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
 #include "AttenuatorBase.h"
 #include <QPen>
 

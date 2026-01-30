@@ -8,7 +8,9 @@
 #ifndef QUCSSEXPORTER_H
 #define QUCSSEXPORTER_H
 
-#include "../SchematicExporter.h"
+#include "Schematic/SchematicContent.h"
+#include "Schematic/Export/SchematicExporter.h"
+#include "Schematic/Export/QucsS/QucsSExporter.h"
 
 // This is needed for catching the current Qucs-S version
 #ifdef HAVE_CONFIG_H

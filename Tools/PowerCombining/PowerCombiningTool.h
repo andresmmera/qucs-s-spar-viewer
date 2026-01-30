@@ -8,7 +8,7 @@
 #ifndef POWERCOMBININGTOOL_H
 #define POWERCOMBININGTOOL_H
 
-#include "./../../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
 #include <QGridLayout>
@@ -23,7 +23,7 @@
 #include <QValidator>
 #include <QWidget>
 
-#include "../../Schematic/Network.h"
+#include "Schematic/Network.h"
 
 #include "Wilkinson2Way.h"
 #include "MultistageWilkinson.h"

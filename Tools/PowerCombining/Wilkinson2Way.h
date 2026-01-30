@@ -9,10 +9,10 @@
 #ifndef WILKINSON2WAY_H
 #define WILKINSON2WAY_H
 
-#include "../../Misc/general.h"
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
+#include "Misc/general.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
 #include <QPen>
 
 /// @class Wilkinson2Way

@@ -8,7 +8,7 @@
 #ifndef NETWORK_H
 #define NETWORK_H
 
-#include "../Schematic/SchematicContent.h"
+#include "Schematic/SchematicContent.h"
 #include <QMap>
 #include <QPen>
 #include <QString>

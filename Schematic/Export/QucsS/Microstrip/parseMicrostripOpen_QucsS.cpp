@@ -5,7 +5,7 @@
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
-#include "./../../QucsS/QucsSExporter.h"
+#include "Schematic/Export/QucsS/QucsSExporter.h"
 
 QString QucsSExporter::parseMicrostripOpen_QucsS(ComponentInfo Comp) {
   //  Open model example

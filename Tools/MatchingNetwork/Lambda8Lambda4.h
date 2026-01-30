@@ -8,9 +8,9 @@
 #ifndef LAMBDA8LAMBDA4_H
 #define LAMBDA8LAMBDA4_H
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
 
 /// @class Lambda8Lambda4
 /// @brief Lambda/8 + Lambda/4 matching network synthesis

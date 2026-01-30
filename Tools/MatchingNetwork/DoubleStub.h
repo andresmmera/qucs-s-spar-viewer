@@ -9,9 +9,9 @@
 #ifndef DOUBLESTUB_H
 #define DOUBLESTUB_H
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
 
 /// @class DoubleStub
 /// @brief Double stub matching network synthesis

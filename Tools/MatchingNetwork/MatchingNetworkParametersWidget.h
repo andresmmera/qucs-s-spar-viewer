@@ -7,7 +7,7 @@
 #ifndef MATCHINGNETWORKPARAMETERSWIDGET_H
 #define MATCHINGNETWORKPARAMETERSWIDGET_H
 
-#include "./../../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
 #include <QGridLayout>
@@ -23,7 +23,7 @@
 #include <QWidget>
 #include <complex>
 
-#include "../../Schematic/structures.h"
+#include "Schematic/structures.h"
 
 /// @class MatchingNetworkParametersWidget
 /// @brief Widget for entering matching network design parameters

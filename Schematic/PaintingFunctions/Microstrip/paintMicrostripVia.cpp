@@ -5,12 +5,10 @@
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
-#include "./../../component.h"
+#include "Schematic/component.h"
 
-///
 /// @brief Microstrip via painting method
 /// \param painter Painter object
-///
 void Component::paintMicrostripVia(QPainter *painter) {
   if (Rotation != 0) {
     painter->rotate(Rotation);

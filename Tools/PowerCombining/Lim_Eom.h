@@ -8,10 +8,10 @@
 #ifndef LIM_EOM_H
 #define LIM_EOM_H
 
-#include "../../Misc/general.h"
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
-#include "../TransmissionLineSynthesis/Microstrip.h"
+#include "Misc/general.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
+#include "Tools/TransmissionLineSynthesis/Microstrip.h"
 #include <QPen>
 
 /// @class Lim_Eom

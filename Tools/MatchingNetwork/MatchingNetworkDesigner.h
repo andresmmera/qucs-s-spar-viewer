@@ -8,8 +8,8 @@
 #ifndef MATCHINGNETWORKDESIGNER_H
 #define MATCHINGNETWORKDESIGNER_H
 
-#include "../../Schematic/Network.h"
-#include "../../Schematic/component.h"
+#include "Schematic/Network.h"
+#include "Schematic/component.h"
 
 #include "CascadedLCSections.h"
 #include "DoubleStub.h"
