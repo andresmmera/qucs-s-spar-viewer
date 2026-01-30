@@ -1026,8 +1026,11 @@ private slots:
     /// @brief Handler to show the parallel resistors calculator
     void slotParallelResistorsCalculator();
 
-    /// @brief Handler to show the parallel capacitors calculator
-    void slotParallelCapacitorsCalculator();
+    /// @brief Handler to show the series capacitors calculator
+    void slotSeriesCapacitorsCalculator();
+
+    /// @brief Handler to show the series inductors calculator
+    void slotParallelInductorsCalculator();
 };
 
 #endif

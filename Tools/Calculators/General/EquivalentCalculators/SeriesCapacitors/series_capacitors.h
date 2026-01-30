@@ -10,7 +10,7 @@
 
 #include <QDialog>
 #include <QVector>
-#include "./../../../../UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "./../../../../../UI/CustomWidgets/CustomDoubleSpinBox.h"
 
 class CustomDoubleSpinBox;
 class QLabel;

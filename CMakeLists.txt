@@ -182,8 +182,9 @@ file(GLOB CALCULATORS_SOURCES
     Tools/Calculators/RF/frequency_to_wavelength/*.cpp
     Tools/Calculators/RF/free_space_loss/*.cpp
     Tools/Calculators/General/VoltageDivider/*.cpp
-    Tools/Calculators/General/ParallelResistors/*.cpp
-    Tools/Calculators/General/SeriesCapacitors/*.cpp
+    Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.cpp
+    Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.cpp
+    Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.cpp
 )
 
 file(GLOB CALCULATORS_HEADERS
@@ -195,8 +196,9 @@ file(GLOB CALCULATORS_HEADERS
     Tools/Calculators/RF/frequency_to_wavelength/*.h
     Tools/Calculators/RF/free_space_loss/*.h
     Tools/Calculators/General/VoltageDivider/*.h
-    Tools/Calculators/General/ParallelResistors/*.h
-    Tools/Calculators/General/SeriesCapacitors/*.h
+    Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.h
+    Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.h
+    Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.h
 )
 
 set(spar_viewer_sources
