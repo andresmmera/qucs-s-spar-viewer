@@ -127,8 +127,8 @@ int main(int argc, char** argv) {
 
   // Window size
   // In initially, the window's size was proportional to the screen size, but after testing the program in
-  // big screens, it seemed more convenient to have a fixed, small size
-  QSize initialWindowSize(900, 650); // width x height in pixels
+  // big screens, it seemed more convenient to have a fixed, small size. Then the user can resize as it likes.
+  QSize initialWindowSize(1200, 650); // width x height in pixels
 
   qucs->resize(initialWindowSize);
 
