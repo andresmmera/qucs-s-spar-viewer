@@ -89,121 +89,121 @@ endif()
 ADD_DEFINITIONS(${QT_DEFINITIONS})
 
 file(GLOB PLOT_WIDGETS_SOURCES
-     PlotWidgets/*.cpp
+     src/PlotWidgets/*.cpp
 )
 
 file(GLOB PLOT_WIDGETS_HEADERS
-     PlotWidgets/*.h
+     src/PlotWidgets/*.h
 )
 
 file(GLOB QCUSTOMPLOT_SOURCE
-     PlotWidgets/QCustomPlot/qcustomplot.cpp
+     src/PlotWidgets/QCustomPlot/qcustomplot.cpp
 )
 
 file(GLOB QCUSTOMPLOT_HEADER
-     PlotWidgets/QCustomPlot/qcustomplot.h
+     src/PlotWidgets/QCustomPlot/qcustomplot.h
 )
 
 file(GLOB SCHEMATIC_SOURCES
-     Schematic/*.cpp
-     Schematic/Export/*.cpp
-     Schematic/Export/QucsS/*.cpp
-     Schematic/Export/QucsS/Microstrip/*.cpp
-     Schematic/PaintingFunctions/*.cpp
-     Schematic/PaintingFunctions/Microstrip/*.cpp
-     Schematic/PaintingFunctions/IdealTransmissionLines/*.cpp
+     src/Schematic/*.cpp
+     src/Schematic/Export/*.cpp
+     src/Schematic/Export/QucsS/*.cpp
+     src/Schematic/Export/QucsS/Microstrip/*.cpp
+     src/Schematic/PaintingFunctions/*.cpp
+     src/Schematic/PaintingFunctions/Microstrip/*.cpp
+     src/Schematic/PaintingFunctions/IdealTransmissionLines/*.cpp
 )
 
 file(GLOB SCHEMATIC_HEADERS
-     Schematic/*.h
+     src/Schematic/*.h
 )
 
 file(GLOB MISC_SOURCES
-     Misc/*.cpp
+     src/Misc/*.cpp
 )
 
 file(GLOB MISC_HEADERS
-     Misc/*.h
+     src/Misc/*.h
 )
 
 file(GLOB SPAR_SOURCES
-     SPAR/*.cpp
+     src/SPAR/*.cpp
 )
 
 file(GLOB SPAR_HEADERS
-     SPAR/*.h
+     src/SPAR/*.h
 )
 
 file(GLOB SPAR_SPECIAL_COMPONENTS
-    SPAR/SpecialComponents/*.cpp
-    SPAR/SpecialComponents/MicrostripComponents/*.cpp
+    src/SPAR/SpecialComponents/*.cpp
+    src/SPAR/SpecialComponents/MicrostripComponents/*.cpp
 )
 
 
 file(GLOB UI_SOURCES
-     UI/*.cpp
-     UI/CustomWidgets/*.cpp
+     src/UI/*.cpp
+     src/UI/CustomWidgets/*.cpp
 )
 
 file(GLOB UI_HEADERS
-     UI/*.h
-     UI/CustomWidgets/*.h
+     src/UI/*.h
+     src/UI/CustomWidgets/*.h
 )
 
 ## TOOLS
 file(GLOB TOOLS_SOURCES
-     Tools/Filtering/*.cpp
-     Tools/Filtering/DirectCoupledFilters/*.cpp
-     Tools/PowerCombining/*.cpp
-     Tools/AttenuatorDesign/*.cpp
-     Tools/NetlistScratchPad/*.cpp
-     Tools/SimulationSetup/*.cpp
-     Tools/MatchingNetwork/*.cpp
-     Tools/TransmissionLineSynthesis/*.cpp
+     src/Tools/Filtering/*.cpp
+     src/Tools/Filtering/DirectCoupledFilters/*.cpp
+     src/Tools/PowerCombining/*.cpp
+     src/Tools/AttenuatorDesign/*.cpp
+     src/Tools/NetlistScratchPad/*.cpp
+     src/Tools/SimulationSetup/*.cpp
+     src/Tools/MatchingNetwork/*.cpp
+     src/Tools/TransmissionLineSynthesis/*.cpp
 )
 
 file(GLOB TOOLS_HEADERS
-     Tools/Filtering/*.h
-     Tools/Filtering/DirectCoupledFilters/*.h
-     Tools/PowerCombining/*.h
-     Tools/AttenuatorDesign/*.h
-     Tools/NetlistScratchPad/*.h
-     Tools/SimulationSetup/*.h
-     Tools/MatchingNetwork/*.h
-     Tools/TransmissionLineSynthesis/*.h
+     src/Tools/Filtering/*.h
+     src/Tools/Filtering/DirectCoupledFilters/*.h
+     src/Tools/PowerCombining/*.h
+     src/Tools/AttenuatorDesign/*.h
+     src/Tools/NetlistScratchPad/*.h
+     src/Tools/SimulationSetup/*.h
+     src/Tools/MatchingNetwork/*.h
+     src/Tools/TransmissionLineSynthesis/*.h
 )
 
 ## CALCULATORS
 file(GLOB CALCULATORS_SOURCES
-    Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.cpp
-    Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.cpp
-    Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.cpp
-    Tools/Calculators/RF/octaveBW_calculator/*.cpp
-    Tools/Calculators/RF/power_converter/*.cpp
-    Tools/Calculators/RF/frequency_to_wavelength/*.cpp
-    Tools/Calculators/RF/free_space_loss/*.cpp
-    Tools/Calculators/General/VoltageDivider/*.cpp
-    Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.cpp
-    Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.cpp
-    Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.cpp
+    src/Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.cpp
+    src/Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.cpp
+    src/Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.cpp
+    src/Tools/Calculators/RF/octaveBW_calculator/*.cpp
+    src/Tools/Calculators/RF/power_converter/*.cpp
+    src/Tools/Calculators/RF/frequency_to_wavelength/*.cpp
+    src/Tools/Calculators/RF/free_space_loss/*.cpp
+    src/Tools/Calculators/General/VoltageDivider/*.cpp
+    src/Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.cpp
+    src/Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.cpp
+    src/Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.cpp
 )
 
 file(GLOB CALCULATORS_HEADERS
-    Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.h
-    Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.h
-    Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.h
-    Tools/Calculators/RF/octaveBW_calculator/*.h
-    Tools/Calculators/RF/power_converter/*.h
-    Tools/Calculators/RF/frequency_to_wavelength/*.h
-    Tools/Calculators/RF/free_space_loss/*.h
-    Tools/Calculators/General/VoltageDivider/*.h
-    Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.h
-    Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.h
-    Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.h
+    src/Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.h
+    src/Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.h
+    src/Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.h
+    src/Tools/Calculators/RF/octaveBW_calculator/*.h
+    src/Tools/Calculators/RF/power_converter/*.h
+    src/Tools/Calculators/RF/frequency_to_wavelength/*.h
+    src/Tools/Calculators/RF/free_space_loss/*.h
+    src/Tools/Calculators/General/VoltageDivider/*.h
+    src/Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.h
+    src/Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.h
+    src/Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.h
 )
 
 set(spar_viewer_sources
-    main.cpp
+    src/main.cpp
     ${UI_SOURCES}
     ${PLOT_WIDGETS_SOURCES}
     ${CUSTOM_WIDGETS_SOURCES}
@@ -228,7 +228,7 @@ set(spar_viewer_moc_headers
     ${QCUSTOMPLOT_HEADER}
 )
 
-SET(RESOURCES qucs-s-spar-viewer.qrc)
+SET(RESOURCES src/qucs-s-spar-viewer.qrc)
 
 QT6_WRAP_CPP( spar_viewer_moc_sources ${spar_viewer_moc_headers} )
 QT6_ADD_RESOURCES(RESOURCES_SRCS ${RESOURCES})
@@ -245,9 +245,9 @@ IF(APPLE)
   SET(MACOSX_BUNDLE_ICON_FILE qucs-s-spar-viewer.icns)
 
   # set where in the bundle to put the icns file
-  SET_SOURCE_FILES_PROPERTIES(${CMAKE_CURRENT_SOURCE_DIR}/bitmaps/qucs-s-spar-viewer.icns PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
+  SET_SOURCE_FILES_PROPERTIES(${CMAKE_CURRENT_SOURCE_DIR}/src/bitmaps/qucs-s-spar-viewer.icns PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
   # include the icns file in the target
-  SET(spar_viewer_sources ${spar_viewer_sources} ${CMAKE_CURRENT_SOURCE_DIR}/bitmaps/qucs-s-spar-viewer.icns)
+  SET(spar_viewer_sources ${spar_viewer_sources} ${CMAKE_CURRENT_SOURCE_DIR}/src/bitmaps/qucs-s-spar-viewer.icns)
 
 ENDIF(APPLE)
 
@@ -259,7 +259,7 @@ ADD_EXECUTABLE( ${QUCS_NAME}spar-viewer MACOSX_BUNDLE WIN32
 
 target_include_directories(${QUCS_NAME}spar-viewer
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 TARGET_LINK_LIBRARIES( ${QUCS_NAME}spar-viewer Qt6::Core Qt6::Gui Qt6::Widgets Qt6::PrintSupport)
