@@ -1214,6 +1214,7 @@ void FilterDesignTool::EllipticTypeChanged() {
   } else {
     OrderSpinBox->setMinimum(1);
   }
+  UpdateDesignParameters();
 }
 
 QStringList FilterDesignTool::setItemsResponseTypeCombo() {
