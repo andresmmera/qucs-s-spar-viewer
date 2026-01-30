@@ -28,6 +28,7 @@
 #include "../Misc/general.h"
 #include "aboutdialog.h"
 
+
 #include <QCheckBox>
 #include <QColorDialog>
 #include <QDoubleSpinBox>
@@ -40,6 +41,8 @@
 #include <complex>
 #include <utility> // std::as_const()
 
+
+
 class QComboBox;
 class QTableWidget;
 class QLineEdit;
@@ -47,6 +50,8 @@ class QIntValidator;
 class QDoubleValidator;
 class QLabel;
 class QPushButton;
+
+class GammaCalculatorDialog;
 
 /// @struct tQucsSettings
 /// @brief Structure to hold Qucs application settings
@@ -970,6 +975,11 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
     QStringList filePaths; // Full path of the files in the progrom. It's used for
                            // file monitoring.
 
+
+    /// @brief Create the Calculators menu with all calculator tools
+    /// @return Pointer to the Calculators menu
+    QMenu *CreateCalculatorsMenu();
+
   private slots:
     /// @brief Update simulation traces
     /// @param SI Schematic description
@@ -983,6 +993,44 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
 
     /// @brief Export schematic (as text) to Qucs-S
     void exportSchematic();
+
+
+    // Dialog calculators
+private slots:
+    // ***** RF calculators *****
+    /// @brief Handler to show the Gamma -> Z / SWR / S11 calculator
+    void slotGammaCalculator();
+
+    /// @brief Handler to show the Z → Γ / SWR / S11 (dB) calculator
+    void slotImpedanceCalculator();
+
+    /// @brief Handler to show the VSWR ↔ S11 ↔ |Γ| calculator
+    void slotSwrS11Calculator();
+
+    /// @brief Handler to show the octave bandwidth calculator
+    void slotOctaveBWCalculator();
+
+    /// @brief Handler to show the RF power unit conversion calculator
+    void slotRFPowerUnitCalculator();
+
+    /// @brief Handler to show the Frequency to wavelength conversion calculator
+    void slotFrequencyToWavelengthCalculator();
+
+    /// @brief Handler to show the free space loss conversion calculator
+    void slotFreeSpaceLossCalculator();
+
+    // ***** General electronics calculators *****
+    /// @brief Handler to show the voltage divider calculator
+    void slotVoltageDividerCalculator();
+
+    /// @brief Handler to show the parallel resistors calculator
+    void slotParallelResistorsCalculator();
+
+    /// @brief Handler to show the series capacitors calculator
+    void slotSeriesCapacitorsCalculator();
+
+    /// @brief Handler to show the series inductors calculator
+    void slotParallelInductorsCalculator();
 };
 
 #endif

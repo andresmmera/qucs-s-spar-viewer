@@ -4,7 +4,7 @@ cmake_policy(VERSION 3.10)
 
 SET(QUCS_NAME "qucs-s")
 
-# use top VERSION file
+#use top VERSION file
 file (STRINGS ${PROJECT_SOURCE_DIR}/VERSION QUCS_VERSION)
 
 if(DEFINED CI_VERSION)
@@ -24,7 +24,7 @@ set(PROJECT_DOMAIN_SECOND "org")
 add_compile_definitions(HAVE_CONFIG_H)
 SET(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-# configure the header config.h
+#configure the header config.h
 CONFIGURE_FILE (
     "${PROJECT_SOURCE_DIR}/config.h.cmake"
     "${PROJECT_BINARY_DIR}/config.h"
@@ -172,6 +172,34 @@ file(GLOB TOOLS_HEADERS
      Tools/TransmissionLineSynthesis/*.h
 )
 
+## CALCULATORS
+file(GLOB CALCULATORS_SOURCES
+    Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.cpp
+    Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.cpp
+    Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.cpp
+    Tools/Calculators/RF/octaveBW_calculator/*.cpp
+    Tools/Calculators/RF/power_converter/*.cpp
+    Tools/Calculators/RF/frequency_to_wavelength/*.cpp
+    Tools/Calculators/RF/free_space_loss/*.cpp
+    Tools/Calculators/General/VoltageDivider/*.cpp
+    Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.cpp
+    Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.cpp
+    Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.cpp
+)
+
+file(GLOB CALCULATORS_HEADERS
+    Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.h
+    Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.h
+    Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.h
+    Tools/Calculators/RF/octaveBW_calculator/*.h
+    Tools/Calculators/RF/power_converter/*.h
+    Tools/Calculators/RF/frequency_to_wavelength/*.h
+    Tools/Calculators/RF/free_space_loss/*.h
+    Tools/Calculators/General/VoltageDivider/*.h
+    Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.h
+    Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.h
+    Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.h
+)
 
 set(spar_viewer_sources
     main.cpp
@@ -183,6 +211,7 @@ set(spar_viewer_sources
     ${SPAR_SPECIAL_COMPONENTS}
     ${MISC_SOURCES}
     ${TOOLS_SOURCES}
+    ${CALCULATORS_SOURCES}
     ${QCUSTOMPLOT_SOURCE}
 )
 
@@ -194,6 +223,7 @@ set(spar_viewer_moc_headers
     ${SPAR_HEADERS}
     ${MISC_HEADERS}
     ${TOOLS_HEADERS}
+    ${CALCULATORS_HEADERS}
     ${QCUSTOMPLOT_HEADER}
 )
 
