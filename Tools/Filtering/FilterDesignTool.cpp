@@ -171,15 +171,15 @@ FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
   //************** Elliptic type ****************
   layout_row++;
   EllipticTypeLabel = new QLabel("Elliptic type");
-  EllipticType = new QComboBox();
-  EllipticType->addItem("Type A");
-  EllipticType->addItem("Type B");
-  EllipticType->addItem("Type C");
-  EllipticType->addItem("Type S");
+  EllipticTypeCombo = new QComboBox();
+  EllipticTypeCombo->addItem("Type A");
+  EllipticTypeCombo->addItem("Type B");
+  EllipticTypeCombo->addItem("Type C");
+  EllipticTypeCombo->addItem("Type S");
   EllipticTypeLabel->setVisible(false);
-  EllipticType->setVisible(false);
+  EllipticTypeCombo->setVisible(false);
   FilterDesignLayout->addWidget(EllipticTypeLabel, layout_row, 0);
-  FilterDesignLayout->addWidget(EllipticType, layout_row, 1);
+  FilterDesignLayout->addWidget(EllipticTypeCombo, layout_row, 1);
 
   //***************  Minimum impedance achievable in the manufacturing process
   //**************
@@ -270,7 +270,7 @@ FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
   connect(FilterResponseTypeCombo, &QComboBox::currentIndexChanged, this,
           &FilterDesignTool::ResposeComboChanged);
 
-  connect(EllipticType, &QComboBox::currentIndexChanged, this,
+  connect(EllipticTypeCombo, &QComboBox::currentIndexChanged, this,
           &FilterDesignTool::EllipticTypeChanged);
 
   connect(FilterClassCombo, &QComboBox::currentIndexChanged, this,
@@ -324,7 +324,7 @@ FilterDesignTool::~FilterDesignTool() {
   delete FilterImplementationCombo;
   delete FC_ScaleCombobox;
   delete BW_ScaleCombobox;
-  delete EllipticType;
+  delete EllipticTypeCombo;
   delete FCSpinbox;
   delete BWSpinbox;
   delete RippleSpinbox;
@@ -449,7 +449,7 @@ void FilterDesignTool::ResposeComboChanged() {
   StopbandAttLabel->setVisible(ActivateCauer);
   StopbandAttdBLabel->setVisible(ActivateCauer);
 
-  EllipticType->setVisible(ActivateCauer);
+  EllipticTypeCombo->setVisible(ActivateCauer);
   EllipticTypeLabel->setVisible(ActivateCauer);
   if (ActivateCauer) {
     TopologyCombo->setItemText(0, "Min L");
@@ -627,7 +627,7 @@ void FilterDesignTool::UpdateDesignParameters() {
   // Update parameters
   Filter_SP.bw = BWSpinbox->value() * getScale(BW_ScaleCombobox->currentText());
   Filter_SP.fc = FCSpinbox->value() * getScale(FC_ScaleCombobox->currentText());
-  Filter_SP.EllipticType = EllipticType->currentText();
+  Filter_SP.EllipticType = EllipticTypeCombo->currentText();
   Filter_SP.isCLC = (TopologyCombo->currentIndex() == 0);
   Filter_SP.ZS = SourceImpedanceLineEdit->text().toDouble();
   Filter_SP.Implementation = FilterImplementationCombo->currentText();
@@ -1209,11 +1209,12 @@ void FilterDesignTool::setSettings_SideCoupled_BPF() {
 }
 
 void FilterDesignTool::EllipticTypeChanged() {
-  if (EllipticType->currentText() != "Type S") {
+  if (EllipticTypeCombo->currentText() != "Type S") {
     OrderSpinBox->setMinimum(2);
   } else {
     OrderSpinBox->setMinimum(1);
   }
+  UpdateDesignParameters();
 }
 
 QStringList FilterDesignTool::setItemsResponseTypeCombo() {

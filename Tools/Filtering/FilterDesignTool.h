@@ -120,7 +120,7 @@ private:
   QLabel* StopbandAttLabel;                 ///< Stopband attenuation label
   CustomDoubleSpinBox* StopbandAttSpinbox;       ///< Stopband attenuation in dB
   QLabel* StopbandAttdBLabel;               ///< Stopband attenuation unit
-  QComboBox* EllipticType;                  ///< Elliptic filter variant selector
+  QComboBox* EllipticTypeCombo;                  ///< Elliptic filter variant selector
   QLabel* EllipticTypeLabel;                ///< Elliptic type label
   QStringList DefaultFilterResponses;       ///< Available response types
   /// @}
