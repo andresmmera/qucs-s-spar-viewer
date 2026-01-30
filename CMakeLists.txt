@@ -152,25 +152,25 @@ file(GLOB UI_HEADERS
 
 ## TOOLS
 file(GLOB TOOLS_SOURCES
-     src/Tools/Filtering/*.cpp
-     src/Tools/Filtering/DirectCoupledFilters/*.cpp
-     src/Tools/PowerCombining/*.cpp
-     src/Tools/AttenuatorDesign/*.cpp
-     src/Tools/NetlistScratchPad/*.cpp
-     src/Tools/SimulationSetup/*.cpp
-     src/Tools/MatchingNetwork/*.cpp
-     src/Tools/TransmissionLineSynthesis/*.cpp
+     src/Tools/DesignTools/Filtering/*.cpp
+     src/Tools/DesignTools/Filtering/DirectCoupledFilters/*.cpp
+     src/Tools/DesignTools/PowerCombining/*.cpp
+     src/Tools/DesignTools/AttenuatorDesign/*.cpp
+     src/Tools/DesignTools/NetlistScratchPad/*.cpp
+     src/Tools/DesignTools/SimulationSetup/*.cpp
+     src/Tools/DesignTools/MatchingNetwork/*.cpp
+     src/Tools/DesignTools/TransmissionLineSynthesis/*.cpp
 )
 
 file(GLOB TOOLS_HEADERS
-     src/Tools/Filtering/*.h
-     src/Tools/Filtering/DirectCoupledFilters/*.h
-     src/Tools/PowerCombining/*.h
-     src/Tools/AttenuatorDesign/*.h
-     src/Tools/NetlistScratchPad/*.h
-     src/Tools/SimulationSetup/*.h
-     src/Tools/MatchingNetwork/*.h
-     src/Tools/TransmissionLineSynthesis/*.h
+     src/Tools/DesignTools/Filtering/*.h
+     src/Tools/DesignTools/Filtering/DirectCoupledFilters/*.h
+     src/Tools/DesignTools/PowerCombining/*.h
+     src/Tools/DesignTools/AttenuatorDesign/*.h
+     src/Tools/DesignTools/NetlistScratchPad/*.h
+     src/Tools/DesignTools/SimulationSetup/*.h
+     src/Tools/DesignTools/MatchingNetwork/*.h
+     src/Tools/DesignTools/TransmissionLineSynthesis/*.h
 )
 
 ## CALCULATORS

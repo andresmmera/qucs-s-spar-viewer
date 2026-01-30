@@ -16,12 +16,12 @@
 #include "UI/CustomWidgets/matrixcombopopup.h"
 #include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 
-#include "Tools/AttenuatorDesign/AttenuatorDesignTool.h"
-#include "Tools/Filtering/FilterDesignTool.h"
-#include "Tools/MatchingNetwork/MatchingNetworkDesignTool.h"
-#include "Tools/NetlistScratchPad/netlistscratchpad.h"
-#include "Tools/PowerCombining/PowerCombiningTool.h"
-#include "Tools/SimulationSetup/simulationsetup.h"
+#include "Tools/DesignTools/AttenuatorDesign/AttenuatorDesignTool.h"
+#include "Tools/DesignTools/Filtering/FilterDesignTool.h"
+#include "Tools/DesignTools/MatchingNetwork/MatchingNetworkDesignTool.h"
+#include "Tools/DesignTools/NetlistScratchPad/netlistscratchpad.h"
+#include "Tools/DesignTools/PowerCombining/PowerCombiningTool.h"
+#include "Tools/DesignTools/SimulationSetup/simulationsetup.h"
 
 #include "SPAR/SParameterCalculator.h"
 
