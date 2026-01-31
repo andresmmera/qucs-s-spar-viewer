@@ -11,6 +11,7 @@
 #include "./Tools/Calculators/General/VoltageDivider/voltage_divider.h"
 #include "./Tools/Calculators/RF/FreeSpaceLoss/free_space_loss.h"
 #include "./Tools/Calculators/RF/FrequencyPlanning/ImageFrequency/ImageFrequencyCalculatorDialog.h"
+#include "./Tools/Calculators/RF/FrequencyPlanning/SecondaryImage/SecondaryImageCalculatorDialog.h"
 #include "./Tools/Calculators/RF/FrequencyToWavelength/freq_wavelength_converter.h"
 #include "./Tools/Calculators/RF/OctaveBandwidthwCalculator/octaveBW_calculator.h"
 #include "./Tools/Calculators/RF/RFPowerConverter/RF_power_converter.h"
@@ -85,6 +86,15 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
   FrequencyPlanningMenu->addAction(ImageFrequencyCalculatorAction);
   connect(ImageFrequencyCalculatorAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotImageFrequencyCalculator);
+
+  // 1.6.2) Secondary image frequency calculator
+  QAction *SecondaryImageFrequencyCalculatorAction =
+      new QAction("Secondary Image Frequency", this);
+  FrequencyPlanningMenu->addAction(SecondaryImageFrequencyCalculatorAction);
+  connect(SecondaryImageFrequencyCalculatorAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotSecondaryImageFrequencyCalculator);
+
+  // Add frequency planning tools to the RF menu
   rfMenu->addMenu(FrequencyPlanningMenu);
 
   // Add RF menu to Calculators menu option
@@ -175,6 +185,12 @@ void Qucs_S_SPAR_Viewer::slotFreeSpaceLossCalculator() {
 // 1.6.1) Image frequency calculator
 void Qucs_S_SPAR_Viewer::slotImageFrequencyCalculator() {
   ImageFrequencyCalculatorDialog dlg(this);
+  dlg.exec();
+}
+
+// 1.6.2) Secondary image frequency calculator
+void Qucs_S_SPAR_Viewer::slotSecondaryImageFrequencyCalculator() {
+  SecondaryImageCalculatorDialog dlg(this);
   dlg.exec();
 }
 

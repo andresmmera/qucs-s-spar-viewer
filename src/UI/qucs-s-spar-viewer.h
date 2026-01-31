@@ -1022,6 +1022,9 @@ private slots:
     /// @brief Handler to show the image frequency calculator
     void slotImageFrequencyCalculator();
 
+    /// @brief Handler to show the secondary image frequency calculator
+    void slotSecondaryImageFrequencyCalculator();
+
     // ***** General electronics calculators *****
     /// @brief Handler to show the voltage divider calculator
     void slotVoltageDividerCalculator();
