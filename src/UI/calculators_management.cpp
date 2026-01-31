@@ -12,10 +12,10 @@
 #include "./Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/swr_s11_calculator.h"
 #include "./Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h"
 #include "./Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/impedance_calculator.h"
-#include "./Tools/Calculators/RF/free_space_loss/free_space_loss.h"
-#include "./Tools/Calculators/RF/frequency_to_wavelength/freq_wavelength_converter.h"
-#include "./Tools/Calculators/RF/octaveBW_calculator/octaveBW_calculator.h"
-#include "./Tools/Calculators/RF/power_converter/RF_power_converter.h"
+#include "./Tools/Calculators/RF/FreeSpaceLoss/free_space_loss.h"
+#include "./Tools/Calculators/RF/FrequencyToWavelength/freq_wavelength_converter.h"
+#include "./Tools/Calculators/RF/OctaveBandwidthwCalculator/octaveBW_calculator.h"
+#include "./Tools/Calculators/RF/RFPowerConverter/RF_power_converter.h"
 
 #include "qucs-s-spar-viewer.h"
 

@@ -179,10 +179,10 @@ file(GLOB CALCULATORS_SOURCES
     src/Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.cpp
     src/Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.cpp
     src/Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.cpp
-    src/Tools/Calculators/RF/octaveBW_calculator/*.cpp
-    src/Tools/Calculators/RF/power_converter/*.cpp
-    src/Tools/Calculators/RF/frequency_to_wavelength/*.cpp
-    src/Tools/Calculators/RF/free_space_loss/*.cpp
+    src/Tools/Calculators/RF/OctaveBandwidthwCalculator/*.cpp
+    src/Tools/Calculators/RF/RFPowerConverter/*.cpp
+    src/Tools/Calculators/RF/FrequencyToWavelength/*.cpp
+    src/Tools/Calculators/RF/FreeSpaceLoss/*.cpp
     src/Tools/Calculators/General/VoltageDivider/*.cpp
     src/Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.cpp
     src/Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.cpp
@@ -193,10 +193,10 @@ file(GLOB CALCULATORS_HEADERS
     src/Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.h
     src/Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.h
     src/Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.h
-    src/Tools/Calculators/RF/octaveBW_calculator/*.h
-    src/Tools/Calculators/RF/power_converter/*.h
-    src/Tools/Calculators/RF/frequency_to_wavelength/*.h
-    src/Tools/Calculators/RF/free_space_loss/*.h
+    src/Tools/Calculators/RF/OctaveBandwidthwCalculator/*.h
+    src/Tools/Calculators/RF/RFPowerConverter/*.h
+    src/Tools/Calculators/RF/FrequencyToWavelength/*.h
+    src/Tools/Calculators/RF/FreeSpaceLoss/*.h
     src/Tools/Calculators/General/VoltageDivider/*.h
     src/Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.h
     src/Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.h
