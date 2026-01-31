@@ -63,6 +63,9 @@ private:
     /// @brief Calculates the image frequency and updates the display
     void calculate();
 
+    /// @brief Shows the documentation for the secondary image frequency calculation
+    void showDocumentation();
+
     /// @brief Sets frequency input with automatic unit selection
     /// @param spinBox Pointer to the spin box to update
     /// @param comboBox Pointer to the unit combo box to update

@@ -119,6 +119,8 @@ void ImageFrequencyCalculatorDialog::setupUI() {
   buttonLayout->addStretch();
 
   docsButton = new QPushButton("See docs");
+  connect(docsButton, &QPushButton::clicked,
+          this, &ImageFrequencyCalculatorDialog::showDocumentation);
   buttonLayout->addWidget(docsButton);
 
   mainLayout->addLayout(buttonLayout);
