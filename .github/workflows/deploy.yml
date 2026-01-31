@@ -104,8 +104,8 @@ jobs:
         EOF
         
         # Copy icon from bitmaps if it exists, otherwise create a placeholder
-        if [ -f bitmaps/qucs-s-spar-viewer.png ]; then
-          cp bitmaps/qucs-s-spar-viewer.png qucs-s-spar-viewer.png
+        if [ -f src/bitmaps/qucs-s-spar-viewer.png ]; then
+          cp src/bitmaps/qucs-s-spar-viewer.png qucs-s-spar-viewer.png
         else
           echo "Warning: No icon found at bitmaps/qucs-s-spar-viewer.png"
           # You'll need to add an actual icon file to your repo

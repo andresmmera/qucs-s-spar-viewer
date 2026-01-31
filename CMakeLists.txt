@@ -2,7 +2,8 @@ PROJECT(qucs-s-spar-viewer CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 cmake_policy(VERSION 3.10)
 
-SET(QUCS_NAME "qucs-s")
+SET(QUCS_NAME "qucs-s")      # Name of Qucs-S. This is needed to keep the QSettings on the same directory as Qucs-S
+SET(QUCS_S_VERSION "25.2.0") # Latest Qucs-S version
 
 #use top VERSION file
 file (STRINGS ${PROJECT_SOURCE_DIR}/VERSION QUCS_VERSION)
@@ -29,6 +30,7 @@ CONFIGURE_FILE (
     "${PROJECT_SOURCE_DIR}/config.h.cmake"
     "${PROJECT_BINARY_DIR}/config.h"
 )
+
 
 INCLUDE_DIRECTORIES("${PROJECT_BINARY_DIR}")
 
@@ -87,122 +89,122 @@ endif()
 
 ADD_DEFINITIONS(${QT_DEFINITIONS})
 
-file(GLOB PLOT_WIDGETS_SOURCES
-     PlotWidgets/*.cpp
-)
-
-file(GLOB PLOT_WIDGETS_HEADERS
-     PlotWidgets/*.h
-)
-
-file(GLOB QCUSTOMPLOT_SOURCE
-     PlotWidgets/QCustomPlot/qcustomplot.cpp
-)
-
-file(GLOB QCUSTOMPLOT_HEADER
-     PlotWidgets/QCustomPlot/qcustomplot.h
-)
-
 file(GLOB SCHEMATIC_SOURCES
-     Schematic/*.cpp
-     Schematic/Export/*.cpp
-     Schematic/Export/QucsS/*.cpp
-     Schematic/Export/QucsS/Microstrip/*.cpp
-     Schematic/PaintingFunctions/*.cpp
-     Schematic/PaintingFunctions/Microstrip/*.cpp
-     Schematic/PaintingFunctions/IdealTransmissionLines/*.cpp
+     src/Schematic/*.cpp
+     src/Schematic/Export/*.cpp
+     src/Schematic/Export/QucsS/*.cpp
+     src/Schematic/Export/QucsS/Microstrip/*.cpp
+     src/Schematic/PaintingFunctions/*.cpp
+     src/Schematic/PaintingFunctions/Microstrip/*.cpp
+     src/Schematic/PaintingFunctions/IdealTransmissionLines/*.cpp
 )
 
 file(GLOB SCHEMATIC_HEADERS
-     Schematic/*.h
+     src/Schematic/*.h
 )
 
 file(GLOB MISC_SOURCES
-     Misc/*.cpp
+     src/Misc/*.cpp
 )
 
 file(GLOB MISC_HEADERS
-     Misc/*.h
+     src/Misc/*.h
 )
 
 file(GLOB SPAR_SOURCES
-     SPAR/*.cpp
+     src/SPAR/*.cpp
 )
 
 file(GLOB SPAR_HEADERS
-     SPAR/*.h
+     src/SPAR/*.h
 )
 
 file(GLOB SPAR_SPECIAL_COMPONENTS
-    SPAR/SpecialComponents/*.cpp
-    SPAR/SpecialComponents/MicrostripComponents/*.cpp
+    src/SPAR/SpecialComponents/*.cpp
+    src/SPAR/SpecialComponents/MicrostripComponents/*.cpp
 )
 
 
 file(GLOB UI_SOURCES
-     UI/*.cpp
-     UI/CustomWidgets/*.cpp
+     src/UI/*.cpp
+     src/UI/CustomWidgets/*.cpp
 )
 
 file(GLOB UI_HEADERS
-     UI/*.h
-     UI/CustomWidgets/*.h
+     src/UI/*.h
+     src/UI/CustomWidgets/*.h
+)
+
+file(GLOB PLOT_WIDGETS_SOURCES # Chart widgets (rectangular plot, Smith Chart, polar plot)
+     src/UI/PlotWidgets/*.cpp
+)
+
+file(GLOB PLOT_WIDGETS_HEADERS # Chart widgets (rectangular plot, Smith Chart, polar plot)
+     src/UI/PlotWidgets/*.h
+)
+
+file(GLOB QCUSTOMPLOT_SOURCE
+     src/UI/PlotWidgets/QCustomPlot/qcustomplot.cpp
+)
+
+file(GLOB QCUSTOMPLOT_HEADER
+     src/UI/PlotWidgets/QCustomPlot/qcustomplot.h
 )
 
 ## TOOLS
 file(GLOB TOOLS_SOURCES
-     Tools/Filtering/*.cpp
-     Tools/Filtering/DirectCoupledFilters/*.cpp
-     Tools/PowerCombining/*.cpp
-     Tools/AttenuatorDesign/*.cpp
-     Tools/NetlistScratchPad/*.cpp
-     Tools/SimulationSetup/*.cpp
-     Tools/MatchingNetwork/*.cpp
-     Tools/TransmissionLineSynthesis/*.cpp
+     src/Tools/DesignTools/Filtering/*.cpp
+     src/Tools/DesignTools/Filtering/DirectCoupledFilters/*.cpp
+     src/Tools/DesignTools/PowerCombining/*.cpp
+     src/Tools/DesignTools/AttenuatorDesign/*.cpp
+     src/Tools/DesignTools/NetlistScratchPad/*.cpp
+     src/Tools/DesignTools/SimulationSetup/*.cpp
+     src/Tools/DesignTools/MatchingNetwork/*.cpp
+     src/Tools/DesignTools/TransmissionLineSynthesis/*.cpp
 )
 
 file(GLOB TOOLS_HEADERS
-     Tools/Filtering/*.h
-     Tools/Filtering/DirectCoupledFilters/*.h
-     Tools/PowerCombining/*.h
-     Tools/AttenuatorDesign/*.h
-     Tools/NetlistScratchPad/*.h
-     Tools/SimulationSetup/*.h
-     Tools/MatchingNetwork/*.h
-     Tools/TransmissionLineSynthesis/*.h
+     src/Tools/DesignTools/Filtering/*.h
+     src/Tools/DesignTools/Filtering/DirectCoupledFilters/*.h
+     src/Tools/DesignTools/PowerCombining/*.h
+     src/Tools/DesignTools/AttenuatorDesign/*.h
+     src/Tools/DesignTools/NetlistScratchPad/*.h
+     src/Tools/DesignTools/SimulationSetup/*.h
+     src/Tools/DesignTools/MatchingNetwork/*.h
+     src/Tools/DesignTools/TransmissionLineSynthesis/*.h
 )
 
 ## CALCULATORS
 file(GLOB CALCULATORS_SOURCES
-    Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.cpp
-    Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.cpp
-    Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.cpp
-    Tools/Calculators/RF/octaveBW_calculator/*.cpp
-    Tools/Calculators/RF/power_converter/*.cpp
-    Tools/Calculators/RF/frequency_to_wavelength/*.cpp
-    Tools/Calculators/RF/free_space_loss/*.cpp
-    Tools/Calculators/General/VoltageDivider/*.cpp
-    Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.cpp
-    Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.cpp
-    Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.cpp
+    src/Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.cpp
+    src/Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.cpp
+    src/Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.cpp
+    src/Tools/Calculators/RF/OctaveBandwidthwCalculator/*.cpp
+    src/Tools/Calculators/RF/RFPowerConverter/*.cpp
+    src/Tools/Calculators/RF/FrequencyToWavelength/*.cpp
+    src/Tools/Calculators/RF/FreeSpaceLoss/*.cpp
+    src/Tools/Calculators/General/VoltageDivider/*.cpp
+    src/Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.cpp
+    src/Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.cpp
+    src/Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.cpp
 )
 
 file(GLOB CALCULATORS_HEADERS
-    Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.h
-    Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.h
-    Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.h
-    Tools/Calculators/RF/octaveBW_calculator/*.h
-    Tools/Calculators/RF/power_converter/*.h
-    Tools/Calculators/RF/frequency_to_wavelength/*.h
-    Tools/Calculators/RF/free_space_loss/*.h
-    Tools/Calculators/General/VoltageDivider/*.h
-    Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.h
-    Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.h
-    Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.h
+    src/Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/*.h
+    src/Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/*.h
+    src/Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/*.h
+    src/Tools/Calculators/RF/OctaveBandwidthwCalculator/*.h
+    src/Tools/Calculators/RF/RFPowerConverter/*.h
+    src/Tools/Calculators/RF/FrequencyToWavelength/*.h
+    src/Tools/Calculators/RF/FreeSpaceLoss/*.h
+    src/Tools/Calculators/General/VoltageDivider/*.h
+    src/Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.h
+    src/Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.h
+    src/Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.h
 )
 
 set(spar_viewer_sources
-    main.cpp
+    src/main.cpp
     ${UI_SOURCES}
     ${PLOT_WIDGETS_SOURCES}
     ${CUSTOM_WIDGETS_SOURCES}
@@ -227,7 +229,7 @@ set(spar_viewer_moc_headers
     ${QCUSTOMPLOT_HEADER}
 )
 
-SET(RESOURCES qucs-s-spar-viewer.qrc)
+SET(RESOURCES src/qucs-s-spar-viewer.qrc)
 
 QT6_WRAP_CPP( spar_viewer_moc_sources ${spar_viewer_moc_headers} )
 QT6_ADD_RESOURCES(RESOURCES_SRCS ${RESOURCES})
@@ -244,9 +246,9 @@ IF(APPLE)
   SET(MACOSX_BUNDLE_ICON_FILE qucs-s-spar-viewer.icns)
 
   # set where in the bundle to put the icns file
-  SET_SOURCE_FILES_PROPERTIES(${CMAKE_CURRENT_SOURCE_DIR}/bitmaps/qucs-s-spar-viewer.icns PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
+  SET_SOURCE_FILES_PROPERTIES(${CMAKE_CURRENT_SOURCE_DIR}/src/bitmaps/qucs-s-spar-viewer.icns PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
   # include the icns file in the target
-  SET(spar_viewer_sources ${spar_viewer_sources} ${CMAKE_CURRENT_SOURCE_DIR}/bitmaps/qucs-s-spar-viewer.icns)
+  SET(spar_viewer_sources ${spar_viewer_sources} ${CMAKE_CURRENT_SOURCE_DIR}/src/bitmaps/qucs-s-spar-viewer.icns)
 
 ENDIF(APPLE)
 
@@ -254,6 +256,11 @@ ADD_EXECUTABLE( ${QUCS_NAME}spar-viewer MACOSX_BUNDLE WIN32
   ${spar_viewer_sources}
   ${spar_viewer_moc_sources}
   ${RESOURCES_SRCS}
+)
+
+target_include_directories(${QUCS_NAME}spar-viewer
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 TARGET_LINK_LIBRARIES( ${QUCS_NAME}spar-viewer Qt6::Core Qt6::Gui Qt6::Widgets Qt6::PrintSupport)

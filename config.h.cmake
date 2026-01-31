@@ -1,10 +1,3 @@
-
-#define QUCS_NAME "@QUCS_NAME@"
-
-#define PACKAGE_VERSION "@PROJECT_VERSION@"
-#define PACKAGE_STRING "qucs @PROJECT_VERSION@"
-
-#define HAVE_QTABWIDGET_SETMOVABLE "@HAVE_QTABWIDGET_SETMOVABLE@"
-#define WITH_SPICE "@WITH_SPICE@"
-
-#define GIT "@GIT@"
+#define QUCS_NAME "@QUCS_NAME@"              // Required to find the QSettings directory
+#define QUCS_S_VERSION "@QUCS_S_VERSION@"    // Latest version of Qucs-S
+#define PACKAGE_VERSION "@PROJECT_VERSION@"  // Latest version of this project (viewer)
