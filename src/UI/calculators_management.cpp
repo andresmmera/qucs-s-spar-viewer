@@ -9,13 +9,15 @@
 #include "./Tools/Calculators/General/EquivalentCalculators/ParallelResistors/parallel_resistors.h"
 #include "./Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/series_capacitors.h"
 #include "./Tools/Calculators/General/VoltageDivider/voltage_divider.h"
-#include "./Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/swr_s11_calculator.h"
-#include "./Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h"
-#include "./Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/impedance_calculator.h"
 #include "./Tools/Calculators/RF/FreeSpaceLoss/free_space_loss.h"
+#include "./Tools/Calculators/RF/FrequencyPlanning/ImageFrequency/ImageFrequencyCalculatorDialog.h"
+#include "./Tools/Calculators/RF/FrequencyPlanning/SecondaryImage/SecondaryImageCalculatorDialog.h"
 #include "./Tools/Calculators/RF/FrequencyToWavelength/freq_wavelength_converter.h"
 #include "./Tools/Calculators/RF/OctaveBandwidthwCalculator/octaveBW_calculator.h"
 #include "./Tools/Calculators/RF/RFPowerConverter/RF_power_converter.h"
+#include "./Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/swr_s11_calculator.h"
+#include "./Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h"
+#include "./Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/impedance_calculator.h"
 
 #include "qucs-s-spar-viewer.h"
 
@@ -74,6 +76,26 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
   rfMenu->addAction(FreeSpaceLossCalaculatorAction);
   connect(FreeSpaceLossCalaculatorAction, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotFreeSpaceLossCalculator);
+
+  // 1.6) Frequency planning calculators
+  QMenu *FrequencyPlanningMenu = new QMenu(tr("Frequency Planning"), this);
+
+  // 1.6.1) Image frequency calculator
+  QAction *ImageFrequencyCalculatorAction =
+      new QAction("Image Frequency", this);
+  FrequencyPlanningMenu->addAction(ImageFrequencyCalculatorAction);
+  connect(ImageFrequencyCalculatorAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotImageFrequencyCalculator);
+
+  // 1.6.2) Secondary image frequency calculator
+  QAction *SecondaryImageFrequencyCalculatorAction =
+      new QAction("Secondary Image Frequency", this);
+  FrequencyPlanningMenu->addAction(SecondaryImageFrequencyCalculatorAction);
+  connect(SecondaryImageFrequencyCalculatorAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotSecondaryImageFrequencyCalculator);
+
+  // Add frequency planning tools to the RF menu
+  rfMenu->addMenu(FrequencyPlanningMenu);
 
   // Add RF menu to Calculators menu option
   calculatorsMenu->addMenu(rfMenu);
@@ -160,8 +182,20 @@ void Qucs_S_SPAR_Viewer::slotFreeSpaceLossCalculator() {
   dlg.exec();
 }
 
+// 1.6.1) Image frequency calculator
+void Qucs_S_SPAR_Viewer::slotImageFrequencyCalculator() {
+  ImageFrequencyCalculatorDialog dlg(this);
+  dlg.exec();
+}
+
+// 1.6.2) Secondary image frequency calculator
+void Qucs_S_SPAR_Viewer::slotSecondaryImageFrequencyCalculator() {
+  SecondaryImageCalculatorDialog dlg(this);
+  dlg.exec();
+}
+
 // 2) General electronics calculators
-// 2.1) Free space loss calculator
+// 2.1) Voltage divider calculator
 void Qucs_S_SPAR_Viewer::slotVoltageDividerCalculator() {
   VoltageDividerDialog dlg(this);
   dlg.exec();
@@ -182,6 +216,6 @@ void Qucs_S_SPAR_Viewer::slotSeriesCapacitorsCalculator() {
 
 // 2.2.3) Parallel inductors equivalent
 void Qucs_S_SPAR_Viewer::slotParallelInductorsCalculator() {
-    ParallelInductorsDialog dlg(this);
-    dlg.exec();
+  ParallelInductorsDialog dlg(this);
+  dlg.exec();
 }
