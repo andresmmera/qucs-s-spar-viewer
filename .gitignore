@@ -8,3 +8,7 @@ latex/
 help/help-venv/
 
 docs/help/help-venv/
+
+build/Desktop_Qt_6_9_1-Debug/CMakeFiles/
+
+build/Desktop_Qt_6_9_1-Debug/

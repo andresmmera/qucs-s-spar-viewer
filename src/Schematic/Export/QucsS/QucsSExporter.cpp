@@ -41,7 +41,7 @@ QString QucsSExporter::exportSchematic() {
   QString qucsNetlist;
 
   // Qucs-S header
-  qucsNetlist += QString("<Qucs Schematic %1>\n").arg(PACKAGE_VERSION);
+  qucsNetlist += QString("<Qucs Schematic %1>\n").arg(QUCS_S_VERSION);
 
   // Process components
   QString components = processComponents_QucsS(backend_simulator);

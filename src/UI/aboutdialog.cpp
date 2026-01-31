@@ -4,7 +4,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
-#include "config.h" // for PACKAGE_VERSION, if needed
+#include "config.h" // PACKAGE_VERSION is defined here
 
 AboutDialog::AboutDialog(QWidget *parent)
     : QDialog(parent),

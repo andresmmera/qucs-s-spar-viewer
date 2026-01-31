@@ -2,7 +2,8 @@ PROJECT(qucs-s-spar-viewer CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 cmake_policy(VERSION 3.10)
 
-SET(QUCS_NAME "qucs-s")
+SET(QUCS_NAME "qucs-s")      # Name of Qucs-S. This is needed to keep the QSettings on the same directory as Qucs-S
+SET(QUCS_S_VERSION "25.2.0") # Latest Qucs-S version
 
 #use top VERSION file
 file (STRINGS ${PROJECT_SOURCE_DIR}/VERSION QUCS_VERSION)
