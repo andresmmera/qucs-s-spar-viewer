@@ -89,22 +89,6 @@ endif()
 
 ADD_DEFINITIONS(${QT_DEFINITIONS})
 
-file(GLOB PLOT_WIDGETS_SOURCES
-     src/PlotWidgets/*.cpp
-)
-
-file(GLOB PLOT_WIDGETS_HEADERS
-     src/PlotWidgets/*.h
-)
-
-file(GLOB QCUSTOMPLOT_SOURCE
-     src/PlotWidgets/QCustomPlot/qcustomplot.cpp
-)
-
-file(GLOB QCUSTOMPLOT_HEADER
-     src/PlotWidgets/QCustomPlot/qcustomplot.h
-)
-
 file(GLOB SCHEMATIC_SOURCES
      src/Schematic/*.cpp
      src/Schematic/Export/*.cpp
@@ -149,6 +133,22 @@ file(GLOB UI_SOURCES
 file(GLOB UI_HEADERS
      src/UI/*.h
      src/UI/CustomWidgets/*.h
+)
+
+file(GLOB PLOT_WIDGETS_SOURCES # Chart widgets (rectangular plot, Smith Chart, polar plot)
+     src/UI/PlotWidgets/*.cpp
+)
+
+file(GLOB PLOT_WIDGETS_HEADERS # Chart widgets (rectangular plot, Smith Chart, polar plot)
+     src/UI/PlotWidgets/*.h
+)
+
+file(GLOB QCUSTOMPLOT_SOURCE
+     src/UI/PlotWidgets/QCustomPlot/qcustomplot.cpp
+)
+
+file(GLOB QCUSTOMPLOT_HEADER
+     src/UI/PlotWidgets/QCustomPlot/qcustomplot.h
 )
 
 ## TOOLS

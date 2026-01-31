@@ -8,9 +8,9 @@
 #ifndef QUCSSPARVIEWER_H
 #define QUCSSPARVIEWER_H
 
-#include "PlotWidgets/polarplotwidget.h"
-#include "PlotWidgets/rectangularplotwidget.h"
-#include "PlotWidgets/smithchartwidget.h"
+#include "UI/PlotWidgets/polarplotwidget.h"
+#include "UI/PlotWidgets/rectangularplotwidget.h"
+#include "UI/PlotWidgets/smithchartwidget.h"
 
 #include "UI/CustomWidgets/codeeditor.h"
 #include "UI/CustomWidgets/matrixcombopopup.h"

@@ -8,7 +8,7 @@
 #ifndef POLARPLOTWIDGET_H
 #define POLARPLOTWIDGET_H
 
-#include "./QCustomPlot/qcustomplot.h"
+#include "UI/PlotWidgets/QCustomPlot/qcustomplot.h"
 #include "UI/CustomWidgets/CustomDoubleSpinBox.h"
 #include <QCheckBox>
 #include <QComboBox>
