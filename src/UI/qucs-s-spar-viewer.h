@@ -1019,6 +1019,9 @@ private slots:
     /// @brief Handler to show the free space loss conversion calculator
     void slotFreeSpaceLossCalculator();
 
+    /// @brief Handler to show the image frequency calculator
+    void slotImageFrequencyCalculator();
+
     // ***** General electronics calculators *****
     /// @brief Handler to show the voltage divider calculator
     void slotVoltageDividerCalculator();

@@ -183,10 +183,12 @@ file(GLOB CALCULATORS_SOURCES
     src/Tools/Calculators/RF/RFPowerConverter/*.cpp
     src/Tools/Calculators/RF/FrequencyToWavelength/*.cpp
     src/Tools/Calculators/RF/FreeSpaceLoss/*.cpp
+    src/Tools/Calculators/RF/FrequencyPlanning/ImageFrequency/*.cpp
     src/Tools/Calculators/General/VoltageDivider/*.cpp
     src/Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.cpp
     src/Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.cpp
     src/Tools/Calculators/General/EquivalentCalculators/SeriesCapacitors/*.cpp
+
 )
 
 file(GLOB CALCULATORS_HEADERS
@@ -197,6 +199,7 @@ file(GLOB CALCULATORS_HEADERS
     src/Tools/Calculators/RF/RFPowerConverter/*.h
     src/Tools/Calculators/RF/FrequencyToWavelength/*.h
     src/Tools/Calculators/RF/FreeSpaceLoss/*.h
+    src/Tools/Calculators/RF/FrequencyPlanning/ImageFrequency/*.h
     src/Tools/Calculators/General/VoltageDivider/*.h
     src/Tools/Calculators/General/EquivalentCalculators/ParallelInductors/*.h
     src/Tools/Calculators/General/EquivalentCalculators/ParallelResistors/*.h
