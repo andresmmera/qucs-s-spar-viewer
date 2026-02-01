@@ -339,3 +339,25 @@ INSTALL(CODE "
 ENDIF()
 
 
+#
+# Install Sphinx documentation
+#
+IF(APPLE)
+    # For macOS bundle
+    INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs/help/build/html/
+        DESTINATION bin/${QUCS_NAME}spar-viewer.app/Contents/Resources/doc
+        COMPONENT Runtime
+        PATTERN ".buildinfo" EXCLUDE
+        PATTERN ".doctrees" EXCLUDE
+        PATTERN "*.inv" EXCLUDE
+    )
+ELSE()
+    # For Linux and Windows
+    INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs/help/build/html/
+        DESTINATION share/${QUCS_NAME}spar-viewer/doc
+        COMPONENT Runtime
+        PATTERN ".buildinfo" EXCLUDE
+        PATTERN ".doctrees" EXCLUDE
+        PATTERN "*.inv" EXCLUDE
+    )
+ENDIF()

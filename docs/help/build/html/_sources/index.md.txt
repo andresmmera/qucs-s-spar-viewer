@@ -4,6 +4,8 @@
 
 This is a comprehensive toolkit for RF and microwave circuit design. It combines S-parameter visualization capabilities with synthesis tools for filters, matching networks, attenuators, and power combiners.
 
+In addition to this, a number of simple RF engineering calculators are available in the menu bar at the top of the window.
+
 ## Features
 
 * Display features
@@ -14,6 +16,7 @@ This is a comprehensive toolkit for RF and microwave circuit design. It combines
 * Trace management
 * Session management (save, load, and recent files listing features)
 * RF circuit synthesis tools
+* [RF engineering calculators](/Calculators/index)
 
 ## Interface overview
 
@@ -26,6 +29,12 @@ The tool interface is divided into two panels:
     - Limit management
     - Synthesis tools
     - Note-taking widget
+* Menu bar calculators:
+    - General electronics
+        - Voltage dividers
+        - Equivalent series capacitors, parallel resistances, etc.
+    - RF electronics:
+        - 
 
 ```{figure} /images/SPViewer-UI-layout-overview.png
 ---

@@ -1,11 +1,5 @@
-/// @file ImageFrequencyDocs.cpp
-/// @brief Documentation for the secondary image frequency calculator
-/// @author Andrés Martínez Mera - andresmmera@protonmail.com
-/// @date Jan 31, 2026
-/// @copyright Copyright (C) 2026 Andrés Martínez Mera
-/// @license GPL-3.0-or-later
+#include "qucs-s-spar-viewer.h"
 
-#include "ImageFrequencyCalculatorDialog.h"
 #include <QCoreApplication>
 #include <QDesktopServices>
 #include <QDir>
@@ -14,11 +8,11 @@
 #include <QMessageBox>
 #include <QUrl>
 
-void ImageFrequencyCalculatorDialog::showDocumentation() {
+void Qucs_S_SPAR_Viewer::slotHelpIntro() {
   // Determine documentation path
   QString docPath;
   QString appDir = QCoreApplication::applicationDirPath();
-  QString path = QString("/Calculators/ImageFrequency/index.html");
+  QString path = QString("/index.html");
 
 #ifdef Q_OS_MACOS
   // macOS bundle: app.app/Contents/MacOS/../Resources/doc/
