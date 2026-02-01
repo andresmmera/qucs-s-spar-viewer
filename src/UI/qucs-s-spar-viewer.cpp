@@ -115,7 +115,7 @@ void Qucs_S_SPAR_Viewer::CreateMenuBar() {
   helpMenu->addAction(helpHelp);
   connect(helpHelp, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotHelpIntro);
-  QAction *helpAbout = new QAction(tr("&About"), this);
+  QAction *helpAbout = new QAction(tr("&Help"), this);
   helpMenu->addAction(helpAbout);
   connect(helpAbout, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotHelpAbout);
@@ -856,30 +856,6 @@ void Qucs_S_SPAR_Viewer::setupScrollableLayout() {
   setupScrollAreaForLayout(VSWRLayout, VSWRTab, "VSWRScrollArea");
   setupScrollAreaForLayout(GroupDelayLayout, GroupDelayTab,
                            "GroupDelayScrollArea");
-}
-
-void Qucs_S_SPAR_Viewer::slotHelpIntro() {
-  QMessageBox msgBox(this);
-  msgBox.setWindowTitle(tr("Help"));
-  msgBox.setIcon(QMessageBox::Information);
-
-  msgBox.setText(
-      tr("<b>Qucs-S S-parameter Viewer & RF Circuit Synthesis Tool "
-         "Help</b><br><br>"
-         "This is a simple viewer for S-parameter data with RF circuit "
-         "synthesis capabilities.<br>"
-         "It can show several .snp files at a time in the same diagram. "
-         "Trace markers can also be added so that the user can read the trace "
-         "value at "
-         "a specific frequency.<br><br>"
-         "Additionally, this viewer now includes basic filter design features, "
-         "and supports visualization with polar plots and Smith charts. "
-         "These specialized plots help in analyzing impedance, reflection "
-         "coefficients, "
-         "and other key S-parameter properties relevant to RF design and "
-         "filter analysis."));
-
-  msgBox.exec();
 }
 
 QString Qucs_S_SPAR_Viewer::extractSParamIndices(const QString &sparam) {

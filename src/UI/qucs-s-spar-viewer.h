@@ -26,6 +26,7 @@
 #include "SPAR/SParameterCalculator.h"
 
 #include "Misc/general.h"
+
 #include "aboutdialog.h"
 
 
@@ -183,9 +184,8 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
 
     private slots:
     // Menu actions
-    /// @brief Show introduction help dialog
-    ///
-    /// Displays a message box with a short description of the program
+    /// @brief Show user help
+    /// @details Opens user help in the web browser
     void slotHelpIntro();
 
     /// @brief Licensing and author credits
