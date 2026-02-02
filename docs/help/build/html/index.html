@@ -7,9 +7,9 @@
 <meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>S-Parameter Viewer &amp; RF Synthesis tools | Qucs-S S-parameter Viewer Documentation</title>
-<meta content="S-Parameter Viewer &amp; RF Synthesis tools | Qucs-S S-parameter Viewer Documentation" property="og:title"/>
-<meta content="S-Parameter Viewer &amp; RF Synthesis tools | Qucs-S S-parameter Viewer Documentation" name="twitter:title"/>
+<title>S-Parameter Viewer &amp; RF Synthesis Tools | Qucs-S S-parameter Viewer Documentation</title>
+<meta content="S-Parameter Viewer &amp; RF Synthesis Tools | Qucs-S S-parameter Viewer Documentation" property="og:title"/>
+<meta content="S-Parameter Viewer &amp; RF Synthesis Tools | Qucs-S S-parameter Viewer Documentation" name="twitter:title"/>
 <link href="_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
 <link href="_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
 <link href="search.html" rel="search" title="Search"/>
@@ -83,6 +83,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Data-display-panel/index.html">Data display panel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Data-management-panel/index.html">Data management panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calculators/index.html">RF Engineering Calculators</a></li>
 </ul>
 </nav>
 </div>
@@ -97,68 +98,84 @@
 <div class="w-full min-w-0 mx-auto">
 <div id="content" role="main">
 <section id="s-parameter-viewer-rf-synthesis-tools">
-<h1>S-Parameter Viewer &amp; RF Synthesis tools<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#s-parameter-viewer-rf-synthesis-tools">¶</a></h1>
+<h1>S-Parameter Viewer &amp; RF Synthesis Tools<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#s-parameter-viewer-rf-synthesis-tools">¶</a></h1>
 <section id="introduction">
 <h2>Introduction<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#introduction" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#introduction'">¶</a></h2>
-<p>This is a comprehensive toolkit for RF and microwave circuit design. It combines S-parameter visualization capabilities with synthesis tools for filters, matching networks, attenuators, and power combiners.</p>
-<p>In addition to this, a number of simple RF engineering calculators are available in the menu bar at the top of the window.</p>
+<p>This is a comprehensive toolkit for RF and microwave circuit design. It combines S-parameter visualization capabilities with synthesis tools for filters, matching networks, attenuators, and power combiners. Additionally, a number of simple RF engineering calculators are available in the menu bar at the top of the window.</p>
 </section>
 <section id="features">
 <h2>Features<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#features" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#features'">¶</a></h2>
+<section id="display-features">
+<h3>Display Features<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#display-features" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#display-features'">¶</a></h3>
 <ul class="simple">
-<li><p>Display features</p>
-<ul>
-<li><p>Rectangular plot, Smith Chart and polar plot display</p></li>
-<li><p>Markers display</p></li>
-<li><p>Limit lines (only for the magnitude and phase plot)</p></li>
+<li><p>Rectangular plot, Smith Chart, and polar plot display</p></li>
+<li><p>Marker display</p></li>
+<li><p>Limit lines (for magnitude and phase plots)</p></li>
 </ul>
-</li>
+</section>
+<section id="data-capabilities">
+<h3>Data Capabilities<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#data-capabilities" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#data-capabilities'">¶</a></h3>
+<ul class="simple">
 <li><p>Reads Touchstone files and Qucs-S datasets</p></li>
 <li><p>Trace management</p></li>
-<li><p>Session management (save, load, and recent files listing features)</p></li>
+<li><p>Session management (save, load, and recent files listing)</p></li>
+</ul>
+</section>
+<section id="design-tools">
+<h3>Design Tools<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#design-tools" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#design-tools'">¶</a></h3>
+<ul class="simple">
 <li><p>RF circuit synthesis tools</p></li>
 <li><p><a class="reference internal" href="Calculators/index.html"><span class="doc std std-doc">RF engineering calculators</span></a></p></li>
 </ul>
 </section>
+</section>
 <section id="interface-overview">
-<h2>Interface overview<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#interface-overview" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#interface-overview'">¶</a></h2>
-<p>The tool interface is divided into two panels:</p>
-<ul>
-<li><p><a class="reference internal" href="Data-display-panel/index.html"><span class="doc std std-doc">Data display panel</span></a></p>
-<ul class="simple">
-<li><p>Contains the display widgets for visualizing the data</p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="Data-management-panel/index.html"><span class="doc std std-doc">Data management panel</span></a></p>
-<ul class="simple">
-<li><p>Contains the widgets needed to managing the data</p></li>
-<li><p>Marker display</p></li>
-<li><p>Limit management</p></li>
-<li><p>Synthesis tools</p></li>
-<li><p>Note-taking widget</p></li>
-</ul>
-</li>
-<li><p>Menu bar calculators:</p>
-<ul>
-<li><p>General electronics</p>
-<ul class="simple">
-<li><p>Voltage dividers</p></li>
-<li><p>Equivalent series capacitors, parallel resistances, etc.</p></li>
-</ul>
-</li>
-<li><p class="rubric" id="rf-electronics">RF electronics:</p>
-</li>
-</ul>
-</li>
-</ul>
+<h2>Interface Overview<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#interface-overview" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#interface-overview'">¶</a></h2>
 <figure class="align-default" id="id1">
 <img alt="_images/SPViewer-UI-layout-overview.png" class="with-border" src="_images/SPViewer-UI-layout-overview.png"/>
 <figcaption>
 <p><span class="caption-text">Overview of the user interface.</span><a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#id1">¶</a></p>
 </figcaption>
 </figure>
-<section id="see-more">
-<h3>See more<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#see-more" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#see-more'">¶</a></h3>
+<p>The tool interface consists of three main components:</p>
+<section id="data-display-panel">
+<h3>Data Display Panel<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#data-display-panel" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#data-display-panel'">¶</a></h3>
+<p>Contains the display widgets for visualizing the data.</p>
+<p><a class="reference internal" href="Data-display-panel/index.html"><span class="doc std std-doc">Learn more about the Data Display Panel</span></a></p>
+</section>
+<section id="data-management-panel">
+<h3>Data Management Panel<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#data-management-panel" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#data-management-panel'">¶</a></h3>
+<p>Provides widgets for managing and analyzing data:</p>
+<ul class="simple">
+<li><p>Marker display</p></li>
+<li><p>Limit management</p></li>
+<li><p>Synthesis tools</p></li>
+<li><p>Note-taking widget</p></li>
+</ul>
+<p><a class="reference internal" href="Data-management-panel/index.html"><span class="doc std std-doc">Learn more about the Data Management Panel</span></a></p>
+</section>
+<section id="menu-bar-calculators">
+<h3>Menu Bar Calculators<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#menu-bar-calculators" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#menu-bar-calculators'">¶</a></h3>
+<p>A collection of engineering calculators organized by category:</p>
+<p><strong>General Electronics:</strong></p>
+<ul class="simple">
+<li><p>Voltage dividers</p></li>
+<li><p>Equivalent series capacitors</p></li>
+<li><p>Parallel resistances</p></li>
+<li><p>And more…</p></li>
+</ul>
+<p><strong>RF Electronics:</strong></p>
+<ul class="simple">
+<li><p>Free Space Loss</p></li>
+<li><p>RF power unit converter</p></li>
+<li><p>Reflection coefficient unit converters</p></li>
+<li><p>And more</p></li>
+</ul>
+<p><a class="reference internal" href="Calculators/index.html"><span class="doc std std-doc">View all calculators</span></a></p>
+</section>
+</section>
+<section id="see-also">
+<h2>See Also<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#see-also" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#see-also'">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Data-display-panel/index.html">Data display panel</a><ul>
@@ -179,9 +196,13 @@
 <li class="toctree-l2"><a class="reference internal" href="Data-management-panel/index.html#note-taking-tool">Note-taking tool</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="Calculators/index.html">RF Engineering Calculators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Calculators/index.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Calculators/index.html#available-calculators">Available Calculators</a></li>
+</ul>
+</li>
 </ul>
 </div>
-</section>
 </section>
 </section>
 </div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
@@ -197,11 +218,19 @@
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
 <li><a :data-current="activeSection === '#introduction'" class="reference internal" href="#introduction">Introduction</a></li>
-<li><a :data-current="activeSection === '#features'" class="reference internal" href="#features">Features</a></li>
-<li><a :data-current="activeSection === '#interface-overview'" class="reference internal" href="#interface-overview">Interface overview</a><ul>
-<li><a :data-current="activeSection === '#see-more'" class="reference internal" href="#see-more">See more</a></li>
+<li><a :data-current="activeSection === '#features'" class="reference internal" href="#features">Features</a><ul>
+<li><a :data-current="activeSection === '#display-features'" class="reference internal" href="#display-features">Display Features</a></li>
+<li><a :data-current="activeSection === '#data-capabilities'" class="reference internal" href="#data-capabilities">Data Capabilities</a></li>
+<li><a :data-current="activeSection === '#design-tools'" class="reference internal" href="#design-tools">Design Tools</a></li>
 </ul>
 </li>
+<li><a :data-current="activeSection === '#interface-overview'" class="reference internal" href="#interface-overview">Interface Overview</a><ul>
+<li><a :data-current="activeSection === '#data-display-panel'" class="reference internal" href="#data-display-panel">Data Display Panel</a></li>
+<li><a :data-current="activeSection === '#data-management-panel'" class="reference internal" href="#data-management-panel">Data Management Panel</a></li>
+<li><a :data-current="activeSection === '#menu-bar-calculators'" class="reference internal" href="#menu-bar-calculators">Menu Bar Calculators</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#see-also'" class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </div>
 </aside>

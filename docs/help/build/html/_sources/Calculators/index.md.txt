@@ -23,7 +23,7 @@ A range of calculators specially suited for the day-to-day work of an RF enginee
 
 - **Frequency Planning**
   - [Image Frequency](/Calculators/ImageFrequency/index)
-  - Secondary Image Frequency Calculator
+  - [Secondary Image Frequency Calculator](/Calculators/SecondaryImageFrequency/index)
 
 ### General Purpose
 
