@@ -188,19 +188,30 @@ FreqWavelengthConverterDialog::FreqWavelengthConverterDialog(QWidget *parent)
   resultsGroup->setLayout(resultsLayout);
 
   // ========== Main Layout ==========
-  QVBoxLayout *main = new QVBoxLayout;
-  main->addWidget(modeGroup);
-  main->addSpacing(10);
-  main->addWidget(freqInputGroup);
-  main->addWidget(wavelengthInputGroup);
-  main->addSpacing(10);
-  main->addWidget(permittivityGroup);
-  main->addSpacing(10);
-  main->addWidget(resultsGroup);
-  main->setSpacing(8);
-  main->setContentsMargins(15, 15, 15, 15);
+  QVBoxLayout *mainLayout = new QVBoxLayout;
+  mainLayout->addWidget(modeGroup);
+  mainLayout->addSpacing(10);
+  mainLayout->addWidget(freqInputGroup);
+  mainLayout->addWidget(wavelengthInputGroup);
+  mainLayout->addSpacing(10);
+  mainLayout->addWidget(permittivityGroup);
+  mainLayout->addSpacing(10);
+  mainLayout->addWidget(resultsGroup);
+  mainLayout->setSpacing(8);
+  mainLayout->setContentsMargins(15, 15, 15, 15);
 
-  setLayout(main);
+  // Docs button
+  QHBoxLayout *buttonLayout = new QHBoxLayout();
+  buttonLayout->addStretch();
+
+  docsButton = new QPushButton("See docs");
+  connect(docsButton, &QPushButton::clicked, this,
+          &FreqWavelengthConverterDialog::showDocumentation);
+  buttonLayout->addWidget(docsButton);
+  mainLayout->addLayout(buttonLayout);
+  mainLayout->addStretch();
+
+  setLayout(mainLayout);
   setMinimumWidth(500);
   setMinimumHeight(600);
 
