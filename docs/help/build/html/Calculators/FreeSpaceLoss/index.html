@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 
-<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../" lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
+<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../../" lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
 <head>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>RF Engineering Calculators | Qucs-S S-parameter Viewer Documentation</title>
-<meta content="RF Engineering Calculators | Qucs-S S-parameter Viewer Documentation" property="og:title"/>
-<meta content="RF Engineering Calculators | Qucs-S S-parameter Viewer Documentation" name="twitter:title"/>
-<link href="../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
-<link href="../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
-<link href="../search.html" rel="search" title="Search"/>
-<link href="../genindex.html" rel="index" title="Index"/>
-<link href="../Data-management-panel/index.html" rel="prev" title="Data management panel"/>
+<title>Free Space Path Loss Calculator | Qucs-S S-parameter Viewer Documentation</title>
+<meta content="Free Space Path Loss Calculator | Qucs-S S-parameter Viewer Documentation" property="og:title"/>
+<meta content="Free Space Path Loss Calculator | Qucs-S S-parameter Viewer Documentation" name="twitter:title"/>
+<link href="../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
+<link href="../../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
 <script>
     <!-- Prevent Flash of wrong theme -->
       const userPreference = localStorage.getItem('darkMode');
@@ -33,7 +32,7 @@
       Skip to content
     </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
 <div class="hidden mr-4 md:flex">
-<a class="flex items-center mr-6" href="../index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Qucs-S S-parameter Viewer Documentation</span>
+<a class="flex items-center mr-6" href="../../index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Qucs-S S-parameter Viewer Documentation</span>
 </a><nav class="flex items-center space-x-6 text-sm font-medium">
 <a class="transition-colors hover:text-foreground/80 text-foreground/60" href="https://qucs-s-help.readthedocs.io" rel="noopener nofollow">Docs</a>
 <a class="transition-colors hover:text-foreground/80 text-foreground/60" href="https://ra3xdh.github.io/" rel="noopener nofollow">Main QUCS-S Site</a>
@@ -45,7 +44,7 @@
 <span class="sr-only">Toggle navigation menu</span>
 </button>
 <div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
-<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
 <input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
 <kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
 <span class="text-xs">⌘</span>
@@ -72,7 +71,7 @@
 </div>
 </header>
 <div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
-<a class="!justify-start text-sm md:!hidden bg-background" href="../index.html"><span class="font-bold text-clip whitespace-nowrap">Qucs-S S-parameter Viewer Documentation</span>
+<a class="!justify-start text-sm md:!hidden bg-background" href="../../index.html"><span class="font-bold text-clip whitespace-nowrap">Qucs-S S-parameter Viewer Documentation</span>
 </a>
 <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
 <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="flex md:hidden flex-col font-medium mt-4">
@@ -80,10 +79,10 @@
 <a href="https://ra3xdh.github.io/" rel="nofollow noopener">Main QUCS-S Site</a>
 <a href="https://github.com/ra3xdh/qucs_s/discussions" rel="nofollow noopener">Forum</a>
 </nav><nav class="table w-full min-w-full my-6 lg:my-8">
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../Data-display-panel/index.html">Data display panel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Data-management-panel/index.html">Data management panel</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">RF Engineering Calculators</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Data-display-panel/index.html">Data display panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Data-management-panel/index.html">Data management panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">RF Engineering Calculators</a></li>
 </ul>
 </nav>
 </div>
@@ -97,90 +96,140 @@
 <main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
 <div class="w-full min-w-0 mx-auto">
 <nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
-<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../index.html">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../../index.html">
 <span class="hidden md:inline">Qucs-S S-parameter Viewer Documentation</span>
 <svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
 <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
 </svg>
 </a>
-<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">RF Engineering Calculators</span>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Free Space Path Loss Calculator</span>
 </nav>
 <div id="content" role="main">
-<section id="rf-engineering-calculators">
-<h1>RF Engineering Calculators<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#rf-engineering-calculators">¶</a></h1>
-<section id="introduction">
-<h2>Introduction<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#introduction" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#introduction'">¶</a></h2>
-<p>A range of calculators specially suited for the day-to-day work of an RF engineer are provided in the top menu bar. These tools address simple but recurrent problems that engineers face regularly.</p>
+<section id="free-space-path-loss-calculator">
+<h1>Free Space Path Loss Calculator<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#free-space-path-loss-calculator">¶</a></h1>
+<section id="overview">
+<h2>Overview<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#overview" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#overview'">¶</a></h2>
+<p>The Free Space Path Loss (FSPL) calculator computes signal attenuation in free space based on frequency, distance, and antenna gains.</p>
 </section>
-<section id="available-calculators">
-<h2>Available Calculators<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#available-calculators" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#available-calculators'">¶</a></h2>
-<section id="rf-engineering-specific">
-<h3>RF Engineering Specific<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#rf-engineering-specific" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#rf-engineering-specific'">¶</a></h3>
+<section id="formula">
+<h2>Formula<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#formula" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#formula'">¶</a></h2>
+<p>The FSPL is calculated using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">FSPL (dB) = 20×log₁₀(4π/c) + 20×log₁₀(f) + 20×log₁₀(d) - G_TX - G_RX
+</span></code></pre></div>
+</div>
+<p>Where:</p>
 <ul class="simple">
-<li><p><strong>Reflection Coefficient Calculators</strong></p>
-<ul>
-<li><p>Gamma to Z / VSWR / S11</p></li>
-<li><p>Z to Gamma / VSWR / S11</p></li>
-<li><p>VSWR ↔ Z ↔ S11</p></li>
-</ul>
-</li>
-<li><p><strong>Frequency and Bandwidth</strong></p>
-<ul>
-<li><p>Octave and Decades from Bandwidth</p></li>
-<li><p>Frequency to Wavelength Converter</p></li>
-</ul>
-</li>
-<li><p><strong>Power and Loss</strong></p>
-<ul>
-<li><p>RF Power Unit Converter</p></li>
-<li><p><a class="reference internal" href="FreeSpaceLoss/index.html"><span class="doc std std-doc">Free Space Path Loss</span></a></p></li>
-</ul>
-</li>
-<li><p><strong>Frequency Planning</strong></p>
-<ul>
-<li><p><a class="reference internal" href="ImageFrequency/index.html"><span class="doc std std-doc">Image Frequency</span></a></p></li>
-<li><p><a class="reference internal" href="SecondaryImageFrequency/index.html"><span class="doc std std-doc">Secondary Image Frequency Calculator</span></a></p></li>
-</ul>
-</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> = frequency in Hz</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span></code> = distance in meters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> = speed of light (299,792,458 m/s)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G_TX</span></code> = transmitter antenna gain in dBi</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G_RX</span></code> = receiver antenna gain in dBi</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">20×log₁₀(4π/c)</span></code> ≈ -147.55 dB (constant term)</p></li>
 </ul>
 </section>
-<section id="general-purpose">
-<h3>General Purpose<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#general-purpose" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#general-purpose'">¶</a></h3>
+<section id="input-parameters">
+<h2>Input Parameters<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#input-parameters" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#input-parameters'">¶</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Range</p></th>
+<th class="head"><p>Units Available</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Frequency</p></td>
+<td><p>0 to 10¹⁵</p></td>
+<td><p>Hz, kHz, MHz, GHz, THz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Distance</p></td>
+<td><p>0 to 10¹⁵</p></td>
+<td><p>m, km, cm, mm, ft, mi, nmi</p></td>
+</tr>
+<tr class="row-even"><td><p>G_TX</p></td>
+<td><p>-50 to 100 dB</p></td>
+<td><p>dBi</p></td>
+</tr>
+<tr class="row-odd"><td><p>G_RX</p></td>
+<td><p>-50 to 100 dB</p></td>
+<td><p>dBi</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="output">
+<h2>Output<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#output" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#output'">¶</a></h2>
+<p>The calculator displays path loss for five distance points:</p>
 <ul class="simple">
-<li><p><strong>Voltage and Impedance</strong></p>
-<ul>
-<li><p><a class="reference internal" href="VoltageDivider/index.html"><span class="doc std std-doc">Voltage Divider Calculator</span></a></p></li>
-</ul>
-</li>
-<li><p><strong>Component Equivalents</strong></p>
-<ul>
-<li><p>Parallel Resistors</p></li>
-<li><p>Parallel Inductors</p></li>
-<li><p>Series Capacitors</p></li>
-</ul>
-</li>
+<li><p>d/4 (quarter distance)</p></li>
+<li><p>d/2 (half distance)</p></li>
+<li><p>d (specified distance, highlighted)</p></li>
+<li><p>2×d (double distance)</p></li>
+<li><p>4×d (quadruple distance)</p></li>
 </ul>
 </section>
+<section id="example">
+<h2>Example<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#example" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#example'">¶</a></h2>
+<p><strong>Input:</strong></p>
+<ul class="simple">
+<li><p>Frequency: 1000 MHz (1 GHz)</p></li>
+<li><p>Distance: 1 km</p></li>
+<li><p>G_TX: 0 dBi</p></li>
+<li><p>G_RX: 0 dBi</p></li>
+</ul>
+<p><strong>Calculation:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">f = 1×10⁹ Hz
+</span><span id="line-2">d = 1000 m
+</span><span id="line-3">FSPL = -147.55 + 20×log₁₀(10⁹) + 20×log₁₀(1000) - 0 - 0
+</span><span id="line-4">     = -147.55 + 180 + 60
+</span><span id="line-5">     = 92.45 dB
+</span></code></pre></div>
+</div>
+<p><strong>Output Table:</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Distance</p></th>
+<th class="head"><p>Path Loss</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>250 m (d/4)</p></td>
+<td><p>80.43 dB</p></td>
+</tr>
+<tr class="row-odd"><td><p>500 m (d/2)</p></td>
+<td><p>86.44 dB</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>1 km (d)</strong></p></td>
+<td><p><strong>92.45 dB</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>2 km (2×d)</p></td>
+<td><p>98.47 dB</p></td>
+</tr>
+<tr class="row-even"><td><p>4 km (4×d)</p></td>
+<td><p>104.48 dB</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="notes">
+<h2>Notes<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#notes" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#notes'">¶</a></h2>
+<ul class="simple">
+<li><p>Distance doubling increases path loss by approximately 6 dB</p></li>
+<li><p>Higher frequencies result in greater path loss</p></li>
+<li><p>Antenna gains reduce overall path loss</p></li>
+<li><p>Invalid inputs (frequency or distance ≤ 0) display “Error”</p></li>
+</ul>
 </section>
 </section>
 </div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
-<div class="mr-auto">
-<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../Data-management-panel/index.html">
-<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<polyline points="15 18 9 12 15 6"></polyline>
-</svg>
-        Data management panel
-      </a>
-</div>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
-<li><a :data-current="activeSection === '#introduction'" class="reference internal" href="#introduction">Introduction</a></li>
-<li><a :data-current="activeSection === '#available-calculators'" class="reference internal" href="#available-calculators">Available Calculators</a><ul>
-<li><a :data-current="activeSection === '#rf-engineering-specific'" class="reference internal" href="#rf-engineering-specific">RF Engineering Specific</a></li>
-<li><a :data-current="activeSection === '#general-purpose'" class="reference internal" href="#general-purpose">General Purpose</a></li>
-</ul>
-</li>
+<li><a :data-current="activeSection === '#overview'" class="reference internal" href="#overview">Overview</a></li>
+<li><a :data-current="activeSection === '#formula'" class="reference internal" href="#formula">Formula</a></li>
+<li><a :data-current="activeSection === '#input-parameters'" class="reference internal" href="#input-parameters">Input Parameters</a></li>
+<li><a :data-current="activeSection === '#output'" class="reference internal" href="#output">Output</a></li>
+<li><a :data-current="activeSection === '#example'" class="reference internal" href="#example">Example</a></li>
+<li><a :data-current="activeSection === '#notes'" class="reference internal" href="#notes">Notes</a></li>
 </ul>
 </div>
 </aside>
@@ -194,9 +243,9 @@
 </div>
 </footer>
 </div>
-<script src="../_static/documentation_options.js?v=5929fcd5"></script>
-<script src="../_static/doctools.js?v=9bcbadda"></script>
-<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-<script defer="defer" src="../_static/theme.js?v=073f68d9"></script>
+<script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+<script src="../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script defer="defer" src="../../_static/theme.js?v=073f68d9"></script>
 </body>
 </html>

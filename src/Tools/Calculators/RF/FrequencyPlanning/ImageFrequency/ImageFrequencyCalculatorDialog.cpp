@@ -114,13 +114,13 @@ void ImageFrequencyCalculatorDialog::setupUI() {
 
   mainLayout->addWidget(resultsGroup);
 
-  // Buttons
+  // Button
   QHBoxLayout *buttonLayout = new QHBoxLayout();
   buttonLayout->addStretch();
 
   docsButton = new QPushButton("See docs");
-  connect(docsButton, &QPushButton::clicked,
-          this, &ImageFrequencyCalculatorDialog::showDocumentation);
+  connect(docsButton, &QPushButton::clicked, this,
+          &ImageFrequencyCalculatorDialog::showDocumentation);
   buttonLayout->addWidget(docsButton);
 
   mainLayout->addLayout(buttonLayout);

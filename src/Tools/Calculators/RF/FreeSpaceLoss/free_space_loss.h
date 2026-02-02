@@ -9,7 +9,8 @@
 #define FREE_SPACE_ATTENUATION_H
 
 #include <QDialog>
-#include "./UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "Misc/general.h"
 
 class CustomDoubleSpinBox;
 class QLabel;
@@ -44,6 +45,12 @@ private slots:
     /// @brief Slot triggered when any input value changes
     void on_inputChanged();
 
+    /// @brief Shows the documentation for the free space loss formula
+    void showDocumentation() {
+        QString path = QString("/Calculators/FreeSpaceLoss/index.html");
+        showHTMLDocs(path);
+    }
+
 private:
     // ========== Input Widgets ==========
 
@@ -64,6 +71,10 @@ private:
 
     /// @brief Spin box for RX antenna gain (dB)
     CustomDoubleSpinBox *spinGainRX;
+
+    /// @brief Button to access documentation
+    QPushButton* docsButton;
+
 
     // Distance labels
     QLabel *label_d_4; ///< Distance/4

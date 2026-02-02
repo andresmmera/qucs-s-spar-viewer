@@ -180,18 +180,29 @@ FreeSpaceAttenuationDialog::FreeSpaceAttenuationDialog(QWidget *parent)
   resultsGroup->setLayout(resultsLayout);
 
   // ========== Main Layout ==========
-  QVBoxLayout *main = new QVBoxLayout;
-  main->addWidget(freqGroup);
-  main->addSpacing(10);
-  main->addWidget(distanceGroup);
-  main->addSpacing(10);
-  main->addWidget(gainsGroup);
-  main->addSpacing(10);
-  main->addWidget(resultsGroup);
-  main->setSpacing(8);
-  main->setContentsMargins(15, 15, 15, 15);
+  QVBoxLayout *mainLayout = new QVBoxLayout;
+  mainLayout->addWidget(freqGroup);
+  mainLayout->addSpacing(10);
+  mainLayout->addWidget(distanceGroup);
+  mainLayout->addSpacing(10);
+  mainLayout->addWidget(gainsGroup);
+  mainLayout->addSpacing(10);
+  mainLayout->addWidget(resultsGroup);
+  mainLayout->setSpacing(8);
+  mainLayout->setContentsMargins(15, 15, 15, 15);
 
-  setLayout(main);
+  // Docs button
+  QHBoxLayout *buttonLayout = new QHBoxLayout();
+  buttonLayout->addStretch();
+
+  docsButton = new QPushButton("See docs");
+  connect(docsButton, &QPushButton::clicked, this,
+          &FreeSpaceAttenuationDialog::showDocumentation);
+  buttonLayout->addWidget(docsButton);
+  mainLayout->addLayout(buttonLayout);
+  mainLayout->addStretch();
+
+  setLayout(mainLayout);
   setMinimumWidth(500);
   setMinimumHeight(650);
 

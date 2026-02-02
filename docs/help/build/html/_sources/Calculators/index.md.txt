@@ -19,7 +19,7 @@ A range of calculators specially suited for the day-to-day work of an RF enginee
 
 - **Power and Loss**
   - RF Power Unit Converter
-  - Free Space Path Loss
+  - [Free Space Path Loss](/Calculators/FreeSpaceLoss/index)
 
 - **Frequency Planning**
   - [Image Frequency](/Calculators/ImageFrequency/index)
