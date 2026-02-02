@@ -28,7 +28,7 @@ A range of calculators specially suited for the day-to-day work of an RF enginee
 ### General Purpose
 
 - **Voltage and Impedance**
-  - Voltage Divider Calculator
+  - [Voltage Divider Calculator](/Calculators/VoltageDivider/index)
 
 - **Component Equivalents**
   - Parallel Resistors

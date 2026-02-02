@@ -55,6 +55,9 @@ private slots:
     /// @brief Slot triggered when any input value changes
     void on_inputChanged();
 
+    /// @brief Shows the documentation for the secondary image frequency calculation
+    void showDocumentation();
+
 private:
     // ========== Input Widgets ==========
 

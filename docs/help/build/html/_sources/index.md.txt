@@ -36,9 +36,7 @@ The tool interface consists of three main components:
 
 ### Data Display Panel
 
-Contains the display widgets for visualizing the data.
-
-[Learn more about the Data Display Panel](/Data-display-panel/index)
+Contains the display widgets for visualizing the data. [Learn more](/Data-display-panel/index)
 
 ### Data Management Panel
 
@@ -49,7 +47,7 @@ Provides widgets for managing and analyzing data:
 - Synthesis tools
 - Note-taking widget
 
-[Learn more about the Data Management Panel](/Data-management-panel/index)
+[Learn more](/Data-management-panel/index)
 
 ### Menu Bar Calculators
 
