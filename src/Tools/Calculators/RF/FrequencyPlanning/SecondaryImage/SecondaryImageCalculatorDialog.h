@@ -18,6 +18,7 @@
 #include <QHBoxLayout>
 #include <QGridLayout>
 #include <QTableWidget>
+#include "Misc/general.h"
 
 /// @class SecondaryImageCalculatorDialog
 /// @brief A dialog for calculating image frequencies in dual-conversion superheterodyne receivers
@@ -54,7 +55,10 @@ private slots:
     void calculate();
 
     /// @brief Shows the documentation for the secondary image frequency calculation
-    void showDocumentation();
+    void showDocumentation() {
+        QString path = QString("/Calculators/SecondaryImageFrequency/index.html");
+        showHTMLDocs(path);
+    }
 
 private:
     /// @brief Sets up the user interface

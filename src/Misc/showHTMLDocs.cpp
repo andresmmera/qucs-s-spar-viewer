@@ -1,11 +1,11 @@
-/// @file SecondaryImageDocs.cpp
-/// @brief Documentation for the secondary image frequency calculator
+/// @file showDocumentation.cpp
+/// @brief Show documentation in the web browser
 /// @author Andrés Martínez Mera - andresmmera@protonmail.com
-/// @date Jan 31, 2026
+/// @date Feb 2, 2026
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
-#include "SecondaryImageCalculatorDialog.h"
+#include "general.h"
 #include <QCoreApplication>
 #include <QDesktopServices>
 #include <QDir>
@@ -14,11 +14,9 @@
 #include <QMessageBox>
 #include <QUrl>
 
-void SecondaryImageCalculatorDialog::showDocumentation() { // Determine
-                                                           // documentation path
+void showHTMLDocs(QString path) {
   QString docPath;
   QString appDir = QCoreApplication::applicationDirPath();
-  QString path = QString("/Calculators/SecondaryImageFrequency/index.html");
 
 #ifdef Q_OS_MACOS
   // macOS bundle: app.app/Contents/MacOS/../Resources/doc/

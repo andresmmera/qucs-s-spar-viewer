@@ -107,4 +107,9 @@ QPointF findClosestPoint(const QList<double>& xValues,
 /// @return Map of variable names to data arrays
 QMap<QString, QList<double>> readTouchstoneFile(const QString& filePath);
 
+
+/// @brief Show HTML documentation in the web browser
+/// @param path Path to the HTML file
+void showHTMLDocs(QString path);
+
 #endif // GENERAL_H

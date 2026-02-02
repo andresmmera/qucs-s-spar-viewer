@@ -228,21 +228,6 @@ VoltageDividerDialog::VoltageDividerDialog(QWidget *parent) : QDialog(parent) {
 
   // ========== Documentation Button ==========
   QPushButton *btnDocs = new QPushButton("See Docs", this);
-  btnDocs->setMinimumHeight(35);
-  btnDocs->setStyleSheet("QPushButton { "
-                         "  font-weight: bold; "
-                         "  background-color: #3498db; "
-                         "  color: white; "
-                         "  border: none; "
-                         "  border-radius: 4px; "
-                         "  padding: 8px; "
-                         "}"
-                         "QPushButton:hover { "
-                         "  background-color: #2980b9; "
-                         "}"
-                         "QPushButton:pressed { "
-                         "  background-color: #21618c; "
-                         "}");
   connect(btnDocs, &QPushButton::clicked, this,
           &VoltageDividerDialog::showDocumentation);
 
