@@ -1,5 +1,6 @@
 /// @file series_capacitors.cpp
-/// @brief Calculator: Equivalent capacitance of series capacitors (implementation)
+/// @brief Calculator: Equivalent capacitance of series capacitors
+/// (implementation)
 /// @author Andrés Martínez Mera - andresmmera@protonmail.com
 /// @date Jan 29, 2026
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
@@ -24,11 +25,13 @@ SeriesCapacitorsDialog::SeriesCapacitorsDialog(QWidget *parent)
   setWindowTitle(tr("Equivalent Capacitance of Series Capacitors"));
 
   // ========== Capacitors Group ==========
-  QGroupBox *capacitorsGroup = new QGroupBox(QString("Capacitance Values"), this);
+  QGroupBox *capacitorsGroup =
+      new QGroupBox(QString("Capacitance Values"), this);
   capacitorsGroup->setStyleSheet("QGroupBox { font-weight: bold; }");
 
   tableCapacitors = new QTableWidget(2, 2, this);
-  tableCapacitors->setHorizontalHeaderLabels(QStringList() << "Capacitor" << "Value");
+  tableCapacitors->setHorizontalHeaderLabels(QStringList()
+                                             << "Capacitor" << "Value");
   tableCapacitors->verticalHeader()->setVisible(false);
   tableCapacitors->setMaximumHeight(300);
 
@@ -45,8 +48,10 @@ SeriesCapacitorsDialog::SeriesCapacitorsDialog(QWidget *parent)
     connect(edit, SIGNAL(textChanged(QString)), this, SLOT(computeResults()));
   }
 
-  tableCapacitors->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-  tableCapacitors->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+  tableCapacitors->horizontalHeader()->setSectionResizeMode(
+      0, QHeaderView::Stretch);
+  tableCapacitors->horizontalHeader()->setSectionResizeMode(
+      1, QHeaderView::Stretch);
 
   QPushButton *btnAdd = new QPushButton("+", this);
   QPushButton *btnRemove = new QPushButton("-", this);
@@ -71,20 +76,24 @@ SeriesCapacitorsDialog::SeriesCapacitorsDialog(QWidget *parent)
 
   labelCeq = new QLabel("-", this);
   labelCeq->setAlignment(Qt::AlignCenter);
-  labelCeq->setStyleSheet(
-      "QLabel { "
-      "  font-size: 18px; "
-      "  font-weight: bold; "
-      "  padding: 15px; "
-      "  border: 2px solid #c0c0c0; "
-      "  border-radius: 4px; "
-      "  background-color: white; "
-      "  min-height: 40px; "
-      "}");
+  labelCeq->setStyleSheet("QLabel { "
+                          "  font-size: 18px; "
+                          "  font-weight: bold; "
+                          "  padding: 15px; "
+                          "  border: 2px solid #c0c0c0; "
+                          "  border-radius: 4px; "
+                          "  background-color: white; "
+                          "  min-height: 40px; "
+                          "}");
 
   QVBoxLayout *ceqLayout = new QVBoxLayout;
   ceqLayout->addWidget(labelCeq);
   ceqGroup->setLayout(ceqLayout);
+
+  // ========== Documentation Button ==========
+  QPushButton *btnDocs = new QPushButton("See Docs", this);
+  connect(btnDocs, &QPushButton::clicked, this,
+          &SeriesCapacitorsDialog::showDocumentation);
 
   // ========== Main Layout ==========
   // Left side - Inputs
@@ -109,6 +118,8 @@ SeriesCapacitorsDialog::SeriesCapacitorsDialog(QWidget *parent)
   main->addLayout(contentLayout);
   main->setSpacing(8);
   main->setContentsMargins(15, 15, 15, 15);
+  main->addSpacing(10);
+  main->addWidget(btnDocs);
 
   setLayout(main);
   setMinimumWidth(600);
@@ -120,8 +131,9 @@ SeriesCapacitorsDialog::SeriesCapacitorsDialog(QWidget *parent)
 
 double SeriesCapacitorsDialog::parseCapacitance(const QString &valueStr) const {
   QString str = valueStr.trimmed().toLower();
-  
-  if (str.isEmpty()) return 0.0;
+
+  if (str.isEmpty())
+    return 0.0;
 
   // Remove spaces
   str.remove(' ');
@@ -172,11 +184,12 @@ double SeriesCapacitorsDialog::parseCapacitance(const QString &valueStr) const {
     bool okPrefix, okSuffix;
     double prefixValue = prefix.isEmpty() ? 0.0 : prefix.toDouble(&okPrefix);
     double suffixValue = 0.0;
-    
+
     if (!suffix.isEmpty()) {
       suffixValue = suffix.toDouble(&okSuffix);
-      if (!okSuffix) return 0.0;
-      
+      if (!okSuffix)
+        return 0.0;
+
       // Calculate the decimal places for suffix
       // "2p2" -> 2e-12 + 2e-13 = 2.2e-12
       // "0p5" -> 0 + 5e-13 = 0.5e-12
@@ -185,7 +198,8 @@ double SeriesCapacitorsDialog::parseCapacitance(const QString &valueStr) const {
       return prefixValue * multiplier + suffixValue * suffixMultiplier;
     } else {
       // Format like "22p" - just multiply
-      if (prefix.isEmpty() || !okPrefix) return 0.0;
+      if (prefix.isEmpty() || !okPrefix)
+        return 0.0;
       return prefixValue * multiplier;
     }
   } else {
@@ -193,7 +207,8 @@ double SeriesCapacitorsDialog::parseCapacitance(const QString &valueStr) const {
     str.remove(QRegularExpression("[^0-9.]"));
     bool ok;
     double value = str.toDouble(&ok);
-    if (!ok) return 0.0;
+    if (!ok)
+      return 0.0;
     return value;
   }
 }
@@ -217,7 +232,8 @@ QString SeriesCapacitorsDialog::formatCapacitance(double value) const {
 QVector<double> SeriesCapacitorsDialog::getCapacitors() const {
   QVector<double> capacitors;
   for (int i = 0; i < tableCapacitors->rowCount(); ++i) {
-    QLineEdit *edit = qobject_cast<QLineEdit*>(tableCapacitors->cellWidget(i, 1));
+    QLineEdit *edit =
+        qobject_cast<QLineEdit *>(tableCapacitors->cellWidget(i, 1));
     if (edit) {
       double value = parseCapacitance(edit->text());
       if (value > 0) {
@@ -228,16 +244,18 @@ QVector<double> SeriesCapacitorsDialog::getCapacitors() const {
   return capacitors;
 }
 
-double SeriesCapacitorsDialog::calculateSeriesCapacitance(const QVector<double> &capacitors) const {
-  if (capacitors.isEmpty()) return 0.0;
-  
+double SeriesCapacitorsDialog::calculateSeriesCapacitance(
+    const QVector<double> &capacitors) const {
+  if (capacitors.isEmpty())
+    return 0.0;
+
   double invSum = 0.0;
   for (double c : capacitors) {
     if (c > 0) {
       invSum += 1.0 / c;
     }
   }
-  
+
   if (invSum > 0) {
     return 1.0 / invSum;
   }
@@ -285,9 +303,8 @@ void SeriesCapacitorsDialog::computeResults() {
   }
 
   // Display equivalent capacitance
-  labelCeq->setText(QString("<b>C<sub>eq</sub> = %1</b>").arg(formatCapacitance(ceq)));
+  labelCeq->setText(
+      QString("<b>C<sub>eq</sub> = %1</b>").arg(formatCapacitance(ceq)));
 }
 
-void SeriesCapacitorsDialog::on_inputChanged() {
-  computeResults();
-}
+void SeriesCapacitorsDialog::on_inputChanged() { computeResults(); }
