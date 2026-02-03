@@ -108,42 +108,42 @@
 </nav>
 <div id="content" role="main">
 <section id="octave-bandwidth-calculator">
-<h1>Octave Bandwidth Calculator<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#octave-bandwidth-calculator">¶</a></h1>
+<h1>Octave Bandwidth Calculator</h1>
 <section id="overview">
-<h2>Overview<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#overview" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#overview'">¶</a></h2>
+<h2>Overview</h2>
 <p>Given a low and high corner frequency, computes the bandwidth, number of octaves and decades, center frequencies, and quality factor of the band.</p>
 </section>
 <section id="formulas">
-<h2>Formulas<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#formulas" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#formulas'">¶</a></h2>
+<h2>Formulas</h2>
 <section id="center-frequencies">
-<h3>Center Frequencies<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#center-frequencies" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#center-frequencies'">¶</a></h3>
+<h3>Center Frequencies</h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">f_c (arithmetic) = (f_high - f_low) / 2
 </span><span id="line-2">f_c (geometric)  = √(f_low × f_high)
 </span></code></pre></div>
 </div>
 </section>
 <section id="bandwidth">
-<h3>Bandwidth<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#bandwidth" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#bandwidth'">¶</a></h3>
+<h3>Bandwidth</h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">BW</span> <span class="o">=</span> <span class="n">f_high</span> <span class="o">-</span> <span class="n">f_low</span>
 </span></code></pre></div>
 </div>
 </section>
 <section id="octaves-and-decades">
-<h3>Octaves and Decades<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#octaves-and-decades" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#octaves-and-decades'">¶</a></h3>
+<h3>Octaves and Decades</h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">Octaves = log₂(f_high / f_low)
 </span><span id="line-2">Decades = log₁₀(f_high / f_low)
 </span></code></pre></div>
 </div>
 </section>
 <section id="quality-factor">
-<h3>Quality Factor<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#quality-factor" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#quality-factor'">¶</a></h3>
+<h3>Quality Factor</h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">Q</span> <span class="o">=</span> <span class="n">f_c</span> <span class="p">(</span><span class="n">arithmetic</span><span class="p">)</span> <span class="o">/</span> <span class="n">BW</span>
 </span></code></pre></div>
 </div>
 </section>
 </section>
 <section id="input-parameters">
-<h2>Input Parameters<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#input-parameters" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#input-parameters'">¶</a></h2>
+<h2>Input Parameters</h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -168,7 +168,7 @@
 <p>Both frequencies must share the same unit (Hz, kHz, MHz, etc.). The calculator does not perform unit conversion — the outputs inherit whatever unit the inputs use.</p>
 </section>
 <section id="output">
-<h2>Output<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#output" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#output'">¶</a></h2>
+<h2>Output</h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -199,7 +199,7 @@
 <p>An error is displayed if f_high ≤ f_low. Q is shown as ∞ when BW is effectively zero.</p>
 </section>
 <section id="example">
-<h2>Example<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#example" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#example'">¶</a></h2>
+<h2>Example</h2>
 <p><strong>Input:</strong></p>
 <ul class="simple">
 <li><p>f_low: 1000 MHz</p></li>
@@ -244,7 +244,7 @@
 </table>
 </section>
 <section id="notes">
-<h2>Notes<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#notes" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#notes'">¶</a></h2>
+<h2>Notes</h2>
 <ul class="simple">
 <li><p>Exactly 1 octave corresponds to a 2:1 frequency ratio; 1 decade to a 10:1 ratio</p></li>
 </ul>

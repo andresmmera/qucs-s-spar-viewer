@@ -93,3 +93,4 @@ theme_options = ThemeOptions(
 )
 
 html_theme_options = asdict(theme_options)
+html_permalinks = False

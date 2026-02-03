@@ -108,19 +108,19 @@
 </nav>
 <div id="content" role="main">
 <section id="rf-power-converter">
-<h1>RF Power Converter<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#rf-power-converter">¶</a></h1>
+<h1>RF Power Converter</h1>
 <section id="overview">
-<h2>Overview<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#overview" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#overview'">¶</a></h2>
+<h2>Overview</h2>
 <p>Converts RF power values between linear and logarithmic units, supporting both 50 Ω and 75 Ω system impedances. All conversions route through watts as an intermediate unit.</p>
 </section>
 <section id="conversion-pipeline">
-<h2>Conversion Pipeline<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#conversion-pipeline" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#conversion-pipeline'">¶</a></h2>
+<h2>Conversion Pipeline</h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">Input (any unit) → Watts → Output (any unit)
 </span></code></pre></div>
 </div>
 </section>
 <section id="supported-units">
-<h2>Supported Units<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#supported-units" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#supported-units'">¶</a></h2>
+<h2>Supported Units</h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Unit</p></th>
@@ -158,9 +158,9 @@
 <p>Each of dBμV, dBmV, and V is available in both 50 Ω and 75 Ω variants.</p>
 </section>
 <section id="formulas">
-<h2>Formulas<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#formulas" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#formulas'">¶</a></h2>
+<h2>Formulas</h2>
 <section id="to-watts">
-<h3>To Watts<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#to-watts" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#to-watts'">¶</a></h3>
+<h3>To Watts</h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Unit</p></th>
@@ -199,7 +199,7 @@
 </table>
 </section>
 <section id="from-watts">
-<h3>From Watts<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#from-watts" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#from-watts'">¶</a></h3>
+<h3>From Watts</h3>
 <p>Each formula above is simply inverted. For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">dBm  = 10 × log₁₀(P_W) + 30
 </span><span id="line-2">V    = √(P_W × Z₀)
@@ -208,7 +208,7 @@
 </section>
 </section>
 <section id="input-parameters">
-<h2>Input Parameters<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#input-parameters" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#input-parameters'">¶</a></h2>
+<h2>Input Parameters</h2>
 <ul class="simple">
 <li><p>Power</p></li>
 <li><p>Input unit</p></li>
@@ -216,7 +216,7 @@
 </ul>
 </section>
 <section id="example">
-<h2>Example<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#example" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#example'">¶</a></h2>
+<h2>Example</h2>
 <p><strong>Input:</strong></p>
 <ul class="simple">
 <li><p>Power: 0 dBm</p></li>

@@ -108,9 +108,9 @@
 </nav>
 <div id="content" role="main">
 <section id="reflection-coefficient-calculators">
-<h1>Reflection Coefficient Calculators<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#reflection-coefficient-calculators">¶</a></h1>
+<h1>Reflection Coefficient Calculators</h1>
 <section id="overview">
-<h2>Overview<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#overview" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#overview'">¶</a></h2>
+<h2>Overview</h2>
 <p>Three calculators for the conversion between reflection coefficient and impedance units. They share the same core set of relationships between reflection coefficient (Γ), impedance (Z), VSWR, and S11, but each takes a different quantity as input.</p>
 <table class="docutils align-default">
 <thead>
@@ -136,23 +136,23 @@
 </table>
 </section>
 <section id="core-formulas">
-<h2>Core Formulas<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#core-formulas" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#core-formulas'">¶</a></h2>
+<h2>Core Formulas</h2>
 <section id="reflection-coefficient-impedance">
-<h3>Reflection Coefficient ↔ Impedance<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#reflection-coefficient-impedance" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#reflection-coefficient-impedance'">¶</a></h3>
+<h3>Reflection Coefficient ↔ Impedance</h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">Γ = (Z - Z₀) / (Z + Z₀)          (complex)
 </span><span id="line-2">Z = Z₀ × (1 + Γ) / (1 - Γ)       (complex)
 </span></code></pre></div>
 </div>
 </section>
 <section id="vswr">
-<h3>VSWR<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#vswr" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#vswr'">¶</a></h3>
+<h3>VSWR</h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">VSWR</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="o">|</span><span class="n">Γ</span><span class="o">|</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="o">|</span><span class="n">Γ</span><span class="o">|</span><span class="p">)</span>     <span class="n">valid</span> <span class="k">for</span> <span class="o">|</span><span class="n">Γ</span><span class="o">|</span> <span class="o">&lt;</span> <span class="mi">1</span>
 </span><span id="line-2"><span class="o">|</span><span class="n">Γ</span><span class="o">|</span>  <span class="o">=</span> <span class="p">(</span><span class="n">VSWR</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">VSWR</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 </section>
 <section id="s11">
-<h3>S11<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#s11" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#s11'">¶</a></h3>
+<h3>S11</h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">S11 (dB) = 20 × log₁₀(|Γ|)
 </span><span id="line-2">|Γ|      = 10^(S11 / 20)
 </span></code></pre></div>
@@ -160,7 +160,7 @@
 </section>
 </section>
 <section id="calculator">
-<h2>Γ Calculator<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#calculator" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#calculator'">¶</a></h2>
+<h2>Γ Calculator</h2>
 <p>Converts a reflection coefficient given in polar form to load impedance and match quality metrics.</p>
 <p><strong>Inputs:</strong></p>
 <table class="docutils align-default">
@@ -192,7 +192,7 @@
 <p>VSWR is shown as ∞ when |Γ| ≥ 1. S11 is shown as −∞ when |Γ| = 0.</p>
 </section>
 <section id="impedance-calculator">
-<h2>Impedance Calculator<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#impedance-calculator" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#impedance-calculator'">¶</a></h2>
+<h2>Impedance Calculator</h2>
 <p>The inverse of the Γ calculator — takes a complex load impedance and produces Γ in polar form.</p>
 <p><strong>Inputs:</strong></p>
 <table class="docutils align-default">
@@ -220,7 +220,7 @@
 <p>Γ is displayed in polar notation: <code class="docutils literal notranslate"><span class="pre">|Γ|</span> <span class="pre">∠</span> <span class="pre">angle°</span></code>.</p>
 </section>
 <section id="vswr-s11-calculator">
-<h2>VSWR ↔ S11 ↔ |Γ| Calculator<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#vswr-s11-calculator" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#vswr-s11-calculator'">¶</a></h2>
+<h2>VSWR ↔ S11 ↔ |Γ| Calculator</h2>
 <p>A three-mode converter that takes any one of the three scalar match metrics and computes the other two. No impedance or phase information is involved — only magnitudes.</p>
 <p><strong>Modes and valid input ranges:</strong></p>
 <table class="docutils align-default">
@@ -247,7 +247,7 @@
 </table>
 </section>
 <section id="example">
-<h2>Example<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#example" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#example'">¶</a></h2>
+<h2>Example</h2>
 <p><strong>Scenario:</strong> A load of Z = 75 + j10 Ω on a 50 Ω line.</p>
 <p><strong>Impedance Calculator path:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">Γ = (75 + j10 - 50) / (75 + j10 + 50)
@@ -270,7 +270,7 @@
 </div>
 </section>
 <section id="edge-cases">
-<h2>Edge Cases<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#edge-cases" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#edge-cases'">¶</a></h2>
+<h2>Edge Cases</h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Condition</p></th>
@@ -299,7 +299,7 @@
 </table>
 </section>
 <section id="notes">
-<h2>Notes<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#notes" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#notes'">¶</a></h2>
+<h2>Notes</h2>
 <ul class="simple">
 <li><p>VSWR is only meaningful for |Γ| &lt; 1; values ≥ 1 indicate total or over-unity reflection</p></li>
 <li><p>The Γ calculator accepts |Γ| up to 10 to allow exploration of active/amplifying loads, but VSWR will be flagged as ∞ for |Γ| ≥ 1</p></li>
