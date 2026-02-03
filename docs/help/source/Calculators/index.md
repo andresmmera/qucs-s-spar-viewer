@@ -22,7 +22,7 @@ Engineering calculators
 |                          | VSWR ↔ Z ↔ S11                                             |
 | Frequency and Bandwidth  | [Octave and Decades from Bandwidth](/Calculators/OctaveBW/index)|
 |                          | [Frequency to Wavelength Converter](/Calculators/FrequencyToWavelength/index) |
-| Power and Loss           | RF Power Unit Converter                                    |
+| Power and Loss           | [RF Power Unit Converter](/Calculators/RFPowerUnitConverter/index)                                    |
 |                          | [Free Space Path Loss](/Calculators/FreeSpaceLoss/index)   |
 | Frequency Planning       | [Image Frequency](/Calculators/ImageFrequency/index)       |
 |                          | [Secondary Image Frequency Calculator](/Calculators/SecondaryImageFrequency/index) |

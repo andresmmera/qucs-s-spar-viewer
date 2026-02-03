@@ -10,6 +10,7 @@
 
 #include <QDialog>
 #include "UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "Misc/general.h"
 
 class CustomDoubleSpinBox;
 class QLabel;
@@ -40,6 +41,13 @@ private slots:
 
     /// @brief Slot triggered when any input value changes
     void on_inputChanged();
+
+    /// @brief Slot to show the HTML RF power unit help
+    void showDocumentation() {
+        QString path = QString("/Calculators/RFPowerUnitConverter/index.html");
+        showHTMLDocs(path);
+    }
+
 
 private:
     // ========== Input Widgets ==========
