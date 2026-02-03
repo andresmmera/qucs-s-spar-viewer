@@ -20,7 +20,7 @@ Engineering calculators
 | Reflection Coefficient   | Gamma to Z / VSWR / S11                                    |
 |                          | Z to Gamma / VSWR / S11                                    |
 |                          | VSWR ↔ Z ↔ S11                                             |
-| Frequency and Bandwidth  | Octave and Decades from Bandwidth                          |
+| Frequency and Bandwidth  | [Octave and Decades from Bandwidth](/Calculators/OctaveBW/index)|
 |                          | [Frequency to Wavelength Converter](/Calculators/FrequencyToWavelength/index) |
 | Power and Loss           | RF Power Unit Converter                                    |
 |                          | [Free Space Path Loss](/Calculators/FreeSpaceLoss/index)   |
