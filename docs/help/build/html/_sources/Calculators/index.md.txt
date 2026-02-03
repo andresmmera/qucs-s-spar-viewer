@@ -33,5 +33,5 @@ Engineering calculators
 |---------------------|--------------------------------------------------------------------|
 | Voltage and Impedance | [Voltage Divider Calculator](/Calculators/VoltageDivider/index) |
 | Component Equivalents | [Parallel Resistors](/Calculators/ParallelSeriesEquivalents/ParallelResistors/index)                                              |
-|                     | Parallel Inductors                                                |
+|                     | [Parallel Inductors](/Calculators/ParallelSeriesEquivalents/ParallelInductors/index)                                                |
 |                     | Series Capacitors                                                 |
