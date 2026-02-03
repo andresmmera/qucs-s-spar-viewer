@@ -55,3 +55,13 @@ L_eq = 1 / (1/10e-9 + 1/22e-9 + 1/4.7e-9)
 | Parameter | Value |
 |-----------|-------|
 | L_eq | 2.792 nH |
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+
+/Calculators/ParallelSeriesEquivalents/ParallelResistors/index
+/Calculators/ParallelSeriesEquivalents/SeriesCapacitors/index
+/Calculators/index
+```

@@ -80,3 +80,13 @@ I₃ = 5 / 470    ≈ 10.64 mA   →  P₃ = 10.64² × 470 ≈ 53.19 mW  ⚠️
 | **Total** | **17.91 mA** | **89.55 mW** |
 
 R₃ exceeds the maximum dissipation power threshold (50 mW).
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+
+/Calculators/ParallelSeriesEquivalents/SeriesCapacitors/index
+/Calculators/ParallelSeriesEquivalents/ParallelInductors/index
+/Calculators/index
+```

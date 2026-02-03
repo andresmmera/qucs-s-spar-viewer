@@ -57,3 +57,14 @@ C_eq = 1 / (1/1e-12 + 1/2.2e-12 + 1/4.7e-9)
 | C_{eq} | 0.6873 pF |
 
 In this case C₁ and C₂ dominate because they are orders of magnitude smaller than C₃ — the series result is pulled toward the smallest capacitor.
+
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+
+/Calculators/ParallelSeriesEquivalents/ParallelResistors/index
+/Calculators/ParallelSeriesEquivalents/ParallelInductors/index
+/Calculators/index
+```

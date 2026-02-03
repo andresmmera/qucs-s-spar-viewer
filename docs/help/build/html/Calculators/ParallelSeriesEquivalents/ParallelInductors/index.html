@@ -202,6 +202,16 @@
 </tbody>
 </table>
 </section>
+<section id="see-also">
+<h2>See Also<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#see-also" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#see-also'">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../ParallelResistors/index.html">Parallel Resistors Calculator</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../SeriesCapacitors/index.html">Series Capacitors Calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">RF Engineering Calculators</a></li>
+</ul>
+</div>
+</section>
 </section>
 </div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
@@ -213,6 +223,7 @@
 <li><a :data-current="activeSection === '#inductance-parsing'" class="reference internal" href="#inductance-parsing">Inductance Parsing</a></li>
 <li><a :data-current="activeSection === '#output'" class="reference internal" href="#output">Output</a></li>
 <li><a :data-current="activeSection === '#example'" class="reference internal" href="#example">Example</a></li>
+<li><a :data-current="activeSection === '#see-also'" class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </div>
 </aside>
