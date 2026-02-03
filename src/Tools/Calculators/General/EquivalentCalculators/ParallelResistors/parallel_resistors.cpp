@@ -159,6 +159,11 @@ ParallelResistorsDialog::ParallelResistorsDialog(QWidget *parent)
       "}";
   resultsTable->setStyleSheet(tableStyle);
 
+  // ========== Documentation Button ==========
+  QPushButton *btnDocs = new QPushButton("See Docs", this);
+  connect(btnDocs, &QPushButton::clicked, this,
+          &ParallelResistorsDialog::showDocumentation);
+
   QVBoxLayout *resultsLayout = new QVBoxLayout;
   resultsLayout->addWidget(resultsTable);
   resultsGroup->setLayout(resultsLayout);
@@ -189,6 +194,8 @@ ParallelResistorsDialog::ParallelResistorsDialog(QWidget *parent)
   main->addLayout(contentLayout);
   main->setSpacing(8);
   main->setContentsMargins(15, 15, 15, 15);
+  main->addSpacing(10);
+  main->addWidget(btnDocs);
 
   setLayout(main);
   setMinimumWidth(800);

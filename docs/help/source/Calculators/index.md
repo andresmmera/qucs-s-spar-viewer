@@ -12,33 +12,26 @@ Engineering calculators
 ```
 
 
-## Available Calculators
+## Calculators
+### RF Engineering
 
-### RF Engineering Specific
+| Category                 | Calculator                                                  
+|--------------------------|-------------------------------------------------------------|
+| Reflection Coefficient   | Gamma to Z / VSWR / S11                                    |
+|                          | Z to Gamma / VSWR / S11                                    |
+|                          | VSWR ↔ Z ↔ S11                                             |
+| Frequency and Bandwidth  | Octave and Decades from Bandwidth                          |
+|                          | [Frequency to Wavelength Converter](/Calculators/FrequencyToWavelength/index) |
+| Power and Loss           | RF Power Unit Converter                                    |
+|                          | [Free Space Path Loss](/Calculators/FreeSpaceLoss/index)   |
+| Frequency Planning       | [Image Frequency](/Calculators/ImageFrequency/index)       |
+|                          | [Secondary Image Frequency Calculator](/Calculators/SecondaryImageFrequency/index) |
 
-- **Reflection Coefficient Calculators**
-  - Gamma to Z / VSWR / S11
-  - Z to Gamma / VSWR / S11
-  - VSWR ↔ Z ↔ S11
 
-- **Frequency and Bandwidth**
-  - Octave and Decades from Bandwidth
-  - [Frequency to Wavelength Converter](/Calculators/FrequencyToWavelength/index)
-
-- **Power and Loss**
-  - RF Power Unit Converter
-  - [Free Space Path Loss](/Calculators/FreeSpaceLoss/index)
-
-- **Frequency Planning**
-  - [Image Frequency](/Calculators/ImageFrequency/index)
-  - [Secondary Image Frequency Calculator](/Calculators/SecondaryImageFrequency/index)
-
-### General Purpose
-
-- **Voltage and Impedance**
-  - [Voltage Divider Calculator](/Calculators/VoltageDivider/index)
-
-- **Component Equivalents**
-  - Parallel Resistors
-  - Parallel Inductors
-  - Series Capacitors
+### General Electronics
+| Category            | Calculator                                                         |
+|---------------------|--------------------------------------------------------------------|
+| Voltage and Impedance | [Voltage Divider Calculator](/Calculators/VoltageDivider/index) |
+| Component Equivalents | [Parallel Resistors](/Calculators/ParallelSeriesEquivalents/ParallelResistors/index)                                              |
+|                     | Parallel Inductors                                                |
+|                     | Series Capacitors                                                 |
