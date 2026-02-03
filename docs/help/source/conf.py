@@ -60,10 +60,10 @@ html_static_path = [ ]
 theme_options = ThemeOptions(
     show_prev_next=True,
     awesome_external_links=True,
-    main_nav_links={"Docs": "https://qucs-s-help.readthedocs.io", "Main QUCS-S Site": "https://ra3xdh.github.io/", "Forum": "https://github.com/ra3xdh/qucs_s/discussions"},
+    main_nav_links={"Online Documentation": "https://andresmmera.github.io/qucs-s-spar-viewer/", "Qucs-S Docs": "https://qucs-s-help.readthedocs.io", "Main QUCS-S Site": "https://ra3xdh.github.io/", "Qucs-S Forum": "https://github.com/ra3xdh/qucs_s/discussions"},
     extra_header_link_icons={
         "repository on GitHub": {
-            "link": "https://github.com/ra3xdh/qucs_s-help",
+            "link": "https://github.com/andresmmera/qucs-s-spar-viewer",
             "icon": (
                 '<svg height="26px" style="margin-top:-2px;display:inline" '
                 'viewBox="0 0 45 44" '

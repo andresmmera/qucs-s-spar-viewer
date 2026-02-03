@@ -8,17 +8,15 @@ This is a comprehensive toolkit for RF and microwave circuit design. It combines
 
 ### Display Features
 
-- Rectangular plot, Smith Chart, and polar plot display
-- Marker display
-- Limit lines (for magnitude and phase plots)
+The tool can display S-parameter data in various formats, including polar plots and Smith charts. Data markers are supported in each display widget. Additionally, the magnitude display supports limit lines.
 
 ### Data Capabilities
 
-- Reads Touchstone files and Qucs-S datasets
-- Trace management
-- Session management (save, load, and recent files listing)
+This tool can read data from Touchstone files and Qucs-S datasets. Users can easily manage files and traces using the data tabs to add and remove data. Sessions can be saved into a file for later use.
 
 ### Design Tools
+
+The tool includes built-in design tools such as:
 
 - RF circuit synthesis tools
 - [RF engineering calculators](/Calculators/index)
@@ -63,7 +61,7 @@ A collection of engineering calculators organized by category:
 - Free Space Loss
 - RF power unit converter
 - Reflection coefficient unit converters
-- And more
+- And more...
 
 [View all calculators](/Calculators/index)
 

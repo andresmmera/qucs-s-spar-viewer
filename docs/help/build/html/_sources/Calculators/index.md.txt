@@ -4,6 +4,14 @@
 
 A range of calculators specially suited for the day-to-day work of an RF engineer are provided in the top menu bar. These tools address simple but recurrent problems that engineers face regularly.
 
+```{figure} /Calculators/CalculatorsMenu.png
+---
+class: with-border
+---
+Overview of the user interface.
+```
+
+
 ## Available Calculators
 
 ### RF Engineering Specific

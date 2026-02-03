@@ -43,9 +43,10 @@
     <div class="hidden mr-4 md:flex">
       <a href="#" class="flex items-center mr-6"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Qucs-S S-parameter Viewer Documentation</span>
       </a><nav class="flex items-center space-x-6 text-sm font-medium">
-        <a href="https://qucs-s-help.readthedocs.io" class="transition-colors hover:text-foreground/80 text-foreground/60" rel="noopener nofollow">Docs</a>
+        <a href="https://andresmmera.github.io/qucs-s-spar-viewer/" class="transition-colors hover:text-foreground/80 text-foreground/60" rel="noopener nofollow">Online Documentation</a>
+        <a href="https://qucs-s-help.readthedocs.io" class="transition-colors hover:text-foreground/80 text-foreground/60" rel="noopener nofollow">Qucs-S Docs</a>
         <a href="https://ra3xdh.github.io/" class="transition-colors hover:text-foreground/80 text-foreground/60" rel="noopener nofollow">Main QUCS-S Site</a>
-        <a href="https://github.com/ra3xdh/qucs_s/discussions" class="transition-colors hover:text-foreground/80 text-foreground/60" rel="noopener nofollow">Forum</a>
+        <a href="https://github.com/ra3xdh/qucs_s/discussions" class="transition-colors hover:text-foreground/80 text-foreground/60" rel="noopener nofollow">Qucs-S Forum</a>
       </nav></div><button
       class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden"
       type="button" @click="showSidebar = true">
@@ -76,7 +77,7 @@
 </form>
       </div>
       <nav class="flex items-center space-x-1">
-        <a href="https://github.com/ra3xdh/qucs_s-help" title="Visit repository on GitHub" rel="noopener nofollow">
+        <a href="https://github.com/andresmmera/qucs-s-spar-viewer" title="Visit repository on GitHub" rel="noopener nofollow">
           <div
             class="inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9">
             <svg height="26px" style="margin-top:-2px;display:inline" viewBox="0 0 45 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M22.477.927C10.485.927.76 10.65.76 22.647c0 9.596 6.223 17.736 14.853 20.608 1.087.2 1.483-.47 1.483-1.047 0-.516-.019-1.881-.03-3.693-6.04 1.312-7.315-2.912-7.315-2.912-.988-2.51-2.412-3.178-2.412-3.178-1.972-1.346.149-1.32.149-1.32 2.18.154 3.327 2.24 3.327 2.24 1.937 3.318 5.084 2.36 6.321 1.803.197-1.403.759-2.36 1.379-2.903-4.823-.548-9.894-2.412-9.894-10.734 0-2.37.847-4.31 2.236-5.828-.224-.55-.969-2.759.214-5.748 0 0 1.822-.584 5.972 2.226 1.732-.482 3.59-.722 5.437-.732 1.845.01 3.703.25 5.437.732 4.147-2.81 5.967-2.226 5.967-2.226 1.185 2.99.44 5.198.217 5.748 1.392 1.517 2.232 3.457 2.232 5.828 0 8.344-5.078 10.18-9.916 10.717.779.67 1.474 1.996 1.474 4.021 0 2.904-.027 5.247-.027 5.96 0 .58.392 1.256 1.493 1.044C37.981 40.375 44.2 32.24 44.2 22.647c0-11.996-9.726-21.72-21.722-21.72" fill="currentColor"/></svg>
@@ -112,9 +113,10 @@
 
     <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
       <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="flex md:hidden flex-col font-medium mt-4">
-  <a href="https://qucs-s-help.readthedocs.io" rel="nofollow noopener">Docs</a>
+  <a href="https://andresmmera.github.io/qucs-s-spar-viewer/" rel="nofollow noopener">Online Documentation</a>
+  <a href="https://qucs-s-help.readthedocs.io" rel="nofollow noopener">Qucs-S Docs</a>
   <a href="https://ra3xdh.github.io/" rel="nofollow noopener">Main QUCS-S Site</a>
-  <a href="https://github.com/ra3xdh/qucs_s/discussions" rel="nofollow noopener">Forum</a>
+  <a href="https://github.com/ra3xdh/qucs_s/discussions" rel="nofollow noopener">Qucs-S Forum</a>
 </nav><nav class="table w-full min-w-full my-6 lg:my-8">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="Data-display-panel/index.html">Data display panel</a></li>
@@ -148,22 +150,15 @@
 <h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
 <section id="display-features">
 <h3>Display Features<a class="headerlink" href="#display-features" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>Rectangular plot, Smith Chart, and polar plot display</p></li>
-<li><p>Marker display</p></li>
-<li><p>Limit lines (for magnitude and phase plots)</p></li>
-</ul>
+<p>The tool can display S-parameter data in various formats, including polar plots and Smith charts. Data markers are supported in each display widget. Additionally, the magnitude display supports limit lines.</p>
 </section>
 <section id="data-capabilities">
 <h3>Data Capabilities<a class="headerlink" href="#data-capabilities" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>Reads Touchstone files and Qucs-S datasets</p></li>
-<li><p>Trace management</p></li>
-<li><p>Session management (save, load, and recent files listing)</p></li>
-</ul>
+<p>This tool can read data from Touchstone files and Qucs-S datasets. Users can easily manage files and traces using the data tabs to add and remove data. Sessions can be saved into a file for later use.</p>
 </section>
 <section id="design-tools">
 <h3>Design Tools<a class="headerlink" href="#design-tools" title="Link to this heading">¶</a></h3>
+<p>The tool includes built-in design tools such as:</p>
 <ul class="simple">
 <li><p>RF circuit synthesis tools</p></li>
 <li><p><a class="reference internal" href="Calculators/index.html"><span class="doc std std-doc">RF engineering calculators</span></a></p></li>
@@ -209,7 +204,7 @@
 <li><p>Free Space Loss</p></li>
 <li><p>RF power unit converter</p></li>
 <li><p>Reflection coefficient unit converters</p></li>
-<li><p>And more</p></li>
+<li><p>And more…</p></li>
 </ul>
 <p><a class="reference internal" href="Calculators/index.html"><span class="doc std std-doc">View all calculators</span></a></p>
 </section>
