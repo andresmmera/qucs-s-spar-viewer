@@ -112,6 +112,11 @@ GammaCalculatorDialog::GammaCalculatorDialog(QWidget *parent)
       "}";
   resultsTable->setStyleSheet(tableStyle);
 
+  // ========== Documentation Button ==========
+  QPushButton *btnDocs = new QPushButton("See Docs", this);
+  connect(btnDocs, &QPushButton::clicked, this,
+          &GammaCalculatorDialog::showDocumentation);
+
   QVBoxLayout *resultsLayout = new QVBoxLayout;
   resultsLayout->addWidget(resultsTable);
   resultsGroup->setLayout(resultsLayout);
@@ -123,6 +128,8 @@ GammaCalculatorDialog::GammaCalculatorDialog(QWidget *parent)
   main->addWidget(resultsGroup);
   main->setSpacing(8);
   main->setContentsMargins(15, 15, 15, 15);
+  main->addSpacing(10);
+  main->addWidget(btnDocs);
 
   setLayout(main);
   setMinimumWidth(400);
