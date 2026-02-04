@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 
-<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../" lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
+<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../../../" lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
 <head>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>RF Circuit Synthesis Tools | Qucs-S S-parameter Viewer Documentation</title>
-<meta content="RF Circuit Synthesis Tools | Qucs-S S-parameter Viewer Documentation" property="og:title"/>
-<meta content="RF Circuit Synthesis Tools | Qucs-S S-parameter Viewer Documentation" name="twitter:title"/>
-<link href="../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
-<link href="../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
-<link href="../search.html" rel="search" title="Search"/>
-<link href="../genindex.html" rel="index" title="Index"/>
-<link href="../Calculators/index.html" rel="prev" title="RF Engineering Calculators"/>
+<title>Series Resistor Attenuator | Qucs-S S-parameter Viewer Documentation</title>
+<meta content="Series Resistor Attenuator | Qucs-S S-parameter Viewer Documentation" property="og:title"/>
+<meta content="Series Resistor Attenuator | Qucs-S S-parameter Viewer Documentation" name="twitter:title"/>
+<link href="../../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
+<link href="../../../search.html" rel="search" title="Search"/>
+<link href="../../../genindex.html" rel="index" title="Index"/>
 <script>
     <!-- Prevent Flash of wrong theme -->
       const userPreference = localStorage.getItem('darkMode');
@@ -33,7 +32,7 @@
       Skip to content
     </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
 <div class="hidden mr-4 md:flex">
-<a class="flex items-center mr-6" href="../index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Qucs-S S-parameter Viewer Documentation</span>
+<a class="flex items-center mr-6" href="../../../index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Qucs-S S-parameter Viewer Documentation</span>
 </a><nav class="flex items-center space-x-6 text-sm font-medium">
 <a class="transition-colors hover:text-foreground/80 text-foreground/60" href="https://andresmmera.github.io/qucs-s-spar-viewer/" rel="noopener nofollow">Online Documentation</a>
 <a class="transition-colors hover:text-foreground/80 text-foreground/60" href="https://qucs-s-help.readthedocs.io" rel="noopener nofollow">Qucs-S Docs</a>
@@ -46,7 +45,7 @@
 <span class="sr-only">Toggle navigation menu</span>
 </button>
 <div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
-<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../../../search.html" class="relative flex items-center group" id="searchbox" method="get">
 <input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
 <kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
 <span class="text-xs">⌘</span>
@@ -73,7 +72,7 @@
 </div>
 </header>
 <div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
-<a class="!justify-start text-sm md:!hidden bg-background" href="../index.html"><span class="font-bold text-clip whitespace-nowrap">Qucs-S S-parameter Viewer Documentation</span>
+<a class="!justify-start text-sm md:!hidden bg-background" href="../../../index.html"><span class="font-bold text-clip whitespace-nowrap">Qucs-S S-parameter Viewer Documentation</span>
 </a>
 <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
 <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="flex md:hidden flex-col font-medium mt-4">
@@ -82,11 +81,11 @@
 <a href="https://ra3xdh.github.io/" rel="nofollow noopener">Main QUCS-S Site</a>
 <a href="https://github.com/ra3xdh/qucs_s/discussions" rel="nofollow noopener">Qucs-S Forum</a>
 </nav><nav class="table w-full min-w-full my-6 lg:my-8">
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../Data-display-panel/index.html">Data display panel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Data-management-panel/index.html">Data management panel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Calculators/index.html">RF Engineering Calculators</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">RF Circuit Synthesis Tools</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Data-display-panel/index.html">Data display panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Data-management-panel/index.html">Data management panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Calculators/index.html">RF Engineering Calculators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">RF Circuit Synthesis Tools</a></li>
 </ul>
 </nav>
 </div>
@@ -100,255 +99,106 @@
 <main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
 <div class="w-full min-w-0 mx-auto">
 <nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
-<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../index.html">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../../../index.html">
 <span class="hidden md:inline">Qucs-S S-parameter Viewer Documentation</span>
 <svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
 <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
 </svg>
 </a>
-<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">RF Circuit Synthesis Tools</span>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Series Resistor Attenuator</span>
 </nav>
 <div id="content" role="main">
-<section id="rf-circuit-synthesis-tools">
-<h1>RF Circuit Synthesis Tools</h1>
-<section id="introduction">
-<h2>Introduction</h2>
-<p>The data management panel contains a tab with tools for synthesizing RF some passive RF circuits:</p>
-<ul class="simple">
-<li><p>Filters</p></li>
-<li><p>Matching networks</p></li>
-<li><p>Power combining/splitting circuits</p></li>
-<li><p>Attenuators</p></li>
-</ul>
-<figure class="align-default" id="id1">
-<img alt="../_images/tools-filter-tab.png" class="with-border" src="../_images/tools-filter-tab.png"/>
-<figcaption>
-<p><span class="caption-text">RF synthesis tools widget</span></p>
-</figcaption>
-</figure>
-</section>
-<section id="design-tools">
-<h2>Design Tools</h2>
-<section id="filter-design">
-<h3><a class="reference internal" href="Filters/index.html"><span class="doc std std-doc">Filter Design</span></a></h3>
-<p>The following RF and MW filters can be synthesized:</p>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Topology</p></th>
-<th class="head"><p>Respose type</p></th>
-<th class="head"><p>Notes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="Filters/LC_Canonical/index.html"><span class="doc std std-doc">Lumped LC filters</span></a></p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>- Canonical filters</p></td>
-<td><p>LPF / HPF / BPF / BSF</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>- Elliptic</p></td>
-<td><p>LPF / HPF / BPF / BSF</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>- Direct-coupled (BPF)</p></td>
-<td><p>BPF</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="Filters/SteppedZ/index.html"><span class="doc std std-doc">Stepped-Z</span></a></p></td>
-<td><p>LPF</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="Filters/QuarterWave/index.html"><span class="doc std std-doc">Quarter-wavelength</span></a></p></td>
-<td><p>BPF / BSF</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="Filters/CapCoupledShuntResonators/index.html"><span class="doc std std-doc">Capacitively-coupled shunt resonators</span></a></p></td>
-<td><p>BPF</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>Side-coupled</p></td>
-<td><p>BPF</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="Filters/EndCoupled/index.html"><span class="doc std std-doc">End-coupled</span></a></p></td>
-<td><p>BPF</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>Semilumped</p></td>
-<td><p>LPF/HPF</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<p><a class="reference internal" href="Filters/index.html"><span class="doc std std-doc">Learn more</span></a></p>
-</section>
-<section id="matching-networks">
-<h3>Matching Networks</h3>
-<p>Single-port and two-port matching networks can be synthesized. The load can be entered manually or loaded from a Touchstone file.The following topologies are available:</p>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Topology</p></th>
-<th class="head"><p>Load type</p></th>
-<th class="head"><p>Notes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>L-section</p></td>
-<td><p>{Real, Complex}</p></td>
-<td><p>Narrowband</p></td>
-</tr>
-<tr class="row-odd"><td><p>Single-stub</p></td>
-<td><p>{Real, Complex}</p></td>
-<td><p>Narrowband</p></td>
-</tr>
-<tr class="row-even"><td><p>Double-stub</p></td>
-<td><p>{Real, Complex}</p></td>
-<td><p>Narrowband</p></td>
-</tr>
-<tr class="row-odd"><td><p>Multisection transformers</p></td>
-<td><p>Real</p></td>
-<td><p>Broadband</p></td>
-</tr>
-<tr class="row-even"><td><p>Cascaded L-sections</p></td>
-<td><p>Real</p></td>
-<td><p>Broadband</p></td>
-</tr>
-<tr class="row-odd"><td><p>\lambda/8 + \lambda/4</p></td>
-<td><p>{Real, Complex}</p></td>
-<td><p>Narrowband</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="power-combining">
-<h3>Power combining</h3>
-<p>This tool allows to synthesize a number of power splitters/combiners and couplers</p>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Topology</p></th>
-<th class="head"><p># ways</p></th>
-<th class="head"><p>Notes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Wilkinson</p></td>
-<td><p>2</p></td>
-<td><p>Narrowband, Matched</p></td>
-</tr>
-<tr class="row-odd"><td><p>Multistage Wilkinson</p></td>
-<td><p>2</p></td>
-<td><p>Broadband, Matched</p></td>
-</tr>
-<tr class="row-even"><td><p>T-Junction</p></td>
-<td><p>2</p></td>
-<td><p>Unmatched</p></td>
-</tr>
-<tr class="row-odd"><td><p>Branchline</p></td>
-<td><p>2</p></td>
-<td><p>Narrowband, Matched</p></td>
-</tr>
-<tr class="row-even"><td><p>Double-box Branchline</p></td>
-<td><p>2</p></td>
-<td><p>Broadband, Matched</p></td>
-</tr>
-<tr class="row-odd"><td><p>Bagley</p></td>
-<td><p>odd {3,5,7,…}</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>Gysel</p></td>
-<td><p>3</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-odd"><td><p>Lim-Eom</p></td>
-<td><p>3</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>Wilkinson 3 way</p></td>
-<td><p>3</p></td>
-<td><p>High isolation</p></td>
-</tr>
-<tr class="row-odd"><td><p>Recombinant 3 way</p></td>
-<td><p>3</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="attenuator-design">
-<h3><a class="reference internal" href="Attenuators/index.html"><span class="doc std std-doc">Attenuator design</span></a></h3>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Topology</p></th>
-<th class="head"><p>Notes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="Attenuators/PiTee/index.html"><span class="doc std std-doc">Pi</span></a></p></td>
-<td><p>Matched</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="Attenuators/PiTee/index.html"><span class="doc std std-doc">Tee</span></a></p></td>
-<td><p>Matched</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="Attenuators/BridgedTee/index.html"><span class="doc std std-doc">Bridged-Tee</span></a></p></td>
-<td><p>Matched</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="Attenuators/ReflectionAttenuator/index.html"><span class="doc std std-doc">Reflection attenuator</span></a></p></td>
-<td><p>Matched</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="Attenuators/QuarterWaveAttenuators/index.html"><span class="doc std std-doc">Quarter-wavelength series</span></a></p></td>
-<td><p>Frequency-dependent. Output port unmatched</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="Attenuators/QuarterWaveAttenuators/index.html"><span class="doc std std-doc">Quarter-wavelength shunt</span></a></p></td>
-<td><p>Frequency-dependent. Output port unmatched</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="Attenuators/Lpad1stSeries/index.html"><span class="doc std std-doc">L-pad 1st series</span></a></p></td>
-<td><p>Very broadband matching</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="Attenuators/Lpad1stShunt/index.html"><span class="doc std std-doc">L-pad 1st shunt</span></a></p></td>
-<td><p>Very broadband matching</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="Attenuators/Rseries/index.html"><span class="doc std std-doc">Series resistor</span></a></p></td>
-<td><p>Two ports unmatched</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="Attenuators/Rshunt/index.html"><span class="doc std std-doc">Shunt resistor</span></a></p></td>
-<td><p>Two ports unmatched</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="see-also">
-<h2>See Also</h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../Calculators/index.html">RF Engineering Calculators</a></li>
-</ul>
+<section id="series-resistor-attenuator">
+<h1>Series Resistor Attenuator</h1>
+<section id="overview">
+<h2>Overview</h2>
+<p>The simplest attenuator configurations using a <strong>single resistor</strong>. Used as a lossy matching network or when impedance matching is not required.</p>
+<hr class="docutils"/>
+<section id="topology">
+<h3>Topology</h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">Input ──[R]── Output
+</span></code></pre></div>
 </div>
+<p>Single series resistor between source and load.</p>
+</section>
+<section id="design-equation">
+<h3>Design Equation</h3>
+<p>Given:</p>
+<ul class="simple">
+<li><p>Source impedance: ZS</p></li>
+<li><p>Load impedance: ZL</p></li>
+<li><p>Desired power attenuation: α (linear power ratio, α &lt; 1)</p></li>
+</ul>
+<p>The series resistor value is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">R = (-1) × ((ZL + ZS) × α - 2√(ZL × ZS × α)) / α
+</span></code></pre></div>
+</div>
+<p><strong>Simplified for ZS = ZL = Z₀:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">R = 2 × Z₀ × (1/√α - 1)
+</span></code></pre></div>
+</div>
+</section>
+<section id="impedances-seen">
+<h3>Impedances Seen</h3>
+<p><strong>Input impedance (looking into attenuator from source):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">Zin</span> <span class="o">=</span> <span class="n">R</span> <span class="o">+</span> <span class="n">ZL</span>
+</span></code></pre></div>
+</div>
+<p><strong>Output impedance (looking back from load):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">Zout</span> <span class="o">=</span> <span class="n">R</span> <span class="o">+</span> <span class="n">ZS</span>
+</span></code></pre></div>
+</div>
+</section>
+<section id="power-dissipation">
+<h3>Power Dissipation</h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">Pdiss = Pin × (1 - α)
+</span></code></pre></div>
+</div>
+<p>All dissipated power goes into the single resistor.</p>
+</section>
+<section id="example-10-db-zs-zl-50-pin-1-w">
+<h3>Example: 10 dB, ZS = ZL = 50 Ω, Pin = 1 W</h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">α = 10^(-10/10) = 0.1
+</span><span id="line-2">√α ≈ 0.316
+</span><span id="line-3">
+</span><span id="line-4">R = 2 × 50 × (1/0.316 - 1)
+</span><span id="line-5">  = 2 × 50 × (3.162 - 1)
+</span><span id="line-6">  = 216.2 Ω
+</span><span id="line-7">
+</span><span id="line-8">Zin = 216.2 + 50 = 266.2 Ω
+</span><span id="line-9">Zout = 216.2 + 50 = 266.2 Ω
+</span><span id="line-10">
+</span><span id="line-11">Pdiss = 1 × (1 - 0.1) = 0.9 W
+</span></code></pre></div>
+</div>
+</section>
+<section id="vswr-at-input">
+<h3>VSWR at Input</h3>
+<p>When ZS ≠ Zin:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">VSWR_in</span> <span class="o">=</span> <span class="p">(</span><span class="n">Zin</span><span class="o">/</span><span class="n">ZS</span><span class="p">)</span>    <span class="k">if</span> <span class="n">Zin</span> <span class="o">&gt;</span> <span class="n">ZS</span>
+</span><span id="line-2">        <span class="o">=</span> <span class="p">(</span><span class="n">ZS</span><span class="o">/</span><span class="n">Zin</span><span class="p">)</span>    <span class="k">if</span> <span class="n">ZS</span> <span class="o">&gt;</span> <span class="n">Zin</span>
+</span></code></pre></div>
+</div>
+<p>For the example above:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">VSWR_in</span> <span class="o">=</span> <span class="mf">266.2</span> <span class="o">/</span> <span class="mi">50</span> <span class="o">=</span> <span class="mf">5.32</span><span class="p">:</span><span class="mi">1</span>  <span class="p">(</span><span class="n">poor</span> <span class="n">match</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+</section>
 </section>
 </section>
 </div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
-<div class="mr-auto">
-<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../Calculators/index.html">
-<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<polyline points="15 18 9 12 15 6"></polyline>
-</svg>
-        RF Engineering Calculators
-      </a>
-</div>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
-<li><a :data-current="activeSection === '#introduction'" class="reference internal" href="#introduction">Introduction</a></li>
-<li><a :data-current="activeSection === '#design-tools'" class="reference internal" href="#design-tools">Design Tools</a><ul>
-<li><a :data-current="activeSection === '#filter-design'" class="reference internal" href="#filter-design"><span class="xref myst">Filter Design</span></a></li>
-<li><a :data-current="activeSection === '#matching-networks'" class="reference internal" href="#matching-networks">Matching Networks</a></li>
-<li><a :data-current="activeSection === '#power-combining'" class="reference internal" href="#power-combining">Power combining</a></li>
-<li><a :data-current="activeSection === '#attenuator-design'" class="reference internal" href="#attenuator-design"><span class="xref myst">Attenuator design</span></a></li>
+<li><a :data-current="activeSection === '#overview'" class="reference internal" href="#overview">Overview</a><ul>
+<li><a :data-current="activeSection === '#topology'" class="reference internal" href="#topology">Topology</a></li>
+<li><a :data-current="activeSection === '#design-equation'" class="reference internal" href="#design-equation">Design Equation</a></li>
+<li><a :data-current="activeSection === '#impedances-seen'" class="reference internal" href="#impedances-seen">Impedances Seen</a></li>
+<li><a :data-current="activeSection === '#power-dissipation'" class="reference internal" href="#power-dissipation">Power Dissipation</a></li>
+<li><a :data-current="activeSection === '#example-10-db-zs-zl-50-pin-1-w'" class="reference internal" href="#example-10-db-zs-zl-50-pin-1-w">Example: 10 dB, ZS = ZL = 50 Ω, Pin = 1 W</a></li>
+<li><a :data-current="activeSection === '#vswr-at-input'" class="reference internal" href="#vswr-at-input">VSWR at Input</a></li>
 </ul>
 </li>
-<li><a :data-current="activeSection === '#see-also'" class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </div>
 </aside>
@@ -362,9 +212,9 @@
 </div>
 </footer>
 </div>
-<script src="../_static/documentation_options.js?v=5929fcd5"></script>
-<script src="../_static/doctools.js?v=9bcbadda"></script>
-<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-<script defer="defer" src="../_static/theme.js?v=073f68d9"></script>
+<script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+<script src="../../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script defer="defer" src="../../../_static/theme.js?v=073f68d9"></script>
 </body>
 </html>

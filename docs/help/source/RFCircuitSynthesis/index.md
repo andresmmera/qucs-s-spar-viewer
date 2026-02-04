@@ -69,20 +69,20 @@ This tool allows to synthesize a number of power splitters/combiners and coupler
 |Wilkinson 3 way|3| High isolation|
 |Recombinant 3 way|3||
 
-### Attenuator design
+### [Attenuator design](/RFCircuitSynthesis/Attenuators/index)
 
 | Topology | Notes|
 |-----------|-------|
-|Pi|Matched|
-|Tee|Matched|
-|Bridged-Tee|Matched|
-|Reflection attenuator|Matched|
-|Quarter-wavelength series|Frequency-dependent. Output port unmatched|
-|Quarter-wavelength shunt|Frequency-dependent. Output port unmatched|
-|L-pad 1st series|Very broadband matching|
-|L-pad 1st shunt|Very broadband matching|
-|Series resistor|Two ports unmatched|
-|Shunt resistor|Two ports unmatched|
+|[Pi](/RFCircuitSynthesis/Attenuators/PiTee/index)|Matched|
+|[Tee](/RFCircuitSynthesis/Attenuators/PiTee/index)|Matched|
+|[Bridged-Tee](/RFCircuitSynthesis/Attenuators/BridgedTee/index)|Matched|
+|[Reflection attenuator](/RFCircuitSynthesis/Attenuators/ReflectionAttenuator/index)|Matched|
+|[Quarter-wavelength series](/RFCircuitSynthesis/Attenuators/QuarterWaveAttenuators/index)|Frequency-dependent. Output port unmatched|
+|[Quarter-wavelength shunt](/RFCircuitSynthesis/Attenuators/QuarterWaveAttenuators/index)|Frequency-dependent. Output port unmatched|
+|[L-pad 1st series](/RFCircuitSynthesis/Attenuators/Lpad1stSeries/index)|Very broadband matching|
+|[L-pad 1st shunt](/RFCircuitSynthesis/Attenuators/Lpad1stShunt/index)|Very broadband matching|
+|[Series resistor](/RFCircuitSynthesis/Attenuators/Rseries/index)|Two ports unmatched|
+|[Shunt resistor](/RFCircuitSynthesis/Attenuators/Rshunt/index)|Two ports unmatched|
 
 ## See Also
 
