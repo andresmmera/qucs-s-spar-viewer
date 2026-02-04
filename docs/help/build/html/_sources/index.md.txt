@@ -18,7 +18,7 @@ This tool can read data from Touchstone files and Qucs-S datasets. Users can eas
 
 The tool includes built-in design tools such as:
 
-- RF circuit synthesis tools
+- [RF circuit synthesis tools](/RFCircuitSynthesis/index)
 - [RF engineering calculators](/Calculators/index)
 
 ## Interface Overview
@@ -68,9 +68,10 @@ A collection of engineering calculators organized by category:
 ## See Also
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 
 Data-display-panel/index
 Data-management-panel/index
 Calculators/index
+RFCircuitSynthesis/index
 ```

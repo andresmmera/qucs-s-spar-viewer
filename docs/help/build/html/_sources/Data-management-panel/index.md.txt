@@ -67,14 +67,6 @@ The simulation is run internally, no external simulation kernels are needed.
 
 On the bottom, the panel has a schematic viewer and export options for simulating the circuit in an external EDA software. Ccurrently, only Qucs-S format is supported.
 
-```{figure} /Data-management-panel/images/tools-filter-tab.png
----
-class: with-border
----
-
-RF synthesis tools widget
-```
-
 ## Note-taking tool
 The note-taking widget is a simple plain text editor for writing annotations about the data. The notes are saved with the viewer session so they can be loaded later.
 

@@ -254,6 +254,12 @@ FilterDesignTool::FilterDesignTool(QWidget *parent) : QWidget(parent) {
   FilterDesignLayout->addWidget(traceNameLabel, layout_row, 0);
   FilterDesignLayout->addWidget(traceNameLineEdit, layout_row, 1);
 
+  // Documentation Button
+  QPushButton *btnDocs = new QPushButton("See Docs", this);
+  connect(btnDocs, &QPushButton::clicked, this,
+          &FilterDesignTool::showDocumentation);
+  FilterDesignLayout->addWidget(btnDocs, layout_row, 2);
+
   this->setLayout(FilterDesignLayout);
 
   // Connection functions for updating the network requirements and simulate in
