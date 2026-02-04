@@ -110,12 +110,12 @@ void Qucs_S_SPAR_Viewer::CreateMenuBar() {
   QMenu *calculatorsMenu = CreateCalculatorsMenu();
 
   QMenu *helpMenu = new QMenu(tr("&Help"));
-  QAction *helpHelp = new QAction(tr("&Help"), this);
+  QAction *helpHelp = new QAction(tr("&User Docs"), this);
   helpHelp->setShortcut(Qt::Key_F1);
   helpMenu->addAction(helpHelp);
   connect(helpHelp, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotHelpIntro);
-  QAction *helpAbout = new QAction(tr("&Help"), this);
+  QAction *helpAbout = new QAction(tr("&About"), this);
   helpMenu->addAction(helpAbout);
   connect(helpAbout, &QAction::triggered, this,
           &Qucs_S_SPAR_Viewer::slotHelpAbout);
