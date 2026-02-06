@@ -9,6 +9,8 @@
 #define POWERCOMBININGTOOL_H
 
 #include "UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "Misc/general.h" // To build the docs path
+
 #include <QCheckBox>
 #include <QComboBox>
 #include <QGridLayout>
@@ -22,6 +24,7 @@
 #include <QVBoxLayout>
 #include <QValidator>
 #include <QWidget>
+#include <QPushButton>
 
 #include "Schematic/Network.h"
 
@@ -105,6 +108,12 @@ private slots:
   /// @brief Handle topology combo box changes
   /// @param index New topology index
   void on_TopoCombo_currentIndexChanged(int);
+
+  /// @brief Shows the documentation for power combiner design tool
+  void showDocumentation() {
+      QString path = QString("/RFCircuitSynthesis/PowerCombining/index.html");
+      showHTMLDocs(path);
+  }
 
 private:
   QLabel *OhmLabel, *K1LabeldB, *NStagesLabel, *K1Label, *FreqLabel, *RefImp,

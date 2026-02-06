@@ -56,18 +56,18 @@ Single-port and two-port matching networks can be synthesized. The load can be e
 
 This tool allows to synthesize a number of power splitters/combiners and couplers
 
-| Topology | # ways| Notes|
-|-----------|-------|-------|
-|Wilkinson|2|Narrowband, Matched|
-|Multistage Wilkinson|2|Broadband, Matched|
-|T-Junction|2|Unmatched|
-|Branchline|2|Narrowband, Matched|
-|Double-box Branchline|2|Broadband, Matched|
-|Bagley|odd {3,5,7,...}||
-|Gysel|3|2|
-|Lim-Eom|3||
-|Wilkinson 3 way|3| High isolation|
-|Recombinant 3 way|3||
+| Topology | Outputs | Power Split | Isolation | Bandwidth | Notes |
+|----------|---------|-------------|-----------|-----------|-------------|
+| [Wilkinson](/RFCircuitSynthesis/PowerCombining/Wilkinson/index) | 2 | Equal/Unequal | Excellent | Medium | Most common, simple |
+| [Multistage Wilkinson](/RFCircuitSynthesis/PowerCombining/MultistageWilkinson/index) | 2ⁿ | Equal | Excellent | Wide | Cascaded 2-way stages |
+| [T-Junction](/RFCircuitSynthesis/PowerCombining/TJunction/index) | 2 | Equal/Unequal | None | Narrowband | Simplest, reactive |
+| [Branch-line](/RFCircuitSynthesis/PowerCombining/Branchline/index) | 2 | Equal/Unequal | Good | Medium | 90° phase, quadrature hybrid |
+| [Double-box Branchline](/RFCircuitSynthesis/PowerCombining/DoubleBoxBranchLine/index) | 2 | Equal/Unequal | Better | Medium | Improved branch-line |
+| [Bagley](/RFCircuitSynthesis/PowerCombining/Bagley/index) | N | Equal | Good | Narrowband | Multi-way, planar |
+| [Gysel](/RFCircuitSynthesis/PowerCombining/Gysel/index) | 2 | Equal | Excellent | Medium | High power, grounded resistors |
+| [Lim-Eom](/RFCircuitSynthesis/PowerCombining/LimEom/index) | 2 | Equal | Excellent | Wide | Wideband improvement |
+| [3-way Improved Isolation](/RFCircuitSynthesis/PowerCombining/ThreeWayWilkinsonImprovedIsolation/index) | 3 | Equal | Excellent | Medium | Enhanced 3-port isolation |
+| [Recombinant 3-way Wilkinson](/RFCircuitSynthesis/PowerCombining/Recombinant3Way/index)| 3 | Equal | Excellent | Medium | Alternative 3-port design |
 
 ### [Attenuator design](/RFCircuitSynthesis/Attenuators/index)
 
