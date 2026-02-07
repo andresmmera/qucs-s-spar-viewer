@@ -32,8 +32,6 @@ Input──┤                     │                   │
 
 ## Design Equations (Equal Split)
 
-### Optimized Impedances
-
 ```
 Z₁ = 2.28 × Z₀    (first stage)
 Z₂ = 1.316 × Z₀   (second stage)
@@ -43,13 +41,14 @@ R₂ = 4 × Z₀       (second stage isolation)
 ```
 
 **For Z₀ = 50 Ω:**
-```
-Z₁ = 114 Ω
-Z₂ = 65.8 Ω
 
-R₁ = 66 Ω
-R₂ = 200 Ω
-```
+| Parameter | Value | 
+|-----------|-------|
+|**Z₁**|114 Ω|
+|**Z₂**|65.8 Ω|
+|**R₁**|66 Ω|
+|**R₂**|200 Ω|
+
 
 **All transmission lines:** λ/4 at f₀
 
@@ -57,3 +56,11 @@ R₂ = 200 Ω
 
 [1] Goldfarb, M.E. ‘A recombinant, In-phase power divider’, IEEE Trans. Microw. Theory Tech., 1991, 39, (8), pp. 1438–1440
 [2] Andrei Grebennikov. "Power combiners, impedance transformers and directional couplers: part II". High Frequency Electronics. 2008
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+/RFCircuitSynthesis/PowerCombining/index
+```

@@ -28,7 +28,7 @@
 ### For N Outputs (Equal Split)
 
 **Branch impedance:**
-```
+```{math}
 Zbr = (2 × Z₀) / √N
 ```
 
@@ -43,16 +43,16 @@ Zbr = (2 × Z₀) / √N
 ### 3-Way Divider, Z₀ = 50 Ω, f₀ = 2 GHz
 
 **Design:**
-```
-N = 3
-Zbr = (2 × 50) / √3 = 100 / 1.732 ≈ 57.7 Ω
 
-λ₀ = 150 mm
-λ/4 = 37.5 mm (vertical branches)
-λ/2 = 75 mm (horizontal sections)
 
-Insertion loss = 10 × log₁₀(3) ≈ 4.77 dB per output
-```
+| Parameter | Value | 
+|-----------|-------|
+|**Number of outputs**|3|
+|**Zbr**|(2 × 50) / √3 = 100 / 1.732 ≈ 57.7 Ω|
+|**λ₀**|150 mm|
+|**λ/4**|37.5 mm (vertical branches)|
+|**λ/2**|75 mm (horizontal branches)|
+
 
 ## Physical Size
 
@@ -69,3 +69,11 @@ N = 8: ~3.5λ
 
 [1] Pozar, D. M. (2012). *Microwave Engineering* (4th ed.). Wiley.
 
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+/RFCircuitSynthesis/PowerCombining/index
+```

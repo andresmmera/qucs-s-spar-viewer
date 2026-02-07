@@ -26,18 +26,20 @@ K = P₂/P₃
 
 ### Transmission Line Impedances
 
-```
+```{math}
 ZA = Z₀ / √2 ≈ 0.707 × Z₀
 ZB = Z₀
 R = Z₀
 ```
 
 **For Z₀ = 50 Ω:**
-```
-ZA = 35.4 Ω
-ZB = 50 Ω
-R = 50 Ω
-```
+
+| Parameter | Value | 
+|-----------|-------|
+|**ZA**|35.4 Ω|
+|**ZB**|50 Ω|
+|**R**|50 Ω|
+
 
 ## Advantages
 
@@ -64,3 +66,11 @@ R = 50 Ω
 ## References
 
 [1] Pozar, D. M. (2012). *Microwave Engineering* (4th ed.), Section 7.5, pp. 347-352. Wiley.
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+/RFCircuitSynthesis/PowerCombining/index
+```

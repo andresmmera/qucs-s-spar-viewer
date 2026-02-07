@@ -19,19 +19,9 @@ Port 4 ─────────[ZB]────────[ZB]────�
 
 ## Design Equations
 
-### Optimization Parameter
-
-```
-r = 1  (typical optimization value)
-t = √((1 + K) × r)
-
-where K = P₂/P₃ (power split ratio)
-```
-
-### Impedance Calculations
 
 **For equal split (K = 1):**
-```
+```{math}
 t = √(2 × 1) = √2
 
 ZA = Z₀ × √(r × (t² - r)) / (t - r)
@@ -54,11 +44,11 @@ R = Z₀  (isolation resistor)
 ```
 
 **For Z₀ = 50 Ω:**
-```
-ZA = ZD ≈ 120.7 Ω
-ZB ≈ 35.4 Ω
-R = 50 Ω
-```
+| Parameter | Value | 
+|-----------|-------|
+|**ZA = ZD**|120.7 Ω|
+|**ZB**|35.4 Ω|
+|**R**|50 Ω|
 
 ## Advantages Over Single-Box
 
@@ -80,3 +70,11 @@ R = 50 Ω
    - Fabrication tolerance critical
 
 4. **Still narrowband**
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+/RFCircuitSynthesis/PowerCombining/index
+```

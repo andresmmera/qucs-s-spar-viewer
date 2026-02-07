@@ -11,7 +11,7 @@ A cascade of λ/4 transmission lines with shunt stubs realizes a bandpass or ban
 ## Design Equations
 
 ### Quarter-Wave Transmission Line
-```
+```{math}
 λ/4 = c / (4 × fc)
 ```
 
@@ -20,20 +20,23 @@ All connecting lines are exactly λ/4 at the center frequency.
 ### Stub Impedances
 
 **Bandpass filter (short-circuit stubs):**
-```
+```{math}
 Z_stub = (π × Z₀ × bw) / (4 × gₖ)
 ```
 
 **Bandstop filter (open-circuit stubs):**
-```
+```{math}
 Z_stub = (4 × Z₀) / (π × bw × gₖ)
 ```
 
 Where:
-- `fc` = center frequency
-- `bw = BW / fc` = fractional bandwidth
-- `gₖ` = normalized lowpass prototype coefficient
-- `Z₀` = source impedance
+
+| Parameter | Range |
+|-----------|-------|
+|**fc**|Center frequency|
+|**bw = BW / fc**|Fractional bandwidth|
+|**gₖ**|Normalized lowpass prototype coefficient|
+|**Z₀**|System impedance|
 
 ## Input Parameters
 
@@ -72,49 +75,6 @@ Input ──[λ/4]──┬──[λ/4]──┬──[λ/4]──┬──[λ/4
 
 Each stub is **open-circuited** at its far end.
 
-## Microstrip Implementation
-
-When microstrip is selected:
-
-**Bandpass:**
-- Short-circuit stubs require **vias** or **shunt capacitors** (100 pF, 1 nF) to ground
-- Via diameter typically 0.5 mm, 4 vias per stub
-
-**Bandstop:**
-- Open-circuit stubs need to account for fringing capacitance at the open end
-
-## Example
-
-**Specification:**
-- 3rd-order Butterworth bandpass
-- fc = 2 GHz, BW = 400 MHz
-- Z₀ = 50 Ω
-
-**Normalized prototype (Butterworth N=3):**
-```
-g₁ = 1.0000
-g₂ = 2.0000
-g₃ = 1.0000
-```
-
-**Fractional bandwidth:**
-```
-bw = BW / fc = 400 / 2000 = 0.2
-```
-
-**λ/4 line length:**
-```
-λ/4 = (3×10⁸) / (4 × 2×10⁹) = 37.5 mm
-```
-
-**Stub impedances:**
-```
-Z_stub1 = (π × 50 × 0.2) / (4 × 1.0) = 7.85 Ω
-Z_stub2 = (π × 50 × 0.2) / (4 × 2.0) = 3.93 Ω
-Z_stub3 = (π × 50 × 0.2) / (4 × 1.0) = 7.85 Ω
-```
-
-All connecting lines: **Z₀ = 50 Ω, length = 37.5 mm**
 
 ## Advantages
 
@@ -135,6 +95,6 @@ All connecting lines: **Z₀ = 50 Ω, length = 37.5 mm**
 
 ```{toctree}
 :maxdepth: 1
-
-../Filters/index
+/RFCircuitSynthesis/index
+/RFCircuitSynthesis/Filters/index
 ```

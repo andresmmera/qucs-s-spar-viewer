@@ -48,3 +48,8 @@ See individual topology documentation for detailed design equations and schemati
 [1] Vizmuller, P. (1995). *RF Design Guide: Systems, Circuits, and Equations*. Artech House.
 
 [2] Doherty, W. E., & Joos, R. D. (1998). *The PIN Diode Circuit Designer's Handbook*. Microsemi Corp.
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+```

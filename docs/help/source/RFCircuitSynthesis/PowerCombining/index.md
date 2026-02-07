@@ -220,3 +220,8 @@ For N-way power combining:
 [2] Wilkinson, E. J. (1960). *An N-Way Hybrid Power Divider*. IRE Trans. Microwave Theory Tech., MTT-8, 116-118.
 
 [3] Gysel, U. H. (1975). *A New N-Way Power Divider/Combiner Suitable for High-Power Applications*. IEEE MTT-S Int. Microwave Symp. Digest, 116-118.
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+```

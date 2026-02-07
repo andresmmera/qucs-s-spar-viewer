@@ -95,3 +95,8 @@ See individual filter documentation for detailed synthesis equations.
 [3] Pozar, D. M. (2012). *Microwave Engineering* (4th ed.). Wiley.
 
 [4] Hong, J.-S., & Lancaster, M. J. (2001). *Microstrip Filters for RF/Microwave Applications*. Wiley.
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+```

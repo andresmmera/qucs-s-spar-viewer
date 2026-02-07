@@ -47,14 +47,15 @@ R₂ = 2 × Z₀       (second isolation)
 ```
 
 **For Z₀ = 50 Ω:**
-```
-Z₁ = 36 Ω
-Z₂ = Z₃ = Z₅ = 40 Ω
-Z₄ = Z₆ = 80 Ω
 
-R₁ = 50 Ω
-R₂ = 100 Ω
-```
+| Parameter | Value | 
+|-----------|-------|
+|**Z₁**|36 Ω|
+|**Z₂ = Z₃ = Z₅**|40 Ω|
+|**Z₄ = Z₆**|80 Ω|
+
+
+
 
 **All transmission lines:** λ/4 at f₀
 
@@ -63,3 +64,11 @@ R₂ = 100 Ω
 [1] "A recombinant in-phase power divider", IEEE Trans. Microwave Theory Tech., vol. MTT-39, Aug. 1991, pp. 1438-1440
 
 [2] "Power combiners, impedance transformers and directional couplers: part II". Andrei Grebennikov. High Frequency Electronics. 2008
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+/RFCircuitSynthesis/PowerCombining/index
+```

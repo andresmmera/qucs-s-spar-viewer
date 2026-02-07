@@ -35,11 +35,12 @@ R = Z₀                         (grounded resistors)
 ```
 
 **For Z₀ = 50 Ω:**
-```
-Z₁ = 70.7 Ω
-Z₄ = 35.4 Ω
-R = 50 Ω
-```
+
+| Parameter | Value | 
+|-----------|-------|
+|**Z₁**|70.7 Ω|
+|**Z₄**|35.4 Ω|
+|**R**|50 Ω|
 
 ## Advantages Over Wilkinson
 
@@ -77,3 +78,11 @@ R = 50 Ω
 ## References
 
 [1] Gysel, U. H. (1975). "A New N-Way Power Divider/Combiner Suitable for High-Power Applications." *IEEE MTT-S Int. Microwave Symp. Digest*, pp. 116-118.
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+/RFCircuitSynthesis/PowerCombining/index
+```

@@ -20,8 +20,6 @@ Input ──┬──[R1]──┬── Output
 
 ## Design Equations
 
-**Note:** Bridged-Tee uses **0.05 × Attenuation** (not 0.1 like Pi/Tee).
-
 ```
 L = 10^(0.05 × Attenuation)
 
@@ -117,3 +115,11 @@ Note: Most power is dissipated in **R2**, which is always equal to Z₀.
 [1] Vizmuller, P. (1995). *RF Design Guide: Systems, Circuits, and Equations*, Chapter 3. Artech House.
 
 [2] Doherty, W. E., & Joos, R. D. (1998). *The PIN Diode Circuit Designer's Handbook*, Chapter 4. Microsemi Corp.
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+/RFCircuitSynthesis/Attenuators/index
+```

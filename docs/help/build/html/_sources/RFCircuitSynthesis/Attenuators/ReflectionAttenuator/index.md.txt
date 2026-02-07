@@ -138,3 +138,11 @@ Pdiss_R1 = Pdiss_R2 = 0.45 W each
 ## References
 
 [1] Doherty, W. E., & Joos, R. D. (1998). *The PIN Diode Circuit Designer's Handbook*, Chapter 5: Reflection Attenuators. Microsemi Corp.
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+/RFCircuitSynthesis/Attenuators/index
+```

@@ -6,7 +6,7 @@ Classical lumped-element filter topology using inductors and capacitors arranged
 
 ## Principle
 
-Normalized lowpass prototype coefficients are transformed into actual component values based on the desired filter type. The network can begin with either a shunt or series element, yielding **CLC** or **LCL** topologies.
+Normalized lowpass prototype coefficients are transformed into actual component values based on the desired filter type. The network can begin with either a shunt or series element, yielding first-series or first shunt topologies.
 
 ## Topology Options
 
@@ -41,12 +41,12 @@ Input ──[L]──┬──[L]──┬──[L]── Output
 Element values are scaled from the normalized prototype:
 
 **Shunt capacitor:**
-```
+```{math}
 C = gₖ / (2π × fc × Z₀)
 ```
 
 **Series inductor:**
-```
+```{math}
 L = gₖ × Z₀ / (2π × fc)
 ```
 
@@ -55,12 +55,12 @@ L = gₖ × Z₀ / (2π × fc)
 Inductors and capacitors swap roles (dual network):
 
 **Shunt inductor:**
-```
+```{math}
 L = Z₀ / (2π × fc × gₖ)
 ```
 
 **Series capacitor:**
-```
+```{math}
 C = 1 / (2π × fc × gₖ × Z₀)
 ```
 
@@ -69,13 +69,13 @@ C = 1 / (2π × fc × gₖ × Z₀)
 Each lowpass element is replaced by a series or parallel resonant circuit:
 
 **Series inductor →** series LC resonator:
-```
+```{math}
 Lₛ = gₖ × Z₀ / (2π × BW)
 Cₛ = BW / (gₖ × Z₀ × (2π × fc)²)
 ```
 
 **Shunt capacitor →** parallel LC resonator:
-```
+```{math}
 Cₚ = gₖ / (2π × BW × Z₀)
 Lₚ = BW × Z₀ / (gₖ × (2π × fc)²)
 ```
@@ -85,22 +85,25 @@ Lₚ = BW × Z₀ / (gₖ × (2π × fc)²)
 Each lowpass element is replaced by its dual resonator:
 
 **Series inductor →** parallel LC resonator (series arm):
-```
+```{math}
 Lₚ = gₖ × Z₀ × BW / ((2π × fc)²)
 Cₚ = 1 / (gₖ × Z₀ × 2π × BW)
 ```
 
 **Shunt capacitor →** series LC resonator (shunt arm):
-```
+```{math}
 Lₛ = Z₀ / (gₖ × 2π × BW)
 Cₛ = gₖ × BW / (Z₀ × (2π × fc)²)
 ```
 
 Where:
-- `fc` = cutoff frequency (LP/HP) or center frequency (BP/BS)
-- `BW` = bandwidth (BP/BS only)
-- `Z₀` = source impedance
-- `gₖ` = normalized lowpass prototype coefficient
+
+| Parameter | Description |
+|-----------|-------------|
+|**fc**|Cutoff frequency (LP/HP) or center frequency (BP/BS)|
+|**BW**|Bandwidth (BP/BS)|
+|**Z₀**|System impedance|
+|**gₖ**|Normalized lowpass prototype coefficients|
 
 ## Input Parameters
 
@@ -117,57 +120,21 @@ Where:
 For lowpass and highpass filters, shunt capacitors and/or series inductors can be replaced by transmission line sections to create a hybrid lumped/distributed implementation.
 
 **Shunt capacitor replacement:**
-```
+```{math}
 l_C = (λ₀ / 2π) × arcsin(2π × fc × Z_min × C)
 ```
 
 **Series inductor replacement:**
-```
+```{math}
 l_L = (λ₀ / 2π) × arcsin(2π × fc × L / Z_max)
 ```
 
 Where:
-- `Z_min` = minimum realizable impedance (e.g., 10 Ω)
-- `Z_max` = maximum realizable impedance (e.g., 120 Ω)
-- `λ₀ = c / fc`
 
-## Example: 3rd-Order Butterworth Lowpass
-
-**Specification:**
-- fc = 1 GHz
-- Z₀ = 50 Ω
-- CLC topology
-
-**Normalized prototype (Butterworth N=3):**
-```
-g₀ = 1.0000 (source)
-g₁ = 1.0000
-g₂ = 2.0000
-g₃ = 1.0000
-g₄ = 1.0000 (load)
-```
-
-**Element values:**
-
-C₁ (shunt):
-```
-C₁ = g₁ / (2π × fc × Z₀)
-   = 1.0 / (2π × 10⁹ × 50)
-   ≈ 3.18 pF
-```
-
-L₂ (series):
-```
-L₂ = g₂ × Z₀ / (2π × fc)
-   = 2.0 × 50 / (2π × 10⁹)
-   ≈ 15.9 nH
-```
-
-C₃ (shunt):
-```
-C₃ = g₃ / (2π × fc × Z₀)
-   ≈ 3.18 pF
-```
+| Parameter | Description |
+|-----------|-------------|
+|**Z_min**|Minimum realizable impedance (e.g., 10 Ω)|
+|**Z_max**|Maximum realizable impedance (e.g., 120 Ω)|
 
 
 ## References
@@ -178,6 +145,6 @@ C₃ = g₃ / (2π × fc × Z₀)
 
 ```{toctree}
 :maxdepth: 1
-
-../Filters/index
+/RFCircuitSynthesis/index
+/RFCircuitSynthesis/Filters/index
 ```

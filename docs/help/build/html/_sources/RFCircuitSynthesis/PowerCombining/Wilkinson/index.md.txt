@@ -23,13 +23,13 @@ Input  ────┤              [R]
 
 ### Equal Power Split (K = 1, 0 dB ratio)
 
-```
+```{math}
 Z₂ = Z₃ = √2 × Z₀ ≈ 70.7 Ω  (for Z₀ = 50Ω)
 R = 2 × Z₀ = 100 Ω
 ```
 
 **Power division:**
-```
+```{math}
 P₂ = P₃ = Pin / 2  (3 dB to each output)
 ```
 
@@ -38,20 +38,20 @@ P₂ = P₃ = Pin / 2  (3 dB to each output)
 Power ratio: K = P₂/P₃ (linear), or K_dB = 10 × log₁₀(K)
 
 **Branch impedances:**
-```
+```{math}
 Z₂ = Z₀ × √(2 × (1 + K) / K)
 Z₃ = Z₀ × √(2 × (1 + K))
 ```
 
 **Isolation resistor:**
-```
+```{math}
 R₂ = Z₀ × K        (series with Port 2)
 R₃ = Z₀ / K        (series with Port 3)
 R = R₂ + R₃ = Z₀ × (K + 1/K)
 ```
 
 **Power division:**
-```
+```{math}
 P₂ = Pin × K/(K + 1)
 P₃ = Pin × 1/(K + 1)
 ```
@@ -59,7 +59,7 @@ P₃ = Pin × 1/(K + 1)
 ## Example: Equal Split, Z₀ = 50 Ω, f₀ = 2 GHz
 
 **Design:**
-```
+```{math}
 Z₂ = Z₃ = 50 × √2 = 70.7 Ω
 R = 2 × 50 = 100 Ω
 λ/4 = (3×10⁸) / (4 × 2×10⁹) = 37.5 mm
@@ -89,3 +89,11 @@ R = 2 × 50 = 100 Ω
 [1] Wilkinson, E. J. (1960). "An N-Way Hybrid Power Divider." *IRE Trans. Microwave Theory Tech.*, MTT-8, pp. 116-118.
 
 [2] Pozar, D. M. (2012). *Microwave Engineering* (4th ed.), Section 7.3, pp. 336-340. Wiley.
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+/RFCircuitSynthesis/PowerCombining/index
+```

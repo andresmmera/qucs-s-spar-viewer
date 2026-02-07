@@ -41,18 +41,18 @@ The following RF and MW filters can be synthesized:
 
 Single-port and two-port matching networks can be synthesized. The load can be entered manually or loaded from a Touchstone file.The following topologies are available:
 
-| Topology | Load type | Notes|
-|-----------|-------|-------|
-| L-section  | {Real, Complex}| Narrowband|
-| Single-stub| {Real, Complex}| Narrowband|
-| Double-stub| {Real, Complex}| Narrowband|
-|Multisection transformers| Real| Broadband|
-| Cascaded L-sections| Real| Broadband|
-|\lambda/8 + \lambda/4| {Real, Complex}| Narrowband|
+| Topology | Elements | Bandwidth | Complex Loads | Adjustable |
+|----------|----------|-----------|---------------|------------|
+| [L-section](/RFCircuitSynthesis/ImpedanceMatching/LSection/index) | 2 lumped | Narrow (5-10%) | Yes | No |
+| [Single-stub](/RFCircuitSynthesis/ImpedanceMatching/SingleStub/index) | 1 TL + stub | Moderate (10-20%) | Yes | No |
+| [Double-stub](/RFCircuitSynthesis/ImpedanceMatching/DoubleStub/index) | 1 TL + 2 stubs | Moderate (10-20%) | Yes | Yes |
+| [Multisection λ/4](/RFCircuitSynthesis/ImpedanceMatching/MultisectionLambda4/index) | N×λ/4 TL | Broad (40-80%) | Real only | No |
+| [Cascaded LC](/RFCircuitSynthesis/ImpedanceMatching/CascadedLC/index) | 2N lumped | Moderate (20-40%) | Real only | No |
+| [λ/8 + λ/4](/RFCircuitSynthesis/ImpedanceMatching/Lambda8Lambda4/index) | 2 TL sections | Moderate (10-20%) | Yes | No |
 
 
 
-### Power combining
+### [Power combining](/RFCircuitSynthesis/PowerCombining/index)
 
 This tool allows to synthesize a number of power splitters/combiners and couplers
 

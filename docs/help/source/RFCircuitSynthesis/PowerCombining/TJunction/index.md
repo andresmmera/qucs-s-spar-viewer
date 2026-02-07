@@ -36,7 +36,7 @@ K = P₂/P₃ = (Port 2 power / Port 3 power)
 
 ### Branch Impedances (First Stage)
 
-```
+```{math}
 Z₂ = Z₀ × (K + 1)          (to higher power port)
 Z₃ = Z₀ × (K + 1) / K      (to lower power port)
 ```
@@ -45,7 +45,7 @@ Z₃ = Z₀ × (K + 1) / K      (to lower power port)
 
 For K ≠ 1, add λ/4 matching transformers:
 
-```
+```{math}
 Z₂ₘ = √(2 × Z₀² × (K + 1))
 Z₃ₘ = √(2 × Z₀² × (K + 1) / K)
 ```
@@ -63,17 +63,6 @@ No additional matching needed
 Z₂ = Z₃ = 100 Ω
 ```
 
-## S-Parameters (Ideal, Equal Split)
-
-At design frequency f₀:
-
-```
-|S₁₁| < -30 dB  (good input match)
-|S₂₁| = -3 dB   (half power to Port 2)
-|S₃₁| = -3 dB   (half power to Port 3)
-
-|S₂₃| ≈ 0 dB    (NO ISOLATION - outputs connected!)
-```
 
 **Critical:** Ports 2 and 3 are directly connected through the junction, so there's no isolation between them.
 
@@ -107,3 +96,11 @@ At design frequency f₀:
 ## References
 
 [1] Pozar, D. M. (2012). *Microwave Engineering* (4th ed.), Section 7.3. Wiley.
+
+## See Also
+
+```{toctree}
+:maxdepth: 1
+/RFCircuitSynthesis/index
+/RFCircuitSynthesis/PowerCombining/index
+```

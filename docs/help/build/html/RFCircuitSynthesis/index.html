@@ -190,40 +190,54 @@
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Topology</p></th>
-<th class="head"><p>Load type</p></th>
-<th class="head"><p>Notes</p></th>
+<th class="head"><p>Elements</p></th>
+<th class="head"><p>Bandwidth</p></th>
+<th class="head"><p>Complex Loads</p></th>
+<th class="head"><p>Adjustable</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>L-section</p></td>
-<td><p>{Real, Complex}</p></td>
-<td><p>Narrowband</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="ImpedanceMatching/LSection/index.html"><span class="doc std std-doc">L-section</span></a></p></td>
+<td><p>2 lumped</p></td>
+<td><p>Narrow (5-10%)</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
 </tr>
-<tr class="row-odd"><td><p>Single-stub</p></td>
-<td><p>{Real, Complex}</p></td>
-<td><p>Narrowband</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="ImpedanceMatching/SingleStub/index.html"><span class="doc std std-doc">Single-stub</span></a></p></td>
+<td><p>1 TL + stub</p></td>
+<td><p>Moderate (10-20%)</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
 </tr>
-<tr class="row-even"><td><p>Double-stub</p></td>
-<td><p>{Real, Complex}</p></td>
-<td><p>Narrowband</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="ImpedanceMatching/DoubleStub/index.html"><span class="doc std std-doc">Double-stub</span></a></p></td>
+<td><p>1 TL + 2 stubs</p></td>
+<td><p>Moderate (10-20%)</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
 </tr>
-<tr class="row-odd"><td><p>Multisection transformers</p></td>
-<td><p>Real</p></td>
-<td><p>Broadband</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="ImpedanceMatching/MultisectionLambda4/index.html"><span class="doc std std-doc">Multisection λ/4</span></a></p></td>
+<td><p>N×λ/4 TL</p></td>
+<td><p>Broad (40-80%)</p></td>
+<td><p>Real only</p></td>
+<td><p>No</p></td>
 </tr>
-<tr class="row-even"><td><p>Cascaded L-sections</p></td>
-<td><p>Real</p></td>
-<td><p>Broadband</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="ImpedanceMatching/CascadedLC/index.html"><span class="doc std std-doc">Cascaded LC</span></a></p></td>
+<td><p>2N lumped</p></td>
+<td><p>Moderate (20-40%)</p></td>
+<td><p>Real only</p></td>
+<td><p>No</p></td>
 </tr>
-<tr class="row-odd"><td><p>\lambda/8 + \lambda/4</p></td>
-<td><p>{Real, Complex}</p></td>
-<td><p>Narrowband</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="ImpedanceMatching/Lambda8Lambda4/index.html"><span class="doc std std-doc">λ/8 + λ/4</span></a></p></td>
+<td><p>2 TL sections</p></td>
+<td><p>Moderate (10-20%)</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="power-combining">
-<h3>Power combining</h3>
+<h3><a class="reference internal" href="PowerCombining/index.html"><span class="doc std std-doc">Power combining</span></a></h3>
 <p>This tool allows to synthesize a number of power splitters/combiners and couplers</p>
 <table class="docutils align-default">
 <thead>
@@ -428,7 +442,7 @@
 <li><a :data-current="activeSection === '#design-tools'" class="reference internal" href="#design-tools">Design Tools</a><ul>
 <li><a :data-current="activeSection === '#filter-design'" class="reference internal" href="#filter-design"><span class="xref myst">Filter Design</span></a></li>
 <li><a :data-current="activeSection === '#matching-networks'" class="reference internal" href="#matching-networks">Matching Networks</a></li>
-<li><a :data-current="activeSection === '#power-combining'" class="reference internal" href="#power-combining">Power combining</a></li>
+<li><a :data-current="activeSection === '#power-combining'" class="reference internal" href="#power-combining"><span class="xref myst">Power combining</span></a></li>
 <li><a :data-current="activeSection === '#attenuator-design'" class="reference internal" href="#attenuator-design"><span class="xref myst">Attenuator design</span></a></li>
 <li><a :data-current="activeSection === '#matching-network-design'" class="reference internal" href="#matching-network-design"><span class="xref myst">Matching Network Design</span></a></li>
 </ul>
