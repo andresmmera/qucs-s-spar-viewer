@@ -1,0 +1,229 @@
+# λ/8 + λ/4 Matching
+
+## Description
+
+The λ/8 + λ/4 matching technique uses two transmission line sections to match complex load impedances (with both resistive and reactive parts) to a real characteristic impedance. The quarter-wave section transforms the real part, while the eighth-wave section compensates for the reactive part.
+
+## When to Use
+
+* Load has significant reactive component
+* Distributed element implementation preferred
+* Microwave frequencies (> 1 GHz)
+* Two-section solution acceptable
+
+## Design Theory
+
+The network consists of:
+
+1. **λ/4 section (Z_m)**: Matches the real impedance transformation
+2. **λ/8 section (Z_mm)**: Compensates for load reactance
+
+The λ/4 section operates as an impedance inverter, while the λ/8 section provides the necessary phase shift to absorb the load reactance.
+
+## Design Equations
+
+### Matching Impedances
+
+$$
+Z_{mm} = \sqrt{R_L^2 + X_L^2}
+$$
+
+$$
+Z_m = \sqrt{\frac{Z_0 \cdot R_L \cdot Z_{mm}}{Z_{mm} - X_L}}
+$$
+
+where:
+* Z₀ = characteristic impedance (source)
+* R_L = load resistance
+* X_L = load reactance
+* Z_m = impedance of λ/4 section
+* Z_mm = impedance of λ/8 section
+
+### Line Lengths
+
+$$
+l_{\lambda/4} = \frac{c}{4f}, \quad l_{\lambda/8} = \frac{c}{8f}
+$$
+
+where c is the speed of light and f is the matching frequency.
+
+## Special Cases
+
+### Purely Resistive Load (XL = 0)
+
+When load is purely resistive, only the λ/4 section is needed:
+
+$$
+Z_m = \sqrt{Z_0 \cdot R_L}
+$$
+
+The λ/8 section is omitted, reducing to a standard quarter-wave transformer.
+
+**Inductive Load (XL > 0)**
+: Requires positive Z_mm, with λ/8 section adding phase lead to compensate.
+
+**Capacitive Load (XL < 0)**
+: Requires careful impedance selection; λ/8 section adds phase lag.
+
+## Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| **Z0** | Characteristic impedance (Ω) |
+| **ZL** | Complex load impedance (R + jX) (Ω) |
+| **Frequency** | Matching frequency (Hz) |
+| **Implementation** | Ideal TL or microstrip |
+
+## Implementation Types
+
+### Ideal Transmission Line
+
+Uses ideal, lossless TL models:
+* Specified by Z0 and electrical length
+* No dispersion or losses
+* Exact λ/4 and λ/8 at all frequencies (unrealistic)
+
+**Use for**:
+* Initial design calculations
+* Concept verification
+* Teaching examples
+
+### Microstrip
+
+Physical implementation with substrate:
+* Calculates physical width from Z0
+* Includes effective permittivity effects
+* Models conductor/dielectric losses
+* Frequency-dependent characteristics
+
+**Use for**:
+* Practical PCB implementation
+* Accurate performance prediction
+* Fabrication-ready designs
+
+### Microstrip Design
+
+The tool automatically:
+1. Synthesizes line widths for Z_m and Z_mm
+2. Calculates effective lengths (includes substrate εeff)
+3. Inserts microstrip step discontinuity between sections
+4. Models all substrate-dependent effects
+
+**Required Substrate Parameters**:
+* Relative permittivity (εr)
+* Substrate height (h)
+* Loss tangent (tanδ)
+* Metal conductivity (σ)
+* Metal thickness (t)
+
+## Bandwidth
+
+### Fractional Bandwidth
+
+Typically narrower than multisection transformers:
+* 10-20% typical for moderate impedance ratios
+* Bandwidth decreases with larger impedance mismatches
+* More sensitive to reactance magnitude
+
+**Comparison**:
+* Single L-section: ~5-10%
+* λ/8 + λ/4: ~10-20%
+* 3-section λ/4: ~40-60%
+
+## Advantages
+
+* **Handles complex loads** with both R and X
+* **Simple two-section design**
+* **Distributed elements** suitable for microwave frequencies
+* **No tuning required** once fabricated
+* **Predictable performance** from design equations
+
+## Limitations
+
+* **Narrowband**: Performance degrades away from center frequency
+* **Physical length**: λ/4 + λ/8 = 3λ/8 total
+* **Impedance range**: Z_m and Z_mm must be realizable
+* **Microstrip limits**: Very high/low Z difficult to implement
+* **No adjustment**: Fixed design, not tunable
+
+## Design Guidelines
+
+### Impedance Constraints
+
+For practical microstrip implementation:
+
+$$
+20\text{Ω} < Z_m < 120\text{Ω}
+$$
+
+$$
+20\text{Ω} < Z_{mm} < 120\text{Ω}
+$$
+
+**When to Use Alternative Methods**:
+* If Z_m or Z_mm outside practical range → use lumped elements
+* If bandwidth > 30% needed → use multisection λ/4
+* If adjustability needed → use stub matching
+* If space critical → use lumped L-section
+
+## Frequency Scaling
+
+Design scales with frequency:
+
+$$
+l_{physical} = \frac{l_{electrical}}{\sqrt{\varepsilon_{eff}}}
+$$
+
+Higher frequencies → shorter physical lengths → easier fabrication.
+
+### Typical Physical Lengths
+
+Microstrip on FR-4, εr = 4.4:
+
+| Frequency | λ/4 length | λ/8 length |
+|-----------|-----------|-----------|
+| 1 GHz | 36 mm | 18 mm |
+| 2.4 GHz | 15 mm | 7.5 mm |
+| 5 GHz | 7.2 mm | 3.6 mm |
+
+## Example
+
+**Match 30 + j20Ω to 50Ω at 2.4 GHz**
+
+Given:
+* Z0 = 50Ω
+* ZL = 30 + j20Ω
+* f = 2.4 GHz
+* Microstrip on FR-4 (εr = 4.4, h = 1.6 mm)
+
+Calculations:
+* Z_mm = √(30² + 20²) = 36.1Ω
+* Z_m = √[(50 × 30 × 36.1)/(36.1 - 20)] = 52.7Ω
+
+Physical implementation:
+* λ/4 line: Z = 52.7Ω, W = 2.8 mm, L = 15.2 mm
+* λ/8 line: Z = 36.1Ω, W = 4.5 mm, L = 7.6 mm
+* Microstrip step between sections
+
+Circuit topology:
+
+```
+Port ── MLIN(52.7Ω, λ/4) ── STEP ── MLIN(36.1Ω, λ/8) ── Load(30+j20Ω)
+```
+
+Performance:
+* Return loss > 20 dB at 2.4 GHz
+* Bandwidth (15 dB RL): ~15%
+* Compact: 23 mm total length
+
+## Simulation Recommendations
+
+1. **Verify impedances** are within realizable range
+2. **Check step discontinuity** effects at higher frequencies
+3. **Sweep frequency** to determine bandwidth
+4. **Include losses** for accurate insertion loss
+5. **Tolerance analysis** for manufacturing variations
+
+## Reference
+
+Bahl, I. J. "Fundamentals of RF and Microwave Transistor Amplifiers", Wiley, 2009, pp. 159-160
