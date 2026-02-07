@@ -11,6 +11,7 @@
 #include <QDialog>
 #include <QVector>
 #include "UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "Misc/general.h"
 
 class CustomDoubleSpinBox;
 class QLabel;
@@ -46,6 +47,12 @@ private slots:
 
     /// @brief Slot triggered when any input value changes
     void on_inputChanged();
+
+    /// @brief Slot to show the HTML parallel resistors help
+    void showDocumentation() {
+        QString path = QString("/Calculators/ParallelSeriesEquivalents/ParallelResistors/index.html");
+        showHTMLDocs(path);
+    }
 
 private:
     // ========== Input Widgets ==========

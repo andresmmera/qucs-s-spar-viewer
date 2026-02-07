@@ -11,6 +11,7 @@
 #include <QDialog>
 #include <QVector>
 #include "UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "Misc/general.h"
 
 class CustomDoubleSpinBox;
 class QLabel;
@@ -54,6 +55,12 @@ private slots:
 
     /// @brief Slot triggered when any input value changes
     void on_inputChanged();
+
+    /// @brief Shows the documentation for the voltage divider
+    void showDocumentation() {
+        QString path = QString("/Calculators/VoltageDivider/index.html");
+        showHTMLDocs(path);
+    }
 
 private:
     // ========== Input Widgets ==========

@@ -169,6 +169,12 @@ AttenuatorDesignTool::AttenuatorDesignTool(QWidget *parent) : QWidget(parent) {
   AttenuatorDesignLayout->addWidget(traceNameLabel, layout_row, 0);
   AttenuatorDesignLayout->addWidget(traceNameLineEdit, layout_row, 1);
 
+  // Documentation Button
+  QPushButton *btnDocs = new QPushButton("See Docs", this);
+  connect(btnDocs, &QPushButton::clicked, this,
+          &AttenuatorDesignTool::showDocumentation);
+  AttenuatorDesignLayout->addWidget(btnDocs, layout_row, 2);
+
   connect(Topology_Combo, &QComboBox::currentIndexChanged, this,
           &AttenuatorDesignTool::on_TopoCombo_currentIndexChanged);
   connect(TL_Implementation_Combo, &QComboBox::currentIndexChanged, this,

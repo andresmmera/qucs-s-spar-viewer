@@ -9,7 +9,8 @@
 #define FREQ_WAVELENGTH_CONVERTER_H
 
 #include <QDialog>
-#include "./UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "Misc/general.h"
 
 class CustomDoubleSpinBox;
 class QLabel;
@@ -42,6 +43,12 @@ private slots:
 
     /// @brief Slot triggered when any input value changes
     void on_inputChanged();
+
+    /// @brief Shows the documentation for the free space loss formula
+    void showDocumentation() {
+        QString path = QString("/Calculators/FrequencyToWavelength/index.html");
+        showHTMLDocs(path);
+    }
 
 private:
     // ========== Mode Selection ==========
@@ -80,6 +87,9 @@ private:
     /// @brief Group box containing wavelength input
     QGroupBox *wavelengthInputGroup;
 
+    /// @brief Button to access documentation
+    QPushButton* docsButton;
+
     // ========== Helper Functions ==========
 
     /// @brief Convert frequency to Hz
@@ -115,6 +125,8 @@ private:
     /// @param wavelengthM Wavelength in meters
     /// @return Formatted string
     QString formatWavelength(double wavelengthM) const;
+
+
 };
 
 #endif // FREQ_WAVELENGTH_CONVERTER_H

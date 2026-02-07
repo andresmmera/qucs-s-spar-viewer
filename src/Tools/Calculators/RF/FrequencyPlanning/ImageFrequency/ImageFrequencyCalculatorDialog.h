@@ -18,6 +18,7 @@
 #include <QHBoxLayout>
 #include <QGridLayout>
 #include <QTableWidget>
+#include "Misc/general.h"
 
 /// @class ImageFrequencyCalculatorDialog
 /// @brief A dialog for calculating the image frequency in superheterodyne receivers
@@ -63,8 +64,11 @@ private:
     /// @brief Calculates the image frequency and updates the display
     void calculate();
 
-    /// @brief Shows the documentation for the secondary image frequency calculation
-    void showDocumentation();
+    /// @brief Shows the documentation for the image frequency calculation
+    void showDocumentation() {
+        QString path = QString("/Calculators/ImageFrequency/index.html");
+        showHTMLDocs(path);
+    }
 
     /// @brief Sets frequency input with automatic unit selection
     /// @param spinBox Pointer to the spin box to update

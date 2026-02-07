@@ -226,6 +226,11 @@ VoltageDividerDialog::VoltageDividerDialog(QWidget *parent) : QDialog(parent) {
   resultsLayout->addWidget(resultsTable);
   resultsGroup->setLayout(resultsLayout);
 
+  // ========== Documentation Button ==========
+  QPushButton *btnDocs = new QPushButton("See Docs", this);
+  connect(btnDocs, &QPushButton::clicked, this,
+          &VoltageDividerDialog::showDocumentation);
+
   // ========== Main Layout ==========
   // Left side - Inputs
   QVBoxLayout *leftLayout = new QVBoxLayout;
@@ -243,6 +248,8 @@ VoltageDividerDialog::VoltageDividerDialog(QWidget *parent) : QDialog(parent) {
   rightLayout->addWidget(voutGroup);
   rightLayout->addSpacing(10);
   rightLayout->addWidget(resultsGroup);
+  rightLayout->addSpacing(10);
+  rightLayout->addWidget(btnDocs);
 
   // Combine left and right
   QHBoxLayout *contentLayout = new QHBoxLayout;

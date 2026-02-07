@@ -10,6 +10,7 @@
 
 #include <QDialog>
 #include "UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "Misc/general.h"
 
 class CustomDoubleSpinBox;
 class QLabel;
@@ -44,6 +45,12 @@ private slots:
 
     /// @brief Slot triggered when calculation mode combo changes
     void on_modeChanged(int index);
+
+    /// @brief Slot to show the HTML reflection coefficient help
+    void showDocumentation() {
+        QString path = QString("/Calculators/ReflectionCoefficientTools/index.html");
+        showHTMLDocs(path);
+    }
 
 private:
     /// @brief Enumeration for calculation modes

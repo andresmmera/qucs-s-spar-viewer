@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en"
+      data-content_root="../../"
+      x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }"
+      x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
+      class="scroll-smooth"
+      :class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
+>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>RF Power Combining/Dividing Design Tool | Qucs-S S-parameter Viewer Documentation</title>
+    <meta property="og:title" content="RF Power Combining/Dividing Design Tool | Qucs-S S-parameter Viewer Documentation" />
+    <meta name="twitter:title" content="RF Power Combining/Dividing Design Tool | Qucs-S S-parameter Viewer Documentation" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=e72c8e07" />
+      <link rel="stylesheet" type="text/css" href="../../_static/theme.css?v=42baaae4" />
+        <link rel="search" title="Search" href="../../search.html" />
+        <link rel="index" title="Index" href="../../genindex.html" />
+
+    <script>
+    <!-- Prevent Flash of wrong theme -->
+      const userPreference = localStorage.getItem('darkMode');
+      let mode;
+      if (userPreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        mode = 'dark';
+        document.documentElement.classList.add('dark');
+      } else {
+        mode = 'light';
+      }
+      if (!userPreference) {localStorage.setItem('darkMode', mode)}
+    </script>
+</head>
+  <body x-data="{ showSidebar: false, showScrollTop: false }" class="min-h-screen font-sans antialiased bg-background text-foreground" :class="{ 'overflow-hidden': showSidebar }">
+    <div x-cloak x-show="showSidebar" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" @click.self="showSidebar = false"></div><div id="page" class="relative flex flex-col min-h-screen"><a href="#content" class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100">
+      Skip to content
+    </a><header
+  class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
+    <div class="hidden mr-4 md:flex">
+      <a href="../../index.html" class="flex items-center mr-6"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Qucs-S S-parameter Viewer Documentation</span>
+      </a><nav class="flex items-center space-x-6 text-sm font-medium">
+        <a href="https://andresmmera.github.io/qucs-s-spar-viewer/" class="transition-colors hover:text-foreground/80 text-foreground/60" rel="noopener nofollow">Online Documentation</a>
+        <a href="https://qucs-s-help.readthedocs.io" class="transition-colors hover:text-foreground/80 text-foreground/60" rel="noopener nofollow">Qucs-S Docs</a>
+        <a href="https://ra3xdh.github.io/" class="transition-colors hover:text-foreground/80 text-foreground/60" rel="noopener nofollow">Main QUCS-S Site</a>
+        <a href="https://github.com/ra3xdh/qucs_s/discussions" class="transition-colors hover:text-foreground/80 text-foreground/60" rel="noopener nofollow">Qucs-S Forum</a>
+      </nav></div><button
+      class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden"
+      type="button" @click="showSidebar = true">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" aria-hidden="true"
+        fill="currentColor">
+        <path
+          d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z" />
+      </svg>
+      <span class="sr-only">Toggle navigation menu</span>
+    </button>
+    <div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
+      <div class="flex-1 w-full md:w-auto md:flex-none"><form id="searchbox"
+      action="../../search.html"
+      method="get"
+      class="relative flex items-center group"
+      @keydown.k.window.meta="$refs.search.focus()">
+  <input x-ref="search"
+          name="q"
+          id="search-input"
+          type="search"
+          aria-label="Search the docs"
+          placeholder="Search ..."
+          class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" />
+  <kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+    <span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+      </div>
+      <nav class="flex items-center space-x-1">
+        <a href="https://github.com/andresmmera/qucs-s-spar-viewer" title="Visit repository on GitHub" rel="noopener nofollow">
+          <div
+            class="inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9">
+            <svg height="26px" style="margin-top:-2px;display:inline" viewBox="0 0 45 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M22.477.927C10.485.927.76 10.65.76 22.647c0 9.596 6.223 17.736 14.853 20.608 1.087.2 1.483-.47 1.483-1.047 0-.516-.019-1.881-.03-3.693-6.04 1.312-7.315-2.912-7.315-2.912-.988-2.51-2.412-3.178-2.412-3.178-1.972-1.346.149-1.32.149-1.32 2.18.154 3.327 2.24 3.327 2.24 1.937 3.318 5.084 2.36 6.321 1.803.197-1.403.759-2.36 1.379-2.903-4.823-.548-9.894-2.412-9.894-10.734 0-2.37.847-4.31 2.236-5.828-.224-.55-.969-2.759.214-5.748 0 0 1.822-.584 5.972 2.226 1.732-.482 3.59-.722 5.437-.732 1.845.01 3.703.25 5.437.732 4.147-2.81 5.967-2.226 5.967-2.226 1.185 2.99.44 5.198.217 5.748 1.392 1.517 2.232 3.457 2.232 5.828 0 8.344-5.078 10.18-9.916 10.717.779.67 1.474 1.996 1.474 4.021 0 2.904-.027 5.247-.027 5.96 0 .58.392 1.256 1.493 1.044C37.981 40.375 44.2 32.24 44.2 22.647c0-11.996-9.726-21.72-21.722-21.72" fill="currentColor"/></svg>
+          </div>
+        </a>
+        
+        <button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'"
+          class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9"
+          type="button"
+          aria-label="Color theme switcher">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="currentColor"
+            class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0">
+            <path
+              d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="currentColor"
+            class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100">
+            <path
+              d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside id="left-sidebar"
+  class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky"
+  :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }">
+
+    <a href="../../index.html" class="!justify-start text-sm md:!hidden bg-background"><span class="font-bold text-clip whitespace-nowrap">Qucs-S S-parameter Viewer Documentation</span>
+    </a>
+
+    <div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
+      <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="flex md:hidden flex-col font-medium mt-4">
+  <a href="https://andresmmera.github.io/qucs-s-spar-viewer/" rel="nofollow noopener">Online Documentation</a>
+  <a href="https://qucs-s-help.readthedocs.io" rel="nofollow noopener">Qucs-S Docs</a>
+  <a href="https://ra3xdh.github.io/" rel="nofollow noopener">Main QUCS-S Site</a>
+  <a href="https://github.com/ra3xdh/qucs_s/discussions" rel="nofollow noopener">Qucs-S Forum</a>
+</nav><nav class="table w-full min-w-full my-6 lg:my-8">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Data-display-panel/index.html">Data display panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Data-management-panel/index.html">Data management panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Calculators/index.html">RF Engineering Calculators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">RF Circuit Synthesis Tools</a></li>
+</ul>
+
+</nav>
+      </div>
+    </div>
+    <button type="button" @click="showSidebar = false"
+      class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 96 960 960" fill="currentColor"
+        stroke="none" class="h-4 w-4">
+        <path
+          d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z" />
+      </svg>
+    </button>
+  </aside>
+        <main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs"
+     class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+  <a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground"
+     href="../../index.html">
+    <span class="hidden md:inline">Qucs-S S-parameter Viewer Documentation</span>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         height="18"
+         width="18"
+         viewBox="0 96 960 960"
+         aria-label="Home"
+         fill="currentColor"
+         stroke="none"
+         class="md:hidden">
+      <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z" />
+    </svg>
+  </a>
+  
+<div class="mr-1">/</div><span aria-current="page"
+        class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">RF Power Combining/Dividing Design Tool</span>
+</nav>
+
+    <div id="content" role="main">
+      <section id="rf-power-combining-dividing-design-tool">
+<h1>RF Power Combining/Dividing Design Tool</h1>
+<section id="overview">
+<h2>Overview</h2>
+<p>The Power Combining/Dividing Design Tool provides synthesis of various RF power splitter and combiner topologies. All designs support both <strong>power division</strong> (1→N) and <strong>power combining</strong> (N→1) by reciprocity.</p>
+</section>
+<section id="supported-topologies">
+<h2>Supported Topologies</h2>
+<p>The tool supports 10 different power divider/combiner topologies:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Topology</p></th>
+<th class="head"><p>Outputs</p></th>
+<th class="head"><p>Power Split</p></th>
+<th class="head"><p>Isolation</p></th>
+<th class="head"><p>Bandwidth</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="Wilkinson/index.html"><span class="doc std std-doc">Wilkinson</span></a></p></td>
+<td><p>2</p></td>
+<td><p>Equal/Unequal</p></td>
+<td><p>Excellent</p></td>
+<td><p>Medium</p></td>
+<td><p>Most common, simple</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="MultistageWilkinson/index.html"><span class="doc std std-doc">Multistage Wilkinson</span></a></p></td>
+<td><p>2ⁿ</p></td>
+<td><p>Equal</p></td>
+<td><p>Excellent</p></td>
+<td><p>Wide</p></td>
+<td><p>Cascaded 2-way stages</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="TJunction/index.html"><span class="doc std std-doc">T-Junction</span></a></p></td>
+<td><p>2</p></td>
+<td><p>Equal/Unequal</p></td>
+<td><p>None</p></td>
+<td><p>Narrowband</p></td>
+<td><p>Simplest, reactive</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Branchline/index.html"><span class="doc std std-doc">Branch-Line</span></a></p></td>
+<td><p>2</p></td>
+<td><p>Equal/Unequal</p></td>
+<td><p>Good</p></td>
+<td><p>Medium</p></td>
+<td><p>90° phase, quadrature hybrid</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DoubleBoxBranchLine/index.html"><span class="doc std std-doc">Double-box Branch-Line</span></a></p></td>
+<td><p>2</p></td>
+<td><p>Equal/Unequal</p></td>
+<td><p>Better</p></td>
+<td><p>Medium</p></td>
+<td><p>Improved branch-line</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Bagley/index.html"><span class="doc std std-doc">Bagley</span></a></p></td>
+<td><p>N</p></td>
+<td><p>Equal</p></td>
+<td><p>Good</p></td>
+<td><p>Narrowband</p></td>
+<td><p>Multi-way, planar</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Gysel/index.html"><span class="doc std std-doc">Gysel</span></a></p></td>
+<td><p>2</p></td>
+<td><p>Equal</p></td>
+<td><p>Excellent</p></td>
+<td><p>Medium</p></td>
+<td><p>High power, grounded resistors</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="LimEom/index.html"><span class="doc std std-doc">Lim-Eom</span></a></p></td>
+<td><p>2</p></td>
+<td><p>Equal</p></td>
+<td><p>Excellent</p></td>
+<td><p>Wide</p></td>
+<td><p>Wideband improvement</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ThreeWayWilkinsonImprovedIsolation/index.html"><span class="doc std std-doc">3-way Improved Isolation</span></a></p></td>
+<td><p>3</p></td>
+<td><p>Equal</p></td>
+<td><p>Excellent</p></td>
+<td><p>Medium</p></td>
+<td><p>Enhanced 3-port isolation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Recombinant3Way/index.html"><span class="doc std std-doc">Recombinant 3-way Wilkinson</span></a></p></td>
+<td><p>3</p></td>
+<td><p>Equal</p></td>
+<td><p>Excellent</p></td>
+<td><p>Medium</p></td>
+<td><p>Alternative 3-port design</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="common-parameters">
+<h2>Common Parameters</h2>
+<section id="electrical-specifications">
+<h3>Electrical Specifications</h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Range</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Z₀</p></td>
+<td><p>1 – 1000 Ω</p></td>
+<td><p>50 Ω</p></td>
+<td><p>System impedance</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frequency</p></td>
+<td><p>1 Hz – 1 MHz</p></td>
+<td><p>1 GHz</p></td>
+<td><p>Design frequency</p></td>
+</tr>
+<tr class="row-even"><td><p>Output Power Ratio</p></td>
+<td><p>-20 to +20 dB</p></td>
+<td><p>0 dB</p></td>
+<td><p>Power split ratio (where applicable)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Number of Outputs</p></td>
+<td><p>2, 3, 4, 8, 16</p></td>
+<td><p>2</p></td>
+<td><p>For multi-way topologies</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="implementation-options">
+<h3>Implementation Options</h3>
+<ol class="arabic simple">
+<li><p><strong>Ideal TL:</strong> Lossless transmission lines (schematic simulation)</p></li>
+<li><p><strong>Microstrip:</strong> Physical microstrip layout (requires substrate parameters)</p></li>
+<li><p><strong>Lumped:</strong> LC equivalent circuits (low frequency, Wilkinson only)</p></li>
+</ol>
+</section>
+</section>
+<section id="key-concepts">
+<h2>Key Concepts</h2>
+<section id="reciprocity">
+<h3>Reciprocity</h3>
+<p>All power dividers are <strong>reciprocal</strong>:</p>
+<ul class="simple">
+<li><p><strong>Divider mode:</strong> 1 input → N outputs (signal split)</p></li>
+<li><p><strong>Combiner mode:</strong> N inputs → 1 output (signal combining)</p></li>
+</ul>
+<p>Performance (insertion loss, isolation, match) is identical in both directions.</p>
+</section>
+<section id="power-split-ratio">
+<h3>Power Split Ratio</h3>
+<p>For 2-way dividers, the <strong>power split ratio</strong> K determines how power divides between outputs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">K = P₂/P₃ = 10^(K_dB/10)
+</span><span id="line-2">
+</span><span id="line-3">where K_dB is the ratio in dB
+</span></code></pre></div>
+</div>
+<p><strong>Equal split:</strong> K = 1 (K_dB = 0 dB) → P₂ = P₃ = Pin/2
+<strong>Unequal split:</strong> K ≠ 1 → P₂ = K×P₃</p>
+</section>
+<section id="isolation">
+<h3>Isolation</h3>
+<p><strong>Isolation</strong> is the signal attenuation between output ports (Port 2 ↔ Port 3):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">Isolation (dB) = -20 × log₁₀(|S₂₃|)
+</span></code></pre></div>
+</div>
+<p><strong>High isolation</strong> (&gt;20 dB) is critical for:</p>
+<ul class="simple">
+<li><p>Combining independent amplifiers (prevents interaction)</p></li>
+<li><p>Antenna systems (reduces coupling)</p></li>
+<li><p>Measurement systems (prevents crosstalk)</p></li>
+</ul>
+</section>
+<section id="insertion-loss">
+<h3>Insertion Loss</h3>
+<p><strong>Insertion Loss</strong> is the power loss from input to each output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">IL (dB) = -10 × log₁₀(Pout/Pin)
+</span></code></pre></div>
+</div>
+<p><strong>Ideal 2-way equal split:</strong> IL = 3.01 dB (50% power loss is fundamental)
+<strong>Real dividers:</strong> IL = 3.01 dB + losses (resistor, conductor, dielectric)</p>
+</section>
+</section>
+<section id="topology-selection-guide">
+<h2>Topology Selection Guide</h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Requirement</p></th>
+<th class="head"><p>Recommended Topology</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>General-purpose 2-way</strong></p></td>
+<td><p><strong>Wilkinson</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>High power handling</strong></p></td>
+<td><p><strong>Gysel</strong> (grounded resistors)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wideband (multi-octave)</strong></p></td>
+<td><p><strong>Multistage Wilkinson</strong> or <strong>Lim-Eom</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Narrowband, simple</strong></p></td>
+<td><p><strong>T-Junction</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>90° phase quadrature</strong></p></td>
+<td><p><strong>Branch-line</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Multi-way (N &gt; 2)</strong></p></td>
+<td><p><strong>Bagley</strong> or cascade Wilkinsons</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3-way optimized</strong></p></td>
+<td><p><strong>3-Way Wilkinson (Improved)</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>No isolation needed</strong></p></td>
+<td><p><strong>T-Junction</strong> (simplest)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="design-flow">
+<h2>Design Flow</h2>
+<ol class="arabic simple">
+<li><p><strong>Select topology</strong> based on requirements (power, bandwidth, isolation, outputs)</p></li>
+<li><p><strong>Set system impedance</strong> Z₀ (typically 50Ω)</p></li>
+<li><p><strong>Specify frequency</strong> (center frequency for narrowband designs)</p></li>
+<li><p><strong>Choose power split ratio</strong> (for 2-way unequal dividers)</p></li>
+<li><p><strong>Select implementation</strong> (Ideal TL / Microstrip / Lumped)</p></li>
+<li><p>For microstrip: <strong>define substrate</strong> parameters</p></li>
+<li><p><strong>Generate schematic</strong> → Tool outputs component values and layout</p></li>
+</ol>
+</section>
+<section id="implementation-comparison">
+<h2>Implementation Comparison</h2>
+<section id="ideal-tl-schematic">
+<h3>Ideal TL (Schematic)</h3>
+<ul class="simple">
+<li><p><strong>Use for:</strong> Circuit simulation, proof-of-concept</p></li>
+<li><p><strong>Pros:</strong> Lossless, frequency-independent impedance</p></li>
+<li><p><strong>Cons:</strong> Not physically realizable</p></li>
+</ul>
+</section>
+<section id="microstrip-layout">
+<h3>Microstrip (Layout)</h3>
+<ul class="simple">
+<li><p><strong>Use for:</strong> PCB fabrication, physical prototype</p></li>
+<li><p><strong>Pros:</strong> Manufacturable, accurate EM behavior</p></li>
+<li><p><strong>Cons:</strong> Requires substrate parameters, frequency-dependent</p></li>
+<li><p><strong>Substrate needed:</strong> εᵣ, height, tan δ, conductor σ, thickness</p></li>
+</ul>
+</section>
+<section id="lumped-lc-low-frequency">
+<h3>Lumped LC (Low Frequency)</h3>
+<ul class="simple">
+<li><p><strong>Use for:</strong> Low frequency (&lt;100 MHz), compact size</p></li>
+<li><p><strong>Pros:</strong> Smallest footprint, no TEM mode required</p></li>
+<li><p><strong>Cons:</strong> Limited to Wilkinson, component Q limits performance</p></li>
+</ul>
+</section>
+</section>
+<section id="key-performance-metrics">
+<h2>Key Performance Metrics</h2>
+<section id="return-loss">
+<h3>Return Loss</h3>
+<p>Impedance match at each port:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">RL (dB) = -20 × log₁₀(|Γ|) = -20 × log₁₀(|Sᵢᵢ|)
+</span></code></pre></div>
+</div>
+<p><strong>Good match:</strong> RL &gt; 20 dB (VSWR &lt; 1.22:1)</p>
+</section>
+<section id="amplitude-balance">
+<h3>Amplitude Balance</h3>
+<p>Difference in output power levels (equal split):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">Balance (dB) = |IL₁ - IL₂|
+</span></code></pre></div>
+</div>
+<p><strong>Good balance:</strong> &lt; 0.5 dB</p>
+</section>
+<section id="phase-balance">
+<h3>Phase Balance</h3>
+<p>Phase difference between outputs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">Phase Balance (°) = |∠S₂₁ - ∠S₃₁|
+</span></code></pre></div>
+</div>
+<p><strong>Wilkinson:</strong> 0° (in-phase)
+<strong>Branch-line:</strong> 90° (quadrature)</p>
+</section>
+</section>
+<section id="bandwidth-considerations">
+<h2>Bandwidth Considerations</h2>
+<section id="narrowband-topologies-10-20-fbw">
+<h3>Narrowband Topologies (10-20% FBW)</h3>
+<ul class="simple">
+<li><p>T-Junction</p></li>
+<li><p>Bagley</p></li>
+<li><p>Single-stage Wilkinson</p></li>
+</ul>
+</section>
+<section id="medium-bandwidth-20-50-fbw">
+<h3>Medium Bandwidth (20-50% FBW)</h3>
+<ul class="simple">
+<li><p>Branch-line</p></li>
+<li><p>Gysel</p></li>
+<li><p>3-Way Wilkinson variants</p></li>
+</ul>
+</section>
+<section id="wideband-50-fbw-multi-octave">
+<h3>Wideband (&gt;50% FBW, multi-octave)</h3>
+<ul class="simple">
+<li><p>Multistage Wilkinson</p></li>
+<li><p>Lim-Eom</p></li>
+</ul>
+</section>
+</section>
+<section id="power-handling">
+<h2>Power Handling</h2>
+<section id="resistive-topologies">
+<h3>Resistive Topologies</h3>
+<p>Wilkinson, Gysel, Lim-Eom: Power limited by <strong>isolation resistors</strong></p>
+<p><strong>Average power rating:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">P_max ≈ (Isolation_dB - 10) × P_resistor
+</span></code></pre></div>
+</div>
+<p>Example: 20 dB isolation, 2W resistors → ~20W max</p>
+</section>
+<section id="grounded-resistors-gysel">
+<h3>Grounded Resistors (Gysel)</h3>
+<ul class="simple">
+<li><p>Better thermal management</p></li>
+<li><p>Easier heat sinking</p></li>
+<li><p>Higher power capability</p></li>
+</ul>
+</section>
+<section id="reactive-topologies">
+<h3>Reactive Topologies</h3>
+<p>T-Junction, Branch-line: No resistors → <strong>very high power</strong> (limited by TL breakdown)</p>
+</section>
+</section>
+<section id="multi-way-combining">
+<h2>Multi-Way Combining</h2>
+<p>For N-way power combining:</p>
+<ol class="arabic simple">
+<li><p><strong>Tree topology:</strong> Cascade 2-way dividers</p>
+<ul class="simple">
+<li><p>N = 2, 4, 8, 16, … (powers of 2)</p></li>
+<li><p>Simple, modular design</p></li>
+</ul>
+</li>
+<li><p><strong>Bagley:</strong> Direct N-way planar design</p>
+<ul class="simple">
+<li><p>Any N</p></li>
+<li><p>More compact than tree</p></li>
+<li><p>Narrower bandwidth</p></li>
+</ul>
+</li>
+<li><p><strong>Corporate feed:</strong> Multistage Wilkinson</p>
+<ul class="simple">
+<li><p>Wideband</p></li>
+<li><p>Good isolation</p></li>
+<li><p>Larger size</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="references">
+<h2>References</h2>
+<p>[1] Pozar, D. M. (2012). <em>Microwave Engineering</em> (4th ed.), Chapter 7. Wiley.</p>
+<p>[2] Wilkinson, E. J. (1960). <em>An N-Way Hybrid Power Divider</em>. IRE Trans. Microwave Theory Tech., MTT-8, 116-118.</p>
+<p>[3] Gysel, U. H. (1975). <em>A New N-Way Power Divider/Combiner Suitable for High-Power Applications</em>. IEEE MTT-S Int. Microwave Symp. Digest, 116-118.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">RF Circuit Synthesis Tools</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+    </div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+</div></div><aside id="right-sidebar" class="hidden text-sm xl:block">
+  <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+    <ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#supported-topologies">Supported Topologies</a></li>
+<li><a class="reference internal" href="#common-parameters">Common Parameters</a><ul>
+<li><a class="reference internal" href="#electrical-specifications">Electrical Specifications</a></li>
+<li><a class="reference internal" href="#implementation-options">Implementation Options</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#key-concepts">Key Concepts</a><ul>
+<li><a class="reference internal" href="#reciprocity">Reciprocity</a></li>
+<li><a class="reference internal" href="#power-split-ratio">Power Split Ratio</a></li>
+<li><a class="reference internal" href="#isolation">Isolation</a></li>
+<li><a class="reference internal" href="#insertion-loss">Insertion Loss</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#topology-selection-guide">Topology Selection Guide</a></li>
+<li><a class="reference internal" href="#design-flow">Design Flow</a></li>
+<li><a class="reference internal" href="#implementation-comparison">Implementation Comparison</a><ul>
+<li><a class="reference internal" href="#ideal-tl-schematic">Ideal TL (Schematic)</a></li>
+<li><a class="reference internal" href="#microstrip-layout">Microstrip (Layout)</a></li>
+<li><a class="reference internal" href="#lumped-lc-low-frequency">Lumped LC (Low Frequency)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#key-performance-metrics">Key Performance Metrics</a><ul>
+<li><a class="reference internal" href="#return-loss">Return Loss</a></li>
+<li><a class="reference internal" href="#amplitude-balance">Amplitude Balance</a></li>
+<li><a class="reference internal" href="#phase-balance">Phase Balance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bandwidth-considerations">Bandwidth Considerations</a><ul>
+<li><a class="reference internal" href="#narrowband-topologies-10-20-fbw">Narrowband Topologies (10-20% FBW)</a></li>
+<li><a class="reference internal" href="#medium-bandwidth-20-50-fbw">Medium Bandwidth (20-50% FBW)</a></li>
+<li><a class="reference internal" href="#wideband-50-fbw-multi-octave">Wideband (&gt;50% FBW, multi-octave)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#power-handling">Power Handling</a><ul>
+<li><a class="reference internal" href="#resistive-topologies">Resistive Topologies</a></li>
+<li><a class="reference internal" href="#grounded-resistors-gysel">Grounded Resistors (Gysel)</a></li>
+<li><a class="reference internal" href="#reactive-topologies">Reactive Topologies</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#multi-way-combining">Multi-Way Combining</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</div>
+</aside>
+        </main>
+      </div>
+    </div><footer class="py-6 border-t border-border md:py-0">
+    <div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+      <div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+        <p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2026, Andrés Martínez Mera. Licensed under GNU Free Documentation License v3.&nbsp;Built with <a class="font-medium underline underline-offset-4"
+    href="https://www.sphinx-doc.org"
+    rel="noreferrer">Sphinx 8.2.3</a></p>
+</div>
+</div>
+</footer>
+  </div>
+  
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script defer="defer" src="../../_static/theme.js?v=073f68d9"></script>
+  
+</body>
+</html>

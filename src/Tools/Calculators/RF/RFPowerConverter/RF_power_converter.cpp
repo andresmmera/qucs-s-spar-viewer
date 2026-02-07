@@ -81,6 +81,11 @@ RFPowerConverterDialog::RFPowerConverterDialog(QWidget *parent)
                              "  min-height: 50px; "
                              "}");
 
+  // ========== Documentation Button ==========
+  QPushButton *btnDocs = new QPushButton("See Docs", this);
+  connect(btnDocs, &QPushButton::clicked, this,
+          &RFPowerConverterDialog::showDocumentation);
+
   QVBoxLayout *resultLayout = new QVBoxLayout;
   resultLayout->addWidget(labelResult);
   resultGroup->setLayout(resultLayout);
@@ -92,6 +97,8 @@ RFPowerConverterDialog::RFPowerConverterDialog(QWidget *parent)
   main->addWidget(resultGroup);
   main->setSpacing(8);
   main->setContentsMargins(15, 15, 15, 15);
+  main->addSpacing(10);
+  main->addWidget(btnDocs);
 
   setLayout(main);
   setMinimumWidth(450);

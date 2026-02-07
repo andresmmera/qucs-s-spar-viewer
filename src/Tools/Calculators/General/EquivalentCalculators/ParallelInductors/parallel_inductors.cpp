@@ -1,5 +1,6 @@
 /// @file parallel_inductors.cpp
-/// @brief Calculator: Equivalent inductance of parallel inductors (implementation)
+/// @brief Calculator: Equivalent inductance of parallel inductors
+/// (implementation)
 /// @author Andrés Martínez Mera - andresmmera@protonmail.com
 /// @date Jan 29, 2026
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
@@ -28,7 +29,8 @@ ParallelInductorsDialog::ParallelInductorsDialog(QWidget *parent)
   inductorsGroup->setStyleSheet("QGroupBox { font-weight: bold; }");
 
   tableInductors = new QTableWidget(2, 2, this);
-  tableInductors->setHorizontalHeaderLabels(QStringList() << "Inductor" << "Value");
+  tableInductors->setHorizontalHeaderLabels(QStringList()
+                                            << "Inductor" << "Value");
   tableInductors->verticalHeader()->setVisible(false);
   tableInductors->setMaximumHeight(300);
 
@@ -45,8 +47,10 @@ ParallelInductorsDialog::ParallelInductorsDialog(QWidget *parent)
     connect(edit, SIGNAL(textChanged(QString)), this, SLOT(computeResults()));
   }
 
-  tableInductors->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-  tableInductors->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+  tableInductors->horizontalHeader()->setSectionResizeMode(
+      0, QHeaderView::Stretch);
+  tableInductors->horizontalHeader()->setSectionResizeMode(
+      1, QHeaderView::Stretch);
 
   QPushButton *btnAdd = new QPushButton("+", this);
   QPushButton *btnRemove = new QPushButton("-", this);
@@ -71,16 +75,20 @@ ParallelInductorsDialog::ParallelInductorsDialog(QWidget *parent)
 
   labelLeq = new QLabel("-", this);
   labelLeq->setAlignment(Qt::AlignCenter);
-  labelLeq->setStyleSheet(
-      "QLabel { "
-      "  font-size: 18px; "
-      "  font-weight: bold; "
-      "  padding: 15px; "
-      "  border: 2px solid #c0c0c0; "
-      "  border-radius: 4px; "
-      "  background-color: white; "
-      "  min-height: 40px; "
-      "}");
+  labelLeq->setStyleSheet("QLabel { "
+                          "  font-size: 18px; "
+                          "  font-weight: bold; "
+                          "  padding: 15px; "
+                          "  border: 2px solid #c0c0c0; "
+                          "  border-radius: 4px; "
+                          "  background-color: white; "
+                          "  min-height: 40px; "
+                          "}");
+
+  // ========== Documentation Button ==========
+  QPushButton *btnDocs = new QPushButton("See Docs", this);
+  connect(btnDocs, &QPushButton::clicked, this,
+          &ParallelInductorsDialog::showDocumentation);
 
   QVBoxLayout *leqLayout = new QVBoxLayout;
   leqLayout->addWidget(labelLeq);
@@ -109,6 +117,8 @@ ParallelInductorsDialog::ParallelInductorsDialog(QWidget *parent)
   main->addLayout(contentLayout);
   main->setSpacing(8);
   main->setContentsMargins(15, 15, 15, 15);
+  main->addSpacing(10);
+  main->addWidget(btnDocs);
 
   setLayout(main);
   setMinimumWidth(600);
@@ -120,8 +130,9 @@ ParallelInductorsDialog::ParallelInductorsDialog(QWidget *parent)
 
 double ParallelInductorsDialog::parseInductance(const QString &valueStr) const {
   QString str = valueStr.trimmed().toLower();
-  
-  if (str.isEmpty()) return 0.0;
+
+  if (str.isEmpty())
+    return 0.0;
 
   // Remove spaces
   str.remove(' ');
@@ -172,11 +183,12 @@ double ParallelInductorsDialog::parseInductance(const QString &valueStr) const {
     bool okPrefix, okSuffix;
     double prefixValue = prefix.isEmpty() ? 0.0 : prefix.toDouble(&okPrefix);
     double suffixValue = 0.0;
-    
+
     if (!suffix.isEmpty()) {
       suffixValue = suffix.toDouble(&okSuffix);
-      if (!okSuffix) return 0.0;
-      
+      if (!okSuffix)
+        return 0.0;
+
       // Calculate the decimal places for suffix
       // "2u2" -> 2e-6 + 2e-7 = 2.2e-6
       // "0u5" -> 0 + 5e-7 = 0.5e-6
@@ -185,7 +197,8 @@ double ParallelInductorsDialog::parseInductance(const QString &valueStr) const {
       return prefixValue * multiplier + suffixValue * suffixMultiplier;
     } else {
       // Format like "22u" - just multiply
-      if (prefix.isEmpty() || !okPrefix) return 0.0;
+      if (prefix.isEmpty() || !okPrefix)
+        return 0.0;
       return prefixValue * multiplier;
     }
   } else {
@@ -193,7 +206,8 @@ double ParallelInductorsDialog::parseInductance(const QString &valueStr) const {
     str.remove(QRegularExpression("[^0-9.]"));
     bool ok;
     double value = str.toDouble(&ok);
-    if (!ok) return 0.0;
+    if (!ok)
+      return 0.0;
     return value;
   }
 }
@@ -215,7 +229,8 @@ QString ParallelInductorsDialog::formatInductance(double value) const {
 QVector<double> ParallelInductorsDialog::getInductors() const {
   QVector<double> inductors;
   for (int i = 0; i < tableInductors->rowCount(); ++i) {
-    QLineEdit *edit = qobject_cast<QLineEdit*>(tableInductors->cellWidget(i, 1));
+    QLineEdit *edit =
+        qobject_cast<QLineEdit *>(tableInductors->cellWidget(i, 1));
     if (edit) {
       double value = parseInductance(edit->text());
       if (value > 0) {
@@ -226,16 +241,18 @@ QVector<double> ParallelInductorsDialog::getInductors() const {
   return inductors;
 }
 
-double ParallelInductorsDialog::calculateParallelInductance(const QVector<double> &inductors) const {
-  if (inductors.isEmpty()) return 0.0;
-  
+double ParallelInductorsDialog::calculateParallelInductance(
+    const QVector<double> &inductors) const {
+  if (inductors.isEmpty())
+    return 0.0;
+
   double invSum = 0.0;
   for (double l : inductors) {
     if (l > 0) {
       invSum += 1.0 / l;
     }
   }
-  
+
   if (invSum > 0) {
     return 1.0 / invSum;
   }
@@ -283,9 +300,8 @@ void ParallelInductorsDialog::computeResults() {
   }
 
   // Display equivalent inductance
-  labelLeq->setText(QString("<b>L<sub>eq</sub> = %1</b>").arg(formatInductance(leq)));
+  labelLeq->setText(
+      QString("<b>L<sub>eq</sub> = %1</b>").arg(formatInductance(leq)));
 }
 
-void ParallelInductorsDialog::on_inputChanged() {
-  computeResults();
-}
+void ParallelInductorsDialog::on_inputChanged() { computeResults(); }

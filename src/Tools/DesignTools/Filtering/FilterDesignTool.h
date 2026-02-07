@@ -22,7 +22,7 @@
 #include <QWidget>
 
 #include "Schematic/Network.h"
-#include "Misc/general.h" // Get scale function
+#include "Misc/general.h" // Get scale function and get docs path
 
 #include "CanonicalFilter.h"
 #include "CapacitivelyCoupledShuntResonatorsFilter.h"
@@ -101,6 +101,12 @@ private slots:
   /// Magnetic-coupled               |      None
   /// Quarter-wave line coupled      |      None
   void setAdjustableResonatorVariables_DirectCoupled();
+
+  /// @brief Shows the documentation for filter design tool
+  void showDocumentation() {
+      QString path = QString("/RFCircuitSynthesis/Filters/index.html");
+      showHTMLDocs(path);
+  }
 
 private:
   /// @name UI Components - Filter Implementation

@@ -54,6 +54,12 @@ MatchingNetworkDesignTool::MatchingNetworkDesignTool(QWidget *parent)
   MatchingNetworkDesignLayout->addWidget(traceNameLabel, 5, 0);
   MatchingNetworkDesignLayout->addWidget(traceNameLineEdit, 5, 1);
 
+  // Documentation Button
+  QPushButton *btnDocs = new QPushButton("See Docs", this);
+  connect(btnDocs, &QPushButton::clicked, this,
+          &MatchingNetworkDesignTool::showDocumentation);
+  MatchingNetworkDesignLayout->addWidget(btnDocs, 5, 2);
+
   // Connect signals from the input matching network setup widget
   connect(InputMatchingSetupWidget,
           &MatchingNetworkParametersWidget::parametersChanged, this,

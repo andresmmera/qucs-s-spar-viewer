@@ -11,6 +11,7 @@
 #include <QDialog>
 #include <complex>
 #include "UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "Misc/general.h"
 
 class CustomDoubleSpinBox;
 class QLabel;
@@ -40,6 +41,12 @@ private slots:
     
     /// @brief Slot triggered when any input value changes
     void on_inputChanged();
+
+    /// @brief Slot to show the HTML reflection coefficient help
+    void showDocumentation() {
+        QString path = QString("/Calculators/ReflectionCoefficientTools/index.html");
+        showHTMLDocs(path);
+    }
 
 private:
     // ========== Input Widgets ==========

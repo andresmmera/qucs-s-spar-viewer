@@ -9,6 +9,8 @@
 #define MATCHINGNETWORKDESIGNTOOL_H
 
 #include "UI/CustomWidgets/CustomDoubleSpinBox.h"
+#include "Misc/general.h" // To build the docs path
+
 #include <QCheckBox>
 #include <QComboBox>
 #include <QGridLayout>
@@ -48,6 +50,12 @@ private slots:
 
   /// @brief Adjust widget visibility based on 1-port or 2-port mode
   void AdjustOneTwoPortMatchingWidgetsVisibility();
+
+  /// @brief Shows the documentation for impedance matching design tool
+  void showDocumentation() {
+      QString path = QString("/RFCircuitSynthesis/ImpedanceMatching/index.html");
+      showHTMLDocs(path);
+  }
 
 private: 
   /// @brief Get frequency scale multiplier

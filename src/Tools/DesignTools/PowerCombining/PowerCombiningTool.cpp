@@ -168,6 +168,12 @@ PowerCombiningTool::PowerCombiningTool(QWidget *parent) : QWidget(parent) {
   PowerCombinerDesignLayout->addWidget(traceNameLabel, layout_row, 0);
   PowerCombinerDesignLayout->addWidget(traceNameLineEdit, layout_row, 1);
 
+  // Documentation Button
+  QPushButton *btnDocs = new QPushButton("See Docs", this);
+  connect(btnDocs, &QPushButton::clicked, this,
+          &PowerCombiningTool::showDocumentation);
+  PowerCombinerDesignLayout->addWidget(btnDocs, layout_row, 2);
+
   this->setLayout(PowerCombinerDesignLayout);
 
   // Make connection between widgets and handler functions to update the design
