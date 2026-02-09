@@ -41,6 +41,7 @@ void Qucs_S_SPAR_Viewer::setToolsDock() {
 
   // Schematic widget
   SchematicWidget = new GraphWidget(this); // Schematic window
+  SchematicWidget->setObjectName("schematicDisplay");
 
   // Export option. Just a line at the bottom of the schematic
   LabelExportSchematic = new QLabel("Export schematic");

@@ -57,10 +57,12 @@ class GammaCalculatorDialog;
 /// @struct tQucsSettings
 /// @brief Structure to hold Qucs application settings
 struct tQucsSettings {
-  int x, y;          ///< Position of main window (x, y coordinates)
-  QFont font;        ///< Application font
-  QString LangDir;   ///< Language directory path
-  QString Language;  ///< Current language setting
+  int x, y;                 ///< Position of main window (x, y coordinates)
+  QFont font;               ///< Application font
+  QString LangDir;          ///< Language directory path
+  QString Language;         ///< Current language setting
+  QString theme;            ///< Theme {'Light', 'Dark'}
+  QString customThemePath;  ///z Path to custom theme (.qss) file
 };
 
 extern struct tQucsSettings QucsSettings;
@@ -182,7 +184,7 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
     void addFile(const QFileInfo& fileInfo);
 
 
-    private slots:
+  private slots:
     // Menu actions
     /// @brief Show user help
     /// @details Opens user help in the web browser
@@ -211,6 +213,15 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
 
     /// @brief Opens file dialog to load a session file
     void slotLoadSession();
+
+    /// @brief Set light theme
+    void slotSetLightTheme();
+
+    /// @brief Set dark theme
+    void slotSetDarkTheme();
+
+    /// @brief Pop up window to let the user to add a custom theme file
+    void slotLoadCustomTheme();
 
     /// @brief Raise appropriate widgets when trace tab is selected
     ///
@@ -979,6 +990,10 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
     /// @brief Create the Calculators menu with all calculator tools
     /// @return Pointer to the Calculators menu
     QMenu *CreateCalculatorsMenu();
+
+    /// @brief Apply the theme
+    /// @param Name of the theme {'light', 'dark', 'custom'}
+    void applyTheme(const QString& themeName);
 
   private slots:
     /// @brief Update simulation traces

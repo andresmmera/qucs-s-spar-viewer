@@ -5,5 +5,7 @@
         <file>Tools/DesignTools/SimulationSetup/bitmaps/microstrip.png</file>
         <file>Tools/DesignTools/SimulationSetup/bitmaps/stripline.png</file>
         <file>Tools/Calculators/General/VoltageDivider/VoltageDivider.png</file>
+        <file>themes/dark-theme.qss</file>
+        <file>themes/light-theme.qss</file>
     </qresource>
 </RCC>

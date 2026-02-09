@@ -106,6 +106,32 @@ void Qucs_S_SPAR_Viewer::CreateMenuBar() {
   fileMenu->addAction(fileSaveAsSession);
   fileMenu->addAction(fileQuit);
 
+  // View menu
+  QMenu *viewMenu = new QMenu(tr("&View"));
+
+  // Theme submenu
+  QMenu *themeMenu = viewMenu->addMenu(tr("&Theme"));
+
+  QAction *lightThemeAction = new QAction(tr("&Light Theme"), this);
+  lightThemeAction->setChecked(QucsSettings.theme == "light");
+  connect(lightThemeAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotSetLightTheme);
+  themeMenu->addAction(lightThemeAction);
+
+  QAction *darkThemeAction = new QAction(tr("&Dark Theme"), this);
+  darkThemeAction->setChecked(QucsSettings.theme == "dark");
+  connect(darkThemeAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotSetDarkTheme);
+  themeMenu->addAction(darkThemeAction);
+
+  themeMenu->addSeparator();
+
+  QAction *customThemeAction = new QAction(tr("&Custom Theme..."), this);
+  connect(customThemeAction, &QAction::triggered, this,
+          &Qucs_S_SPAR_Viewer::slotLoadCustomTheme);
+  themeMenu->addAction(customThemeAction);
+
+
   // Create calculators menu
   QMenu *calculatorsMenu = CreateCalculatorsMenu();
 
@@ -126,6 +152,8 @@ void Qucs_S_SPAR_Viewer::CreateMenuBar() {
           &Qucs_S_SPAR_Viewer::slotHelpAboutQt);
 
   menuBar()->addMenu(fileMenu);
+  menuBar()->addSeparator();
+  menuBar()->addMenu(viewMenu);
   menuBar()->addSeparator();
   menuBar()->addMenu(calculatorsMenu);
   menuBar()->addSeparator();
