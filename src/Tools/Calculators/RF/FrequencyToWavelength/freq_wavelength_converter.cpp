@@ -29,7 +29,6 @@ FreqWavelengthConverterDialog::FreqWavelengthConverterDialog(QWidget *parent)
 
   // ========== Mode Selection ==========
   QGroupBox *modeGroup = new QGroupBox(QString("Conversion Mode"), this);
-  modeGroup->setStyleSheet("QGroupBox { font-weight: bold; }");
 
   radioFreqToWavelength = new QRadioButton(tr("Frequency → Wavelength"), this);
   radioWavelengthToFreq = new QRadioButton(tr("Wavelength → Frequency"), this);
@@ -46,7 +45,6 @@ FreqWavelengthConverterDialog::FreqWavelengthConverterDialog(QWidget *parent)
 
   // ========== Frequency Input Group ==========
   freqInputGroup = new QGroupBox(QString("Frequency Input"), this);
-  freqInputGroup->setStyleSheet("QGroupBox { font-weight: bold; }");
 
   spinFrequency = new CustomDoubleSpinBox(this);
   spinFrequency->setRange(0.0, 1e15);
@@ -71,7 +69,6 @@ FreqWavelengthConverterDialog::FreqWavelengthConverterDialog(QWidget *parent)
 
   // ========== Wavelength Input Group ==========
   wavelengthInputGroup = new QGroupBox(QString("Wavelength Input"), this);
-  wavelengthInputGroup->setStyleSheet("QGroupBox { font-weight: bold; }");
 
   spinWavelength = new CustomDoubleSpinBox(this);
   spinWavelength->setRange(0.0, 1e15);
@@ -101,7 +98,6 @@ FreqWavelengthConverterDialog::FreqWavelengthConverterDialog(QWidget *parent)
 
   // ========== Permittivity Input ==========
   QGroupBox *permittivityGroup = new QGroupBox(QString("Medium"), this);
-  permittivityGroup->setStyleSheet("QGroupBox { font-weight: bold; }");
 
   spinPermittivity = new CustomDoubleSpinBox(this);
   spinPermittivity->setRange(1.0, 100.0);
@@ -119,7 +115,6 @@ FreqWavelengthConverterDialog::FreqWavelengthConverterDialog(QWidget *parent)
 
   // ========== Results Table ==========
   QGroupBox *resultsGroup = new QGroupBox(QString("Results"), this);
-  resultsGroup->setStyleSheet("QGroupBox { font-weight: bold; }");
 
   resultsTable = new QTableWidget(4, 2, this);
   resultsTable->setHorizontalHeaderLabels(QStringList()
@@ -160,28 +155,6 @@ FreqWavelengthConverterDialog::FreqWavelengthConverterDialog(QWidget *parent)
   resultsTable->setSelectionMode(QAbstractItemView::SingleSelection);
   resultsTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
   resultsTable->setMinimumHeight(150);
-
-  // Table stylesheet
-  QString tableStyle =
-      "QTableWidget { "
-      "  gridline-color: #d0d0d0; "
-      "  border: 1px solid #c0c0c0; "
-      "  border-radius: 4px; "
-      "  background-color: white; "
-      "}"
-      "QTableWidget::item { "
-      "  padding: 8px; "
-      "}"
-      "QHeaderView::section { "
-      "  background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, "
-      "                                     stop:0 #f0f0f0, stop:1 #e0e0e0); "
-      "  padding: 6px; "
-      "  border: none; "
-      "  border-right: 1px solid #c0c0c0; "
-      "  border-bottom: 1px solid #c0c0c0; "
-      "  font-weight: bold; "
-      "}";
-  resultsTable->setStyleSheet(tableStyle);
 
   QVBoxLayout *resultsLayout = new QVBoxLayout;
   resultsLayout->addWidget(resultsTable);

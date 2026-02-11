@@ -76,15 +76,6 @@ SeriesCapacitorsDialog::SeriesCapacitorsDialog(QWidget *parent)
 
   labelCeq = new QLabel("-", this);
   labelCeq->setAlignment(Qt::AlignCenter);
-  labelCeq->setStyleSheet("QLabel { "
-                          "  font-size: 18px; "
-                          "  font-weight: bold; "
-                          "  padding: 15px; "
-                          "  border: 2px solid #c0c0c0; "
-                          "  border-radius: 4px; "
-                          "  background-color: white; "
-                          "  min-height: 40px; "
-                          "}");
 
   QVBoxLayout *ceqLayout = new QVBoxLayout;
   ceqLayout->addWidget(labelCeq);

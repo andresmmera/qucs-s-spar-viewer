@@ -153,28 +153,6 @@ FreeSpaceAttenuationDialog::FreeSpaceAttenuationDialog(QWidget *parent)
   resultsTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
   resultsTable->setMinimumHeight(200);
 
-  // Table stylesheet
-  QString tableStyle =
-      "QTableWidget { "
-      "  gridline-color: #d0d0d0; "
-      "  border: 1px solid #c0c0c0; "
-      "  border-radius: 4px; "
-      "  background-color: white; "
-      "}"
-      "QTableWidget::item { "
-      "  padding: 8px; "
-      "}"
-      "QHeaderView::section { "
-      "  background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, "
-      "                                     stop:0 #f0f0f0, stop:1 #e0e0e0); "
-      "  padding: 6px; "
-      "  border: none; "
-      "  border-right: 1px solid #c0c0c0; "
-      "  border-bottom: 1px solid #c0c0c0; "
-      "  font-weight: bold; "
-      "}";
-  resultsTable->setStyleSheet(tableStyle);
-
   QVBoxLayout *resultsLayout = new QVBoxLayout;
   resultsLayout->addWidget(resultsTable);
   resultsGroup->setLayout(resultsLayout);

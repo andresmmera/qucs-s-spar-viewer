@@ -162,15 +162,7 @@ VoltageDividerDialog::VoltageDividerDialog(QWidget *parent) : QDialog(parent) {
 
   labelVout = new QLabel("-", this);
   labelVout->setAlignment(Qt::AlignCenter);
-  labelVout->setStyleSheet("QLabel { "
-                           "  font-size: 18px; "
-                           "  font-weight: bold; "
-                           "  padding: 15px; "
-                           "  border: 2px solid #c0c0c0; "
-                           "  border-radius: 4px; "
-                           "  background-color: white; "
-                           "  min-height: 40px; "
-                           "}");
+
 
   QVBoxLayout *voutLayout = new QVBoxLayout;
   voutLayout->addWidget(labelVout);
@@ -199,28 +191,6 @@ VoltageDividerDialog::VoltageDividerDialog(QWidget *parent) : QDialog(parent) {
                                                          QHeaderView::Stretch);
   resultsTable->setSelectionMode(QAbstractItemView::SingleSelection);
   resultsTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
-
-  // Table stylesheet
-  QString tableStyle =
-      "QTableWidget { "
-      "  gridline-color: #d0d0d0; "
-      "  border: 1px solid #c0c0c0; "
-      "  border-radius: 4px; "
-      "  background-color: white; "
-      "}"
-      "QTableWidget::item { "
-      "  padding: 8px; "
-      "}"
-      "QHeaderView::section { "
-      "  background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, "
-      "                                     stop:0 #f0f0f0, stop:1 #e0e0e0); "
-      "  padding: 6px; "
-      "  border: none; "
-      "  border-right: 1px solid #c0c0c0; "
-      "  border-bottom: 1px solid #c0c0c0; "
-      "  font-weight: bold; "
-      "}";
-  resultsTable->setStyleSheet(tableStyle);
 
   QVBoxLayout *resultsLayout = new QVBoxLayout;
   resultsLayout->addWidget(resultsTable);
