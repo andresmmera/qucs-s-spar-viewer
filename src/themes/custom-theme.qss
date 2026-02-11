@@ -1,0 +1,355 @@
+/* Orange Theme - Darker background with darker orange text */
+QMainWindow {
+    background-color: #0a0a0a;
+    color: #cc7000;
+}
+
+QDockWidget {
+    background-color: #0a0a0a;
+    color: #cc7000;
+}
+
+QDockWidget::title {
+    background-color: #1a1a1a;
+    padding: 5px;
+    text-align: left;
+    color: #cc7000;
+}
+
+QMenuBar {
+    background-color: #1a1a1a;
+    color: #cc7000;
+}
+
+QMenuBar::item:selected {
+    background-color: #094771;
+    color: #cc7000;
+}
+
+QMenu {
+    background-color: #0a0a0a;
+    color: #cc7000;
+    border: 1px solid #1a1a1a;
+}
+
+QMenu::item:selected {
+    background-color: #094771;
+    color: #cc7000;
+}
+
+QPushButton {
+    background-color: #1a1a1a;
+    color: #cc7000;
+    border: 1px solid #333333;
+    border-radius: 3px;
+    padding: 5px 15px;
+}
+
+QPushButton:hover {
+    background-color: #2a2a2a;
+    color: #e68a00;
+}
+
+QPushButton:pressed {
+    background-color: #0a0a0a;
+    color: #cc7000;
+}
+
+QLineEdit, QSpinBox, QDoubleSpinBox, QComboBox {
+    background-color: #1a1a1a;
+    color: #cc7000;
+    border: 1px solid #333333;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QComboBox:focus {
+    border: 1px solid #cc7000;
+}
+
+QComboBox::drop-down {
+    border: none;
+}
+
+QComboBox::down-arrow {
+    image: url(:/icons/down-arrow-dark.png);
+    width: 12px;
+    height: 12px;
+}
+
+QDialog QTableWidget QHeaderView::section {
+    background-color: #1a1a1a;
+    color: #cc7000;
+    padding: 6px;
+    border: 1px solid #333333;
+    font-weight: bold;
+}
+
+/* Text inside the calculators' tables*/
+QDialog QTableWidget {
+    background-color: #0a0a0a;
+    alternate-background-color: #1a1a1a;
+    color: #cc7000;
+    gridline-color: #333333;
+    border: 1px solid #1a1a1a;
+}
+
+QDialog QHeaderView::section {
+    background-color: #1a1a1a;
+    color: #cc7000;
+    padding: 5px;
+    border: 1px solid #333333;
+}
+
+QTableWidget::item:selected {
+    background-color: #094771;
+    color: #e68a00;
+}
+
+QScrollBar:vertical {
+    background-color: #0a0a0a;
+    width: 14px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #333333;
+    min-height: 20px;
+    border-radius: 7px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #cc7000;
+}
+
+QScrollBar:horizontal {
+    background-color: #0a0a0a;
+    height: 14px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #333333;
+    min-width: 20px;
+    border-radius: 7px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background-color: #cc7000;
+}
+
+QLabel {
+    color: #cc7000;
+}
+
+QGroupBox {
+    color: #cc7000;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    margin-top: 1ex;
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 5px;
+    color: #cc7000;
+}
+
+QToolButton {
+    background-color: #1a1a1a;
+    color: #cc7000;
+    border: 1px solid #333333;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+QToolButton:hover {
+    background-color: #2a2a2a;
+    color: #e68a00;
+}
+
+QCheckBox {
+    color: #cc7000;
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+}
+
+QCheckBox::indicator:unchecked {
+    border: 1px solid #333333;
+    background-color: #0a0a0a;
+    border-radius: 3px;
+}
+
+QCheckBox::indicator:checked {
+    border: 1px solid #cc7000;
+    background-color: #cc7000;
+    border-radius: 3px;
+}
+
+QTextEdit {
+    background-color: #0f0f0f;
+    color: #cc7000;
+    border: 1px solid #1a1a1a;
+}
+
+QPlainTextEdit {
+    background-color: #0f0f0f;
+    color: #cc7000;
+    border: 1px solid #1a1a1a;
+}
+
+/* Dialog styling */
+QDialog {
+    background-color: #0a0a0a;
+    color: #cc7000;
+}
+
+QDialog QLabel {
+    color: #cc7000;
+}
+
+/* Radio buttons */
+QRadioButton {
+    color: #cc7000;
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+}
+
+QRadioButton::indicator:unchecked {
+    border: 1px solid #333333;
+    background-color: #0a0a0a;
+    border-radius: 9px;
+}
+
+QRadioButton::indicator:checked {
+    border: 1px solid #cc7000;
+    background-color: #cc7000;
+    border-radius: 9px;
+}
+
+/* Tab Widget styling */
+QTabWidget::pane {
+    border: 1px solid #333333;
+    background-color: #0a0a0a;
+}
+
+QTabBar::tab {
+    background-color: #1a1a1a;
+    color: #cc7000;
+    border: 1px solid #333333;
+    border-bottom: none;
+    padding: 6px 12px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background-color: #0a0a0a;
+    color: #e68a00;
+    border-bottom: 1px solid #0a0a0a;
+}
+
+QTabBar::tab:hover {
+    background-color: #2a2a2a;
+    color: #e68a00;
+}
+
+QTabBar::tab:!selected {
+    margin-top: 2px;
+}
+
+/*Schematic background*/
+#schematicDisplay {
+background-color: #ffffff;
+color: #000000;
+}
+
+/* Smith Chart Widget - Dark theme with darker orange text */
+#smithChartWidget {
+background-color: #0a0a0a;
+color: #cc7000;
+}
+
+/* Labels inside Smith Chart */
+#smithChartWidget QLabel {
+color: #cc7000;
+background-color: transparent;
+}
+
+/* ComboBoxes inside Smith Chart */
+#smithChartWidget QComboBox {
+background-color: #1a1a1a;
+color: #cc7000;
+border: 1px solid #333333;
+border-radius: 3px;
+padding: 3px;
+}
+
+#smithChartWidget QComboBox:hover {
+background-color: #2a2a2a;
+color: #e68a00;
+}
+
+#smithChartWidget QComboBox::drop-down {
+border: none;
+width: 20px;
+}
+
+#smithChartWidget QComboBox::down-arrow {
+image: none;
+border-left: 4px solid transparent;
+border-right: 4px solid transparent;
+border-top: 5px solid #cc7000;
+margin-right: 5px;
+}
+
+#smithChartWidget QComboBox QAbstractItemView {
+background-color: #0a0a0a;
+color: #cc7000;
+selection-background-color: #094771;
+selection-color: #e68a00;
+border: 1px solid #333333;
+}
+
+/* SpinBoxes inside Smith Chart */
+#smithChartWidget QDoubleSpinBox,
+#smithChartWidget QSpinBox {
+background-color: #1a1a1a;
+color: #cc7000;
+border: 1px solid #333333;
+border-radius: 3px;
+padding: 3px;
+}
+
+#smithChartWidget QDoubleSpinBox:focus,
+#smithChartWidget QSpinBox:focus {
+border: 1px solid #cc7000;
+}
+
+/* Checkboxes inside Smith Chart */
+#smithChartWidget QCheckBox {
+color: #cc7000;
+}
+
+#smithChartWidget QCheckBox::indicator {
+width: 18px;
+height: 18px;
+}
+
+#smithChartWidget QCheckBox::indicator:unchecked {
+border: 1px solid #333333;
+background-color: #0a0a0a;
+border-radius: 3px;
+}
+
+#smithChartWidget QCheckBox::indicator:checked {
+border: 1px solid #cc7000;
+background-color: #cc7000;
+border-radius: 3px;
+}
