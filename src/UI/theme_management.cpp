@@ -56,10 +56,17 @@ void Qucs_S_SPAR_Viewer::slotSetDarkTheme() {
 }
 
 void Qucs_S_SPAR_Viewer::slotLoadCustomTheme() {
+    // Determine the themes directory path
+    QString appDir = QCoreApplication::applicationDirPath();
+    QString themesDir = appDir + "/themes/";
+
+    // Check if themes directory exists, otherwise fall back to home
+    QString startDir = QDir(themesDir).exists() ? themesDir : QDir::homePath();
+
     QString filename = QFileDialog::getOpenFileName(
         this,
         tr("Select Custom Theme File"),
-        QDir::homePath(),
+        startDir,  // Changed from QDir::homePath()
         tr("Stylesheet Files (*.qss *.css);;All Files (*)")
         );
 
@@ -70,4 +77,5 @@ void Qucs_S_SPAR_Viewer::slotLoadCustomTheme() {
     QucsSettings.customThemePath = filename;
     applyTheme("custom");
 }
+
 
