@@ -15,6 +15,60 @@ QDockWidget::title {
     text-align: left;
 }
 
+/* Generic widget background fix */
+QWidget {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+/* Dialog styling */
+QDialog {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+/* Text editing widgets */
+QPlainTextEdit {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
+}
+
+/* Radio buttons */
+QRadioButton {
+    color: #000000;
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+}
+
+QRadioButton::indicator:unchecked {
+    border: 1px solid #acacac;
+    background-color: #ffffff;
+    border-radius: 9px;
+}
+
+QRadioButton::indicator:checked {
+    border: 1px solid #0078d7;
+    background-color: #0078d7;
+    border-radius: 9px;
+}
+
+/* Scroll areas */
+QScrollArea {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+/* Frames */
+QFrame {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+
 QMenuBar {
     background-color: #f5f5f5;
     color: #000000;
@@ -250,4 +304,34 @@ color: #000000;
     border: 1px solid #0078d7;
     background-color: #0078d7;
     border-radius: 3px;
+}
+
+
+/* Tab Widget styling */
+QTabWidget::pane {
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+}
+
+QTabBar::tab {
+    background-color: #e0e0e0;
+    color: #000000;
+    border: 1px solid #cccccc;
+    border-bottom: none;
+    padding: 6px 12px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background-color: #ffffff;
+    color: #000000;
+    border-bottom: 1px solid #ffffff;
+}
+
+QTabBar::tab:hover {
+    background-color: #e5f3ff;
+}
+
+QTabBar::tab:!selected {
+    margin-top: 2px;
 }
