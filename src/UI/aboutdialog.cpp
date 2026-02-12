@@ -68,6 +68,26 @@ QString AboutDialog::buildAboutHtml() const
 
         <hr/>
 
+        <h3>Platform Support</h3>
+        <p>
+            This software runs best on <b>Linux</b>. It is developed and primarily tested
+            using <a href="https://www.tuxedocomputers.com/en/TUXEDO-OS_1.tuxedo">Tuxedo OS</a>.
+        </p>
+        <p>
+            Windows builds are provided via CI and have received basic testing. Some
+            issues may occur.
+        </p>
+        <p>
+            It has <b>not been tested on macOS at all</b>.
+        </p>
+
+        <p>
+            Users are encouraged to support Linux and moving away from proprietary operating systems.
+        </p>
+
+
+        <hr/>
+
         <h3>Acknowledgments</h3>
           <ul>
             <li>Special thanks to <b>Vadim Kuznetsov</b>, the <a href="https://github.com/ra3xdh/qucs_s">Qucs-S</a> project leader.</li>
