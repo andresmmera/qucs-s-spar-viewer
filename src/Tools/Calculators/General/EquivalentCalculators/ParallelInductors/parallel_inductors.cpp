@@ -75,15 +75,6 @@ ParallelInductorsDialog::ParallelInductorsDialog(QWidget *parent)
 
   labelLeq = new QLabel("-", this);
   labelLeq->setAlignment(Qt::AlignCenter);
-  labelLeq->setStyleSheet("QLabel { "
-                          "  font-size: 18px; "
-                          "  font-weight: bold; "
-                          "  padding: 15px; "
-                          "  border: 2px solid #c0c0c0; "
-                          "  border-radius: 4px; "
-                          "  background-color: white; "
-                          "  min-height: 40px; "
-                          "}");
 
   // ========== Documentation Button ==========
   QPushButton *btnDocs = new QPushButton("See Docs", this);

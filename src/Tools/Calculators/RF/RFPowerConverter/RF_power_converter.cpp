@@ -71,15 +71,6 @@ RFPowerConverterDialog::RFPowerConverterDialog(QWidget *parent)
 
   labelResult = new QLabel("-", this);
   labelResult->setAlignment(Qt::AlignCenter);
-  labelResult->setStyleSheet("QLabel { "
-                             "  font-size: 18px; "
-                             "  font-weight: bold; "
-                             "  padding: 20px; "
-                             "  border: 2px solid #c0c0c0; "
-                             "  border-radius: 4px; "
-                             "  background-color: white; "
-                             "  min-height: 50px; "
-                             "}");
 
   // ========== Documentation Button ==========
   QPushButton *btnDocs = new QPushButton("See Docs", this);

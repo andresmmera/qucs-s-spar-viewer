@@ -12,6 +12,10 @@
 SmithChartWidget::SmithChartWidget(QWidget *parent)
     : QWidget(parent), z0(50.0), scaleFactor(1.0), panX(0.0), panY(0.0),
       m_showAdmittanceChart(false) {
+
+  // Object name: Needed for the theme settings
+  setObjectName("smithChartWidget");
+
   // Default characteristic impedance
   setAttribute(Qt::WA_Hover);
   setMouseTracking(true);

@@ -296,6 +296,34 @@ INSTALL(TARGETS ${QUCS_NAME}spar-viewer
     RUNTIME DESTINATION bin COMPONENT Runtime
     )
 
+#
+# Install themes folder next to the binary
+#
+IF(APPLE)
+    # For macOS bundle - install inside the app bundle
+    INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/src/themes
+        DESTINATION bin/${QUCS_NAME}spar-viewer.app/Contents/MacOS
+        COMPONENT Runtime
+        FILES_MATCHING PATTERN "*.qss"
+        PATTERN "*.txt"
+    )
+ELSEIF(WIN32)
+    # For Windows - install next to the .exe
+    INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/src/themes
+        DESTINATION bin
+        COMPONENT Runtime
+        FILES_MATCHING PATTERN "*.qss"
+        PATTERN "*.txt"
+    )
+ELSE()
+    # For Linux - install next to the binary
+    INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/src/themes
+        DESTINATION bin
+        COMPONENT Runtime
+        FILES_MATCHING PATTERN "*.qss"
+        PATTERN "*.txt"
+    )
+ENDIF()
 
 #
 # Install needed Qt plugins by copying directories from the qt installation
