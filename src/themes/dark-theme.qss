@@ -272,3 +272,60 @@ color: #000000;
     background-color: #094771;
     border-radius: 3px;
 }
+
+/*Needed to force dark theme on Windows on the QDockWidgets tabs*/
+
+QTabBar {
+    background-color: #2b2b2b;
+}
+
+QTabBar::tab {
+    background-color: #3c3c3c;
+    color: #d4d4d4;
+    padding: 5px 10px;
+    border: 1px solid #555555;
+    border-bottom: none;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border-bottom: 2px solid #094771;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #4a4a4a;
+}
+
+QTabWidget::pane {
+    border: 1px solid #555555;
+    background-color: #2b2b2b;
+}
+
+QTabWidget::tab-bar {
+    alignment: left;
+}
+
+QDockWidget > QWidget {
+    background-color: #2b2b2b;
+    color: #d4d4d4;
+}
+
+/* Needed to enforce dark theme on Windows on the design tools */
+QDockWidget QScrollArea {
+    background-color: #2b2b2b;
+    border: none;
+}
+
+QDockWidget QScrollArea > QWidget > QWidget {
+    background-color: #2b2b2b;
+}
+
+QAbstractScrollArea {
+    background-color: #2b2b2b;
+}
+
+QAbstractScrollArea > QWidget {
+    background-color: #2b2b2b;
+}

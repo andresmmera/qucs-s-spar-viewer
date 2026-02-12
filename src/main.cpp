@@ -119,6 +119,9 @@ bool loadTheme(const QString& themeName) {
 int main(int argc, char** argv) {
   QApplication a(argc, argv);
 
+  // Force Fusion style
+  QApplication::setStyle("Fusion");
+
   // apply default settings
   QucsSettings.x = 200;
   QucsSettings.y = 100;
