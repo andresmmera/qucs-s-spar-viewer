@@ -224,7 +224,7 @@ jobs:
             -DCMAKE_OSX_ARCHITECTURES="${{ matrix.cmake_arch }}" \
             -DCI_VERSION="${{ env.VERSION }}"
 
-      - name: 'Build RF-Designer'
+      - name: 'Build Tool'
         run: |
           cmake --build ${{ github.workspace }}/build --parallel --config=${{ env.BUILD_TYPE }}
 
@@ -349,12 +349,12 @@ jobs:
     - name: 'Configure CMake'
       run: |
         cmake -B ${{github.workspace}}\build -G 'Ninja'  `
-              -DCMAKE_INSTALL_PREFIX=${{github.workspace}}\build\rf-designer-suite  `
+              -DCMAKE_INSTALL_PREFIX=${{github.workspace}}\build\qucs-s-spar-viewer-tool  `
               -DCMAKE_CXX_COMPILER=cl -DCMAKE_C_COMPILER=cl  `
               -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}   `
               -DCI_VERSION="${{env.VERSION}}"
 
-    - name: 'Build RF-Designer'
+    - name: 'Build Tool'
       run: |
         cmake --build ${{github.workspace}}\build --parallel --config=${{env.BUILD_TYPE}}
 
@@ -364,7 +364,7 @@ jobs:
 
     - name: 'Deploy Qt6 dependencies'
       run: |
-        $suite_bin_dir = "${{github.workspace}}\build\rf-designer-suite\bin"
+        $suite_bin_dir = "${{github.workspace}}\build\qucs-s-spar-viewer-tool\bin"
         $executable = "qucs-sspar-viewer.exe"
         
         if (Test-Path "$suite_bin_dir\$executable") {
@@ -377,7 +377,7 @@ jobs:
 
     - name: 'Create zip archive for release'
       run: |
-        $suite_dir = "${{github.workspace}}\build\rf-designer-suite"
+        $suite_dir = "${{github.workspace}}\build\qucs-s-spar-viewer-tool"
         
         cd $suite_dir
         $zipName = "${env:APP_NAME}-${env:VERSION}${env:SHORT_HASH}-MSVC-x64.zip"
@@ -457,19 +457,19 @@ jobs:
       run: |
         cmake.exe -B build/ -G 'Ninja' \
                   -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} \
-                  -DCMAKE_INSTALL_PREFIX=build/rf-designer-suite  \
+                  -DCMAKE_INSTALL_PREFIX=build/qucs-s-spar-viewer-tool  \
                   -DCI_VERSION="${{env.VERSION}}"
         cmake.exe --build build/ --parallel --config ${{env.BUILD_TYPE}}
 
     - name: Make install
       run: |
         cmake --build build/ --target install
-        strip build/rf-designer-suite/bin/*.exe
+        strip build/qucs-s-spar-viewer-tool/bin/*.exe
 
     - name: Deploy Qt6 dependencies
       run: |
         deploy_tool="windeployqt.exe"
-        bin_dir="build/rf-designer-suite/bin"
+        bin_dir="build/qucs-s-spar-viewer-tool/bin"
         options="--svg --no-translations --no-system-d3d-compiler --no-network"
 
         # Only deploy for the executable that exists
@@ -480,19 +480,19 @@ jobs:
     - name: Copy non-Qt DLLs to bin directory
       run: |
         shopt -s extglob
-        EXE_FILE="build/rf-designer-suite/bin/qucs-sspar-viewer.exe"
+        EXE_FILE="build/qucs-s-spar-viewer-tool/bin/qucs-sspar-viewer.exe"
         if [ -f "$EXE_FILE" ]; then
           FILES=$(ldd "$EXE_FILE" | awk '($3 ~ /\/${{ matrix.config.msystem }}\/bin\//) {print $3}')
           for file in $FILES; do
             if [[ $(basename "$file") != Qt6* ]]; then
-              cp -r "$file" build/rf-designer-suite/bin
+              cp -r "$file" build/qucs-s-spar-viewer-tool/bin
             fi
           done
         fi
 
     - name: Create zip archive for release
       run: |
-        cd build/rf-designer-suite
+        cd build/qucs-s-spar-viewer-tool
         zip -r ../../${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}.zip ./bin ./share ./lib
         cd ../..
 
