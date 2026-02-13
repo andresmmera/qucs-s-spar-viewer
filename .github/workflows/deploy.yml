@@ -490,17 +490,11 @@ jobs:
           done
         fi
 
-    - name: Create zip archive for release
-      run: |
-        cd build/qucs-s-spar-viewer-tool
-        zip -r ../../${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}.zip ./bin ./share ./lib
-        cd ../..
-
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}
-        path: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}.zip
+        path: build/qucs-s-spar-viewer-tool/
 
   create-release:
     runs-on: ubuntu-latest
