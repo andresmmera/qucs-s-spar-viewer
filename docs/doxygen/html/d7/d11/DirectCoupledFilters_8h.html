@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Qucs-S S-parameter Viewer &amp; RF Synthesis Tools: Tools/Filtering/DirectCoupledFilters/DirectCoupledFilters.h File Reference</title>
+<title>Qucs-S S-parameter Viewer &amp; RF Synthesis Tools: Tools/DesignTools/Filtering/DirectCoupledFilters/DirectCoupledFilters.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -70,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_7e461070e7b716e896e0d97cd6a82321.html">Tools</a></li><li class="navelem"><a class="el" href="../../dir_d8eaeca9d366747a96eeae60fc418639.html">Filtering</a></li><li class="navelem"><a class="el" href="../../dir_8fec6accce901cf94ee9a1afd7128b90.html">DirectCoupledFilters</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_7e461070e7b716e896e0d97cd6a82321.html">Tools</a></li><li class="navelem"><a class="el" href="../../dir_bdfe9f1f609ab29be5374b464a6c3875.html">DesignTools</a></li><li class="navelem"><a class="el" href="../../dir_49b0d682575c6692fdc709c308e1a195.html">Filtering</a></li><li class="navelem"><a class="el" href="../../dir_d0078de07979c3fe64fbd1a860ef27ff.html">DirectCoupledFilters</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -80,16 +79,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Synthesis of different types of Direct Coupled filters.  
+<p>Synthesis of different types of direct-coupled resonator filters (definition)  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;./../../../Schematic/Network.h&quot;</code><br />
-<code>#include &quot;./../../../Schematic/component.h&quot;</code><br />
-<code>#include &quot;./../LowpassPrototypeCoeffs.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d2/dab/Network_8h_source.html">Schematic/Network.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/dcf/component_8h_source.html">Schematic/component.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/db7/LowpassPrototypeCoeffs_8h_source.html">Tools/DesignTools/Filtering/LowpassPrototypeCoeffs.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DirectCoupledFilters.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../da/d05/DirectCoupledFilters_8h__incl.png" border="0" usemap="#aTools_2Filtering_2DirectCoupledFilters_2DirectCoupledFilters_8h" alt=""/></div>
-<map name="aTools_2Filtering_2DirectCoupledFilters_2DirectCoupledFilters_8h" id="aTools_2Filtering_2DirectCoupledFilters_2DirectCoupledFilters_8h">
+<div class="center"><img src="../../da/d05/DirectCoupledFilters_8h__incl.png" border="0" usemap="#aTools_2DesignTools_2Filtering_2DirectCoupledFilters_2DirectCoupledFilters_8h" alt=""/></div>
+<map name="aTools_2DesignTools_2Filtering_2DirectCoupledFilters_2DirectCoupledFilters_8h" id="aTools_2DesignTools_2Filtering_2DirectCoupledFilters_2DirectCoupledFilters_8h">
 <area shape="rect" title="Synthesis of different types of Direct Coupled filters." alt="" coords="390,5,601,45"/>
 <area shape="rect" href="../../d2/dab/Network_8h_source.html" title=" " alt="" coords="428,328,563,368"/>
 <area shape="poly" title=" " alt="" coords="498,46,498,314,493,314,493,46"/>
@@ -224,8 +223,8 @@ Include dependency graph for DirectCoupledFilters.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d7/dba/DirectCoupledFilters_8h__dep__incl.png" border="0" usemap="#aTools_2Filtering_2DirectCoupledFilters_2DirectCoupledFilters_8hdep" alt=""/></div>
-<map name="aTools_2Filtering_2DirectCoupledFilters_2DirectCoupledFilters_8hdep" id="aTools_2Filtering_2DirectCoupledFilters_2DirectCoupledFilters_8hdep">
+<div class="center"><img src="../../d7/dba/DirectCoupledFilters_8h__dep__incl.png" border="0" usemap="#aTools_2DesignTools_2Filtering_2DirectCoupledFilters_2DirectCoupledFilters_8hdep" alt=""/></div>
+<map name="aTools_2DesignTools_2Filtering_2DirectCoupledFilters_2DirectCoupledFilters_8hdep" id="aTools_2DesignTools_2Filtering_2DirectCoupledFilters_2DirectCoupledFilters_8hdep">
 <area shape="rect" title="Synthesis of different types of Direct Coupled filters." alt="" coords="583,5,793,45"/>
 <area shape="rect" href="../../d8/d0b/CapacitiveCoupledSeriesResonators_8cpp.html" title="Synthesis of capacitive&#45;coupled series resonators filters." alt="" coords="5,93,333,133"/>
 <area shape="poly" title=" " alt="" coords="569,49,283,96,282,91,568,44"/>
@@ -247,13 +246,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3a/classDirectCoupledFilters.html">DirectCoupledFilters</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synthesis of different topologies of Direct-Coupled filters.  <a href="../../d0/d3a/classDirectCoupledFilters.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements synthesis of various direct-coupled resonator filter topologies.  <a href="../../d0/d3a/classDirectCoupledFilters.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Synthesis of different types of Direct Coupled filters. </p>
-<dl class="section author"><dt>Author</dt><dd>Andrés Martínez Mera </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2025 </dd></dl>
+<div class="textblock"><p>Synthesis of different types of direct-coupled resonator filters (definition) </p>
+<dl class="section author"><dt>Author</dt><dd>Andrés Martínez Mera - <a href="#" onclick="location.href='mai'+'lto:'+'and'+'re'+'smm'+'er'+'a@p'+'ro'+'ton'+'ma'+'il.'+'co'+'m'; return false;">andre<span class="obfuscator">.nosp@m.</span>smme<span class="obfuscator">.nosp@m.</span>ra@pr<span class="obfuscator">.nosp@m.</span>oton<span class="obfuscator">.nosp@m.</span>mail.<span class="obfuscator">.nosp@m.</span>com</a> </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>Jan 4, 2026 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (C) 2019-2025 Andrés Martínez Mera @license GPL-3.0-or-later </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

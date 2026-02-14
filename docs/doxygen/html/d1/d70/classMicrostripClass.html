@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -78,6 +77,11 @@ $(function() {
   <div class="headertitle"><div class="title">MicrostripClass Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Synthesize microstrip lines.  
+ <a href="../../d1/d70/classMicrostripClass.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../df/d92/Microstrip_8h_source.html">Microstrip.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for MicrostripClass:</div>
 <div class="dyncontent">
@@ -94,41 +98,111 @@ Collaboration diagram for MicrostripClass:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d3b/structMicrostripClass_1_1SynthesisResults.html">SynthesisResults</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for microstrip calculations.  <a href="../../d6/d3b/structMicrostripClass_1_1SynthesisResults.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6a001c81b238b82df9a2ce957685581e" id="r_a6a001c81b238b82df9a2ce957685581e"><td class="memItemLeft" align="right" valign="top"><a id="a6a001c81b238b82df9a2ce957685581e" name="a6a001c81b238b82df9a2ce957685581e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calcMicrostrip</b> (double width, double freq, double &amp;er_eff, double &amp;zl)</td></tr>
+<tr class="memitem:a0736c7c2abf0d1c223eb30398c9a7fad" id="r_a0736c7c2abf0d1c223eb30398c9a7fad"><td class="memItemLeft" align="right" valign="top"><a id="a0736c7c2abf0d1c223eb30398c9a7fad" name="a0736c7c2abf0d1c223eb30398c9a7fad"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>MicrostripClass</b> ()=default</td></tr>
+<tr class="memdesc:a0736c7c2abf0d1c223eb30398c9a7fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">@brieg Class constructor <br /></td></tr>
+<tr class="separator:a0736c7c2abf0d1c223eb30398c9a7fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56cb4387f94cf0df6636fec6c857c998" id="r_a56cb4387f94cf0df6636fec6c857c998"><td class="memItemLeft" align="right" valign="top"><a id="a56cb4387f94cf0df6636fec6c857c998" name="a56cb4387f94cf0df6636fec6c857c998"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~MicrostripClass</b> ()=default</td></tr>
+<tr class="memdesc:a56cb4387f94cf0df6636fec6c857c998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class destructor. <br /></td></tr>
+<tr class="separator:a56cb4387f94cf0df6636fec6c857c998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a001c81b238b82df9a2ce957685581e" id="r_a6a001c81b238b82df9a2ce957685581e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d70/classMicrostripClass.html#a6a001c81b238b82df9a2ce957685581e">calcMicrostrip</a> (double width, double freq, double &amp;er_eff, double &amp;zl)</td></tr>
+<tr class="memdesc:a6a001c81b238b82df9a2ce957685581e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the impedance and relative effective permittivity of a microstrip line.  <br /></td></tr>
 <tr class="separator:a6a001c81b238b82df9a2ce957685581e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae42b423357b3057a291997e7f4ffba64" id="r_ae42b423357b3057a291997e7f4ffba64"><td class="memItemLeft" align="right" valign="top"><a id="ae42b423357b3057a291997e7f4ffba64" name="ae42b423357b3057a291997e7f4ffba64"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>synthesizeMicrostrip</b> (double Z0, double e_length, double freq)</td></tr>
+<tr class="memdesc:ae42b423357b3057a291997e7f4ffba64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synthesizes microstrip width for given characteristic impedance. <br /></td></tr>
 <tr class="separator:ae42b423357b3057a291997e7f4ffba64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa8b1c3d7dc0735a425c52b16178c986" id="r_aaa8b1c3d7dc0735a425c52b16178c986"><td class="memItemLeft" align="right" valign="top"><a id="aaa8b1c3d7dc0735a425c52b16178c986" name="aaa8b1c3d7dc0735a425c52b16178c986"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>getMicrostripOpen</b> (double Wh, double er, double er_eff)</td></tr>
+<tr class="memdesc:aaa8b1c3d7dc0735a425c52b16178c986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates additional line length for microstrip open end. <br /></td></tr>
 <tr class="separator:aaa8b1c3d7dc0735a425c52b16178c986"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d7bbbc2df2eab4ae34df48b1802948" id="r_a71d7bbbc2df2eab4ae34df48b1802948"><td class="memItemLeft" align="right" valign="top"><a id="a71d7bbbc2df2eab4ae34df48b1802948" name="a71d7bbbc2df2eab4ae34df48b1802948"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>synthesizeCoupledMicrostrip</b> (double zl_even, double zl_odd, double length, double freq)</td></tr>
+<tr class="memdesc:a71d7bbbc2df2eab4ae34df48b1802948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synthesizes coupled microstrip dimensions for given even and odd mode impedances. <br /></td></tr>
 <tr class="separator:a71d7bbbc2df2eab4ae34df48b1802948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79bb9e6335783ef65ab0714102a138b1" id="r_a79bb9e6335783ef65ab0714102a138b1"><td class="memItemLeft" align="right" valign="top"><a id="a79bb9e6335783ef65ab0714102a138b1" name="a79bb9e6335783ef65ab0714102a138b1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>calcCoupledMicrostrip</b> (double width, double gap, double freq, double &amp;zl_even, double &amp;zl_odd, double &amp;er_eff_even, double &amp;er_eff_odd)</td></tr>
+<tr class="memdesc:a79bb9e6335783ef65ab0714102a138b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates even and odd mode parameters for coupled microstrip lines. <br /></td></tr>
 <tr class="separator:a79bb9e6335783ef65ab0714102a138b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79c598d3cc4fa5a0ca5448c1d2123d9e" id="r_a79c598d3cc4fa5a0ca5448c1d2123d9e"><td class="memItemLeft" align="right" valign="top"><a id="a79c598d3cc4fa5a0ca5448c1d2123d9e" name="a79c598d3cc4fa5a0ca5448c1d2123d9e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>printResults</b> (const std::string &amp;title=&quot;Results&quot;)</td></tr>
+<tr class="memdesc:a79c598d3cc4fa5a0ca5448c1d2123d9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints results in a formatted way. <br /></td></tr>
 <tr class="separator:a79c598d3cc4fa5a0ca5448c1d2123d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a8b9bf7e8f0467f04ab17de9431c2e0af" id="r_a8b9bf7e8f0467f04ab17de9431c2e0af"><td class="memItemLeft" align="right" valign="top"><a id="a8b9bf7e8f0467f04ab17de9431c2e0af" name="a8b9bf7e8f0467f04ab17de9431c2e0af"></a>
 <a class="el" href="../../d8/dfd/structMS__Substrate.html">MS_Substrate</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Substrate</b></td></tr>
+<tr class="memdesc:a8b9bf7e8f0467f04ab17de9431c2e0af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Substrate definition. <br /></td></tr>
 <tr class="separator:a8b9bf7e8f0467f04ab17de9431c2e0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a455cadd18d7e9e1b05ea2071b32d146b" id="r_a455cadd18d7e9e1b05ea2071b32d146b"><td class="memItemLeft" align="right" valign="top"><a id="a455cadd18d7e9e1b05ea2071b32d146b" name="a455cadd18d7e9e1b05ea2071b32d146b"></a>
 <a class="el" href="../../d6/d3b/structMicrostripClass_1_1SynthesisResults.html">SynthesisResults</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Results</b></td></tr>
+<tr class="memdesc:a455cadd18d7e9e1b05ea2071b32d146b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synthesis results. <br /></td></tr>
 <tr class="separator:a455cadd18d7e9e1b05ea2071b32d146b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Synthesize microstrip lines. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6a001c81b238b82df9a2ce957685581e" name="a6a001c81b238b82df9a2ce957685581e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a001c81b238b82df9a2ce957685581e">&#9670;&#160;</a></span>calcMicrostrip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MicrostripClass::calcMicrostrip </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>freq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>er_eff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>zl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the impedance and relative effective permittivity of a microstrip line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">width</td><td>Trace width (mm). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">freq</td><td>Frequency (Hz). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">er_eff</td><td>Effective relative permittivity (output). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">zl</td><td>Characteristic impedance (Ω, output). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Tools/TransmissionLineSynthesis/<a class="el" href="../../df/d92/Microstrip_8h_source.html">Microstrip.h</a></li>
-<li>Tools/TransmissionLineSynthesis/<b>Microstrip.cpp</b></li>
+<li>Tools/DesignTools/TransmissionLineSynthesis/<a class="el" href="../../df/d92/Microstrip_8h_source.html">Microstrip.h</a></li>
+<li>Tools/DesignTools/TransmissionLineSynthesis/<b>Microstrip.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

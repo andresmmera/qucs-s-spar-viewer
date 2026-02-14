@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['compound_5fenumerators_0',['compound_enumerators',['../de/db6/classdocutils_1_1writers_1_1latex2e_1_1LaTeXTranslator.html#a0c0b491719e9f25f92302ceaf855db70',1,'docutils::writers::latex2e::LaTeXTranslator']]],
-  ['context_1',['context',['../de/db6/classdocutils_1_1writers_1_1latex2e_1_1LaTeXTranslator.html#a8ed4361b9355adbb69cca03eefe2a1c2',1,'docutils::writers::latex2e::LaTeXTranslator']]]
+  ['backend_5fsimulator_0',['backend_simulator',['../dd/d97/classQucsSExporter.html#abdf9e2efcdd081983f556f6c90015b46',1,'QucsSExporter']]],
+  ['button_5fdelete_5flimit_1',['Button_Delete_Limit',['../d9/d3e/structLimitProperties.html#af605c55e4e527c74207045ceee4442a0',1,'LimitProperties']]]
 ];

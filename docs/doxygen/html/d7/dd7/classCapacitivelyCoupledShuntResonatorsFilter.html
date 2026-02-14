@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -76,6 +75,11 @@ $(function() {
   <div class="headertitle"><div class="title">CapacitivelyCoupledShuntResonatorsFilter Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implements an end-coupled resonator bandpass filter. This class synthesizes bandpass filters using end-coupled resonator topology, where resonators are coupled through series capacitors at their ends. Reference: Microwave Engineering. David M. Pozar. 4th Edition.  
+ <a href="../../d7/dd7/classCapacitivelyCoupledShuntResonatorsFilter.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dd/d66/CapacitivelyCoupledShuntResonatorsFilter_8h_source.html">CapacitivelyCoupledShuntResonatorsFilter.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CapacitivelyCoupledShuntResonatorsFilter:</div>
 <div class="dyncontent">
@@ -101,19 +105,79 @@ Collaboration diagram for CapacitivelyCoupledShuntResonatorsFilter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a237d59b27daff5bff1111a740027a687" id="r_a237d59b27daff5bff1111a740027a687"><td class="memItemLeft" align="right" valign="top"><a id="a237d59b27daff5bff1111a740027a687" name="a237d59b27daff5bff1111a740027a687"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CapacitivelyCoupledShuntResonatorsFilter</b> (<a class="el" href="../../d6/d16/structFilterSpecifications.html">FilterSpecifications</a>)</td></tr>
-<tr class="separator:a237d59b27daff5bff1111a740027a687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a811b5c8870f705abc9eac3b6e0bcc53e" id="r_a811b5c8870f705abc9eac3b6e0bcc53e"><td class="memItemLeft" align="right" valign="top"><a id="a811b5c8870f705abc9eac3b6e0bcc53e" name="a811b5c8870f705abc9eac3b6e0bcc53e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>CapacitivelyCoupledShuntResonatorsFilter</b> ()</td></tr>
+<tr class="memdesc:a811b5c8870f705abc9eac3b6e0bcc53e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="separator:a811b5c8870f705abc9eac3b6e0bcc53e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa339b59f44fa5d48cf0fffed52b1b72e" id="r_aa339b59f44fa5d48cf0fffed52b1b72e"><td class="memItemLeft" align="right" valign="top"><a id="aa339b59f44fa5d48cf0fffed52b1b72e" name="aa339b59f44fa5d48cf0fffed52b1b72e"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~CapacitivelyCoupledShuntResonatorsFilter</b> ()</td></tr>
+<tr class="memdesc:aa339b59f44fa5d48cf0fffed52b1b72e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. <br /></td></tr>
+<tr class="separator:aa339b59f44fa5d48cf0fffed52b1b72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3aeefb3cb521514819a7312e32c6755" id="r_ad3aeefb3cb521514819a7312e32c6755"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dd7/classCapacitivelyCoupledShuntResonatorsFilter.html#ad3aeefb3cb521514819a7312e32c6755">CapacitivelyCoupledShuntResonatorsFilter</a> (FilterSpecifications FS)</td></tr>
+<tr class="memdesc:ad3aeefb3cb521514819a7312e32c6755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with filter specifications.  <br /></td></tr>
+<tr class="separator:ad3aeefb3cb521514819a7312e32c6755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac22db8cd88c4c100a38ae0a3801f5297" id="r_ac22db8cd88c4c100a38ae0a3801f5297"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dd7/classCapacitivelyCoupledShuntResonatorsFilter.html#ac22db8cd88c4c100a38ae0a3801f5297">synthesize</a> ()</td></tr>
+<tr class="memdesc:ac22db8cd88c4c100a38ae0a3801f5297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synthesizes the filter based on the provided specifications.  <br /></td></tr>
 <tr class="separator:ac22db8cd88c4c100a38ae0a3801f5297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classNetwork"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classNetwork')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/d16/classNetwork.html">Network</a></td></tr>
+<tr class="memitem:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork" id="r_ae833815d689402bacbeea0b6226ff85a"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Network</b> ()</td></tr>
+<tr class="memdesc:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classNetwork"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classNetwork')"><img src="../../closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="../../d5/d16/classNetwork.html">Network</a></td></tr>
 <tr class="memitem:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork" id="r_a18c4ac582102779da804825a3500bd62"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../df/d9e/classSchematicContent.html">SchematicContent</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Schematic</b></td></tr>
+<tr class="memdesc:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork"><td class="mdescLeft">&#160;</td><td class="mdescRight">Circuit data including components, nets, and simulation info. <br /></td></tr>
 <tr class="separator:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implements an end-coupled resonator bandpass filter. This class synthesizes bandpass filters using end-coupled resonator topology, where resonators are coupled through series capacitors at their ends. Reference: Microwave Engineering. David M. Pozar. 4th Edition. </p>
+<ol type="1">
+<li>John Wiley and Sons.Page 443-448. <dl class="section note"><dt>Note</dt><dd>Supports:<ul>
+<li>Ideal transmission lines</li>
+<li>Microstrip transmission lines </li>
+</ul>
+</dd></dl>
+</li>
+</ol>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad3aeefb3cb521514819a7312e32c6755" name="ad3aeefb3cb521514819a7312e32c6755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3aeefb3cb521514819a7312e32c6755">&#9670;&#160;</a></span>CapacitivelyCoupledShuntResonatorsFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CapacitivelyCoupledShuntResonatorsFilter::CapacitivelyCoupledShuntResonatorsFilter </td>
+          <td>(</td>
+          <td class="paramtype">FilterSpecifications&#160;</td>
+          <td class="paramname"><em>FS</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor with filter specifications. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FS</td><td>Filter specifications including order, bandwidth, center frequency, impedance, and transmission line implementation type. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac22db8cd88c4c100a38ae0a3801f5297" name="ac22db8cd88c4c100a38ae0a3801f5297"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac22db8cd88c4c100a38ae0a3801f5297">&#9670;&#160;</a></span>synthesize()</h2>
@@ -138,13 +202,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="../../d5/d16/classNetwork.html">Network</a>.</p>
+<p>Synthesizes the filter based on the provided specifications. </p>
+
+<p>Implements <a class="el" href="../../d5/d16/classNetwork.html#afeae260a8cae50beba4a3c9db5429057">Network</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Tools/Filtering/<a class="el" href="../../dd/d66/CapacitivelyCoupledShuntResonatorsFilter_8h_source.html">CapacitivelyCoupledShuntResonatorsFilter.h</a></li>
-<li>Tools/Filtering/<b>CapacitivelyCoupledShuntResonatorsFilter.cpp</b></li>
+<li>Tools/DesignTools/Filtering/<a class="el" href="../../dd/d66/CapacitivelyCoupledShuntResonatorsFilter_8h_source.html">CapacitivelyCoupledShuntResonatorsFilter.h</a></li>
+<li>Tools/DesignTools/Filtering/<a class="el" href="../../d7/de1/CapacitivelyCoupledShuntResonatorsFilter_8cpp.html">CapacitivelyCoupledShuntResonatorsFilter.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

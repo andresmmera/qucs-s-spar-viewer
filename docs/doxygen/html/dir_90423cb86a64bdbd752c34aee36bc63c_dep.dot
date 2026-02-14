@@ -1,0 +1,16 @@
+digraph "Tools/Calculators/RF/ReflectionCalculators/gamma_calculator"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_e82af5f3fcb09bf6c87ae5dc3628aabf {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="ReflectionCalculators", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_e82af5f3fcb09bf6c87ae5dc3628aabf.html",tooltip=""]
+  dir_90423cb86a64bdbd752c34aee36bc63c [label="gamma_calculator", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_90423cb86a64bdbd752c34aee36bc63c.html",tooltip=""];
+  }
+  dir_53ff6e473d46d4e442ba5a7ce9f895e3 [label="UI", fillcolor="#edf0f7", color="red", style="filled", URL="dir_53ff6e473d46d4e442ba5a7ce9f895e3.html",tooltip=""];
+  dir_b11b26c345ed0f7c972184e81ad6f440 [label="Misc", fillcolor="#edf0f7", color="grey25", style="filled", URL="dir_b11b26c345ed0f7c972184e81ad6f440.html",tooltip=""];
+  dir_90423cb86a64bdbd752c34aee36bc63c->dir_53ff6e473d46d4e442ba5a7ce9f895e3 [headlabel="1", labeldistance=1.5 headhref="dir_000011_000042.html" href="dir_000011_000042.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_90423cb86a64bdbd752c34aee36bc63c->dir_b11b26c345ed0f7c972184e81ad6f440 [headlabel="1", labeldistance=1.5 headhref="dir_000011_000020.html" href="dir_000011_000020.html" color="steelblue1" fontcolor="steelblue1"];
+}

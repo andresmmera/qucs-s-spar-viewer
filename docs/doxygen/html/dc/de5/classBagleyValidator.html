@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -76,6 +75,11 @@ $(function() {
   <div class="headertitle"><div class="title">BagleyValidator Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Validator for <a class="el" href="../../d1/db6/classBagley.html" title="Bagley power combiner/divider network.">Bagley</a> topology ensuring odd number of outputs.  
+ <a href="../../dc/de5/classBagleyValidator.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dd/d2b/PowerCombiningTool_8h_source.html">PowerCombiningTool.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for BagleyValidator:</div>
 <div class="dyncontent">
@@ -99,15 +103,99 @@ Collaboration diagram for BagleyValidator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9c3d33bf8dfd9860fae8ac419d0e6681" id="r_a9c3d33bf8dfd9860fae8ac419d0e6681"><td class="memItemLeft" align="right" valign="top"><a id="a9c3d33bf8dfd9860fae8ac419d0e6681" name="a9c3d33bf8dfd9860fae8ac419d0e6681"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BagleyValidator</b> (QObject *parent=0)</td></tr>
+<tr class="memitem:a9c3d33bf8dfd9860fae8ac419d0e6681" id="r_a9c3d33bf8dfd9860fae8ac419d0e6681"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/de5/classBagleyValidator.html#a9c3d33bf8dfd9860fae8ac419d0e6681">BagleyValidator</a> (QObject *parent=0)</td></tr>
+<tr class="memdesc:a9c3d33bf8dfd9860fae8ac419d0e6681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
 <tr class="separator:a9c3d33bf8dfd9860fae8ac419d0e6681"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab52d32d150f365348d31de8a2ddedc65" id="r_ab52d32d150f365348d31de8a2ddedc65"><td class="memItemLeft" align="right" valign="top"><a id="ab52d32d150f365348d31de8a2ddedc65" name="ab52d32d150f365348d31de8a2ddedc65"></a>
-virtual State&#160;</td><td class="memItemRight" valign="bottom"><b>validate</b> (QString &amp;input, int &amp;) const</td></tr>
+<tr class="memitem:ab52d32d150f365348d31de8a2ddedc65" id="r_ab52d32d150f365348d31de8a2ddedc65"><td class="memItemLeft" align="right" valign="top">virtual State&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/de5/classBagleyValidator.html#ab52d32d150f365348d31de8a2ddedc65">validate</a> (QString &amp;input, int &amp;) const</td></tr>
+<tr class="memdesc:ab52d32d150f365348d31de8a2ddedc65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate input to ensure odd numbers only.  <br /></td></tr>
 <tr class="separator:ab52d32d150f365348d31de8a2ddedc65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Validator for <a class="el" href="../../d1/db6/classBagley.html" title="Bagley power combiner/divider network.">Bagley</a> topology ensuring odd number of outputs. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9c3d33bf8dfd9860fae8ac419d0e6681" name="a9c3d33bf8dfd9860fae8ac419d0e6681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c3d33bf8dfd9860fae8ac419d0e6681">&#9670;&#160;</a></span>BagleyValidator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BagleyValidator::BagleyValidator </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Parent object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab52d32d150f365348d31de8a2ddedc65" name="ab52d32d150f365348d31de8a2ddedc65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab52d32d150f365348d31de8a2ddedc65">&#9670;&#160;</a></span>validate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual State BagleyValidator::validate </td>
+          <td>(</td>
+          <td class="paramtype">QString &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validate input to ensure odd numbers only. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Input string to validate </td></tr>
+    <tr><td class="paramname">pos</td><td>Current cursor position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Validation state (Acceptable or Invalid) </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Tools/PowerCombining/<a class="el" href="../../dd/d2b/PowerCombiningTool_8h_source.html">PowerCombiningTool.h</a></li>
+<li>Tools/DesignTools/PowerCombining/<a class="el" href="../../dd/d2b/PowerCombiningTool_8h_source.html">PowerCombiningTool.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

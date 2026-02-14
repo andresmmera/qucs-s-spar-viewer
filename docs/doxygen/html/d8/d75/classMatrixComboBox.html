@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -81,7 +80,7 @@ $(function() {
 <p>ComboBox with custom matrix-style popup for parameter selection.  
  <a href="../../d8/d75/classMatrixComboBox.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d0/d87/UI_2CustomWidgets_2matrixcombopopup_8h_source.html">matrixcombopopup.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d8/d46/matrixcombopopup_8h_source.html">matrixcombopopup.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MatrixComboBox:</div>
 <div class="dyncontent">
@@ -107,12 +106,6 @@ Collaboration diagram for MatrixComboBox:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5018b72509a91eb831b9c110f0db546b" id="r_a5018b72509a91eb831b9c110f0db546b"><td class="memItemLeft" align="right" valign="top"><a id="a5018b72509a91eb831b9c110f0db546b" name="a5018b72509a91eb831b9c110f0db546b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MatrixComboBox</b> (QWidget *parent=nullptr)</td></tr>
-<tr class="separator:a5018b72509a91eb831b9c110f0db546b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae96a2b5cdfbc70998cb892c0661d71de" id="r_ae96a2b5cdfbc70998cb892c0661d71de"><td class="memItemLeft" align="right" valign="top"><a id="ae96a2b5cdfbc70998cb892c0661d71de" name="ae96a2b5cdfbc70998cb892c0661d71de"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setParameters</b> (const QStringList &amp;sParams, const QStringList &amp;otherParams)</td></tr>
-<tr class="separator:ae96a2b5cdfbc70998cb892c0661d71de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5018b72509a91eb831b9c110f0db546b" id="r_a5018b72509a91eb831b9c110f0db546b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d75/classMatrixComboBox.html#a5018b72509a91eb831b9c110f0db546b">MatrixComboBox</a> (QWidget *parent=nullptr)</td></tr>
 <tr class="memdesc:a5018b72509a91eb831b9c110f0db546b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
 <tr class="separator:a5018b72509a91eb831b9c110f0db546b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,15 +115,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setParameters</b> (co
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a182c1ab1fb8e349018078d79964bb7fb" id="r_a182c1ab1fb8e349018078d79964bb7fb"><td class="memItemLeft" align="right" valign="top"><a id="a182c1ab1fb8e349018078d79964bb7fb" name="a182c1ab1fb8e349018078d79964bb7fb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>showPopup</b> () override</td></tr>
-<tr class="separator:a182c1ab1fb8e349018078d79964bb7fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cfd7caf426c778d7a987cf7ba738e1f" id="r_a6cfd7caf426c778d7a987cf7ba738e1f"><td class="memItemLeft" align="right" valign="top"><a id="a6cfd7caf426c778d7a987cf7ba738e1f" name="a6cfd7caf426c778d7a987cf7ba738e1f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>hidePopup</b> () override</td></tr>
-<tr class="separator:a6cfd7caf426c778d7a987cf7ba738e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af736b5ed65a28abd48d4c354ccf4a459" id="r_af736b5ed65a28abd48d4c354ccf4a459"><td class="memItemLeft" align="right" valign="top"><a id="af736b5ed65a28abd48d4c354ccf4a459" name="af736b5ed65a28abd48d4c354ccf4a459"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>paintEvent</b> (QPaintEvent *event) override</td></tr>
-<tr class="separator:af736b5ed65a28abd48d4c354ccf4a459"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a182c1ab1fb8e349018078d79964bb7fb" id="r_a182c1ab1fb8e349018078d79964bb7fb"><td class="memItemLeft" align="right" valign="top"><a id="a182c1ab1fb8e349018078d79964bb7fb" name="a182c1ab1fb8e349018078d79964bb7fb"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>showPopup</b> () override</td></tr>
 <tr class="memdesc:a182c1ab1fb8e349018078d79964bb7fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows custom matrix popup instead of standard dropdown. <br /></td></tr>
@@ -253,10 +237,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>hidePopup</b> () over
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>CustomWidgets/<a class="el" href="../../de/d32/CustomWidgets_2matrixcombopopup_8h_source.html">matrixcombopopup.h</a></li>
-<li>UI/CustomWidgets/<a class="el" href="../../d0/d87/UI_2CustomWidgets_2matrixcombopopup_8h_source.html">matrixcombopopup.h</a></li>
-<li>CustomWidgets/<b>matrixcombopopup.cpp</b></li>
-<li>UI/CustomWidgets/<a class="el" href="../../d9/db9/UI_2CustomWidgets_2matrixcombopopup_8cpp.html">matrixcombopopup.cpp</a></li>
+<li>UI/CustomWidgets/<a class="el" href="../../d8/d46/matrixcombopopup_8h_source.html">matrixcombopopup.h</a></li>
+<li>UI/CustomWidgets/<a class="el" href="../../d8/d05/matrixcombopopup_8cpp.html">matrixcombopopup.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

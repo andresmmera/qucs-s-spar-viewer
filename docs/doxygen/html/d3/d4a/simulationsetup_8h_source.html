@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Qucs-S S-parameter Viewer &amp; RF Synthesis Tools: Tools/SimulationSetup/simulationsetup.h Source File</title>
+<title>Qucs-S S-parameter Viewer &amp; RF Synthesis Tools: Tools/DesignTools/SimulationSetup/simulationsetup.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -75,118 +74,158 @@ $(document).ready(function() { init_codefold(1); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_7e461070e7b716e896e0d97cd6a82321.html">Tools</a></li><li class="navelem"><a class="el" href="../../dir_a65223fb17d7956204c2709c5a0f119a.html">SimulationSetup</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_7e461070e7b716e896e0d97cd6a82321.html">Tools</a></li><li class="navelem"><a class="el" href="../../dir_bdfe9f1f609ab29be5374b464a6c3875.html">DesignTools</a></li><li class="navelem"><a class="el" href="../../dir_bb10584cdb0bda7b7430705ebc2cb82a.html">SimulationSetup</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">simulationsetup.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> *  Copyright (C) 2025 Andrés Martínez Mera - andresmmera@protonmail.com</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  This program is free software: you can redistribute it and/or modify</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *  it under the terms of the GNU General Public License as published by</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *  the Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *  (at your option) any later version.</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *  This program is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *  GNU General Public License for more details.</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *  You should have received a copy of the GNU General Public License</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *  along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#ifndef SIMULATIONSETUP_H</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define SIMULATIONSETUP_H</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;../../Misc/general.h&quot;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;../../Schematic/infoclasses.h&quot;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;QButtonGroup&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;QComboBox&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;QDoubleSpinBox&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;QGridLayout&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;QGroupBox&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;QHBoxLayout&gt;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;QRadioButton&gt;</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;QSpinBox&gt;</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;QTabWidget&gt;</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// Needed for having the substrate structures for each transmission line</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// implementation</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;../TransmissionLineSynthesis/Microstrip.h&quot;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html">   40</a></span><span class="keyword">class </span><a class="code hl_class" href="../../db/d70/classSimulationSetup.html">SimulationSetup</a> : <span class="keyword">public</span> QWidget {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  Q_OBJECT</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <a class="code hl_class" href="../../db/d70/classSimulationSetup.html">SimulationSetup</a>(QWidget* parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_class" href="../../db/d70/classSimulationSetup.html">~SimulationSetup</a>();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">// Frequency sweep methods</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordtype">double</span> getFstart();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  QString getFstart_as_Text();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">double</span> getFstop();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  QString getFstop_as_Text();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">int</span> getNpoints();</div>
+<a href="../../d3/d4a/simulationsetup_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef SIMULATIONSETUP_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define SIMULATIONSETUP_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="../../d9/d14/general_8h.html">Misc/general.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d09/infoclasses_8h.html">Schematic/infoclasses.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/da9/CustomDoubleSpinBox_8h.html">UI/CustomWidgets/CustomDoubleSpinBox.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;QButtonGroup&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;QComboBox&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;QGridLayout&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;QGroupBox&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;QHBoxLayout&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;QRadioButton&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;QSpinBox&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;QTabWidget&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// Needed for having the substrate structures for each transmission line</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// implementation</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &quot;<a class="code" href="../../df/d92/Microstrip_8h.html">Tools/DesignTools/TransmissionLineSynthesis/Microstrip.h</a>&quot;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html">   37</a></span><span class="keyword">class </span><a class="code hl_class" href="../../db/d70/classSimulationSetup.html">SimulationSetup</a> : <span class="keyword">public</span> QWidget {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    Q_OBJECT</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_class" href="../../db/d70/classSimulationSetup.html">SimulationSetup</a>(QWidget* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html#ab9610505dafde7aad3940080908560e2">   45</a></span>    <a class="code hl_function" href="../../db/d70/classSimulationSetup.html#ab9610505dafde7aad3940080908560e2">~SimulationSetup</a>() {}</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">double</span> getFstart();</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="comment">// Substrate properties methods</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  TransmissionLineType getTransmissionLineType();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordtype">double</span> getSubstrateThickness();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">double</span> getSubstratePermittivity();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">double</span> getSubstrateLossTangent();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">double</span> getConductorThickness();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">double</span> getConductorConductivity();</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordtype">double</span> getGroundPlaneThickness(); <span class="comment">// For stripline</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="comment">// Interfacing functions</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_struct" href="../../d8/dfd/structMS__Substrate.html">MS_Substrate</a> get_MS_Substrate();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    QString <a class="code hl_function" href="../../db/d70/classSimulationSetup.html#ad08e2228715a02a62c4d8350081f343f">getFstart_as_Text</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="../../db/d70/classSimulationSetup.html#a98718360bea4507b6c4c64a01d86c49b">getFstop</a>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    QString <a class="code hl_function" href="../../db/d70/classSimulationSetup.html#a0e007d1df62d550ab20e2d0a48ee7ff2">getFstop_as_Text</a>();</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="comment">// Tab widget</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  QTabWidget* tabWidget;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="comment">// Frequency sweep widgets</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  QDoubleSpinBox *fstartSpinBox, *fstopSpinBox;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  QComboBox *fstartScaleComboBox, *fstopScaleComboBox;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  QSpinBox* npointsSpinBox;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="comment">// Substrate properties widgets</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  QComboBox* transmissionLineComboBox;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  QDoubleSpinBox* substrateThicknessSpinBox;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  QDoubleSpinBox* substratePermittivitySpinBox;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  QDoubleSpinBox* substrateLossTangentSpinBox;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  QDoubleSpinBox* conductorThicknessSpinBox;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  QDoubleSpinBox* conductorConductivitySpinBox;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  QDoubleSpinBox* groundPlaneThicknessSpinBox;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  QLabel* imageLabel;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="comment">// Helper methods</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  QWidget* createFrequencySweepTab();</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  QWidget* createSubstratePropertiesTab();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">void</span> updateImageDisplay();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="comment">// Substrate data</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <a class="code hl_struct" href="../../d8/dfd/structMS__Substrate.html">MS_Substrate</a> MS_Subs;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordtype">void</span> updateSubstrateDefinition();</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordtype">void</span> onTransmissionLineTypeChanged();</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>signals:</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordtype">void</span> updateSimulation();</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordtype">void</span> updateSubstrate();</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>};</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html#afdd0ee6cb228cbd86069a0d9a284b12d">   67</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="../../db/d70/classSimulationSetup.html#afdd0ee6cb228cbd86069a0d9a284b12d">getNpoints</a>() { <span class="keywordflow">return</span> npointsSpinBox-&gt;value(); }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    TransmissionLineType getTransmissionLineType();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html#a3c7a855535a8d883085ceaa28d7a209a">   79</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="../../db/d70/classSimulationSetup.html#a3c7a855535a8d883085ceaa28d7a209a">getSubstrateThickness</a>(){</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      <span class="keywordflow">return</span> substrateThicknessSpinBox-&gt;value(); <span class="comment">// in mm</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
 </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">#endif </span><span class="comment">// SIMULATIONSETUP_H</span></div>
-<div class="ttc" id="aclassSimulationSetup_html"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html">SimulationSetup</a></div><div class="ttdef"><b>Definition</b> simulationsetup.h:40</div></div>
-<div class="ttc" id="astructMS__Substrate_html"><div class="ttname"><a href="../../d8/dfd/structMS__Substrate.html">MS_Substrate</a></div><div class="ttdef"><b>Definition</b> structures.h:92</div></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html#ad60efdc5a309d83774e62c95e38728e0">   84</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="../../db/d70/classSimulationSetup.html#ad60efdc5a309d83774e62c95e38728e0">getSubstratePermittivity</a>(){</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      <span class="keywordflow">return</span> substratePermittivitySpinBox-&gt;value();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html#a893b7031b39e18ca71eb656b5d87e298">   89</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="../../db/d70/classSimulationSetup.html#a893b7031b39e18ca71eb656b5d87e298">getSubstrateLossTangent</a>(){</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      <span class="keywordflow">return</span> substrateLossTangentSpinBox-&gt;value();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html#a0b535693f651d0ae02b235b5981d26fe">   94</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="../../db/d70/classSimulationSetup.html#a0b535693f651d0ae02b235b5981d26fe">getConductorThickness</a>(){</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      <span class="keywordflow">return</span> conductorThicknessSpinBox-&gt;value();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html#a8950984bc32d641bbe57d35765566ccb">   99</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="../../db/d70/classSimulationSetup.html#a8950984bc32d641bbe57d35765566ccb">getConductorConductivity</a>() {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <span class="keywordflow">return</span> conductorConductivitySpinBox-&gt;value();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html#a6fbd4cdf7a77baea8f26dac6ea03f51d">  105</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="../../db/d70/classSimulationSetup.html#a6fbd4cdf7a77baea8f26dac6ea03f51d">getGroundPlaneThickness</a>(){</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      <span class="keywordflow">return</span> groundPlaneThicknessSpinBox-&gt;value();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html#a7721dab3c06f6dc885adaabc4575772b">  112</a></span>    <a class="code hl_struct" href="../../d8/dfd/structMS__Substrate.html">MS_Substrate</a> <a class="code hl_function" href="../../db/d70/classSimulationSetup.html#a7721dab3c06f6dc885adaabc4575772b">get_MS_Substrate</a>() { <span class="keywordflow">return</span> MS_Subs; }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="comment">// Tab widget</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    QTabWidget       *tabWidget;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_class" href="../../dc/d5f/classCustomDoubleSpinBox.html">CustomDoubleSpinBox</a>   *fstartSpinBox;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_class" href="../../dc/d5f/classCustomDoubleSpinBox.html">CustomDoubleSpinBox</a>   *fstopSpinBox;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    QComboBox        *fstartScaleComboBox;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    QComboBox        *fstopScaleComboBox;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    QSpinBox         *npointsSpinBox;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    QComboBox        *transmissionLineComboBox;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <a class="code hl_class" href="../../dc/d5f/classCustomDoubleSpinBox.html">CustomDoubleSpinBox</a>   *substrateThicknessSpinBox;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <a class="code hl_class" href="../../dc/d5f/classCustomDoubleSpinBox.html">CustomDoubleSpinBox</a>   *substratePermittivitySpinBox;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <a class="code hl_class" href="../../dc/d5f/classCustomDoubleSpinBox.html">CustomDoubleSpinBox</a>   *substrateLossTangentSpinBox;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <a class="code hl_class" href="../../dc/d5f/classCustomDoubleSpinBox.html">CustomDoubleSpinBox</a>   *conductorThicknessSpinBox;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <a class="code hl_class" href="../../dc/d5f/classCustomDoubleSpinBox.html">CustomDoubleSpinBox</a>   *conductorConductivitySpinBox;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <a class="code hl_class" href="../../dc/d5f/classCustomDoubleSpinBox.html">CustomDoubleSpinBox</a>   *groundPlaneThicknessSpinBox;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    QLabel           *imageLabel;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    QWidget* createFrequencySweepTab();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    QWidget* createSubstratePropertiesTab();</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">void</span> updateImageDisplay();</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="comment">// Substrate data</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <a class="code hl_struct" href="../../d8/dfd/structMS__Substrate.html">MS_Substrate</a> MS_Subs; </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">void</span> updateSubstrateDefinition();</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordtype">void</span> updateFrequencySweep() {emit <a class="code hl_signal" href="../../db/d70/classSimulationSetup.html#a1359e74887d1d1ea067a0573c37a19e1">updateSimulation</a>();}</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordtype">void</span> onTransmissionLineTypeChanged();</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  signals:</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html#a1359e74887d1d1ea067a0573c37a19e1">  161</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="../../db/d70/classSimulationSetup.html#a1359e74887d1d1ea067a0573c37a19e1">updateSimulation</a>();</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="../../db/d70/classSimulationSetup.html#af36ec528b7a0bd7bc7cde15a2fe4e30c">  164</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="../../db/d70/classSimulationSetup.html#af36ec528b7a0bd7bc7cde15a2fe4e30c">updateSubstrate</a>();</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>};</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">#endif </span><span class="comment">// SIMULATIONSETUP_H</span></div>
+<div class="ttc" id="aCustomDoubleSpinBox_8h_html"><div class="ttname"><a href="../../d5/da9/CustomDoubleSpinBox_8h.html">CustomDoubleSpinBox.h</a></div><div class="ttdoc">Custom QDoubleSpinBox. It includes a context menu (right-click) for setting the minimum,...</div></div>
+<div class="ttc" id="aMicrostrip_8h_html"><div class="ttname"><a href="../../df/d92/Microstrip_8h.html">Microstrip.h</a></div><div class="ttdoc">Synthesize microstrip lines (definition)</div></div>
+<div class="ttc" id="aclassCustomDoubleSpinBox_html"><div class="ttname"><a href="../../dc/d5f/classCustomDoubleSpinBox.html">CustomDoubleSpinBox</a></div><div class="ttdoc">A QDoubleSpinBox subclass that provides a context menu for configuring range and step.</div><div class="ttdef"><b>Definition</b> CustomDoubleSpinBox.h:28</div></div>
+<div class="ttc" id="aclassSimulationSetup_html"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html">SimulationSetup</a></div><div class="ttdoc">UI component to set the simulation settings The widget consists of two tabs: 1) Frequency Sweep – sta...</div><div class="ttdef"><b>Definition</b> simulationsetup.h:37</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_a0b535693f651d0ae02b235b5981d26fe"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#a0b535693f651d0ae02b235b5981d26fe">SimulationSetup::getConductorThickness</a></div><div class="ttdeci">double getConductorThickness()</div><div class="ttdoc">Conductor thickness (µm)</div><div class="ttdef"><b>Definition</b> simulationsetup.h:94</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_a0e007d1df62d550ab20e2d0a48ee7ff2"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#a0e007d1df62d550ab20e2d0a48ee7ff2">SimulationSetup::getFstop_as_Text</a></div><div class="ttdeci">QString getFstop_as_Text()</div><div class="ttdoc">Get the stop frequency as a formatted string.</div><div class="ttdef"><b>Definition</b> simulationsetup.cpp:318</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_a1359e74887d1d1ea067a0573c37a19e1"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#a1359e74887d1d1ea067a0573c37a19e1">SimulationSetup::updateSimulation</a></div><div class="ttdeci">void updateSimulation()</div><div class="ttdoc">Emitted when any simulation parameter changes.</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_a3c7a855535a8d883085ceaa28d7a209a"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#a3c7a855535a8d883085ceaa28d7a209a">SimulationSetup::getSubstrateThickness</a></div><div class="ttdeci">double getSubstrateThickness()</div><div class="ttdoc">Substrate thickness (mm).</div><div class="ttdef"><b>Definition</b> simulationsetup.h:79</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_a6fbd4cdf7a77baea8f26dac6ea03f51d"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#a6fbd4cdf7a77baea8f26dac6ea03f51d">SimulationSetup::getGroundPlaneThickness</a></div><div class="ttdeci">double getGroundPlaneThickness()</div><div class="ttdoc">Ground‑plane thickness (µm).</div><div class="ttdef"><b>Definition</b> simulationsetup.h:105</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_a7721dab3c06f6dc885adaabc4575772b"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#a7721dab3c06f6dc885adaabc4575772b">SimulationSetup::get_MS_Substrate</a></div><div class="ttdeci">MS_Substrate get_MS_Substrate()</div><div class="ttdoc">}@</div><div class="ttdef"><b>Definition</b> simulationsetup.h:112</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_a893b7031b39e18ca71eb656b5d87e298"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#a893b7031b39e18ca71eb656b5d87e298">SimulationSetup::getSubstrateLossTangent</a></div><div class="ttdeci">double getSubstrateLossTangent()</div><div class="ttdoc">Loss tangent (tan δ)</div><div class="ttdef"><b>Definition</b> simulationsetup.h:89</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_a8950984bc32d641bbe57d35765566ccb"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#a8950984bc32d641bbe57d35765566ccb">SimulationSetup::getConductorConductivity</a></div><div class="ttdeci">double getConductorConductivity()</div><div class="ttdoc">Conductor conductivity (S/m)</div><div class="ttdef"><b>Definition</b> simulationsetup.h:99</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_a98718360bea4507b6c4c64a01d86c49b"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#a98718360bea4507b6c4c64a01d86c49b">SimulationSetup::getFstop</a></div><div class="ttdeci">double getFstop()</div><div class="ttdoc">Get the stop frequency in Hz.</div><div class="ttdef"><b>Definition</b> simulationsetup.cpp:310</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_ab9610505dafde7aad3940080908560e2"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#ab9610505dafde7aad3940080908560e2">SimulationSetup::~SimulationSetup</a></div><div class="ttdeci">~SimulationSetup()</div><div class="ttdoc">Class destructor.</div><div class="ttdef"><b>Definition</b> simulationsetup.h:45</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_ad08e2228715a02a62c4d8350081f343f"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#ad08e2228715a02a62c4d8350081f343f">SimulationSetup::getFstart_as_Text</a></div><div class="ttdeci">QString getFstart_as_Text()</div><div class="ttdoc">Get the start frequency as a formatted string.</div><div class="ttdef"><b>Definition</b> simulationsetup.cpp:303</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_ad60efdc5a309d83774e62c95e38728e0"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#ad60efdc5a309d83774e62c95e38728e0">SimulationSetup::getSubstratePermittivity</a></div><div class="ttdeci">double getSubstratePermittivity()</div><div class="ttdoc">Relative permittivity (εᵣ)</div><div class="ttdef"><b>Definition</b> simulationsetup.h:84</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_af36ec528b7a0bd7bc7cde15a2fe4e30c"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#af36ec528b7a0bd7bc7cde15a2fe4e30c">SimulationSetup::updateSubstrate</a></div><div class="ttdeci">void updateSubstrate()</div><div class="ttdoc">Emitted specifically when substrate data changes.</div></div>
+<div class="ttc" id="aclassSimulationSetup_html_afdd0ee6cb228cbd86069a0d9a284b12d"><div class="ttname"><a href="../../db/d70/classSimulationSetup.html#afdd0ee6cb228cbd86069a0d9a284b12d">SimulationSetup::getNpoints</a></div><div class="ttdeci">int getNpoints()</div><div class="ttdoc">Get the number of frequency points.</div><div class="ttdef"><b>Definition</b> simulationsetup.h:67</div></div>
+<div class="ttc" id="ageneral_8h_html"><div class="ttname"><a href="../../d9/d14/general_8h.html">general.h</a></div><div class="ttdoc">Utility functions needed across the whole project.</div></div>
+<div class="ttc" id="ainfoclasses_8h_html"><div class="ttname"><a href="../../db/d09/infoclasses_8h.html">infoclasses.h</a></div><div class="ttdoc">Definition of the classes related to the component, nodes and wires data.</div></div>
+<div class="ttc" id="astructMS__Substrate_html"><div class="ttname"><a href="../../d8/dfd/structMS__Substrate.html">MS_Substrate</a></div><div class="ttdoc">Microstrip substrate parameters.</div><div class="ttdef"><b>Definition</b> structures.h:145</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -76,6 +75,11 @@ $(function() {
   <div class="headertitle"><div class="title">Lim_Eom Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Lim-Eom power combiner/divider network References: [1] "Power combiners, impedance transformers and directional couplers: part II". Andrei Grebennikov. High Frequency Electronics. 2008 [2] "A New 3-Way Power Divider with Various Output Power Ratios," J.-S. Lim and S.-Y. Eom, 1996 IEEE MTT-S Int. Microwave Symp. Dig., pp. 785-788.".  
+ <a href="../../da/d18/classLim__Eom.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../de/d0e/Lim__Eom_8h_source.html">Lim_Eom.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Lim_Eom:</div>
 <div class="dyncontent">
@@ -101,19 +105,71 @@ Collaboration diagram for Lim_Eom:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6678ffe5f7b17dbdfffc3de21d5e06ec" id="r_a6678ffe5f7b17dbdfffc3de21d5e06ec"><td class="memItemLeft" align="right" valign="top"><a id="a6678ffe5f7b17dbdfffc3de21d5e06ec" name="a6678ffe5f7b17dbdfffc3de21d5e06ec"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Lim_Eom</b> (<a class="el" href="../../db/d8b/structPowerCombinerParams.html">PowerCombinerParams</a>)</td></tr>
-<tr class="separator:a6678ffe5f7b17dbdfffc3de21d5e06ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79d35f30581e6e3a02826f4b088dc815" id="r_a79d35f30581e6e3a02826f4b088dc815"><td class="memItemLeft" align="right" valign="top"><a id="a79d35f30581e6e3a02826f4b088dc815" name="a79d35f30581e6e3a02826f4b088dc815"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Lim_Eom</b> ()</td></tr>
+<tr class="memdesc:a79d35f30581e6e3a02826f4b088dc815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="separator:a79d35f30581e6e3a02826f4b088dc815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a262bffff13e236fb7d0d6058518b37d2" id="r_a262bffff13e236fb7d0d6058518b37d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d18/classLim__Eom.html#a262bffff13e236fb7d0d6058518b37d2">Lim_Eom</a> (<a class="el" href="../../db/d8b/structPowerCombinerParams.html">PowerCombinerParams</a> PS)</td></tr>
+<tr class="memdesc:a262bffff13e236fb7d0d6058518b37d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with power combiner parameters.  <br /></td></tr>
+<tr class="separator:a262bffff13e236fb7d0d6058518b37d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8667bee4a2b0eafd450133a990e87ed0" id="r_a8667bee4a2b0eafd450133a990e87ed0"><td class="memItemLeft" align="right" valign="top"><a id="a8667bee4a2b0eafd450133a990e87ed0" name="a8667bee4a2b0eafd450133a990e87ed0"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Lim_Eom</b> ()</td></tr>
+<tr class="memdesc:a8667bee4a2b0eafd450133a990e87ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class destructor. <br /></td></tr>
+<tr class="separator:a8667bee4a2b0eafd450133a990e87ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84a38fa82a16b3229a7c6c4b72b20c98" id="r_a84a38fa82a16b3229a7c6c4b72b20c98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d18/classLim__Eom.html#a84a38fa82a16b3229a7c6c4b72b20c98">synthesize</a> ()</td></tr>
+<tr class="memdesc:a84a38fa82a16b3229a7c6c4b72b20c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synthesize the <a class="el" href="../../d1/db6/classBagley.html" title="Bagley power combiner/divider network.">Bagley</a> network.  <br /></td></tr>
 <tr class="separator:a84a38fa82a16b3229a7c6c4b72b20c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classNetwork"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classNetwork')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/d16/classNetwork.html">Network</a></td></tr>
+<tr class="memitem:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork" id="r_ae833815d689402bacbeea0b6226ff85a"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Network</b> ()</td></tr>
+<tr class="memdesc:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classNetwork"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classNetwork')"><img src="../../closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="../../d5/d16/classNetwork.html">Network</a></td></tr>
 <tr class="memitem:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork" id="r_a18c4ac582102779da804825a3500bd62"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../df/d9e/classSchematicContent.html">SchematicContent</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Schematic</b></td></tr>
+<tr class="memdesc:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork"><td class="mdescLeft">&#160;</td><td class="mdescRight">Circuit data including components, nets, and simulation info. <br /></td></tr>
 <tr class="separator:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Lim-Eom power combiner/divider network References: [1] "Power combiners, impedance transformers and directional couplers: part II". Andrei Grebennikov. High Frequency Electronics. 2008 [2] "A New 3-Way Power Divider with Various Output Power Ratios," J.-S. Lim and S.-Y. Eom, 1996 IEEE MTT-S Int. Microwave Symp. Dig., pp. 785-788.". </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a262bffff13e236fb7d0d6058518b37d2" name="a262bffff13e236fb7d0d6058518b37d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a262bffff13e236fb7d0d6058518b37d2">&#9670;&#160;</a></span>Lim_Eom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Lim_Eom::Lim_Eom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d8b/structPowerCombinerParams.html">PowerCombinerParams</a>&#160;</td>
+          <td class="paramname"><em>PS</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor with power combiner parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">params</td><td>Power combiner specification parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a84a38fa82a16b3229a7c6c4b72b20c98" name="a84a38fa82a16b3229a7c6c4b72b20c98"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84a38fa82a16b3229a7c6c4b72b20c98">&#9670;&#160;</a></span>synthesize()</h2>
@@ -138,13 +194,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="../../d5/d16/classNetwork.html">Network</a>.</p>
+<p>Synthesize the <a class="el" href="../../d1/db6/classBagley.html" title="Bagley power combiner/divider network.">Bagley</a> network. </p>
+
+<p>Implements <a class="el" href="../../d5/d16/classNetwork.html#afeae260a8cae50beba4a3c9db5429057">Network</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Tools/PowerCombining/<a class="el" href="../../de/d0e/Lim__Eom_8h_source.html">Lim_Eom.h</a></li>
-<li>Tools/PowerCombining/<b>Lim_Eom.cpp</b></li>
+<li>Tools/DesignTools/PowerCombining/<a class="el" href="../../de/d0e/Lim__Eom_8h_source.html">Lim_Eom.h</a></li>
+<li>Tools/DesignTools/PowerCombining/<a class="el" href="../../d7/dd2/Lim__Eom_8cpp.html">Lim_Eom.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
