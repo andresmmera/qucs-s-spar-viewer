@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -80,33 +79,50 @@ $(function() {
   <div class="headertitle"><div class="title">RectangularPlotWidget::Trace Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Data structure representing a trace on the plot.  
+ <a href="../../de/d86/structRectangularPlotWidget_1_1Trace.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dd/d1d/rectangularplotwidget_8h_source.html">rectangularplotwidget.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a179e05b578b96edcde8f858c85a59f50" id="r_a179e05b578b96edcde8f858c85a59f50"><td class="memItemLeft" align="right" valign="top"><a id="a179e05b578b96edcde8f858c85a59f50" name="a179e05b578b96edcde8f858c85a59f50"></a>
 QList&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>trace</b></td></tr>
+<tr class="memdesc:a179e05b578b96edcde8f858c85a59f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y-axis values. <br /></td></tr>
 <tr class="separator:a179e05b578b96edcde8f858c85a59f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a2b173cc5bd77628e87b2a76e6bafb4" id="r_a2a2b173cc5bd77628e87b2a76e6bafb4"><td class="memItemLeft" align="right" valign="top"><a id="a2a2b173cc5bd77628e87b2a76e6bafb4" name="a2a2b173cc5bd77628e87b2a76e6bafb4"></a>
 QList&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>frequencies</b></td></tr>
+<tr class="memdesc:a2a2b173cc5bd77628e87b2a76e6bafb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">X-axis frequency values in Hz. <br /></td></tr>
 <tr class="separator:a2a2b173cc5bd77628e87b2a76e6bafb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebcd065a41024897a4c3b4329854d6a4" id="r_aebcd065a41024897a4c3b4329854d6a4"><td class="memItemLeft" align="right" valign="top"><a id="aebcd065a41024897a4c3b4329854d6a4" name="aebcd065a41024897a4c3b4329854d6a4"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>units</b></td></tr>
+<tr class="memdesc:aebcd065a41024897a4c3b4329854d6a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Units for the trace values (e.g., "dB") <br /></td></tr>
 <tr class="separator:aebcd065a41024897a4c3b4329854d6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dc26da81a1fbc54b53401adc25701bc" id="r_a4dc26da81a1fbc54b53401adc25701bc"><td class="memItemLeft" align="right" valign="top"><a id="a4dc26da81a1fbc54b53401adc25701bc" name="a4dc26da81a1fbc54b53401adc25701bc"></a>
 QPen&#160;</td><td class="memItemRight" valign="bottom"><b>pen</b></td></tr>
+<tr class="memdesc:a4dc26da81a1fbc54b53401adc25701bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visual style for the trace line. <br /></td></tr>
 <tr class="separator:a4dc26da81a1fbc54b53401adc25701bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecb6d14f6b587e39af60d6790b1cd984" id="r_aecb6d14f6b587e39af60d6790b1cd984"><td class="memItemLeft" align="right" valign="top"><a id="aecb6d14f6b587e39af60d6790b1cd984" name="aecb6d14f6b587e39af60d6790b1cd984"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>Z0</b></td></tr>
+<tr class="memdesc:aecb6d14f6b587e39af60d6790b1cd984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference impedance. <br /></td></tr>
 <tr class="separator:aecb6d14f6b587e39af60d6790b1cd984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaed96947abf6ee9bd8f9b853a5b69c26" id="r_aaed96947abf6ee9bd8f9b853a5b69c26"><td class="memItemLeft" align="right" valign="top"><a id="aaed96947abf6ee9bd8f9b853a5b69c26" name="aaed96947abf6ee9bd8f9b853a5b69c26"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>y_axis</b></td></tr>
+<tr class="memdesc:aaed96947abf6ee9bd8f9b853a5b69c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Axis assignment: 0 for left, 2 for right. <br /></td></tr>
 <tr class="separator:aaed96947abf6ee9bd8f9b853a5b69c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79020b8c073e957ff6c874b98d81f775" id="r_a79020b8c073e957ff6c874b98d81f775"><td class="memItemLeft" align="right" valign="top"><a id="a79020b8c073e957ff6c874b98d81f775" name="a79020b8c073e957ff6c874b98d81f775"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>y_axis_title</b></td></tr>
+<tr class="memdesc:a79020b8c073e957ff6c874b98d81f775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Title for the y-axis. <br /></td></tr>
 <tr class="separator:a79020b8c073e957ff6c874b98d81f775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>PlotWidgets/<a class="el" href="../../dd/d1d/rectangularplotwidget_8h_source.html">rectangularplotwidget.h</a></li>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Data structure representing a trace on the plot. </p>
+<dl class="section note"><dt>Note</dt><dd>It contains the y-axis data and the x-axis data (frequency) in separate QList&lt;double&gt; </dd>
+<dd>
+The struct also contains information about the y-axis units, the y-axis to use (left or right) as well as the trace identifier </dd></dl>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>UI/PlotWidgets/<a class="el" href="../../dd/d1d/rectangularplotwidget_8h_source.html">rectangularplotwidget.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

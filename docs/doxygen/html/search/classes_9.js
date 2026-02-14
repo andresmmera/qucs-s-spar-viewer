@@ -1,16 +1,14 @@
 var searchData=
 [
-  ['marker_0',['marker',['../d6/d90/structPolarPlotWidget_1_1Marker.html',1,'PolarPlotWidget::Marker'],['../df/de0/structRectangularPlotWidget_1_1Marker.html',1,'RectangularPlotWidget::Marker'],['../d9/de9/structSmithChartWidget_1_1Marker.html',1,'SmithChartWidget::Marker']]],
-  ['markerproperties_1',['MarkerProperties',['../d1/d81/structMarkerProperties.html',1,'']]],
-  ['matchingdata_2',['MatchingData',['../d9/d26/structMatchingData.html',1,'']]],
-  ['matchingnetworkdesigner_3',['MatchingNetworkDesigner',['../d5/da6/classMatchingNetworkDesigner.html',1,'']]],
-  ['matchingnetworkdesignparameters_4',['MatchingNetworkDesignParameters',['../d7/d68/structMatchingNetworkDesignParameters.html',1,'']]],
-  ['matchingnetworkdesigntool_5',['MatchingNetworkDesignTool',['../da/db3/classMatchingNetworkDesignTool.html',1,'']]],
-  ['matchingnetworkparameterswidget_6',['MatchingNetworkParametersWidget',['../da/df2/classMatchingNetworkParametersWidget.html',1,'']]],
-  ['matrixcombobox_7',['MatrixComboBox',['../d8/d75/classMatrixComboBox.html',1,'']]],
-  ['matrixcombopopup_8',['MatrixComboPopup',['../d7/d34/classMatrixComboPopup.html',1,'']]],
-  ['microstripclass_9',['MicrostripClass',['../d1/d70/classMicrostripClass.html',1,'']]],
-  ['ms_5fsubstrate_10',['MS_Substrate',['../d8/dfd/structMS__Substrate.html',1,'']]],
-  ['multisectionquarterwave_11',['MultisectionQuarterWave',['../d4/dab/classMultisectionQuarterWave.html',1,'']]],
-  ['multistagewilkinson_12',['MultistageWilkinson',['../dc/d22/classMultistageWilkinson.html',1,'']]]
+  ['labeldata_0',['LabelData',['../d5/d5e/structQCPLabelPainterPrivate_1_1LabelData.html',1,'QCPLabelPainterPrivate']]],
+  ['lambda8lambda4_1',['Lambda8Lambda4',['../d3/d2b/classLambda8Lambda4.html',1,'']]],
+  ['lim_5feom_2',['Lim_Eom',['../da/d18/classLim__Eom.html',1,'']]],
+  ['limit_3',['Limit',['../d6/da2/structRectangularPlotWidget_1_1Limit.html',1,'RectangularPlotWidget']]],
+  ['limitproperties_4',['LimitProperties',['../d9/d3e/structLimitProperties.html',1,'']]],
+  ['linenumberarea_5',['LineNumberArea',['../da/d6f/classLineNumberArea.html',1,'']]],
+  ['loadspecificationwidget_6',['LoadSpecificationWidget',['../df/d69/classLoadSpecificationWidget.html',1,'']]],
+  ['lowpassprototypecoeffs_7',['LowpassPrototypeCoeffs',['../de/d20/classLowpassPrototypeCoeffs.html',1,'']]],
+  ['lpadfirstseries_8',['LPadFirstSeries',['../df/d84/classLPadFirstSeries.html',1,'']]],
+  ['lpadfirstshunt_9',['LPadFirstShunt',['../d8/d9c/classLPadFirstShunt.html',1,'']]],
+  ['lsection_10',['Lsection',['../d0/db0/classLsection.html',1,'']]]
 ];

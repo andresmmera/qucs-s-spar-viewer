@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['objtype_0',['objtype',['../d2/d96/namespacesphinx_1_1ext_1_1autodoc.html#ad3f118a492c1bc8b57e152124e3881e5',1,'sphinx::ext::autodoc']]]
+  ['gamma_5fmax_0',['gamma_MAX',['../d7/d68/structMatchingNetworkDesignParameters.html#a9f5619decd37861ba80c124922484774',1,'MatchingNetworkDesignParameters']]]
 ];

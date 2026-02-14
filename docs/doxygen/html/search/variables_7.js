@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resonatorvalues_0',['resonatorValues',['../d6/d16/structFilterSpecifications.html#ab1aef115ead03e859262216f536faa36',1,'FilterSpecifications']]]
+  ['height_0',['height',['../d8/dfd/structMS__Substrate.html#ad7a5efa7870022c42845bb56d7563151',1,'MS_Substrate']]]
 ];

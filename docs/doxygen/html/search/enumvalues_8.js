@@ -1,0 +1,10 @@
+var searchData=
+[
+  ['magnitude_5fdb_0',['Magnitude_dB',['../d4/df4/qucs-s-spar-viewer_8h.html#a59b40c5838e0a3d2bfbfa64c85d7ca27a0943e17b50ad3d17de5c9646e5d28dba',1,'qucs-s-spar-viewer.h']]],
+  ['msall_1',['msAll',['../dc/dfe/namespaceQCP.html#a7e487e3e2ccb62ab7771065bab7cae54a43d7361cb0c5244eabdc962021bffebc',1,'QCP']]],
+  ['msbottom_2',['msBottom',['../dc/dfe/namespaceQCP.html#a7e487e3e2ccb62ab7771065bab7cae54a5241d8eac2bab9524a38889f576179cc',1,'QCP']]],
+  ['msleft_3',['msLeft',['../dc/dfe/namespaceQCP.html#a7e487e3e2ccb62ab7771065bab7cae54a9500c8bfcc9e80b9dff0a8e00e867f07',1,'QCP']]],
+  ['msnone_4',['msNone',['../dc/dfe/namespaceQCP.html#a7e487e3e2ccb62ab7771065bab7cae54a80aa4149f16dabd538f8b2e3d42c42d5',1,'QCP']]],
+  ['msright_5',['msRight',['../dc/dfe/namespaceQCP.html#a7e487e3e2ccb62ab7771065bab7cae54a93c719593bb2b94ed244d52c86d83b65',1,'QCP']]],
+  ['mstop_6',['msTop',['../dc/dfe/namespaceQCP.html#a7e487e3e2ccb62ab7771065bab7cae54a5db8fb0d0b0ecf0d611c2602a348e8a0',1,'QCP']]]
+];

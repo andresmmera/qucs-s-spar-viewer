@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -77,6 +76,8 @@ $(function() {
   <div class="headertitle"><div class="title">SchematicExporter Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d4/d97/SchematicExporter_8h_source.html">SchematicExporter.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SchematicExporter:</div>
 <div class="dyncontent">
@@ -90,28 +91,95 @@ Inheritance diagram for SchematicExporter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a62dd7d6ef7b50346d4d2116f5068870f" id="r_a62dd7d6ef7b50346d4d2116f5068870f"><td class="memItemLeft" align="right" valign="top"><a id="a62dd7d6ef7b50346d4d2116f5068870f" name="a62dd7d6ef7b50346d4d2116f5068870f"></a>
-virtual QString&#160;</td><td class="memItemRight" valign="bottom"><b>exportSchematic</b> ()=0</td></tr>
+<tr class="memitem:acde67febddb9e23b2547958947d58ee3" id="r_acde67febddb9e23b2547958947d58ee3"><td class="memItemLeft" align="right" valign="top"><a id="acde67febddb9e23b2547958947d58ee3" name="acde67febddb9e23b2547958947d58ee3"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~SchematicExporter</b> ()=default</td></tr>
+<tr class="memdesc:acde67febddb9e23b2547958947d58ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class destructor. <br /></td></tr>
+<tr class="separator:acde67febddb9e23b2547958947d58ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62dd7d6ef7b50346d4d2116f5068870f" id="r_a62dd7d6ef7b50346d4d2116f5068870f"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d1a/classSchematicExporter.html#a62dd7d6ef7b50346d4d2116f5068870f">exportSchematic</a> ()=0</td></tr>
+<tr class="memdesc:a62dd7d6ef7b50346d4d2116f5068870f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export function.  <br /></td></tr>
 <tr class="separator:a62dd7d6ef7b50346d4d2116f5068870f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a7b91e4cb8d3ee1a4135588ae4fbc8870" id="r_a7b91e4cb8d3ee1a4135588ae4fbc8870"><td class="memItemLeft" align="right" valign="top"><a id="a7b91e4cb8d3ee1a4135588ae4fbc8870" name="a7b91e4cb8d3ee1a4135588ae4fbc8870"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>scale_x</b></td></tr>
+<tr class="memdesc:a7b91e4cb8d3ee1a4135588ae4fbc8870"><td class="mdescLeft">&#160;</td><td class="mdescRight">x-axis scale factor <br /></td></tr>
 <tr class="separator:a7b91e4cb8d3ee1a4135588ae4fbc8870"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54f247e84560d679875edc04a85308bc" id="r_a54f247e84560d679875edc04a85308bc"><td class="memItemLeft" align="right" valign="top"><a id="a54f247e84560d679875edc04a85308bc" name="a54f247e84560d679875edc04a85308bc"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>scale_y</b></td></tr>
+<tr class="memdesc:a54f247e84560d679875edc04a85308bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">y-axis scale factor <br /></td></tr>
 <tr class="separator:a54f247e84560d679875edc04a85308bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb3cd60c5208f392f68b58d331377965" id="r_aeb3cd60c5208f392f68b58d331377965"><td class="memItemLeft" align="right" valign="top"><a id="aeb3cd60c5208f392f68b58d331377965" name="aeb3cd60c5208f392f68b58d331377965"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>x_offset</b></td></tr>
+<tr class="memdesc:aeb3cd60c5208f392f68b58d331377965"><td class="mdescLeft">&#160;</td><td class="mdescRight">x-axis offset <br /></td></tr>
 <tr class="separator:aeb3cd60c5208f392f68b58d331377965"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad96520aec19b5e22c2edd4864819dae6" id="r_ad96520aec19b5e22c2edd4864819dae6"><td class="memItemLeft" align="right" valign="top"><a id="ad96520aec19b5e22c2edd4864819dae6" name="ad96520aec19b5e22c2edd4864819dae6"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>y_offset</b></td></tr>
+<tr class="memdesc:ad96520aec19b5e22c2edd4864819dae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">y-axis offset <br /></td></tr>
 <tr class="separator:ad96520aec19b5e22c2edd4864819dae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8051d0efff679f1fc011c5a38be69a4a" id="r_a8051d0efff679f1fc011c5a38be69a4a"><td class="memItemLeft" align="right" valign="top"><a id="a8051d0efff679f1fc011c5a38be69a4a" name="a8051d0efff679f1fc011c5a38be69a4a"></a>
-QMap&lt; QString, QList&lt; QPoint &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ComponentPinMap</b></td></tr>
+<tr class="memitem:a8051d0efff679f1fc011c5a38be69a4a" id="r_a8051d0efff679f1fc011c5a38be69a4a"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QList&lt; QPoint &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d1a/classSchematicExporter.html#a8051d0efff679f1fc011c5a38be69a4a">ComponentPinMap</a></td></tr>
+<tr class="memdesc:a8051d0efff679f1fc011c5a38be69a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps component identifiers to their pin position lists.  <br /></td></tr>
 <tr class="separator:a8051d0efff679f1fc011c5a38be69a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract base class for exporting schematics </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a62dd7d6ef7b50346d4d2116f5068870f" name="a62dd7d6ef7b50346d4d2116f5068870f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62dd7d6ef7b50346d4d2116f5068870f">&#9670;&#160;</a></span>exportSchematic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QString SchematicExporter::exportSchematic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Export function. </p>
+<dl class="section note"><dt>Note</dt><dd>The implementation will be provided in the classes inheriting this base class </dd></dl>
+
+<p>Implemented in <a class="el" href="../../dd/d97/classQucsSExporter.html#a24ab48a8545b224b4ed30e0231870261">QucsSExporter</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a8051d0efff679f1fc011c5a38be69a4a" name="a8051d0efff679f1fc011c5a38be69a4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8051d0efff679f1fc011c5a38be69a4a">&#9670;&#160;</a></span>ComponentPinMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;QString, QList&lt;QPoint&gt; &gt; SchematicExporter::ComponentPinMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maps component identifiers to their pin position lists. </p>
+<p>Each component ID (QString) maps to a QList of QPoint objects representing the coordinates of all pins for that component. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Schematic/Export/<a class="el" href="../../d4/d97/SchematicExporter_8h_source.html">SchematicExporter.h</a></li>
 </ul>

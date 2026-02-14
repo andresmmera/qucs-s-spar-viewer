@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -77,6 +76,11 @@ $(function() {
   <div class="headertitle"><div class="title">AttenuatorDesignTool Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>GUI tool for RF attenuator design tool.  
+ <a href="../../d5/d0b/classAttenuatorDesignTool.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../de/dd2/AttenuatorDesignTool_8h_source.html">AttenuatorDesignTool.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AttenuatorDesignTool:</div>
 <div class="dyncontent">
@@ -102,26 +106,63 @@ Collaboration diagram for AttenuatorDesignTool:</div>
 Signals</h2></td></tr>
 <tr class="memitem:a7928d98b489259c1a405139afd9e01f7" id="r_a7928d98b489259c1a405139afd9e01f7"><td class="memItemLeft" align="right" valign="top"><a id="a7928d98b489259c1a405139afd9e01f7" name="a7928d98b489259c1a405139afd9e01f7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>updateSchematic</b> (<a class="el" href="../../df/d9e/classSchematicContent.html">SchematicContent</a>)</td></tr>
+<tr class="memdesc:a7928d98b489259c1a405139afd9e01f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when schematic needs updating. <br /></td></tr>
 <tr class="separator:a7928d98b489259c1a405139afd9e01f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ddf78a2c97d8ae745de19d3722cb591" id="r_a9ddf78a2c97d8ae745de19d3722cb591"><td class="memItemLeft" align="right" valign="top"><a id="a9ddf78a2c97d8ae745de19d3722cb591" name="a9ddf78a2c97d8ae745de19d3722cb591"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>updateSimulation</b> (<a class="el" href="../../df/d9e/classSchematicContent.html">SchematicContent</a>)</td></tr>
+<tr class="memdesc:a9ddf78a2c97d8ae745de19d3722cb591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when simulation needs updating. <br /></td></tr>
 <tr class="separator:a9ddf78a2c97d8ae745de19d3722cb591"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a04f11a22d16191549dda3ef62d4350a4" id="r_a04f11a22d16191549dda3ef62d4350a4"><td class="memItemLeft" align="right" valign="top"><a id="a04f11a22d16191549dda3ef62d4350a4" name="a04f11a22d16191549dda3ef62d4350a4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AttenuatorDesignTool</b> (QWidget *parent=nullptr)</td></tr>
+<tr class="memitem:a04f11a22d16191549dda3ef62d4350a4" id="r_a04f11a22d16191549dda3ef62d4350a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0b/classAttenuatorDesignTool.html#a04f11a22d16191549dda3ef62d4350a4">AttenuatorDesignTool</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a04f11a22d16191549dda3ef62d4350a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class constructor.  <br /></td></tr>
 <tr class="separator:a04f11a22d16191549dda3ef62d4350a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae572e82b4b5379eef8c3a880959e89e4" id="r_ae572e82b4b5379eef8c3a880959e89e4"><td class="memItemLeft" align="right" valign="top"><a id="ae572e82b4b5379eef8c3a880959e89e4" name="ae572e82b4b5379eef8c3a880959e89e4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~AttenuatorDesignTool</b> ()</td></tr>
+<tr class="memdesc:ae572e82b4b5379eef8c3a880959e89e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class destructor. <br /></td></tr>
+<tr class="separator:ae572e82b4b5379eef8c3a880959e89e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9d568c306e42076cb478efa10f6bf39" id="r_af9d568c306e42076cb478efa10f6bf39"><td class="memItemLeft" align="right" valign="top"><a id="af9d568c306e42076cb478efa10f6bf39" name="af9d568c306e42076cb478efa10f6bf39"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>design</b> ()</td></tr>
+<tr class="memdesc:af9d568c306e42076cb478efa10f6bf39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger design process. <br /></td></tr>
 <tr class="separator:af9d568c306e42076cb478efa10f6bf39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9db05ce6aef36ab9777366f5f6237fde" id="r_a9db05ce6aef36ab9777366f5f6237fde"><td class="memItemLeft" align="right" valign="top"><a id="a9db05ce6aef36ab9777366f5f6237fde" name="a9db05ce6aef36ab9777366f5f6237fde"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>synthesize</b> ()</td></tr>
+<tr class="memdesc:a9db05ce6aef36ab9777366f5f6237fde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synthesize attenuator circuit based on selected topology. <br /></td></tr>
 <tr class="separator:a9db05ce6aef36ab9777366f5f6237fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>GUI tool for RF attenuator design tool. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a04f11a22d16191549dda3ef62d4350a4" name="a04f11a22d16191549dda3ef62d4350a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f11a22d16191549dda3ef62d4350a4">&#9670;&#160;</a></span>AttenuatorDesignTool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AttenuatorDesignTool::AttenuatorDesignTool </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Class constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Parent widget </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Tools/AttenuatorDesign/<a class="el" href="../../de/dd2/AttenuatorDesignTool_8h_source.html">AttenuatorDesignTool.h</a></li>
-<li>Tools/AttenuatorDesign/<b>AttenuatorDesignTool.cpp</b></li>
+<li>Tools/DesignTools/AttenuatorDesign/<a class="el" href="../../de/dd2/AttenuatorDesignTool_8h_source.html">AttenuatorDesignTool.h</a></li>
+<li>Tools/DesignTools/AttenuatorDesign/<a class="el" href="../../d3/d00/AttenuatorDesignTool_8cpp.html">AttenuatorDesignTool.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

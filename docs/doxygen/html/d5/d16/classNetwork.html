@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -77,6 +76,11 @@ $(function() {
   <div class="headertitle"><div class="title">Network Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract base class for network implementations.  
+ <a href="../../d5/d16/classNetwork.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/dab/Network_8h_source.html">Network.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Network:</div>
 <div class="dyncontent">
@@ -172,16 +176,24 @@ Collaboration diagram for Network:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ae833815d689402bacbeea0b6226ff85a" id="r_ae833815d689402bacbeea0b6226ff85a"><td class="memItemLeft" align="right" valign="top"><a id="ae833815d689402bacbeea0b6226ff85a" name="ae833815d689402bacbeea0b6226ff85a"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Network</b> ()</td></tr>
+<tr class="memdesc:ae833815d689402bacbeea0b6226ff85a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:ae833815d689402bacbeea0b6226ff85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeae260a8cae50beba4a3c9db5429057" id="r_afeae260a8cae50beba4a3c9db5429057"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d16/classNetwork.html#afeae260a8cae50beba4a3c9db5429057">synthesize</a> ()=0</td></tr>
+<tr class="memdesc:afeae260a8cae50beba4a3c9db5429057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synthesize the network.  <br /></td></tr>
 <tr class="separator:afeae260a8cae50beba4a3c9db5429057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a18c4ac582102779da804825a3500bd62" id="r_a18c4ac582102779da804825a3500bd62"><td class="memItemLeft" align="right" valign="top"><a id="a18c4ac582102779da804825a3500bd62" name="a18c4ac582102779da804825a3500bd62"></a>
 <a class="el" href="../../df/d9e/classSchematicContent.html">SchematicContent</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Schematic</b></td></tr>
+<tr class="memdesc:a18c4ac582102779da804825a3500bd62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Circuit data including components, nets, and simulation info. <br /></td></tr>
 <tr class="separator:a18c4ac582102779da804825a3500bd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract base class for network implementations. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afeae260a8cae50beba4a3c9db5429057" name="afeae260a8cae50beba4a3c9db5429057"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afeae260a8cae50beba4a3c9db5429057">&#9670;&#160;</a></span>synthesize()</h2>
 
@@ -205,7 +217,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="../../d0/d3a/classDirectCoupledFilters.html#a862253ad0debfc20196d722def54c471">DirectCoupledFilters</a>, <a class="el" href="../../df/d84/classLPadFirstSeries.html#a9ebf2bb0fd33ea40315015054e30f17d">LPadFirstSeries</a>, and <a class="el" href="../../d8/d9c/classLPadFirstShunt.html#a21363a24501f4fc0532e12169cbbd384">LPadFirstShunt</a>.</p>
+<p>Synthesize the network. </p>
+
+<p>Implemented in <a class="el" href="../../de/df5/classCanonicalFilter.html#a26206cb6057992d11493b8e950c5d023">CanonicalFilter</a>, <a class="el" href="../../d7/dd7/classCapacitivelyCoupledShuntResonatorsFilter.html#ac22db8cd88c4c100a38ae0a3801f5297">CapacitivelyCoupledShuntResonatorsFilter</a>, <a class="el" href="../../d9/db4/classCoupledLineBandpassFilter.html#a2bf6fb81f80f6b577017d6c951b9c82e">CoupledLineBandpassFilter</a>, <a class="el" href="../../d0/d3a/classDirectCoupledFilters.html#a862253ad0debfc20196d722def54c471">DirectCoupledFilters</a>, <a class="el" href="../../d5/d72/classEllipticFilter.html#a2e2ad73333553e759bbd0bf2e4067730">EllipticFilter</a>, <a class="el" href="../../d5/d68/classEndCoupled.html#ac12b1ea26904754bacd18e218c024ce4">EndCoupled</a>, <a class="el" href="../../d2/d9c/classQuarterWaveFilters.html#a9dded98e90f848fa6b7da54725eea699">QuarterWaveFilters</a>, <a class="el" href="../../dd/d0c/classSteppedImpedanceFilter.html#aad594e2b778205f9400bd6e7091410d7">SteppedImpedanceFilter</a>, <a class="el" href="../../d8/d72/classCascadedLCSections.html#a37e57c8265b07ad31794fc078812202c">CascadedLCSections</a>, <a class="el" href="../../d6/d0f/classDoubleStub.html#ae3202e7abbdf93e2a3ae0383b9bbb1fd">DoubleStub</a>, <a class="el" href="../../d3/d2b/classLambda8Lambda4.html#a2d4197d35271f9ad40b365475df34e70">Lambda8Lambda4</a>, <a class="el" href="../../d0/db0/classLsection.html#abc98d9f46f4a2062bdbe4fd090ab3bc9">Lsection</a>, <a class="el" href="../../d5/da6/classMatchingNetworkDesigner.html#a351e4b4607a340aec990cced48ffbb15">MatchingNetworkDesigner</a>, <a class="el" href="../../d4/dab/classMultisectionQuarterWave.html#a4ebb4595ecdb6a5b0f478feab9133497">MultisectionQuarterWave</a>, <a class="el" href="../../d4/d42/classSingleStub.html#a244c1f57c5fe4e4d2cea064cb8c2f388">SingleStub</a>, <a class="el" href="../../d1/db6/classBagley.html#ab3834a8242124434a6564a511268c556">Bagley</a>, <a class="el" href="../../df/dcc/classBranchline.html#a7a327af592c879195125bedd05bdb5c6">Branchline</a>, <a class="el" href="../../db/df3/classDoubleBoxBranchline.html#a8ea87094e13cf713544c770da0b5866c">DoubleBoxBranchline</a>, <a class="el" href="../../df/dc5/classGysel.html#aa22f800d178378fbae0a7d29046755ed">Gysel</a>, <a class="el" href="../../da/d18/classLim__Eom.html#a84a38fa82a16b3229a7c6c4b72b20c98">Lim_Eom</a>, <a class="el" href="../../dc/d22/classMultistageWilkinson.html#ac9daea7120d6bfe17ba759a05a23b5fa">MultistageWilkinson</a>, <a class="el" href="../../d0/d4c/classRecombinant3WayWilkinson.html#a6d43a7242413f2ff31c63aa6f274a336">Recombinant3WayWilkinson</a>, <a class="el" href="../../d0/d45/classTJunction.html#a1efb7fa6bbeca563bb6e8cda4340752d">TJunction</a>, <a class="el" href="../../d0/de7/classWilkinson2Way.html#a3157dab924417d01b698dc5d90b54b00">Wilkinson2Way</a>, <a class="el" href="../../df/dfb/classWilkinson3Way__ImprovedIsolation.html#abc7456cdcf37dfc089e73c89227643aa">Wilkinson3Way_ImprovedIsolation</a>, <a class="el" href="../../d5/d78/classBridgedTeeAttenuator.html#ac45adc11152516ddfa6d29e883919354">BridgedTeeAttenuator</a>, <a class="el" href="../../df/d84/classLPadFirstSeries.html#a9ebf2bb0fd33ea40315015054e30f17d">LPadFirstSeries</a>, <a class="el" href="../../d8/d9c/classLPadFirstShunt.html#a21363a24501f4fc0532e12169cbbd384">LPadFirstShunt</a>, <a class="el" href="../../d3/d22/classPiAttenuator.html#a68c98f1a023e4260ad2448fe6e81f28f">PiAttenuator</a>, <a class="el" href="../../dd/d2a/classQW__SeriesAttenuator.html#a48456756298ad311fa2ec7a965c07115">QW_SeriesAttenuator</a>, <a class="el" href="../../d7/d08/classQW__ShuntAttenuator.html#a35355df42256129d300d91512c3fb4ef">QW_ShuntAttenuator</a>, <a class="el" href="../../d2/dbc/classReflectionAttenuator.html#a228b09f055b9e88a6c6526bbfdd96878">ReflectionAttenuator</a>, <a class="el" href="../../d4/d5d/classRSeriesAttenuator.html#aea06a7a97d9a1565a4083a8e31b11d53">RSeriesAttenuator</a>, <a class="el" href="../../d5/d85/classRShuntAttenuator.html#a167a1874d9d16785a9aed922593e32ac">RShuntAttenuator</a>, <a class="el" href="../../db/dd8/classTeeAttenuator.html#a36809d814f83e90b5e7f8ebaaf5fe36e">TeeAttenuator</a>, and <a class="el" href="../../de/d4b/classAttenuatorBase.html#a7ffe2cc6c2281a9dc78102d96be32af9">AttenuatorBase</a>.</p>
 
 </div>
 </div>

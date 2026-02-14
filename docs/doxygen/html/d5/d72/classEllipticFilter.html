@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -76,6 +75,11 @@ $(function() {
   <div class="headertitle"><div class="title">EllipticFilter Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Synthesizes elliptic filters Amstutz - "Elliptic Approximation and Elliptic Filter Design" (1978)  
+ <a href="../../d5/d72/classEllipticFilter.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d3/d82/EllipticFilter_8h_source.html">EllipticFilter.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for EllipticFilter:</div>
 <div class="dyncontent">
@@ -101,23 +105,109 @@ Collaboration diagram for EllipticFilter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9b46e280931183a036c8e2c5cdcfd18c" id="r_a9b46e280931183a036c8e2c5cdcfd18c"><td class="memItemLeft" align="right" valign="top"><a id="a9b46e280931183a036c8e2c5cdcfd18c" name="a9b46e280931183a036c8e2c5cdcfd18c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>EllipticFilter</b> (<a class="el" href="../../d6/d16/structFilterSpecifications.html">FilterSpecifications</a>)</td></tr>
-<tr class="separator:a9b46e280931183a036c8e2c5cdcfd18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78ab5c2bd67ef33a7811a85298a57512" id="r_a78ab5c2bd67ef33a7811a85298a57512"><td class="memItemLeft" align="right" valign="top"><a id="a78ab5c2bd67ef33a7811a85298a57512" name="a78ab5c2bd67ef33a7811a85298a57512"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>EllipticFilter</b> ()</td></tr>
+<tr class="memdesc:a78ab5c2bd67ef33a7811a85298a57512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="separator:a78ab5c2bd67ef33a7811a85298a57512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c0e51a5de1be90b2d18d66c78f83f7b" id="r_a8c0e51a5de1be90b2d18d66c78f83f7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d72/classEllipticFilter.html#a8c0e51a5de1be90b2d18d66c78f83f7b">EllipticFilter</a> (FilterSpecifications FS)</td></tr>
+<tr class="memdesc:a8c0e51a5de1be90b2d18d66c78f83f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with filter specifications.  <br /></td></tr>
+<tr class="separator:a8c0e51a5de1be90b2d18d66c78f83f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30ac02fa7023291fa47fd80bdcaeea52" id="r_a30ac02fa7023291fa47fd80bdcaeea52"><td class="memItemLeft" align="right" valign="top"><a id="a30ac02fa7023291fa47fd80bdcaeea52" name="a30ac02fa7023291fa47fd80bdcaeea52"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~EllipticFilter</b> ()</td></tr>
+<tr class="memdesc:a30ac02fa7023291fa47fd80bdcaeea52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor - cleans up dynamically allocated arrays. <br /></td></tr>
+<tr class="separator:a30ac02fa7023291fa47fd80bdcaeea52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e2ad73333553e759bbd0bf2e4067730" id="r_a2e2ad73333553e759bbd0bf2e4067730"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d72/classEllipticFilter.html#a2e2ad73333553e759bbd0bf2e4067730">synthesize</a> ()</td></tr>
+<tr class="memdesc:a2e2ad73333553e759bbd0bf2e4067730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs complete elliptic filter synthesis.  <br /></td></tr>
 <tr class="separator:a2e2ad73333553e759bbd0bf2e4067730"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67be2d974c22328f24fe1131cc934801" id="r_a67be2d974c22328f24fe1131cc934801"><td class="memItemLeft" align="right" valign="top"><a id="a67be2d974c22328f24fe1131cc934801" name="a67be2d974c22328f24fe1131cc934801"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSemilumpedMode</b> (bool)</td></tr>
-<tr class="separator:a67be2d974c22328f24fe1131cc934801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa61cd13b40409859d322b9acd9f0a7c1" id="r_aa61cd13b40409859d322b9acd9f0a7c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d72/classEllipticFilter.html#aa61cd13b40409859d322b9acd9f0a7c1">setSemilumpedMode</a> (bool mode)</td></tr>
+<tr class="memdesc:aa61cd13b40409859d322b9acd9f0a7c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables semi-lumped implementation mode.  <br /></td></tr>
+<tr class="separator:aa61cd13b40409859d322b9acd9f0a7c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classNetwork"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classNetwork')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/d16/classNetwork.html">Network</a></td></tr>
+<tr class="memitem:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork" id="r_ae833815d689402bacbeea0b6226ff85a"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Network</b> ()</td></tr>
+<tr class="memdesc:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classNetwork"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classNetwork')"><img src="../../closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="../../d5/d16/classNetwork.html">Network</a></td></tr>
 <tr class="memitem:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork" id="r_a18c4ac582102779da804825a3500bd62"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../df/d9e/classSchematicContent.html">SchematicContent</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Schematic</b></td></tr>
+<tr class="memdesc:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork"><td class="mdescLeft">&#160;</td><td class="mdescRight">Circuit data including components, nets, and simulation info. <br /></td></tr>
 <tr class="separator:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Synthesizes elliptic filters Amstutz - "Elliptic Approximation and Elliptic Filter Design" (1978) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8c0e51a5de1be90b2d18d66c78f83f7b" name="a8c0e51a5de1be90b2d18d66c78f83f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0e51a5de1be90b2d18d66c78f83f7b">&#9670;&#160;</a></span>EllipticFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EllipticFilter::EllipticFilter </td>
+          <td>(</td>
+          <td class="paramtype">FilterSpecifications&#160;</td>
+          <td class="paramname"><em>FS</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor with filter specifications. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">specs</td><td>Filter parameters (order, ripple, stopband attenuation, type) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa61cd13b40409859d322b9acd9f0a7c1" name="aa61cd13b40409859d322b9acd9f0a7c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa61cd13b40409859d322b9acd9f0a7c1">&#9670;&#160;</a></span>setSemilumpedMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EllipticFilter::setSemilumpedMode </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables semi-lumped implementation mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>true to use transmission line stubs (Type S only) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a2e2ad73333553e759bbd0bf2e4067730" name="a2e2ad73333553e759bbd0bf2e4067730"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e2ad73333553e759bbd0bf2e4067730">&#9670;&#160;</a></span>synthesize()</h2>
 
@@ -141,13 +231,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="../../d5/d16/classNetwork.html">Network</a>.</p>
+<p>Performs complete elliptic filter synthesis. </p>
+
+<p>Implements <a class="el" href="../../d5/d16/classNetwork.html#afeae260a8cae50beba4a3c9db5429057">Network</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Tools/Filtering/<a class="el" href="../../d3/d82/EllipticFilter_8h_source.html">EllipticFilter.h</a></li>
-<li>Tools/Filtering/<b>EllipticFilter.cpp</b></li>
+<li>Tools/DesignTools/Filtering/<a class="el" href="../../d3/d82/EllipticFilter_8h_source.html">EllipticFilter.h</a></li>
+<li>Tools/DesignTools/Filtering/<a class="el" href="../../d4/da8/EllipticFilter_8cpp.html">EllipticFilter.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

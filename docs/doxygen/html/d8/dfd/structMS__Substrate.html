@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -77,32 +76,45 @@ $(function() {
   <div class="headertitle"><div class="title">MS_Substrate Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Microstrip substrate parameters.  
+ <a href="../../d8/dfd/structMS__Substrate.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dd/da3/structures_8h_source.html">structures.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae2919b2ee85a5b705336622dec908ab1" id="r_ae2919b2ee85a5b705336622dec908ab1"><td class="memItemLeft" align="right" valign="top"><a id="ae2919b2ee85a5b705336622dec908ab1" name="ae2919b2ee85a5b705336622dec908ab1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MS_Substrate</b> (double h=0.508e-3, double epsilon_r=3.55, double tand=0.0027, double MetalConductivity=58e6, double MetalThickness=32e-6)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>MS_Substrate</b> (double h=0.508e-3, double epsilon_r=3.55, double <a class="el" href="../../d8/dfd/structMS__Substrate.html#a60c216ede0181b48afdf37dbd498fe52">tand</a>=0.0027, double <a class="el" href="../../d8/dfd/structMS__Substrate.html#ac311922637772fb23da57480c2e18b86">MetalConductivity</a>=58e6, double <a class="el" href="../../d8/dfd/structMS__Substrate.html#a03090b961712dfad355559b2e8a66ae0">MetalThickness</a>=32e-6)</td></tr>
+<tr class="memdesc:ae2919b2ee85a5b705336622dec908ab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with RO4003C defaults (20 mils) <br /></td></tr>
 <tr class="separator:ae2919b2ee85a5b705336622dec908ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ad7a5efa7870022c42845bb56d7563151" id="r_ad7a5efa7870022c42845bb56d7563151"><td class="memItemLeft" align="right" valign="top"><a id="ad7a5efa7870022c42845bb56d7563151" name="ad7a5efa7870022c42845bb56d7563151"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>height</b></td></tr>
+<tr class="memdesc:ad7a5efa7870022c42845bb56d7563151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Substrate height (m) <br /></td></tr>
 <tr class="separator:ad7a5efa7870022c42845bb56d7563151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09a8a65e9c98c829c773408b4ae1b70b" id="r_a09a8a65e9c98c829c773408b4ae1b70b"><td class="memItemLeft" align="right" valign="top"><a id="a09a8a65e9c98c829c773408b4ae1b70b" name="a09a8a65e9c98c829c773408b4ae1b70b"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>er</b></td></tr>
+<tr class="memdesc:a09a8a65e9c98c829c773408b4ae1b70b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relative permittivity. <br /></td></tr>
 <tr class="separator:a09a8a65e9c98c829c773408b4ae1b70b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60c216ede0181b48afdf37dbd498fe52" id="r_a60c216ede0181b48afdf37dbd498fe52"><td class="memItemLeft" align="right" valign="top"><a id="a60c216ede0181b48afdf37dbd498fe52" name="a60c216ede0181b48afdf37dbd498fe52"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>tand</b></td></tr>
+<tr class="memdesc:a60c216ede0181b48afdf37dbd498fe52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dissipation factor. <br /></td></tr>
 <tr class="separator:a60c216ede0181b48afdf37dbd498fe52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac311922637772fb23da57480c2e18b86" id="r_ac311922637772fb23da57480c2e18b86"><td class="memItemLeft" align="right" valign="top"><a id="ac311922637772fb23da57480c2e18b86" name="ac311922637772fb23da57480c2e18b86"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>MetalConductivity</b></td></tr>
+<tr class="memdesc:ac311922637772fb23da57480c2e18b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metal conductivity (S/m) <br /></td></tr>
 <tr class="separator:ac311922637772fb23da57480c2e18b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03090b961712dfad355559b2e8a66ae0" id="r_a03090b961712dfad355559b2e8a66ae0"><td class="memItemLeft" align="right" valign="top"><a id="a03090b961712dfad355559b2e8a66ae0" name="a03090b961712dfad355559b2e8a66ae0"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>MetalThickness</b></td></tr>
+<tr class="memdesc:a03090b961712dfad355559b2e8a66ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metal thickness (m) <br /></td></tr>
 <tr class="separator:a03090b961712dfad355559b2e8a66ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Microstrip substrate parameters. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>Schematic/<a class="el" href="../../dd/da3/structures_8h_source.html">structures.h</a></li>
 </ul>
 </div><!-- contents -->

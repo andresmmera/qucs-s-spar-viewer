@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -77,25 +76,79 @@ $(function() {
   <div class="headertitle"><div class="title">Port Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="../../d5/d16/classNetwork.html" title="Abstract base class for network implementations.">Network</a> port definition with node and impedance.  
+ <a href="../../de/d8c/structPort.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/dbc/SParameterCalculator_8h_source.html">SParameterCalculator.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abb371ce66c7f33da7c53c6ccad7928e5" id="r_abb371ce66c7f33da7c53c6ccad7928e5"><td class="memItemLeft" align="right" valign="top"><a id="abb371ce66c7f33da7c53c6ccad7928e5" name="abb371ce66c7f33da7c53c6ccad7928e5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Port</b> (int n, double z=50.0)</td></tr>
+<tr class="memitem:abb371ce66c7f33da7c53c6ccad7928e5" id="r_abb371ce66c7f33da7c53c6ccad7928e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8c/structPort.html#abb371ce66c7f33da7c53c6ccad7928e5">Port</a> (int n, double z=50.0)</td></tr>
+<tr class="memdesc:abb371ce66c7f33da7c53c6ccad7928e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with default 50Ω impedance.  <br /></td></tr>
 <tr class="separator:abb371ce66c7f33da7c53c6ccad7928e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a77fd2b4ce9492cb6fcb253a8dabf012e" id="r_a77fd2b4ce9492cb6fcb253a8dabf012e"><td class="memItemLeft" align="right" valign="top"><a id="a77fd2b4ce9492cb6fcb253a8dabf012e" name="a77fd2b4ce9492cb6fcb253a8dabf012e"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>node</b></td></tr>
+<tr class="memdesc:a77fd2b4ce9492cb6fcb253a8dabf012e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../df/dd0/classNode.html" title="Wiring node for circuit connections.">Node</a> number where port is connected. <br /></td></tr>
 <tr class="separator:a77fd2b4ce9492cb6fcb253a8dabf012e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a653c03d2cc35e9bea7b40fdbb6feea21" id="r_a653c03d2cc35e9bea7b40fdbb6feea21"><td class="memItemLeft" align="right" valign="top"><a id="a653c03d2cc35e9bea7b40fdbb6feea21" name="a653c03d2cc35e9bea7b40fdbb6feea21"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>impedance</b></td></tr>
+<tr class="memdesc:a653c03d2cc35e9bea7b40fdbb6feea21"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/d8c/structPort.html" title="Network port definition with node and impedance.">Port</a> characteristic impedance (typically 50Ω) <br /></td></tr>
 <tr class="separator:a653c03d2cc35e9bea7b40fdbb6feea21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="../../d5/d16/classNetwork.html" title="Abstract base class for network implementations.">Network</a> port definition with node and impedance. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="abb371ce66c7f33da7c53c6ccad7928e5" name="abb371ce66c7f33da7c53c6ccad7928e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb371ce66c7f33da7c53c6ccad7928e5">&#9670;&#160;</a></span>Port()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Port::Port </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>z</em> = <code>50.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor with default 50Ω impedance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td><a class="el" href="../../df/dd0/classNode.html" title="Wiring node for circuit connections.">Node</a> number </td></tr>
+    <tr><td class="paramname">z</td><td><a class="el" href="../../de/d8c/structPort.html" title="Network port definition with node and impedance.">Port</a> impedance (default 50Ω) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>SPAR/<a class="el" href="../../db/dbc/SParameterCalculator_8h_source.html">SParameterCalculator.h</a></li>
-<li>SPAR/<b>SParameterCalculator.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

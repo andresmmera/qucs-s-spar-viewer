@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -76,6 +75,11 @@ $(function() {
   <div class="headertitle"><div class="title">PowerCombinerParams Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Power combiner parameters.  
+ <a href="../../db/d8b/structPowerCombinerParams.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dd/da3/structures_8h_source.html">structures.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for PowerCombinerParams:</div>
 <div class="dyncontent">
@@ -91,36 +95,48 @@ Collaboration diagram for PowerCombinerParams:</div>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a02638cf66e10927c93e4773fa185c99f" id="r_a02638cf66e10927c93e4773fa185c99f"><td class="memItemLeft" align="right" valign="top"><a id="a02638cf66e10927c93e4773fa185c99f" name="a02638cf66e10927c93e4773fa185c99f"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>Type</b></td></tr>
+<tr class="memdesc:a02638cf66e10927c93e4773fa185c99f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wilkinson, branchlines, <a class="el" href="../../d1/db6/classBagley.html" title="Bagley power combiner/divider network.">Bagley</a>, etc. <br /></td></tr>
 <tr class="separator:a02638cf66e10927c93e4773fa185c99f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49b6df48d4323b300c344fb6f2669afb" id="r_a49b6df48d4323b300c344fb6f2669afb"><td class="memItemLeft" align="right" valign="top"><a id="a49b6df48d4323b300c344fb6f2669afb" name="a49b6df48d4323b300c344fb6f2669afb"></a>
 TransmissionLineType&#160;</td><td class="memItemRight" valign="bottom"><b>TL_implementation</b></td></tr>
+<tr class="memdesc:a49b6df48d4323b300c344fb6f2669afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">TL type. <br /></td></tr>
 <tr class="separator:a49b6df48d4323b300c344fb6f2669afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af362987927b7d124ba56527e88c56254" id="r_af362987927b7d124ba56527e88c56254"><td class="memItemLeft" align="right" valign="top"><a id="af362987927b7d124ba56527e88c56254" name="af362987927b7d124ba56527e88c56254"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>Noutputs</b></td></tr>
+<tr class="memdesc:af362987927b7d124ba56527e88c56254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of output branches. <br /></td></tr>
 <tr class="separator:af362987927b7d124ba56527e88c56254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6e3f3d181ea0f9390d0ba713ea6a853" id="r_ab6e3f3d181ea0f9390d0ba713ea6a853"><td class="memItemLeft" align="right" valign="top"><a id="ab6e3f3d181ea0f9390d0ba713ea6a853" name="ab6e3f3d181ea0f9390d0ba713ea6a853"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>Nstages</b></td></tr>
+<tr class="memdesc:ab6e3f3d181ea0f9390d0ba713ea6a853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of combiner stages. <br /></td></tr>
 <tr class="separator:ab6e3f3d181ea0f9390d0ba713ea6a853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa185bfbdc1318d411634aab1390d38f9" id="r_aa185bfbdc1318d411634aab1390d38f9"><td class="memItemLeft" align="right" valign="top"><a id="aa185bfbdc1318d411634aab1390d38f9" name="aa185bfbdc1318d411634aab1390d38f9"></a>
 std::deque&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>OutputRatio</b></td></tr>
+<tr class="memdesc:aa185bfbdc1318d411634aab1390d38f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splitting ratio. <br /></td></tr>
 <tr class="separator:aa185bfbdc1318d411634aab1390d38f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68bcbd1113ddc52aacf2d528d8fcdd99" id="r_a68bcbd1113ddc52aacf2d528d8fcdd99"><td class="memItemLeft" align="right" valign="top"><a id="a68bcbd1113ddc52aacf2d528d8fcdd99" name="a68bcbd1113ddc52aacf2d528d8fcdd99"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>alpha</b></td></tr>
+<tr class="memdesc:a68bcbd1113ddc52aacf2d528d8fcdd99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attenuation constant. <br /></td></tr>
 <tr class="separator:a68bcbd1113ddc52aacf2d528d8fcdd99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2199e07ea98970ba2aaa6d4784efe24" id="r_ad2199e07ea98970ba2aaa6d4784efe24"><td class="memItemLeft" align="right" valign="top"><a id="ad2199e07ea98970ba2aaa6d4784efe24" name="ad2199e07ea98970ba2aaa6d4784efe24"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>units</b></td></tr>
+<tr class="memdesc:ad2199e07ea98970ba2aaa6d4784efe24"><td class="mdescLeft">&#160;</td><td class="mdescRight">mm, mil, um <br /></td></tr>
 <tr class="separator:ad2199e07ea98970ba2aaa6d4784efe24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a121467907d7cd4c48c372a7faaa987ab" id="r_a121467907d7cd4c48c372a7faaa987ab"><td class="memItemLeft" align="right" valign="top"><a id="a121467907d7cd4c48c372a7faaa987ab" name="a121467907d7cd4c48c372a7faaa987ab"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>freq</b></td></tr>
+<tr class="memdesc:a121467907d7cd4c48c372a7faaa987ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Center frequency (Hz) <br /></td></tr>
 <tr class="separator:a121467907d7cd4c48c372a7faaa987ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef64fc5297208c2e2db49a6e87c3bf18" id="r_aef64fc5297208c2e2db49a6e87c3bf18"><td class="memItemLeft" align="right" valign="top"><a id="aef64fc5297208c2e2db49a6e87c3bf18" name="aef64fc5297208c2e2db49a6e87c3bf18"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>Z0</b></td></tr>
+<tr class="memdesc:aef64fc5297208c2e2db49a6e87c3bf18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference impedance (Ohm) <br /></td></tr>
 <tr class="separator:aef64fc5297208c2e2db49a6e87c3bf18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab552b6396ce0e7bfd9f39bac644a8494" id="r_ab552b6396ce0e7bfd9f39bac644a8494"><td class="memItemLeft" align="right" valign="top"><a id="ab552b6396ce0e7bfd9f39bac644a8494" name="ab552b6396ce0e7bfd9f39bac644a8494"></a>
 <a class="el" href="../../d8/dfd/structMS__Substrate.html">MS_Substrate</a>&#160;</td><td class="memItemRight" valign="bottom"><b>MS_Subs</b></td></tr>
+<tr class="memdesc:ab552b6396ce0e7bfd9f39bac644a8494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Substrate settings. <br /></td></tr>
 <tr class="separator:ab552b6396ce0e7bfd9f39bac644a8494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Power combiner parameters. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>Schematic/<a class="el" href="../../dd/da3/structures_8h_source.html">structures.h</a></li>
 </ul>
 </div><!-- contents -->

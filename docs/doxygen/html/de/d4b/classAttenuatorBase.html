@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -78,6 +77,11 @@ $(function() {
   <div class="headertitle"><div class="title">AttenuatorBase Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract base class for RF attenuator implementations.  
+ <a href="../../de/d4b/classAttenuatorBase.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../de/d71/AttenuatorBase_8h_source.html">AttenuatorBase.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AttenuatorBase:</div>
 <div class="dyncontent">
@@ -129,31 +133,47 @@ Collaboration diagram for AttenuatorBase:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6235e16324ce13c05a26641603133e89" id="r_a6235e16324ce13c05a26641603133e89"><td class="memItemLeft" align="right" valign="top"><a id="a6235e16324ce13c05a26641603133e89" name="a6235e16324ce13c05a26641603133e89"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AttenuatorBase</b> (<a class="el" href="../../d4/d9f/structAttenuatorDesignParameters.html">AttenuatorDesignParameters</a> AS)</td></tr>
+<tr class="memitem:a8e2f0ac2028c502035d7055990c63ebb" id="r_a8e2f0ac2028c502035d7055990c63ebb"><td class="memItemLeft" align="right" valign="top"><a id="a8e2f0ac2028c502035d7055990c63ebb" name="a8e2f0ac2028c502035d7055990c63ebb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AttenuatorBase</b> ()=default</td></tr>
+<tr class="memdesc:a8e2f0ac2028c502035d7055990c63ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class constructor. <br /></td></tr>
+<tr class="separator:a8e2f0ac2028c502035d7055990c63ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6235e16324ce13c05a26641603133e89" id="r_a6235e16324ce13c05a26641603133e89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/classAttenuatorBase.html#a6235e16324ce13c05a26641603133e89">AttenuatorBase</a> (<a class="el" href="../../d4/d9f/structAttenuatorDesignParameters.html">AttenuatorDesignParameters</a> AS)</td></tr>
+<tr class="memdesc:a6235e16324ce13c05a26641603133e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with design parameters.  <br /></td></tr>
 <tr class="separator:a6235e16324ce13c05a26641603133e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60b52418201bd644bc674405a16f25f7" id="r_a60b52418201bd644bc674405a16f25f7"><td class="memItemLeft" align="right" valign="top"><a id="a60b52418201bd644bc674405a16f25f7" name="a60b52418201bd644bc674405a16f25f7"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~AttenuatorBase</b> ()=default</td></tr>
+<tr class="memdesc:a60b52418201bd644bc674405a16f25f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class destructor. <br /></td></tr>
+<tr class="separator:a60b52418201bd644bc674405a16f25f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ffe2cc6c2281a9dc78102d96be32af9" id="r_a7ffe2cc6c2281a9dc78102d96be32af9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/classAttenuatorBase.html#a7ffe2cc6c2281a9dc78102d96be32af9">synthesize</a> ()=0</td></tr>
+<tr class="memdesc:a7ffe2cc6c2281a9dc78102d96be32af9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synthesize the attenuator: Calculates topology parameters and build the circuit.  <br /></td></tr>
 <tr class="separator:a7ffe2cc6c2281a9dc78102d96be32af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a142208d2d599bc2bb4318d37533ab609" id="r_a142208d2d599bc2bb4318d37533ab609"><td class="memItemLeft" align="right" valign="top"><a id="a142208d2d599bc2bb4318d37533ab609" name="a142208d2d599bc2bb4318d37533ab609"></a>
-QMap&lt; QString, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPowerDissipation</b> ()</td></tr>
+<tr class="memitem:a142208d2d599bc2bb4318d37533ab609" id="r_a142208d2d599bc2bb4318d37533ab609"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/classAttenuatorBase.html#a142208d2d599bc2bb4318d37533ab609">getPowerDissipation</a> ()</td></tr>
+<tr class="memdesc:a142208d2d599bc2bb4318d37533ab609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get power dissipation for all resistors in the attenuator.  <br /></td></tr>
 <tr class="separator:a142208d2d599bc2bb4318d37533ab609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classNetwork"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classNetwork')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/d16/classNetwork.html">Network</a></td></tr>
+<tr class="memitem:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork" id="r_ae833815d689402bacbeea0b6226ff85a"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Network</b> ()</td></tr>
+<tr class="memdesc:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ab7745a765e73cc16ec442f160ba54d1e" id="r_ab7745a765e73cc16ec442f160ba54d1e"><td class="memItemLeft" align="right" valign="top"><a id="ab7745a765e73cc16ec442f160ba54d1e" name="ab7745a765e73cc16ec442f160ba54d1e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateParams</b> ()=0</td></tr>
+<tr class="memitem:ab7745a765e73cc16ec442f160ba54d1e" id="r_ab7745a765e73cc16ec442f160ba54d1e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/classAttenuatorBase.html#ab7745a765e73cc16ec442f160ba54d1e">calculateParams</a> ()=0</td></tr>
+<tr class="memdesc:ab7745a765e73cc16ec442f160ba54d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate component values and power dissipation.  <br /></td></tr>
 <tr class="separator:ab7745a765e73cc16ec442f160ba54d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcc200d080ce7d28a7b1ba0a905b5bf8" id="r_adcc200d080ce7d28a7b1ba0a905b5bf8"><td class="memItemLeft" align="right" valign="top"><a id="adcc200d080ce7d28a7b1ba0a905b5bf8" name="adcc200d080ce7d28a7b1ba0a905b5bf8"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>buildNetwork</b> ()=0</td></tr>
+<tr class="memitem:adcc200d080ce7d28a7b1ba0a905b5bf8" id="r_adcc200d080ce7d28a7b1ba0a905b5bf8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/classAttenuatorBase.html#adcc200d080ce7d28a7b1ba0a905b5bf8">buildNetwork</a> ()=0</td></tr>
+<tr class="memdesc:adcc200d080ce7d28a7b1ba0a905b5bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the schematic network.  <br /></td></tr>
 <tr class="separator:adcc200d080ce7d28a7b1ba0a905b5bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a052d362e17bd99087f9ca22505237562" id="r_a052d362e17bd99087f9ca22505237562"><td class="memItemLeft" align="right" valign="top"><a id="a052d362e17bd99087f9ca22505237562" name="a052d362e17bd99087f9ca22505237562"></a>
 <a class="el" href="../../d4/d9f/structAttenuatorDesignParameters.html">AttenuatorDesignParameters</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Specification</b></td></tr>
+<tr class="memdesc:a052d362e17bd99087f9ca22505237562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Design specifications. <br /></td></tr>
 <tr class="separator:a052d362e17bd99087f9ca22505237562"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08985979b3ccfe13ca6c6578889b49c5" id="r_a08985979b3ccfe13ca6c6578889b49c5"><td class="memItemLeft" align="right" valign="top"><a id="a08985979b3ccfe13ca6c6578889b49c5" name="a08985979b3ccfe13ca6c6578889b49c5"></a>
 QMap&lt; QString, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Pdiss</b></td></tr>
+<tr class="memdesc:a08985979b3ccfe13ca6c6578889b49c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power dissipation per resistor (Watts) <br /></td></tr>
 <tr class="separator:a08985979b3ccfe13ca6c6578889b49c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -161,9 +181,131 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classNetwork"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classNetwork')"><img src="../../closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="../../d5/d16/classNetwork.html">Network</a></td></tr>
 <tr class="memitem:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork" id="r_a18c4ac582102779da804825a3500bd62"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../df/d9e/classSchematicContent.html">SchematicContent</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Schematic</b></td></tr>
+<tr class="memdesc:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork"><td class="mdescLeft">&#160;</td><td class="mdescRight">Circuit data including components, nets, and simulation info. <br /></td></tr>
 <tr class="separator:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract base class for RF attenuator implementations. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6235e16324ce13c05a26641603133e89" name="a6235e16324ce13c05a26641603133e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6235e16324ce13c05a26641603133e89">&#9670;&#160;</a></span>AttenuatorBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AttenuatorBase::AttenuatorBase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d9f/structAttenuatorDesignParameters.html">AttenuatorDesignParameters</a>&#160;</td>
+          <td class="paramname"><em>AS</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct with design parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">AS</td><td>Design specifications (attenuation, impedances, frequency, power, etc.) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="adcc200d080ce7d28a7b1ba0a905b5bf8" name="adcc200d080ce7d28a7b1ba0a905b5bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcc200d080ce7d28a7b1ba0a905b5bf8">&#9670;&#160;</a></span>buildNetwork()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void AttenuatorBase::buildNetwork </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Build the schematic network. </p>
+<dl class="section note"><dt>Note</dt><dd>Pure virtual - each attenuator type implements its own </dd></dl>
+
+</div>
+</div>
+<a id="ab7745a765e73cc16ec442f160ba54d1e" name="ab7745a765e73cc16ec442f160ba54d1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7745a765e73cc16ec442f160ba54d1e">&#9670;&#160;</a></span>calculateParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void AttenuatorBase::calculateParams </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate component values and power dissipation. </p>
+<dl class="section note"><dt>Note</dt><dd>Pure virtual - each attenuator type implements its own </dd></dl>
+
+</div>
+</div>
+<a id="a142208d2d599bc2bb4318d37533ab609" name="a142208d2d599bc2bb4318d37533ab609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a142208d2d599bc2bb4318d37533ab609">&#9670;&#160;</a></span>getPowerDissipation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt; QString, double &gt; AttenuatorBase::getPowerDissipation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get power dissipation for all resistors in the attenuator. </p>
+<dl class="section return"><dt>Returns</dt><dd>Map of resistor names to power values in Watts </dd></dl>
+
+</div>
+</div>
 <a id="a7ffe2cc6c2281a9dc78102d96be32af9" name="a7ffe2cc6c2281a9dc78102d96be32af9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ffe2cc6c2281a9dc78102d96be32af9">&#9670;&#160;</a></span>synthesize()</h2>
 
@@ -187,14 +329,16 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="../../d5/d16/classNetwork.html">Network</a>.</p>
+<p>Synthesize the attenuator: Calculates topology parameters and build the circuit. </p>
 
-<p>Implemented in <a class="el" href="../../df/d84/classLPadFirstSeries.html#a9ebf2bb0fd33ea40315015054e30f17d">LPadFirstSeries</a>, and <a class="el" href="../../d8/d9c/classLPadFirstShunt.html#a21363a24501f4fc0532e12169cbbd384">LPadFirstShunt</a>.</p>
+<p>Implements <a class="el" href="../../d5/d16/classNetwork.html#afeae260a8cae50beba4a3c9db5429057">Network</a>.</p>
+
+<p>Implemented in <a class="el" href="../../d5/d78/classBridgedTeeAttenuator.html#ac45adc11152516ddfa6d29e883919354">BridgedTeeAttenuator</a>, <a class="el" href="../../df/d84/classLPadFirstSeries.html#a9ebf2bb0fd33ea40315015054e30f17d">LPadFirstSeries</a>, <a class="el" href="../../d8/d9c/classLPadFirstShunt.html#a21363a24501f4fc0532e12169cbbd384">LPadFirstShunt</a>, <a class="el" href="../../d3/d22/classPiAttenuator.html#a68c98f1a023e4260ad2448fe6e81f28f">PiAttenuator</a>, <a class="el" href="../../dd/d2a/classQW__SeriesAttenuator.html#a48456756298ad311fa2ec7a965c07115">QW_SeriesAttenuator</a>, <a class="el" href="../../d7/d08/classQW__ShuntAttenuator.html#a35355df42256129d300d91512c3fb4ef">QW_ShuntAttenuator</a>, <a class="el" href="../../d2/dbc/classReflectionAttenuator.html#a228b09f055b9e88a6c6526bbfdd96878">ReflectionAttenuator</a>, <a class="el" href="../../d4/d5d/classRSeriesAttenuator.html#aea06a7a97d9a1565a4083a8e31b11d53">RSeriesAttenuator</a>, <a class="el" href="../../d5/d85/classRShuntAttenuator.html#a167a1874d9d16785a9aed922593e32ac">RShuntAttenuator</a>, and <a class="el" href="../../db/dd8/classTeeAttenuator.html#a36809d814f83e90b5e7f8ebaaf5fe36e">TeeAttenuator</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Tools/AttenuatorDesign/<a class="el" href="../../de/d71/AttenuatorBase_8h_source.html">AttenuatorBase.h</a></li>
+<li>Tools/DesignTools/AttenuatorDesign/<a class="el" href="../../de/d71/AttenuatorBase_8h_source.html">AttenuatorBase.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

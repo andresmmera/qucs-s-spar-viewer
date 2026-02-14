@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -76,6 +75,12 @@ $(function() {
   <div class="headertitle"><div class="title">Recombinant3WayWilkinson Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Recombinant 3-way Wilkinson-type power combiner/divider network References: [1] "Power combiners, impedance transformers and directional couplers: part
+II". Andrei Grebennikov. High Frequency Electronics. 2008 [2] "A recombinant in-phase power divider", IEEE Trans. Microwave Theory Tech., vol. MTT-39, Aug. 1991, pp. 1438-1440.  
+ <a href="../../d0/d4c/classRecombinant3WayWilkinson.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dc/dd5/Recombinant3WayWilkinson_8h_source.html">Recombinant3WayWilkinson.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Recombinant3WayWilkinson:</div>
 <div class="dyncontent">
@@ -101,19 +106,72 @@ Collaboration diagram for Recombinant3WayWilkinson:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a822d9b194ef112096aff5f0ea1285120" id="r_a822d9b194ef112096aff5f0ea1285120"><td class="memItemLeft" align="right" valign="top"><a id="a822d9b194ef112096aff5f0ea1285120" name="a822d9b194ef112096aff5f0ea1285120"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Recombinant3WayWilkinson</b> (<a class="el" href="../../db/d8b/structPowerCombinerParams.html">PowerCombinerParams</a>)</td></tr>
-<tr class="separator:a822d9b194ef112096aff5f0ea1285120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7974743404334a7dfbc5484eae97c760" id="r_a7974743404334a7dfbc5484eae97c760"><td class="memItemLeft" align="right" valign="top"><a id="a7974743404334a7dfbc5484eae97c760" name="a7974743404334a7dfbc5484eae97c760"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Recombinant3WayWilkinson</b> ()</td></tr>
+<tr class="memdesc:a7974743404334a7dfbc5484eae97c760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class constructor. <br /></td></tr>
+<tr class="separator:a7974743404334a7dfbc5484eae97c760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a382a7b579da680806a72022a3f2532b4" id="r_a382a7b579da680806a72022a3f2532b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d4c/classRecombinant3WayWilkinson.html#a382a7b579da680806a72022a3f2532b4">Recombinant3WayWilkinson</a> (<a class="el" href="../../db/d8b/structPowerCombinerParams.html">PowerCombinerParams</a> PS)</td></tr>
+<tr class="memdesc:a382a7b579da680806a72022a3f2532b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with power combiner parameters.  <br /></td></tr>
+<tr class="separator:a382a7b579da680806a72022a3f2532b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaff85a3d2ef09ee8040fad0c687b50f" id="r_adaff85a3d2ef09ee8040fad0c687b50f"><td class="memItemLeft" align="right" valign="top"><a id="adaff85a3d2ef09ee8040fad0c687b50f" name="adaff85a3d2ef09ee8040fad0c687b50f"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Recombinant3WayWilkinson</b> ()</td></tr>
+<tr class="memdesc:adaff85a3d2ef09ee8040fad0c687b50f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class destructor. <br /></td></tr>
+<tr class="separator:adaff85a3d2ef09ee8040fad0c687b50f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d43a7242413f2ff31c63aa6f274a336" id="r_a6d43a7242413f2ff31c63aa6f274a336"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d4c/classRecombinant3WayWilkinson.html#a6d43a7242413f2ff31c63aa6f274a336">synthesize</a> ()</td></tr>
+<tr class="memdesc:a6d43a7242413f2ff31c63aa6f274a336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synthesize the network.  <br /></td></tr>
 <tr class="separator:a6d43a7242413f2ff31c63aa6f274a336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classNetwork"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classNetwork')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/d16/classNetwork.html">Network</a></td></tr>
+<tr class="memitem:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork" id="r_ae833815d689402bacbeea0b6226ff85a"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Network</b> ()</td></tr>
+<tr class="memdesc:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:ae833815d689402bacbeea0b6226ff85a inherit pub_methods_classNetwork"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classNetwork"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classNetwork')"><img src="../../closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="../../d5/d16/classNetwork.html">Network</a></td></tr>
 <tr class="memitem:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork" id="r_a18c4ac582102779da804825a3500bd62"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../df/d9e/classSchematicContent.html">SchematicContent</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Schematic</b></td></tr>
+<tr class="memdesc:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork"><td class="mdescLeft">&#160;</td><td class="mdescRight">Circuit data including components, nets, and simulation info. <br /></td></tr>
 <tr class="separator:a18c4ac582102779da804825a3500bd62 inherit pub_attribs_classNetwork"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Recombinant 3-way Wilkinson-type power combiner/divider network References: [1] "Power combiners, impedance transformers and directional couplers: part
+II". Andrei Grebennikov. High Frequency Electronics. 2008 [2] "A recombinant in-phase power divider", IEEE Trans. Microwave Theory Tech., vol. MTT-39, Aug. 1991, pp. 1438-1440. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a382a7b579da680806a72022a3f2532b4" name="a382a7b579da680806a72022a3f2532b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a382a7b579da680806a72022a3f2532b4">&#9670;&#160;</a></span>Recombinant3WayWilkinson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Recombinant3WayWilkinson::Recombinant3WayWilkinson </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d8b/structPowerCombinerParams.html">PowerCombinerParams</a>&#160;</td>
+          <td class="paramname"><em>PS</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor with power combiner parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">params</td><td>Power combiner specification parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6d43a7242413f2ff31c63aa6f274a336" name="a6d43a7242413f2ff31c63aa6f274a336"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6d43a7242413f2ff31c63aa6f274a336">&#9670;&#160;</a></span>synthesize()</h2>
@@ -138,13 +196,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="../../d5/d16/classNetwork.html">Network</a>.</p>
+<p>Synthesize the network. </p>
+
+<p>Implements <a class="el" href="../../d5/d16/classNetwork.html#afeae260a8cae50beba4a3c9db5429057">Network</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Tools/PowerCombining/<a class="el" href="../../dc/dd5/Recombinant3WayWilkinson_8h_source.html">Recombinant3WayWilkinson.h</a></li>
-<li>Tools/PowerCombining/<b>Recombinant3WayWilkinson.cpp</b></li>
+<li>Tools/DesignTools/PowerCombining/<a class="el" href="../../dc/dd5/Recombinant3WayWilkinson_8h_source.html">Recombinant3WayWilkinson.h</a></li>
+<li>Tools/DesignTools/PowerCombining/<a class="el" href="../../d3/d68/Recombinant3WayWilkinson_8cpp.html">Recombinant3WayWilkinson.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

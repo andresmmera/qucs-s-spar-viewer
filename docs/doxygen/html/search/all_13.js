@@ -1,8 +1,23 @@
 var searchData=
 [
-  ['wilkinson2way_0',['Wilkinson2Way',['../d0/de7/classWilkinson2Way.html',1,'']]],
-  ['wilkinson3way_5fimprovedisolation_1',['Wilkinson3Way_ImprovedIsolation',['../df/dfb/classWilkinson3Way__ImprovedIsolation.html',1,'']]],
-  ['wire_2',['Wire',['../d7/d64/classWire.html',1,'']]],
-  ['wireinfo_3',['WireInfo',['../d2/d93/classWireInfo.html',1,'']]],
-  ['work_4',['Saving Work',['../index.html#autotoc_md14',1,'']]]
+  ['undefinepen_0',['undefinePen',['../d6/d53/classQCPScatterStyle.html#acabc2a8c83d650b946f50c3166b6c35e',1,'QCPScatterStyle']]],
+  ['under_20or_20between_20graphs_1',['Filling under or between graphs',['../dd/dff/classQCPGraph.html#filling',1,'']]],
+  ['uniqueid_2',['uniqueId',['../dc/dc7/structTraceInfo.html#a71906a0cf6ef62dda7e2b6359d3264e6',1,'TraceInfo']]],
+  ['units_3',['units',['../de/d86/structRectangularPlotWidget_1_1Trace.html#aebcd065a41024897a4c3b4329854d6a4',1,'RectangularPlotWidget::Trace::units'],['../d9/d14/general_8h.html#ac33d2b1fdba15c8bfb494f9cf0ef4190',1,'Units:&#160;general.h'],['../db/d8b/structPowerCombinerParams.html#ad2199e07ea98970ba2aaa6d4784efe24',1,'PowerCombinerParams::units']]],
+  ['up_20to_20the_4',['Leaving the color/pen up to the',['../d6/d53/classQCPScatterStyle.html#QCPScatterStyle-undefinedpen',1,'']]],
+  ['update_5',['update',['../d7/dd0/classQCPLayoutElement.html#a929c2ec62e0e0e1d8418eaa802e2af9b',1,'QCPLayoutElement::update()'],['../dd/d49/classQCPLayout.html#a48ecc9c98ea90b547c3e27a931a8f7bd',1,'QCPLayout::update()'],['../d9/d8c/classQCPAxisRect.html#add049d464b9ef2ccdc638adc4ccb4aca',1,'QCPAxisRect::update()'],['../d9/d3e/classQCPColorScale.html#a259dcb6d3053a2cc3c197e9b1191ddbe',1,'QCPColorScale::update()'],['../d2/dbc/classQCPPolarAxisAngular.html#a9f2dfb377cdf3ce22a451fa9d3ab47e6',1,'QCPPolarAxisAngular::update()'],['../d8/d95/classQCPColorScaleAxisRectPrivate.html#add049d464b9ef2ccdc638adc4ccb4aca',1,'QCPColorScaleAxisRectPrivate::update()']]],
+  ['updatelegendicon_6',['updateLegendIcon',['../d3/dd5/classQCPColorMap.html#a5d8158b62d55fcfeaabcb68ce0083e87',1,'QCPColorMap']]],
+  ['updatelimit_7',['updateLimit',['../d8/dee/classRectangularPlotWidget.html#a2a8ce86d9d2fc2b659cfeb3b672a803f',1,'RectangularPlotWidget']]],
+  ['updatemarkerfrequency_8',['updatemarkerfrequency',['../de/d80/classPolarPlotWidget.html#a5630bf2e229b603614fc1ea33f53874d',1,'PolarPlotWidget::updateMarkerFrequency()'],['../d9/dca/classSmithChartWidget.html#a7f4030d6db1c3da3428f54476cebf89d',1,'SmithChartWidget::updateMarkerFrequency()'],['../d8/dee/classRectangularPlotWidget.html#a81b1cfbbc887d3d6327b6719444eff41',1,'RectangularPlotWidget::updateMarkerFrequency()']]],
+  ['updatephase_9',['UpdatePhase',['../d7/dd0/classQCPLayoutElement.html#a0d83360e05735735aaf6d7983c56374d',1,'QCPLayoutElement']]],
+  ['updateplot_10',['updatePlot',['../d8/dee/classRectangularPlotWidget.html#a952e0db042a35b30769cb2263e8550cb',1,'RectangularPlotWidget']]],
+  ['updateposition_11',['updatePosition',['../d0/d93/classQCPItemTracer.html#a5b90296109e36384aedbc8908a670413',1,'QCPItemTracer']]],
+  ['updateschematic_12',['updateschematic',['../da/d3c/classPowerCombiningTool.html#a4a1f688f4ef39fe30553c0cbf5469384',1,'PowerCombiningTool::updateSchematic()'],['../d5/d0b/classAttenuatorDesignTool.html#a7928d98b489259c1a405139afd9e01f7',1,'AttenuatorDesignTool::updateSchematic()'],['../d8/dad/classFilterDesignTool.html#a55c5edc6dda7f555b69c0a0b1c860341',1,'FilterDesignTool::updateSchematic()'],['../da/db3/classMatchingNetworkDesignTool.html#acb81102db296a0d1fab23fbe9acadbb2',1,'MatchingNetworkDesignTool::updateSchematic()']]],
+  ['updatesimulation_13',['updatesimulation',['../d8/dad/classFilterDesignTool.html#a72753f48898c5717dcd7fde97ef27a2f',1,'FilterDesignTool::updateSimulation()'],['../db/d70/classSimulationSetup.html#a1359e74887d1d1ea067a0573c37a19e1',1,'SimulationSetup::updateSimulation()'],['../da/d3c/classPowerCombiningTool.html#ae5d98d82f7699e8e7d6dd653652a9523',1,'PowerCombiningTool::updateSimulation()'],['../d2/d24/classNetlistScratchPad.html#a09cfb1a64c788cd60c3d4701122467d4',1,'NetlistScratchPad::updateSimulation()'],['../da/db3/classMatchingNetworkDesignTool.html#a0074f2eea90fe4649fa8a9539a40afde',1,'MatchingNetworkDesignTool::updateSimulation()'],['../d5/d0b/classAttenuatorDesignTool.html#a9ddf78a2c97d8ae745de19d3722cb591',1,'AttenuatorDesignTool::updateSimulation()']]],
+  ['updatesubstrate_14',['updateSubstrate',['../db/d70/classSimulationSetup.html#af36ec528b7a0bd7bc7cde15a2fe4e30c',1,'SimulationSetup']]],
+  ['uplayout_15',['upLayout',['../d7/dd0/classQCPLayoutElement.html#a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045',1,'QCPLayoutElement']]],
+  ['upmargins_16',['upMargins',['../d7/dd0/classQCPLayoutElement.html#a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676',1,'QCPLayoutElement']]],
+  ['uppreparation_17',['upPreparation',['../d7/dd0/classQCPLayoutElement.html#a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3',1,'QCPLayoutElement']]],
+  ['usage_18',['usage',['../index.html#autotoc_md10',1,'Usage'],['../d5/d0b/classQCPCurve.html#qcpcurve-usage',1,'Usage'],['../d4/d2a/classQCPBarsGroup.html#qcpbarsgroup-usage',1,'Usage'],['../d6/def/classQCPBars.html#qcpbars-usage',1,'Usage'],['../d8/d82/classQCPStatisticalBox.html#qcpstatisticalbox-usage',1,'Usage'],['../d3/dd5/classQCPColorMap.html#qcpcolormap-usage',1,'Usage'],['../da/d5b/classQCPFinancial.html#qcpfinancial-usage',1,'Usage']]],
+  ['using_20items_19',['Using items',['../d9/d9a/classQCPAbstractItem.html#items-using',1,'']]]
 ];

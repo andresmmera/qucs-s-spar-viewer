@@ -20,7 +20,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="../../qucs-s.png"/></td>
   <td id="projectalign">
    <div id="projectname">Qucs-S S-parameter Viewer &amp; RF Synthesis Tools
    </div>
@@ -79,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>[0]  
+<p><a class="el" href="../../d7/d64/classWire.html" title="Wire connection between symbols.">Wire</a> connection between symbols.  
  <a href="../../d7/d64/classWire.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d9/d9b/wire_8h_source.html">wire.h</a>&gt;</code></p>
@@ -112,51 +111,371 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad0b8e561f5bbdeb4a8e349644afb7779" id="r_ad0b8e561f5bbdeb4a8e349644afb7779"><td class="memItemLeft" align="right" valign="top"><a id="ad0b8e561f5bbdeb4a8e349644afb7779" name="ad0b8e561f5bbdeb4a8e349644afb7779"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Wire</b> (<a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *sourceNode, int port_num_source, <a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *destNode, int port_num_dest)</td></tr>
+<tr class="memitem:ad0b8e561f5bbdeb4a8e349644afb7779" id="r_ad0b8e561f5bbdeb4a8e349644afb7779"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d64/classWire.html#ad0b8e561f5bbdeb4a8e349644afb7779">Wire</a> (<a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *<a class="el" href="../../d7/d64/classWire.html#acee12274d58447f49a9d78b2ffffa7da">sourceNode</a>, int port_num_source, <a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *<a class="el" href="../../d7/d64/classWire.html#ad6e06171638e4179bb468bfc88ab4998">destNode</a>, int port_num_dest)</td></tr>
+<tr class="memdesc:ad0b8e561f5bbdeb4a8e349644afb7779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct wire with source and destination.  <br /></td></tr>
 <tr class="separator:ad0b8e561f5bbdeb4a8e349644afb7779"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fde4db5cadd7633f553739727651838" id="r_a0fde4db5cadd7633f553739727651838"><td class="memItemLeft" align="right" valign="top"><a id="a0fde4db5cadd7633f553739727651838" name="a0fde4db5cadd7633f553739727651838"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSource</b> (<a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *, int)</td></tr>
-<tr class="separator:a0fde4db5cadd7633f553739727651838"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a1532e0b62aeda829b53f90b9399acd" id="r_a3a1532e0b62aeda829b53f90b9399acd"><td class="memItemLeft" align="right" valign="top"><a id="a3a1532e0b62aeda829b53f90b9399acd" name="a3a1532e0b62aeda829b53f90b9399acd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDestination</b> (<a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *, int)</td></tr>
-<tr class="separator:a3a1532e0b62aeda829b53f90b9399acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29ab91d6c83e898bbd49485685992bcb" id="r_a29ab91d6c83e898bbd49485685992bcb"><td class="memItemLeft" align="right" valign="top"><a id="a29ab91d6c83e898bbd49485685992bcb" name="a29ab91d6c83e898bbd49485685992bcb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setColor</b> (QColor)</td></tr>
-<tr class="separator:a29ab91d6c83e898bbd49485685992bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66dc5e7067329d8661456b272d2566ea" id="r_a66dc5e7067329d8661456b272d2566ea"><td class="memItemLeft" align="right" valign="top"><a id="a66dc5e7067329d8661456b272d2566ea" name="a66dc5e7067329d8661456b272d2566ea"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Wire</b> ()</td></tr>
+<tr class="memdesc:a66dc5e7067329d8661456b272d2566ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="separator:a66dc5e7067329d8661456b272d2566ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59484bad1e9bf939a4d087092f0380c1" id="r_a59484bad1e9bf939a4d087092f0380c1"><td class="memItemLeft" align="right" valign="top"><a id="a59484bad1e9bf939a4d087092f0380c1" name="a59484bad1e9bf939a4d087092f0380c1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~Wire</b> ()</td></tr>
+<tr class="memdesc:a59484bad1e9bf939a4d087092f0380c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class destructor. <br /></td></tr>
+<tr class="separator:a59484bad1e9bf939a4d087092f0380c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a382f3f869049339ca35d046fceaf6983" id="r_a382f3f869049339ca35d046fceaf6983"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d64/classWire.html#a382f3f869049339ca35d046fceaf6983">setSource</a> (<a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *<a class="el" href="../../d7/d64/classWire.html#ad6e06171638e4179bb468bfc88ab4998">destNode</a>, int port)</td></tr>
+<tr class="memdesc:a382f3f869049339ca35d046fceaf6983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set wire source.  <br /></td></tr>
+<tr class="separator:a382f3f869049339ca35d046fceaf6983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2783b1a2a6f8ff9b093b598e96dcfe7f" id="r_a2783b1a2a6f8ff9b093b598e96dcfe7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d64/classWire.html#a2783b1a2a6f8ff9b093b598e96dcfe7f">setDestination</a> (<a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *<a class="el" href="../../d7/d64/classWire.html#ad6e06171638e4179bb468bfc88ab4998">destNode</a>, int port)</td></tr>
+<tr class="memdesc:a2783b1a2a6f8ff9b093b598e96dcfe7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set wire destination.  <br /></td></tr>
+<tr class="separator:a2783b1a2a6f8ff9b093b598e96dcfe7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa36d46e84ed88f564501c3e683909608" id="r_aa36d46e84ed88f564501c3e683909608"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d64/classWire.html#aa36d46e84ed88f564501c3e683909608">setColor</a> (QColor Color)</td></tr>
+<tr class="memdesc:aa36d46e84ed88f564501c3e683909608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set wire color.  <br /></td></tr>
+<tr class="separator:aa36d46e84ed88f564501c3e683909608"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b6f86d4c1c0981b57fb8816792a1c7c" id="r_a2b6f86d4c1c0981b57fb8816792a1c7c"><td class="memItemLeft" align="right" valign="top"><a id="a2b6f86d4c1c0981b57fb8816792a1c7c" name="a2b6f86d4c1c0981b57fb8816792a1c7c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>paintWire</b> ()</td></tr>
+<tr class="memdesc:a2b6f86d4c1c0981b57fb8816792a1c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paint wire on scene. <br /></td></tr>
 <tr class="separator:a2b6f86d4c1c0981b57fb8816792a1c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acee12274d58447f49a9d78b2ffffa7da" id="r_acee12274d58447f49a9d78b2ffffa7da"><td class="memItemLeft" align="right" valign="top"><a id="acee12274d58447f49a9d78b2ffffa7da" name="acee12274d58447f49a9d78b2ffffa7da"></a>
-<a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sourceNode</b> () const</td></tr>
+<tr class="memitem:acee12274d58447f49a9d78b2ffffa7da" id="r_acee12274d58447f49a9d78b2ffffa7da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d64/classWire.html#acee12274d58447f49a9d78b2ffffa7da">sourceNode</a> () const</td></tr>
+<tr class="memdesc:acee12274d58447f49a9d78b2ffffa7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get source symbol.  <br /></td></tr>
 <tr class="separator:acee12274d58447f49a9d78b2ffffa7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6e06171638e4179bb468bfc88ab4998" id="r_ad6e06171638e4179bb468bfc88ab4998"><td class="memItemLeft" align="right" valign="top"><a id="ad6e06171638e4179bb468bfc88ab4998" name="ad6e06171638e4179bb468bfc88ab4998"></a>
-<a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>destNode</b> () const</td></tr>
+<tr class="memitem:ad6e06171638e4179bb468bfc88ab4998" id="r_ad6e06171638e4179bb468bfc88ab4998"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d64/classWire.html#ad6e06171638e4179bb468bfc88ab4998">destNode</a> () const</td></tr>
+<tr class="memdesc:ad6e06171638e4179bb468bfc88ab4998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get destination symbol.  <br /></td></tr>
 <tr class="separator:ad6e06171638e4179bb468bfc88ab4998"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a347caf8ddad7854496728148f3eab138" id="r_a347caf8ddad7854496728148f3eab138"><td class="memItemLeft" align="right" valign="top"><a id="a347caf8ddad7854496728148f3eab138" name="a347caf8ddad7854496728148f3eab138"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>adjust</b> ()</td></tr>
+<tr class="memdesc:a347caf8ddad7854496728148f3eab138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust wire geometry based on endpoint positions. <br /></td></tr>
 <tr class="separator:a347caf8ddad7854496728148f3eab138"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ec45a7d7bc1352a13d0b89cab0f1103" id="r_a8ec45a7d7bc1352a13d0b89cab0f1103"><td class="memItemLeft" align="right" valign="top"><a id="a8ec45a7d7bc1352a13d0b89cab0f1103" name="a8ec45a7d7bc1352a13d0b89cab0f1103"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>type</b> () const</td></tr>
 <tr class="separator:a8ec45a7d7bc1352a13d0b89cab0f1103"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17f12242f8477c3e9c251340a543ad81" id="r_a17f12242f8477c3e9c251340a543ad81"><td class="memItemLeft" align="right" valign="top"><a id="a17f12242f8477c3e9c251340a543ad81" name="a17f12242f8477c3e9c251340a543ad81"></a>
-QPoint&#160;</td><td class="memItemRight" valign="bottom"><b>getPortLocation</b> (int)</td></tr>
-<tr class="separator:a17f12242f8477c3e9c251340a543ad81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:acafabef220de1cfce1ce17cf5d86655c" id="r_acafabef220de1cfce1ce17cf5d86655c"><td class="memItemLeft" align="right" valign="top"><a id="acafabef220de1cfce1ce17cf5d86655c" name="acafabef220de1cfce1ce17cf5d86655c"></a>
-QRectF&#160;</td><td class="memItemRight" valign="bottom"><b>boundingRect</b> () const</td></tr>
+<tr class="memitem:acafabef220de1cfce1ce17cf5d86655c" id="r_acafabef220de1cfce1ce17cf5d86655c"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d64/classWire.html#acafabef220de1cfce1ce17cf5d86655c">boundingRect</a> () const</td></tr>
+<tr class="memdesc:acafabef220de1cfce1ce17cf5d86655c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get wire bounding rectangle.  <br /></td></tr>
 <tr class="separator:acafabef220de1cfce1ce17cf5d86655c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06e15e6bda5fbd104a16008bdfc3062d" id="r_a06e15e6bda5fbd104a16008bdfc3062d"><td class="memItemLeft" align="right" valign="top"><a id="a06e15e6bda5fbd104a16008bdfc3062d" name="a06e15e6bda5fbd104a16008bdfc3062d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>paint</b> (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)</td></tr>
+<tr class="memitem:a06e15e6bda5fbd104a16008bdfc3062d" id="r_a06e15e6bda5fbd104a16008bdfc3062d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d64/classWire.html#a06e15e6bda5fbd104a16008bdfc3062d">paint</a> (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)</td></tr>
+<tr class="memdesc:a06e15e6bda5fbd104a16008bdfc3062d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paint wire.  <br /></td></tr>
 <tr class="separator:a06e15e6bda5fbd104a16008bdfc3062d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>[0] </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p><a class="el" href="../../d7/d64/classWire.html" title="Wire connection between symbols.">Wire</a> connection between symbols. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad0b8e561f5bbdeb4a8e349644afb7779" name="ad0b8e561f5bbdeb4a8e349644afb7779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0b8e561f5bbdeb4a8e349644afb7779">&#9670;&#160;</a></span>Wire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Wire::Wire </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *&#160;</td>
+          <td class="paramname"><em>sourceNode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port_num_source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *&#160;</td>
+          <td class="paramname"><em>destNode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port_num_dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct wire with source and destination. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sourceNode</td><td>Source symbol </td></tr>
+    <tr><td class="paramname">port_num_source</td><td>Source port number </td></tr>
+    <tr><td class="paramname">destNode</td><td>Destination symbol </td></tr>
+    <tr><td class="paramname">port_num_dest</td><td>Destination port number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="acafabef220de1cfce1ce17cf5d86655c" name="acafabef220de1cfce1ce17cf5d86655c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acafabef220de1cfce1ce17cf5d86655c">&#9670;&#160;</a></span>boundingRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRectF Wire::boundingRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get wire bounding rectangle. </p>
+<dl class="section return"><dt>Returns</dt><dd>Bounding rectangle </dd></dl>
+
+</div>
+</div>
+<a id="ad6e06171638e4179bb468bfc88ab4998" name="ad6e06171638e4179bb468bfc88ab4998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6e06171638e4179bb468bfc88ab4998">&#9670;&#160;</a></span>destNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> * Wire::destNode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get destination symbol. </p>
+<dl class="section return"><dt>Returns</dt><dd>Destination symbol pointer </dd></dl>
+
+</div>
+</div>
+<a id="a06e15e6bda5fbd104a16008bdfc3062d" name="a06e15e6bda5fbd104a16008bdfc3062d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e15e6bda5fbd104a16008bdfc3062d">&#9670;&#160;</a></span>paint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Wire::paint </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>widget</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Paint wire. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">painter</td><td>QPainter instance </td></tr>
+    <tr><td class="paramname">option</td><td>Style options </td></tr>
+    <tr><td class="paramname">widget</td><td>Target widget </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa36d46e84ed88f564501c3e683909608" name="aa36d46e84ed88f564501c3e683909608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa36d46e84ed88f564501c3e683909608">&#9670;&#160;</a></span>setColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Wire::setColor </td>
+          <td>(</td>
+          <td class="paramtype">QColor&#160;</td>
+          <td class="paramname"><em>Color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set wire color. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Color</td><td><a class="el" href="../../d7/d64/classWire.html" title="Wire connection between symbols.">Wire</a> color </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2783b1a2a6f8ff9b093b598e96dcfe7f" name="a2783b1a2a6f8ff9b093b598e96dcfe7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2783b1a2a6f8ff9b093b598e96dcfe7f">&#9670;&#160;</a></span>setDestination()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Wire::setDestination </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *&#160;</td>
+          <td class="paramname"><em>destNode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set wire destination. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">destNode</td><td>Destination symbol </td></tr>
+    <tr><td class="paramname">port</td><td>Destination port number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a382f3f869049339ca35d046fceaf6983" name="a382f3f869049339ca35d046fceaf6983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a382f3f869049339ca35d046fceaf6983">&#9670;&#160;</a></span>setSource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Wire::setSource </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> *&#160;</td>
+          <td class="paramname"><em>destNode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set wire source. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sourceNode</td><td>Source symbol </td></tr>
+    <tr><td class="paramname">port</td><td>Source port number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acee12274d58447f49a9d78b2ffffa7da" name="acee12274d58447f49a9d78b2ffffa7da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acee12274d58447f49a9d78b2ffffa7da">&#9670;&#160;</a></span>sourceNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d0f/classSymbol.html">Symbol</a> * Wire::sourceNode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get source symbol. </p>
+<dl class="section return"><dt>Returns</dt><dd>Source symbol pointer </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>Schematic/<a class="el" href="../../d9/d9b/wire_8h_source.html">wire.h</a></li>
-<li>Schematic/<b>wire.cpp</b></li>
+<li>Schematic/<a class="el" href="../../d9/d87/wire_8cpp.html">wire.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

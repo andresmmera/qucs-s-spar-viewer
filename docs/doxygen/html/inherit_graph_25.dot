@@ -1,0 +1,21 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="QCPAxisTicker",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$de/d56/classQCPAxisTicker.html",tooltip="The base class tick generator used by QCPAxis to create tick positions and tick labels."];
+  Node0 -> Node1 [id="edge39_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="QCPAxisTickerDateTime",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$dd/d9e/classQCPAxisTickerDateTime.html",tooltip="Specialized axis ticker for calendar dates and times as axis ticks."];
+  Node0 -> Node2 [id="edge40_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="QCPAxisTickerFixed",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$de/de8/classQCPAxisTickerFixed.html",tooltip="Specialized axis ticker with a fixed tick step."];
+  Node0 -> Node3 [id="edge41_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="QCPAxisTickerLog",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$de/d6a/classQCPAxisTickerLog.html",tooltip="Specialized axis ticker suited for logarithmic axes."];
+  Node0 -> Node4 [id="edge42_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="QCPAxisTickerPi",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d6/df1/classQCPAxisTickerPi.html",tooltip="Specialized axis ticker to display ticks in units of an arbitrary constant, for example pi."];
+  Node0 -> Node5 [id="edge43_Node000000_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="QCPAxisTickerText",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d9/d81/classQCPAxisTickerText.html",tooltip="Specialized axis ticker which allows arbitrary labels at specified coordinates."];
+  Node0 -> Node6 [id="edge44_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="QCPAxisTickerTime",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d1/dea/classQCPAxisTickerTime.html",tooltip="Specialized axis ticker for time spans in units of milliseconds to days."];
+}
