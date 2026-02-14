@@ -4,7 +4,7 @@
     {
       "label": "Sphinx: Build HTML",
       "type": "shell",
-      "command": "${workspaceFolder}/help-venv/bin/python",
+      "command": "${workspaceFolder}/sphinx-venv/bin/python",
       "args": ["-m", "sphinx", "-b", "html", "source", "build/html"],
       "group": "build",
       "problemMatcher": [],
