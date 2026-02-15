@@ -271,9 +271,9 @@ void SimulationSetup::updateImageDisplay() {
   // Load and display the appropriate cross-section image
   QString imagePath;
   if (transmissionLineComboBox->currentIndex() == 0) { // Microstrip
-    imagePath = ":/Tools/SimulationSetup/bitmaps/microstrip.png";
+    imagePath = ":/Tools/DesignTools/SimulationSetup/bitmaps/microstrip.png";
   } else { // Stripline
-    imagePath = ":/Tools/SimulationSetup/bitmaps/stripline.png";
+    imagePath = ":/Tools/DesignTools/SimulationSetup/bitmaps/stripline.png";
   }
 
   QPixmap pixmap(imagePath);
