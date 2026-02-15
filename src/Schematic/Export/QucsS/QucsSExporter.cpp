@@ -304,14 +304,13 @@ QString QucsSExporter::processComponents_QucsS(QString backend_simulator) {
 }
 
 MS_Substrate QucsSExporter::get_MS_Substrate(ComponentInfo Comp) {
-  MS_Substrate subs;
-  subs.er = Comp.val["er"].toDouble();
-  subs.height = Comp.val["h"].toDouble();
-  subs.MetalConductivity = Comp.val["cond"].toDouble();
-  subs.MetalThickness = Comp.val["th"].toDouble();
-  subs.tand = Comp.val["tand"].toDouble();
-
-  return subs;
+    MS_Substrate subs;
+    subs.er                = parseValueWithUnit(Comp.val["er"]);
+    subs.height            = parseValueWithUnit(Comp.val["h"]);
+    subs.MetalConductivity = parseValueWithUnit(Comp.val["cond"]);
+    subs.MetalThickness    = parseValueWithUnit(Comp.val["th"]);
+    subs.tand              = parseValueWithUnit(Comp.val["tand"]);
+    return subs;
 }
 
 QString QucsSExporter::addSubstrateBox(QList<MS_Substrate> subs_list,
@@ -323,8 +322,8 @@ QString QucsSExporter::addSubstrateBox(QList<MS_Substrate> subs_list,
     const MS_Substrate &s = subs_list_simplified[i];
     // Format fields as requested (use mm and um for better readability)
     QString line =
-        QString("<SUBST Subst%1 1 %2 %3 -30 24 0 0 \"%2\" 1 \"%3 mm\" 1 "
-                "\"%4 um\" 1 \"%5\" 1 \"%6\" 1 \"%7\" 1>")
+        QString("<SUBST Subst%1 1 %2 %3 -30 24 0 0 \"%4\" 1 \"%5 mm\" 1 "
+                "\"%6 um\" 1 \"%7\" 1 \"%8\" 1 \"%9\" 1>")
             .arg(i + 1)
             .arg(x_bottom)
             .arg(y_bottom)

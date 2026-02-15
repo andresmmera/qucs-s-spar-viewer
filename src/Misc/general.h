@@ -83,6 +83,11 @@ double getFreqScale(QString frequency_unit);
 /// @return Scale factor
 double getScaleFactor(QString scale);
 
+/// @brief Parse string containing magnitude and scale factor (e.g 5mm, 500u, etc)
+/// @param input string (500 um)
+/// @param output double (5e-4)
+double parseValueWithUnit(const QString& str);
+
 /// @brief Finds index of closest value in list
 /// @param list List to search
 /// @param value Target value
