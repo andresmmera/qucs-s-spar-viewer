@@ -486,3 +486,23 @@ double getScaleFactor(QString scale) {
     return 1.0; // No prefix
   }
 }
+
+
+double parseValueWithUnit(const QString& str) {
+    bool ok;
+    double value = str.toDouble(&ok);
+    if (ok) return value; // Plain number, no suffix
+
+    // Find where the numeric part ends
+    int i = 0;
+    while (i < str.size() && (str[i].isDigit() || str[i] == '.' || str[i] == '-' || str[i] == '+' || str[i] == 'e' || str[i] == 'E'))
+        ++i;
+
+    double numeric = str.left(i).toDouble(&ok);
+    if (!ok) return 0.0;
+
+    // The remainder is the unit string (e.g. "mm", "u", "m")
+    // Pass just the first character (the SI prefix) to getScaleFactor
+    QString suffix = str.mid(i);
+    return numeric * getScaleFactor(suffix);
+}

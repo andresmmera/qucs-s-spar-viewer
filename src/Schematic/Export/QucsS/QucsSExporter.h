@@ -11,6 +11,7 @@
 #include "Schematic/SchematicContent.h"
 #include "Schematic/Export/SchematicExporter.h"
 #include "Schematic/Export/QucsS/QucsSExporter.h"
+#include "Misc/general.h"
 
 // This is needed for catching the current Qucs-S version
 #ifdef HAVE_CONFIG_H
