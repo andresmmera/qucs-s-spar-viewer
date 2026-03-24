@@ -1,8 +1,8 @@
 /// @file WyeCombiner.cpp
 /// @brief Direct N-way Wye resistive power splitter (implementation)
 /// @author Andrés Martínez Mera - andresmmera@protonmail.com
-/// @date Mar 22, 2026
-/// @copyright Copyright (C) 2019-2025 Andrés Martínez Mera
+/// @date Mar 24, 2026
+/// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 ///
 /// Design equation:

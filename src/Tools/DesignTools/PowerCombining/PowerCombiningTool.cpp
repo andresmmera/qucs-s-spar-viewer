@@ -29,6 +29,7 @@ PowerCombiningTool::PowerCombiningTool(QWidget *parent) : QWidget(parent) {
   TopoCombo->addItem("3 Way Wilkinson Improved Isolation");
   TopoCombo->addItem("Recombinant 3 Way Wilkinson");
   TopoCombo->addItem("Wye");
+  TopoCombo->addItem("Delta");
   //  TopoCombo->addItem("Travelling Wave");
   //  TopoCombo->addItem("Tree");
   PowerCombinerDesignLayout->addWidget(TopoLabel, layout_row, 0);
@@ -368,6 +369,13 @@ void PowerCombiningTool::synthesize() {
     WC = new WyeCombiner(Specs);
     WC->synthesize();
     SchContent = WC->Schematic;
+    break;
+
+  case DELTA:
+    DeltaCombiner *DC;
+    DC = new DeltaCombiner(Specs);
+    DC->synthesize();
+    SchContent = DC->Schematic;
     break;
   }
 
@@ -815,6 +823,30 @@ void PowerCombiningTool::setSettings_Wye() {
     for (int i = 2; i < 16; ++i) {
         BranchesCombo->addItem(QString::number(i));
     }
+
+    BranchesCombo->show();
+    number_Output_Label->show();
+    BranchesCombo->blockSignals(false);
+}
+
+void PowerCombiningTool::setSettings_Delta() {
+    // No transmission lines. It's purely resistive
+    TL_Implementation_Combo->blockSignals(true);
+    TL_Implementation_Combo->clear();
+    TL_Implementation_Combo->addItem("Lumped");
+    TL_Implementation_Combo->blockSignals(false);
+    TL_Implementation_Combo->hide();
+    TL_Implementation_Label->hide();
+
+    // Hide length: No transmission lines
+    UnitsCombo->hide();
+    UnitsLabel->hide();
+
+    // Adjust the number of branches
+    BranchesCombo->blockSignals(true);
+
+    BranchesCombo->clear();
+    BranchesCombo->addItem("2");
 
     BranchesCombo->show();
     number_Output_Label->show();
