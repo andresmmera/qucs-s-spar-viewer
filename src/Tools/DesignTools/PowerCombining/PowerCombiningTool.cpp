@@ -28,6 +28,7 @@ PowerCombiningTool::PowerCombiningTool(QWidget *parent) : QWidget(parent) {
   TopoCombo->addItem("Lim-Eom");
   TopoCombo->addItem("3 Way Wilkinson Improved Isolation");
   TopoCombo->addItem("Recombinant 3 Way Wilkinson");
+  TopoCombo->addItem("Wye");
   //  TopoCombo->addItem("Travelling Wave");
   //  TopoCombo->addItem("Tree");
   PowerCombinerDesignLayout->addWidget(TopoLabel, layout_row, 0);
@@ -361,6 +362,13 @@ void PowerCombiningTool::synthesize() {
     RWK->synthesize();
     SchContent = RWK->Schematic;
     break;
+
+  case WYE:
+    WyeCombiner *WC;
+    WC = new WyeCombiner(Specs);
+    WC->synthesize();
+    SchContent = WC->Schematic;
+    break;
   }
 
   QString TraceName = traceNameLineEdit->text();
@@ -429,12 +437,15 @@ void PowerCombiningTool::on_TopoCombo_currentIndexChanged(int index) {
   case RECOMBINANT_3_WAY_WILKINSON:
     setSettings_Recombinant_3_Way_Wilkinson();
     break;
-  case TRAVELLING_WAVE:
-    setSettings_Travelling_Wave();
-    break;
+  case WYE:
+      setSettings_Wye();
+      break;
+ /* case TRAVELLING_WAVE:
+      setSettings_Travelling_Wave();
+      break;
   case TREE:
-    setSettings_Tree();
-    break;
+      setSettings_Tree();
+      break;*/
   }
 
   UpdateDesignParameters();
@@ -472,6 +483,10 @@ void PowerCombiningTool::setSettings_Wilkinson() {
   // Unblock signals after adjusting parameters
   BranchesCombo->blockSignals(false);
   TL_Implementation_Combo->blockSignals(false);
+
+  // Show transmission lines units
+  UnitsCombo->hide();
+  UnitsLabel->hide();
 }
 
 void PowerCombiningTool::setSettings_MultistageWilkinson() {
@@ -512,6 +527,10 @@ void PowerCombiningTool::setSettings_MultistageWilkinson() {
   NStagesSpinbox->blockSignals(false);
   BranchesCombo->blockSignals(false);
   TL_Implementation_Combo->blockSignals(false);
+
+  // Show transmission lines units
+  UnitsCombo->hide();
+  UnitsLabel->hide();
 }
 
 void PowerCombiningTool::setSettings_T_Junction() {
@@ -544,6 +563,10 @@ void PowerCombiningTool::setSettings_T_Junction() {
   // Unblock signals after adjusting parameters
   BranchesCombo->blockSignals(false);
   TL_Implementation_Combo->blockSignals(false);
+
+  // Show transmission lines units
+  UnitsCombo->hide();
+  UnitsLabel->hide();
 }
 void PowerCombiningTool::setSettings_Branchline() {
 
@@ -576,6 +599,10 @@ void PowerCombiningTool::setSettings_Branchline() {
   // parameters
   BranchesCombo->blockSignals(false);
   TL_Implementation_Combo->blockSignals(false);
+
+  // Show transmission lines units
+  UnitsCombo->hide();
+  UnitsLabel->hide();
 }
 void PowerCombiningTool::setSettings_DoubleBoxBranchline() {
 
@@ -608,6 +635,10 @@ void PowerCombiningTool::setSettings_DoubleBoxBranchline() {
   // parameters
   BranchesCombo->blockSignals(false);
   TL_Implementation_Combo->blockSignals(false);
+
+  // Show transmission lines units
+  UnitsCombo->hide();
+  UnitsLabel->hide();
 }
 
 void PowerCombiningTool::setSettings_Bagley() {
@@ -646,6 +677,10 @@ void PowerCombiningTool::setSettings_Bagley() {
   // Unblock signals after adjusting parameters
   BranchesCombo->blockSignals(false);
   TL_Implementation_Combo->blockSignals(false);
+
+  // Show transmission lines units
+  UnitsCombo->hide();
+  UnitsLabel->hide();
 }
 
 void PowerCombiningTool::setSettings_Gysel() {
@@ -683,6 +718,10 @@ void PowerCombiningTool::setSettings_Gysel() {
   // parameters
   BranchesCombo->blockSignals(false);
   TL_Implementation_Combo->blockSignals(false);
+
+  // Show transmission lines units
+  UnitsCombo->hide();
+  UnitsLabel->hide();
 }
 
 void PowerCombiningTool::setSettings_LimEom() {
@@ -718,6 +757,10 @@ void PowerCombiningTool::setSettings_LimEom() {
   // parameters
   BranchesCombo->blockSignals(false);
   TL_Implementation_Combo->blockSignals(false);
+
+  // Show transmission lines units
+  UnitsCombo->hide();
+  UnitsLabel->hide();
 }
 
 void PowerCombiningTool::setSettings_Wilkinson_3_Way_Improved_Isolation() {
@@ -730,6 +773,10 @@ void PowerCombiningTool::setSettings_Wilkinson_3_Way_Improved_Isolation() {
   TL_Implementation_Combo->addItem("Microstrip");
   // TL_Implementation_Combo->addItem("Lumped");
   TL_Implementation_Combo->blockSignals(false);
+
+  // Show transmission lines units
+  UnitsCombo->hide();
+  UnitsLabel->hide();
 }
 
 void PowerCombiningTool::setSettings_Recombinant_3_Way_Wilkinson() {
@@ -742,6 +789,36 @@ void PowerCombiningTool::setSettings_Recombinant_3_Way_Wilkinson() {
   TL_Implementation_Combo->addItem("Microstrip");
   // TL_Implementation_Combo->addItem("Lumped");
   TL_Implementation_Combo->blockSignals(false);
+
+  // Show transmission lines units
+  UnitsCombo->hide();
+  UnitsLabel->hide();
+}
+
+void PowerCombiningTool::setSettings_Wye() {
+    // No transmission lines. It's purely resistive
+    TL_Implementation_Combo->blockSignals(true);
+    TL_Implementation_Combo->clear();
+    TL_Implementation_Combo->addItem("Lumped");
+    TL_Implementation_Combo->blockSignals(false);
+    TL_Implementation_Combo->hide();
+    TL_Implementation_Label->hide();
+
+    // Hide length: No transmission lines
+    UnitsCombo->hide();
+    UnitsLabel->hide();
+
+    // Adjust the number of branches
+    BranchesCombo->blockSignals(true);
+
+    BranchesCombo->clear();
+    for (int i = 2; i < 16; ++i) {
+        BranchesCombo->addItem(QString::number(i));
+    }
+
+    BranchesCombo->show();
+    number_Output_Label->show();
+    BranchesCombo->blockSignals(false);
 }
 
 void PowerCombiningTool::setSettings_Travelling_Wave() {
