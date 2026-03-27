@@ -30,6 +30,7 @@ PowerCombiningTool::PowerCombiningTool(QWidget *parent) : QWidget(parent) {
   TopoCombo->addItem("Recombinant 3 Way Wilkinson");
   TopoCombo->addItem("Wye");
   TopoCombo->addItem("Delta");
+  TopoCombo->addItem("Adams");
   //  TopoCombo->addItem("Travelling Wave");
   //  TopoCombo->addItem("Tree");
   PowerCombinerDesignLayout->addWidget(TopoLabel, layout_row, 0);
@@ -377,6 +378,13 @@ void PowerCombiningTool::synthesize() {
     DC->synthesize();
     SchContent = DC->Schematic;
     break;
+
+  case ADAMS:
+    AdamsCombiner *AC;
+    AC = new AdamsCombiner(Specs);
+    AC->synthesize();
+    SchContent = AC->Schematic;
+    break;
   }
 
   QString TraceName = traceNameLineEdit->text();
@@ -448,6 +456,12 @@ void PowerCombiningTool::on_TopoCombo_currentIndexChanged(int index) {
   case WYE:
       setSettings_Wye();
       break;
+  case DELTA:
+      setSettings_Delta();
+      break;
+  case ADAMS:
+      setSettings_Adams();
+      break;
  /* case TRAVELLING_WAVE:
       setSettings_Travelling_Wave();
       break;
@@ -460,10 +474,17 @@ void PowerCombiningTool::on_TopoCombo_currentIndexChanged(int index) {
 }
 
 void PowerCombiningTool::setSettings_Wilkinson() {
+  setDefaultSettings();
 
   // Block signals before adjusting parameters
   BranchesCombo->blockSignals(true);
   TL_Implementation_Combo->blockSignals(true);
+
+  // Ensure that the output ratio label is correct
+  K1Label->setText("Output Power Ratio");
+  K1Spinbox->blockSignals(true);
+  K1Spinbox->setValue(0); // Force equal power ratio
+  K1Spinbox->blockSignals(false);
 
   // Enable power split ration
   K1Spinbox->setVisible(true);
@@ -542,6 +563,7 @@ void PowerCombiningTool::setSettings_MultistageWilkinson() {
 }
 
 void PowerCombiningTool::setSettings_T_Junction() {
+  setDefaultSettings();
 
   // Block signals before adjusting parameters
   BranchesCombo->blockSignals(true);
@@ -577,6 +599,8 @@ void PowerCombiningTool::setSettings_T_Junction() {
   UnitsLabel->hide();
 }
 void PowerCombiningTool::setSettings_Branchline() {
+
+  setDefaultSettings();
 
   // Block signals before adjusting parameters
   BranchesCombo->blockSignals(true);
@@ -738,6 +762,13 @@ void PowerCombiningTool::setSettings_LimEom() {
   BranchesCombo->blockSignals(true);
   TL_Implementation_Combo->blockSignals(true);
 
+  // Ensure that the output ratio label is correct
+  K1Label->setText("Output Power Ratio");
+  K1Spinbox->blockSignals(true);
+  K1Spinbox->setValue(0); // Force equal power ratio
+  K1Spinbox->setMaximum(100);
+  K1Spinbox->blockSignals(false);
+
   K1Label->setVisible(true);
   K1LabeldB->setVisible(true);
   K1Spinbox->setVisible(true);
@@ -804,6 +835,8 @@ void PowerCombiningTool::setSettings_Recombinant_3_Way_Wilkinson() {
 }
 
 void PowerCombiningTool::setSettings_Wye() {
+    setDefaultSettings();
+
     // No transmission lines. It's purely resistive
     TL_Implementation_Combo->blockSignals(true);
     TL_Implementation_Combo->clear();
@@ -827,9 +860,17 @@ void PowerCombiningTool::setSettings_Wye() {
     BranchesCombo->show();
     number_Output_Label->show();
     BranchesCombo->blockSignals(false);
+
+    // Make invisible the output ratio controls
+    K1Label->setVisible(false);
+    K1LabeldB->setVisible(false);
+    K1Spinbox->setVisible(false);
+    K2Spinbox->setVisible(false);
+    K3Spinbox->setVisible(false);
 }
 
 void PowerCombiningTool::setSettings_Delta() {
+    setDefaultSettings();
     // No transmission lines. It's purely resistive
     TL_Implementation_Combo->blockSignals(true);
     TL_Implementation_Combo->clear();
@@ -851,6 +892,53 @@ void PowerCombiningTool::setSettings_Delta() {
     BranchesCombo->show();
     number_Output_Label->show();
     BranchesCombo->blockSignals(false);
+
+    // Make invisible the output ratio controls
+    K1Label->setVisible(false);
+    K1LabeldB->setVisible(false);
+    K1Spinbox->setVisible(false);
+    K2Spinbox->setVisible(false);
+    K3Spinbox->setVisible(false);
+}
+
+void PowerCombiningTool::setSettings_Adams() {
+    setDefaultSettings();
+    // No transmission lines. It's purely resistive
+    TL_Implementation_Combo->blockSignals(true);
+    TL_Implementation_Combo->clear();
+    TL_Implementation_Combo->addItem("Lumped");
+    TL_Implementation_Combo->blockSignals(false);
+    TL_Implementation_Combo->hide();
+    TL_Implementation_Label->hide();
+
+    // Hide length: No transmission lines
+    UnitsCombo->hide();
+    UnitsLabel->hide();
+
+    // Adjust the number of branches
+    BranchesCombo->blockSignals(true);
+
+    BranchesCombo->clear();
+    BranchesCombo->addItem("2");
+
+    BranchesCombo->show();
+    number_Output_Label->show();
+    BranchesCombo->blockSignals(false);
+
+
+    // The UI for the output power ratio is reused here for indicating the main path loss
+    K1Label->setText("Main Path Loss");
+    K1Spinbox->blockSignals(true);
+    K1Spinbox->setValue(1); // Force equal power ratio
+    K1Spinbox->setMaximum(6); // Adams' combiner cannot exceed 6 dB in the main path loss
+    K1Spinbox->blockSignals(false);
+
+    // Make visible the output ratio control
+    K1Label->setVisible(true);
+    K1LabeldB->setVisible(true);
+    K1Spinbox->setVisible(true);
+    K2Spinbox->setVisible(false);
+    K3Spinbox->setVisible(false);
 }
 
 void PowerCombiningTool::setSettings_Travelling_Wave() {
@@ -901,6 +989,15 @@ void PowerCombiningTool::setDefaultSettings() {
   K1LabeldB->setVisible(false);
   K2Spinbox->setVisible(false);
   K3Spinbox->setVisible(false);
+
+  // Force output ratio label text. It's changed in Adams
+  K1Label->setText("Output Power Ratio");
+
+  // Reset K1 ratio
+  K1Spinbox->blockSignals(true);
+  K1Spinbox->setValue(0);
+  K1Spinbox->setMaximum(100);
+  K1Spinbox->blockSignals(false);
 
   // Hide stages control
   NStagesLabel->setVisible(false);

@@ -40,6 +40,7 @@
 #include "Recombinant3WayWilkinson.h"
 #include "WyeCombiner.h"
 #include "DeltaCombiner.h"
+#include "AdamsCombiner.h"
 
 #define WILKINSON 0
 #define MULTISTAGE_WILKINSON 1
@@ -53,6 +54,7 @@
 #define RECOMBINANT_3_WAY_WILKINSON 9
 #define WYE 10
 #define DELTA 11
+#define ADAMS 12
 // #define TRAVELLING_WAVE 10
 // #define TREE 11
 
@@ -198,6 +200,8 @@ private:
   /// @brief Configure UI for the Delta power combiner
   void setSettings_Delta();
 
+  /// @brief Configure UI for the Adams power combiner
+  void setSettings_Adams();
 
 signals:
   /// @brief Signal emitted when schematic needs update
