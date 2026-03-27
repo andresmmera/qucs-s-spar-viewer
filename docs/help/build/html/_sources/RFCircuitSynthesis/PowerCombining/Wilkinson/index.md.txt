@@ -23,46 +23,60 @@ Input  ────┤              [R]
 
 ### Equal Power Split (K = 1, 0 dB ratio)
 
+Branch impedance and isolation resistor:
+
 ```{math}
-Z₂ = Z₃ = √2 × Z₀ ≈ 70.7 Ω  (for Z₀ = 50Ω)
-R = 2 × Z₀ = 100 Ω
+Z_2 = Z_3 = \sqrt{2} \times Z_0 \approx 70.7 \ \Omega \quad (Z_0 = 50 \ \Omega)
 ```
 
-**Power division:**
 ```{math}
-P₂ = P₃ = Pin / 2  (3 dB to each output)
+R = 2 \times Z_0 = 100 \ \Omega
+```
+
+Power division (3 dB to each output):
+
+```{math}
+P_2 = P_3 = \frac{P_{in}}{2}
 ```
 
 ### Unequal Power Split (K ≠ 1)
 
-Power ratio: K = P₂/P₃ (linear), or K_dB = 10 × log₁₀(K)
+Power ratio K = P₂/P₃ (linear), or K_dB = 10 × log₁₀(K).
 
-**Branch impedances:**
+Branch impedances:
+
 ```{math}
-Z₂ = Z₀ × √(2 × (1 + K) / K)
-Z₃ = Z₀ × √(2 × (1 + K))
+Z_2 = Z_0 \sqrt{\frac{2\,(1 + K)}{K}}
 ```
 
-**Isolation resistor:**
 ```{math}
-R₂ = Z₀ × K        (series with Port 2)
-R₃ = Z₀ / K        (series with Port 3)
-R = R₂ + R₃ = Z₀ × (K + 1/K)
+Z_3 = Z_0 \sqrt{2\,(1 + K)}
 ```
 
-**Power division:**
+Isolation resistor (sum of two series sections):
+
 ```{math}
-P₂ = Pin × K/(K + 1)
-P₃ = Pin × 1/(K + 1)
+R_2 = Z_0 \times K \qquad R_3 = \frac{Z_0}{K} \qquad R = R_2 + R_3 = Z_0 \left(K + \frac{1}{K}\right)
+```
+
+Power division:
+
+```{math}
+P_2 = P_{in} \times \frac{K}{K + 1} \qquad P_3 = P_{in} \times \frac{1}{K + 1}
 ```
 
 ## Example: Equal Split, Z₀ = 50 Ω, f₀ = 2 GHz
 
-**Design:**
 ```{math}
-Z₂ = Z₃ = 50 × √2 = 70.7 Ω
-R = 2 × 50 = 100 Ω
-λ/4 = (3×10⁸) / (4 × 2×10⁹) = 37.5 mm
+Z_2 = Z_3 = 50\sqrt{2} \approx 70.7 \ \Omega
+```
+
+```{math}
+R = 2 \times 50 = 100 \ \Omega
+```
+
+```{math}
+\frac{\lambda}{4} = \frac{3 \times 10^8}{4 \times 2 \times 10^9} = 37.5 \ \text{mm}
 ```
 
 ## Advantages
@@ -77,12 +91,11 @@ R = 2 × 50 = 100 Ω
 
 1. **Resistor loss:** Isolation resistor may dissipate power if the circuit is not perfectly balanced
 2. **Physical size:** λ/4 lines large at low frequency
-4. **Unequal split limitations:**
+3. **Unequal split limitations:**
    - Wide Z₂/Z₃ ratios → fabrication challenges
    - Large K → very high/low impedances
-   
-**Rule of thumb:** Keep 30Ω < Z₂, Z₃ < 150Ω for practical fabrication
 
+**Rule of thumb:** Keep 30 Ω < Z₂, Z₃ < 150 Ω for practical fabrication.
 
 ## References
 

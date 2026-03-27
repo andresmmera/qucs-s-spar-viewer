@@ -148,16 +148,20 @@
 </section>
 <section id="branch-impedances-first-stage">
 <h3>Branch Impedances (First Stage)</h3>
+<p>Branch impedance to the higher-power output (Port 2):</p>
 <div class="math notranslate nohighlight">
-\[Z₂ = Z₀ × (K + 1)          (to higher power port)
-Z₃ = Z₀ × (K + 1) / K      (to lower power port)\]</div>
+\[Z_2 = Z_0 \times (K + 1)\]</div>
+<p>Branch impedance to the lower-power output (Port 3):</p>
+<div class="math notranslate nohighlight">
+\[Z_3 = Z_0 \times \frac{K + 1}{K}\]</div>
 </section>
 <section id="matching-sections-unequal-split-only">
 <h3>Matching Sections (Unequal Split Only)</h3>
 <p>For K ≠ 1, add λ/4 matching transformers:</p>
 <div class="math notranslate nohighlight">
-\[Z₂ₘ = √(2 × Z₀² × (K + 1))
-Z₃ₘ = √(2 × Z₀² × (K + 1) / K)\]</div>
+\[Z_{2m} = \sqrt{2 \, Z_0^2 \,(K + 1)}\]</div>
+<div class="math notranslate nohighlight">
+\[Z_{3m} = \sqrt{2 \, Z_0^2 \,\frac{K + 1}{K}}\]</div>
 </section>
 <section id="equal-split-k-1">
 <h3>Equal Split (K = 1)</h3>
@@ -248,7 +252,6 @@ Z₃ₘ = √(2 × Z₀² × (K + 1) / K)\]</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">RF Circuit Synthesis Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">RF Power Combining/Dividing Design Tool</a></li>
 </ul>
 </div>
 </section>

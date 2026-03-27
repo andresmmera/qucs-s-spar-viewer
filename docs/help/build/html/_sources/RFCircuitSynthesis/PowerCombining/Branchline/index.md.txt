@@ -27,7 +27,7 @@ K = P₂/P₃
 ### Transmission Line Impedances
 
 ```{math}
-ZA = Z₀ / √2 ≈ 0.707 × Z₀
+Z_A = \frac{Z_0}{\sqrt{2}} \approx 0.707 \cdot Z_0
 ZB = Z₀
 R = Z₀
 ```
