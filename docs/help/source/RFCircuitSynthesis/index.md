@@ -52,7 +52,7 @@ Single-port and two-port matching networks can be synthesized. The load can be e
 
 
 
-### [Power combining](/RFCircuitSynthesis/PowerCombining/index)
+### Power combining
 
 This tool allows to synthesize a number of power splitters/combiners and couplers
 
@@ -68,9 +68,12 @@ This tool allows to synthesize a number of power splitters/combiners and coupler
 | [Lim-Eom](/RFCircuitSynthesis/PowerCombining/LimEom/index) | 2 | Equal | Excellent | Wide | Wideband improvement |
 | [3-way Improved Isolation](/RFCircuitSynthesis/PowerCombining/ThreeWayWilkinsonImprovedIsolation/index) | 3 | Equal | Excellent | Medium | Enhanced 3-port isolation |
 | [Recombinant 3-way Wilkinson](/RFCircuitSynthesis/PowerCombining/Recombinant3Way/index)| 3 | Equal | Excellent | Medium | Alternative 3-port design |
+| [Wye Resistive Combiner](/RFCircuitSynthesis/PowerCombining/Wye/index)| N | Equal | Depends on # outputs | Very broadband | Lossy |
+| [Delta Resistive Combiner](/RFCircuitSynthesis/PowerCombining/Delta/index)| 2 | Equal | 6 dB | Very broadband | Lossy |
+| [Adams Resistive Combiner](/RFCircuitSynthesis/PowerCombining/Adams/index)| 2 | Unequal | Very poor | Very broadband | Lossy |
 
-### [Attenuator design](/RFCircuitSynthesis/Attenuators/index)
 
+### Attenuator design
 | Topology | Notes|
 |-----------|-------|
 |[Pi](/RFCircuitSynthesis/Attenuators/PiTee/index)|Matched|
@@ -84,16 +87,6 @@ This tool allows to synthesize a number of power splitters/combiners and coupler
 |[Series resistor](/RFCircuitSynthesis/Attenuators/Rseries/index)|Two ports unmatched|
 |[Shunt resistor](/RFCircuitSynthesis/Attenuators/Rshunt/index)|Two ports unmatched|
 
-### [Matching Network Design](/RFCircuitSynthesis/ImpedanceMatching/index)
-
-| Topology | Elements | Bandwidth | Complex Loads | Adjustable |
-|----------|----------|-----------|---------------|------------|
-| [L-section](/RFCircuitSynthesis/ImpedanceMatching/LSection/index) | 2 lumped | Narrow (5-10%) | Yes* | No |
-| [Single-stub](/RFCircuitSynthesis/ImpedanceMatching/SingleStub/index) | 1 TL + stub | Moderate (10-20%) | Yes | No |
-| [Double-stub](/RFCircuitSynthesis/ImpedanceMatching/DoubleStub/index) | 1 TL + 2 stubs | Moderate (10-20%) | Yes | Yes |
-| [Multisection λ/4](/RFCircuitSynthesis/ImpedanceMatching/MultisectionLambda4/index) | N×λ/4 TL | Broad (40-80%) | Real only | No |
-| [Cascaded LC](/RFCircuitSynthesis/ImpedanceMatching/CascadedLC/index) | 2N lumped | Moderate (20-40%) | Real only | No |
-| [λ/8 + λ/4](/RFCircuitSynthesis/ImpedanceMatching/Lambda8Lambda4/index) | 2 TL sections | Moderate (10-20%) | Yes | No |
 
 ## See Also
 
