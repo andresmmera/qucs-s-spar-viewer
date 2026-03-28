@@ -36,18 +36,28 @@ K = P₂/P₃ = (Port 2 power / Port 3 power)
 
 ### Branch Impedances (First Stage)
 
+Branch impedance to the higher-power output (Port 2):
+ 
 ```{math}
-Z₂ = Z₀ × (K + 1)          (to higher power port)
-Z₃ = Z₀ × (K + 1) / K      (to lower power port)
+Z_2 = Z_0 \times (K + 1)
+```
+ 
+Branch impedance to the lower-power output (Port 3):
+ 
+```{math}
+Z_3 = Z_0 \times \frac{K + 1}{K}
 ```
 
 ### Matching Sections (Unequal Split Only)
 
 For K ≠ 1, add λ/4 matching transformers:
-
+ 
 ```{math}
-Z₂ₘ = √(2 × Z₀² × (K + 1))
-Z₃ₘ = √(2 × Z₀² × (K + 1) / K)
+Z_{2m} = \sqrt{2 \, Z_0^2 \,(K + 1)}
+```
+ 
+```{math}
+Z_{3m} = \sqrt{2 \, Z_0^2 \,\frac{K + 1}{K}}
 ```
 
 ### Equal Split (K = 1)

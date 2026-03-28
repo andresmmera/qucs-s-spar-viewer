@@ -9,5 +9,7 @@ How to install build the help documentation?
 3) Install the required Python packages to build the documentation 
 	pip3 install -r requirements.txt
 	
-4) Install VScode and the reStructuredText extension.
-   Then, press CTRL+B and build the Sphinx docs
+4) Build docs
+	cd ~/git/qucs-s-spar-viewer/docs/help/source
+	chmod +x build_docs
+	./build_docs

@@ -26,6 +26,7 @@
 <meta content="Double-Box Branch-Line Coupler | Qucs-S S-parameter Viewer Documentation" name="twitter:title"/>
 <link href="../../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
 <link href="../../../_static/theme.css?v=73505e79" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.datatables.net/v/dt/dt-2.3.5/datatables.min.css" rel="stylesheet" type="text/css"/>
 <link href="../../../search.html" rel="search" title="Search"/>
 <link href="../../../genindex.html" rel="index" title="Index"/>
 </head>
@@ -132,18 +133,13 @@
 <section id="design-equations">
 <h2>Design Equations</h2>
 <p><strong>For equal split (K = 1):</strong></p>
+<p>Let $t = \sqrt{2}$, $r = 1$. The shunt and series arm impedances are:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}t = √(2 × 1) = √2\\ZA = Z₀ × √(r × (t² - r)) / (t - r)
-   = Z₀ × √(1 × (2 - 1)) / (√2 - 1)
-   = Z₀ / (√2 - 1)
-   = Z₀ × (√2 + 1)
-   ≈ 2.414 × Z₀\\ZD = Z₀ × √(r × (t² - r)) / (t - 1)
-   = Z₀ × √(1 × 1) / (√2 - 1)
-   = Z₀ / (√2 - 1)
-   ≈ 2.414 × Z₀\\ZB = Z₀ × √(r - r²/t²)
-   = Z₀ × √(1 - 1/2)
-   = Z₀ / √2
-   ≈ 0.707 × Z₀\\R = Z₀  (isolation resistor)\end{aligned}\end{align} \]</div>
+\[Z_A = Z_D = \frac{Z_0}{\sqrt{2} - 1} = Z_0\,(\sqrt{2} + 1) \approx 2.414 \times Z_0\]</div>
+<div class="math notranslate nohighlight">
+\[Z_B = \frac{Z_0}{\sqrt{2}} \approx 0.707 \times Z_0\]</div>
+<div class="math notranslate nohighlight">
+\[R = Z_0 \quad \text{(isolation resistor)}\]</div>
 <p><strong>For Z₀ = 50 Ω:</strong></p>
 <table class="docutils align-default">
 <thead>
@@ -152,10 +148,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>ZA = ZD</strong></p></td>
+<tr class="row-even"><td><p><strong>Z_A = Z_D</strong></p></td>
 <td><p>120.7 Ω</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ZB</strong></p></td>
+<tr class="row-odd"><td><p><strong>Z_B</strong></p></td>
 <td><p>35.4 Ω</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>R</strong></p></td>
@@ -167,32 +163,16 @@
 <section id="advantages-over-single-box">
 <h2>Advantages Over Single-Box</h2>
 <ol class="arabic simple">
-<li><p><strong>Wider bandwidth:</strong> 25-35% vs. 15-20%</p>
-<ul class="simple">
-<li><p>50-75% improvement</p></li>
-<li><p>Better match across band</p></li>
-</ul>
-</li>
+<li><p><strong>Wider bandwidth:</strong> 25–35% vs. 15–20% (50–75% improvement)</p></li>
 </ol>
 </section>
 <section id="limitations">
 <h2>Limitations</h2>
 <ol class="arabic simple">
-<li><p><strong>Larger size:</strong> 7 lines vs. 4</p>
-<ul class="simple">
-<li><p>More PCB area</p></li>
-<li><p>Approximately 2× size of single-box</p></li>
-</ul>
-</li>
+<li><p><strong>Larger size:</strong> 7 lines vs. 4 — approximately 2× the area of a single-box design</p></li>
 <li><p><strong>More complex layout</strong></p></li>
-<li><p><strong>Higher impedance (ZA, ZD):</strong> 120.7 Ω</p>
-<ul class="simple">
-<li><p>Narrow lines</p></li>
-<li><p>Challenging on thin substrates</p></li>
-<li><p>Fabrication tolerance critical</p></li>
-</ul>
-</li>
-<li><p><strong>Still narrowband</strong></p></li>
+<li><p><strong>Higher impedance (Z_A, Z_D):</strong> 120.7 Ω results in narrow lines, challenging on thin substrates where fabrication tolerance is critical</p></li>
+<li><p><strong>Still narrowband</strong> relative to other broadband coupler topologies</p></li>
 </ol>
 </section>
 <section id="see-also">
@@ -200,7 +180,6 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">RF Circuit Synthesis Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">RF Power Combining/Dividing Design Tool</a></li>
 </ul>
 </div>
 </section>
@@ -228,10 +207,14 @@
 </div>
 </footer>
 </div>
+<script src="../../../_static/jquery.js?v=5d32c60e"></script>
+<script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
 <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
 <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
 <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
 <script defer="defer" src="../../../_static/theme.js?v=582b20c5"></script>
 <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+<script src="https://cdn.datatables.net/v/dt/dt-2.3.5/datatables.min.js"></script>
+<script src="../../../_static/activate_datatables.js?v=cb6dbd5f"></script>
 </body>
 </html>

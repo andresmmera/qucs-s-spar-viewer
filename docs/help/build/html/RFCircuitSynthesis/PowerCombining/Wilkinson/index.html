@@ -26,6 +26,7 @@
 <meta content="Wilkinson Power Divider | Qucs-S S-parameter Viewer Documentation" name="twitter:title"/>
 <link href="../../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
 <link href="../../../_static/theme.css?v=73505e79" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.datatables.net/v/dt/dt-2.3.5/datatables.min.css" rel="stylesheet" type="text/css"/>
 <link href="../../../search.html" rel="search" title="Search"/>
 <link href="../../../genindex.html" rel="index" title="Index"/>
 </head>
@@ -136,38 +137,39 @@
 <h2>Design Equations</h2>
 <section id="equal-power-split-k-1-0-db-ratio">
 <h3>Equal Power Split (K = 1, 0 dB ratio)</h3>
+<p>Branch impedance and isolation resistor:</p>
 <div class="math notranslate nohighlight">
-\[Z₂ = Z₃ = √2 × Z₀ ≈ 70.7 Ω  (for Z₀ = 50Ω)
-R = 2 × Z₀ = 100 Ω\]</div>
-<p><strong>Power division:</strong></p>
+\[Z_2 = Z_3 = \sqrt{2} \times Z_0 \approx 70.7 \ \Omega \quad (Z_0 = 50 \ \Omega)\]</div>
 <div class="math notranslate nohighlight">
-\[P₂ = P₃ = Pin / 2  (3 dB to each output)\]</div>
+\[R = 2 \times Z_0 = 100 \ \Omega\]</div>
+<p>Power division (3 dB to each output):</p>
+<div class="math notranslate nohighlight">
+\[P_2 = P_3 = \frac{P_{in}}{2}\]</div>
 </section>
 <section id="unequal-power-split-k-1">
 <h3>Unequal Power Split (K ≠ 1)</h3>
-<p>Power ratio: K = P₂/P₃ (linear), or K_dB = 10 × log₁₀(K)</p>
-<p><strong>Branch impedances:</strong></p>
+<p>Power ratio K = P₂/P₃ (linear), or K_dB = 10 × log₁₀(K).</p>
+<p>Branch impedances:</p>
 <div class="math notranslate nohighlight">
-\[Z₂ = Z₀ × √(2 × (1 + K) / K)
-Z₃ = Z₀ × √(2 × (1 + K))\]</div>
-<p><strong>Isolation resistor:</strong></p>
+\[Z_2 = Z_0 \sqrt{\frac{2\,(1 + K)}{K}}\]</div>
 <div class="math notranslate nohighlight">
-\[R₂ = Z₀ × K        (series with Port 2)
-R₃ = Z₀ / K        (series with Port 3)
-R = R₂ + R₃ = Z₀ × (K + 1/K)\]</div>
-<p><strong>Power division:</strong></p>
+\[Z_3 = Z_0 \sqrt{2\,(1 + K)}\]</div>
+<p>Isolation resistor (sum of two series sections):</p>
 <div class="math notranslate nohighlight">
-\[P₂ = Pin × K/(K + 1)
-P₃ = Pin × 1/(K + 1)\]</div>
+\[R_2 = Z_0 \times K \qquad R_3 = \frac{Z_0}{K} \qquad R = R_2 + R_3 = Z_0 \left(K + \frac{1}{K}\right)\]</div>
+<p>Power division:</p>
+<div class="math notranslate nohighlight">
+\[P_2 = P_{in} \times \frac{K}{K + 1} \qquad P_3 = P_{in} \times \frac{1}{K + 1}\]</div>
 </section>
 </section>
 <section id="example-equal-split-z0-50-f0-2-ghz">
 <h2>Example: Equal Split, Z₀ = 50 Ω, f₀ = 2 GHz</h2>
-<p><strong>Design:</strong></p>
 <div class="math notranslate nohighlight">
-\[Z₂ = Z₃ = 50 × √2 = 70.7 Ω
-R = 2 × 50 = 100 Ω
-λ/4 = (3×10⁸) / (4 × 2×10⁹) = 37.5 mm\]</div>
+\[Z_2 = Z_3 = 50\sqrt{2} \approx 70.7 \ \Omega\]</div>
+<div class="math notranslate nohighlight">
+\[R = 2 \times 50 = 100 \ \Omega\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\lambda}{4} = \frac{3 \times 10^8}{4 \times 2 \times 10^9} = 37.5 \ \text{mm}\]</div>
 </section>
 <section id="advantages">
 <h2>Advantages</h2>
@@ -191,7 +193,7 @@ R = 2 × 50 = 100 Ω
 </ul>
 </li>
 </ol>
-<p><strong>Rule of thumb:</strong> Keep 30Ω &lt; Z₂, Z₃ &lt; 150Ω for practical fabrication</p>
+<p><strong>Rule of thumb:</strong> Keep 30 Ω &lt; Z₂, Z₃ &lt; 150 Ω for practical fabrication.</p>
 </section>
 <section id="references">
 <h2>References</h2>
@@ -203,7 +205,6 @@ R = 2 × 50 = 100 Ω
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">RF Circuit Synthesis Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">RF Power Combining/Dividing Design Tool</a></li>
 </ul>
 </div>
 </section>
@@ -237,10 +238,14 @@ R = 2 × 50 = 100 Ω
 </div>
 </footer>
 </div>
+<script src="../../../_static/jquery.js?v=5d32c60e"></script>
+<script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
 <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
 <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
 <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
 <script defer="defer" src="../../../_static/theme.js?v=582b20c5"></script>
 <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+<script src="https://cdn.datatables.net/v/dt/dt-2.3.5/datatables.min.js"></script>
+<script src="../../../_static/activate_datatables.js?v=cb6dbd5f"></script>
 </body>
 </html>

@@ -26,6 +26,7 @@
 <meta content="T-Junction Power Divider | Qucs-S S-parameter Viewer Documentation" name="twitter:title"/>
 <link href="../../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
 <link href="../../../_static/theme.css?v=73505e79" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.datatables.net/v/dt/dt-2.3.5/datatables.min.css" rel="stylesheet" type="text/css"/>
 <link href="../../../search.html" rel="search" title="Search"/>
 <link href="../../../genindex.html" rel="index" title="Index"/>
 </head>
@@ -148,16 +149,20 @@
 </section>
 <section id="branch-impedances-first-stage">
 <h3>Branch Impedances (First Stage)</h3>
+<p>Branch impedance to the higher-power output (Port 2):</p>
 <div class="math notranslate nohighlight">
-\[Z₂ = Z₀ × (K + 1)          (to higher power port)
-Z₃ = Z₀ × (K + 1) / K      (to lower power port)\]</div>
+\[Z_2 = Z_0 \times (K + 1)\]</div>
+<p>Branch impedance to the lower-power output (Port 3):</p>
+<div class="math notranslate nohighlight">
+\[Z_3 = Z_0 \times \frac{K + 1}{K}\]</div>
 </section>
 <section id="matching-sections-unequal-split-only">
 <h3>Matching Sections (Unequal Split Only)</h3>
 <p>For K ≠ 1, add λ/4 matching transformers:</p>
 <div class="math notranslate nohighlight">
-\[Z₂ₘ = √(2 × Z₀² × (K + 1))
-Z₃ₘ = √(2 × Z₀² × (K + 1) / K)\]</div>
+\[Z_{2m} = \sqrt{2 \, Z_0^2 \,(K + 1)}\]</div>
+<div class="math notranslate nohighlight">
+\[Z_{3m} = \sqrt{2 \, Z_0^2 \,\frac{K + 1}{K}}\]</div>
 </section>
 <section id="equal-split-k-1">
 <h3>Equal Split (K = 1)</h3>
@@ -248,7 +253,6 @@ Z₃ₘ = √(2 × Z₀² × (K + 1) / K)\]</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">RF Circuit Synthesis Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">RF Power Combining/Dividing Design Tool</a></li>
 </ul>
 </div>
 </section>
@@ -284,10 +288,14 @@ Z₃ₘ = √(2 × Z₀² × (K + 1) / K)\]</div>
 </div>
 </footer>
 </div>
+<script src="../../../_static/jquery.js?v=5d32c60e"></script>
+<script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
 <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
 <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
 <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
 <script defer="defer" src="../../../_static/theme.js?v=582b20c5"></script>
 <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+<script src="https://cdn.datatables.net/v/dt/dt-2.3.5/datatables.min.js"></script>
+<script src="../../../_static/activate_datatables.js?v=cb6dbd5f"></script>
 </body>
 </html>
