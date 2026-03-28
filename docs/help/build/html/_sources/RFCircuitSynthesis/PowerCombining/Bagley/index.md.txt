@@ -29,7 +29,7 @@
 
 **Branch impedance:**
 ```{math}
-Zbr = (2 × Z₀) / √N
+Zbr = \frac{2 × Z₀} {\sqrt{N}}
 ```
 
 **All transmission lines:**

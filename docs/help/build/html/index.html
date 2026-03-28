@@ -26,6 +26,7 @@
 <meta content="S-Parameter Viewer &amp; RF Synthesis Tools | Qucs-S S-parameter Viewer Documentation" name="twitter:title"/>
 <link href="_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
 <link href="_static/theme.css?v=73505e79" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.datatables.net/v/dt/dt-2.3.5/datatables.min.css" rel="stylesheet" type="text/css"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="genindex.html" rel="index" title="Index"/>
 <link href="Data-display-panel/index.html" rel="next" title="Data display panel"/>
@@ -110,20 +111,20 @@
 </section>
 <section id="features">
 <h2>Features</h2>
-<section id="display-features">
-<h3>Display Features</h3>
+<section id="data-display">
+<h3>Data Display</h3>
 <p>The tool can display S-parameter data in various formats, including polar plots and Smith charts. Data markers are supported in each display widget. Additionally, the magnitude display supports limit lines.</p>
 </section>
-<section id="data-capabilities">
-<h3>Data Capabilities</h3>
+<section id="data-management">
+<h3>Data Management</h3>
 <p>This tool can read data from Touchstone files and Qucs-S datasets. Users can easily manage files and traces using the data tabs to add and remove data. Sessions can be saved into a file for later use.</p>
 </section>
 <section id="design-tools">
 <h3>Design Tools</h3>
 <p>The tool includes built-in design tools such as:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="RFCircuitSynthesis/index.html"><span class="doc std std-doc">RF circuit synthesis tools</span></a></p></li>
-<li><p><a class="reference internal" href="Calculators/index.html"><span class="doc std std-doc">RF engineering calculators</span></a></p></li>
+<li><p><a class="reference internal" href="RFCircuitSynthesis/index.html"><span class="doc std std-doc">RF Circuit Synthesis Tools</span></a></p></li>
+<li><p><a class="reference internal" href="Calculators/index.html"><span class="doc std std-doc">RF Engineering Calculators</span></a></p></li>
 </ul>
 </section>
 </section>
@@ -143,11 +144,11 @@
 <section id="data-management-panel">
 <h3>Data Management Panel</h3>
 <p>Provides widgets for managing and analyzing data:</p>
-<ul class="simple">
-<li><p>Marker display</p></li>
-<li><p>Limit management</p></li>
-<li><p>Synthesis tools</p></li>
-<li><p>Note-taking widget</p></li>
+<ul style="margin-top: 0; line-height: 0.5;">
+<li>Marker display</li>
+<li>Limit management</li>
+<li>Synthesis tools</li>
+<li>Note-taking widget</li>
 </ul>
 <p><a class="reference internal" href="Data-management-panel/index.html"><span class="doc std std-doc">Learn more</span></a></p>
 </section>
@@ -155,18 +156,18 @@
 <h3>Menu Bar Calculators</h3>
 <p>A collection of engineering calculators organized by category:</p>
 <p><strong>General Electronics:</strong></p>
-<ul class="simple">
-<li><p>Voltage dividers</p></li>
-<li><p>Equivalent series capacitors</p></li>
-<li><p>Parallel resistances</p></li>
-<li><p>And more…</p></li>
+<ul style="margin-top: 0; line-height: 0.5;">
+<li>Voltage dividers</li>
+<li>Equivalent series capacitors</li>
+<li>Parallel resistances</li>
+<li>and more...</li>
 </ul>
 <p><strong>RF Electronics:</strong></p>
-<ul class="simple">
-<li><p>Free Space Loss</p></li>
-<li><p>RF power unit converter</p></li>
-<li><p>Reflection coefficient unit converters</p></li>
-<li><p>And more…</p></li>
+<ul style="margin-top: 0; line-height: 0.5;">
+<li>Free Space Loss</li>
+<li> RF power unit converter</li>
+<li> Reflection coefficient unit converters</li>
+<li>And more...</li>
 </ul>
 <p><a class="reference internal" href="Calculators/index.html"><span class="doc std std-doc">View all calculators</span></a></p>
 </section>
@@ -197,8 +198,8 @@
 <ul>
 <li><a :data-current="activeSection === '#introduction'" class="reference internal" href="#introduction">Introduction</a></li>
 <li><a :data-current="activeSection === '#features'" class="reference internal" href="#features">Features</a><ul>
-<li><a :data-current="activeSection === '#display-features'" class="reference internal" href="#display-features">Display Features</a></li>
-<li><a :data-current="activeSection === '#data-capabilities'" class="reference internal" href="#data-capabilities">Data Capabilities</a></li>
+<li><a :data-current="activeSection === '#data-display'" class="reference internal" href="#data-display">Data Display</a></li>
+<li><a :data-current="activeSection === '#data-management'" class="reference internal" href="#data-management">Data Management</a></li>
 <li><a :data-current="activeSection === '#design-tools'" class="reference internal" href="#design-tools">Design Tools</a></li>
 </ul>
 </li>
@@ -222,9 +223,13 @@
 </div>
 </footer>
 </div>
+<script src="_static/jquery.js?v=5d32c60e"></script>
+<script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
 <script src="_static/documentation_options.js?v=5929fcd5"></script>
 <script src="_static/doctools.js?v=fd6eb6e6"></script>
 <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
 <script defer="defer" src="_static/theme.js?v=582b20c5"></script>
+<script src="https://cdn.datatables.net/v/dt/dt-2.3.5/datatables.min.js"></script>
+<script src="_static/activate_datatables.js?v=cb6dbd5f"></script>
 </body>
 </html>

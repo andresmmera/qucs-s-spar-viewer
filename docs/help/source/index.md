@@ -6,11 +6,11 @@ This is a comprehensive toolkit for RF and microwave circuit design. It combines
 
 ## Features
 
-### Display Features
+### Data Display
 
 The tool can display S-parameter data in various formats, including polar plots and Smith charts. Data markers are supported in each display widget. Additionally, the magnitude display supports limit lines.
 
-### Data Capabilities
+### Data Management
 
 This tool can read data from Touchstone files and Qucs-S datasets. Users can easily manage files and traces using the data tabs to add and remove data. Sessions can be saved into a file for later use.
 
@@ -18,8 +18,8 @@ This tool can read data from Touchstone files and Qucs-S datasets. Users can eas
 
 The tool includes built-in design tools such as:
 
-- [RF circuit synthesis tools](/RFCircuitSynthesis/index)
-- [RF engineering calculators](/Calculators/index)
+- [RF Circuit Synthesis Tools](/RFCircuitSynthesis/index)
+- [RF Engineering Calculators](/Calculators/index)
 
 ## Interface Overview
 
@@ -40,10 +40,12 @@ Contains the display widgets for visualizing the data. [Learn more](/Data-displa
 
 Provides widgets for managing and analyzing data:
 
-- Marker display
-- Limit management
-- Synthesis tools
-- Note-taking widget
+<ul style="margin-top: 0; line-height: 0.5;">
+  <li>Marker display</li>
+  <li>Limit management</li>
+  <li>Synthesis tools</li>
+  <li>Note-taking widget</li>
+</ul>
 
 [Learn more](/Data-management-panel/index)
 
@@ -52,16 +54,22 @@ Provides widgets for managing and analyzing data:
 A collection of engineering calculators organized by category:
 
 **General Electronics:**
-- Voltage dividers
-- Equivalent series capacitors
-- Parallel resistances
-- And more...
+
+<ul style="margin-top: 0; line-height: 0.5;">
+  <li>Voltage dividers</li>
+  <li>Equivalent series capacitors</li>
+  <li>Parallel resistances</li>
+  <li>and more...</li>
+</ul>
+
 
 **RF Electronics:**
-- Free Space Loss
-- RF power unit converter
-- Reflection coefficient unit converters
-- And more...
+<ul style="margin-top: 0; line-height: 0.5;">
+    <li>Free Space Loss</li>
+    <li> RF power unit converter</li>
+    <li> Reflection coefficient unit converters</li>
+    <li>And more...</li>
+</ul>
 
 [View all calculators](/Calculators/index)
 
