@@ -19,6 +19,7 @@
 #include "SingleStub.h"
 #include "TeeMatching.h"
 #include "PiMatching.h"
+#include "TappedCMatching.h"
 
 /// @class MatchingNetworkDesigner
 /// @brief Management of the matching network design

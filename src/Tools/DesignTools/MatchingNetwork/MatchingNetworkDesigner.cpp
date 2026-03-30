@@ -96,6 +96,14 @@ SchematicContent MatchingNetworkDesigner::synthesize_One_Port(
       break;
   }
 
+  case 8: { // Tapped-C transformer
+      TappedCMatching *TC = new TappedCMatching(NetworkParams, f_match, NetworkParams.Q);
+      TC->synthesize();
+      Schematic = TC->Schematic;
+      delete TC;
+      break;
+  }
+
   }
   return Schematic;
 }

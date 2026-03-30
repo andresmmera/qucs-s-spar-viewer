@@ -58,6 +58,7 @@ void MatchingNetworkParametersWidget::setupUI() {
   matching_methods.append(QString("%1/8 + %1/4 line").arg(QChar(0xBB, 0x03)));
   matching_methods.append(tr("Tee-matching"));
   matching_methods.append(tr("Pi-matching"));
+  matching_methods.append(tr("Tapped-C transformer"));
   Topology_Combo->addItems(matching_methods);
   mainLayout->addWidget(Topology_Label, layout_row, 0);
   mainLayout->addWidget(Topology_Combo, layout_row, 1);
@@ -375,6 +376,22 @@ void MatchingNetworkParametersWidget::onTopologyChanged(int index) {
       Q_SpinBox->show();
       TeeNetworkMask_Label->show();
       TeeNetworkMask_Combo->show();
+      break;
+
+  case 8: // Tapped-C transformer
+      Solution1_RB->hide();
+      Solution2_RB->hide();
+      TL_Implementation_Label->hide();
+      TL_Implementation_Combo->hide();
+      Sections_Label->hide();
+      Sections_SpinBox->hide();
+      StubTermination_Label->hide();
+      StubTermination_ComboBox->hide();
+      Weighting_GroupBox->hide();
+      Q_Label->show();
+      Q_SpinBox->show();
+      TeeNetworkMask_Label->hide();  // no mask for Tapped-C
+      TeeNetworkMask_Combo->hide();
       break;
 
   default:
