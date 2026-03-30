@@ -104,6 +104,14 @@ SchematicContent MatchingNetworkDesigner::synthesize_One_Port(
       break;
   }
 
+  case 9: { // Tapped-L transformer
+      TappedLMatching *TL = new TappedLMatching(NetworkParams, f_match, NetworkParams.Q);
+      TL->synthesize();
+      Schematic = TL->Schematic;
+      delete TL;
+      break;
+  }
+
   }
   return Schematic;
 }
