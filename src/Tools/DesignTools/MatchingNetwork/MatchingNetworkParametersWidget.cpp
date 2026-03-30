@@ -56,6 +56,7 @@ void MatchingNetworkParametersWidget::setupUI() {
       QString("%1 %2/4").arg(tr("Multisection "), QString(QChar(0xBB, 0x03))));
   matching_methods.append(tr("Cascaded L-sections"));
   matching_methods.append(QString("%1/8 + %1/4 line").arg(QChar(0xBB, 0x03)));
+  matching_methods.append(tr("Tee-matching"));
   Topology_Combo->addItems(matching_methods);
   mainLayout->addWidget(Topology_Label, layout_row, 0);
   mainLayout->addWidget(Topology_Combo, layout_row, 1);
@@ -129,6 +130,29 @@ void MatchingNetworkParametersWidget::setupUI() {
   mainLayout->addWidget(Sections_Label, layout_row, 0);
   mainLayout->addWidget(Sections_SpinBox, layout_row, 1);
 
+  // Tee/Pi matching: loaded Q factor
+  layout_row++;
+  Q_Label = new QLabel(tr("Q"));
+  Q_SpinBox = new CustomDoubleSpinBox();
+  Q_SpinBox->setMinimum(0.1);
+  Q_SpinBox->setMaximum(100.0);
+  Q_SpinBox->setSingleStep(0.5);
+  Q_SpinBox->setDecimals(2);
+  Q_SpinBox->setValue(1.0);
+  mainLayout->addWidget(Q_Label, layout_row, 0);
+  mainLayout->addWidget(Q_SpinBox, layout_row, 1);
+
+  // Tee/Pi matching: LP/HP topology mask
+  layout_row++;
+  TeeNetworkMask_Label = new QLabel(tr("Network type"));
+  TeeNetworkMask_Combo = new QComboBox();
+  TeeNetworkMask_Combo->addItem(tr("LP-LP"));
+  TeeNetworkMask_Combo->addItem(tr("LP-HP"));
+  TeeNetworkMask_Combo->addItem(tr("HP-LP"));
+  TeeNetworkMask_Combo->addItem(tr("HP-HP"));
+  mainLayout->addWidget(TeeNetworkMask_Label, layout_row, 0);
+  mainLayout->addWidget(TeeNetworkMask_Combo, layout_row, 1);
+
   // Input impedance
   layout_row++;
   Zin_Label = new QLabel("Z0");
@@ -188,6 +212,12 @@ void MatchingNetworkParametersWidget::connectSignals() {
           &MatchingNetworkParametersWidget::onParameterChanged);
 
   connect(Sections_SpinBox, &QSpinBox::valueChanged, this,
+          &MatchingNetworkParametersWidget::onParameterChanged);
+
+  connect(Q_SpinBox, &CustomDoubleSpinBox::valueChanged, this,
+          &MatchingNetworkParametersWidget::onParameterChanged);
+
+  connect(TeeNetworkMask_Combo, &QComboBox::currentIndexChanged, this,
           &MatchingNetworkParametersWidget::onParameterChanged);
 
   connect(m_toggleButton, &QPushButton::clicked, this,
@@ -303,6 +333,33 @@ void MatchingNetworkParametersWidget::onTopologyChanged(int index) {
     Weighting_GroupBox->hide();
     break;
 
+  case 6: // Tee-matching
+      // Hide L-section solution radio buttons
+      Solution1_RB->hide();
+      Solution2_RB->hide();
+
+      // Hide TLIN implementation widgets
+      TL_Implementation_Label->hide();
+      TL_Implementation_Combo->hide();
+
+      // Hide number of sections
+      Sections_Label->hide();
+      Sections_SpinBox->hide();
+
+      // Hide stub termination options
+      StubTermination_Label->hide();
+      StubTermination_ComboBox->hide();
+
+      // Hide lambda/4 weighting
+      Weighting_GroupBox->hide();
+
+      // Show Tee-matching controls
+      Q_Label->show();
+      Q_SpinBox->show();
+      TeeNetworkMask_Label->show();
+      TeeNetworkMask_Combo->show();
+      break;
+
   default:
     break;
   }
@@ -346,6 +403,10 @@ MatchingNetworkParametersWidget::getDesignParameters() const {
   specs.NSections = Sections_SpinBox->value();
   specs.Weigthing = Weighting_Combo->currentText();
   specs.gamma_MAX = Ripple_SpinBox->value();
+
+  // Tee-matching
+  specs.Q = Q_SpinBox->value();
+  specs.TeeNetworkMask = TeeNetworkMask_Combo->currentIndex() + 1; // 1-based
 
   ////////////////////////////////////////////////////////////////////////////
   // Transmission line implementation

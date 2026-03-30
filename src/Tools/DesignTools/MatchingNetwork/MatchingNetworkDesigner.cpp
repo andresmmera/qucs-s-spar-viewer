@@ -77,6 +77,16 @@ SchematicContent MatchingNetworkDesigner::synthesize_One_Port(
     delete L8L4;
     break;
   }
+
+  case 6: { // Tee-matching
+      TeeNetworkMask mask = static_cast<TeeNetworkMask>(NetworkParams.TeeNetworkMask);
+      TeeMatching *TM = new TeeMatching(NetworkParams, f_match, NetworkParams.Q, mask);
+      TM->synthesize();
+      Schematic = TM->Schematic;
+      delete TM;
+      break;
+  }
+
   }
   return Schematic;
 }
