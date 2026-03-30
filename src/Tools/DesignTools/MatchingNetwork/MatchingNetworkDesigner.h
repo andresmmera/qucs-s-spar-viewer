@@ -18,6 +18,7 @@
 #include "MultisectionQuarterWave.h"
 #include "SingleStub.h"
 #include "TeeMatching.h"
+#include "PiMatching.h"
 
 /// @class MatchingNetworkDesigner
 /// @brief Management of the matching network design

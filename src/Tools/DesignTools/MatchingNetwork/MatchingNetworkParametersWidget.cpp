@@ -57,6 +57,7 @@ void MatchingNetworkParametersWidget::setupUI() {
   matching_methods.append(tr("Cascaded L-sections"));
   matching_methods.append(QString("%1/8 + %1/4 line").arg(QChar(0xBB, 0x03)));
   matching_methods.append(tr("Tee-matching"));
+  matching_methods.append(tr("Pi-matching"));
   Topology_Combo->addItems(matching_methods);
   mainLayout->addWidget(Topology_Label, layout_row, 0);
   mainLayout->addWidget(Topology_Combo, layout_row, 1);
@@ -64,8 +65,8 @@ void MatchingNetworkParametersWidget::setupUI() {
   // Solution number widget
   SolutionWidget = new QWidget();
   QHBoxLayout *SolutionLayout = new QHBoxLayout();
-  Solution1_RB = new QRadioButton("Solution 1");
-  Solution2_RB = new QRadioButton("Solution 2");
+  Solution1_RB = new QRadioButton("LP");
+  Solution2_RB = new QRadioButton("HP");
   Solution1_RB->setChecked(true);
   SolutionLayout->addWidget(Solution1_RB);
   SolutionLayout->addWidget(Solution2_RB);
@@ -354,6 +355,22 @@ void MatchingNetworkParametersWidget::onTopologyChanged(int index) {
       Weighting_GroupBox->hide();
 
       // Show Tee-matching controls
+      Q_Label->show();
+      Q_SpinBox->show();
+      TeeNetworkMask_Label->show();
+      TeeNetworkMask_Combo->show();
+      break;
+
+  case 7: // Pi-matching
+      Solution1_RB->hide();
+      Solution2_RB->hide();
+      TL_Implementation_Label->hide();
+      TL_Implementation_Combo->hide();
+      Sections_Label->hide();
+      Sections_SpinBox->hide();
+      StubTermination_Label->hide();
+      StubTermination_ComboBox->hide();
+      Weighting_GroupBox->hide();
       Q_Label->show();
       Q_SpinBox->show();
       TeeNetworkMask_Label->show();

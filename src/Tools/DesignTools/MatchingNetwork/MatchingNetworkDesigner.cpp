@@ -87,6 +87,15 @@ SchematicContent MatchingNetworkDesigner::synthesize_One_Port(
       break;
   }
 
+  case 7: { // Pi-matching
+      PiNetworkMask mask = static_cast<PiNetworkMask>(NetworkParams.TeeNetworkMask);
+      PiMatching *PM = new PiMatching(NetworkParams, f_match, NetworkParams.Q, mask);
+      PM->synthesize();
+      Schematic = PM->Schematic;
+      delete PM;
+      break;
+  }
+
   }
   return Schematic;
 }
