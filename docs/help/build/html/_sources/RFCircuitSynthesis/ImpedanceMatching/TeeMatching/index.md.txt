@@ -11,7 +11,7 @@ combinations are available for each Q value.
 
 * RF frequencies.
 * Narrow bandwidth.
-* Small area to be implemented
+* Small area to be implemented.
 * A specific filtering characteristic (low-pass or high-pass) is desired.
 
 ## Design Equations
@@ -100,4 +100,5 @@ Artech House, 1995.
 
 /RFCircuitSynthesis/index
 /RFCircuitSynthesis/ImpedanceMatching/index
+/RFCircuitSynthesis/ImpedanceMatching/PiMatching/index
 ```

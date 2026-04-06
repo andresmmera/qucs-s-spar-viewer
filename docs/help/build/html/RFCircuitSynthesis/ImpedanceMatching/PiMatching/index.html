@@ -21,9 +21,9 @@
 <meta content="#ffffff" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="#030711" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Tee Matching | Qucs-S S-parameter Viewer Documentation</title>
-<meta content="Tee Matching | Qucs-S S-parameter Viewer Documentation" property="og:title"/>
-<meta content="Tee Matching | Qucs-S S-parameter Viewer Documentation" name="twitter:title"/>
+<title>Pi Matching | Qucs-S S-parameter Viewer Documentation</title>
+<meta content="Pi Matching | Qucs-S S-parameter Viewer Documentation" property="og:title"/>
+<meta content="Pi Matching | Qucs-S S-parameter Viewer Documentation" name="twitter:title"/>
 <link href="../../../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
 <link href="../../../_static/theme.css?v=73505e79" rel="stylesheet" type="text/css"/>
 <link href="https://cdn.datatables.net/v/dt/dt-2.3.5/datatables.min.css" rel="stylesheet" type="text/css"/>
@@ -108,16 +108,16 @@
 <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
 </svg>
 </a>
-<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Tee Matching</span>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Pi Matching</span>
 </nav>
 <div id="content" role="main">
-<section id="tee-matching">
-<h1>Tee Matching</h1>
+<section id="pi-matching">
+<h1>Pi Matching</h1>
 <section id="description">
 <h2>Description</h2>
-<p>Tee matching uses a series-shunt-series lumped-element arrangement to achieve
-impedance matching at a target frequency. The loaded Q can be freely chosen,
-giving the designer direct control over bandwidth. Four LP/HP topology
+<p>Pi matching uses a shunt-series-shunt lumped-element arrangement to achieve
+impedance matching at a target frequency. Like the Tee network, the loaded Q
+can be freely chosen, giving direct control over bandwidth. Four LP/HP topology
 combinations are available for each Q value.</p>
 </section>
 <section id="when-to-use">
@@ -136,38 +136,67 @@ virtual resistance Rv.</p>
 <section id="virtual-intermediate-resistance">
 <h3>Virtual Intermediate Resistance</h3>
 <div class="math notranslate nohighlight">
-\[R_v = (Q^2 + 1)\,\min(R_S,\, R_L)\]</div>
-<p>Rv is always greater than both RS and RL.</p>
+\[R_v = \frac{\max(R_S,\, R_L)}{Q^2 + 1}\]</div>
+<p>Rv is always smaller than both RS and RL.</p>
 </section>
 <section id="source-side-l-section-rs-rv">
 <h3>Source-side L-section (RS → Rv)</h3>
 <p>Low-pass solution:</p>
 <div class="math notranslate nohighlight">
-\[B_{1a} = \frac{\sqrt{R_v/R_S}\,\sqrt{R_v^2 - R_S R_v}}{R_v^2}\]</div>
+\[X_{1a} = \sqrt{R_v (R_S - R_v)}\]</div>
 <div class="math notranslate nohighlight">
-\[X_1 = \frac{1}{B_{1a}} + \frac{R_S}{R_v} - \frac{R_S}{B_{1a} R_v}\]</div>
-<p>High-pass solution: negate both B₁ₐ and X₁.</p>
+\[B_1 = \frac{\sqrt{(R_S - R_v)/R_v}}{R_S}\]</div>
+<p>High-pass solution: negate both X₁ₐ and B₁.</p>
 </section>
 <section id="load-side-l-section-rv-zl">
 <h3>Load-side L-section (Rv → ZL)</h3>
 <p>Low-pass solution:</p>
 <div class="math notranslate nohighlight">
-\[X_2 = \sqrt{R_L(R_v - R_L)} - X_L\]</div>
+\[B_2 = \frac{X_L + \sqrt{R_L/R_v}\,\sqrt{R_L^2 + X_L^2 - R_v R_L}}{R_L^2 + X_L^2}\]</div>
 <div class="math notranslate nohighlight">
-\[B_{1b} = \frac{\sqrt{(R_v - R_L)/R_L}}{R_v}\]</div>
-<p>High-pass solution: negate both B₁ᵦ and X₂, and subtract XL with the
-opposite sign.</p>
+\[X_{1b} = \frac{1}{B_2} + \frac{X_L R_v}{R_L} - \frac{R_v}{B_2 R_L}\]</div>
+<p>High-pass solution: negate the square-root term in B₂, then recompute X₁ᵦ.</p>
 </section>
-<section id="combined-centre-susceptance">
-<h3>Combined Centre Susceptance</h3>
+<section id="combined-series-reactance">
+<h3>Combined Series Reactance</h3>
 <div class="math notranslate nohighlight">
-\[B_1 = B_{1a} + B_{1b}\]</div>
+\[X_1 = X_{1a} + X_{1b}\]</div>
+</section>
+<section id="component-values">
+<h3>Component Values</h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Condition</p></th>
+<th class="head"><p>Element</p></th>
+<th class="head"><p>Formula</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X &gt; 0</p></td>
+<td><p>Inductor</p></td>
+<td><p>L = X / ω₀</p></td>
+</tr>
+<tr class="row-odd"><td><p>X &lt; 0</p></td>
+<td><p>Capacitor</p></td>
+<td><p>C = −1 / (ω₀ X)</p></td>
+</tr>
+<tr class="row-even"><td><p>B &gt; 0</p></td>
+<td><p>Capacitor</p></td>
+<td><p>C = B / ω₀</p></td>
+</tr>
+<tr class="row-odd"><td><p>B &lt; 0</p></td>
+<td><p>Inductor</p></td>
+<td><p>L = −1 / (ω₀ B)</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="minimum-q-constraint">
 <h3>Minimum Q Constraint</h3>
 <div class="math notranslate nohighlight">
 \[Q &gt; Q_{\min} = \sqrt{\frac{\max(R_S, R_L)}{\min(R_S, R_L)} - 1}\]</div>
-<p>Values of Q below Qmin make Rv imaginary and the design is invalid.</p>
+<p>Values of Q below Qmin make Rv larger than the smaller termination and the
+design is invalid.</p>
 </section>
 </section>
 <section id="parameters">
@@ -213,7 +242,7 @@ giving four topologies for any given Q:</p>
 <tr class="row-even"><td><p>LP-LP</p></td>
 <td><p>Low-pass</p></td>
 <td><p>Low-pass</p></td>
-<td><p>All shunt caps, series inductors</p></td>
+<td><p>Shunt caps, series inductor</p></td>
 </tr>
 <tr class="row-odd"><td><p>LP-HP</p></td>
 <td><p>Low-pass</p></td>
@@ -228,7 +257,34 @@ giving four topologies for any given Q:</p>
 <tr class="row-odd"><td><p>HP-HP</p></td>
 <td><p>High-pass</p></td>
 <td><p>High-pass</p></td>
-<td><p>All shunt inductors, series caps</p></td>
+<td><p>Shunt inductors, series cap</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tee-and-pi-matching">
+<h2>Tee and Pi matching</h2>
+<p>The Tee and Pi networks are duals of each other and share the same Q-based
+design procedure, but with opposite roles for Rv:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Tee</p></th>
+<th class="head"><p>Pi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Rv relative to terminations</p></td>
+<td><p>Rv &gt; RS and RL</p></td>
+<td><p>Rv &lt; RS and RL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Topology</p></td>
+<td><p>Series-shunt-series</p></td>
+<td><p>Shunt-series-shunt</p></td>
+</tr>
+<tr class="row-even"><td><p>Favours</p></td>
+<td><p>Low-impedance terminations</p></td>
+<td><p>High-impedance terminations</p></td>
 </tr>
 </tbody>
 </table>
@@ -250,7 +306,7 @@ Artech House, 1995.</p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">RF Circuit Synthesis Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Matching Network Design Tool</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../PiMatching/index.html">Pi Matching</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../TeeMatching/index.html">Tee Matching</a></li>
 </ul>
 </div>
 </section>
@@ -265,12 +321,14 @@ Artech House, 1995.</p>
 <li><a :data-current="activeSection === '#virtual-intermediate-resistance'" class="reference internal" href="#virtual-intermediate-resistance">Virtual Intermediate Resistance</a></li>
 <li><a :data-current="activeSection === '#source-side-l-section-rs-rv'" class="reference internal" href="#source-side-l-section-rs-rv">Source-side L-section (RS → Rv)</a></li>
 <li><a :data-current="activeSection === '#load-side-l-section-rv-zl'" class="reference internal" href="#load-side-l-section-rv-zl">Load-side L-section (Rv → ZL)</a></li>
-<li><a :data-current="activeSection === '#combined-centre-susceptance'" class="reference internal" href="#combined-centre-susceptance">Combined Centre Susceptance</a></li>
+<li><a :data-current="activeSection === '#combined-series-reactance'" class="reference internal" href="#combined-series-reactance">Combined Series Reactance</a></li>
+<li><a :data-current="activeSection === '#component-values'" class="reference internal" href="#component-values">Component Values</a></li>
 <li><a :data-current="activeSection === '#minimum-q-constraint'" class="reference internal" href="#minimum-q-constraint">Minimum Q Constraint</a></li>
 </ul>
 </li>
 <li><a :data-current="activeSection === '#parameters'" class="reference internal" href="#parameters">Parameters</a></li>
 <li><a :data-current="activeSection === '#network-type-lp-hp-mask'" class="reference internal" href="#network-type-lp-hp-mask">Network Type (LP/HP Mask)</a></li>
+<li><a :data-current="activeSection === '#tee-and-pi-matching'" class="reference internal" href="#tee-and-pi-matching">Tee and Pi matching</a></li>
 <li><a :data-current="activeSection === '#limitations'" class="reference internal" href="#limitations">Limitations</a></li>
 <li><a :data-current="activeSection === '#reference'" class="reference internal" href="#reference">Reference</a></li>
 <li><a :data-current="activeSection === '#see-also'" class="reference internal" href="#see-also">See Also</a></li>

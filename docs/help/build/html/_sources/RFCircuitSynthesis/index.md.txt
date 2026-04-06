@@ -111,6 +111,11 @@ Single-port and two-port matching networks can be synthesized. The load can be e
      - Narrow
      - Yes
      - Yes
+   * - `Pi <../RFCircuitSynthesis/ImpedanceMatching/PiMatching/index.html>`_
+     - 3 Lumped Elements
+     - Narrow
+     - Yes
+     - Yes
 ```
 
 ### Power combining
