@@ -106,6 +106,11 @@ Single-port and two-port matching networks can be synthesized. The load can be e
      - Moderate (10-20%)
      - Yes
      - No
+   * - `Tee <../RFCircuitSynthesis/ImpedanceMatching/TeeMatching/index.html>`_
+     - 3 Lumped Elements
+     - Narrow
+     - Yes
+     - Yes
 ```
 
 ### Power combining
