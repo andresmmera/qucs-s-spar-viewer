@@ -63,7 +63,7 @@ the series arm and the other split across the two shunt arms:
 |-|----------|----------|
 | Series element | C1 (capacitor) | L1 (inductor) |
 | Shunt elements | L and C2 | C and L2 |
-| Preferred use | Tank circuits, oscillators | Broadband transformers |
+| Preferred use | Tank circuits, oscillators |  |
 
 
 ## Limitations
@@ -77,4 +77,5 @@ the series arm and the other split across the two shunt arms:
 
 /RFCircuitSynthesis/index
 /RFCircuitSynthesis/ImpedanceMatching/index
+/RFCircuitSynthesis/ImpedanceMatching/TappedL/index
 ```

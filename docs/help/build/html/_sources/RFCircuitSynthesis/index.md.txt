@@ -121,6 +121,11 @@ Single-port and two-port matching networks can be synthesized. The load can be e
      - Narrow
      - No
      - Yes
+   * - `Tapped-L <../RFCircuitSynthesis/ImpedanceMatching/TappedL/index.html>`_
+     - 3 Lumped Elements
+     - Narrow
+     - No
+     - Yes
 ```
 
 ### Power combining

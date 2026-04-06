@@ -24,9 +24,9 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#030711" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Tapped-C Transformer Matching | Qucs-S S-parameter Viewer Documentation</title>
-  <meta property="og:title" content="Tapped-C Transformer Matching | Qucs-S S-parameter Viewer Documentation" />
-  <meta name="twitter:title" content="Tapped-C Transformer Matching | Qucs-S S-parameter Viewer Documentation" />
+  <title>Tapped-L Transformer Matching | Qucs-S S-parameter Viewer Documentation</title>
+  <meta property="og:title" content="Tapped-L Transformer Matching | Qucs-S S-parameter Viewer Documentation" />
+  <meta name="twitter:title" content="Tapped-L Transformer Matching | Qucs-S S-parameter Viewer Documentation" />
   <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=e72c8e07" />
   <link rel="stylesheet" type="text/css" href="../../../_static/theme.css?v=73505e79" />
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-2.3.5/datatables.min.css" />
@@ -160,18 +160,19 @@
   </a>
   
 <div class="mr-1">/</div><span aria-current="page"
-        class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Tapped-C Transformer Matching</span>
+        class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Tapped-L Transformer Matching</span>
 </nav>
 
     <div id="content" role="main">
-      <section id="tapped-c-transformer-matching">
-<h1>Tapped-C Transformer Matching</h1>
+      <section id="tapped-l-transformer-matching">
+<h1>Tapped-L Transformer Matching</h1>
 <section id="description">
 <h2>Description</h2>
-<p>The Tapped-C transformer uses a shunt-series-shunt arrangement of one inductor
-and two capacitors to achieve impedance matching at a target frequency. The
-loaded Q controls the bandwidth. Unlike the Tee and Pi networks there is no
-LP/HP mask — the component placement is fixed by the impedance ratio alone.</p>
+<p>The Tapped-L transformer uses a shunt-series-shunt arrangement of two
+inductors and one capacitor to achieve impedance matching at a target
+frequency. It is the dual of the Tapped-C: the series element is always an
+inductor (L1), and the single capacitor C is split across the two shunt arms
+together with a second inductor L2. The loaded Q controls the bandwidth.</p>
 </section>
 <section id="when-to-use">
 <h2>When to Use</h2>
@@ -179,13 +180,12 @@ LP/HP mask — the component placement is fixed by the impedance ratio alone.</p
 <li><p>RF frequencies.</p></li>
 <li><p>Narrow bandwidth.</p></li>
 <li><p>Small area to be implemented.</p></li>
-<li><p>Typically used in some RF oscillators.</p></li>
 </ul>
 </section>
 <section id="design-equations">
 <h2>Design Equations</h2>
 <p>When RL &gt; RS the roles of the two ports are internally swapped before
-computing component values, and L and C2 are placed on opposite sides of
+computing component values, and C and L2 are placed on opposite sides of
 the network (see Topology section).</p>
 <section id="auxiliary-q-factor">
 <h3>Auxiliary Q Factor</h3>
@@ -195,11 +195,11 @@ the network (see Topology section).</p>
 <section id="component-values">
 <h3>Component Values</h3>
 <div class="math notranslate nohighlight">
-\[L = \frac{R_S}{\omega_0\, Q}\]</div>
+\[C = \frac{Q}{\omega_0\, R_S}\]</div>
 <div class="math notranslate nohighlight">
-\[C_2 = \frac{Q_2}{R_L\, \omega_0}\]</div>
+\[L_2 = \frac{R_L}{Q_2\, \omega_0}\]</div>
 <div class="math notranslate nohighlight">
-\[C_1 = \frac{C_2\,(Q_2^2 + 1)}{Q\,Q_2 - Q_2^2}\]</div>
+\[L_1 = \frac{L_2\,(Q\,Q_2 - Q_2^2)}{Q_2^2 + 1}\]</div>
 </section>
 <section id="minimum-q-constraint">
 <h3>Minimum Q Constraint</h3>
@@ -273,7 +273,7 @@ the series arm and the other split across the two shunt arms:</p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">RF Circuit Synthesis Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Matching Network Design Tool</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../TappedL/index.html">Tapped-L Transformer Matching</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../TappedC/index.html">Tapped-C Transformer Matching</a></li>
 </ul>
 </div>
 </section>
