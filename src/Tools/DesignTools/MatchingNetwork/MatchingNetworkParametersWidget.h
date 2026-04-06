@@ -135,6 +135,14 @@ private:
   QSpinBox* Sections_SpinBox;
   /// @}
 
+  /// @name Tee/Pi-matching controls
+  /// @{
+  QLabel* Q_Label;                    ///< Label for the Q factor spinbox
+  CustomDoubleSpinBox* Q_SpinBox;     ///< Loaded Q factor (Tee/Pi networks)
+  QLabel* TeeNetworkMask_Label;       ///< Label for the topology-mask combobox
+  QComboBox* TeeNetworkMask_Combo;    ///< LP-LP / LP-HP / HP-LP / HP-HP
+  /// @}
+
   /// @name Reference impedance
   /// @{
   QLabel* Zin_Label;

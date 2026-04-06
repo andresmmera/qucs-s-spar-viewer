@@ -77,6 +77,41 @@ SchematicContent MatchingNetworkDesigner::synthesize_One_Port(
     delete L8L4;
     break;
   }
+
+  case 6: { // Tee-matching
+      TeeNetworkMask mask = static_cast<TeeNetworkMask>(NetworkParams.TeeNetworkMask);
+      TeeMatching *TM = new TeeMatching(NetworkParams, f_match, NetworkParams.Q, mask);
+      TM->synthesize();
+      Schematic = TM->Schematic;
+      delete TM;
+      break;
+  }
+
+  case 7: { // Pi-matching
+      PiNetworkMask mask = static_cast<PiNetworkMask>(NetworkParams.TeeNetworkMask);
+      PiMatching *PM = new PiMatching(NetworkParams, f_match, NetworkParams.Q, mask);
+      PM->synthesize();
+      Schematic = PM->Schematic;
+      delete PM;
+      break;
+  }
+
+  case 8: { // Tapped-C transformer
+      TappedCMatching *TC = new TappedCMatching(NetworkParams, f_match, NetworkParams.Q);
+      TC->synthesize();
+      Schematic = TC->Schematic;
+      delete TC;
+      break;
+  }
+
+  case 9: { // Tapped-L transformer
+      TappedLMatching *TL = new TappedLMatching(NetworkParams, f_match, NetworkParams.Q);
+      TL->synthesize();
+      Schematic = TL->Schematic;
+      delete TL;
+      break;
+  }
+
   }
   return Schematic;
 }

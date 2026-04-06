@@ -232,6 +232,8 @@ struct MatchingNetworkDesignParameters {
   QList<std::complex<double>> ZL_data;    ///< Impedance vs frequency
   QString sim_path;                       ///< S-parameter file path
   MS_Substrate MS_Subs;                   ///< Substrate settings
+  double Q = 1.0;                         ///< Loaded Q factor (Tee-matching)
+  int TeeNetworkMask = 1;                 ///< LP-LP=1, LP-HP=2, HP-LP=3, HP-HP=4 (Tee-matching)
 };
 
 ///
