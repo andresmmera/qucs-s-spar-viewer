@@ -78,4 +78,5 @@ the series arm and the other split across the two shunt arms:
 /RFCircuitSynthesis/index
 /RFCircuitSynthesis/ImpedanceMatching/index
 /RFCircuitSynthesis/ImpedanceMatching/TappedC/index
+/RFCircuitSynthesis/ImpedanceMatching/DoubleTappedResonator/index
 ```
