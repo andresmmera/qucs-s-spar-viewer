@@ -1,0 +1,33 @@
+<map id="QCPAbstractPlottable" name="QCPAbstractPlottable">
+<area shape="rect" id="Node000001" title="The abstract base class for all data representing objects in a plot." alt="" coords="289,237,449,262"/>
+<area shape="rect" id="Node000004" href="$df/d94/classQCPAbstractPlottable1D.html" title=" " alt="" coords="508,5,687,45"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="378,223,396,185,421,140,455,95,496,55,516,43,518,48,499,59,459,98,426,143,401,188,383,225"/>
+<area shape="rect" id="Node000006" href="$df/d94/classQCPAbstractPlottable1D.html" title=" " alt="" coords="508,69,687,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="386,224,432,172,462,143,496,119,520,107,522,112,499,124,466,148,436,175,390,228"/>
+<area shape="rect" id="Node000008" href="$df/d94/classQCPAbstractPlottable1D.html" title=" " alt="" coords="508,133,687,173"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="404,228,496,183,528,171,530,176,498,188,406,232"/>
+<area shape="rect" id="Node000010" href="$df/d94/classQCPAbstractPlottable1D.html" title=" " alt="" coords="508,197,687,237"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="463,234,508,227,508,232,463,239"/>
+<area shape="rect" id="Node000012" href="$df/d94/classQCPAbstractPlottable1D.html" title=" " alt="" coords="497,261,697,301"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="463,260,497,265,497,270,463,265"/>
+<area shape="rect" id="Node000014" href="$df/d94/classQCPAbstractPlottable1D.html" title="A template base class for plottables with one&#45;dimensional data." alt="" coords="508,325,687,365"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="406,266,498,311,530,323,528,328,496,316,404,271"/>
+<area shape="rect" id="Node000015" href="$d3/dd5/classQCPColorMap.html" title="A plottable representing a two&#45;dimensional color map in a plot." alt="" coords="542,390,653,415"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="389,271,435,324,465,352,499,375,543,392,541,397,496,380,462,356,431,328,385,275"/>
+<area shape="rect" id="Node000016" href="$d2/dc8/classQCPErrorBars.html" title="A plottable that adds a set of error bars to other plottables." alt="" coords="543,439,652,465"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="384,273,401,308,426,350,459,391,499,426,520,437,543,444,542,449,518,442,496,430,455,395,422,353,396,311,379,275"/>
+<area shape="rect" id="Node000002" href="$d0/d2b/classQCPLayerable.html" title="Base class for all drawable objects." alt="" coords="128,237,241,262"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,247,289,247,289,252,255,252"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,237,80,262"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,247,128,247,128,252,94,252"/>
+<area shape="rect" id="Node000005" href="$d6/def/classQCPBars.html" title="A plottable representing a bar chart in a plot." alt="" coords="775,13,854,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="701,23,775,23,775,28,701,28"/>
+<area shape="rect" id="Node000007" href="$d5/d0b/classQCPCurve.html" title="A plottable representing a parametric curve in a plot." alt="" coords="771,77,858,102"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="701,87,771,87,771,92,701,92"/>
+<area shape="rect" id="Node000009" href="$da/d5b/classQCPFinancial.html" title="A plottable representing a financial stock chart." alt="" coords="761,141,868,166"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="701,151,761,151,761,156,701,156"/>
+<area shape="rect" id="Node000011" href="$dd/dff/classQCPGraph.html" title="A plottable representing a graph in a plot." alt="" coords="771,205,859,230"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="701,215,770,215,770,220,701,220"/>
+<area shape="rect" id="Node000013" href="$d8/d82/classQCPStatisticalBox.html" title="A plottable representing a single statistical box in a plot." alt="" coords="745,269,884,294"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="711,279,745,279,745,284,711,284"/>
+</map>

@@ -1,0 +1,42 @@
+<map id="Tools/Calculators/General/EquivalentCalculators/ParallelInductors/parallel_inductors.h" name="Tools/Calculators/General/EquivalentCalculators/ParallelInductors/parallel_inductors.h">
+<area shape="rect" id="Node000001" title="Calculator: Equivalent inductance of parallel inductors (definition)" alt="" coords="296,5,483,75"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,211,80,236"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="327,77,78,207,75,202,324,72"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="262,130,335,155"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="361,77,320,121,316,118,357,73"/>
+<area shape="rect" id="Node000004" href="$d5/da9/CustomDoubleSpinBox_8h.html" title="Custom QDoubleSpinBox. It includes a context menu (right&#45;click) for setting the minimum,..." alt="" coords="360,123,603,163"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="422,73,456,110,452,114,419,77"/>
+<area shape="rect" id="Node000012" href="$d9/d14/general_8h.html" title="Utility functions needed across the whole project." alt="" coords="1307,130,1424,155"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="483,48,1293,131,1293,137,483,54"/>
+<area shape="poly" id="edge6_Node000004_Node000002" title=" " alt="" coords="362,165,94,213,93,208,361,160"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="104,211,235,236"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="407,165,229,210,227,205,406,160"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="259,211,327,236"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="437,165,335,208,333,203,435,160"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="352,211,461,236"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="465,165,429,202,425,199,461,161"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="486,211,629,236"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="502,161,538,199,534,202,498,165"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="653,211,763,236"/>
+<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="536,160,663,204,661,209,535,165"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="788,211,855,236"/>
+<area shape="poly" id="edge10_Node000004_Node000010" title=" " alt="" coords="566,160,775,208,776,208,774,213,774,213,565,165"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="879,211,1035,236"/>
+<area shape="poly" id="edge11_Node000004_Node000011" title=" " alt="" coords="596,160,875,206,874,211,595,165"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1059,211,1114,236"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="1325,158,1128,213,1126,208,1324,153"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1139,211,1219,236"/>
+<area shape="poly" id="edge14_Node000012_Node000014" title=" " alt="" coords="1339,158,1219,208,1217,203,1337,153"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="1243,211,1314,236"/>
+<area shape="poly" id="edge15_Node000012_Node000015" title=" " alt="" coords="1354,157,1304,203,1300,199,1351,154"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="1338,211,1393,236"/>
+<area shape="poly" id="edge16_Node000012_Node000016" title=" " alt="" coords="1368,156,1368,197,1363,197,1363,156"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="1417,211,1490,236"/>
+<area shape="poly" id="edge17_Node000012_Node000017" title=" " alt="" coords="1380,154,1432,200,1429,204,1377,158"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="1514,211,1667,236"/>
+<area shape="poly" id="edge18_Node000012_Node000018" title=" " alt="" coords="1399,153,1546,204,1544,209,1397,158"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="1691,211,1754,236"/>
+<area shape="poly" id="edge19_Node000012_Node000019" title=" " alt="" coords="1424,153,1678,208,1677,213,1423,158"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="1778,211,1857,236"/>
+<area shape="poly" id="edge20_Node000012_Node000020" title=" " alt="" coords="1424,150,1575,174,1765,208,1764,213,1574,179,1424,155"/>
+</map>

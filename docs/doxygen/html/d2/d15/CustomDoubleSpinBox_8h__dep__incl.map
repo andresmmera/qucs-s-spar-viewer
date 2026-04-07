@@ -1,0 +1,121 @@
+<map id="UI/CustomWidgets/CustomDoubleSpinBox.h" name="UI/CustomWidgets/CustomDoubleSpinBox.h">
+<area shape="rect" id="Node000001" title="Custom QDoubleSpinBox. It includes a context menu (right&#45;click) for setting the minimum,..." alt="" coords="2363,5,2606,45"/>
+<area shape="rect" id="Node000002" href="$dc/d52/parallel__inductors_8h.html" title="Calculator: Equivalent inductance of parallel inductors (definition)" alt="" coords="984,93,1171,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2349,32,2077,39,1742,51,1418,70,1285,82,1183,96,1172,98,1171,93,1183,91,1284,77,1418,65,1741,46,2077,34,2349,27"/>
+<area shape="rect" id="Node000005" href="$d9/dbe/parallel__resistors_8h.html" title="Calculator: Equivalent resistance of parallel resistors (definition)" alt="" coords="1474,93,1660,163"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="2349,32,2209,38,2041,49,1860,68,1680,96,1661,100,1660,95,1679,91,1859,63,2041,44,2209,33,2349,27"/>
+<area shape="rect" id="Node000007" href="$d0/dfa/series__capacitors_8h.html" title="Calculator: Equivalent capacitance of series capacitors (definition)" alt="" coords="39,93,226,163"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="2350,29,1901,30,1293,37,980,46,687,58,435,74,245,96,227,99,226,94,244,91,435,69,687,52,979,40,1293,32,1901,24,2350,23"/>
+<area shape="rect" id="Node000009" href="$d7/d24/voltage__divider_8h.html" title="Calculator: Voltage divider design with power dissipation analysis (definition)" alt="" coords="351,101,538,155"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="2349,31,1968,38,1466,51,970,70,765,82,609,96,538,107,538,102,608,91,765,77,970,64,1466,45,1968,33,2349,26"/>
+<area shape="rect" id="Node000011" href="$d5/dc7/free__space__loss_8h_source.html" title=" " alt="" coords="79,335,276,390"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="2349,30,1854,34,1205,44,892,52,625,64,431,78,371,87,340,96,315,114,299,134,287,154,280,176,266,225,256,252,240,281,201,337,196,334,235,279,251,250,261,223,275,175,283,152,294,131,312,110,338,91,370,81,431,73,625,58,892,47,1204,39,1854,28,2349,25"/>
+<area shape="rect" id="Node000012" href="$de/db7/freq__wavelength__converter_8h.html" title="Calculator: Convert between frequency and wavelength (definition)" alt="" coords="621,101,836,155"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="2349,31,2094,37,1752,48,1364,67,973,96,837,112,836,107,972,91,1364,62,1751,43,2093,31,2349,26"/>
+<area shape="rect" id="Node000014" href="$db/dc3/octaveBW__calculator_8h_source.html" title=" " alt="" coords="1195,101,1414,155"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="2349,32,2172,38,1950,50,1706,68,1462,96,1414,104,1414,99,1461,91,1706,63,1950,44,2172,33,2349,27"/>
+<area shape="rect" id="Node000016" href="$d6/d42/RF__power__converter_8h.html" title="Calculator: Convert RF power between different units (definition)" alt="" coords="1786,101,1954,155"/>
+<area shape="poly" id="edge21_Node000001_Node000016" title=" " alt="" coords="2349,46,2190,68,2017,96,1955,109,1953,104,2016,91,2189,62,2349,40"/>
+<area shape="rect" id="Node000018" href="$dd/d4a/swr__s11__calculator_8h.html" title="Calculator: Conversion between SWR, S11 and |Γ| (definition)" alt="" coords="1525,328,1710,397"/>
+<area shape="poly" id="edge24_Node000001_Node000018" title=" " alt="" coords="2350,35,2007,58,1857,75,1805,85,1775,96,1758,111,1739,134,1700,198,1635,329,1630,327,1695,195,1735,131,1754,107,1772,91,1803,80,1856,70,2007,53,2349,30"/>
+<area shape="rect" id="Node000019" href="$df/d45/gamma__calculator_8h.html" title="Calculator: Reflection coefficient (Γ) to Z, VSWR and S11 (definition)" alt="" coords="2029,93,2230,163"/>
+<area shape="poly" id="edge26_Node000001_Node000019" title=" " alt="" coords="2405,52,2231,101,2230,96,2404,47"/>
+<area shape="rect" id="Node000021" href="$d2/dea/impedance__calculator_8h.html" title="Simple calculator: Impedance (Z) to Γ, VSWR and S11 (definition)" alt="" coords="2282,93,2527,163"/>
+<area shape="poly" id="edge29_Node000001_Node000021" title=" " alt="" coords="2463,58,2433,95,2429,91,2459,54"/>
+<area shape="rect" id="Node000023" href="$de/dd2/AttenuatorDesignTool_8h.html" title="GUI for the RF attenuator design tool (definition)" alt="" coords="3181,108,3404,148"/>
+<area shape="poly" id="edge32_Node000001_Node000023" title=" " alt="" coords="2620,41,3181,110,3180,115,2619,46"/>
+<area shape="rect" id="Node000025" href="$d4/df4/qucs-s-spar-viewer_8h.html" title="Main application class for S&#45;parameter viewer (and its RF circuit synthesis tools)" alt="" coords="4014,350,4189,375"/>
+<area shape="poly" id="edge69_Node000001_Node000025" title=" " alt="" coords="2620,26,2936,34,3323,47,3671,65,3796,77,3870,91,3928,111,3971,133,4008,163,4048,209,4071,246,4087,286,4103,349,4097,351,4082,288,4066,249,4044,212,4004,167,3968,138,3926,116,3869,96,3796,82,3671,71,3323,52,2936,39,2620,32"/>
+<area shape="rect" id="Node000035" href="$d7/d2a/FilterDesignTool_8h.html" title="GUI and control logic for RF filter design and synthesis (definition)" alt="" coords="3663,108,3858,148"/>
+<area shape="poly" id="edge43_Node000001_Node000035" title=" " alt="" coords="2620,33,2979,57,3415,91,3663,114,3663,119,3415,96,2979,62,2619,38"/>
+<area shape="rect" id="Node000038" href="$dd/d1d/MatchingNetworkDesignTool_8h.html" title="GUI for the matching network synthesis tool (definition)" alt="" coords="2576,225,2854,265"/>
+<area shape="poly" id="edge47_Node000001_Node000038" title=" " alt="" coords="2511,54,2541,92,2565,128,2592,161,2636,196,2680,223,2677,227,2633,200,2588,165,2561,131,2537,95,2507,58"/>
+<area shape="rect" id="Node000040" href="$d3/dd4/MatchingNetworkParametersWidget_8h_source.html" title=" " alt="" coords="2602,101,2873,155"/>
+<area shape="poly" id="edge50_Node000001_Node000040" title=" " alt="" coords="2545,48,2673,98,2671,103,2544,53"/>
+<area shape="rect" id="Node000042" href="$dd/d2b/PowerCombiningTool_8h.html" title="Widget for power combining network design and synthesis (definition)" alt="" coords="4452,108,4703,148"/>
+<area shape="poly" id="edge53_Node000001_Node000042" title=" " alt="" coords="2619,26,3009,33,3523,46,4031,65,4243,77,4403,91,4494,105,4493,111,4403,96,4242,82,4031,70,3523,51,3009,38,2619,31"/>
+<area shape="rect" id="Node000044" href="$d3/d4a/simulationsetup_8h.html" title="UI component to set the simulation settings (definition)" alt="" coords="5146,108,5356,148"/>
+<area shape="poly" id="edge56_Node000001_Node000044" title=" " alt="" coords="2619,26,3797,47,4484,66,4770,78,4987,91,5146,108,5145,114,4987,96,4770,83,4484,72,3797,53,2619,31"/>
+<area shape="rect" id="Node000046" href="$d2/d02/CustomDoubleSpinBox_8cpp.html" title="Custom QDoubleSpinBox. It includes a context menu (right&#45;click) for setting the minimum,..." alt="" coords="5670,108,5912,148"/>
+<area shape="poly" id="edge59_Node000001_Node000046" title=" " alt="" coords="2619,25,3290,32,4237,44,5135,64,5463,76,5658,91,5729,105,5728,111,5657,96,5463,82,5134,69,4237,50,3290,37,2619,30"/>
+<area shape="rect" id="Node000047" href="$de/d16/polarplotwidget_8h.html" title="Construct polar plot widget with default configuration (definition)" alt="" coords="5409,115,5645,141"/>
+<area shape="poly" id="edge60_Node000001_Node000047" title=" " alt="" coords="2619,24,3181,25,3976,34,4391,42,4780,54,5115,70,5369,91,5429,100,5484,113,5483,118,5428,106,5368,96,5115,75,4779,59,4390,47,3976,39,3181,31,2619,29"/>
+<area shape="rect" id="Node000049" href="$dd/d1d/rectangularplotwidget_8h.html" title="Widget for displaying rectangular (Cartesian) plots with dual y&#45;axes (definition)" alt="" coords="4114,115,4391,141"/>
+<area shape="poly" id="edge63_Node000001_Node000049" title=" " alt="" coords="2620,27,3376,48,3792,67,3964,78,4095,91,4209,113,4208,118,4095,96,3964,83,3792,72,3376,53,2620,32"/>
+<area shape="rect" id="Node000051" href="$d0/d79/smithchartwidget_8h.html" title="Smith chart visualization and interaction widget (definition)" alt="" coords="4727,115,4975,141"/>
+<area shape="poly" id="edge66_Node000001_Node000051" title=" " alt="" coords="2620,24,3066,28,3671,37,3983,46,4274,57,4525,72,4715,91,4768,101,4815,113,4813,118,4766,106,4715,96,4525,77,4274,62,3983,51,3671,43,3066,33,2620,30"/>
+<area shape="rect" id="Node000003" href="$d9/d29/parallel__inductors_8cpp.html" title="Calculator: Equivalent inductance of parallel inductors (implementation)" alt="" coords="868,211,1055,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1036,174,997,212,994,209,1032,171"/>
+<area shape="rect" id="Node000004" href="$d0/d79/calculators__management_8cpp.html" title="Implementation of the slots to call the dialog calculators." alt="" coords="1199,453,1431,478"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1089,175,1102,225,1122,284,1151,343,1189,396,1209,414,1232,429,1279,450,1277,455,1230,434,1206,418,1185,399,1146,345,1117,286,1097,227,1084,177"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="1606,173,1621,198,1631,226,1633,254,1624,281,1612,296,1600,305,1574,314,1546,318,1514,330,1408,398,1331,455,1328,450,1405,394,1511,326,1544,313,1573,308,1598,300,1609,292,1619,279,1628,254,1626,227,1616,200,1601,175"/>
+<area shape="rect" id="Node000006" href="$d8/dd0/parallel__resistors_8cpp.html" title="Calculator: Equivalent resistance of parallel resistors (implementation)" alt="" coords="1423,211,1610,280"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1549,177,1534,212,1529,209,1544,174"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="61,173,43,191,29,212,11,265,8,290,10,313,17,335,29,356,46,376,68,395,84,401,116,407,221,418,537,437,901,450,1199,459,1199,464,901,456,536,442,220,423,116,412,83,406,66,400,42,380,25,359,12,337,5,314,3,290,5,264,25,209,39,188,58,169"/>
+<area shape="rect" id="Node000008" href="$df/dcb/series__capacitors_8cpp.html" title="Calculator: Equivalent capacitance of series capacitors (implementation)" alt="" coords="39,211,226,280"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="135,177,135,210,130,210,130,177"/>
+<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="383,165,359,186,341,212,333,230,330,246,332,262,341,278,364,303,396,325,435,345,482,363,592,394,717,417,849,434,979,446,1199,459,1199,464,978,452,848,440,716,422,591,399,480,368,433,350,393,330,360,307,337,282,327,263,325,246,328,229,337,209,355,183,380,161"/>
+<area shape="rect" id="Node000010" href="$d5/da8/voltage__divider_8cpp.html" title="Calculator: Voltage divider design with power dissipation analysis (implementation)" alt="" coords="351,218,538,273"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="447,169,447,218,442,218,442,169"/>
+<area shape="poly" id="edge14_Node000011_Node000004" title=" " alt="" coords="275,391,295,395,419,414,547,429,797,449,1023,459,1199,462,1199,467,1023,464,797,454,546,434,419,419,295,400,274,396"/>
+<area shape="poly" id="edge17_Node000012_Node000004" title=" " alt="" coords="651,164,624,185,603,212,594,230,590,246,593,262,602,278,619,295,642,312,703,342,779,368,866,391,1050,427,1211,450,1210,455,1049,433,865,397,778,374,701,347,639,316,616,300,598,282,588,264,585,246,589,229,598,209,620,181,648,160"/>
+<area shape="rect" id="Node000013" href="$d3/dd1/freq__wavelength__converter_8cpp.html" title="Calculator: Convert between frequency and wavelength (implementation)" alt="" coords="613,218,844,273"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="731,169,731,218,726,218,726,169"/>
+<area shape="poly" id="edge20_Node000014_Node000004" title=" " alt="" coords="1221,164,1193,185,1171,212,1163,229,1161,244,1171,279,1198,334,1235,384,1273,423,1303,451,1299,454,1269,427,1231,387,1194,337,1166,281,1156,245,1158,228,1166,209,1189,181,1218,160"/>
+<area shape="rect" id="Node000015" href="$d7/da7/octaveBW__calculator_8cpp.html" title="Calculator: Calculate the number of octaves and decades in a band given the corner frequencies (imple..." alt="" coords="1180,218,1399,273"/>
+<area shape="poly" id="edge19_Node000014_Node000015" title=" " alt="" coords="1302,169,1296,218,1290,217,1297,169"/>
+<area shape="poly" id="edge23_Node000016_Node000004" title=" " alt="" coords="1819,166,1796,187,1776,212,1763,238,1758,263,1757,310,1757,332,1753,355,1743,377,1723,399,1703,413,1674,424,1601,442,1515,454,1431,461,1431,456,1515,449,1600,437,1673,419,1700,408,1720,395,1738,374,1748,353,1751,332,1752,310,1752,262,1758,236,1771,209,1792,184,1816,162"/>
+<area shape="rect" id="Node000017" href="$d9/d63/RF__power__converter_8cpp.html" title="Calculator: Convert RF power between different units (implementation)" alt="" coords="1786,218,1954,273"/>
+<area shape="poly" id="edge22_Node000016_Node000017" title=" " alt="" coords="1872,169,1872,218,1867,218,1867,169"/>
+<area shape="poly" id="edge25_Node000018_Node000004" title=" " alt="" coords="1513,401,1350,455,1349,450,1511,396"/>
+<area shape="poly" id="edge28_Node000019_Node000004" title=" " alt="" coords="2066,173,2018,213,2003,231,1994,247,1984,264,1968,282,1915,325,1871,354,1822,377,1759,400,1675,424,1589,441,1432,461,1431,455,1588,436,1674,419,1757,395,1820,372,1868,350,1912,321,1964,278,1980,261,1989,245,1999,228,2014,209,2063,169"/>
+<area shape="rect" id="Node000020" href="$d3/dd7/gamma__calculator_8cpp.html" title="Calculator: Reflection coefficient (Γ) to Z, VSWR and S11 (implementation)" alt="" coords="2029,211,2230,280"/>
+<area shape="poly" id="edge27_Node000019_Node000020" title=" " alt="" coords="2132,177,2132,210,2127,210,2127,177"/>
+<area shape="poly" id="edge31_Node000021_Node000004" title=" " alt="" coords="2343,173,2296,213,2281,231,2272,249,2261,265,2243,282,2191,316,2144,339,2101,355,2058,366,1967,380,1853,400,1742,420,1629,437,1432,458,1431,453,1629,431,1741,415,1852,395,1967,375,2057,361,2099,350,2142,334,2188,311,2240,278,2257,262,2267,246,2276,228,2292,209,2339,169"/>
+<area shape="rect" id="Node000022" href="$d9/d91/impedance__calculator_8cpp.html" title="Simple calculator: Impedance (Z) to Γ, VSWR and S11 (implementation)" alt="" coords="2306,211,2551,280"/>
+<area shape="poly" id="edge30_Node000021_Node000022" title=" " alt="" coords="2417,176,2424,210,2419,211,2412,177"/>
+<area shape="rect" id="Node000024" href="$d3/d00/AttenuatorDesignTool_8cpp.html" title="GUI for the attenuator design tool (implementation)" alt="" coords="3173,225,3412,265"/>
+<area shape="poly" id="edge33_Node000023_Node000024" title=" " alt="" coords="3295,162,3295,225,3290,225,3290,162"/>
+<area shape="poly" id="edge34_Node000023_Node000025" title=" " alt="" coords="3344,152,3385,178,3425,209,3441,228,3450,247,3459,263,3476,278,3519,296,3576,311,3722,334,3879,348,4014,356,4014,361,3879,353,3721,339,3575,316,3517,301,3474,282,3455,266,3445,249,3436,231,3421,213,3382,182,3341,157"/>
+<area shape="poly" id="edge35_Node000025_Node000004" title=" " alt="" coords="4001,370,1431,462,1431,457,4000,365"/>
+<area shape="rect" id="Node000026" href="$d0/d63/dataset__management_8cpp.html" title="Implementation of the functions related to the data management." alt="" coords="4668,453,4879,478"/>
+<area shape="poly" id="edge36_Node000025_Node000026" title=" " alt="" coords="4195,375,4657,443,4703,450,4703,455,4656,448,4194,380"/>
+<area shape="rect" id="Node000027" href="$d3/d75/limits_8cpp.html" title="Implementation of the functions related to the limits management." alt="" coords="3535,453,3639,478"/>
+<area shape="poly" id="edge37_Node000025_Node000027" title=" " alt="" coords="4011,380,3844,408,3652,448,3624,455,3623,450,3650,443,3843,403,4011,375"/>
+<area shape="rect" id="Node000028" href="$d4/d19/markers_8cpp.html" title="Implementation of the functions related to the markers management." alt="" coords="3663,453,3783,478"/>
+<area shape="poly" id="edge38_Node000025_Node000028" title=" " alt="" coords="4046,381,3767,455,3765,450,4045,376"/>
+<area shape="rect" id="Node000029" href="$d9/d88/qucs-s-spar-viewer_8cpp.html" title="Main application class for S&#45;parameter viewer (implementation)" alt="" coords="3807,453,3996,478"/>
+<area shape="poly" id="edge39_Node000025_Node000029" title=" " alt="" coords="4068,384,3926,455,3923,450,4065,379"/>
+<area shape="rect" id="Node000030" href="$d1/d93/read__Sparam__data__files_8cpp.html" title="Implementation of the functions related to the data import." alt="" coords="4020,445,4183,485"/>
+<area shape="poly" id="edge40_Node000025_Node000030" title=" " alt="" coords="4104,389,4104,445,4099,445,4099,389"/>
+<area shape="rect" id="Node000031" href="$da/d08/session__management_8cpp.html" title="Implementation of the functions related to the session management." alt="" coords="4207,453,4418,478"/>
+<area shape="poly" id="edge41_Node000025_Node000031" title=" " alt="" coords="4139,379,4290,450,4287,455,4137,384"/>
+<area shape="rect" id="Node000032" href="$df/d05/theme__management_8cpp.html" title="Function for handling the UI theme." alt="" coords="4442,453,4644,478"/>
+<area shape="poly" id="edge42_Node000025_Node000032" title=" " alt="" coords="4166,376,4493,450,4492,455,4164,381"/>
+<area shape="poly" id="edge46_Node000035_Node000025" title=" " alt="" coords="3872,148,3939,172,3972,189,4002,209,4026,235,4053,275,4098,349,4093,351,4049,277,4022,238,3999,213,3969,193,3937,177,3870,153"/>
+<area shape="rect" id="Node000036" href="$dc/d97/DirectCoupledFilterAdjustResonatorValuesWindow_8cpp.html" title="Window to define the values of the resonator components in direct&#45;coupled filters." alt="" coords="3487,218,3770,273"/>
+<area shape="poly" id="edge44_Node000035_Node000036" title=" " alt="" coords="3730,159,3660,220,3657,216,3726,155"/>
+<area shape="rect" id="Node000037" href="$d7/d91/FilterDesignTool_8cpp.html" title="GUI and control logic for RF filter design and synthesis (implementation)" alt="" coords="3794,225,3988,265"/>
+<area shape="poly" id="edge45_Node000035_Node000037" title=" " alt="" coords="3794,155,3871,223,3868,227,3791,159"/>
+<area shape="poly" id="edge49_Node000038_Node000025" title=" " alt="" coords="2803,266,2866,277,3030,298,3197,315,3525,339,3810,352,4014,357,4014,363,3809,357,3524,344,3197,320,3029,303,2865,283,2802,271"/>
+<area shape="rect" id="Node000039" href="$dd/d4e/MatchingNetworkDesignTool_8cpp.html" title="GUI for the matching network synthesis tool (implementation)" alt="" coords="2568,343,2862,383"/>
+<area shape="poly" id="edge48_Node000038_Node000039" title=" " alt="" coords="2718,279,2718,342,2712,342,2712,279"/>
+<area shape="poly" id="edge51_Node000040_Node000038" title=" " alt="" coords="2733,169,2721,226,2716,225,2727,168"/>
+<area shape="rect" id="Node000041" href="$d3/d70/MatchingNetworkParametersWidget_8cpp.html" title="GUI selecting the matching network topology parameters (implementation)" alt="" coords="2878,218,3149,273"/>
+<area shape="poly" id="edge52_Node000040_Node000041" title=" " alt="" coords="2814,158,2952,215,2950,220,2812,163"/>
+<area shape="poly" id="edge55_Node000042_Node000025" title=" " alt="" coords="4671,151,4713,174,4732,190,4747,209,4757,228,4761,246,4758,264,4746,282,4718,297,4666,310,4516,333,4342,349,4190,359,4189,354,4342,344,4516,327,4665,305,4716,292,4743,278,4753,262,4755,247,4752,230,4742,212,4728,194,4710,178,4668,155"/>
+<area shape="rect" id="Node000043" href="$d3/d49/PowerCombiningTool_8cpp.html" title="Widget for power combining network design and synthesis (implementation)" alt="" coords="4482,225,4732,265"/>
+<area shape="poly" id="edge54_Node000042_Node000043" title=" " alt="" coords="4588,161,4605,224,4600,226,4583,162"/>
+<area shape="poly" id="edge58_Node000044_Node000025" title=" " alt="" coords="5311,153,5344,177,5371,209,5380,229,5384,247,5382,264,5370,282,5352,290,5318,298,5207,312,4869,335,4486,352,4189,362,4189,356,4486,347,4868,330,5206,307,5317,293,5351,285,5367,278,5377,263,5379,247,5375,231,5366,212,5341,180,5308,157"/>
+<area shape="rect" id="Node000045" href="$d5/dd9/simulationsetup_8cpp.html" title="UI component to set the simulation settings (implementation)" alt="" coords="5146,225,5356,265"/>
+<area shape="poly" id="edge57_Node000044_Node000045" title=" " alt="" coords="5254,162,5254,225,5248,225,5248,162"/>
+<area shape="poly" id="edge62_Node000047_Node000025" title=" " alt="" coords="5598,142,5652,167,5676,186,5696,209,5706,228,5710,247,5707,264,5695,282,5673,292,5628,302,5483,318,5281,331,5044,342,4554,356,4189,363,4189,357,4554,351,5044,336,5280,326,5482,312,5627,296,5671,287,5692,278,5702,262,5705,247,5701,230,5691,212,5673,190,5649,172,5596,147"/>
+<area shape="rect" id="Node000048" href="$d4/d88/polarplotwidget_8cpp.html" title="Construct polar plot widget with default configuration (implementation)" alt="" coords="5431,233,5682,258"/>
+<area shape="poly" id="edge61_Node000047_Node000048" title=" " alt="" coords="5536,153,5556,232,5551,233,5531,154"/>
+<area shape="poly" id="edge65_Node000049_Node000025" title=" " alt="" coords="4222,150,4187,177,4155,212,4134,249,4120,288,4106,350,4101,349,4115,287,4130,247,4150,209,4183,173,4219,146"/>
+<area shape="rect" id="Node000050" href="$db/d4b/rectangularplotwidget_8cpp.html" title="Widget for displaying rectangular (Cartesian) plots with dual y&#45;axes (implementation)" alt="" coords="4165,233,4457,258"/>
+<area shape="poly" id="edge64_Node000049_Node000050" title=" " alt="" coords="4267,152,4308,231,4303,234,4262,154"/>
+<area shape="poly" id="edge68_Node000051_Node000025" title=" " alt="" coords="4848,155,4839,185,4824,220,4802,254,4773,282,4727,304,4664,322,4589,335,4506,346,4335,358,4190,363,4189,358,4335,353,4505,340,4588,330,4663,316,4725,299,4770,278,4798,251,4819,218,4834,183,4843,153"/>
+<area shape="rect" id="Node000052" href="$dd/d74/smithchartwidget_8cpp.html" title="Smith chart visualization and interaction widget (implementation)" alt="" coords="4858,233,5121,258"/>
+<area shape="poly" id="edge67_Node000051_Node000052" title=" " alt="" coords="4877,147,4978,231,4974,235,4874,152"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Tools/Calculators/RF/FrequencyToWavelength/freq_wavelength_converter.h" name="Tools/Calculators/RF/FrequencyToWavelength/freq_wavelength_converter.h">
+<area shape="rect" id="Node000001" title="Calculator: Convert between frequency and wavelength (definition)" alt="" coords="141,5,356,60"/>
+<area shape="rect" id="Node000002" href="$d3/dd1/freq__wavelength__converter_8cpp.html" title="Calculator: Convert between frequency and wavelength (implementation)" alt="" coords="5,108,236,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,70,156,110,153,106,203,66"/>
+<area shape="rect" id="Node000003" href="$d0/d79/calculators__management_8cpp.html" title="Implementation of the slots to call the dialog calculators." alt="" coords="261,123,493,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="294,66,364,120,360,125,291,71"/>
+</map>

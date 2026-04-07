@@ -1,12 +1,18 @@
 var searchData=
 [
-  ['z0_0',['z0',['../d7/d68/structMatchingNetworkDesignParameters.html#a96f37de33a914bfc147f9327412ce121',1,'MatchingNetworkDesignParameters::Z0'],['../db/d8b/structPowerCombinerParams.html#aef64fc5297208c2e2db49a6e87c3bf18',1,'PowerCombinerParams::Z0'],['../de/d86/structRectangularPlotWidget_1_1Trace.html#aecb6d14f6b587e39af60d6790b1cd984',1,'RectangularPlotWidget::Trace::Z0'],['../d2/d1e/structSmithChartWidget_1_1Trace.html#a928dcb967b75df29e3b2238878695420',1,'SmithChartWidget::Trace::Z0'],['../d5/d5d/structSmithChartWidget_1_1AxisSettings.html#aee8984fe0abf13ffbe96e94ae1ebbf1b',1,'SmithChartWidget::AxisSettings::Z0']]],
-  ['z_5fchart_1',['z_chart',['../d5/d5d/structSmithChartWidget_1_1AxisSettings.html#a1ba5c324a7f66775735e37f6ded25983',1,'SmithChartWidget::AxisSettings']]],
-  ['zin_2',['Zin',['../d4/d9f/structAttenuatorDesignParameters.html#ac8c63db45db8b04dd67cc9e02f947186',1,'AttenuatorDesignParameters']]],
-  ['zl_3',['zl',['../d7/d68/structMatchingNetworkDesignParameters.html#a85428cd38afa36871bc315438c4d5054',1,'MatchingNetworkDesignParameters::ZL'],['../df/d3b/structNetworkInfo.html#a6e311359ed57ee69760c8de87823d1da',1,'NetworkInfo::ZL']]],
-  ['zl_5fdata_4',['ZL_data',['../d7/d68/structMatchingNetworkDesignParameters.html#a1a4098aae1cd837f1c52e768846ba077',1,'MatchingNetworkDesignParameters']]],
-  ['zl_5ffreq_5',['ZL_freq',['../d7/d68/structMatchingNetworkDesignParameters.html#ada48166c1a6e2936466c9944f2d15fc6',1,'MatchingNetworkDesignParameters']]],
-  ['zout_6',['Zout',['../d4/d9f/structAttenuatorDesignParameters.html#a3dca5ca472ac0e01848e0fd65db3b7ca',1,'AttenuatorDesignParameters']]],
-  ['zs_7',['ZS',['../df/d3b/structNetworkInfo.html#ac23b4c35a0d9cd892f8f0c87d42397c8',1,'NetworkInfo']]],
-  ['zvalue_8',['Zvalue',['../d6/d33/structComponent__SPAR.html#a68885b90290cf7fa1eceb136ca05f9fc',1,'Component_SPAR']]]
+  ['y_0',['y',['../d9/d26/structtQucsSettings.html#adc432431bd5891432d2b73d8901ff916',1,'tQucsSettings']]],
+  ['y1_1',['y1',['../d6/da2/structRectangularPlotWidget_1_1Limit.html#ad3fde3cec72bd2a77b018af7b7cfbf0c',1,'RectangularPlotWidget::Limit']]],
+  ['y2_2',['y2',['../d6/da2/structRectangularPlotWidget_1_1Limit.html#ab68fc2ff0f51a224fbd360d55e5756c8',1,'RectangularPlotWidget::Limit']]],
+  ['y2axisdiv_3',['y2AxisDiv',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#a8331e36576bf348026e21742bfdc6d5a',1,'RectangularPlotWidget::AxisSettings']]],
+  ['y2axismax_4',['y2AxisMax',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#ac172ef6c3ae5bbe7ed949255f3750ca3',1,'RectangularPlotWidget::AxisSettings']]],
+  ['y2axismin_5',['y2AxisMin',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#a69fc079604cb04fa070e67b61a172757',1,'RectangularPlotWidget::AxisSettings']]],
+  ['y_5faxis_6',['y_axis',['../de/d86/structRectangularPlotWidget_1_1Trace.html#aaed96947abf6ee9bd8f9b853a5b69c26',1,'RectangularPlotWidget::Trace::y_axis'],['../d6/da2/structRectangularPlotWidget_1_1Limit.html#ae76c3317e7dc5986f7049975cbc68861',1,'RectangularPlotWidget::Limit::y_axis']]],
+  ['y_5faxis_5ftitle_7',['y_axis_title',['../de/d86/structRectangularPlotWidget_1_1Trace.html#a79020b8c073e957ff6c874b98d81f775',1,'RectangularPlotWidget::Trace']]],
+  ['y_5fchart_8',['y_chart',['../d5/d5d/structSmithChartWidget_1_1AxisSettings.html#a087807c4742da6b644520c9ee1c5f766',1,'SmithChartWidget::AxisSettings']]],
+  ['y_5foffset_9',['y_offset',['../d6/d1a/classSchematicExporter.html#ad96520aec19b5e22c2edd4864819dae6',1,'SchematicExporter']]],
+  ['yaxis_10',['yAxis',['../d4/df9/classQCustomPlot.html#af6fea5679725b152c14facd920b19367',1,'QCustomPlot']]],
+  ['yaxis2_11',['yAxis2',['../d4/df9/classQCustomPlot.html#af13fdc5bce7d0fabd640f13ba805c0b7',1,'QCustomPlot']]],
+  ['yaxisdiv_12',['yAxisDiv',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#acb858cb33399a37b7b6c1bdc966bdbba',1,'RectangularPlotWidget::AxisSettings']]],
+  ['yaxismax_13',['yAxisMax',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#ac92c769da4c603c0d3ce892a5d3c79ad',1,'RectangularPlotWidget::AxisSettings']]],
+  ['yaxismin_14',['yAxisMin',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#a046dde259014f92e813f295ab19134da',1,'RectangularPlotWidget::AxisSettings']]]
 ];

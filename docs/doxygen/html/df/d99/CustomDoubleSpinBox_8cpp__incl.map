@@ -1,0 +1,21 @@
+<map id="UI/CustomWidgets/CustomDoubleSpinBox.cpp" name="UI/CustomWidgets/CustomDoubleSpinBox.cpp">
+<area shape="rect" id="Node000001" title="Custom QDoubleSpinBox. It includes a context menu (right&#45;click) for setting the minimum,..." alt="" coords="360,5,603,45"/>
+<area shape="rect" id="Node000002" href="$d5/da9/CustomDoubleSpinBox_8h.html" title="Custom QDoubleSpinBox. It includes a context menu (right&#45;click) for setting the minimum,..." alt="" coords="390,93,573,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="484,46,484,79,479,79,479,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,136,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="416,121,150,167,149,162,415,116"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="161,167,229,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="436,121,243,169,241,164,435,116"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="253,167,328,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="452,121,336,164,334,159,450,116"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="352,167,461,192"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="471,121,431,159,427,155,468,117"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="486,167,629,192"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="495,117,537,155,533,159,492,121"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="653,167,763,192"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="519,116,659,160,657,165,517,121"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="788,167,855,192"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="542,116,775,164,774,169,541,121"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="879,167,1035,192"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="558,116,868,162,867,167,557,121"/>
+</map>

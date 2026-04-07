@@ -7,5 +7,6 @@ var searchData=
   ['limitlabel_4',['LimitLabel',['../d9/d3e/structLimitProperties.html#a6e060486eec05ad3596f238f67e2f272',1,'LimitProperties']]],
   ['linestylecombobox_5',['LineStyleComboBox',['../de/d63/structTraceProperties.html#a875c04a8186ee770fdae678ea0ed9ec2',1,'TraceProperties']]],
   ['lockaxis_6',['lockAxis',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#addea3dbe6b569a5261e9c58945a724b0',1,'RectangularPlotWidget::AxisSettings']]],
-  ['lockpan_7',['lockPan',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#ac016959b29dbb0b15eae6492b78da1e2',1,'RectangularPlotWidget::AxisSettings']]]
+  ['lockpan_7',['lockPan',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#ac016959b29dbb0b15eae6492b78da1e2',1,'RectangularPlotWidget::AxisSettings']]],
+  ['ltap_8',['Ltap',['../d7/d68/structMatchingNetworkDesignParameters.html#a105dd8cbc649c6c8c43685d2a9d249cd',1,'MatchingNetworkDesignParameters']]]
 ];

@@ -1,0 +1,27 @@
+<map id="UI/PlotWidgets/polarplotwidget.h" name="UI/PlotWidgets/polarplotwidget.h">
+<area shape="rect" id="Node000001" title="Construct polar plot widget with default configuration (definition)" alt="" coords="726,5,962,31"/>
+<area shape="rect" id="Node000002" href="$d4/d88/polarplotwidget_8cpp.html" title="Construct polar plot widget with default configuration (implementation)" alt="" coords="600,79,851,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="814,40,746,81,743,76,812,35"/>
+<area shape="rect" id="Node000003" href="$d4/df4/qucs-s-spar-viewer_8h.html" title="Main application class for S&#45;parameter viewer (and its RF circuit synthesis tools)" alt="" coords="875,79,1050,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="876,35,945,76,942,81,874,40"/>
+<area shape="rect" id="Node000004" href="$d0/d79/calculators__management_8cpp.html" title="Implementation of the slots to call the dialog calculators." alt="" coords="5,159,237,185"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="862,107,688,121,553,129,420,138,250,155,194,162,193,157,249,149,419,133,553,124,688,116,861,101"/>
+<area shape="rect" id="Node000005" href="$d0/d63/dataset__management_8cpp.html" title="Implementation of the functions related to the data management." alt="" coords="261,159,472,185"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="862,107,484,155,436,162,435,157,484,149,862,101"/>
+<area shape="rect" id="Node000006" href="$d3/d75/limits_8cpp.html" title="Implementation of the functions related to the limits management." alt="" coords="496,159,600,185"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="866,109,745,128,613,155,585,162,584,157,611,149,744,123,865,103"/>
+<area shape="rect" id="Node000007" href="$d4/d19/markers_8cpp.html" title="Implementation of the functions related to the markers management." alt="" coords="624,159,744,185"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="910,110,725,162,724,157,908,105"/>
+<area shape="rect" id="Node000008" href="$d9/d88/qucs-s-spar-viewer_8cpp.html" title="Main application class for S&#45;parameter viewer (implementation)" alt="" coords="768,159,957,185"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="939,115,879,161,876,157,935,111"/>
+<area shape="rect" id="Node000009" href="$d1/d93/read__Sparam__data__files_8cpp.html" title="Implementation of the functions related to the data import." alt="" coords="981,152,1144,192"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="990,111,1040,150,1037,154,987,115"/>
+<area shape="rect" id="Node000010" href="$da/d08/session__management_8cpp.html" title="Implementation of the functions related to the session management." alt="" coords="1168,159,1379,185"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="1022,105,1229,157,1227,162,1020,110"/>
+<area shape="rect" id="Node000011" href="$df/d05/theme__management_8cpp.html" title="Function for handling the UI theme." alt="" coords="1403,159,1605,185"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="1063,103,1391,149,1437,157,1437,162,1390,155,1062,108"/>
+<area shape="rect" id="Node000012" href="$d3/d62/tools_8cpp.html" title="Implementation of the functions related to the tools management." alt="" coords="1629,159,1728,185"/>
+<area shape="poly" id="edge11_Node000003_Node000012" title=" " alt="" coords="1064,93,1317,109,1468,125,1618,149,1647,157,1645,162,1617,155,1467,131,1316,114,1063,98"/>
+<area shape="rect" id="Node000013" href="$df/d47/trace__management_8cpp.html" title="Implementation of the functions related to the trace management." alt="" coords="1752,159,1947,185"/>
+<area shape="poly" id="edge12_Node000003_Node000013" title=" " alt="" coords="1064,95,1367,114,1554,129,1740,149,1789,157,1788,162,1740,155,1553,135,1367,119,1064,100"/>
+</map>

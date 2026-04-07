@@ -1,0 +1,31 @@
+<map id="QCPLayoutElement" name="QCPLayoutElement">
+<area shape="rect" id="Node000001" title="The abstract base class for all objects that form the layout system." alt="" coords="289,179,436,204"/>
+<area shape="rect" id="Node000004" href="$dd/d3f/classQCPAbstractLegendItem.html" title="The abstract base class for all entries in a QCPLegend." alt="" coords="484,55,663,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="384,166,427,127,483,89,511,78,513,83,485,94,430,131,387,170"/>
+<area shape="rect" id="Node000007" href="$d9/d8c/classQCPAxisRect.html" title="Holds multiple axes and arranges them in a rectangular shape." alt="" coords="521,104,626,129"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="404,170,483,139,523,127,525,132,485,145,406,175"/>
+<area shape="rect" id="Node000009" href="$d9/d3e/classQCPColorScale.html" title="A color scale for use with color coding data such as QCPColorMap." alt="" coords="514,153,633,179"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="449,178,513,170,514,176,450,184"/>
+<area shape="rect" id="Node000010" href="$dd/d49/classQCPLayout.html" title="The abstract base class for layouts." alt="" coords="527,203,620,228"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="450,199,527,207,526,213,449,204"/>
+<area shape="rect" id="Node000014" href="$d2/dbc/classQCPPolarAxisAngular.html" title="The main container for polar plots, representing the angular axis as a circle." alt="" coords="493,252,653,277"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="406,207,485,238,522,249,520,254,483,243,404,212"/>
+<area shape="rect" id="Node000015" href="$df/daf/classQCPTextElement.html" title="A layout element displaying a text." alt="" coords="508,301,639,327"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="388,212,431,251,485,288,513,299,511,304,483,292,427,255,384,216"/>
+<area shape="rect" id="Node000002" href="$d0/d2b/classQCPLayerable.html" title="Base class for all drawable objects." alt="" coords="128,179,241,204"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,189,289,189,289,194,255,194"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,179,80,204"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,189,128,189,128,194,94,194"/>
+<area shape="rect" id="Node000005" href="$d4/da5/classQCPPlottableLegendItem.html" title="A legend item representing a plottable with an icon and the plottable name." alt="" coords="729,5,913,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="650,49,756,28,757,33,652,55"/>
+<area shape="rect" id="Node000006" href="$d8/dd7/classQCPPolarLegendItem.html" title="A legend item for polar plots." alt="" coords="742,55,901,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="676,65,742,65,742,70,676,70"/>
+<area shape="rect" id="Node000008" href="$d8/d95/classQCPColorScaleAxisRectPrivate.html" title=" " alt="" coords="711,104,932,129"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="640,114,711,114,711,119,640,119"/>
+<area shape="rect" id="Node000011" href="$dc/d48/classQCPLayoutGrid.html" title="A layout that arranges child elements in a grid." alt="" coords="761,177,881,203"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="634,207,761,193,761,199,634,212"/>
+<area shape="rect" id="Node000013" href="$dc/d82/classQCPLayoutInset.html" title="A layout that places child elements aligned to the border or arbitrarily positioned." alt="" coords="759,227,884,252"/>
+<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="634,218,759,231,758,236,633,224"/>
+<area shape="rect" id="Node000012" href="$db/dca/classQCPLegend.html" title="Manages a legend inside a QCustomPlot." alt="" coords="980,177,1076,203"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="895,187,979,187,979,193,895,193"/>
+</map>

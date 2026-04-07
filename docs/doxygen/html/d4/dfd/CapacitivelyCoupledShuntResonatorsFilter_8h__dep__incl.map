@@ -1,0 +1,33 @@
+<map id="Tools/DesignTools/Filtering/CapacitivelyCoupledShuntResonatorsFilter.h" name="Tools/DesignTools/Filtering/CapacitivelyCoupledShuntResonatorsFilter.h">
+<area shape="rect" id="Node000001" title="Synthesis of capacitive&#45;coupled shunt resonantors bandpass filters (definition)" alt="" coords="489,5,759,60"/>
+<area shape="rect" id="Node000002" href="$d7/de1/CapacitivelyCoupledShuntResonatorsFilter_8cpp.html" title="Synthesis of capacitive&#45;coupled shunt resonantors bandpass filters (implementation)" alt="" coords="361,108,631,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="582,70,531,110,528,106,579,66"/>
+<area shape="rect" id="Node000003" href="$d7/d2a/FilterDesignTool_8h.html" title="GUI and control logic for RF filter design and synthesis (definition)" alt="" coords="656,115,851,155"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="670,66,730,113,727,117,667,71"/>
+<area shape="rect" id="Node000004" href="$dc/d97/DirectCoupledFilterAdjustResonatorValuesWindow_8cpp.html" title="Window to define the values of the resonator components in direct&#45;coupled filters." alt="" coords="349,211,632,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="692,163,560,213,558,208,690,158"/>
+<area shape="rect" id="Node000005" href="$d7/d91/FilterDesignTool_8cpp.html" title="GUI and control logic for RF filter design and synthesis (implementation)" alt="" coords="656,218,851,258"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="756,169,756,218,751,218,751,169"/>
+<area shape="rect" id="Node000006" href="$d4/df4/qucs-s-spar-viewer_8h.html" title="Main application class for S&#45;parameter viewer (and its RF circuit synthesis tools)" alt="" coords="875,225,1050,251"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="806,159,940,223,937,228,804,164"/>
+<area shape="rect" id="Node000007" href="$d0/d79/calculators__management_8cpp.html" title="Implementation of the slots to call the dialog calculators." alt="" coords="5,321,237,346"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="913,257,863,268,692,290,557,298,422,302,250,316,194,323,193,318,249,311,422,297,557,292,691,285,862,263,912,252"/>
+<area shape="rect" id="Node000008" href="$d0/d63/dataset__management_8cpp.html" title="Implementation of the functions related to the data management." alt="" coords="261,321,472,346"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="911,257,863,268,757,286,674,295,591,303,484,316,436,323,436,318,484,311,590,298,674,290,756,280,862,263,910,252"/>
+<area shape="rect" id="Node000009" href="$d3/d75/limits_8cpp.html" title="Implementation of the functions related to the limits management." alt="" coords="496,321,600,346"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="909,257,863,268,738,291,613,316,585,323,584,318,611,311,737,286,862,263,908,252"/>
+<area shape="rect" id="Node000010" href="$d4/d19/markers_8cpp.html" title="Implementation of the functions related to the markers management." alt="" coords="624,321,744,346"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="917,257,719,323,718,318,915,252"/>
+<area shape="rect" id="Node000011" href="$d9/d88/qucs-s-spar-viewer_8cpp.html" title="Main application class for S&#45;parameter viewer (implementation)" alt="" coords="768,321,957,346"/>
+<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="942,262,877,323,873,319,938,258"/>
+<area shape="rect" id="Node000012" href="$d1/d93/read__Sparam__data__files_8cpp.html" title="Implementation of the functions related to the data import." alt="" coords="981,313,1144,353"/>
+<area shape="poly" id="edge11_Node000006_Node000012" title=" " alt="" coords="987,258,1044,311,1041,315,983,262"/>
+<area shape="rect" id="Node000013" href="$da/d08/session__management_8cpp.html" title="Implementation of the functions related to the session management." alt="" coords="1168,321,1379,346"/>
+<area shape="poly" id="edge12_Node000006_Node000013" title=" " alt="" coords="1014,252,1236,318,1234,323,1013,257"/>
+<area shape="rect" id="Node000014" href="$df/d05/theme__management_8cpp.html" title="Function for handling the UI theme." alt="" coords="1403,321,1605,346"/>
+<area shape="poly" id="edge13_Node000006_Node000014" title=" " alt="" coords="1043,250,1438,318,1437,323,1042,256"/>
+<area shape="rect" id="Node000015" href="$d3/d62/tools_8cpp.html" title="Implementation of the functions related to the tools management." alt="" coords="1629,321,1728,346"/>
+<area shape="poly" id="edge14_Node000006_Node000015" title=" " alt="" coords="1064,242,1317,265,1468,284,1618,311,1646,318,1645,323,1617,316,1467,290,1316,270,1063,248"/>
+<area shape="rect" id="Node000016" href="$df/d47/trace__management_8cpp.html" title="Implementation of the functions related to the trace management." alt="" coords="1752,321,1947,346"/>
+<area shape="poly" id="edge15_Node000006_Node000016" title=" " alt="" coords="1064,244,1367,269,1554,288,1740,311,1788,318,1787,323,1740,316,1553,294,1367,275,1064,249"/>
+</map>

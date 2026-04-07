@@ -1,0 +1,31 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,343,80,368"/>
+<area shape="rect" id="Node000001" href="$db/d23/classAboutDialog.html" title=" " alt="" coords="193,5,296,31"/>
+<area shape="poly" id="edge109_Node000000_Node000001" title=" " alt="" coords="45,329,56,261,73,174,96,93,110,62,126,40,141,29,158,22,193,14,194,20,159,27,144,34,130,44,115,64,101,95,78,176,61,262,50,330"/>
+<area shape="rect" id="Node000002" href="$d5/dbb/classFreeSpaceAttenuationDialog.html" title="Dialog for calculating free space path loss." alt="" coords="141,55,348,80"/>
+<area shape="poly" id="edge110_Node000000_Node000002" title=" " alt="" coords="41,329,46,278,58,213,69,179,83,146,102,116,126,89,143,78,146,82,130,93,106,119,88,149,74,181,63,215,51,279,47,329"/>
+<area shape="rect" id="Node000003" href="$d8/d4c/classFreqWavelengthConverterDialog.html" title="Dialog for converting between frequency and wavelength." alt="" coords="128,104,361,129"/>
+<area shape="poly" id="edge111_Node000000_Node000003" title=" " alt="" coords="44,328,51,286,65,235,89,183,106,159,126,139,144,127,147,132,130,143,110,163,94,186,70,237,56,287,49,329"/>
+<area shape="rect" id="Node000004" href="$d1/d78/classGammaCalculatorDialog.html" title="Dialog for calculating impedance, VSWR, and S11 from reflection coefficient (Γ)" alt="" coords="153,153,336,179"/>
+<area shape="poly" id="edge112_Node000000_Node000004" title=" " alt="" coords="47,328,57,296,73,258,96,221,126,189,152,175,154,180,130,193,100,224,78,261,62,298,53,330"/>
+<area shape="rect" id="Node000005" href="$da/dd0/classImageFrequencyCalculatorDialog.html" title="A dialog for calculating the image frequency in superheterodyne receivers This calculator determines ..." alt="" coords="147,203,343,243"/>
+<area shape="poly" id="edge113_Node000000_Node000005" title=" " alt="" coords="56,329,85,290,105,270,127,253,150,241,152,246,129,258,108,274,89,294,60,333"/>
+<area shape="rect" id="Node000006" href="$d8/d8e/classImpedanceCalculatorDialog.html" title="Dialog for calculating reflection coefficient, VSWR, and S11 from a complex impedance (Z)" alt="" coords="143,268,346,293"/>
+<area shape="poly" id="edge114_Node000000_Node000006" title=" " alt="" coords="71,333,127,302,163,291,165,296,129,307,73,337"/>
+<area shape="rect" id="Node000007" href="$dc/dd5/classOctaveBWCalculatorDialog.html" title="Dialog for calculating the number of octaves, decades, and Q from the band corner frequencies." alt="" coords="145,317,344,343"/>
+<area shape="poly" id="edge115_Node000000_Node000007" title=" " alt="" coords="93,346,145,340,145,345,94,352"/>
+<area shape="rect" id="Node000008" href="$d1/dcd/classParallelInductorsDialog.html" title="Dialog for calculating equivalent inductance of parallel inductors." alt="" coords="159,367,331,392"/>
+<area shape="poly" id="edge116_Node000000_Node000008" title=" " alt="" coords="94,359,159,366,158,372,93,364"/>
+<area shape="rect" id="Node000009" href="$dc/de0/classParallelResistorsDialog.html" title="Dialog for calculating equivalent resistance of parallel resistors." alt="" coords="159,416,331,441"/>
+<area shape="poly" id="edge117_Node000000_Node000009" title=" " alt="" coords="75,373,129,401,170,413,168,418,127,406,73,378"/>
+<area shape="rect" id="Node000010" href="$d9/d50/classRFPowerConverterDialog.html" title="Dialog for converting RF power between different units." alt="" coords="152,465,337,491"/>
+<area shape="poly" id="edge118_Node000000_Node000010" title=" " alt="" coords="61,378,90,416,108,435,129,450,157,463,155,468,127,455,105,439,86,420,57,382"/>
+<area shape="rect" id="Node000011" href="$d5/d75/classSecondaryImageCalculatorDialog.html" title="A dialog for calculating image frequencies in dual&#45;conversion superheterodyne receivers." alt="" coords="146,515,343,555"/>
+<area shape="poly" id="edge119_Node000000_Node000011" title=" " alt="" coords="54,380,82,441,103,473,130,500,151,513,148,517,126,504,99,476,77,443,49,382"/>
+<area shape="rect" id="Node000012" href="$d0/df1/classSeriesCapacitorsDialog.html" title="Dialog for calculating equivalent capacitance of series capacitors." alt="" coords="158,580,331,605"/>
+<area shape="poly" id="edge120_Node000000_Node000012" title=" " alt="" coords="49,381,56,422,71,472,94,523,110,546,130,565,159,582,156,586,126,569,106,549,90,526,66,474,51,423,44,382"/>
+<area shape="rect" id="Node000013" href="$dc/d9d/classSwrS11CalculatorDialog.html" title="Dialog for bidirectional conversion between SWR, S11, and reflection coefficient magnitude." alt="" coords="155,629,334,655"/>
+<area shape="poly" id="edge121_Node000000_Node000013" title=" " alt="" coords="47,382,51,432,64,495,74,528,89,560,107,589,130,615,156,631,153,635,126,619,103,592,84,562,69,530,59,496,46,433,42,382"/>
+<area shape="rect" id="Node000014" href="$d3/d13/classVoltageDividerDialog.html" title="Dialog for designing voltage dividers with multiple parallel resistors." alt="" coords="165,679,325,704"/>
+<area shape="poly" id="edge122_Node000000_Node000014" title=" " alt="" coords="50,381,61,448,78,533,102,613,115,644,130,664,146,676,165,684,163,688,144,680,126,668,111,646,97,615,73,535,56,449,45,382"/>
+</map>

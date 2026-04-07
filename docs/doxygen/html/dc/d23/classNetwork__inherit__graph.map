@@ -1,77 +1,91 @@
 <map id="Network" name="Network">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,812,83,837"/>
-<area shape="rect" id="Node000002" href="$de/d4b/classAttenuatorBase.html" title=" " alt="" coords="193,179,315,204"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="42,799,44,675,55,499,65,409,80,327,101,260,114,233,129,213,142,202,158,194,192,187,193,192,160,200,145,207,133,217,119,236,106,262,86,328,70,410,60,500,50,675,48,799"/>
-<area shape="rect" id="Node000013" href="$d1/db6/classBagley.html" title=" " alt="" coords="221,228,287,253"/>
-<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="43,798,46,683,58,523,69,441,83,366,103,305,115,281,129,263,149,248,173,239,220,235,221,240,174,245,152,253,133,267,120,284,108,307,89,367,74,442,63,523,51,684,48,798"/>
-<area shape="rect" id="Node000014" href="$df/dcc/classBranchline.html" title=" " alt="" coords="209,277,299,303"/>
-<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="43,798,48,692,61,547,72,473,87,405,105,350,129,312,146,299,167,291,208,284,209,290,168,296,149,304,133,316,110,352,92,407,77,473,66,547,53,693,49,798"/>
-<area shape="rect" id="Node000015" href="$de/df5/classCanonicalFilter.html" title=" " alt="" coords="195,327,313,352"/>
-<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="44,798,50,701,65,571,76,505,90,445,107,396,129,363,143,352,159,344,194,336,195,341,161,349,146,356,133,366,112,399,95,447,81,506,70,572,56,702,49,798"/>
-<area shape="rect" id="Node000016" href="$d7/dd7/classCapacitivelyCoupledShuntResonatorsFilter.html" title=" " alt="" coords="157,377,351,417"/>
-<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="45,798,54,714,70,604,95,498,110,457,129,428,155,409,158,414,133,432,115,459,100,500,75,605,59,715,50,799"/>
-<area shape="rect" id="Node000017" href="$d8/d72/classCascadedLCSections.html" title=" " alt="" coords="176,441,332,467"/>
-<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="46,798,56,723,73,628,97,537,112,502,129,477,150,463,174,454,176,459,153,468,133,481,116,504,102,539,78,629,61,724,51,799"/>
-<area shape="rect" id="Node000018" href="$d9/db4/classCoupledLineBandpassFilter.html" title=" " alt="" coords="155,491,353,516"/>
-<area shape="poly" id="edge19_Node000001_Node000018" title=" " alt="" coords="42,798,44,741,56,668,66,630,82,592,102,557,129,527,153,511,156,516,132,531,107,560,87,594,72,631,61,669,50,742,47,798"/>
-<area shape="rect" id="Node000019" href="$d0/d3a/classDirectCoupledFilters.html" title="Synthesis of different topologies of Direct&#45;Coupled filters." alt="" coords="177,540,331,565"/>
-<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="44,797,49,750,63,690,88,628,106,600,129,576,151,562,175,554,177,559,153,567,132,580,110,604,93,631,68,691,54,750,49,798"/>
-<area shape="rect" id="Node000020" href="$db/df3/classDoubleBoxBranchline.html" title=" " alt="" coords="173,589,335,615"/>
-<area shape="poly" id="edge21_Node000001_Node000020" title=" " alt="" coords="46,798,55,759,70,712,94,665,110,644,129,625,149,613,171,605,173,610,151,618,132,629,114,647,98,668,75,714,60,760,52,799"/>
-<area shape="rect" id="Node000021" href="$d6/d0f/classDoubleStub.html" title=" " alt="" coords="205,639,303,664"/>
-<area shape="poly" id="edge22_Node000001_Node000021" title=" " alt="" coords="50,798,78,735,100,702,129,674,166,657,204,650,205,655,168,662,132,679,104,706,83,738,55,800"/>
-<area shape="rect" id="Node000022" href="$d5/d72/classEllipticFilter.html" title=" " alt="" coords="205,688,303,713"/>
-<area shape="poly" id="edge23_Node000001_Node000022" title=" " alt="" coords="58,799,87,760,107,740,129,724,166,708,204,701,205,706,168,714,132,728,110,744,91,763,62,802"/>
-<area shape="rect" id="Node000023" href="$d5/d68/classEndCoupled.html" title=" " alt="" coords="205,737,303,763"/>
-<area shape="poly" id="edge24_Node000001_Node000023" title=" " alt="" coords="73,802,130,773,167,761,204,754,205,759,168,767,132,778,76,807"/>
-<area shape="rect" id="Node000024" href="$df/dc5/classGysel.html" title=" " alt="" coords="225,787,283,812"/>
-<area shape="poly" id="edge25_Node000001_Node000024" title=" " alt="" coords="96,816,224,800,224,805,97,821"/>
-<area shape="rect" id="Node000025" href="$d3/d2b/classLambda8Lambda4.html" title=" " alt="" coords="183,836,325,861"/>
-<area shape="poly" id="edge26_Node000001_Node000025" title=" " alt="" coords="97,828,183,838,182,843,96,833"/>
-<area shape="rect" id="Node000026" href="$da/d18/classLim__Eom.html" title=" " alt="" coords="213,885,295,911"/>
-<area shape="poly" id="edge27_Node000001_Node000026" title=" " alt="" coords="76,842,132,872,173,883,213,891,212,896,172,889,130,876,73,847"/>
-<area shape="rect" id="Node000027" href="$d0/db0/classLsection.html" title=" " alt="" coords="216,935,292,960"/>
-<area shape="poly" id="edge28_Node000001_Node000027" title=" " alt="" coords="62,848,91,886,110,905,132,921,174,937,216,944,215,949,173,942,129,926,107,909,87,890,58,851"/>
-<area shape="rect" id="Node000028" href="$d5/da6/classMatchingNetworkDesigner.html" title=" " alt="" coords="157,984,351,1009"/>
-<area shape="poly" id="edge29_Node000001_Node000028" title=" " alt="" coords="55,849,66,878,82,911,104,944,132,970,157,984,155,988,129,975,100,947,78,914,61,880,50,851"/>
-<area shape="rect" id="Node000029" href="$d4/dab/classMultisectionQuarterWave.html" title=" " alt="" coords="161,1033,347,1059"/>
-<area shape="poly" id="edge30_Node000001_Node000029" title=" " alt="" coords="51,850,60,889,75,935,98,982,114,1002,132,1020,162,1036,159,1040,129,1024,110,1006,94,984,70,937,54,890,46,852"/>
-<area shape="rect" id="Node000030" href="$dc/d22/classMultistageWilkinson.html" title=" " alt="" coords="177,1083,331,1108"/>
-<area shape="poly" id="edge31_Node000001_Node000030" title=" " alt="" coords="49,851,54,899,68,958,92,1019,110,1046,132,1069,153,1082,177,1090,175,1095,151,1087,129,1073,106,1049,88,1021,62,960,49,900,44,852"/>
-<area shape="rect" id="Node000031" href="$d2/d9c/classQuarterWaveFilters.html" title=" " alt="" coords="181,1132,327,1157"/>
-<area shape="poly" id="edge32_Node000001_Node000031" title=" " alt="" coords="47,851,49,908,61,980,71,1018,86,1055,107,1089,132,1119,155,1133,181,1141,179,1146,153,1138,129,1123,102,1092,82,1058,66,1020,55,981,44,908,42,851"/>
-<area shape="rect" id="Node000032" href="$d0/d4c/classRecombinant3WayWilkinson.html" title=" " alt="" coords="150,1181,358,1207"/>
-<area shape="poly" id="edge33_Node000001_Node000032" title=" " alt="" coords="51,851,61,925,78,1021,102,1111,116,1145,133,1168,151,1181,148,1185,129,1172,112,1148,97,1113,73,1022,55,926,46,852"/>
-<area shape="rect" id="Node000033" href="$d4/d42/classSingleStub.html" title=" " alt="" coords="209,1231,299,1256"/>
-<area shape="poly" id="edge34_Node000001_Node000033" title=" " alt="" coords="50,850,58,934,74,1045,99,1150,114,1191,133,1217,149,1229,168,1237,209,1243,208,1249,167,1242,146,1234,129,1221,110,1193,94,1152,69,1046,53,935,45,851"/>
-<area shape="rect" id="Node000034" href="$dd/d0c/classSteppedImpedanceFilter.html" title=" " alt="" coords="164,1280,344,1305"/>
-<area shape="poly" id="edge35_Node000001_Node000034" title=" " alt="" coords="49,851,56,944,71,1069,82,1133,96,1190,113,1236,133,1267,147,1278,165,1286,163,1291,145,1283,129,1270,108,1238,91,1191,77,1134,66,1070,51,945,44,851"/>
-<area shape="rect" id="Node000035" href="$d0/d45/classTJunction.html" title=" " alt="" coords="213,1329,295,1355"/>
-<area shape="poly" id="edge36_Node000001_Node000035" title=" " alt="" coords="49,851,54,953,68,1093,78,1164,93,1229,111,1281,133,1316,150,1329,170,1337,213,1342,212,1348,169,1342,147,1334,129,1320,106,1284,88,1230,73,1165,62,1094,49,954,43,851"/>
-<area shape="rect" id="Node000036" href="$d0/de7/classWilkinson2Way.html" title=" " alt="" coords="193,1379,315,1404"/>
-<area shape="poly" id="edge37_Node000001_Node000036" title=" " alt="" coords="48,851,52,962,64,1117,75,1196,90,1268,109,1327,120,1349,133,1365,145,1376,160,1383,193,1391,192,1396,158,1388,142,1380,129,1369,116,1352,104,1329,85,1269,70,1197,59,1118,47,963,43,851"/>
-<area shape="rect" id="Node000037" href="$df/dfb/classWilkinson3Way__ImprovedIsolation.html" title=" " alt="" coords="131,1428,377,1453"/>
-<area shape="poly" id="edge38_Node000001_Node000037" title=" " alt="" coords="48,851,50,972,61,1142,72,1228,87,1307,107,1372,119,1396,133,1415,146,1426,143,1430,129,1419,114,1399,102,1374,82,1309,66,1229,56,1142,45,972,43,851"/>
-<area shape="rect" id="Node000003" href="$d5/d78/classBridgedTeeAttenuator.html" title=" " alt="" coords="425,5,588,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,166,337,104,379,69,424,40,450,28,452,33,427,44,382,74,340,108,277,170"/>
-<area shape="rect" id="Node000004" href="$df/d84/classLPadFirstSeries.html" title="L&#45;pad (first series) 1&#45;port matched attenuator (definition)" alt="" coords="447,55,567,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="298,169,357,135,424,101,488,78,490,83,426,106,359,140,300,174"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="274,167,339,122,424,77,446,69,448,74,426,82,342,127,277,172"/>
-<area shape="rect" id="Node000005" href="$d8/d9c/classLPadFirstShunt.html" title="L&#45;pad (first shunt) 1&#45;port matched attenuator (definition)" alt="" coords="448,104,565,129"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="329,175,481,127,482,132,330,180"/>
-<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="291,171,447,124,449,129,293,176"/>
-<area shape="rect" id="Node000006" href="$d3/d22/classPiAttenuator.html" title=" " alt="" coords="455,153,558,179"/>
-<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="329,181,455,168,455,174,330,186"/>
-<area shape="rect" id="Node000007" href="$dd/d2a/classQW__SeriesAttenuator.html" title=" " alt="" coords="426,203,587,228"/>
-<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="330,196,426,205,426,210,329,201"/>
-<area shape="rect" id="Node000008" href="$d7/d08/classQW__ShuntAttenuator.html" title=" " alt="" coords="427,252,586,277"/>
-<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="330,200,378,213,403,224,426,237,462,249,460,254,424,242,400,229,376,218,328,205"/>
-<area shape="rect" id="Node000009" href="$d4/d5d/classRSeriesAttenuator.html" title=" " alt="" coords="437,301,577,327"/>
-<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="330,194,355,201,379,213,396,231,404,250,412,269,427,287,450,299,447,304,424,291,407,272,399,252,392,234,376,217,353,206,328,199"/>
-<area shape="rect" id="Node000010" href="$d5/d85/classRShuntAttenuator.html" title=" " alt="" coords="438,351,575,376"/>
-<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="330,191,356,199,379,213,393,228,400,244,405,275,409,307,415,321,427,336,446,348,443,353,424,340,411,324,404,308,400,276,395,245,388,231,376,217,353,204,328,196"/>
-<area shape="rect" id="Node000011" href="$d2/dbc/classReflectionAttenuator.html" title=" " alt="" coords="429,400,585,425"/>
-<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="330,190,356,198,379,213,396,235,404,256,405,300,405,344,412,365,427,385,444,398,441,402,423,389,407,367,400,344,400,300,399,257,392,237,376,217,354,203,328,195"/>
-<area shape="rect" id="Node000012" href="$db/dd8/classTeeAttenuator.html" title=" " alt="" coords="450,449,563,475"/>
-<area shape="poly" id="edge13_Node000002_Node000012" title=" " alt="" coords="330,190,356,198,379,213,400,241,408,269,409,297,405,326,402,354,402,381,409,409,427,436,451,452,448,456,423,440,404,411,396,382,396,353,400,325,403,297,403,270,395,243,375,217,354,203,328,195"/>
+<area shape="rect" id="Node000001" title="Abstract base class for network implementations." alt="" coords="5,1009,83,1035"/>
+<area shape="rect" id="Node000002" href="$d6/df6/classAdamsCombiner.html" title="Adams unequal resistive power splitter." alt="" coords="189,179,319,204"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="44,995,51,826,67,578,79,453,93,343,109,260,118,231,129,214,156,195,188,187,189,192,158,200,133,217,123,233,114,261,98,344,84,453,73,578,57,826,49,996"/>
+<area shape="rect" id="Node000003" href="$de/d4b/classAttenuatorBase.html" title="Abstract base class for RF attenuator implementations." alt="" coords="193,228,315,253"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="44,995,52,835,69,603,81,486,94,384,110,306,119,279,129,263,142,252,158,244,191,236,193,241,160,249,145,256,133,266,124,282,115,307,100,385,86,487,74,603,58,836,49,996"/>
+<area shape="rect" id="Node000014" href="$d1/db6/classBagley.html" title="Bagley power combiner/divider network." alt="" coords="221,277,287,303"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="44,995,53,844,71,628,96,424,111,352,120,328,129,312,149,297,173,288,220,284,220,289,174,294,151,302,133,316,124,330,116,354,101,425,76,628,59,845,49,996"/>
+<area shape="rect" id="Node000015" href="$df/dcc/classBranchline.html" title="Branch&#45;line power combiner/divider network." alt="" coords="209,327,299,352"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="42,995,43,863,52,672,62,575,78,485,99,412,113,383,129,361,146,348,166,340,208,333,209,339,168,345,149,353,133,365,118,386,104,414,83,486,67,575,57,673,48,863,47,995"/>
+<area shape="rect" id="Node000016" href="$de/df5/classCanonicalFilter.html" title="Synthesizes classical ladder filter topologies from normalized prototypes." alt="" coords="195,376,313,401"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="43,995,45,872,55,697,66,607,81,526,101,458,114,432,129,412,143,401,159,393,194,385,195,390,161,398,146,405,133,416,119,435,106,460,86,527,71,608,60,697,50,872,48,995"/>
+<area shape="rect" id="Node000017" href="$d7/dd7/classCapacitivelyCoupledShuntResonatorsFilter.html" title="Implements an end&#45;coupled resonator bandpass filter. This class synthesizes bandpass filters using en..." alt="" coords="157,426,351,466"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="43,995,48,884,60,729,71,650,86,578,105,519,129,478,155,458,159,462,133,481,110,521,91,580,77,651,66,730,53,884,48,995"/>
+<area shape="rect" id="Node000018" href="$d8/d72/classCascadedLCSections.html" title="Cascaded L&#45;section matching network synthesis Reference: Inder J. Bahl. &quot;Fundamentals of RF and micro..." alt="" coords="176,491,332,516"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="43,995,49,892,62,752,73,681,88,616,106,563,129,527,150,512,174,503,176,508,152,516,133,530,111,565,93,618,79,682,68,753,54,893,49,995"/>
+<area shape="rect" id="Node000019" href="$d9/db4/classCoupledLineBandpassFilter.html" title="Implements a coupled&#45;line bandpass filter." alt="" coords="155,540,353,565"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="44,995,51,902,66,777,77,713,91,656,108,608,129,576,153,560,156,564,133,580,113,611,96,657,82,714,71,777,56,903,49,996"/>
+<area shape="rect" id="Node000020" href="$d3/dfc/classDeltaCombiner.html" title="Delta resistive power splitter." alt="" coords="194,589,314,615"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="45,995,53,911,69,801,94,695,110,654,129,625,159,607,193,599,194,604,161,612,133,629,115,656,99,696,74,802,58,912,50,996"/>
+<area shape="rect" id="Node000021" href="$d0/d3a/classDirectCoupledFilters.html" title="Implements synthesis of various direct&#45;coupled resonator filter topologies." alt="" coords="177,639,331,664"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="46,995,56,921,73,825,97,734,112,699,129,675,151,660,176,651,177,656,153,665,133,679,116,702,102,736,78,826,61,922,51,996"/>
+<area shape="rect" id="Node000022" href="$db/df3/classDoubleBoxBranchline.html" title="Double&#45;box branch&#45;line power combiner/divider network." alt="" coords="173,688,335,713"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="42,995,44,939,56,866,66,827,82,789,102,754,129,724,149,710,172,702,173,707,151,715,132,728,107,758,87,792,72,829,61,867,50,939,47,996"/>
+<area shape="rect" id="Node000023" href="$d6/d0f/classDoubleStub.html" title="Double stub matching network synthesis Reference: &#39;Microwave Engineering&#39;, David Pozar...." alt="" coords="205,737,303,763"/>
+<area shape="poly" id="edge22_Node000001_Node000023" title=" " alt="" coords="44,995,49,947,63,887,88,826,106,798,129,773,146,762,165,754,204,747,205,752,167,759,149,766,132,777,110,801,93,828,68,889,54,948,49,995"/>
+<area shape="rect" id="Node000024" href="$d4/d73/classDoubleTappedResonatorMatching.html" title="Double&#45;tapped resonator matching network synthesis." alt="" coords="134,787,374,812"/>
+<area shape="poly" id="edge23_Node000001_Node000024" title=" " alt="" coords="46,995,55,956,70,910,94,862,110,841,129,823,150,810,153,814,132,827,114,845,98,865,75,912,60,958,52,996"/>
+<area shape="rect" id="Node000025" href="$d5/d72/classEllipticFilter.html" title="Synthesizes elliptic filters Amstutz &#45; &quot;Elliptic Approximation and Elliptic Filter Design&quot; (1978)" alt="" coords="205,836,303,861"/>
+<area shape="poly" id="edge24_Node000001_Node000025" title=" " alt="" coords="50,995,78,933,100,899,129,872,166,854,204,847,205,852,167,860,132,876,104,903,83,935,55,997"/>
+<area shape="rect" id="Node000026" href="$d5/d68/classEndCoupled.html" title="Implements an end&#45;coupled resonator bandpass filter." alt="" coords="205,885,303,911"/>
+<area shape="poly" id="edge25_Node000001_Node000026" title=" " alt="" coords="58,996,87,957,107,937,129,921,166,906,204,898,205,903,168,911,132,926,110,941,91,960,62,999"/>
+<area shape="rect" id="Node000027" href="$df/dc5/classGysel.html" title="Gysel power combiner/divider network." alt="" coords="225,935,283,960"/>
+<area shape="poly" id="edge26_Node000001_Node000027" title=" " alt="" coords="73,1000,130,970,179,956,224,948,225,953,180,961,132,975,76,1004"/>
+<area shape="rect" id="Node000028" href="$d3/d2b/classLambda8Lambda4.html" title="Lambda/8 + Lambda/4 matching network synthesis Reference: Inder J. Bahl. &quot;Fundamentals of RF and micr..." alt="" coords="183,984,325,1009"/>
+<area shape="poly" id="edge27_Node000001_Node000028" title=" " alt="" coords="96,1013,182,1003,183,1008,97,1018"/>
+<area shape="rect" id="Node000029" href="$da/d18/classLim__Eom.html" title="Lim&#45;Eom power combiner/divider network References: [1] &quot;Power combiners, impedance transformers and d..." alt="" coords="213,1033,295,1059"/>
+<area shape="poly" id="edge28_Node000001_Node000029" title=" " alt="" coords="97,1025,213,1039,212,1044,96,1031"/>
+<area shape="rect" id="Node000030" href="$d0/db0/classLsection.html" title="L&#45;section matching network synthesis Reference: RF design guide. Systems, circuits,..." alt="" coords="216,1083,292,1108"/>
+<area shape="poly" id="edge29_Node000001_Node000030" title=" " alt="" coords="76,1040,132,1069,175,1081,216,1089,215,1094,174,1086,130,1074,73,1045"/>
+<area shape="rect" id="Node000031" href="$d5/da6/classMatchingNetworkDesigner.html" title="Management of the matching network design." alt="" coords="157,1132,351,1157"/>
+<area shape="poly" id="edge30_Node000001_Node000031" title=" " alt="" coords="62,1045,91,1084,110,1103,132,1118,158,1130,155,1135,129,1123,107,1107,87,1087,58,1048"/>
+<area shape="rect" id="Node000032" href="$d4/dab/classMultisectionQuarterWave.html" title="Quarterwave multisection transformer matching." alt="" coords="161,1181,347,1207"/>
+<area shape="poly" id="edge31_Node000001_Node000032" title=" " alt="" coords="55,1047,66,1076,82,1109,104,1141,132,1168,162,1182,159,1187,129,1172,100,1145,78,1111,61,1078,50,1048"/>
+<area shape="rect" id="Node000033" href="$dc/d22/classMultistageWilkinson.html" title="Multistage Wilkinson power combiner/divider network." alt="" coords="177,1231,331,1256"/>
+<area shape="poly" id="edge32_Node000001_Node000033" title=" " alt="" coords="51,1048,60,1086,75,1133,98,1179,114,1199,132,1217,153,1230,177,1237,175,1242,151,1235,129,1221,110,1203,94,1182,70,1135,54,1088,46,1049"/>
+<area shape="rect" id="Node000034" href="$db/d08/classPiMatching.html" title="Pi&#45;section matching network synthesis." alt="" coords="207,1280,301,1305"/>
+<area shape="poly" id="edge33_Node000001_Node000034" title=" " alt="" coords="49,1049,54,1096,68,1156,92,1216,110,1243,132,1267,149,1278,167,1285,207,1292,206,1297,166,1290,146,1282,129,1271,106,1246,88,1219,62,1157,49,1097,44,1049"/>
+<area shape="rect" id="Node000035" href="$d2/d9c/classQuarterWaveFilters.html" title="Implements quarter&#45;wave stub bandpass and bandstop filters." alt="" coords="181,1329,327,1355"/>
+<area shape="poly" id="edge34_Node000001_Node000035" title=" " alt="" coords="47,1049,49,1105,61,1178,71,1216,86,1253,107,1287,132,1316,155,1330,181,1338,179,1343,153,1335,129,1320,102,1290,82,1255,66,1217,55,1179,44,1105,42,1049"/>
+<area shape="rect" id="Node000036" href="$d0/d4c/classRecombinant3WayWilkinson.html" title="Recombinant 3&#45;way Wilkinson&#45;type power combiner/divider network References: [1] &quot;Power combiners,..." alt="" coords="150,1379,358,1404"/>
+<area shape="poly" id="edge35_Node000001_Node000036" title=" " alt="" coords="51,1048,61,1122,78,1218,102,1308,116,1343,133,1365,151,1378,148,1383,129,1369,112,1345,97,1310,73,1219,55,1123,46,1049"/>
+<area shape="rect" id="Node000037" href="$d4/d42/classSingleStub.html" title=" " alt="" coords="209,1428,299,1453"/>
+<area shape="poly" id="edge36_Node000001_Node000037" title=" " alt="" coords="50,1048,58,1131,74,1242,99,1347,114,1388,133,1415,149,1427,168,1434,209,1441,208,1446,167,1440,146,1431,129,1419,110,1390,94,1349,69,1243,53,1132,45,1048"/>
+<area shape="rect" id="Node000038" href="$dd/d0c/classSteppedImpedanceFilter.html" title="Implements a stepped&#45;impedance lowpass filter." alt="" coords="164,1477,344,1503"/>
+<area shape="poly" id="edge37_Node000001_Node000038" title=" " alt="" coords="49,1048,56,1141,71,1267,82,1330,96,1387,113,1433,133,1464,147,1475,165,1483,163,1488,145,1480,129,1468,108,1436,91,1388,77,1331,66,1268,51,1142,44,1049"/>
+<area shape="rect" id="Node000039" href="$d0/d45/classTJunction.html" title="T&#45;Junction power combiner/divider network." alt="" coords="213,1527,295,1552"/>
+<area shape="poly" id="edge38_Node000001_Node000039" title=" " alt="" coords="49,1048,54,1150,68,1291,78,1362,93,1426,111,1479,133,1514,150,1526,170,1534,213,1540,212,1545,169,1539,147,1531,129,1517,106,1481,88,1428,73,1363,62,1291,49,1151,43,1048"/>
+<area shape="rect" id="Node000040" href="$d9/dc2/classTappedCMatching.html" title="Tapped&#45;C transformer matching network synthesis." alt="" coords="185,1576,323,1601"/>
+<area shape="poly" id="edge39_Node000001_Node000040" title=" " alt="" coords="48,1048,52,1160,64,1315,75,1394,90,1465,109,1524,120,1546,133,1563,157,1579,186,1587,184,1592,154,1584,129,1567,116,1549,104,1526,85,1467,70,1395,59,1315,47,1160,43,1048"/>
+<area shape="rect" id="Node000041" href="$dd/d47/classTappedLMatching.html" title="Tapped&#45;L transformer matching network synthesis." alt="" coords="187,1625,321,1651"/>
+<area shape="poly" id="edge40_Node000001_Node000041" title=" " alt="" coords="48,1049,50,1169,61,1339,72,1426,87,1505,107,1569,119,1594,133,1612,157,1629,187,1637,186,1642,155,1634,129,1616,114,1597,102,1571,82,1506,66,1427,56,1340,45,1169,43,1049"/>
+<area shape="rect" id="Node000042" href="$df/df7/classTeeMatching.html" title="Tee&#45;section matching network synthesis." alt="" coords="202,1675,306,1700"/>
+<area shape="poly" id="edge41_Node000001_Node000042" title=" " alt="" coords="48,1049,49,1178,58,1363,68,1458,84,1544,105,1614,118,1641,133,1661,147,1673,164,1681,202,1688,201,1693,163,1686,144,1678,129,1665,113,1644,100,1616,79,1545,63,1458,53,1363,43,1178,42,1049"/>
+<area shape="rect" id="Node000043" href="$d0/de7/classWilkinson2Way.html" title="Wilkinson power combiner/divider network." alt="" coords="193,1724,315,1749"/>
+<area shape="poly" id="edge42_Node000001_Node000043" title=" " alt="" coords="49,1048,59,1196,77,1407,102,1604,117,1674,125,1697,133,1711,145,1721,160,1729,193,1736,192,1741,158,1734,142,1726,129,1714,120,1699,111,1676,96,1605,71,1407,54,1196,44,1048"/>
+<area shape="rect" id="Node000044" href="$df/dfb/classWilkinson3Way__ImprovedIsolation.html" title="3&#45;way Wilkinson with improved isolation network References: [1] &quot;Power combiners, impedance transform..." alt="" coords="131,1773,377,1799"/>
+<area shape="poly" id="edge43_Node000001_Node000044" title=" " alt="" coords="49,1048,58,1206,75,1432,87,1546,100,1645,116,1720,124,1745,133,1760,146,1771,142,1775,129,1764,119,1748,111,1722,95,1646,81,1546,70,1433,53,1206,44,1049"/>
+<area shape="rect" id="Node000045" href="$d7/dbb/classWyeCombiner.html" title="Direct N&#45;way Wye resistive power splitter." alt="" coords="197,1823,311,1848"/>
+<area shape="poly" id="edge44_Node000001_Node000045" title=" " alt="" coords="49,1049,57,1215,73,1457,85,1579,99,1686,115,1767,124,1794,133,1810,146,1821,162,1828,197,1835,196,1841,160,1833,143,1825,129,1813,119,1796,110,1768,93,1687,80,1580,68,1458,52,1215,44,1049"/>
+<area shape="rect" id="Node000004" href="$d5/d78/classBridgedTeeAttenuator.html" title="Bridged&#45;Tee attenuator implementation." alt="" coords="425,5,588,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="328,236,354,228,376,213,392,193,399,173,400,130,400,85,407,62,423,40,439,29,442,33,427,44,412,65,405,86,405,130,404,174,396,196,379,217,356,232,330,241"/>
+<area shape="rect" id="Node000005" href="$df/d84/classLPadFirstSeries.html" title="L&#45;pad (first series) 1&#45;port matched attenuator (definition)" alt="" coords="447,55,567,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="328,235,354,227,376,213,388,199,395,185,399,154,403,122,410,105,424,89,445,76,448,80,427,93,415,108,408,123,405,154,400,186,393,202,379,217,356,232,330,240"/>
+<area shape="rect" id="Node000006" href="$d8/d9c/classLPadFirstShunt.html" title="L&#45;pad (first shunt) 1&#45;port matched attenuator (definition)" alt="" coords="448,104,565,129"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="328,233,353,225,376,213,392,196,399,178,407,158,424,139,447,126,449,131,427,143,411,161,404,179,396,199,379,217,355,230,330,238"/>
+<area shape="rect" id="Node000007" href="$d3/d22/classPiAttenuator.html" title="Pi attenuator synthesis Reference: RF design guide. Systems, circuits, and equations...." alt="" coords="455,153,558,179"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="328,226,376,213,400,201,424,188,457,176,458,181,426,192,403,205,378,218,330,231"/>
+<area shape="rect" id="Node000008" href="$dd/d2a/classQW__SeriesAttenuator.html" title="Quarter wavelength first&#45;series attenuator synthesis Reference: The PIN diode circuit designer&#39;s hand..." alt="" coords="426,203,587,228"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="329,231,426,221,426,226,330,236"/>
+<area shape="rect" id="Node000009" href="$d7/d08/classQW__ShuntAttenuator.html" title="Quarter wavelength first&#45;shunt attenuator synthesis Reference: The PIN diode circuit designer&#39;s handb..." alt="" coords="427,252,586,277"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="329,245,427,254,427,260,329,250"/>
+<area shape="rect" id="Node000010" href="$d4/d5d/classRSeriesAttenuator.html" title="Series resistor (unmatched) attenuator synthesis." alt="" coords="437,301,577,327"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="330,249,378,262,403,274,426,286,462,299,460,304,424,291,400,279,376,267,328,254"/>
+<area shape="rect" id="Node000011" href="$d5/d85/classRShuntAttenuator.html" title="Shunt resistor (unmatched) attenuator synthesi0." alt="" coords="438,351,575,376"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="330,243,355,250,379,263,396,281,404,300,412,318,427,336,450,348,447,353,424,340,407,321,399,302,392,283,376,267,353,255,328,248"/>
+<area shape="rect" id="Node000012" href="$d2/dbc/classReflectionAttenuator.html" title="Reflection attenuator synthesis Reference: The PIN diode circuit designer&#39;s handbook...." alt="" coords="429,400,585,425"/>
+<area shape="poly" id="edge11_Node000003_Node000012" title=" " alt="" coords="330,241,356,249,379,263,393,278,400,293,405,325,409,356,415,371,427,385,446,398,443,402,424,389,411,374,404,357,400,325,395,295,388,281,376,267,353,253,328,246"/>
+<area shape="rect" id="Node000013" href="$db/dd8/classTeeAttenuator.html" title="Tee attenuator synthesis Reference: RF design guide. Systems, circuits, and equations...." alt="" coords="450,449,563,475"/>
+<area shape="poly" id="edge12_Node000003_Node000013" title=" " alt="" coords="330,240,356,248,379,263,396,284,404,306,406,328,405,350,405,394,412,415,427,436,451,451,448,456,424,440,407,418,400,395,400,350,401,328,399,307,392,287,376,267,354,253,328,245"/>
 </map>

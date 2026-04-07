@@ -1,0 +1,7 @@
+<map id="Tools/Calculators/General/VoltageDivider/voltage_divider.h" name="Tools/Calculators/General/VoltageDivider/voltage_divider.h">
+<area shape="rect" id="Node000001" title="Calculator: Voltage divider design with power dissipation analysis (definition)" alt="" coords="121,5,308,60"/>
+<area shape="rect" id="Node000002" href="$d5/da8/voltage__divider_8cpp.html" title="Calculator: Voltage divider design with power dissipation analysis (implementation)" alt="" coords="5,108,192,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,71,131,110,127,106,172,67"/>
+<area shape="rect" id="Node000003" href="$d0/d79/calculators__management_8cpp.html" title="Implementation of the slots to call the dialog calculators." alt="" coords="216,123,448,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="258,67,320,120,317,124,254,71"/>
+</map>

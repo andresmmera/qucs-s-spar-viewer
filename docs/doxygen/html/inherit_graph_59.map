@@ -1,0 +1,25 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,252,84,277"/>
+<area shape="rect" id="Node000001" href="$d5/d0b/classAttenuatorDesignTool.html" title="GUI tool for RF attenuator design tool." alt="" coords="155,5,317,31"/>
+<area shape="poly" id="edge137_Node000000_Node000001" title=" " alt="" coords="46,238,53,195,67,141,92,87,109,62,130,40,153,26,156,31,134,44,114,65,97,89,72,143,58,196,51,239"/>
+<area shape="rect" id="Node000002" href="$d8/dad/classFilterDesignTool.html" title="Interactive filter design tool with real&#45;time synthesis and visualization." alt="" coords="173,55,299,80"/>
+<area shape="poly" id="edge138_Node000000_Node000002" title=" " alt="" coords="49,238,59,204,75,163,99,123,130,89,150,78,172,70,173,75,152,82,134,93,103,126,80,166,64,205,54,239"/>
+<area shape="rect" id="Node000003" href="$da/d6f/classLineNumberArea.html" title=" " alt="" coords="171,104,301,129"/>
+<area shape="poly" id="edge139_Node000000_Node000003" title=" " alt="" coords="54,238,84,187,105,161,131,138,169,122,171,127,133,143,109,164,88,190,59,241"/>
+<area shape="rect" id="Node000004" href="$da/db3/classMatchingNetworkDesignTool.html" title="Main widget for matching network design." alt="" coords="132,153,340,179"/>
+<area shape="poly" id="edge140_Node000000_Node000004" title=" " alt="" coords="64,240,94,212,131,188,160,176,162,181,133,192,97,217,68,244"/>
+<area shape="rect" id="Node000005" href="$d2/d24/classNetlistScratchPad.html" title="Widget for editing netlists." alt="" coords="168,203,304,228"/>
+<area shape="poly" id="edge141_Node000000_Node000005" title=" " alt="" coords="97,246,131,237,177,225,178,231,133,242,98,252"/>
+<area shape="rect" id="Node000006" href="$de/d80/classPolarPlotWidget.html" title="Widget for displaying complex data in polar plot format with markers and traces." alt="" coords="173,252,299,277"/>
+<area shape="poly" id="edge142_Node000000_Node000006" title=" " alt="" coords="98,262,172,262,172,267,98,267"/>
+<area shape="rect" id="Node000007" href="$da/d3c/classPowerCombiningTool.html" title="Widget for power combining network design and synthesis." alt="" coords="157,301,315,327"/>
+<area shape="poly" id="edge143_Node000000_Node000007" title=" " alt="" coords="98,277,133,286,182,299,181,304,131,291,96,282"/>
+<area shape="rect" id="Node000008" href="$d4/df9/classQCustomPlot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ..." alt="" coords="183,351,289,376"/>
+<area shape="poly" id="edge144_Node000000_Node000008" title=" " alt="" coords="69,286,98,312,133,336,183,353,181,358,131,340,95,316,65,289"/>
+<area shape="rect" id="Node000009" href="$d8/dee/classRectangularPlotWidget.html" title="Widget for displaying rectangular (Cartesian) plots with dual y&#45;axes It provides a rectangular plot v..." alt="" coords="151,400,321,425"/>
+<area shape="poly" id="edge145_Node000000_Node000009" title=" " alt="" coords="59,288,88,338,109,364,133,385,158,398,156,402,131,390,105,367,84,341,55,291"/>
+<area shape="rect" id="Node000010" href="$db/d70/classSimulationSetup.html" title="UI component to set the simulation settings The widget consists of two tabs: 1) Frequency Sweep – sta..." alt="" coords="171,449,301,475"/>
+<area shape="poly" id="edge146_Node000000_Node000010" title=" " alt="" coords="54,290,64,323,80,363,103,402,134,435,152,445,172,453,170,458,149,450,130,439,99,405,75,365,59,325,49,291"/>
+<area shape="rect" id="Node000011" href="$d9/dca/classSmithChartWidget.html" title="Smith chart visualization and interaction widget. Provides impedance/admittance Smith chart drawing,..." alt="" coords="165,499,307,524"/>
+<area shape="poly" id="edge147_Node000000_Node000011" title=" " alt="" coords="51,291,58,333,73,386,97,439,114,463,134,484,149,494,166,501,164,506,146,499,130,488,110,466,93,442,68,388,53,335,46,292"/>
+</map>

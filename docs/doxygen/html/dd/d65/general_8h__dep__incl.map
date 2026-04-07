@@ -1,0 +1,154 @@
+<map id="Misc/general.h" name="Misc/general.h">
+<area shape="rect" id="Node000001" title="Utility functions needed across the whole project." alt="" coords="4437,5,4554,31"/>
+<area shape="rect" id="Node000002" href="$de/dbd/general_8cpp.html" title="Utility functions needed across the whole project." alt="" coords="5,101,137,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="4423,22,3553,26,2161,35,1451,43,831,53,372,66,227,73,149,81,119,91,93,103,90,98,117,86,148,76,226,68,372,60,831,47,1451,37,2161,30,3553,20,4423,17"/>
+<area shape="rect" id="Node000003" href="$d6/ddd/readTouchstone_8cpp.html" title="Touchstone data reader." alt="" coords="161,101,347,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="4423,22,3628,21,2353,26,1692,33,1097,43,632,59,468,70,360,81,319,91,283,103,281,98,318,86,359,76,468,64,632,54,1097,38,1692,27,2353,20,3628,16,4423,16"/>
+<area shape="rect" id="Node000004" href="$db/dbc/SParameterCalculator_8h.html" title="S&#45;parameter network analysis calculator." alt="" coords="371,101,582,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="4423,22,3671,24,2474,32,1853,39,1296,50,861,64,707,72,605,81,556,91,512,103,511,98,555,86,604,76,706,67,861,58,1296,44,1853,34,2474,27,3671,19,4423,17"/>
+<area shape="rect" id="Node000018" href="$d4/df4/qucs-s-spar-viewer_8h.html" title="Main application class for S&#45;parameter viewer (and its RF circuit synthesis tools)" alt="" coords="3131,372,3305,397"/>
+<area shape="poly" id="edge102_Node000001_Node000018" title=" " alt="" coords="4423,22,2360,40,1193,58,815,69,707,75,667,81,663,108,665,160,674,235,703,272,735,294,773,308,821,321,880,333,968,342,1220,358,1544,369,1908,376,2631,382,3131,381,3131,386,2631,387,1908,381,1544,374,1220,363,968,348,879,338,820,327,771,313,732,299,700,276,669,237,660,160,658,107,663,77,706,70,814,64,1192,53,2360,35,4423,17"/>
+<area shape="rect" id="Node000029" href="$da/d18/QucsSExporter_8h.html" title="Qucs&#45;S schematic export class (definition)" alt="" coords="723,93,903,133"/>
+<area shape="poly" id="edge7_Node000001_Node000029" title=" " alt="" coords="4423,22,3731,26,2641,35,1573,53,1178,65,1039,73,946,81,875,96,874,91,946,76,1038,68,1178,60,1573,47,2641,29,3731,20,4423,17"/>
+<area shape="rect" id="Node000046" href="$d4/d96/SchematicContent_8h.html" title="Container for schematic circuit data (definition)" alt="" coords="711,203,936,229"/>
+<area shape="poly" id="edge13_Node000001_Node000046" title=" " alt="" coords="4423,22,3689,27,2551,38,1490,55,1140,67,1036,74,991,81,973,95,964,112,956,130,940,150,894,183,851,206,848,201,891,178,936,146,951,127,960,109,969,92,989,76,1036,69,1140,62,1490,50,2550,32,3689,22,4423,17"/>
+<area shape="rect" id="Node000115" href="$dd/d1d/MatchingNetworkDesignTool_8h.html" title="GUI for the matching network synthesis tool (definition)" alt="" coords="833,284,1112,324"/>
+<area shape="poly" id="edge83_Node000001_Node000115" title=" " alt="" coords="4423,22,3634,21,2399,27,1779,34,1247,44,869,60,758,70,726,75,712,81,683,117,675,136,671,155,672,174,677,194,700,234,720,249,751,262,834,282,832,288,749,267,717,254,696,238,672,196,666,175,666,154,670,134,678,114,708,77,725,70,757,65,868,55,1247,39,1779,28,2399,21,3634,16,4423,16"/>
+<area shape="rect" id="Node000051" href="$d6/dcf/component_8h.html" title="Graphical component representation in schematic (definition)" alt="" coords="3387,101,3566,126"/>
+<area shape="poly" id="edge14_Node000001_Node000051" title=" " alt="" coords="4423,26,4118,47,3722,81,3552,103,3551,98,3722,76,4117,41,4423,21"/>
+<area shape="rect" id="Node000074" href="$de/db4/LPadFirstSeries_8h.html" title="L&#45;pad (first series) 1&#45;port matched attenuator (definition)" alt="" coords="1061,196,1271,236"/>
+<area shape="poly" id="edge72_Node000001_Node000074" title=" " alt="" coords="4422,23,3024,40,2207,58,1906,69,1729,81,1586,105,1446,137,1226,198,1224,193,1444,132,1585,100,1728,76,1906,63,2207,52,3024,35,4422,17"/>
+<area shape="rect" id="Node000071" href="$de/dd2/AttenuatorDesignTool_8h.html" title="GUI for the RF attenuator design tool (definition)" alt="" coords="1773,284,1996,324"/>
+<area shape="poly" id="edge71_Node000001_Node000071" title=" " alt="" coords="4423,22,3781,28,2799,39,1874,56,1557,68,1456,74,1403,81,1364,96,1335,113,1307,132,1268,151,1234,159,1202,161,1146,158,1121,158,1097,163,1074,175,1051,198,1043,217,1044,225,1051,234,1064,243,1085,251,1152,265,1242,276,1348,285,1575,295,1773,299,1773,305,1575,301,1348,290,1242,282,1151,271,1084,256,1061,248,1047,238,1040,227,1037,216,1046,194,1071,171,1095,158,1120,153,1146,153,1202,156,1233,154,1266,145,1305,128,1332,109,1361,91,1401,76,1456,69,1556,63,1874,51,2799,33,3781,22,4423,17"/>
+<area shape="rect" id="Node000075" href="$db/d8d/LPadFirstShunt_8h.html" title="L&#45;pad (first shunt) 1&#45;port matched attenuator (definition)" alt="" coords="1295,196,1506,236"/>
+<area shape="poly" id="edge73_Node000001_Node000075" title=" " alt="" coords="4423,22,3991,26,3341,36,2671,53,2390,66,2178,81,1982,106,1789,138,1485,199,1484,193,1788,133,1982,101,2178,76,2390,61,2671,48,3341,30,3991,21,4423,17"/>
+<area shape="rect" id="Node000079" href="$dd/d56/QW__SeriesAttenuator_8h_source.html" title=" " alt="" coords="1530,196,1751,236"/>
+<area shape="poly" id="edge74_Node000001_Node000079" title=" " alt="" coords="4423,22,4047,26,3495,36,2929,54,2693,66,2514,81,2419,96,2346,114,2273,132,2178,151,2062,167,1971,176,1764,199,1752,200,1751,195,1763,193,1971,171,2061,162,2178,145,2272,127,2345,108,2418,91,2514,76,2692,61,2929,48,3495,31,4047,21,4423,17"/>
+<area shape="rect" id="Node000081" href="$d7/d59/QW__ShuntAttenuator_8h.html" title="Quarter wavelength first&#45;shunt attenuator synthesis (definition)" alt="" coords="1775,196,1994,236"/>
+<area shape="poly" id="edge75_Node000001_Node000081" title=" " alt="" coords="4423,21,4079,21,3582,27,3321,34,3077,45,2866,60,2708,81,2653,96,2612,115,2570,134,2515,151,2438,166,2373,175,2262,183,2149,186,2006,199,1995,200,1994,195,2006,193,2149,181,2261,177,2373,170,2437,160,2513,145,2568,129,2609,110,2651,91,2707,76,2866,55,3076,39,3321,28,3582,21,4079,16,4423,16"/>
+<area shape="rect" id="Node000083" href="$df/dfe/RSeriesAttenuator_8h.html" title="Series resistor (unmatched) attenuator synthesis (definition)" alt="" coords="2018,196,2229,236"/>
+<area shape="poly" id="edge76_Node000001_Node000083" title=" " alt="" coords="4423,23,4069,27,3572,37,3102,54,2931,66,2831,81,2795,96,2770,115,2745,134,2708,151,2639,170,2580,181,2527,187,2477,188,2373,189,2312,191,2241,199,2229,200,2228,195,2240,193,2312,186,2373,183,2477,183,2527,181,2579,176,2638,165,2706,145,2742,129,2767,110,2792,92,2829,76,2930,61,3102,49,3571,31,4069,21,4423,17"/>
+<area shape="rect" id="Node000085" href="$de/da0/ReflectionAttenuator_8h.html" title="Reflection attenuator synthesis (definition)" alt="" coords="2253,196,2469,236"/>
+<area shape="poly" id="edge77_Node000001_Node000085" title=" " alt="" coords="4423,22,4085,24,3614,32,3379,40,3171,50,3011,64,2954,72,2918,81,2892,96,2875,114,2858,133,2831,150,2781,169,2737,181,2660,189,2581,190,2481,199,2470,200,2469,195,2480,193,2580,185,2659,184,2736,176,2779,164,2829,146,2854,129,2871,111,2888,92,2916,76,2953,67,3010,58,3171,45,3379,34,3614,27,4085,19,4423,17"/>
+<area shape="rect" id="Node000087" href="$dc/db0/RshuntAttenuator_8h.html" title="Shunt resistor (unmatched) attenuator synthesi0s (definition)" alt="" coords="2493,196,2703,236"/>
+<area shape="poly" id="edge78_Node000001_Node000087" title=" " alt="" coords="4423,22,4102,25,3659,34,3438,41,3243,51,3093,65,3040,73,3006,81,2979,96,2962,114,2945,133,2918,150,2879,164,2826,177,2704,201,2703,195,2825,172,2878,159,2915,146,2941,129,2958,110,2976,92,3004,76,3039,67,3092,59,3243,46,3438,36,3659,28,4102,20,4423,17"/>
+<area shape="rect" id="Node000138" href="$d6/dd1/AdamsCombiner_8h.html" title="Delta resistive power splitter (definition)" alt="" coords="6087,196,6338,236"/>
+<area shape="poly" id="edge86_Node000001_Node000138" title=" " alt="" coords="4568,21,4615,27,4666,37,4719,53,4769,76,4789,94,4801,113,4812,131,4833,146,4865,155,4916,164,5059,176,5244,183,5449,187,5841,189,6075,193,6087,194,6087,200,6075,199,5840,194,5449,192,5244,188,5059,181,4915,169,4864,161,4830,150,4808,135,4796,116,4785,98,4766,81,4717,58,4665,42,4614,32,4567,26"/>
+<area shape="rect" id="Node000140" href="$dd/d2b/PowerCombiningTool_8h.html" title="Widget for power combining network design and synthesis (definition)" alt="" coords="4426,284,4677,324"/>
+<area shape="poly" id="edge94_Node000001_Node000140" title=" " alt="" coords="4568,17,4625,22,4690,32,4756,49,4819,76,4840,94,4852,113,4863,131,4883,146,4910,151,4964,155,5135,159,5623,160,5880,161,6107,166,6274,176,6326,184,6352,194,6359,205,6362,216,6359,227,6351,238,6291,245,6140,253,5660,272,4677,302,4677,296,5660,266,6139,248,6290,240,6349,234,6355,225,6357,216,6355,207,6348,198,6324,189,6273,181,6107,171,5880,167,5623,165,5135,164,4964,160,4910,156,4881,150,4859,134,4847,116,4836,97,4817,81,4755,54,4689,37,4625,27,4568,22"/>
+<area shape="rect" id="Node000142" href="$d4/dbb/Bagley_8h.html" title="Bagley power combiner/divider network (definition)" alt="" coords="2727,196,2978,236"/>
+<area shape="poly" id="edge87_Node000001_Node000142" title=" " alt="" coords="4423,22,4170,26,3823,35,3477,53,3333,65,3225,81,3130,106,3037,138,2893,198,2891,193,3035,133,3128,101,3224,76,3333,60,3477,47,3823,30,4170,21,4423,17"/>
+<area shape="rect" id="Node000144" href="$d7/d97/Branchline_8h.html" title="Branch&#45;line power combiner/divider network (definition)" alt="" coords="3002,196,3253,236"/>
+<area shape="poly" id="edge88_Node000001_Node000144" title=" " alt="" coords="4423,22,4196,23,3893,30,3737,38,3593,48,3469,63,3376,81,3310,106,3248,137,3154,198,3151,194,3246,133,3308,101,3375,76,3468,57,3592,43,3737,32,3893,25,4196,18,4423,16"/>
+<area shape="rect" id="Node000146" href="$d3/d19/DeltaCombiner_8h.html" title="Delta resistive power splitter (definition)" alt="" coords="3327,196,3578,236"/>
+<area shape="poly" id="edge89_Node000001_Node000146" title=" " alt="" coords="4423,25,4199,43,4061,59,3924,81,3806,108,3690,140,3507,198,3505,193,3688,135,3805,103,3923,76,4061,54,4199,37,4423,20"/>
+<area shape="rect" id="Node000148" href="$db/d41/DoubleBoxBranchline_8h.html" title="Double&#45;box branch&#45;line power combiner/divider network (definition)" alt="" coords="3602,196,3853,236"/>
+<area shape="poly" id="edge90_Node000001_Node000148" title=" " alt="" coords="4423,33,4305,53,4172,81,3955,142,3782,199,3780,193,3953,137,4171,76,4304,48,4422,28"/>
+<area shape="rect" id="Node000150" href="$d9/db6/Gysel_8h.html" title="Gysel power combiner/divider network (definition)" alt="" coords="3877,196,4127,236"/>
+<area shape="poly" id="edge91_Node000001_Node000150" title=" " alt="" coords="4455,38,4050,198,4048,193,4453,33"/>
+<area shape="rect" id="Node000152" href="$de/d0e/Lim__Eom_8h.html" title="Lim&#45;Eom power combiner/divider network (definition)" alt="" coords="4151,196,4402,236"/>
+<area shape="poly" id="edge92_Node000001_Node000152" title=" " alt="" coords="4474,42,4299,198,4296,194,4470,38"/>
+<area shape="rect" id="Node000154" href="$d2/d5f/MultistageWilkinson_8h.html" title="Multistage Wilkinson power combiner/divider network (definition)" alt="" coords="4426,196,4677,236"/>
+<area shape="poly" id="edge93_Node000001_Node000154" title=" " alt="" coords="4503,43,4530,147,4546,195,4541,196,4525,149,4498,45"/>
+<area shape="rect" id="Node000156" href="$dc/dd5/Recombinant3WayWilkinson_8h_source.html" title=" " alt="" coords="4701,196,4951,236"/>
+<area shape="poly" id="edge95_Node000001_Node000156" title=" " alt="" coords="4510,41,4545,101,4563,129,4580,146,4605,159,4641,171,4729,193,4728,199,4640,176,4602,164,4576,150,4559,132,4540,104,4505,44"/>
+<area shape="rect" id="Node000158" href="$d4/dd3/TJunction_8h_source.html" title=" " alt="" coords="4975,196,5226,236"/>
+<area shape="poly" id="edge96_Node000001_Node000158" title=" " alt="" coords="4525,37,4573,77,4590,97,4600,115,4611,131,4630,146,4975,195,4975,200,4628,150,4607,135,4595,118,4585,100,4569,81,4522,41"/>
+<area shape="rect" id="Node000159" href="$d0/d7b/Wilkinson2Way_8h.html" title="Wilkinson power combiner/divider network (definition)" alt="" coords="5250,196,5501,236"/>
+<area shape="poly" id="edge97_Node000001_Node000159" title=" " alt="" coords="4541,33,4581,52,4620,77,4638,96,4649,114,4661,131,4681,146,4731,163,4797,175,4873,182,4954,185,5114,188,5238,193,5250,195,5250,200,5238,199,5114,193,4954,191,4872,187,4796,180,4730,168,4678,150,4657,135,4645,117,4634,99,4616,81,4578,57,4539,38"/>
+<area shape="rect" id="Node000161" href="$d4/dd9/Wilkinson3way__ImprovedIsolation_8h.html" title="3&#45;way Wilkinson with improved isolation network (definition)" alt="" coords="5525,196,5788,236"/>
+<area shape="poly" id="edge98_Node000001_Node000161" title=" " alt="" coords="4564,32,4617,50,4669,76,4689,95,4700,114,4711,131,4731,146,4764,158,4802,168,4894,182,5001,189,5115,191,5339,189,5436,190,5513,193,5526,195,5525,200,5512,199,5436,195,5339,195,5115,197,5001,195,4894,188,4801,174,4762,163,4729,150,4707,135,4695,117,4684,98,4666,81,4615,55,4562,37"/>
+<area shape="rect" id="Node000163" href="$d0/d39/WyeCombiner_8h.html" title="Direct N&#45;way Wye resistive power splitter (definition)" alt="" coords="5813,196,6063,236"/>
+<area shape="poly" id="edge99_Node000001_Node000163" title=" " alt="" coords="4569,26,4643,44,4682,58,4718,76,4739,94,4750,113,4762,131,4782,146,4808,154,4850,161,4968,172,5287,183,5608,188,5801,193,5813,194,5812,200,5801,199,5608,194,5287,189,4967,177,4849,166,4807,159,4779,150,4758,135,4746,116,4734,98,4715,81,4680,63,4641,49,4567,31"/>
+<area shape="rect" id="Node000172" href="$dc/d52/parallel__inductors_8h.html" title="Calculator: Equivalent inductance of parallel inductors (definition)" alt="" coords="5039,79,5226,148"/>
+<area shape="poly" id="edge58_Node000001_Node000172" title=" " alt="" coords="4568,21,4773,39,4897,55,5021,76,5039,80,5038,85,5020,81,4896,60,4772,44,4568,26"/>
+<area shape="rect" id="Node000174" href="$d9/dbe/parallel__resistors_8h.html" title="Calculator: Equivalent resistance of parallel resistors (definition)" alt="" coords="5250,79,5437,148"/>
+<area shape="poly" id="edge59_Node000001_Node000174" title=" " alt="" coords="4568,17,4695,20,4862,29,5050,47,5238,76,5250,79,5249,84,5238,81,5049,52,4862,35,4695,26,4568,22"/>
+<area shape="rect" id="Node000176" href="$d0/dfa/series__capacitors_8h.html" title="Calculator: Equivalent capacitance of series capacitors (definition)" alt="" coords="5461,79,5647,148"/>
+<area shape="poly" id="edge60_Node000001_Node000176" title=" " alt="" coords="4568,19,5017,38,5267,55,5371,65,5449,76,5461,78,5460,84,5448,81,5370,70,5267,60,5017,43,4568,24"/>
+<area shape="rect" id="Node000178" href="$d7/d24/voltage__divider_8h.html" title="Calculator: Voltage divider design with power dissipation analysis (definition)" alt="" coords="5671,86,5858,141"/>
+<area shape="poly" id="edge61_Node000001_Node000178" title=" " alt="" coords="4568,18,4802,23,5117,34,5431,51,5561,63,5660,76,5691,83,5690,89,5659,81,5561,68,5431,57,5117,40,4802,29,4568,23"/>
+<area shape="rect" id="Node000180" href="$d5/dc7/free__space__loss_8h_source.html" title=" " alt="" coords="5882,86,6079,141"/>
+<area shape="poly" id="edge62_Node000001_Node000180" title=" " alt="" coords="4568,17,4839,22,5216,32,5594,49,5751,61,5870,76,5903,83,5902,88,5870,81,5751,67,5594,54,5216,37,4839,27,4568,23"/>
+<area shape="rect" id="Node000181" href="$da/d44/ImageFrequencyCalculatorDialog_8h.html" title="Image frequency calculator (definition)" alt="" coords="6103,86,6365,141"/>
+<area shape="poly" id="edge63_Node000001_Node000181" title=" " alt="" coords="4568,18,4877,22,5318,33,5765,50,5951,62,6092,76,6134,83,6133,89,6091,81,5950,67,5764,56,5318,38,4877,28,4567,23"/>
+<area shape="rect" id="Node000183" href="$d2/deb/SecondaryImageCalculatorDialog_8h.html" title="Secondary image frequency calculator (definition)" alt="" coords="6389,86,6685,141"/>
+<area shape="poly" id="edge64_Node000001_Node000183" title=" " alt="" coords="4568,17,4927,22,5450,32,5985,49,6208,61,6377,76,6424,83,6423,89,6376,81,6208,67,5985,54,5450,37,4927,27,4568,23"/>
+<area shape="rect" id="Node000185" href="$de/db7/freq__wavelength__converter_8h.html" title="Calculator: Convert between frequency and wavelength (definition)" alt="" coords="6709,86,6924,141"/>
+<area shape="poly" id="edge65_Node000001_Node000185" title=" " alt="" coords="4568,16,4980,16,5597,22,5924,29,6232,40,6497,55,6697,76,6733,83,6732,88,6696,81,6497,60,6231,45,5924,34,5597,27,4980,21,4568,22"/>
+<area shape="rect" id="Node000187" href="$db/dc3/octaveBW__calculator_8h_source.html" title=" " alt="" coords="6949,86,7167,141"/>
+<area shape="poly" id="edge66_Node000001_Node000187" title=" " alt="" coords="4568,17,5805,35,6519,53,6782,64,6937,76,6974,83,6973,88,6936,81,6782,69,6519,58,5805,40,4568,23"/>
+<area shape="rect" id="Node000189" href="$d6/d42/RF__power__converter_8h.html" title="Calculator: Convert RF power between different units (definition)" alt="" coords="7191,86,7359,141"/>
+<area shape="poly" id="edge67_Node000001_Node000189" title=" " alt="" coords="4568,17,5108,20,5926,29,6717,47,7008,60,7111,68,7180,76,7210,83,7208,89,7179,81,7111,73,7008,65,6717,52,5925,35,5108,25,4568,22"/>
+<area shape="rect" id="Node000191" href="$dd/d4a/swr__s11__calculator_8h.html" title="Calculator: Conversion between SWR, S11 and |Γ| (definition)" alt="" coords="7384,79,7569,148"/>
+<area shape="poly" id="edge68_Node000001_Node000191" title=" " alt="" coords="4568,17,5143,20,6021,30,6873,47,7187,60,7298,68,7372,76,7384,78,7383,84,7371,81,7297,73,7187,65,6873,53,6021,35,5143,26,4568,22"/>
+<area shape="rect" id="Node000192" href="$df/d45/gamma__calculator_8h.html" title="Calculator: Reflection coefficient (Γ) to Z, VSWR and S11 (definition)" alt="" coords="7593,79,7795,148"/>
+<area shape="poly" id="edge69_Node000001_Node000192" title=" " alt="" coords="4568,17,5180,20,6124,29,7043,47,7383,60,7503,68,7582,76,7593,78,7592,83,7582,81,7502,73,7382,65,7043,52,6124,34,5180,25,4568,22"/>
+<area shape="rect" id="Node000194" href="$d2/dea/impedance__calculator_8h.html" title="Simple calculator: Impedance (Z) to Γ, VSWR and S11 (definition)" alt="" coords="7819,79,8065,148"/>
+<area shape="poly" id="edge70_Node000001_Node000194" title=" " alt="" coords="4568,17,5220,21,6234,31,7226,49,7592,61,7808,76,7820,78,7819,83,7807,81,7592,66,7226,54,6234,36,5220,26,4568,22"/>
+<area shape="rect" id="Node000093" href="$d7/d2a/FilterDesignTool_8h.html" title="GUI and control logic for RF filter design and synthesis (definition)" alt="" coords="5329,284,5523,324"/>
+<area shape="poly" id="edge79_Node000001_Node000093" title=" " alt="" coords="4568,23,4735,42,4814,57,4870,76,4891,94,4903,113,4914,131,4934,146,4961,151,5013,155,5181,159,5659,160,5912,162,6135,166,6298,176,6349,184,6374,194,6382,205,6385,216,6382,227,6374,238,6342,245,6268,253,6032,270,5523,300,5523,295,6032,265,6267,248,6341,240,6371,234,6377,225,6379,216,6377,207,6371,198,6347,189,6298,181,6134,172,5912,167,5659,166,5181,164,5013,160,4960,156,4932,150,4910,134,4898,116,4887,97,4867,81,4813,63,4734,48,4567,28"/>
+<area shape="rect" id="Node000196" href="$db/d7b/LoadSpecificationWidget_8h.html" title="Widget for entering the load impedance data (definition)" alt="" coords="1002,93,1255,133"/>
+<area shape="poly" id="edge81_Node000001_Node000196" title=" " alt="" coords="4423,22,3787,27,2801,38,1839,56,1483,68,1274,81,1197,96,1196,91,1274,76,1483,62,1839,51,2801,33,3787,22,4423,17"/>
+<area shape="rect" id="Node000169" href="$d2/d2c/netlistscratchpad_8h.html" title="Widget for editing netlists (definition)" alt="" coords="5862,284,6083,324"/>
+<area shape="poly" id="edge84_Node000001_Node000169" title=" " alt="" coords="4568,21,4761,39,4854,55,4892,65,4921,76,4942,94,4953,113,4964,131,4984,146,5011,151,5062,154,5226,159,5696,160,5943,162,6162,167,6322,176,6372,184,6397,194,6405,205,6407,216,6397,238,6382,247,6355,256,6277,271,6084,295,6083,290,6276,266,6354,251,6380,242,6393,234,6402,215,6400,207,6394,198,6371,189,6322,182,6162,172,5943,167,5696,166,5226,164,5062,160,5010,156,4982,150,4961,134,4949,115,4938,97,4918,81,4891,70,4853,61,4760,45,4567,26"/>
+<area shape="rect" id="Node000198" href="$d3/d4a/simulationsetup_8h.html" title="UI component to set the simulation settings (definition)" alt="" coords="6265,284,6475,324"/>
+<area shape="poly" id="edge100_Node000001_Node000198" title=" " alt="" coords="4568,19,4670,25,4787,36,4895,52,4939,63,4971,76,4991,93,5001,113,5010,131,5029,146,5065,156,5123,162,5288,166,5500,161,5734,153,5967,147,6175,149,6262,153,6334,162,6387,175,6406,184,6420,194,6427,205,6430,217,6424,242,6409,265,6392,286,6388,282,6405,262,6419,240,6424,217,6422,207,6416,198,6404,189,6385,180,6333,167,6261,159,6175,154,5967,153,5734,159,5500,167,5288,171,5122,168,5064,161,5026,150,5006,134,4996,115,4987,97,4969,81,4937,68,4894,57,4786,41,4670,30,4568,25"/>
+<area shape="rect" id="Node000005" href="$dd/d5d/SParameterCalculator_8cpp.html" title="S&#45;parameter network analysis calculator (implementation)" alt="" coords="359,203,586,229"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="478,140,476,203,470,203,473,140"/>
+<area shape="rect" id="Node000006" href="$d8/dcb/CoupledLines_8cpp.html" title="Implementation of function for the S&#45;parameter analysis of the ideal coupled lines." alt="" coords="147,196,335,236"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="438,134,286,198,284,193,436,129"/>
+<area shape="poly" id="edge6_Node000004_Node000018" title=" " alt="" coords="426,132,359,151,270,164,182,173,148,181,127,193,123,200,122,209,136,234,186,284,211,301,236,313,287,327,341,330,461,321,529,318,605,321,842,339,1157,353,1908,370,2639,378,3130,381,3130,386,2639,384,1908,376,1157,358,842,344,605,327,529,323,461,327,341,336,286,333,234,318,208,305,183,288,132,238,117,210,118,199,124,189,146,176,181,168,269,158,357,145,425,127"/>
+<area shape="poly" id="edge8_Node000029_Node000029" title=" " alt="" coords="918,99,926,105,929,114,922,126,904,132,902,127,918,121,924,113,922,108,915,103"/>
+<area shape="poly" id="edge9_Node000029_Node000046" title=" " alt="" coords="810,147,819,202,813,203,805,147"/>
+<area shape="poly" id="edge10_Node000046_Node000029" title=" " alt="" coords="826,190,819,134,825,133,831,189"/>
+<area shape="poly" id="edge11_Node000046_Node000115" title=" " alt="" coords="857,233,941,282,938,286,854,238"/>
+<area shape="poly" id="edge12_Node000115_Node000018" title=" " alt="" coords="1126,308,3130,378,3130,383,1126,313"/>
+<area shape="poly" id="edge30_Node000051_Node000115" title=" " alt="" coords="3439,134,3380,162,3317,198,3293,220,3282,230,3265,239,2987,251,2364,269,1112,302,1112,297,2364,264,2987,245,3264,233,3279,226,3289,216,3314,194,3378,158,3436,129"/>
+<area shape="poly" id="edge15_Node000051_Node000074" title=" " alt="" coords="3374,117,3027,118,2511,128,2214,138,1904,153,1591,173,1284,199,1272,200,1271,195,1283,193,1590,167,1904,147,2214,133,2511,123,3027,113,3373,111"/>
+<area shape="poly" id="edge18_Node000051_Node000075" title=" " alt="" coords="3374,120,2452,149,1913,172,1688,185,1518,199,1506,200,1506,195,1518,193,1688,180,1913,167,2452,144,3374,115"/>
+<area shape="poly" id="edge20_Node000051_Node000079" title=" " alt="" coords="3374,121,2567,152,2103,175,1764,199,1752,200,1751,195,1763,193,2103,169,2567,147,3374,115"/>
+<area shape="poly" id="edge22_Node000051_Node000081" title=" " alt="" coords="3374,122,2682,154,2292,177,2006,199,1995,200,1994,195,2006,193,2291,171,2681,149,3374,116"/>
+<area shape="poly" id="edge24_Node000051_Node000083" title=" " alt="" coords="3374,123,2793,157,2474,178,2241,199,2229,200,2228,195,2240,193,2474,173,2793,151,3373,118"/>
+<area shape="poly" id="edge26_Node000051_Node000085" title=" " alt="" coords="3374,123,2981,151,2732,172,2481,199,2470,200,2469,195,2480,193,2732,167,2981,145,3373,118"/>
+<area shape="poly" id="edge28_Node000051_Node000087" title=" " alt="" coords="3374,127,3078,156,2716,199,2704,200,2703,195,2715,193,3077,151,3373,121"/>
+<area shape="poly" id="edge31_Node000051_Node000138" title=" " alt="" coords="3580,115,4903,150,5643,174,6076,193,6087,194,6087,200,6075,199,5643,179,4903,156,3580,120"/>
+<area shape="poly" id="edge34_Node000051_Node000142" title=" " alt="" coords="3393,131,2970,199,2969,193,3392,126"/>
+<area shape="poly" id="edge36_Node000051_Node000144" title=" " alt="" coords="3425,132,3193,199,3192,193,3423,127"/>
+<area shape="poly" id="edge38_Node000051_Node000146" title=" " alt="" coords="3473,140,3460,196,3455,195,3468,139"/>
+<area shape="poly" id="edge40_Node000051_Node000148" title=" " alt="" coords="3519,129,3681,193,3679,198,3517,134"/>
+<area shape="poly" id="edge42_Node000051_Node000150" title=" " alt="" coords="3550,126,3904,193,3903,199,3549,131"/>
+<area shape="poly" id="edge44_Node000051_Node000152" title=" " alt="" coords="3580,124,4140,193,4152,195,4151,200,4139,199,3579,130"/>
+<area shape="poly" id="edge46_Node000051_Node000154" title=" " alt="" coords="3580,119,3949,148,4414,193,4426,195,4426,200,4414,199,3948,154,3580,125"/>
+<area shape="poly" id="edge48_Node000051_Node000156" title=" " alt="" coords="3580,117,4059,143,4372,165,4689,193,4701,195,4700,200,4688,199,4372,170,4059,148,3579,122"/>
+<area shape="poly" id="edge50_Node000051_Node000158" title=" " alt="" coords="3580,115,4168,138,4563,161,4964,193,4975,195,4975,200,4963,199,4562,167,4168,144,3580,120"/>
+<area shape="poly" id="edge52_Node000051_Node000159" title=" " alt="" coords="3580,114,3865,120,4275,134,4752,157,4998,174,5238,193,5250,194,5249,200,5238,199,4997,179,4752,163,4275,139,3865,125,3579,119"/>
+<area shape="poly" id="edge54_Node000051_Node000161" title=" " alt="" coords="3580,115,4537,146,5100,169,5513,193,5526,194,5525,200,5512,199,5100,174,4537,151,3579,120"/>
+<area shape="poly" id="edge56_Node000051_Node000163" title=" " alt="" coords="3580,115,4765,152,5419,175,5801,193,5813,194,5812,200,5800,199,5419,180,4765,157,3580,120"/>
+<area shape="poly" id="edge16_Node000074_Node000071" title=" " alt="" coords="1285,234,1552,266,1773,289,1773,295,1551,271,1285,239"/>
+<area shape="poly" id="edge17_Node000071_Node000018" title=" " alt="" coords="2010,310,3131,376,3130,381,2010,315"/>
+<area shape="poly" id="edge19_Node000075_Node000071" title=" " alt="" coords="1520,236,1779,281,1778,287,1519,241"/>
+<area shape="poly" id="edge21_Node000079_Node000071" title=" " alt="" coords="1708,238,1832,281,1830,287,1706,243"/>
+<area shape="poly" id="edge23_Node000081_Node000071" title=" " alt="" coords="1887,250,1887,284,1882,284,1882,250"/>
+<area shape="poly" id="edge25_Node000083_Node000071" title=" " alt="" coords="2059,243,1938,286,1936,281,2057,238"/>
+<area shape="poly" id="edge27_Node000085_Node000071" title=" " alt="" coords="2243,241,1989,287,1988,281,2242,236"/>
+<area shape="poly" id="edge29_Node000087_Node000071" title=" " alt="" coords="2480,239,2216,271,1997,294,1996,289,2215,266,2479,233"/>
+<area shape="poly" id="edge32_Node000138_Node000140" title=" " alt="" coords="6074,239,5670,268,5275,287,4930,298,4677,304,4677,298,4930,293,5275,282,5669,263,6073,233"/>
+<area shape="poly" id="edge33_Node000140_Node000018" title=" " alt="" coords="4412,316,3306,381,3305,376,4412,311"/>
+<area shape="poly" id="edge35_Node000142_Node000140" title=" " alt="" coords="2992,233,3407,263,3813,282,4167,293,4426,299,4426,304,4166,299,3813,288,3407,268,2992,239"/>
+<area shape="poly" id="edge37_Node000144_Node000140" title=" " alt="" coords="3267,229,3316,233,3629,255,3939,272,4426,295,4426,300,3939,278,3628,260,3315,239,3267,235"/>
+<area shape="poly" id="edge39_Node000146_Node000140" title=" " alt="" coords="3592,233,3827,255,4057,272,4426,294,4426,299,4056,277,3826,260,3592,239"/>
+<area shape="poly" id="edge41_Node000148_Node000140" title=" " alt="" coords="3866,233,4172,266,4426,289,4426,295,4172,271,3866,239"/>
+<area shape="poly" id="edge43_Node000150_Node000140" title=" " alt="" coords="4136,235,4431,281,4431,287,4135,241"/>
+<area shape="poly" id="edge45_Node000152_Node000140" title=" " alt="" coords="4351,238,4492,281,4490,287,4349,243"/>
+<area shape="poly" id="edge47_Node000154_Node000140" title=" " alt="" coords="4554,250,4554,284,4549,284,4549,250"/>
+<area shape="poly" id="edge49_Node000156_Node000140" title=" " alt="" coords="4753,243,4612,287,4611,281,4752,238"/>
+<area shape="poly" id="edge51_Node000158_Node000140" title=" " alt="" coords="4967,241,4672,287,4671,281,4966,235"/>
+<area shape="poly" id="edge53_Node000159_Node000140" title=" " alt="" coords="5237,239,4931,271,4677,295,4677,289,4930,266,5236,233"/>
+<area shape="poly" id="edge55_Node000161_Node000140" title=" " alt="" coords="5512,239,5047,277,4677,299,4677,294,5046,271,5512,233"/>
+<area shape="poly" id="edge57_Node000163_Node000140" title=" " alt="" coords="5799,239,5478,264,5165,283,4677,302,4677,297,5164,277,5478,259,5798,233"/>
+<area shape="poly" id="edge80_Node000093_Node000018" title=" " alt="" coords="5315,312,3306,383,3305,378,5315,307"/>
+<area shape="poly" id="edge82_Node000196_Node000115" title=" " alt="" coords="1074,142,1038,166,1007,198,994,219,986,242,977,285,972,283,981,241,990,217,1003,194,1035,162,1071,138"/>
+<area shape="poly" id="edge85_Node000169_Node000018" title=" " alt="" coords="5848,314,5535,327,4209,364,3305,384,3305,379,4209,359,5535,321,5848,309"/>
+<area shape="poly" id="edge101_Node000198_Node000018" title=" " alt="" coords="6251,317,6095,327,5245,356,4420,374,3735,383,3306,386,3306,380,3735,377,4420,369,5245,351,6095,321,6251,312"/>
+</map>

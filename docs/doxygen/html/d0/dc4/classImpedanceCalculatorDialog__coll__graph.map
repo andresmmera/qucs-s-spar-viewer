@@ -1,0 +1,5 @@
+<map id="ImpedanceCalculatorDialog" name="ImpedanceCalculatorDialog">
+<area shape="rect" id="Node000001" title="Dialog for calculating reflection coefficient, VSWR, and S11 from a complex impedance (Z)" alt="" coords="5,79,208,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="69,5,144,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,44,109,79,104,79,104,44"/>
+</map>

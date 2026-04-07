@@ -1,10 +1,17 @@
 var searchData=
 [
-  ['magnitude_5fdb_0',['Magnitude_dB',['../d4/df4/qucs-s-spar-viewer_8h.html#a59b40c5838e0a3d2bfbfa64c85d7ca27a0943e17b50ad3d17de5c9646e5d28dba',1,'qucs-s-spar-viewer.h']]],
-  ['msall_1',['msAll',['../dc/dfe/namespaceQCP.html#a7e487e3e2ccb62ab7771065bab7cae54a43d7361cb0c5244eabdc962021bffebc',1,'QCP']]],
-  ['msbottom_2',['msBottom',['../dc/dfe/namespaceQCP.html#a7e487e3e2ccb62ab7771065bab7cae54a5241d8eac2bab9524a38889f576179cc',1,'QCP']]],
-  ['msleft_3',['msLeft',['../dc/dfe/namespaceQCP.html#a7e487e3e2ccb62ab7771065bab7cae54a9500c8bfcc9e80b9dff0a8e00e867f07',1,'QCP']]],
-  ['msnone_4',['msNone',['../dc/dfe/namespaceQCP.html#a7e487e3e2ccb62ab7771065bab7cae54a80aa4149f16dabd538f8b2e3d42c42d5',1,'QCP']]],
-  ['msright_5',['msRight',['../dc/dfe/namespaceQCP.html#a7e487e3e2ccb62ab7771065bab7cae54a93c719593bb2b94ed244d52c86d83b65',1,'QCP']]],
-  ['mstop_6',['msTop',['../dc/dfe/namespaceQCP.html#a7e487e3e2ccb62ab7771065bab7cae54a5db8fb0d0b0ecf0d611c2602a348e8a0',1,'QCP']]]
+  ['limabove_0',['limAbove',['../d4/df9/classQCustomPlot.html#a75a8afbe6ef333b1f3d47abb25b9add7a062b0b7825650b432a713c0df6742d41',1,'QCustomPlot']]],
+  ['limbelow_1',['limBelow',['../d4/df9/classQCustomPlot.html#a75a8afbe6ef333b1f3d47abb25b9add7aee39cf650cd24e68552da0b697ce4a93',1,'QCustomPlot']]],
+  ['lmbuffered_2',['lmBuffered',['../de/df8/classQCPLayer.html#a67dcfc1590be2a1f2227c5a39bb59c7cab581b9fab3007c4c65f057f4185d7538',1,'QCPLayer']]],
+  ['lmlogical_3',['lmLogical',['../de/df8/classQCPLayer.html#a67dcfc1590be2a1f2227c5a39bb59c7ca02eb5e9a4cb7f1baf1e2b6b99e3b87ce',1,'QCPLayer']]],
+  ['lp_5fhp_4',['LP_HP',['../d8/d47/TeeMatching_8h.html#a0121397dbdf94bf73cd7d38ff95da76aa527f6b498d577d34f2a8357e8eb3fce6',1,'TeeMatching.h']]],
+  ['lp_5flp_5',['LP_LP',['../d8/d47/TeeMatching_8h.html#a0121397dbdf94bf73cd7d38ff95da76aaf2e3d64c5957c682e6dc6273033c813d',1,'TeeMatching.h']]],
+  ['lsimpulse_6',['lsImpulse',['../dd/dff/classQCPGraph.html#ad60175cd9b5cac937c5ee685c32c0859aa3b358b4ae7cca94aceeb8e529c12ebb',1,'QCPGraph']]],
+  ['lsinside_7',['lsInside',['../de/d4f/classQCPAxis.html#a24b13374b9b8f75f47eed2ea78c37db9aae7b027ac2839cf4ad611df30236fc3f',1,'QCPAxis']]],
+  ['lsline_8',['lsline',['../dd/dff/classQCPGraph.html#ad60175cd9b5cac937c5ee685c32c0859a3c42a27b15aa3c92d399082fad8b7515',1,'QCPGraph::lsLine'],['../d5/d0b/classQCPCurve.html#a2710e9f79302152cff794c6e16cc01f1ade5822ce6fbf131d3df131795c2e1003',1,'QCPCurve::lsLine'],['../d6/d6e/classQCPPolarGraph.html#a1970d7ea3fb60006fad24ce3218e4b40af2efc561134fbc2c971a499877a9449d',1,'QCPPolarGraph::lsLine']]],
+  ['lsnone_9',['lsnone',['../dd/dff/classQCPGraph.html#ad60175cd9b5cac937c5ee685c32c0859aea9591b933733cc7b20786b71e60fa04',1,'QCPGraph::lsNone'],['../d5/d0b/classQCPCurve.html#a2710e9f79302152cff794c6e16cc01f1aec1601a191cdf0b4e761c4c66092cc48',1,'QCPCurve::lsNone'],['../d6/d6e/classQCPPolarGraph.html#a1970d7ea3fb60006fad24ce3218e4b40a2015a1b1471431d25ddcf35cc6fdef56',1,'QCPPolarGraph::lsNone']]],
+  ['lsoutside_10',['lsOutside',['../de/d4f/classQCPAxis.html#a24b13374b9b8f75f47eed2ea78c37db9a2eadb509fc0c9a8b35b85c86ec9f3c7a',1,'QCPAxis']]],
+  ['lsstepcenter_11',['lsStepCenter',['../dd/dff/classQCPGraph.html#ad60175cd9b5cac937c5ee685c32c0859a5adf7b04da215a40a764c21294ea7366',1,'QCPGraph']]],
+  ['lsstepleft_12',['lsStepLeft',['../dd/dff/classQCPGraph.html#ad60175cd9b5cac937c5ee685c32c0859ae10568bda57836487d9dec5eba1d6c6e',1,'QCPGraph']]],
+  ['lsstepright_13',['lsStepRight',['../dd/dff/classQCPGraph.html#ad60175cd9b5cac937c5ee685c32c0859a9c37951f7d11aa070100fd16f2935c9e',1,'QCPGraph']]]
 ];

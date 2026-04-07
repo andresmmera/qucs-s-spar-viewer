@@ -1,0 +1,9 @@
+<map id="QCPColorScale" name="QCPColorScale">
+<area shape="rect" id="Node000001" title="A color scale for use with color coding data such as QCPColorMap." alt="" coords="19,225,138,251"/>
+<area shape="rect" id="Node000002" href="$d7/dd0/classQCPLayoutElement.html" title="The abstract base class for all objects that form the layout system." alt="" coords="5,152,152,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,191,81,225,76,225,76,191"/>
+<area shape="rect" id="Node000003" href="$d0/d2b/classQCPLayerable.html" title="Base class for all drawable objects." alt="" coords="22,79,135,104"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,118,81,152,76,152,76,118"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="41,5,116,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="81,44,81,79,76,79,76,44"/>
+</map>

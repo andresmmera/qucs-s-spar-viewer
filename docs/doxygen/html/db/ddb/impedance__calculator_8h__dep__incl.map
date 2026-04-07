@@ -1,0 +1,7 @@
+<map id="Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/impedance_calculator.h" name="Tools/Calculators/RF/ReflectionCalculators/impedance_calculator/impedance_calculator.h">
+<area shape="rect" id="Node000001" title="Simple calculator: Impedance (Z) to Γ, VSWR and S11 (definition)" alt="" coords="136,5,381,75"/>
+<area shape="rect" id="Node000002" href="$d9/d91/impedance__calculator_8cpp.html" title="Simple calculator: Impedance (Z) to Γ, VSWR and S11 (implementation)" alt="" coords="5,123,251,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,86,168,124,165,120,208,82"/>
+<area shape="rect" id="Node000003" href="$d0/d79/calculators__management_8cpp.html" title="Implementation of the slots to call the dialog calculators." alt="" coords="275,145,507,170"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="309,82,379,143,376,147,306,86"/>
+</map>
