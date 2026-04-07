@@ -150,6 +150,12 @@ private:
   QLabel* Ohm_Zin_Label;
   /// @}
 
+  /// @name Tapped resonator matching inductor value (nH)
+  /// @{
+  QLabel*             Ltap_Label;
+  CustomDoubleSpinBox* Ltap_SpinBox;
+  /// @}
+
   QGroupBox* groupBox;
 
   /// @name Transmission line implementation

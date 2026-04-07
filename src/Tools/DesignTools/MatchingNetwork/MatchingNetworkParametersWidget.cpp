@@ -60,6 +60,7 @@ void MatchingNetworkParametersWidget::setupUI() {
   matching_methods.append(tr("Pi-matching"));
   matching_methods.append(tr("Tapped-C transformer"));
   matching_methods.append(tr("Tapped-L transformer"));
+  matching_methods.append(tr("Double-tapped resonator"));
   Topology_Combo->addItems(matching_methods);
   mainLayout->addWidget(Topology_Label, layout_row, 0);
   mainLayout->addWidget(Topology_Combo, layout_row, 1);
@@ -156,6 +157,18 @@ void MatchingNetworkParametersWidget::setupUI() {
   mainLayout->addWidget(TeeNetworkMask_Label, layout_row, 0);
   mainLayout->addWidget(TeeNetworkMask_Combo, layout_row, 1);
 
+  // Double-tapped resonator: tapped inductance
+  layout_row++;
+  Ltap_Label = new QLabel(tr("L<sub>tap</sub> (nH)"));
+  Ltap_SpinBox = new CustomDoubleSpinBox();
+  Ltap_SpinBox->setMinimum(0.1);
+  Ltap_SpinBox->setMaximum(10000.0);
+  Ltap_SpinBox->setSingleStep(0.5);
+  Ltap_SpinBox->setDecimals(2);
+  Ltap_SpinBox->setValue(1.0);
+  mainLayout->addWidget(Ltap_Label,   layout_row, 0);
+  mainLayout->addWidget(Ltap_SpinBox, layout_row, 1);
+
   // Input impedance
   layout_row++;
   Zin_Label = new QLabel("Z0");
@@ -223,10 +236,19 @@ void MatchingNetworkParametersWidget::connectSignals() {
   connect(TeeNetworkMask_Combo, &QComboBox::currentIndexChanged, this,
           &MatchingNetworkParametersWidget::onParameterChanged);
 
+  connect(Ltap_SpinBox, &CustomDoubleSpinBox::valueChanged, this,
+          &MatchingNetworkParametersWidget::onParameterChanged);
+
   connect(m_toggleButton, &QPushButton::clicked, this,
           [this]() { onToggleCollapse(); });
 }
 void MatchingNetworkParametersWidget::onTopologyChanged(int index) {
+
+    /// @todo Create a function with the default behaviour
+    // Default behaviour
+    Ltap_Label->hide();
+    Ltap_SpinBox->hide();
+
   switch (index) {
   case 0: // L-section
     // Show L-section matching solutions
@@ -411,6 +433,24 @@ void MatchingNetworkParametersWidget::onTopologyChanged(int index) {
       TeeNetworkMask_Combo->hide();
       break;
 
+  case 10: // Double-tapped resonator
+      Solution1_RB->hide();
+      Solution2_RB->hide();
+      TL_Implementation_Label->hide();
+      TL_Implementation_Combo->hide();
+      Sections_Label->hide();
+      Sections_SpinBox->hide();
+      StubTermination_Label->hide();
+      StubTermination_ComboBox->hide();
+      Weighting_GroupBox->hide();
+      Q_Label->show();
+      Q_SpinBox->show();
+      TeeNetworkMask_Label->hide();
+      TeeNetworkMask_Combo->hide();
+      Ltap_Label->show();
+      Ltap_SpinBox->show();
+      break;
+
   default:
     break;
   }
@@ -457,7 +497,8 @@ MatchingNetworkParametersWidget::getDesignParameters() const {
 
   // Tee-matching
   specs.Q = Q_SpinBox->value();
-  specs.TeeNetworkMask = TeeNetworkMask_Combo->currentIndex() + 1; // 1-based
+  specs.TeeNetworkMask = TeeNetworkMask_Combo->currentIndex() + 1;
+  specs.Ltap = Ltap_SpinBox->value() * 1e-9;
 
   ////////////////////////////////////////////////////////////////////////////
   // Transmission line implementation

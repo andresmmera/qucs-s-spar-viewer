@@ -112,6 +112,16 @@ SchematicContent MatchingNetworkDesigner::synthesize_One_Port(
       break;
   }
 
+  case 10: { // Double-tapped resonator
+      DoubleTappedResonatorMatching *DTR =
+          new DoubleTappedResonatorMatching(NetworkParams, f_match,
+                                            NetworkParams.Q, NetworkParams.Ltap);
+      DTR->synthesize();
+      Schematic = DTR->Schematic;
+      delete DTR;
+      break;
+  }
+
   }
   return Schematic;
 }
