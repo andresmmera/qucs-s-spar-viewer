@@ -13,6 +13,7 @@
 
 #include "CascadedLCSections.h"
 #include "DoubleStub.h"
+#include "DoubleTappedResonatorMatching.h"
 #include "Lambda8Lambda4.h"
 #include "Lsection.h"
 #include "MultisectionQuarterWave.h"

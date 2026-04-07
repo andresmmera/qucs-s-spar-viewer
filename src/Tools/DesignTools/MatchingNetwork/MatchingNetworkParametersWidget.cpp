@@ -60,6 +60,7 @@ void MatchingNetworkParametersWidget::setupUI() {
   matching_methods.append(tr("Pi-matching"));
   matching_methods.append(tr("Tapped-C transformer"));
   matching_methods.append(tr("Tapped-L transformer"));
+  matching_methods.append(tr("Double-tapped resonator"));
   Topology_Combo->addItems(matching_methods);
   mainLayout->addWidget(Topology_Label, layout_row, 0);
   mainLayout->addWidget(Topology_Combo, layout_row, 1);
@@ -156,6 +157,18 @@ void MatchingNetworkParametersWidget::setupUI() {
   mainLayout->addWidget(TeeNetworkMask_Label, layout_row, 0);
   mainLayout->addWidget(TeeNetworkMask_Combo, layout_row, 1);
 
+  // Double-tapped resonator: tapped inductance
+  layout_row++;
+  Ltap_Label = new QLabel(tr("L<sub>tap</sub> (nH)"));
+  Ltap_SpinBox = new CustomDoubleSpinBox();
+  Ltap_SpinBox->setMinimum(0.1);
+  Ltap_SpinBox->setMaximum(10000.0);
+  Ltap_SpinBox->setSingleStep(0.5);
+  Ltap_SpinBox->setDecimals(2);
+  Ltap_SpinBox->setValue(1.0);
+  mainLayout->addWidget(Ltap_Label,   layout_row, 0);
+  mainLayout->addWidget(Ltap_SpinBox, layout_row, 1);
+
   // Input impedance
   layout_row++;
   Zin_Label = new QLabel("Z0");
@@ -223,59 +236,72 @@ void MatchingNetworkParametersWidget::connectSignals() {
   connect(TeeNetworkMask_Combo, &QComboBox::currentIndexChanged, this,
           &MatchingNetworkParametersWidget::onParameterChanged);
 
+  connect(Ltap_SpinBox, &CustomDoubleSpinBox::valueChanged, this,
+          &MatchingNetworkParametersWidget::onParameterChanged);
+
   connect(m_toggleButton, &QPushButton::clicked, this,
           [this]() { onToggleCollapse(); });
 }
-void MatchingNetworkParametersWidget::onTopologyChanged(int index) {
-  switch (index) {
-  case 0: // L-section
-    // Show L-section matching solutions
-    Solution1_RB->show();
-    Solution2_RB->show();
+
+void MatchingNetworkParametersWidget::setDefaultSettings(){
+
+    // Hide inductor value in double tapped resonator technique
+    Ltap_Label->hide();
+    Ltap_SpinBox->hide();
+
+    // Hide Tee-matching controls
+    Q_Label->hide();
+    Q_SpinBox->hide();
+    TeeNetworkMask_Label->hide();
+    TeeNetworkMask_Combo->hide();
+
+    // Hide L-section matching solutions
+    Solution1_RB->hide();
+    Solution2_RB->hide();
 
     // Hide TLIN implementation widgets
     TL_Implementation_Label->hide();
     TL_Implementation_Combo->hide();
 
-    // Hide number of sections
-    Sections_Label->hide();
-    Sections_SpinBox->hide();
-
     // Hide open circuit termination options
     StubTermination_Label->hide();
     StubTermination_ComboBox->hide();
 
+    // Hide number of sections. This is for multistage transformers
+    Sections_Label->hide();
+    Sections_SpinBox->hide();
+
     // Hide lambda/4 weighting
     Weighting_GroupBox->hide();
+
+}
+
+
+void MatchingNetworkParametersWidget::onTopologyChanged(int index) {
+
+  setDefaultSettings();
+
+  switch (index) {
+  case 0: // L-section
+    // Show L-section matching solutions
+    Solution1_RB->show();
+    Solution2_RB->show();
     break;
 
   case 1: // Single-stub matching
   case 2: // Double-stub matching
-    // Hide L-section matching solutions
-    Solution1_RB->hide();
-    Solution2_RB->hide();
 
     // Show TLIN implementation widgets
     TL_Implementation_Label->show();
     TL_Implementation_Combo->show();
 
-    // Hide number of sections
-    Sections_Label->hide();
-    Sections_SpinBox->hide();
-
     // Show stub termination options
     StubTermination_Label->show();
     StubTermination_ComboBox->show();
 
-    // Hide lambda/4 weighting
-    Weighting_GroupBox->hide();
     break;
 
   case 3: // Multisection lambda/4 transformer
-    // Hide L-section matching solutions
-    Solution1_RB->hide();
-    Solution2_RB->hide();
-
     // Show TLIN implementation widgets
     TL_Implementation_Label->show();
     TL_Implementation_Combo->show();
@@ -283,10 +309,6 @@ void MatchingNetworkParametersWidget::onTopologyChanged(int index) {
     // Show number of sections
     Sections_Label->show();
     Sections_SpinBox->show();
-
-    // Hide stub termination options
-    StubTermination_Label->hide();
-    StubTermination_ComboBox->hide();
 
     // Show lambda/4 weighting
     Weighting_GroupBox->show();
@@ -299,117 +321,36 @@ void MatchingNetworkParametersWidget::onTopologyChanged(int index) {
     Solution1_RB->show();
     Solution2_RB->show();
 
-    // Hide TLIN implementation widgets
-    TL_Implementation_Label->hide();
-    TL_Implementation_Combo->hide();
-
     // Show number of sections
     Sections_Label->show();
     Sections_SpinBox->show();
 
-    // Hide stub termination options
-    StubTermination_Label->hide();
-    StubTermination_ComboBox->hide();
-
-    // Hide lambda/4 weighting
-    Weighting_GroupBox->hide();
     break;
 
   case 5: // lambda/8 + lambda/4
-    // Hide L-section matching solutions
-    Solution1_RB->hide();
-    Solution2_RB->hide();
-
     // Show TLIN implementation widgets
     TL_Implementation_Label->show();
     TL_Implementation_Combo->show();
-
-    // Hide number of sections
-    Sections_Label->hide();
-    Sections_SpinBox->hide();
-
-    // Hide stub termination options
-    StubTermination_Label->hide();
-    StubTermination_ComboBox->hide();
-
-    // Hide lambda/4 weighting
-    Weighting_GroupBox->hide();
     break;
 
   case 6: // Tee-matching
-      // Hide L-section solution radio buttons
-      Solution1_RB->hide();
-      Solution2_RB->hide();
-
-      // Hide TLIN implementation widgets
-      TL_Implementation_Label->hide();
-      TL_Implementation_Combo->hide();
-
-      // Hide number of sections
-      Sections_Label->hide();
-      Sections_SpinBox->hide();
-
-      // Hide stub termination options
-      StubTermination_Label->hide();
-      StubTermination_ComboBox->hide();
-
-      // Hide lambda/4 weighting
-      Weighting_GroupBox->hide();
-
-      // Show Tee-matching controls
-      Q_Label->show();
-      Q_SpinBox->show();
-      TeeNetworkMask_Label->show();
-      TeeNetworkMask_Combo->show();
-      break;
-
   case 7: // Pi-matching
-      Solution1_RB->hide();
-      Solution2_RB->hide();
-      TL_Implementation_Label->hide();
-      TL_Implementation_Combo->hide();
-      Sections_Label->hide();
-      Sections_SpinBox->hide();
-      StubTermination_Label->hide();
-      StubTermination_ComboBox->hide();
-      Weighting_GroupBox->hide();
-      Q_Label->show();
-      Q_SpinBox->show();
-      TeeNetworkMask_Label->show();
-      TeeNetworkMask_Combo->show();
-      break;
+    Q_Label->show();
+    Q_SpinBox->show();
+    TeeNetworkMask_Label->show();
+    TeeNetworkMask_Combo->show();
+    break;
 
   case 8: // Tapped-C transformer
-      Solution1_RB->hide();
-      Solution2_RB->hide();
-      TL_Implementation_Label->hide();
-      TL_Implementation_Combo->hide();
-      Sections_Label->hide();
-      Sections_SpinBox->hide();
-      StubTermination_Label->hide();
-      StubTermination_ComboBox->hide();
-      Weighting_GroupBox->hide();
-      Q_Label->show();
-      Q_SpinBox->show();
-      TeeNetworkMask_Label->hide();  // no mask for Tapped-C
-      TeeNetworkMask_Combo->hide();
-      break;
-
   case 9: // Tapped-L transformer
-      Solution1_RB->hide();
-      Solution2_RB->hide();
-      TL_Implementation_Label->hide();
-      TL_Implementation_Combo->hide();
-      Sections_Label->hide();
-      Sections_SpinBox->hide();
-      StubTermination_Label->hide();
-      StubTermination_ComboBox->hide();
-      Weighting_GroupBox->hide();
-      Q_Label->show();
-      Q_SpinBox->show();
-      TeeNetworkMask_Label->hide();
-      TeeNetworkMask_Combo->hide();
-      break;
+    Q_Label->show();
+    Q_SpinBox->show();
+    break;
+
+  case 10: // Double-tapped resonator
+    Ltap_Label->show();
+    Ltap_SpinBox->show();
+    break;
 
   default:
     break;
@@ -457,7 +398,8 @@ MatchingNetworkParametersWidget::getDesignParameters() const {
 
   // Tee-matching
   specs.Q = Q_SpinBox->value();
-  specs.TeeNetworkMask = TeeNetworkMask_Combo->currentIndex() + 1; // 1-based
+  specs.TeeNetworkMask = TeeNetworkMask_Combo->currentIndex() + 1;
+  specs.Ltap = Ltap_SpinBox->value() * 1e-9;
 
   ////////////////////////////////////////////////////////////////////////////
   // Transmission line implementation

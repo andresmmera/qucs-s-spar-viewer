@@ -94,6 +94,9 @@ private:
   /// @brief Connect signal handlers
   void connectSignals();
 
+  /// @brief Adjust the default visibility of the widgets
+  void setDefaultSettings();
+
   /// @name UI Components - Common
   /// @{
   QGridLayout* m_mainLayout;
@@ -148,6 +151,12 @@ private:
   QLabel* Zin_Label;
   CustomDoubleSpinBox* ZinRSpinBox;
   QLabel* Ohm_Zin_Label;
+  /// @}
+
+  /// @name Tapped resonator matching inductor value (nH)
+  /// @{
+  QLabel*             Ltap_Label;
+  CustomDoubleSpinBox* Ltap_SpinBox;
   /// @}
 
   QGroupBox* groupBox;

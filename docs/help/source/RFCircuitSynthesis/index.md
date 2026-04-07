@@ -49,7 +49,7 @@ The following RF and MW filters can be synthesized:
    * - `Capacitively-coupled shunt resonators <../RFCircuitSynthesis/Filters/CapCoupledShuntResonators/index.html>`_
      - BPF
      -
-   * - Side-coupled
+   * - `Side-coupled <../RFCircuitSynthesis/Filters/SideCoupled/index.html>`_
      - BPF
      -
    * - `End-coupled <../RFCircuitSynthesis/Filters/EndCoupled/index.html>`_
@@ -123,6 +123,11 @@ Single-port and two-port matching networks can be synthesized. The load can be e
      - Yes
    * - `Tapped-L <../RFCircuitSynthesis/ImpedanceMatching/TappedL/index.html>`_
      - 3 Lumped Elements
+     - Narrow
+     - No
+     - Yes
+   * - `Double Tapped Resonator <../RFCircuitSynthesis/ImpedanceMatching/DoubleTappedResonator/index.html>`_
+     - 4 Lumped Elements
      - Narrow
      - No
      - Yes
