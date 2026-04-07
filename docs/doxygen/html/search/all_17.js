@@ -1,18 +1,11 @@
 var searchData=
 [
-  ['y_0',['y',['../d9/d26/structtQucsSettings.html#adc432431bd5891432d2b73d8901ff916',1,'tQucsSettings']]],
-  ['y1_1',['y1',['../d6/da2/structRectangularPlotWidget_1_1Limit.html#ad3fde3cec72bd2a77b018af7b7cfbf0c',1,'RectangularPlotWidget::Limit']]],
-  ['y2_2',['y2',['../d6/da2/structRectangularPlotWidget_1_1Limit.html#ab68fc2ff0f51a224fbd360d55e5756c8',1,'RectangularPlotWidget::Limit']]],
-  ['y2axisdiv_3',['y2AxisDiv',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#a8331e36576bf348026e21742bfdc6d5a',1,'RectangularPlotWidget::AxisSettings']]],
-  ['y2axismax_4',['y2AxisMax',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#ac172ef6c3ae5bbe7ed949255f3750ca3',1,'RectangularPlotWidget::AxisSettings']]],
-  ['y2axismin_5',['y2AxisMin',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#a69fc079604cb04fa070e67b61a172757',1,'RectangularPlotWidget::AxisSettings']]],
-  ['y_5faxis_6',['y_axis',['../de/d86/structRectangularPlotWidget_1_1Trace.html#aaed96947abf6ee9bd8f9b853a5b69c26',1,'RectangularPlotWidget::Trace::y_axis'],['../d6/da2/structRectangularPlotWidget_1_1Limit.html#ae76c3317e7dc5986f7049975cbc68861',1,'RectangularPlotWidget::Limit::y_axis']]],
-  ['y_5faxis_5ftitle_7',['y_axis_title',['../de/d86/structRectangularPlotWidget_1_1Trace.html#a79020b8c073e957ff6c874b98d81f775',1,'RectangularPlotWidget::Trace']]],
-  ['y_5fchart_8',['y_chart',['../d5/d5d/structSmithChartWidget_1_1AxisSettings.html#a087807c4742da6b644520c9ee1c5f766',1,'SmithChartWidget::AxisSettings']]],
-  ['y_5foffset_9',['y_offset',['../d6/d1a/classSchematicExporter.html#ad96520aec19b5e22c2edd4864819dae6',1,'SchematicExporter']]],
-  ['yaxis_10',['yAxis',['../d4/df9/classQCustomPlot.html#af6fea5679725b152c14facd920b19367',1,'QCustomPlot']]],
-  ['yaxis2_11',['yAxis2',['../d4/df9/classQCustomPlot.html#af13fdc5bce7d0fabd640f13ba805c0b7',1,'QCustomPlot']]],
-  ['yaxisdiv_12',['yAxisDiv',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#acb858cb33399a37b7b6c1bdc966bdbba',1,'RectangularPlotWidget::AxisSettings']]],
-  ['yaxismax_13',['yAxisMax',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#ac92c769da4c603c0d3ce892a5d3c79ad',1,'RectangularPlotWidget::AxisSettings']]],
-  ['yaxismin_14',['yAxisMin',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#a046dde259014f92e813f295ab19134da',1,'RectangularPlotWidget::AxisSettings']]]
+  ['x_5foffset_0',['x_offset',['../d6/d1a/classSchematicExporter.html#aeb3cd60c5208f392f68b58d331377965',1,'SchematicExporter']]],
+  ['xaxis_1',['xAxis',['../d4/df9/classQCustomPlot.html#a9a79cd0158a4c7f30cbc702f0fd800e4',1,'QCustomPlot']]],
+  ['xaxis2_2',['xAxis2',['../d4/df9/classQCustomPlot.html#ada41599f22cad901c030f3dcbdd82fd9',1,'QCustomPlot']]],
+  ['xaxisdiv_3',['xAxisDiv',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#a6684e9060b016d106cd7dd2b6de24922',1,'RectangularPlotWidget::AxisSettings']]],
+  ['xaxislabel_4',['xAxisLabel',['../d8/dee/classRectangularPlotWidget.html#aeb07fffc457bd1ceb5e2cef30e2a48e5',1,'RectangularPlotWidget']]],
+  ['xaxismax_5',['xAxisMax',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#a4860be78b56580a0730e921a36f26a6e',1,'RectangularPlotWidget::AxisSettings']]],
+  ['xaxismin_6',['xAxisMin',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#a366af4851cecad5806ce2e89e47de183',1,'RectangularPlotWidget::AxisSettings']]],
+  ['xaxisunits_7',['xAxisUnits',['../db/d4f/structRectangularPlotWidget_1_1AxisSettings.html#a77601e2763795575cdfbbeb4f8c685a3',1,'RectangularPlotWidget::AxisSettings']]]
 ];

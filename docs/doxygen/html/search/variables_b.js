@@ -7,7 +7,7 @@ var searchData=
   ['net_4',['Net',['../dc/da9/classNodeInfo.html#a30eed4c398e7d39ae7030d65a8e036d7',1,'NodeInfo']]],
   ['net2_5',['Net2',['../d9/d77/classComponentInfo.html#a976eeb1c96c57a3a314ce8e5018af728',1,'ComponentInfo']]],
   ['node_6',['node',['../de/d8c/structPort.html#a77fd2b4ce9492cb6fcb253a8dabf012e',1,'Port']]],
-  ['nodes_7',['nodes',['../d6/d33/structComponent__SPAR.html#ae8dffdcee1679e4a0dafa46827998267',1,'Component_SPAR::nodes'],['../df/d9e/classSchematicContent.html#a99aa8843d5a2c804fe50d51416680bc5',1,'SchematicContent::Nodes']]],
+  ['nodes_7',['nodes',['../df/d9e/classSchematicContent.html#a99aa8843d5a2c804fe50d51416680bc5',1,'SchematicContent::Nodes'],['../d6/d33/structComponent__SPAR.html#ae8dffdcee1679e4a0dafa46827998267',1,'Component_SPAR::nodes']]],
   ['noutputs_8',['Noutputs',['../db/d8b/structPowerCombinerParams.html#af362987927b7d124ba56527e88c56254',1,'PowerCombinerParams']]],
   ['nsections_9',['NSections',['../d7/d68/structMatchingNetworkDesignParameters.html#ab5bb2c4eefd131601ceb3153c6423eea',1,'MatchingNetworkDesignParameters']]],
   ['nstages_10',['Nstages',['../db/d8b/structPowerCombinerParams.html#ab6e3f3d181ea0f9390d0ba713ea6a853',1,'PowerCombinerParams']]],

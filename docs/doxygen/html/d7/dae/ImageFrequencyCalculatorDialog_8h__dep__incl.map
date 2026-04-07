@@ -1,0 +1,7 @@
+<map id="Tools/Calculators/RF/FrequencyPlanning/ImageFrequency/ImageFrequencyCalculatorDialog.h" name="Tools/Calculators/RF/FrequencyPlanning/ImageFrequency/ImageFrequencyCalculatorDialog.h">
+<area shape="rect" id="Node000001" title="Image frequency calculator (definition)" alt="" coords="147,5,408,60"/>
+<area shape="rect" id="Node000002" href="$de/d4d/ImageFrequencyCalculatorDialog_8cpp.html" title="Image frequency calculator (implementation)" alt="" coords="5,108,275,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,70,178,110,174,106,229,66"/>
+<area shape="rect" id="Node000003" href="$d0/d79/calculators__management_8cpp.html" title="Implementation of the slots to call the dialog calculators." alt="" coords="299,123,531,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="325,66,401,120,397,125,322,70"/>
+</map>

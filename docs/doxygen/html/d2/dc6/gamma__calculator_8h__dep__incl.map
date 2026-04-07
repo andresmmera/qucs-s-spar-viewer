@@ -1,0 +1,7 @@
+<map id="Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h" name="Tools/Calculators/RF/ReflectionCalculators/gamma_calculator/gamma_calculator.h">
+<area shape="rect" id="Node000001" title="Calculator: Reflection coefficient (Γ) to Z, VSWR and S11 (definition)" alt="" coords="125,5,327,75"/>
+<area shape="rect" id="Node000002" href="$d3/dd7/gamma__calculator_8cpp.html" title="Calculator: Reflection coefficient (Γ) to Z, VSWR and S11 (implementation)" alt="" coords="5,123,207,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,86,143,124,139,121,179,83"/>
+<area shape="rect" id="Node000003" href="$d0/d79/calculators__management_8cpp.html" title="Implementation of the slots to call the dialog calculators." alt="" coords="231,145,463,170"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="274,83,337,143,333,147,270,87"/>
+</map>

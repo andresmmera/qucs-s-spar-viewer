@@ -1,0 +1,13 @@
+<map id="QCPStatisticalBox" name="QCPStatisticalBox">
+<area shape="rect" id="Node000001" title="A plottable representing a single statistical box in a plot." alt="" coords="113,313,252,339"/>
+<area shape="rect" id="Node000002" href="$df/d94/classQCPAbstractPlottable1D.html" title=" " alt="" coords="83,225,283,265"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,279,185,313,180,313,180,279"/>
+<area shape="rect" id="Node000003" href="$d8/dd3/classQCPAbstractPlottable.html" title="The abstract base class for all data representing objects in a plot." alt="" coords="5,152,165,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="112,184,161,223,158,227,109,188"/>
+<area shape="rect" id="Node000004" href="$d0/d2b/classQCPLayerable.html" title="Base class for all drawable objects." alt="" coords="29,79,142,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="88,118,88,152,83,152,83,118"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="48,5,123,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="88,44,88,79,83,79,83,44"/>
+<area shape="rect" id="Node000006" href="$da/d2e/classQCPPlottableInterface1D.html" title="Defines an abstract interface for one&#45;dimensional plottables." alt="" coords="190,152,373,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="258,188,208,227,205,223,254,184"/>
+</map>

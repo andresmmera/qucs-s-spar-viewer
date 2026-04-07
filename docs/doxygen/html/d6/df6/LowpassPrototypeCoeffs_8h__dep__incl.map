@@ -1,0 +1,71 @@
+<map id="Tools/DesignTools/Filtering/LowpassPrototypeCoeffs.h" name="Tools/DesignTools/Filtering/LowpassPrototypeCoeffs.h">
+<area shape="rect" id="Node000001" title="Calculation of the normalized lowpass filter coefficients (definition)" alt="" coords="1007,5,1206,45"/>
+<area shape="rect" id="Node000002" href="$d8/d6f/CanonicalFilter_8h.html" title="Synthesis of canonical filters (definition)" alt="" coords="133,101,328,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="993,34,697,54,518,72,340,96,303,103,302,98,340,91,518,66,696,48,993,29"/>
+<area shape="rect" id="Node000018" href="$dd/d66/CapacitivelyCoupledShuntResonatorsFilter_8h.html" title="Synthesis of capacitive&#45;coupled shunt resonantors bandpass filters (definition)" alt="" coords="353,93,623,148"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="994,44,636,96,624,98,623,93,636,91,993,39"/>
+<area shape="rect" id="Node000020" href="$da/d76/CoupledLineBandpassFilter_8h.html" title="Synthesis of coupled&#45;line bandpass filters (definition)" alt="" coords="648,101,861,141"/>
+<area shape="poly" id="edge20_Node000001_Node000020" title=" " alt="" coords="1023,51,826,103,825,98,1021,46"/>
+<area shape="rect" id="Node000022" href="$d7/d11/DirectCoupledFilters_8h.html" title="Synthesis of different types of direct&#45;coupled resonator filters (definition)" alt="" coords="1105,93,1359,148"/>
+<area shape="poly" id="edge23_Node000001_Node000022" title=" " alt="" coords="1145,51,1198,91,1195,95,1142,56"/>
+<area shape="rect" id="Node000027" href="$d2/d89/EndCoupled_8h.html" title="Synthesis of end coupled BPF (definition) (implementation)" alt="" coords="1384,101,1579,141"/>
+<area shape="poly" id="edge29_Node000001_Node000027" title=" " alt="" coords="1196,46,1406,98,1405,103,1195,51"/>
+<area shape="rect" id="Node000029" href="$dc/dfe/LowpassPrototypeCoeffs_8cpp.html" title="Calculation of the normalized lowpass filter coefficients (implementation)" alt="" coords="1821,101,2035,141"/>
+<area shape="poly" id="edge32_Node000001_Node000029" title=" " alt="" coords="1220,30,1489,52,1650,69,1810,91,1850,98,1849,103,1809,96,1649,74,1489,57,1219,36"/>
+<area shape="rect" id="Node000030" href="$d1/d5a/QuarterWaveFilters_8h_source.html" title=" " alt="" coords="885,101,1080,141"/>
+<area shape="poly" id="edge33_Node000001_Node000030" title=" " alt="" coords="1072,56,1009,103,1006,98,1069,51"/>
+<area shape="rect" id="Node000031" href="$d2/df6/SteppedImpedanceFilter_8h.html" title="Synthesis of stepped impdance filters (definition)" alt="" coords="1603,101,1797,141"/>
+<area shape="poly" id="edge35_Node000001_Node000031" title=" " alt="" coords="1220,36,1395,59,1591,91,1626,98,1625,103,1590,96,1394,64,1220,42"/>
+<area shape="rect" id="Node000003" href="$d8/dc1/CanonicalFilter_8cpp.html" title="Synthesis of canonical filters (implementation)" alt="" coords="5,203,200,243"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,151,128,205,125,201,194,147"/>
+<area shape="rect" id="Node000004" href="$d7/d2a/FilterDesignTool_8h.html" title="GUI and control logic for RF filter design and synthesis (definition)" alt="" coords="772,203,967,243"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="318,141,340,145,458,162,550,169,642,177,759,193,796,201,795,206,758,199,641,182,549,175,457,167,340,151,317,146"/>
+<area shape="rect" id="Node000005" href="$dc/d97/DirectCoupledFilterAdjustResonatorValuesWindow_8cpp.html" title="Window to define the values of the resonator components in direct&#45;coupled filters." alt="" coords="465,299,748,353"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="808,251,676,301,674,296,806,246"/>
+<area shape="rect" id="Node000006" href="$d7/d91/FilterDesignTool_8cpp.html" title="GUI and control logic for RF filter design and synthesis (implementation)" alt="" coords="772,306,967,346"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="872,257,872,306,867,306,867,257"/>
+<area shape="rect" id="Node000007" href="$d4/df4/qucs-s-spar-viewer_8h.html" title="Main application class for S&#45;parameter viewer (and its RF circuit synthesis tools)" alt="" coords="991,313,1166,339"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="922,247,1056,311,1053,316,920,252"/>
+<area shape="rect" id="Node000008" href="$d0/d79/calculators__management_8cpp.html" title="Implementation of the slots to call the dialog calculators." alt="" coords="121,409,353,434"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1029,345,979,356,808,378,673,386,538,390,366,404,310,411,309,406,365,399,538,385,673,380,807,373,978,351,1028,340"/>
+<area shape="rect" id="Node000009" href="$d0/d63/dataset__management_8cpp.html" title="Implementation of the functions related to the data management." alt="" coords="377,409,588,434"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1027,345,979,356,873,374,790,383,707,391,600,404,552,411,552,406,600,399,706,386,790,378,872,368,978,351,1026,340"/>
+<area shape="rect" id="Node000010" href="$d3/d75/limits_8cpp.html" title="Implementation of the functions related to the limits management." alt="" coords="612,409,716,434"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="1025,345,979,356,854,379,729,404,701,411,700,406,727,399,853,374,978,351,1024,340"/>
+<area shape="rect" id="Node000011" href="$d4/d19/markers_8cpp.html" title="Implementation of the functions related to the markers management." alt="" coords="740,409,860,434"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="1033,345,835,411,834,406,1031,340"/>
+<area shape="rect" id="Node000012" href="$d9/d88/qucs-s-spar-viewer_8cpp.html" title="Main application class for S&#45;parameter viewer (implementation)" alt="" coords="884,409,1073,434"/>
+<area shape="poly" id="edge11_Node000007_Node000012" title=" " alt="" coords="1058,350,993,411,989,407,1054,346"/>
+<area shape="rect" id="Node000013" href="$d1/d93/read__Sparam__data__files_8cpp.html" title="Implementation of the functions related to the data import." alt="" coords="1097,401,1260,441"/>
+<area shape="poly" id="edge12_Node000007_Node000013" title=" " alt="" coords="1103,346,1160,399,1157,403,1099,350"/>
+<area shape="rect" id="Node000014" href="$da/d08/session__management_8cpp.html" title="Implementation of the functions related to the session management." alt="" coords="1284,409,1495,434"/>
+<area shape="poly" id="edge13_Node000007_Node000014" title=" " alt="" coords="1130,340,1352,406,1350,411,1129,345"/>
+<area shape="rect" id="Node000015" href="$df/d05/theme__management_8cpp.html" title="Function for handling the UI theme." alt="" coords="1519,409,1721,434"/>
+<area shape="poly" id="edge14_Node000007_Node000015" title=" " alt="" coords="1159,338,1554,406,1553,411,1158,344"/>
+<area shape="rect" id="Node000016" href="$d3/d62/tools_8cpp.html" title="Implementation of the functions related to the tools management." alt="" coords="1745,409,1844,434"/>
+<area shape="poly" id="edge15_Node000007_Node000016" title=" " alt="" coords="1180,330,1433,353,1584,372,1734,399,1762,406,1761,411,1733,404,1583,378,1432,358,1179,336"/>
+<area shape="rect" id="Node000017" href="$df/d47/trace__management_8cpp.html" title="Implementation of the functions related to the trace management." alt="" coords="1868,409,2063,434"/>
+<area shape="poly" id="edge16_Node000007_Node000017" title=" " alt="" coords="1180,332,1483,357,1670,376,1856,399,1904,406,1903,411,1856,404,1669,382,1483,363,1180,337"/>
+<area shape="poly" id="edge19_Node000018_Node000004" title=" " alt="" coords="601,149,798,201,797,206,600,154"/>
+<area shape="rect" id="Node000019" href="$d7/de1/CapacitivelyCoupledShuntResonatorsFilter_8cpp.html" title="Synthesis of capacitive&#45;coupled shunt resonantors bandpass filters (implementation)" alt="" coords="225,196,495,251"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="446,158,395,198,392,194,443,154"/>
+<area shape="poly" id="edge22_Node000020_Node000004" title=" " alt="" coords="788,148,850,201,846,205,785,152"/>
+<area shape="rect" id="Node000021" href="$de/d9b/CoupledLineBandpassFilter_8cpp.html" title="Synthesis of coupled&#45;line bandpass filters (implementation)" alt="" coords="519,203,747,243"/>
+<area shape="poly" id="edge21_Node000020_Node000021" title=" " alt="" coords="723,151,658,205,654,201,720,147"/>
+<area shape="poly" id="edge28_Node000022_Node000004" title=" " alt="" coords="1125,154,938,206,937,201,1124,149"/>
+<area shape="rect" id="Node000023" href="$d8/d0b/CapacitiveCoupledSeriesResonators_8cpp.html" title="Synthesis of capacitive&#45;coupled series resonators filters." alt="" coords="1485,196,1715,251"/>
+<area shape="poly" id="edge24_Node000022_Node000023" title=" " alt="" coords="1341,149,1505,193,1503,199,1340,154"/>
+<area shape="rect" id="Node000024" href="$d0/dfc/DirectCoupledFilters_8cpp.html" title="Synthesis of different types of direct&#45;coupled resonator filters (implementation)" alt="" coords="1739,196,1994,251"/>
+<area shape="poly" id="edge25_Node000022_Node000024" title=" " alt="" coords="1373,145,1553,170,1728,193,1739,195,1739,200,1728,199,1552,175,1372,151"/>
+<area shape="rect" id="Node000025" href="$d5/d2a/InductiveCoupledSeriesResonators_8cpp.html" title="Synthesis of inductive&#45;coupled series resonators filters." alt="" coords="991,196,1214,251"/>
+<area shape="poly" id="edge26_Node000022_Node000025" title=" " alt="" coords="1189,158,1138,198,1135,194,1186,154"/>
+<area shape="rect" id="Node000026" href="$dd/d9d/InductiveCoupledShuntResonators_8cpp.html" title="Synthesis of inductive&#45;coupled shunt resonators BPF." alt="" coords="1238,196,1461,251"/>
+<area shape="poly" id="edge27_Node000022_Node000026" title=" " alt="" coords="1275,155,1320,194,1317,198,1272,159"/>
+<area shape="poly" id="edge31_Node000027_Node000004" title=" " alt="" coords="1395,146,1372,151,1262,167,1176,175,1090,183,980,199,945,206,944,201,980,193,1090,177,1176,169,1262,162,1372,145,1394,141"/>
+<area shape="rect" id="Node000028" href="$d9/d8b/EndCoupled_8cpp.html" title="Synthesis of end coupled BPF (implementation) (implementation)" alt="" coords="2019,203,2213,243"/>
+<area shape="poly" id="edge30_Node000027_Node000028" title=" " alt="" coords="1569,141,1591,145,1708,162,1799,169,1890,177,2007,193,2043,201,2042,206,2006,199,1890,182,1798,175,1707,167,1590,151,1568,146"/>
+<area shape="poly" id="edge34_Node000030_Node000004" title=" " alt="" coords="953,152,892,205,889,201,949,148"/>
+<area shape="poly" id="edge36_Node000031_Node000004" title=" " alt="" coords="1615,146,1591,151,1499,163,1420,170,1285,175,1151,179,1073,186,980,199,943,206,942,201,980,193,1072,181,1151,174,1285,169,1419,165,1498,158,1590,145,1614,141"/>
+<area shape="rect" id="Node000032" href="$dc/d48/SteppedImpedanceFilter_8cpp.html" title="Synthesis of stepped impdance filters (implementation)" alt="" coords="2237,203,2448,243"/>
+<area shape="poly" id="edge37_Node000031_Node000032" title=" " alt="" coords="1787,141,1810,145,1926,162,2017,170,2109,177,2226,193,2264,201,2263,206,2225,199,2108,183,2017,175,1926,167,1809,151,1786,146"/>
+</map>

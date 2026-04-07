@@ -1,0 +1,11 @@
+<map id="QCPPlottableLegendItem" name="QCPPlottableLegendItem">
+<area shape="rect" id="Node000001" title="A legend item representing a plottable with an icon and the plottable name." alt="" coords="5,299,189,324"/>
+<area shape="rect" id="Node000002" href="$dd/d3f/classQCPAbstractLegendItem.html" title="The abstract base class for all entries in a QCPLegend." alt="" coords="8,225,187,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,264,100,299,95,299,95,264"/>
+<area shape="rect" id="Node000003" href="$d7/dd0/classQCPLayoutElement.html" title="The abstract base class for all objects that form the layout system." alt="" coords="24,152,171,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="100,191,100,225,95,225,95,191"/>
+<area shape="rect" id="Node000004" href="$d0/d2b/classQCPLayerable.html" title="Base class for all drawable objects." alt="" coords="41,79,154,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="100,118,100,152,95,152,95,118"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="60,5,135,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="100,44,100,79,95,79,95,44"/>
+</map>

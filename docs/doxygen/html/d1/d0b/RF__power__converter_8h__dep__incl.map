@@ -1,0 +1,7 @@
+<map id="Tools/Calculators/RF/RFPowerConverter/RF_power_converter.h" name="Tools/Calculators/RF/RFPowerConverter/RF_power_converter.h">
+<area shape="rect" id="Node000001" title="Calculator: Convert RF power between different units (definition)" alt="" coords="117,5,285,60"/>
+<area shape="rect" id="Node000002" href="$d9/d63/RF__power__converter_8cpp.html" title="Calculator: Convert RF power between different units (implementation)" alt="" coords="5,108,173,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,71,120,110,117,106,160,67"/>
+<area shape="rect" id="Node000003" href="$d0/d79/calculators__management_8cpp.html" title="Implementation of the slots to call the dialog calculators." alt="" coords="197,123,429,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="243,68,302,120,299,124,239,72"/>
+</map>

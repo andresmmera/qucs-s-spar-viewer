@@ -1,0 +1,61 @@
+<map id="Tools/Calculators/General/EquivalentCalculators/ParallelInductors/parallel_inductors.cpp" name="Tools/Calculators/General/EquivalentCalculators/ParallelInductors/parallel_inductors.cpp">
+<area shape="rect" id="Node000001" title="Calculator: Equivalent inductance of parallel inductors (implementation)" alt="" coords="1549,5,1735,75"/>
+<area shape="rect" id="Node000002" href="$dc/d52/parallel__inductors_8h.html" title="Calculator: Equivalent inductance of parallel inductors (definition)" alt="" coords="821,123,972,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1549,56,986,126,985,120,1548,50"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="1521,284,1630,309"/>
+<area shape="poly" id="edge22_Node000001_Node000008" title=" " alt="" coords="1576,77,1551,98,1532,124,1521,153,1518,178,1523,204,1532,235,1542,255,1556,272,1551,275,1538,258,1528,237,1517,205,1513,178,1515,152,1528,121,1547,94,1573,73"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="1655,284,1765,309"/>
+<area shape="poly" id="edge31_Node000001_Node000010" title=" " alt="" coords="1611,76,1595,99,1583,124,1573,155,1567,181,1570,206,1583,235,1595,249,1609,260,1643,278,1640,282,1606,265,1591,253,1578,237,1564,208,1562,181,1568,154,1578,122,1590,96,1607,73"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="1790,284,1857,309"/>
+<area shape="poly" id="edge26_Node000001_Node000011" title=" " alt="" coords="1629,76,1621,112,1622,130,1627,147,1641,170,1658,191,1699,227,1743,256,1783,276,1780,281,1740,260,1696,231,1654,194,1637,173,1622,149,1616,131,1616,111,1624,75"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="563,284,716,309"/>
+<area shape="poly" id="edge29_Node000001_Node000019" title=" " alt="" coords="1548,45,1371,51,1156,63,1050,74,952,87,870,104,810,125,760,157,716,198,681,239,656,274,652,271,677,236,712,194,756,153,808,120,869,99,951,82,1049,69,1156,58,1371,45,1548,40"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="740,284,803,309"/>
+<area shape="poly" id="edge32_Node000001_Node000020" title=" " alt="" coords="1549,71,817,285,815,280,1548,66"/>
+<area shape="rect" id="Node000022" title=" " alt="" coords="1637,123,1733,148"/>
+<area shape="poly" id="edge23_Node000001_Node000022" title=" " alt="" coords="1660,74,1676,109,1671,111,1655,76"/>
+<area shape="rect" id="Node000023" title=" " alt="" coords="1757,123,1868,148"/>
+<area shape="poly" id="edge24_Node000001_Node000023" title=" " alt="" coords="1705,72,1781,114,1778,118,1702,77"/>
+<area shape="rect" id="Node000024" title=" " alt="" coords="1892,123,2003,148"/>
+<area shape="poly" id="edge25_Node000001_Node000024" title=" " alt="" coords="1736,67,1898,116,1896,121,1735,72"/>
+<area shape="rect" id="Node000025" title=" " alt="" coords="2027,123,2111,148"/>
+<area shape="poly" id="edge27_Node000001_Node000025" title=" " alt="" coords="1736,59,2014,119,2013,125,1735,64"/>
+<area shape="rect" id="Node000026" title=" " alt="" coords="2135,123,2242,148"/>
+<area shape="poly" id="edge28_Node000001_Node000026" title=" " alt="" coords="1736,54,2122,120,2121,125,1735,60"/>
+<area shape="rect" id="Node000027" title=" " alt="" coords="2266,123,2378,148"/>
+<area shape="poly" id="edge30_Node000001_Node000027" title=" " alt="" coords="1736,50,1967,80,2253,120,2252,125,1966,85,1735,55"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="827,284,902,309"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="897,149,872,271,867,270,892,148"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="785,203,859,229"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="888,150,844,195,840,192,884,146"/>
+<area shape="rect" id="Node000005" href="$d5/da9/CustomDoubleSpinBox_8h.html" title="Custom QDoubleSpinBox. It includes a context menu (right&#45;click) for setting the minimum,..." alt="" coords="1142,196,1385,236"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="951,145,1163,191,1162,196,949,151"/>
+<area shape="rect" id="Node000013" href="$d9/d14/general_8h.html" title="Utility functions needed across the whole project." alt="" coords="341,203,458,229"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="825,151,472,206,471,201,824,145"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="1160,239,916,286,915,281,1159,233"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="1366,284,1497,309"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1305,234,1395,276,1393,281,1302,238"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="927,284,995,309"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1192,239,1008,286,1007,281,1190,233"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="1339,233,1517,278,1516,283,1337,239"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="1019,284,1161,309"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="1223,238,1129,281,1127,276,1221,234"/>
+<area shape="poly" id="edge10_Node000005_Node000010" title=" " alt="" coords="1371,233,1641,281,1640,286,1370,239"/>
+<area shape="poly" id="edge11_Node000005_Node000011" title=" " alt="" coords="1385,226,1566,248,1777,281,1776,287,1566,253,1385,232"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="1185,284,1341,309"/>
+<area shape="poly" id="edge12_Node000005_Node000012" title=" " alt="" coords="1266,236,1266,270,1261,270,1261,236"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="5,284,60,309"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="341,231,222,254,74,287,73,281,221,249,340,225"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="85,284,165,309"/>
+<area shape="poly" id="edge15_Node000013_Node000015" title=" " alt="" coords="360,231,178,283,177,278,359,226"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="189,284,260,309"/>
+<area shape="poly" id="edge16_Node000013_Node000016" title=" " alt="" coords="375,231,264,281,262,276,373,226"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="284,284,339,309"/>
+<area shape="poly" id="edge17_Node000013_Node000017" title=" " alt="" coords="388,231,336,277,333,273,385,227"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="363,284,436,309"/>
+<area shape="poly" id="edge18_Node000013_Node000018" title=" " alt="" coords="402,229,402,270,397,270,397,229"/>
+<area shape="poly" id="edge19_Node000013_Node000019" title=" " alt="" coords="435,226,592,277,591,282,433,231"/>
+<area shape="poly" id="edge20_Node000013_Node000020" title=" " alt="" coords="459,226,727,281,726,287,458,231"/>
+<area shape="rect" id="Node000021" title=" " alt="" coords="460,284,539,309"/>
+<area shape="poly" id="edge21_Node000013_Node000021" title=" " alt="" coords="416,227,475,273,472,277,412,231"/>
+</map>

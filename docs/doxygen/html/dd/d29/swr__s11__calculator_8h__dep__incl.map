@@ -1,0 +1,5 @@
+<map id="Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/swr_s11_calculator.h" name="Tools/Calculators/RF/ReflectionCalculators/SWR_S11_calculator/swr_s11_calculator.h">
+<area shape="rect" id="Node000001" title="Calculator: Conversion between SWR, S11 and |Γ| (definition)" alt="" coords="29,5,214,75"/>
+<area shape="rect" id="Node000002" href="$d0/d79/calculators__management_8cpp.html" title="Implementation of the slots to call the dialog calculators." alt="" coords="5,123,237,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,88,124,122,119,122,119,88"/>
+</map>

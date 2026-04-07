@@ -38,8 +38,10 @@ var searchData=
   ['parseterm_5fqucss_2ecpp_35',['parseTerm_QucsS.cpp',['../d5/d88/parseTerm__QucsS_8cpp.html',1,'']]],
   ['piattenuator_2ecpp_36',['PiAttenuator.cpp',['../df/d8a/PiAttenuator_8cpp.html',1,'']]],
   ['piattenuator_2eh_37',['PiAttenuator.h',['../db/d8c/PiAttenuator_8h.html',1,'']]],
-  ['polarplotwidget_2ecpp_38',['polarplotwidget.cpp',['../d4/d88/polarplotwidget_8cpp.html',1,'']]],
-  ['polarplotwidget_2eh_39',['polarplotwidget.h',['../de/d16/polarplotwidget_8h.html',1,'']]],
-  ['powercombiningtool_2ecpp_40',['PowerCombiningTool.cpp',['../d3/d49/PowerCombiningTool_8cpp.html',1,'']]],
-  ['powercombiningtool_2eh_41',['PowerCombiningTool.h',['../dd/d2b/PowerCombiningTool_8h.html',1,'']]]
+  ['pimatching_2ecpp_38',['PiMatching.cpp',['../da/def/PiMatching_8cpp.html',1,'']]],
+  ['pimatching_2eh_39',['PiMatching.h',['../de/d48/PiMatching_8h.html',1,'']]],
+  ['polarplotwidget_2ecpp_40',['polarplotwidget.cpp',['../d4/d88/polarplotwidget_8cpp.html',1,'']]],
+  ['polarplotwidget_2eh_41',['polarplotwidget.h',['../de/d16/polarplotwidget_8h.html',1,'']]],
+  ['powercombiningtool_2ecpp_42',['PowerCombiningTool.cpp',['../d3/d49/PowerCombiningTool_8cpp.html',1,'']]],
+  ['powercombiningtool_2eh_43',['PowerCombiningTool.h',['../dd/d2b/PowerCombiningTool_8h.html',1,'']]]
 ];

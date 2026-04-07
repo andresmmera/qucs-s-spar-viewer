@@ -86,6 +86,27 @@ $(function() {
 Include dependency graph for general.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../de/d94/general_8cpp__incl.png" border="0" usemap="#aMisc_2general_8cpp" alt=""/></div>
+<map name="aMisc_2general_8cpp" id="aMisc_2general_8cpp">
+<area shape="rect" title="Utility functions needed across the whole project." alt="" coords="289,5,421,31"/>
+<area shape="rect" href="../../d9/d14/general_8h.html" title="Utility functions needed across the whole project." alt="" coords="314,79,397,104"/>
+<area shape="poly" title=" " alt="" coords="358,31,358,65,353,65,353,31"/>
+<area shape="rect" title=" " alt="" coords="5,152,60,177"/>
+<area shape="poly" title=" " alt="" coords="314,103,209,124,74,155,73,149,208,119,313,98"/>
+<area shape="rect" title=" " alt="" coords="85,152,165,177"/>
+<area shape="poly" title=" " alt="" coords="319,107,176,151,174,145,317,101"/>
+<area shape="rect" title=" " alt="" coords="189,152,260,177"/>
+<area shape="poly" title=" " alt="" coords="336,106,259,148,257,143,333,102"/>
+<area shape="rect" title=" " alt="" coords="284,152,339,177"/>
+<area shape="poly" title=" " alt="" coords="350,106,328,142,323,139,346,103"/>
+<area shape="rect" title=" " alt="" coords="363,152,436,177"/>
+<area shape="poly" title=" " alt="" coords="365,103,387,139,383,142,360,106"/>
+<area shape="rect" title=" " alt="" coords="460,152,613,177"/>
+<area shape="poly" title=" " alt="" coords="385,102,495,144,493,149,383,107"/>
+<area shape="rect" title=" " alt="" coords="637,152,700,177"/>
+<area shape="poly" title=" " alt="" coords="397,99,624,149,623,154,396,104"/>
+<area shape="rect" title=" " alt="" coords="724,152,803,177"/>
+<area shape="poly" title=" " alt="" coords="397,96,533,117,711,149,710,154,532,123,396,101"/>
+</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -126,6 +147,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a1fda6f21fb309026b87a2912b6fc34ba" id="r_a1fda6f21fb309026b87a2912b6fc34ba"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/general_8cpp.html#a1fda6f21fb309026b87a2912b6fc34ba">getScaleFactor</a> (QString scale)</td></tr>
 <tr class="memdesc:a1fda6f21fb309026b87a2912b6fc34ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets scale factor from SI prefix.  <br /></td></tr>
 <tr class="separator:a1fda6f21fb309026b87a2912b6fc34ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e1fb3a2214348ebd4c9670d989d232" id="r_aa1e1fb3a2214348ebd4c9670d989d232"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/general_8cpp.html#aa1e1fb3a2214348ebd4c9670d989d232">parseValueWithUnit</a> (const QString &amp;str)</td></tr>
+<tr class="memdesc:aa1e1fb3a2214348ebd4c9670d989d232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse string containing magnitude and scale factor (e.g 5mm, 500u, etc)  <br /></td></tr>
+<tr class="separator:aa1e1fb3a2214348ebd4c9670d989d232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utility functions needed across the whole project. </p>
@@ -493,6 +517,33 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Formatted string </dd></dl>
+
+</div>
+</div>
+<a id="aa1e1fb3a2214348ebd4c9670d989d232" name="aa1e1fb3a2214348ebd4c9670d989d232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e1fb3a2214348ebd4c9670d989d232">&#9670;&#160;</a></span>parseValueWithUnit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double parseValueWithUnit </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse string containing magnitude and scale factor (e.g 5mm, 500u, etc) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>string (500 um) </td></tr>
+    <tr><td class="paramname">output</td><td>double (5e-4) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

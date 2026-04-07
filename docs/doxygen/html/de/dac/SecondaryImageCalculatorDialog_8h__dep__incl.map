@@ -1,0 +1,7 @@
+<map id="Tools/Calculators/RF/FrequencyPlanning/SecondaryImage/SecondaryImageCalculatorDialog.h" name="Tools/Calculators/RF/FrequencyPlanning/SecondaryImage/SecondaryImageCalculatorDialog.h">
+<area shape="rect" id="Node000001" title="Secondary image frequency calculator (definition)" alt="" coords="161,5,457,60"/>
+<area shape="rect" id="Node000002" href="$d5/d78/SecondaryImageCalculatorDialog_8cpp.html" title="Secondary image frequency calculator (implementation)" alt="" coords="5,108,316,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,70,201,110,198,106,258,65"/>
+<area shape="rect" id="Node000003" href="$d0/d79/calculators__management_8cpp.html" title="Implementation of the slots to call the dialog calculators." alt="" coords="341,123,573,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="360,65,441,120,438,125,357,70"/>
+</map>
