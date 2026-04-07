@@ -94,6 +94,9 @@ private:
   /// @brief Connect signal handlers
   void connectSignals();
 
+  /// @brief Adjust the default visibility of the widgets
+  void setDefaultSettings();
+
   /// @name UI Components - Common
   /// @{
   QGridLayout* m_mainLayout;
