@@ -375,15 +375,19 @@ jobs:
           exit 1
         }
 
+    - name: 'Package into zip'
+      run: |
+        Compress-Archive -Path "${{github.workspace}}\build\qucs-s-spar-viewer-tool\*" `
+          -DestinationPath "${{github.workspace}}\${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}.zip"
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}
-        path: build/qucs-s-spar-viewer-tool/
+       name: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}
+       path: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}.zip
 
   build-windows:
     runs-on: ${{ matrix.config.os }}
-    continue-on-error: true
     needs: setup
     strategy:
       fail-fast: false
@@ -465,11 +469,17 @@ jobs:
           done
         fi
 
+    - name: 'Package into zip'
+      run: |
+        cd build
+        7z a "../${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}.zip" \
+          qucs-s-spar-viewer-tool/
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}
-        path: build/qucs-s-spar-viewer-tool/
+        path: ${{ env.APP_NAME }}-${{ env.VERSION }}${{ env.SHORT_HASH }}-${{ matrix.config.platform_tag }}.zip
 
   create-release:
     runs-on: ubuntu-latest
