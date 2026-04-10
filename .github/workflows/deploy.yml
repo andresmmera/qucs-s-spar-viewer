@@ -14,7 +14,7 @@ env:
   EXECUTABLE_NAME: "qucs-sspar-viewer"  # This matches what CMake creates
   PUBLISHER_NAME: "The Qucs-S Team"
   BUILD_TYPE: Release
-  QT_VERSION: 6.10.1
+  QT_VERSION: 6.10.3
 
  
 jobs:
@@ -389,9 +389,6 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - os: windows-2022
-            msystem: ucrt64
-            platform_tag: win64
           - os: windows-11-arm
             msystem: clangarm64
             platform_tag: win-arm64
