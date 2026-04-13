@@ -266,35 +266,58 @@ QString QucsSExporter::processComponents_QucsS(QString backend_simulator) {
   }
 
   // Add equations
+  // Xyce does not support the equations block; skip it entirely.
+  // NGspice uses a different S-parameter syntax: dB(S_N_M) instead of dB(S[N,M]).
+  // Qucsator uses the default dB(S[N,M]) syntax.
   x_bottom += 170;
-  if (schematic.Type == QString("Power Combiner")) {
-    qucs_S_Components_Netlist +=
-        QString("<Eqn Eqn1 1 %1 %2 -28 15 0 0 \"S11_dB=dB(S[1,1])\" "
-                "1 \"S21_dB=dB(S[2,1])\" 1 \"S31_dB=dB(S[3,1])\" 1 "
-                "\"S32_dB=dB(S[3,2])\" 1 \"yes\" 0>\n")
-            .arg(x_bottom)
-            .arg(y_bottom);
+  if (backend_simulator != QString("Xyce")) {
+    const bool isNGspice = (backend_simulator == QString("NGspice"));
 
-  } else if (schematic.Type == QString("Matching-1-port")) {
-    qucs_S_Components_Netlist +=
-        QString(
-            "<Eqn Eqn1 1 %1 %2 -28 15 0 0 \"S11_dB=dB(S[1,1])\" 1 \"yes\" 0>\n")
-            .arg(x_bottom)
-            .arg(y_bottom);
+    // Helper lambdas to build the equation string for each port pair
+    // depending on the active backend.
+    auto eqS11 = [&]() -> QString {
+      return isNGspice ? QString("\"dBS11=dB(S_1_1)\" 1")
+                       : QString("\"S11_dB=dB(S[1,1])\" 1");
+    };
+    auto eqS21 = [&]() -> QString {
+      return isNGspice ? QString("\"dBS21=dB(S_2_1)\" 1")
+                       : QString("\"S21_dB=dB(S[2,1])\" 1");
+    };
+    auto eqS31 = [&]() -> QString {
+      return isNGspice ? QString("\"dBS31=dB(S_3_1)\" 1")
+                       : QString("\"S31_dB=dB(S[3,1])\" 1");
+    };
+    auto eqS32 = [&]() -> QString {
+      return isNGspice ? QString("\"dBS32=dB(S_3_2)\" 1")
+                       : QString("\"S32_dB=dB(S[3,2])\" 1");
+    };
 
-  } else if (schematic.Type == QString("Matching-2-ports")) {
-    qucs_S_Components_Netlist +=
-        QString("<Eqn Eqn1 1 %1 %2 -28 15 0 0 \"S21_dB=dB(S[2,1])\" "
-                "1 \"S11_dB=dB(S[1,1])\" 1 \"yes\" 0>\n")
-            .arg(x_bottom)
-            .arg(y_bottom);
-  } else {
-    // Filter
-    qucs_S_Components_Netlist +=
-        QString("<Eqn Eqn1 1 %1 %2 -28 15 0 0 \"S21_dB=dB(S[2,1])\" "
-                "1 \"S11_dB=dB(S[1,1])\" 1 \"yes\" 0>\n")
-            .arg(x_bottom)
-            .arg(y_bottom);
+    if (schematic.Type == QString("Power Combiner")) {
+      qucs_S_Components_Netlist +=
+          QString("<Eqn Eqn1 1 %1 %2 -28 15 0 0 %3 %4 %5 %6 \"yes\" 0>\n")
+              .arg(x_bottom)
+              .arg(y_bottom)
+              .arg(eqS11())
+              .arg(eqS21())
+              .arg(eqS31())
+              .arg(eqS32());
+
+    } else if (schematic.Type == QString("Matching-1-port")) {
+      qucs_S_Components_Netlist +=
+          QString("<Eqn Eqn1 1 %1 %2 -28 15 0 0 %3 \"yes\" 0>\n")
+              .arg(x_bottom)
+              .arg(y_bottom)
+              .arg(eqS11());
+
+    } else {
+      // Matching-2-ports, Filter, and any other two-port schematic type
+      qucs_S_Components_Netlist +=
+          QString("<Eqn Eqn1 1 %1 %2 -28 15 0 0 %3 %4 \"yes\" 0>\n")
+              .arg(x_bottom)
+              .arg(y_bottom)
+              .arg(eqS21())
+              .arg(eqS11());
+    }
   }
 
   qucs_S_Components_Netlist +=
