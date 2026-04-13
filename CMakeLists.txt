@@ -3,7 +3,26 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 cmake_policy(VERSION 3.10)
 
 SET(QUCS_NAME "qucs-s")      # Name of Qucs-S. This is needed to keep the QSettings on the same directory as Qucs-S
-SET(QUCS_S_VERSION "25.2.0") # Latest Qucs-S version
+
+# Fetch latest Qucs-S version from upstream at configure time
+set(QUCS_S_VERSION_URL "https://raw.githubusercontent.com/ra3xdh/qucs_s/current/VERSION")
+set(QUCS_S_VERSION_FILE "${CMAKE_BINARY_DIR}/qucs_s_upstream_version.txt")
+
+file(DOWNLOAD "${QUCS_S_VERSION_URL}" "${QUCS_S_VERSION_FILE}"
+    TIMEOUT 5
+    STATUS DOWNLOAD_STATUS
+    TLS_VERIFY ON
+)
+
+list(GET DOWNLOAD_STATUS 0 DOWNLOAD_STATUS_CODE)
+if(DOWNLOAD_STATUS_CODE EQUAL 0)
+    file(STRINGS "${QUCS_S_VERSION_FILE}" QUCS_S_VERSION)
+    string(STRIP "${QUCS_S_VERSION}" QUCS_S_VERSION)
+    message(STATUS "Fetched latest Qucs-S version: ${QUCS_S_VERSION}")
+else()
+    set(QUCS_S_VERSION "26.1.0") # fallback
+    message(WARNING "Could not fetch Qucs-S version, using fallback: ${QUCS_S_VERSION}")
+endif()
 
 #use top VERSION file
 file (STRINGS ${PROJECT_SOURCE_DIR}/VERSION QUCS_VERSION)
