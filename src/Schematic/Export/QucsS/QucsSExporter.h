@@ -129,6 +129,12 @@ private:
         ///          - NGspice: Cannot handle microstrip vias, steps, coupled lines
         ///          - Xyce: Cannot handle most microstrip components
         QMap<QString, QList<ComponentType>> Export_Blacklists;
+
+        /// @brief Generates the Qucs-S equations block for S-parameter display
+        /// @param x X-coordinate for equation box placement
+        /// @param y Y-coordinate for equation box placement
+        /// @return QString with the equation block, or empty string for unsupported backends
+        QString buildEquationsBlock(int x, int y);
 };
 
 #endif // QUCSSEXPORTER_H
