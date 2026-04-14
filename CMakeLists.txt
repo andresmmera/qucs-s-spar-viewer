@@ -3,7 +3,38 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 cmake_policy(VERSION 3.10)
 
 SET(QUCS_NAME "qucs-s")      # Name of Qucs-S. This is needed to keep the QSettings on the same directory as Qucs-S
-SET(QUCS_S_VERSION "25.2.0") # Latest Qucs-S version
+
+# Determine latest Qucs-S version using a 3-tier fallback:
+#   1. Parent directory VERSION file  -> built as part of the Qucs-S source tree
+#   2. Download from GitHub           -> standalone build with Internet access
+#   3. Hardcoded fallback             -> standalone build, no Internet access
+set(_QUCS_S_VERSION_FALLBACK "26.1.0")
+
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../VERSION")
+    # Tier 1: Check if the SP Viewer is part of the Qucs-S tree.
+    file(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/../VERSION" QUCS_S_VERSION)
+    string(STRIP "${QUCS_S_VERSION}" QUCS_S_VERSION)
+    message(STATUS "Qucs-S version from parent VERSION file: ${QUCS_S_VERSION}")
+else()
+    # Tier 2: Standalone build — try to fetch the version file from the Qucs-S repo GitHub
+    set(_QUCS_S_VERSION_URL "https://raw.githubusercontent.com/ra3xdh/qucs_s/current/VERSION")
+    set(_QUCS_S_VERSION_FILE "${CMAKE_BINARY_DIR}/qucs_s_upstream_version.txt")
+    file(DOWNLOAD "${_QUCS_S_VERSION_URL}" "${_QUCS_S_VERSION_FILE}"
+        TIMEOUT 5
+        STATUS _DOWNLOAD_STATUS
+        TLS_VERIFY ON
+    )
+    list(GET _DOWNLOAD_STATUS 0 _DOWNLOAD_STATUS_CODE)
+    if(_DOWNLOAD_STATUS_CODE EQUAL 0)
+        file(STRINGS "${_QUCS_S_VERSION_FILE}" QUCS_S_VERSION)
+        string(STRIP "${QUCS_S_VERSION}" QUCS_S_VERSION)
+        message(STATUS "Qucs-S version fetched from GitHub: ${QUCS_S_VERSION}")
+    else()
+        # Tier 3: Standalone build and no Internet — use hardcoded fallback
+        set(QUCS_S_VERSION "${_QUCS_S_VERSION_FALLBACK}")
+        message(WARNING "Could not fetch Qucs-S version from GitHub, using fallback: ${QUCS_S_VERSION}")
+    endif()
+endif()
 
 #use top VERSION file
 file (STRINGS ${PROJECT_SOURCE_DIR}/VERSION QUCS_VERSION)
