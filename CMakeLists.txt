@@ -8,7 +8,7 @@ SET(QUCS_NAME "qucs-s")      # Name of Qucs-S. This is needed to keep the QSetti
 #   1. Parent directory VERSION file  -> built as part of the Qucs-S source tree
 #   2. Download from GitHub           -> standalone build with Internet access
 #   3. Hardcoded fallback             -> standalone build, no Internet access
-set(_QUCS_S_VERSION_FALLBACK "26.1.0")
+set(_QUCS_S_VERSION_FALLBACK "26.1.1")
 
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../VERSION")
     # Tier 1: Check if the SP Viewer is part of the Qucs-S tree.
