@@ -83,6 +83,8 @@ private:
     QLabel *label_dx2; ///< Distance x 2
     QLabel *label_dx4; ///< Distance x 4
 
+    QLabel *labelNearFieldWarning; ///< Near field warning label
+
     // ========== Output Display ==========
 
     /// @brief Table widget displaying calculated results at various distances
