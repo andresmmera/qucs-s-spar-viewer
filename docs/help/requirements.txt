@@ -11,7 +11,7 @@ shot-scraper
 sphinxawesome-theme
 myst-parser
 sphinx-tags
-sphinx-datatable
+sphinx-datatables
 
 sphinx-js
 # Pin it because it fails otherwise

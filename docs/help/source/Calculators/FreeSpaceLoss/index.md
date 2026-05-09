@@ -20,6 +20,8 @@ Where:
 - `G_RX` = receiver antenna gain in dBi
 - `20×log₁₀(4π/c)` ≈ -147.55 dB (constant term)
 
+> **⚠ Valid only in the far field:** This formula is only valid for far-field condition (d >> λ).
+
 ## Input Parameters
 
 | Parameter | Range | Units Available |
