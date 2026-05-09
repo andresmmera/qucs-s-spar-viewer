@@ -80,7 +80,7 @@ private:
     /// @param value The calculated value
     /// @param units The unit string
     /// @return Formatted result string
-    QString formatResult(double value, const QString &units) const;
+    QString formatResult(double value, double powerW, const QString &units) const;
 };
 
 #endif // RF_POWER_CONVERTER_H

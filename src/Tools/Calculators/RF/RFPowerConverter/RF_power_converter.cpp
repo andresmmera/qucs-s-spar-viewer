@@ -17,6 +17,15 @@
 #include <QVBoxLayout>
 #include <cmath>
 
+static double applySIPrefix(double value, QString &prefix) {
+    prefix = "";
+    if (value <= 0.0) return value;
+    if (value >= 1e-3)      { prefix = "m"; return value * 1e3;  }
+    else if (value >= 1e-6) { prefix = "μ"; return value * 1e6;  }
+    else if (value >= 1e-9) { prefix = "n"; return value * 1e9;  }
+    else                    { prefix = "p"; return value * 1e12; }
+}
+
 RFPowerConverterDialog::RFPowerConverterDialog(QWidget *parent)
     : QDialog(parent) {
   setWindowTitle(tr("RF Power Converter"));
@@ -167,52 +176,46 @@ double RFPowerConverterDialog::convertFromWatts(double powerW,
   return result;
 }
 
-QString RFPowerConverterDialog::formatResult(double value,
+QString RFPowerConverterDialog::formatResult(double value, double powerW,
                                              const QString &units) const {
-  QString scale = "";
-  double scaledValue = value;
+    // ── Voltage output: show both RMS and peak ────────────────────────────
+    if (units == "V_75" || units == "V_50") {
+        const double Z0       = (units == "V_75") ? 75.0 : 50.0;
+        const QString Z0label = (units == "V_75") ? "75" : "50";
+        const double Vrms     = std::sqrt(powerW * Z0);
+        const double Vpeak    = Vrms * std::sqrt(2.0);
 
-  // Apply scaling for linear units (W, V_75, V_50) if value is small
-  if ((units == "W" || units == "V_75" || units == "V_50") && (value < 0.5) &&
-      (value > 0)) {
-    if (value >= 1e-3) {
-      scale = "m";
-      scaledValue = value * 1e3;
-    } else if (value >= 1e-6) {
-      scale = "μ";
-      scaledValue = value * 1e6;
-    } else if (value >= 1e-9) {
-      scale = "n";
-      scaledValue = value * 1e9;
-    } else {
-      scale = "p";
-      scaledValue = value * 1e12;
+        QString rmsPrefix;
+        double rmsScaled  = (Vrms < 0.5 && Vrms > 0)
+                               ? applySIPrefix(Vrms, rmsPrefix)
+                               : (rmsPrefix = "", Vrms);
+        double peakScaled = rmsPrefix.isEmpty() ? Vpeak : Vpeak * (rmsScaled / Vrms);
+
+        return QString("%1 %2Vrms\n%3 %4Vpeak")
+            .arg(QString::number(rmsScaled,  'f', 2), rmsPrefix, QString::number(peakScaled, 'f', 2), rmsPrefix);
     }
-  }
 
-  // Get the unit display text
-  QString unitText;
-  int index = comboNewUnits->currentIndex();
-  if (index >= 0) {
-    unitText = comboNewUnits->itemText(index);
-  }
+    // ── All other units ───────────────────────────────────────────────────
+    QString scale = "";
+    double scaledValue = value;
 
-  // Format the number with 2 decimal places
-  QString formattedValue = QString::number(scaledValue, 'f', 2);
-
-  // Build result string
-  if (!scale.isEmpty()) {
-    // Replace the first character of the unit with the scale prefix
-    if (units == "W") {
-      return formattedValue + " " + scale + "W";
-    } else if (units == "V_75") {
-      return formattedValue + " " + scale + "V (Z₀ = 75 Ω)";
-    } else if (units == "V_50") {
-      return formattedValue + " " + scale + "V (Z₀ = 50 Ω)";
+    if (units == "W" && value < 0.5 && value > 0) {
+        scaledValue = applySIPrefix(value, scale);
     }
-  }
 
-  return formattedValue + " " + unitText;
+    QString unitText;
+    int index = comboNewUnits->currentIndex();
+    if (index >= 0) {
+        unitText = comboNewUnits->itemText(index);
+    }
+
+    QString formattedValue = QString::number(scaledValue, 'f', 2);
+
+    if (!scale.isEmpty() && units == "W") {
+        return formattedValue + " " + scale + "W";
+    }
+
+    return formattedValue + " " + unitText;
 }
 
 void RFPowerConverterDialog::computeConversion() {
@@ -254,7 +257,7 @@ void RFPowerConverterDialog::computeConversion() {
   double result = convertFromWatts(powerW, newUnits);
 
   // Format and display result
-  QString resultText = formatResult(result, newUnits);
+  QString resultText = formatResult(result, powerW, newUnits);
   labelResult->setText(resultText);
 }
 
