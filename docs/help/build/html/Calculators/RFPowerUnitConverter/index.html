@@ -115,7 +115,7 @@
 <h1>RF Power Converter</h1>
 <section id="overview">
 <h2>Overview</h2>
-<p>Converts RF power values between linear and logarithmic units, supporting both 50 Ω and 75 Ω system impedances. All conversions route through watts as an intermediate unit.</p>
+<p>Converts RF power values between linear and logarithmic units, supporting both 50 Ω and 75 Ω system impedances for dBμV and dBmV, and an arbitrary reference impedance for voltage (V) units.</p>
 </section>
 <section id="conversion-pipeline">
 <h2>Conversion Pipeline</h2>
@@ -191,8 +191,8 @@
 <tr class="row-even"><td><p>dBmV (75 Ω)</p></td>
 <td><p>P_W = 10^((P - 78.75) / 10)</p></td>
 </tr>
-<tr class="row-odd"><td><p>V (75 Ω)</p></td>
-<td><p>P_W = V² / 75</p></td>
+<tr class="row-odd"><td><p>V (Z₀)</p></td>
+<td><p>P_W = V² / Z₀</p></td>
 </tr>
 <tr class="row-even"><td><p>dBμV (50 Ω)</p></td>
 <td><p>P_W = 10^((P - 136.99) / 10)</p></td>
@@ -200,10 +200,7 @@
 <tr class="row-odd"><td><p>dBmV (50 Ω)</p></td>
 <td><p>P_W = 10^((P - 76.99) / 10)</p></td>
 </tr>
-<tr class="row-even"><td><p>V (50 Ω)</p></td>
-<td><p>P_W = V² / 50</p></td>
-</tr>
-<tr class="row-odd"><td><p>dBpW</p></td>
+<tr class="row-even"><td><p>dBpW</p></td>
 <td><p>P_W = 10^((P - 120) / 10)</p></td>
 </tr>
 </tbody>
@@ -233,8 +230,8 @@
 <tr class="row-even"><td><p>dBmV (75 Ω)</p></td>
 <td><p>P = 10 × log₁₀(P_W) + 78.75</p></td>
 </tr>
-<tr class="row-odd"><td><p>V (75 Ω)</p></td>
-<td><p>P = √(P_W × 75)</p></td>
+<tr class="row-odd"><td><p>V (Z₀)</p></td>
+<td><p>P = √(P_W × Z₀)</p></td>
 </tr>
 <tr class="row-even"><td><p>dBμV (50 Ω)</p></td>
 <td><p>P = 10 × log₁₀(P_W) + 136.99</p></td>
@@ -242,10 +239,7 @@
 <tr class="row-odd"><td><p>dBmV (50 Ω)</p></td>
 <td><p>P = 10 × log₁₀(P_W) + 76.99</p></td>
 </tr>
-<tr class="row-even"><td><p>V (50 Ω)</p></td>
-<td><p>P = √(P_W × 50)</p></td>
-</tr>
-<tr class="row-odd"><td><p>dBpW</p></td>
+<tr class="row-even"><td><p>dBpW</p></td>
 <td><p>P = 10 × log₁₀(P_W) + 120</p></td>
 </tr>
 </tbody>

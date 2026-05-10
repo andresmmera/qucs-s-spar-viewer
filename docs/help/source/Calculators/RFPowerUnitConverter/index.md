@@ -2,7 +2,7 @@
 
 ## Overview
 
-Converts RF power values between linear and logarithmic units, supporting both 50 Ω and 75 Ω system impedances. All conversions route through watts as an intermediate unit.
+Converts RF power values between linear and logarithmic units, supporting both 50 Ω and 75 Ω system impedances for dBμV and dBmV, and an arbitrary reference impedance for voltage (V) units.
 
 ## Conversion Pipeline
 
@@ -35,10 +35,9 @@ Each of dBμV, dBmV, and V is available in both 50 Ω and 75 Ω variants.
 | dBm | P_W = 10^((P - 30) / 10) |
 | dBμV (75 Ω) | P_W = 10^((P - 138.75) / 10) |
 | dBmV (75 Ω) | P_W = 10^((P - 78.75) / 10) |
-| V (75 Ω) | P_W = V² / 75 |
+| V (Z₀) | P_W = V² / Z₀ |
 | dBμV (50 Ω) | P_W = 10^((P - 136.99) / 10) |
 | dBmV (50 Ω) | P_W = 10^((P - 76.99) / 10) |
-| V (50 Ω) | P_W = V² / 50 |
 | dBpW | P_W = 10^((P - 120) / 10) |
 
 ### From Watts
@@ -50,10 +49,9 @@ Each of dBμV, dBmV, and V is available in both 50 Ω and 75 Ω variants.
 | dBm | P = 10 × log₁₀(P_W) + 30 |
 | dBμV (75 Ω) | P = 10 × log₁₀(P_W) + 138.75 |
 | dBmV (75 Ω) | P = 10 × log₁₀(P_W) + 78.75 |
-| V (75 Ω) | P = √(P_W × 75) |
+| V (Z₀) | P = √(P_W × Z₀) |
 | dBμV (50 Ω) | P = 10 × log₁₀(P_W) + 136.99 |
 | dBmV (50 Ω) | P = 10 × log₁₀(P_W) + 76.99 |
-| V (50 Ω) | P = √(P_W × 50) |
 | dBpW | P = 10 × log₁₀(P_W) + 120 |
 
 ## Direct Conversion Summary
