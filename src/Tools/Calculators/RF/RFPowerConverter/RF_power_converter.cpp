@@ -8,7 +8,6 @@
 #include "RF_power_converter.h"
 
 #include <QComboBox>
-#include <QFormLayout>
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -16,6 +15,15 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <cmath>
+
+static double applySIPrefix(double value, QString &prefix) {
+    prefix = "";
+    if (value <= 0.0) return value;
+    if (value >= 1e-3)      { prefix = "m"; return value * 1e3;  }
+    else if (value >= 1e-6) { prefix = "μ"; return value * 1e6;  }
+    else if (value >= 1e-9) { prefix = "n"; return value * 1e9;  }
+    else                    { prefix = "p"; return value * 1e12; }
+}
 
 RFPowerConverterDialog::RFPowerConverterDialog(QWidget *parent)
     : QDialog(parent) {
@@ -35,11 +43,19 @@ RFPowerConverterDialog::RFPowerConverterDialog(QWidget *parent)
   comboOldUnits->addItem("dBm", "dBm");
   comboOldUnits->addItem(QString("dBμV (Z₀ = 75 Ω)"), "dBuV_75");
   comboOldUnits->addItem(QString("dBmV (Z₀ = 75 Ω)"), "dBmV_75");
-  comboOldUnits->addItem(QString("V (Z₀ = 75 Ω)"), "V_75");
   comboOldUnits->addItem(QString("dBμV (Z₀ = 50 Ω)"), "dBuV_50");
   comboOldUnits->addItem(QString("dBmV (Z₀ = 50 Ω)"), "dBmV_50");
-  comboOldUnits->addItem(QString("V (Z₀ = 50 Ω)"), "V_50");
+  comboOldUnits->addItem(QString("V"), "V");
   comboOldUnits->setCurrentIndex(2); // Default: dBm
+
+  // Initialize the input reference impedance spinbox
+  spinZ0old = new CustomDoubleSpinBox(this);
+  spinZ0old->setRange(0.1, 1e6);
+  spinZ0old->setDecimals(2);
+  spinZ0old->setSingleStep(1.0);
+  spinZ0old->setValue(50.0);
+  spinZ0old->setSuffix(" Ω");
+  spinZ0old->setVisible(false);
 
   // Initialize combo box for output units
   comboNewUnits = new QComboBox(this);
@@ -48,22 +64,60 @@ RFPowerConverterDialog::RFPowerConverterDialog(QWidget *parent)
   comboNewUnits->addItem("dBm", "dBm");
   comboNewUnits->addItem(QString("dBμV (Z₀ = 75 Ω)"), "dBuV_75");
   comboNewUnits->addItem(QString("dBmV (Z₀ = 75 Ω)"), "dBmV_75");
-  comboNewUnits->addItem(QString("V (Z₀ = 75 Ω)"), "V_75");
   comboNewUnits->addItem(QString("dBμV (Z₀ = 50 Ω)"), "dBuV_50");
   comboNewUnits->addItem(QString("dBmV (Z₀ = 50 Ω)"), "dBmV_50");
-  comboNewUnits->addItem(QString("V (Z₀ = 50 Ω)"), "V_50");
+  comboNewUnits->addItem(QString("V"), "V");
   comboNewUnits->setCurrentIndex(3); // Default: dBμV (75Ω)
+
+  // Initialize the output reference impedance spinbox
+  spinZ0new = new CustomDoubleSpinBox(this);
+  spinZ0new->setRange(0.1, 1e6);
+  spinZ0new->setDecimals(2);
+  spinZ0new->setSingleStep(1.0);
+  spinZ0new->setValue(50.0);
+  spinZ0new->setSuffix(" Ω");
+  spinZ0new->setVisible(false);
 
   // Create input group box
   QGroupBox *inputGroup = new QGroupBox(QString("Input Parameters"), this);
   inputGroup->setStyleSheet("QGroupBox { font-weight: bold; }");
-  QFormLayout *inputForm = new QFormLayout;
-  inputForm->addRow(QString("<b>Power:</b>"), spinPower);
-  inputForm->addRow(QString("<b>Units:</b>"), comboOldUnits);
-  inputForm->addRow(QString("<b>New Units:</b>"), comboNewUnits);
-  inputForm->setLabelAlignment(Qt::AlignRight);
-  inputForm->setSpacing(12);
-  inputGroup->setLayout(inputForm);
+
+  auto *labelPower    = new QLabel("<b>Power:</b>",    this);
+  auto *labelUnits    = new QLabel("<b>Units:</b>",    this);
+  labelZ0old     = new QLabel("<b>Z₀ (in):</b>", this);
+  auto *labelNewUnits = new QLabel("<b>New Units:</b>",this);
+  labelZ0new    = new QLabel("<b>Z₀ (out):</b>",this);
+
+  auto *rowPower    = new QHBoxLayout;
+  rowPower->addWidget(labelPower);
+  rowPower->addWidget(spinPower);
+
+  auto *rowUnits    = new QHBoxLayout;
+  rowUnits->addWidget(labelUnits);
+  rowUnits->addWidget(comboOldUnits);
+
+  auto *rowZ0in     = new QHBoxLayout;
+  labelZ0old->setVisible(false);
+  rowZ0in->addWidget(labelZ0old);
+  rowZ0in->addWidget(spinZ0old);
+
+  auto *rowNewUnits = new QHBoxLayout;
+  rowNewUnits->addWidget(labelNewUnits);
+  rowNewUnits->addWidget(comboNewUnits);
+
+  auto *rowZ0out    = new QHBoxLayout;
+  labelZ0new->setVisible(false);
+  rowZ0out->addWidget(labelZ0new);
+  rowZ0out->addWidget(spinZ0new);
+
+  auto *inputLayout = new QVBoxLayout;
+  inputLayout->addLayout(rowPower);
+  inputLayout->addLayout(rowUnits);
+  inputLayout->addLayout(rowZ0in);
+  inputLayout->addLayout(rowNewUnits);
+  inputLayout->addLayout(rowZ0out);
+  inputLayout->setSpacing(12);
+  inputGroup->setLayout(inputLayout);
 
   // Create result display
   QGroupBox *resultGroup = new QGroupBox(QString("Result"), this);
@@ -101,16 +155,18 @@ RFPowerConverterDialog::RFPowerConverterDialog(QWidget *parent)
   connect(spinPower, SIGNAL(editingFinished()), this,
           SLOT(computeConversion()));
   connect(comboOldUnits, SIGNAL(currentIndexChanged(int)), this,
-          SLOT(computeConversion()));
+          SLOT(onInputUnitChanged()));
   connect(comboNewUnits, SIGNAL(currentIndexChanged(int)), this,
-          SLOT(computeConversion()));
+          SLOT(onOutputUnitChanged()));
+  connect(spinZ0old,   SIGNAL(valueChanged(double)), this, SLOT(computeConversion()));
+  connect(spinZ0new,  SIGNAL(valueChanged(double)), this, SLOT(computeConversion()));
 
   // Compute initial values
   computeConversion();
 }
 
 double RFPowerConverterDialog::convertToWatts(double power,
-                                              const QString &units) const {
+                                              const QString &units, double Z0) const {
   double powerW = 0.0;
 
   if (units == "W") {
@@ -123,14 +179,12 @@ double RFPowerConverterDialog::convertToWatts(double power,
     powerW = std::pow(10.0, 0.1 * (power - 138.75));
   } else if (units == "dBmV_75") {
     powerW = std::pow(10.0, 0.1 * (power - 78.75));
-  } else if (units == "V_75") {
-    powerW = power * power / 75.0;
+  } else if (units == "V") {
+    powerW = power * power / Z0;
   } else if (units == "dBuV_50") {
     powerW = std::pow(10.0, 0.1 * (power - 136.99));
   } else if (units == "dBmV_50") {
     powerW = std::pow(10.0, 0.1 * (power - 76.99));
-  } else if (units == "V_50") {
-    powerW = power * power / 50.0;
   } else {
     powerW = power;
   }
@@ -139,7 +193,7 @@ double RFPowerConverterDialog::convertToWatts(double power,
 }
 
 double RFPowerConverterDialog::convertFromWatts(double powerW,
-                                                const QString &units) const {
+                                                const QString &units, double Z0) const {
   double result = 0.0;
 
   if (units == "W") {
@@ -152,14 +206,12 @@ double RFPowerConverterDialog::convertFromWatts(double powerW,
     result = 10.0 * std::log10(powerW) + 138.75;
   } else if (units == "dBmV_75") {
     result = 10.0 * std::log10(powerW) + 78.75;
-  } else if (units == "V_75") {
-    result = std::sqrt(powerW * 75.0);
+  } else if (units == "V") {
+    result = std::sqrt(powerW * Z0);
   } else if (units == "dBuV_50") {
     result = 10.0 * std::log10(powerW) + 136.99;
   } else if (units == "dBmV_50") {
     result = 10.0 * std::log10(powerW) + 76.99;
-  } else if (units == "V_50") {
-    result = std::sqrt(powerW * 50.0);
   } else {
     result = powerW;
   }
@@ -167,58 +219,53 @@ double RFPowerConverterDialog::convertFromWatts(double powerW,
   return result;
 }
 
-QString RFPowerConverterDialog::formatResult(double value,
-                                             const QString &units) const {
-  QString scale = "";
-  double scaledValue = value;
+QString RFPowerConverterDialog::formatResult(double value, double powerW,
+                                             const QString &units, double Z0) const {
+    // ── Voltage output: show both RMS and peak ────────────────────────────
+    if (units == "V") {
+        const QString Z0label = QString("%1").arg(Z0);
+        const double Vrms     = std::sqrt(powerW * Z0);
+        const double Vpeak    = Vrms * std::sqrt(2.0);
 
-  // Apply scaling for linear units (W, V_75, V_50) if value is small
-  if ((units == "W" || units == "V_75" || units == "V_50") && (value < 0.5) &&
-      (value > 0)) {
-    if (value >= 1e-3) {
-      scale = "m";
-      scaledValue = value * 1e3;
-    } else if (value >= 1e-6) {
-      scale = "μ";
-      scaledValue = value * 1e6;
-    } else if (value >= 1e-9) {
-      scale = "n";
-      scaledValue = value * 1e9;
-    } else {
-      scale = "p";
-      scaledValue = value * 1e12;
+        QString rmsPrefix;
+        double rmsScaled  = (Vrms < 0.5 && Vrms > 0)
+                               ? applySIPrefix(Vrms, rmsPrefix)
+                               : (rmsPrefix = "", Vrms);
+        double peakScaled = rmsPrefix.isEmpty() ? Vpeak : Vpeak * (rmsScaled / Vrms);
+
+        return QString("%1 %2Vrms\n%3 %4Vpeak")
+            .arg(QString::number(rmsScaled,  'f', 2), rmsPrefix, QString::number(peakScaled, 'f', 2), rmsPrefix);
     }
-  }
 
-  // Get the unit display text
-  QString unitText;
-  int index = comboNewUnits->currentIndex();
-  if (index >= 0) {
-    unitText = comboNewUnits->itemText(index);
-  }
+    // ── All other units ───────────────────────────────────────────────────
+    QString scale = "";
+    double scaledValue = value;
 
-  // Format the number with 2 decimal places
-  QString formattedValue = QString::number(scaledValue, 'f', 2);
-
-  // Build result string
-  if (!scale.isEmpty()) {
-    // Replace the first character of the unit with the scale prefix
-    if (units == "W") {
-      return formattedValue + " " + scale + "W";
-    } else if (units == "V_75") {
-      return formattedValue + " " + scale + "V (Z₀ = 75 Ω)";
-    } else if (units == "V_50") {
-      return formattedValue + " " + scale + "V (Z₀ = 50 Ω)";
+    if (units == "W" && value < 0.5 && value > 0) {
+        scaledValue = applySIPrefix(value, scale);
     }
-  }
 
-  return formattedValue + " " + unitText;
+    QString unitText;
+    int index = comboNewUnits->currentIndex();
+    if (index >= 0) {
+        unitText = comboNewUnits->itemText(index);
+    }
+
+    QString formattedValue = QString::number(scaledValue, 'f', 2);
+
+    if (!scale.isEmpty() && units == "W") {
+        return formattedValue + " " + scale + "W";
+    }
+
+    return formattedValue + " " + unitText;
 }
 
 void RFPowerConverterDialog::computeConversion() {
   double power = spinPower->value();
   QString oldUnits = comboOldUnits->currentData().toString();
   QString newUnits = comboNewUnits->currentData().toString();
+  double Zold = spinZ0old->value();  ///< Impedance at which the old units are referred (if applicable)
+  double Znew = spinZ0new->value();  ///< Impedance at which the new units are referred (if applicable)
 
   // Validate input for linear units (must be positive)
   if (power <= 0.0 && !oldUnits.contains("dB")) {
@@ -248,14 +295,26 @@ void RFPowerConverterDialog::computeConversion() {
                              "}");
 
   // Convert to Watts first
-  double powerW = convertToWatts(power, oldUnits);
+  double powerW = convertToWatts(power, oldUnits, Zold);
 
   // Convert from Watts to new units
-  double result = convertFromWatts(powerW, newUnits);
+  double result = convertFromWatts(powerW, newUnits, Znew);
 
   // Format and display result
-  QString resultText = formatResult(result, newUnits);
+  QString resultText = formatResult(result, powerW, newUnits, Znew);
   labelResult->setText(resultText);
 }
 
-void RFPowerConverterDialog::on_inputChanged() { computeConversion(); }
+void RFPowerConverterDialog::onInputUnitChanged() {
+    bool isVoltage = (comboOldUnits->currentText().toStdString() == "V");
+    spinZ0old->setVisible(isVoltage);
+    labelZ0old->setVisible(isVoltage);
+    computeConversion();
+}
+
+void RFPowerConverterDialog::onOutputUnitChanged() {
+    bool isVoltage = (comboNewUnits->currentText().toStdString() == "V");
+    spinZ0new->setVisible(isVoltage);
+    labelZ0new->setVisible(isVoltage);
+    computeConversion();
+}

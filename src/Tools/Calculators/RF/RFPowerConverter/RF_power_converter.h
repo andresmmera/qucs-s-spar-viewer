@@ -39,15 +39,17 @@ private slots:
     /// @brief Compute the conversion from input to output units
     void computeConversion();
 
-    /// @brief Slot triggered when any input value changes
-    void on_inputChanged();
-
     /// @brief Slot to show the HTML RF power unit help
     void showDocumentation() {
         QString path = QString("/Calculators/RFPowerUnitConverter/index.html");
         showHTMLDocs(path);
     }
 
+    /// @brief Check if the power input units are voltage referred to an impedance
+    void onInputUnitChanged();
+
+    /// @brief Check if the power output units are voltage referred to an impedance
+    void onOutputUnitChanged();
 
 private:
     // ========== Input Widgets ==========
@@ -58,8 +60,15 @@ private:
     /// @brief Combo box for input units selection
     QComboBox *comboOldUnits;
 
+    /// @brief Reference impedance for the input units (only meaningful for voltage referred units)
+    QLabel *labelZ0old;
+    CustomDoubleSpinBox *spinZ0old;
     /// @brief Combo box for output units selection
     QComboBox *comboNewUnits;
+
+    /// @brief Reference impedance for the output units (only meaningful for voltage referred units)
+    QLabel *labelZ0new;
+    CustomDoubleSpinBox *spinZ0new;
 
     /// @brief Label to display the result
     QLabel *labelResult;
@@ -67,20 +76,23 @@ private:
     /// @brief Convert power from input units to Watts
     /// @param power Power value in input units
     /// @param units Unit type string
+    /// @param Z0 Reference impedance (used only for voltage referred power units)
     /// @return Power in Watts
-    double convertToWatts(double power, const QString &units) const;
+    double convertToWatts(double power, const QString &units, double Z0) const;
 
     /// @brief Convert power from Watts to output units
     /// @param powerW Power value in Watts
     /// @param units Unit type string
+    /// @param Z0 Reference impedance (used only for voltage referred power units)
     /// @return Power in output units
-    double convertFromWatts(double powerW, const QString &units) const;
+    double convertFromWatts(double powerW, const QString &units, double Z0) const;
 
     /// @brief Format the result with appropriate scaling
     /// @param value The calculated value
     /// @param units The unit string
+    /// @param Z0 Reference impedance (used only for voltage referred power units)
     /// @return Formatted result string
-    QString formatResult(double value, const QString &units) const;
+    QString formatResult(double value, double powerW, const QString &units, double Z0) const;
 };
 
 #endif // RF_POWER_CONVERTER_H
