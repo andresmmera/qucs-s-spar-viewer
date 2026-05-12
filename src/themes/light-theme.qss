@@ -341,3 +341,20 @@ QTabBar::tab:hover {
 QTabBar::tab:!selected {
     margin-top: 2px;
 }
+
+QFileDialog QToolBar {
+    background-color: palette(window);
+    border: none;
+}
+
+QFileDialog QToolButton {
+    background-color: palette(button);
+    color: palette(button-text);
+    border: 1px solid palette(mid);
+    border-radius: 3px;
+    padding: 3px;
+}
+
+QFileDialog QToolButton:hover {
+    background-color: palette(light);
+}
