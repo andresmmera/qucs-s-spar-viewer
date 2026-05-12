@@ -95,6 +95,8 @@ SmithChartWidget::SmithChartWidget(QWidget *parent)
   mainLayout->addWidget(
       chartWidget, 1); // Give it a stretch factor of 1 to take available space
 
+  chartWidget->setObjectName("smithChartPlotArea");
+
   // Create frequency range controls layout
   QGridLayout *freqRangeLayout = new QGridLayout();
   freqRangeLayout->setContentsMargins(5, 5, 5, 5);
