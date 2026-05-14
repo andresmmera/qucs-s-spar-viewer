@@ -506,3 +506,17 @@ double parseValueWithUnit(const QString& str) {
     QString suffix = str.mid(i);
     return numeric * getScaleFactor(suffix);
 }
+
+QMap<QString, QList<double>> loadSparamFile(const QString& path) {
+    QString ext = QFileInfo(path).suffix().toLower();
+    if (ext.startsWith("s") && ext.endsWith("p"))
+        return readTouchstoneFile(path);
+    else if (ext == "dat")
+        return readQucsatorDataset(path);
+    else if (ext == "ngspice")
+        return readNGspiceData(path);
+    else {
+        qWarning() << "loadSparamFile: unsupported file extension:" << ext << "in" << path;
+        return {};
+    }
+}

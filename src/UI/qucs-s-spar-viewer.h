@@ -294,16 +294,6 @@ class Qucs_S_SPAR_Viewer : public QMainWindow {
     /// @note Uses removeTraceByProps() to handle the actual removal
     void removeTracesByDataset(const QString& dataset_to_remove);
 
-    /// @brief Read Qucsator dataset file
-    /// @param filePath Path to the dataset file
-    /// @return QMap containing the parsed data
-    QMap<QString, QList<double>> readQucsatorDataset(const QString& filePath);
-
-    /// @brief Read NGspice data file
-    /// @param filePath Path to the data file
-    /// @return QMap containing the parsed data
-    QMap<QString, QList<double>> readNGspiceData(const QString& filePath);
-
     /// @brief Extract S-parameter indices from parameter string
     /// @param sparam S-parameter string (e.g., "S[1,2]")
     /// @return QString Extracted indices
