@@ -55,7 +55,7 @@ QMap<QString, QList<double>> readTouchstoneFile(const QString &filePath) {
 
     // Check for the option line
     if (line.at(0) == '#') {
-      QStringList info = line.split(" ");
+      QStringList info = line.split(' ', Qt::SkipEmptyParts);
       frequency_unit = info.at(1); // Specifies the unit of frequency.
                                    // Legal values are Hz, kHz, MHz, and GHz.
                                    // The default value is GHz.
@@ -74,11 +74,10 @@ QMap<QString, QList<double>> readTouchstoneFile(const QString &filePath) {
       }
 
       // parameter: {S,Y,Z,H,G}
-      parameter = info.at(2); // specifies what kind of network parameter data
-                              // is contained in the file
+      parameter = info.at(2).toUpper();; // specifies what kind of network parameter data
+                                         // is contained in the file
       // format: {DB, MA, RI} for dB-angle, magnitude-angle, and real-imaginary
-      format = info.at(
-          3); // Specifies the format of the network parameter data pairs
+      format = info.at(3).toLower();    // Specifies the format of the network parameter data pairs
       Z0 = info.at(5).toDouble();
       file_data["Z0"].append(Z0);
 
@@ -87,7 +86,7 @@ QMap<QString, QList<double>> readTouchstoneFile(const QString &filePath) {
 
     // Split line by whitespace
     values.clear();
-    values = line.split(' ');
+    values = line.split(' ', Qt::SkipEmptyParts);
 
     file_data["frequency"].append(values[0].toDouble() * freq_scale); // in Hz
 
