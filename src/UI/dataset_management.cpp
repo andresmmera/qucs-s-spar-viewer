@@ -143,25 +143,15 @@ void Qucs_S_SPAR_Viewer::addFiles(QStringList fileNames) {
                               // only the files to be added
   for (int i = existing_files; i < existing_files + n_files; i++) {
     // Create the file name label
-    QString filename = QFileInfo(fileNames.at(i - existing_files)).fileName();
+    QFileInfo file_info = QFileInfo(fileNames.at(i - existing_files));
+    QString filename = file_info.fileName();
+    QString fileabspath = file_info.absoluteFilePath();
 
     // Determine the file extension
     QString fileExtension =
         QFileInfo(fileNames.at(i - existing_files)).suffix().toLower();
 
-    QMap<QString, QList<double>> file_data;
-
-    // Use appropriate function based on the file extension
-    if (fileExtension.startsWith("s") && fileExtension.endsWith("p")) {
-      file_data = readTouchstoneFile(fileNames.at(i - existing_files));
-    } else if (fileExtension == "dat") {
-      file_data = readQucsatorDataset(fileNames.at(i - existing_files));
-    } else if (fileExtension == "ngspice") {
-      file_data = readNGspiceData(fileNames.at(i - existing_files));
-    } else {
-      qWarning() << "Unsupported file extension: " << fileExtension;
-      continue; // Skip unsupported files
-    }
+    QMap<QString, QList<double>> file_data = loadSparamFile(fileabspath);
 
     if (file_data.isEmpty()) {
       // Stop the load process and remove file from the list of files to be

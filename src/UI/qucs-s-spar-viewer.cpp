@@ -1629,21 +1629,7 @@ void Qucs_S_SPAR_Viewer::fileChanged(const QString &path) {
 
     qDebug() << "Reloading file:" << path << "for dataset:" << datasetName;
 
-    // Determine the file extension
-    QString fileExtension = fileInfo.suffix().toLower();
-    QMap<QString, QList<double>> file_data;
-
-    // Use appropriate function based on the file extension
-    if (fileExtension.startsWith("s") && fileExtension.endsWith("p")) {
-      file_data = readTouchstoneFile(path);
-    } else if (fileExtension == "dat") {
-      file_data = readQucsatorDataset(path);
-    } else if (fileExtension == "ngspice") {
-      file_data = readNGspiceData(path);
-    } else {
-      qWarning() << "Unsupported file extension: " << fileExtension;
-      return;
-    }
+    QMap<QString, QList<double>> file_data = loadSparamFile(path);
 
     // Verify we actually loaded data
     if (file_data.isEmpty()) {

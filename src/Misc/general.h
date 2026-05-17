@@ -112,6 +112,20 @@ QPointF findClosestPoint(const QList<double>& xValues,
 /// @return Map of variable names to data arrays
 QMap<QString, QList<double>> readTouchstoneFile(const QString& filePath);
 
+/// @brief Reads Qucs-S dataset with data from NGspice
+/// @param filePath Path to the dataset file (.dat.ngspice)
+/// @return Map of variable names to data arrays
+QMap<QString, QList<double>> readNGspiceData(const QString& filePath);
+
+/// @brief Reads Qucs-S dataset with data from qucsator-RF
+/// @param filePath Path to the dataset file (.dat)
+/// @return Map of variable names to data arrays
+QMap<QString, QList<double>> readQucsatorDataset(const QString& filePath);
+
+/// @brief Load S-parameter data from Touchstone files or Qucs-S datasets
+/// @see readTouchstoneFile, readNGspiceData, and readQucsatorDataset
+QMap<QString, QList<double>> loadSparamFile(const QString& path);
+
 
 /// @brief Show HTML documentation in the web browser
 /// @param path Path to the HTML file

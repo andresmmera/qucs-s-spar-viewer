@@ -375,8 +375,7 @@ bool SParameterCalculator::parseNetlist() {
         QString filename = parts[idx];
 
         // Load S-parameters from file
-        QMap<QString, QList<double>> touchstoneData =
-            readTouchstoneFile(filename);
+        QMap<QString, QList<double>> touchstoneData = loadSparamFile(filename);
 
         if (touchstoneData.isEmpty()) {
           cerr << "Error: Failed to load " << filename.toStdString() << endl;
