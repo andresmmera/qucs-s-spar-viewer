@@ -276,15 +276,18 @@ QString QucsSExporter::processComponents_QucsS(QString backend_simulator) {
 }
 
 QString QucsSExporter::buildEquationsBlock(int x, int y) {
+    // Xyce outputs S-parameters in dB directly, so no post-processing
+    // equations are needed.
     if (backend_simulator == QString("Xyce"))
         return QString();
 
     QString s11, s21, s31, s32;
     if (backend_simulator == QString("NGspice")) {
-        s11 = "\"dBS11=dB(S_1_1)\" 1";
-        s21 = "\"dBS21=dB(S_2_1)\" 1";
-        s31 = "\"dBS31=dB(S_3_1)\" 1";
-        s32 = "\"dBS32=dB(S_3_2)\" 1";
+        // NutmegEq: evaluated by NGspice's nutmeg post-processor
+        s11 = "\"S11_dB=db(S_1_1)\" 1";
+        s21 = "\"S21_dB=db(S_2_1)\" 1";
+        s31 = "\"S31_dB=db(S_3_1)\" 1";
+        s32 = "\"S32_dB=db(S_3_2)\" 1";
     } else {
         // Qucsator
         s11 = "\"S11_dB=dB(S[1,1])\" 1";
@@ -293,15 +296,21 @@ QString QucsSExporter::buildEquationsBlock(int x, int y) {
         s32 = "\"S32_dB=dB(S[3,2])\" 1";
     }
 
-    const QString prefix = QString("<Eqn Eqn1 1 %1 %2 -28 15 0 0 ").arg(x).arg(y);
-    const QString suffix = " \"yes\" 0>\n";
+    // NGspice requires <NutmegEq>; Qucsator uses <Eqn> with an export flag.
+    QString tag, suffix;
+    if (backend_simulator == QString("NGspice")) {
+        tag    = QString("<NutmegEq NutmegEq1 1 %1 %2 -28 15 0 0 \"ALL\" 1 ").arg(x).arg(y);
+        suffix = QString(">\n");
+    } else {
+        tag    = QString("<Eqn Eqn1 1 %1 %2 -28 15 0 0 ").arg(x).arg(y);
+        suffix = QString(" \"yes\" 0>\n");
+    }
 
     if (schematic.Type == QString("Power Combiner"))
-        return prefix + s11 + " " + s21 + " " + s31 + " " + s32 + suffix;
+        return tag + s11 + " " + s21 + " " + s31 + " " + s32 + suffix;
     if (schematic.Type == QString("Matching-1-port"))
-        return prefix + s11 + suffix;
-    // Matching-2-ports, Filter, and any other two-port type
-    return prefix + s21 + " " + s11 + suffix;
+        return tag + s11 + suffix;
+    return tag + s21 + " " + s11 + suffix;
 }
 
 
