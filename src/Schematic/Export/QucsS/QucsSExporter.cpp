@@ -252,6 +252,10 @@ QString QucsSExporter::processComponents_QucsS(QString backend_simulator) {
           .arg(schematic.f_stop)
           .arg(schematic.n_points);
 
+  // NGspice requires a minimum of two ports for S-parameter analysis.
+  // For single-port schematics, inject a dummy port next to the .SP box.
+  qucs_S_Components_Netlist += addNGspiceDummyPort(x_bottom + 300, y_bottom);
+
   // Substrate box
   x_bottom += 170;
   QString SubstrateNetlist =
@@ -488,4 +492,22 @@ QString QucsSExporter::processWires_QucsS() {
 
   qucsWires += "</Wires>\n";
   return qucsWires;
+}
+
+
+QString QucsSExporter::addNGspiceDummyPort(int x, int y) {
+    // NGspice cannot solve a single-port S-parameter analysis. A dummy port
+    // with very high impedance (1 MΩ) is placed in parallel with the load.
+    // It is electrically invisible but satisfies the two-port solver requirement.
+    if (backend_simulator != QString("NGspice") ||
+        schematic.Type != QString("Matching-1-port"))
+        return QString();
+
+    QString dummy_source = QString("<Pac T2 1 %1 %2 18 -26 0 1 \"2\" 1 \"1e6\" 1 "
+                                   "\"0 dBm\" 0 \"1 GHz\" 0 \"26.85\" 0 \"true\" 0 \"false\" 0>\n").arg(x).arg(y);
+
+    dummy_source += QString("<GND * 1 %1 %2 0 0 0 0>\n").arg(x).arg(y+30);
+
+    return dummy_source;
+
 }

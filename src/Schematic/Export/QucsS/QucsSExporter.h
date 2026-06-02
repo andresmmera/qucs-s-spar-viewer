@@ -49,7 +49,6 @@ public:
     /// @brief Name of the backend simulator (Qucsator, NGspice, or Xyce)
     QString backend_simulator;
 
-
 private:
     /// @brief Reference to the schematic content being exported
     SchematicContent& schematic;
@@ -135,6 +134,12 @@ private:
         /// @param y Y-coordinate for equation box placement
         /// @return QString with the equation block, or empty string for unsupported backends
         QString buildEquationsBlock(int x, int y);
+
+        /// @brief Generates a dummy high-impedance port for NGspice single-port workaround
+        /// @param x X-coordinate for dummy port placement
+        /// @param y Y-coordinate for dummy port placement
+        /// @return QString with the dummy Pac component, or empty string if not needed
+        QString addNGspiceDummyPort(int x, int y);
 };
 
 #endif // QUCSSEXPORTER_H
