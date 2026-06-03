@@ -127,21 +127,32 @@ void CodeEditor::resizeEvent(QResizeEvent* e) {
 //![cursorPositionChanged]
 
 void CodeEditor::highlightCurrentLine() {
-  QList<QTextEdit::ExtraSelection> extraSelections;
+    QList<QTextEdit::ExtraSelection> extraSelections;
+    if (!isReadOnly()) {
+        QTextEdit::ExtraSelection selection;
 
-  if (!isReadOnly()) {
-    QTextEdit::ExtraSelection selection;
+        // Blend the window text colour into the base at 8% opacity —
+        // works for both light and dark palettes without any hard-coding
+        QColor base = palette().color(QPalette::Base);
+        QColor text = palette().color(QPalette::Text);
+        QColor lineColor = base;
+        lineColor.setRed  (base.red()   + (text.red()   - base.red())   * 0.08);
+        lineColor.setGreen(base.green() + (text.green() - base.green()) * 0.08);
+        lineColor.setBlue (base.blue()  + (text.blue()  - base.blue())  * 0.08);
 
-    QColor lineColor = QColor(Qt::yellow).lighter(160);
+        selection.format.setBackground(lineColor);
+        selection.format.setProperty(QTextFormat::FullWidthSelection, true);
+        selection.cursor = textCursor();
+        selection.cursor.clearSelection();
+        extraSelections.append(selection);
+    }
+    setExtraSelections(extraSelections);
+}
 
-    selection.format.setBackground(lineColor);
-    selection.format.setProperty(QTextFormat::FullWidthSelection, true);
-    selection.cursor = textCursor();
-    selection.cursor.clearSelection();
-    extraSelections.append(selection);
-  }
-
-  setExtraSelections(extraSelections);
+void CodeEditor::changeEvent(QEvent *event) {
+    QPlainTextEdit::changeEvent(event);
+    if (event->type() == QEvent::PaletteChange)
+        highlightCurrentLine();
 }
 
 //![cursorPositionChanged]
