@@ -49,7 +49,6 @@ public:
     /// @brief Name of the backend simulator (Qucsator, NGspice, or Xyce)
     QString backend_simulator;
 
-
 private:
     /// @brief Reference to the schematic content being exported
     SchematicContent& schematic;
@@ -62,6 +61,12 @@ private:
         // General schematic scaling versus the tool's schematic
         int scale_x; ///< x-axis scale factor
         int scale_y; ///< y-axis scale factor
+
+        // Wires, components and paintings are processed at different points
+        // Needed by the complex load component. It requires a wire to join
+        // the elements the make the equivalent complex load
+        QStringList m_pendingWires;
+        QStringList m_pendingPaintings;
 
         // Component processing
 
@@ -84,7 +89,7 @@ private:
         QString parseIdealCoupledTransmissionLines_QucsS(ComponentInfo);
         QString parseShortStub_QucsS(ComponentInfo);
         QString parseIdealCoupler_QucsS(ComponentInfo);
-        QString parseComplexImpedance_QucsS(ComponentInfo, double);
+        QString parseComplexImpedance_QucsS(ComponentInfo);
         QString parseSPAR_Block_QucsS(ComponentInfo);
         
         // Microstrip components
@@ -115,6 +120,7 @@ private:
         /// @details Creates orthogonal (horizontal/vertical only) wire paths,
         ///          splitting diagonal connections into L-shaped segments.
         ///          Automatically skips ground connections that don't need routing.
+        ///          It also flushes pending wires from components
         QString processWires_QucsS();
 
         /// @brief Processes internal nodes and records their positions
@@ -122,6 +128,10 @@ private:
         ///          scaling factors.
         /// @note This will be needed later for tracing the wires
         void processNodes_QucsS();
+
+        /// @brief Processes paintings
+        /// @details Flushes pending paintings from components
+        QString processPaintings_QucsS();
 
         /// @brief Maps simulator backends to lists of unsupported component types
         /// @details Each backend simulator (NGspice, Xyce, Qucsator) has different
@@ -135,6 +145,12 @@ private:
         /// @param y Y-coordinate for equation box placement
         /// @return QString with the equation block, or empty string for unsupported backends
         QString buildEquationsBlock(int x, int y);
+
+        /// @brief Generates a dummy high-impedance port for NGspice single-port workaround
+        /// @param x X-coordinate for dummy port placement
+        /// @param y Y-coordinate for dummy port placement
+        /// @return QString with the dummy Pac component, or empty string if not needed
+        QString addNGspiceDummyPort(int x, int y);
 };
 
 #endif // QUCSSEXPORTER_H

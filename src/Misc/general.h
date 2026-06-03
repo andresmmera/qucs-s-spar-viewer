@@ -29,7 +29,7 @@ static constexpr double euler       = M_E;
 static constexpr double ln2         = 0.693147180559945;
 
 /// @brief Unit types for engineering values
-enum Units { Capacitance, Inductance, Length, Resistance, Degrees, NoUnits };
+enum Units { Capacitance, Inductance, Length, Resistance, Degrees, Frequency, NoUnits };
 
 /// @brief Rounds double to minimum decimal places needed
 /// @param val Value to round

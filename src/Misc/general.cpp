@@ -104,6 +104,8 @@ QString num2str(double Num, Units CompType) {
     break;
   case Degrees:
     unit = QString("º");
+  case Frequency:
+      unit = QString("Hz");
   default:
     break;
   }
@@ -173,59 +175,64 @@ QString num2str(double Num) {
 }
 
 std::complex<double> Str2Complex(QString num) {
-  // Remove suffixes: "Ohm" and "Ω"
-  num.replace("Ohm", "");
-  num.replace("Ω", "");
-  num = num.trimmed();
+    // Remove suffixes: "Ohm" and "Ω"
+    num.replace("Ohm", "");
+    num.replace("Ω", "");
+    num.remove(' '); // Remove blank spaces
+    num = num.trimmed();
 
-  int jpos = num.indexOf('j');
+    int jpos = num.indexOf('j');
 
-  // No imaginary part → purely real
-  if (jpos == -1) {
-    return std::complex<double>(num.toDouble(), 0.0);
-  }
-
-  QString realStr;
-  QString imagStr;
-
-  // Case: "j50" or "-j50"
-  if (jpos == 0 || (jpos == 1 && (num[0] == '+' || num[0] == '-'))) {
-    realStr = "0";
-    imagStr = num.mid(jpos + 1); // characters after 'j'
-
-    // If imag part is empty (e.g. "j"), it's 1
-    if (imagStr.isEmpty())
-      imagStr = "1";
-
-    // Apply sign if it was "-j50"
-    if (num.startsWith('-'))
-      imagStr.prepend('-');
-
-    return std::complex<double>(0.0, imagStr.toDouble());
-  }
-
-  // Find last '+' or '-' before the 'j'
-  // But not counting the very beginning (to allow "-3+4j")
-  int signPos = -1;
-  for (int i = jpos - 1; i > 0; --i) {
-    if (num[i] == '+' || num[i] == '-') {
-      signPos = i;
-      break;
+    // No imaginary part → purely real
+    if (jpos == -1) {
+        return std::complex<double>(num.toDouble(), 0.0);
     }
-  }
 
-  if (signPos == -1) {
-    // No explicit sign between real/imag → case: "3j"
-    realStr = num.left(jpos);
-    imagStr = "1";
+    QString realStr;
+    QString imagStr;
+
+    // Case: "j50", "-j50", "+j50"
+    if (jpos == 0 || (jpos == 1 && (num[0] == '+' || num[0] == '-'))) {
+        realStr = "0";
+        imagStr = num.mid(jpos + 1); // characters after 'j'
+        // If imag part is empty (e.g. "j"), it's 1
+        if (imagStr.isEmpty())
+            imagStr = "1";
+        // Apply sign if it was "-j50"
+        if (num.startsWith('-'))
+            imagStr.prepend('-');
+        return std::complex<double>(0.0, imagStr.toDouble());
+    }
+
+    // Find last '+' or '-' before the 'j'
+    // But not counting the very beginning (to allow "-3+4j")
+    int signPos = -1;
+    for (int i = jpos - 1; i > 0; --i) {
+        if (num[i] == '+' || num[i] == '-') {
+            signPos = i;
+            break;
+        }
+    }
+
+    if (signPos == -1) {
+        // No explicit sign between real/imag → case: "3j"
+        realStr = num.left(jpos);
+        imagStr = "1";
+        return std::complex<double>(realStr.toDouble(), imagStr.toDouble());
+    }
+
+    // Split real and imaginary strings
+    realStr = num.left(signPos);
+
+    QString signChar = QString(num[signPos]); // "+" or "-"
+    imagStr = num.mid(jpos + 1);             // digits after 'j'
+
+    if (imagStr.isEmpty())
+        imagStr = "1";
+
+    imagStr.prepend(signChar);               // e.g. "+2.40" or "-2.40"
+
     return std::complex<double>(realStr.toDouble(), imagStr.toDouble());
-  }
-
-  // Split real and imaginary strings
-  realStr = num.left(signPos);
-  imagStr = num.mid(signPos, jpos - signPos); // like "+4" or "-4"
-
-  return std::complex<double>(realStr.toDouble(), imagStr.toDouble());
 }
 
 QString ConvertLengthFromM(QString units, double len) {

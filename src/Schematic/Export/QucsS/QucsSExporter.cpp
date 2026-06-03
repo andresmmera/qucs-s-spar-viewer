@@ -59,23 +59,24 @@ QString QucsSExporter::exportSchematic() {
   // Process wires
   qucsNetlist += processWires_QucsS();
 
+  // Process paintings
+  qucsNetlist += processPaintings_QucsS();
+
+
   qDebug() << qucsNetlist;
   return qucsNetlist;
 }
 
 QString QucsSExporter::processComponents_QucsS(QString backend_simulator) {
+  // Clear any wires left over from a previous export run
+  m_pendingWires.clear();
+
   QString qucs_S_Components_Netlist = QString("");
   qucs_S_Components_Netlist += QString("<Components>\n");
 
   // Coordinates of the bottom left (needed for putting the simulation box, etc.
   // there)
   int x_bottom = 1e6, y_bottom = -1e6;
-
-  // System impedance
-  // This is used for the complex impedance component (RFEDD), which requires a
-  // Z0. This value is initialized as 50 Ohm (the most common case) and updated
-  // when the port component is found.
-  double Z0 = 50;
 
   QList<MS_Substrate>
       MS_Substrate_List; // Contains all substrates used in the design. So far
@@ -127,7 +128,7 @@ QString QucsSExporter::processComponents_QucsS(QString backend_simulator) {
       break;
 
     case ComplexImpedance:
-      componentLine = parseComplexImpedance_QucsS(schematic.Comps[i], Z0);
+      componentLine = parseComplexImpedance_QucsS(schematic.Comps[i]);
       break;
 
     case Capacitor:
@@ -252,6 +253,10 @@ QString QucsSExporter::processComponents_QucsS(QString backend_simulator) {
           .arg(schematic.f_stop)
           .arg(schematic.n_points);
 
+  // NGspice requires a minimum of two ports for S-parameter analysis.
+  // For single-port schematics, inject a dummy port next to the .SP box.
+  qucs_S_Components_Netlist += addNGspiceDummyPort(x_bottom + 300, y_bottom);
+
   // Substrate box
   x_bottom += 170;
   QString SubstrateNetlist =
@@ -276,15 +281,18 @@ QString QucsSExporter::processComponents_QucsS(QString backend_simulator) {
 }
 
 QString QucsSExporter::buildEquationsBlock(int x, int y) {
+    // Xyce outputs S-parameters in dB directly, so no post-processing
+    // equations are needed.
     if (backend_simulator == QString("Xyce"))
         return QString();
 
     QString s11, s21, s31, s32;
     if (backend_simulator == QString("NGspice")) {
-        s11 = "\"dBS11=dB(S_1_1)\" 1";
-        s21 = "\"dBS21=dB(S_2_1)\" 1";
-        s31 = "\"dBS31=dB(S_3_1)\" 1";
-        s32 = "\"dBS32=dB(S_3_2)\" 1";
+        // NutmegEq: evaluated by NGspice's nutmeg post-processor
+        s11 = "\"S11_dB=db(S_1_1)\" 1";
+        s21 = "\"S21_dB=db(S_2_1)\" 1";
+        s31 = "\"S31_dB=db(S_3_1)\" 1";
+        s32 = "\"S32_dB=db(S_3_2)\" 1";
     } else {
         // Qucsator
         s11 = "\"S11_dB=dB(S[1,1])\" 1";
@@ -293,15 +301,21 @@ QString QucsSExporter::buildEquationsBlock(int x, int y) {
         s32 = "\"S32_dB=dB(S[3,2])\" 1";
     }
 
-    const QString prefix = QString("<Eqn Eqn1 1 %1 %2 -28 15 0 0 ").arg(x).arg(y);
-    const QString suffix = " \"yes\" 0>\n";
+    // NGspice requires <NutmegEq>; Qucsator uses <Eqn> with an export flag.
+    QString tag, suffix;
+    if (backend_simulator == QString("NGspice")) {
+        tag    = QString("<NutmegEq NutmegEq1 1 %1 %2 -28 15 0 0 \"ALL\" 1 ").arg(x).arg(y);
+        suffix = QString(">\n");
+    } else {
+        tag    = QString("<Eqn Eqn1 1 %1 %2 -28 15 0 0 ").arg(x).arg(y);
+        suffix = QString(" \"yes\" 0>\n");
+    }
 
     if (schematic.Type == QString("Power Combiner"))
-        return prefix + s11 + " " + s21 + " " + s31 + " " + s32 + suffix;
+        return tag + s11 + " " + s21 + " " + s31 + " " + s32 + suffix;
     if (schematic.Type == QString("Matching-1-port"))
-        return prefix + s11 + suffix;
-    // Matching-2-ports, Filter, and any other two-port type
-    return prefix + s21 + " " + s11 + suffix;
+        return tag + s11 + suffix;
+    return tag + s21 + " " + s11 + suffix;
 }
 
 
@@ -353,6 +367,17 @@ void QucsSExporter::processNodes_QucsS() {
     ComponentPinMap[NodeName].resize(1); // Allocate memory for 1 point
     ComponentPinMap[NodeName][0] = QPoint(x_pos, y_pos);
   }
+}
+
+QString QucsSExporter::processPaintings_QucsS() {
+    QString qucsPaintings = "<Paintings>\n";
+    if (!m_pendingPaintings.isEmpty()) {
+        for (const QString &painting : std::as_const(m_pendingPaintings)) {
+            qucsPaintings += painting + "\n";
+        }
+    }
+    qucsPaintings += QString("</Paintings>\n");
+    return qucsPaintings;
 }
 
 QString QucsSExporter::processWires_QucsS() {
@@ -477,6 +502,32 @@ QString QucsSExporter::processWires_QucsS() {
     }
   }
 
+  // ── Flush parallel-impedance wires ────────────────────────────────────
+  if (!m_pendingWires.isEmpty()) {
+      for (const QString &wire : std::as_const(m_pendingWires)) {
+          qucsWires += wire + "\n";
+      }
+  }
+
   qucsWires += "</Wires>\n";
+
   return qucsWires;
+}
+
+
+QString QucsSExporter::addNGspiceDummyPort(int x, int y) {
+    // NGspice cannot solve a single-port S-parameter analysis. A dummy port
+    // with very high impedance (1 MΩ) is placed in parallel with the load.
+    // It is electrically invisible but satisfies the two-port solver requirement.
+    if (backend_simulator != QString("NGspice") ||
+        schematic.Type != QString("Matching-1-port"))
+        return QString();
+
+    QString dummy_source = QString("<Pac T2 1 %1 %2 18 -26 0 1 \"2\" 1 \"1e6\" 1 "
+                                   "\"0 dBm\" 0 \"1 GHz\" 0 \"26.85\" 0 \"true\" 0 \"false\" 0>\n").arg(x).arg(y);
+
+    dummy_source += QString("<GND * 1 %1 %2 0 0 0 0>\n").arg(x).arg(y+30);
+
+    return dummy_source;
+
 }

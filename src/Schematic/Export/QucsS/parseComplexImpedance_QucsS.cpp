@@ -1,90 +1,142 @@
 /// @file parseComplexImpedance_QucsS.cpp
-/// @brief Converts a complex impedance component to Qucs-S RFEDD format
+/// @brief Converts a complex impedance component to a RL/RC equivalent at an specific (match) frequency
 /// @author Andrés Martínez Mera - andresmmera@protonmail.com
-/// @date Jan 4, 2026
+/// @date June 3, 2026
 /// @copyright Copyright (C) 2026 Andrés Martínez Mera
 /// @license GPL-3.0-or-later
 
 #include "Schematic/Export/QucsS/QucsSExporter.h"
 
-QString QucsSExporter::parseComplexImpedance_QucsS(ComponentInfo Comp,
-                                                   double Z0) {
-  // Format: <RFEDD ID status x y text_x text_y 0 rotation params>
-  // ID: e.g. Rx, where x is a positive integer
-  // status:
-  //         0 -> opened
-  //         1 -> active
-  //         2 -> shorted
-  // x: x-axis position
-  // y: y-axis position
-  // 0: Unidentified behaviour
-  // rotation: Component's rotation {0, 1, 2, 3}
-  // text_x: x-axis position of the texts showing the properties
-  // text_y: y-axis position of the texts showing the properties
 
-  // Example: <RFEDD RF1 1 210 250 -26 -38 0 0 "S" 0 "2" 0 "open" 0 "S11" 0
-  // "S12" 0 "S21" 0 "S22" 0>
+static void addImpedanceAnnotation(QStringList &pendingPaintings,
+                                   double R, double X, double f0,
+                                   int x_pos, int y_pos)
+{
+    QString sign    = (X >= 0.0) ? "+" : "-";
+    QString label   = QString("%1 %2 j %3 Ω @ %4")
+                        .arg(num2str(R, Units::NoUnits),
+                        sign,
+                        num2str(std::abs(X), Units::NoUnits),
+                        num2str(f0, Units::Frequency));
 
-  int status = 1;
-  int x_pos = Comp.Coordinates.at(0) * scale_x + x_offset;
-  int y_pos = Comp.Coordinates.at(1) * scale_y + y_offset;
-  int x_text = 25;
-  int y_text = 0;
-  int rotation = static_cast<int>(Comp.Rotation / 90) + 1;
-  QString Zstr = Comp.val["Z"]; // R+jX
 
-  // Process the string to get the resistance and the reactance
-  std::complex<double> Z = Str2Complex(Zstr);
+    int rect_x = x_pos - 40; // Upper corner x
+    int rect_y = y_pos - 60; // Upper corner y
+    int rect_w = 220;        // Width
+    int rect_h = 120;        // Height
 
-  // Calculate the ABCD parameters of a series impedance
-  std::complex<double> A = 1;
-  std::complex<double> B = Z;
-  std::complex<double> C = 0;
-  std::complex<double> D = 1;
+    pendingPaintings << QString("<Rectangle %1 %2 %3 %4 #000000 1 1 #c0c0c0 1 0>")
+                            .arg(rect_x).arg(rect_y).arg(rect_w).arg(rect_h);
+    pendingPaintings << QString("<Text %1 %2 12 #000000 0 \"%3\">")
+                            .arg(rect_x + 5).arg(rect_y - 30).arg(label);
+}
 
-  // Convert ABCD into S
-  std::complex<double> K = (A + B / Z0 + C * Z0 + D);
-  std::complex<double> S11 = (A + B / Z0 - C * Z0 - D) / K;
-  std::complex<double> S12 = 2. * (A * D - B * C) / K;
-  std::complex<double> S21 = 2. / K;
-  std::complex<double> S22 = (-A + B / Z0 - C * Z0 + D) / K;
+QString QucsSExporter::parseComplexImpedance_QucsS(ComponentInfo Comp) {
+    QString Zstr = Comp.val["Z"];
+    std::complex<double> Z = Str2Complex(Zstr);
+    double R = Z.real();
+    double X = Z.imag();
+    int x_pos = Comp.Coordinates.at(0) * scale_x + x_offset;
+    int y_pos = Comp.Coordinates.at(1) * scale_y + y_offset;
+    const bool hasR = (R != 0.0);
+    const bool hasX = (X != 0.0);
 
-  // Adjust text position depending on orientation
-  switch (rotation) {
-  case 2:
-  case 0: // Horizontal orientation
-    x_text = -30;
-    y_text = -50;
+    // Get match frequency
+    double f0 = schematic.properties.value("f_match", 0.0);
 
-    // Save pin position. This is needed for wiring later
-    ComponentPinMap[Comp.ID][0] = QPoint(x_pos - 30, y_pos); // Pin 1
-    ComponentPinMap[Comp.ID][1] = QPoint(x_pos + 30, y_pos); // Pin 2
-    break;
-  case 1: // Vertical orientation
-    x_text = 20;
-    y_text = -10;
+    // Convert series R+jX to parallel equivalent
+    double Rp = 0.0, Xp = 0.0;
+    if (hasR && hasX) {
+        double mag2 = R * R + X * X;
+        Rp = mag2 / R;
+        Xp = mag2 / X;
+    } else if (hasR) {
+        Rp = R;
+    } else if (hasX) {
+        Xp = X;
+    }
 
-    // Save pin position. This is needed for wiring later
+    const bool hasRp = (Rp != 0.0);
+    const bool hasXp = (Xp != 0.0);
+
+    // Reactive element
+    bool isInductive = (Xp >= 0.0);
+    double XL = 0.0, XC = 0.0;
+    if (hasXp) {
+        if (f0 <= 0.0)
+            f0 = std::sqrt(schematic.f_start.toDouble() * schematic.f_stop.toDouble());
+        double omega = 2.0 * M_PI * f0;
+        if (isInductive) {
+            XL = Xp / omega;
+        } else {
+            XC = -1.0 / (omega * Xp);
+        }
+    }
+
+    QString R_ID  = Comp.ID + QString("_R");
+    QString LC_ID = Comp.ID + (isInductive ? QString("_L") : QString("_C"));
+
+
+    // Pin positions (same regardless of the imaginary part)
     ComponentPinMap[Comp.ID][0] = QPoint(x_pos, y_pos + 30); // Pin 1
     ComponentPinMap[Comp.ID][1] = QPoint(x_pos, y_pos - 30); // Pin 2
-    break;
-  }
 
-  // Add RFEDD
-  QString componentLine =
-      QString("<RFEDD %1 %2 %3 %4 %5 %6 0 %7 \"S\" 0 \"2\" 0 \"open\" 0 "
-              "\"%8\" 0  \"%9\" 0 \"%10\" 0 \"%11\" 0>\n")
-          .arg(Comp.ID)
-          .arg(status)
-          .arg(x_pos)
-          .arg(y_pos)
-          .arg(x_text)
-          .arg(y_text)
-          .arg(rotation)
-          .arg(num2str(S11, NoUnits))
-          .arg(num2str(S12, NoUnits))
-          .arg(num2str(S21, NoUnits))
-          .arg(num2str(S22, NoUnits));
+    QString result;
 
-  return componentLine;
+    if (hasRp && hasXp) {
+        // Two parallel branches: Real and imaginary part
+        result += QString("<R %1 1 %2 %3 75 -45 0 1 \"%4\" 1 \"26.85\" 0 \"US\" 0>\n")
+                      .arg(R_ID).arg(x_pos).arg(y_pos)
+                      .arg(num2str(Rp, Units::Resistance));
+
+        int reactive_x_pos = x_pos + 60;
+
+        if (isInductive) {
+            result += QString("<L %1 1 %2 %3 15 0 0 1 \"%4\" 1>\n")
+                          .arg(LC_ID).arg(reactive_x_pos).arg(y_pos)
+                          .arg(num2str(XL, Units::Inductance));
+        } else {
+            result += QString("<C %1 1 %2 %3 15 0 0 1 \"%4\" 1>\n")
+                          .arg(LC_ID).arg(reactive_x_pos).arg(y_pos)
+                          .arg(num2str(XC, Units::Capacitance));
+        }
+
+        result += QString("<GND * 1 %1 %2 0 0 0 0>\n").arg(reactive_x_pos).arg(y_pos+30);
+
+        // Qucs-S wire format: <x1 y1 x2 y2>
+        // Top horizontal rail
+        m_pendingWires << QString("<%1 %2 %3 %4>")
+                              .arg(x_pos).arg(y_pos-50)
+                              .arg(reactive_x_pos).arg(y_pos-50);
+
+        // Vertical wire connecting the reactive load
+        m_pendingWires << QString("<%1 %2 %3 %4>")
+                              .arg(reactive_x_pos).arg(y_pos-50)
+                              .arg(reactive_x_pos).arg(y_pos-30);
+
+        // Draw a box to clarify the equivalent impedance
+        addImpedanceAnnotation(m_pendingPaintings, R, X, f0, x_pos, y_pos);
+
+    } else if (hasRp) {
+        // ── Purely resistive ──────────────────────────────────────────────
+        result += QString("<R %1 1 %2 %3 20 -10 0 1 \"%4\" 1 \"26.85\" 0 \"US\" 0>\n")
+                      .arg(R_ID).arg(x_pos).arg(y_pos)
+                      .arg(num2str(Rp, Units::Resistance));
+        // No extra wires needed; component pins land exactly on Pin1/Pin2.
+
+    } else if (hasXp) {
+        // ── Purely reactive ───────────────────────────────────────────────
+        if (isInductive) {
+            result += QString("<L %1 1 %2 %3 20 -10 0 1 \"%4\" 1>\n")
+                          .arg(LC_ID).arg(x_pos).arg(y_pos)
+                          .arg(num2str(XL, Units::Inductance));
+        } else {
+            result += QString("<C %1 1 %2 %3 20 -10 0 1 \"%4\" 1>\n")
+                          .arg(LC_ID).arg(x_pos).arg(y_pos)
+                          .arg(num2str(XC, Units::Capacitance));
+        }
+        // No extra wires needed.
+    }
+
+    return result;
 }

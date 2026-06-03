@@ -74,6 +74,11 @@ class SchematicContent {
         QString f_start, f_stop;               ///< Frequency sweep start and stop
         int n_points;                          ///< Number of frequency points
 
+
+        /// Schematic properties (circuit-type specific)
+        QMap<QString, double>  properties;       ///< Numeric properties
+        QMap<QString, QString> strProperties;    ///< String properties
+
     private:
         /// @brief Assign net to all wires connected to a node
         /// @param NodeID Node identifier
