@@ -104,6 +104,8 @@ QString num2str(double Num, Units CompType) {
     break;
   case Degrees:
     unit = QString("º");
+  case Frequency:
+      unit = QString("Hz");
   default:
     break;
   }

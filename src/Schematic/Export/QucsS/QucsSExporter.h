@@ -62,9 +62,11 @@ private:
         int scale_x; ///< x-axis scale factor
         int scale_y; ///< y-axis scale factor
 
+        // Wires, components and paintings are processed at different points
         // Needed by the complex load component. It requires a wire to join
         // the elements the make the equivalent complex load
         QStringList m_pendingWires;
+        QStringList m_pendingPaintings;
 
         // Component processing
 
@@ -118,6 +120,7 @@ private:
         /// @details Creates orthogonal (horizontal/vertical only) wire paths,
         ///          splitting diagonal connections into L-shaped segments.
         ///          Automatically skips ground connections that don't need routing.
+        ///          It also flushes pending wires from components
         QString processWires_QucsS();
 
         /// @brief Processes internal nodes and records their positions
@@ -125,6 +128,10 @@ private:
         ///          scaling factors.
         /// @note This will be needed later for tracing the wires
         void processNodes_QucsS();
+
+        /// @brief Processes paintings
+        /// @details Flushes pending paintings from components
+        QString processPaintings_QucsS();
 
         /// @brief Maps simulator backends to lists of unsupported component types
         /// @details Each backend simulator (NGspice, Xyce, Qucsator) has different

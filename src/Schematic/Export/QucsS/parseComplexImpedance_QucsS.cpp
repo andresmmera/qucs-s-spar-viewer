@@ -7,6 +7,30 @@
 
 #include "Schematic/Export/QucsS/QucsSExporter.h"
 
+
+static void addImpedanceAnnotation(QStringList &pendingPaintings,
+                                   double R, double X, double f0,
+                                   int x_pos, int y_pos)
+{
+    QString sign    = (X >= 0.0) ? "+" : "-";
+    QString label   = QString("%1 %2 j %3 Ω @ %4")
+                        .arg(num2str(R, Units::NoUnits),
+                        sign,
+                        num2str(std::abs(X), Units::NoUnits),
+                        num2str(f0, Units::Frequency));
+
+
+    int rect_x = x_pos - 40; // Upper corner x
+    int rect_y = y_pos - 60; // Upper corner y
+    int rect_w = 220;        // Width
+    int rect_h = 120;        // Height
+
+    pendingPaintings << QString("<Rectangle %1 %2 %3 %4 #000000 1 1 #c0c0c0 1 0>")
+                            .arg(rect_x).arg(rect_y).arg(rect_w).arg(rect_h);
+    pendingPaintings << QString("<Text %1 %2 12 #000000 0 \"%3\">")
+                            .arg(rect_x + 5).arg(rect_y - 30).arg(label);
+}
+
 QString QucsSExporter::parseComplexImpedance_QucsS(ComponentInfo Comp) {
     QString Zstr = Comp.val["Z"];
     std::complex<double> Z = Str2Complex(Zstr);
@@ -16,6 +40,9 @@ QString QucsSExporter::parseComplexImpedance_QucsS(ComponentInfo Comp) {
     int y_pos = Comp.Coordinates.at(1) * scale_y + y_offset;
     const bool hasR = (R != 0.0);
     const bool hasX = (X != 0.0);
+
+    // Get match frequency
+    double f0 = schematic.properties.value("f_match", 0.0);
 
     // Convert series R+jX to parallel equivalent
     double Rp = 0.0, Xp = 0.0;
@@ -36,7 +63,6 @@ QString QucsSExporter::parseComplexImpedance_QucsS(ComponentInfo Comp) {
     bool isInductive = (Xp >= 0.0);
     double XL = 0.0, XC = 0.0;
     if (hasXp) {
-        double f0 = schematic.properties.value("f_match", 0.0);
         if (f0 <= 0.0)
             f0 = std::sqrt(schematic.f_start.toDouble() * schematic.f_stop.toDouble());
         double omega = 2.0 * M_PI * f0;
@@ -87,6 +113,9 @@ QString QucsSExporter::parseComplexImpedance_QucsS(ComponentInfo Comp) {
         m_pendingWires << QString("<%1 %2 %3 %4>")
                               .arg(reactive_x_pos).arg(y_pos-50)
                               .arg(reactive_x_pos).arg(y_pos-30);
+
+        // Draw a box to clarify the equivalent impedance
+        addImpedanceAnnotation(m_pendingPaintings, R, X, f0, x_pos, y_pos);
 
     } else if (hasRp) {
         // ── Purely resistive ──────────────────────────────────────────────

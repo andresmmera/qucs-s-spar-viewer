@@ -59,6 +59,10 @@ QString QucsSExporter::exportSchematic() {
   // Process wires
   qucsNetlist += processWires_QucsS();
 
+  // Process paintings
+  qucsNetlist += processPaintings_QucsS();
+
+
   qDebug() << qucsNetlist;
   return qucsNetlist;
 }
@@ -365,6 +369,17 @@ void QucsSExporter::processNodes_QucsS() {
   }
 }
 
+QString QucsSExporter::processPaintings_QucsS() {
+    QString qucsPaintings = "<Paintings>\n";
+    if (!m_pendingPaintings.isEmpty()) {
+        for (const QString &painting : std::as_const(m_pendingPaintings)) {
+            qucsPaintings += painting + "\n";
+        }
+    }
+    qucsPaintings += QString("</Paintings>\n");
+    return qucsPaintings;
+}
+
 QString QucsSExporter::processWires_QucsS() {
   QString qucsWires = "<Wires>\n";
 
@@ -494,8 +509,8 @@ QString QucsSExporter::processWires_QucsS() {
       }
   }
 
-
   qucsWires += "</Wires>\n";
+
   return qucsWires;
 }
 
