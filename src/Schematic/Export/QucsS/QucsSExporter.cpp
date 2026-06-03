@@ -64,18 +64,15 @@ QString QucsSExporter::exportSchematic() {
 }
 
 QString QucsSExporter::processComponents_QucsS(QString backend_simulator) {
+  // Clear any wires left over from a previous export run
+  m_pendingWires.clear();
+
   QString qucs_S_Components_Netlist = QString("");
   qucs_S_Components_Netlist += QString("<Components>\n");
 
   // Coordinates of the bottom left (needed for putting the simulation box, etc.
   // there)
   int x_bottom = 1e6, y_bottom = -1e6;
-
-  // System impedance
-  // This is used for the complex impedance component (RFEDD), which requires a
-  // Z0. This value is initialized as 50 Ohm (the most common case) and updated
-  // when the port component is found.
-  double Z0 = 50;
 
   QList<MS_Substrate>
       MS_Substrate_List; // Contains all substrates used in the design. So far
@@ -127,7 +124,7 @@ QString QucsSExporter::processComponents_QucsS(QString backend_simulator) {
       break;
 
     case ComplexImpedance:
-      componentLine = parseComplexImpedance_QucsS(schematic.Comps[i], Z0);
+      componentLine = parseComplexImpedance_QucsS(schematic.Comps[i]);
       break;
 
     case Capacitor:
@@ -489,6 +486,14 @@ QString QucsSExporter::processWires_QucsS() {
                        .arg(y_end);
     }
   }
+
+  // ── Flush parallel-impedance wires ────────────────────────────────────
+  if (!m_pendingWires.isEmpty()) {
+      for (const QString &wire : std::as_const(m_pendingWires)) {
+          qucsWires += wire + "\n";
+      }
+  }
+
 
   qucsWires += "</Wires>\n";
   return qucsWires;

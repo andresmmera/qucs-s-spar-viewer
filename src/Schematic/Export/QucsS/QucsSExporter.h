@@ -62,6 +62,10 @@ private:
         int scale_x; ///< x-axis scale factor
         int scale_y; ///< y-axis scale factor
 
+        // Needed by the complex load component. It requires a wire to join
+        // the elements the make the equivalent complex load
+        QStringList m_pendingWires;
+
         // Component processing
 
         /// @brief Processes all components and generates Qucs-S component definitions
@@ -83,7 +87,7 @@ private:
         QString parseIdealCoupledTransmissionLines_QucsS(ComponentInfo);
         QString parseShortStub_QucsS(ComponentInfo);
         QString parseIdealCoupler_QucsS(ComponentInfo);
-        QString parseComplexImpedance_QucsS(ComponentInfo, double);
+        QString parseComplexImpedance_QucsS(ComponentInfo);
         QString parseSPAR_Block_QucsS(ComponentInfo);
         
         // Microstrip components

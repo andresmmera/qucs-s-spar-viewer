@@ -196,6 +196,10 @@ void MatchingNetworkDesignTool::UpdateDesignParameters() {
   MatchDesigner->synthesize();
   SchContent = MatchDesigner->Schematic;
 
+  // Save the matching frequency as a schematic property so the exporter can use it for
+  // reactive element decomposition (e.g. complex impedance R+L/R+C)
+  SchContent.properties["f_match"] = Specs.f_match;
+
   // EMIT SIGNAL TO SIMULATE
   QString TraceName = traceNameLineEdit->text();
   SchContent.Name = TraceName;
