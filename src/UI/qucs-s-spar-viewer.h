@@ -70,10 +70,10 @@ extern struct tQucsSettings QucsSettings;
 /// @struct MarkerProperties
 /// @brief Structure to hold all widgets related to a marker
 struct MarkerProperties {
-  QLabel* nameLabel;           ///< Label displaying the marker name
-  QDoubleSpinBox* freqSpinBox; ///< Spin box for frequency input
-  QComboBox* scaleComboBox;    ///< Combo box for frequency scale selection
-  QToolButton* deleteButton;   ///< Button to delete the marker
+  QLabel* nameLabel = nullptr;           ///< Label displaying the marker name
+  QDoubleSpinBox* freqSpinBox = nullptr; ///< Spin box for frequency input
+  QComboBox* scaleComboBox = nullptr;    ///< Combo box for frequency scale selection
+  QToolButton* deleteButton = nullptr;   ///< Button to delete the marker
 };
 
 /// @enum DisplayMode

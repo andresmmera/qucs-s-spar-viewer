@@ -506,7 +506,7 @@ double parseValueWithUnit(const QString& str) {
     while (i < str.size() && (str[i].isDigit() || str[i] == '.' || str[i] == '-' || str[i] == '+' || str[i] == 'e' || str[i] == 'E'))
         ++i;
 
-    double numeric = str.left(i).toDouble(&ok);
+    double numeric = QStringView(str).left(i).toDouble(&ok);
     if (!ok) return 0.0;
 
     // The remainder is the unit string (e.g. "mm", "u", "m")

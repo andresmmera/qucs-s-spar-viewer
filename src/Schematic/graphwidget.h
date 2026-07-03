@@ -80,7 +80,7 @@ public slots:
 
   /// @brief Handle component selection events
   /// @param CI Selected component information
-  void ComponentSelectionHandler(struct ComponentInfo CI) {
+  void ComponentSelectionHandler(ComponentInfo CI) {
     emit this->SendComponentSelectionToMainFunction(CI);
   }
 

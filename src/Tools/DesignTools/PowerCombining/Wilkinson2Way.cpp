@@ -54,7 +54,7 @@ void Wilkinson2Way::buildWilkinson_LumpedLC() {
   int x_3rd_shunt_C = 400;
 
   // Design equations
-  double Z4, Z5, L2_, C2_, L3_, C3_;
+  double Z4=50, Z5=50, L2_=1e-9, C2_=1e-12, L3_=1e-9, C3_=1e-12;
   double K = Specification.OutputRatio.at(0);
   double w = 2 * M_PI * Specification.freq;
   double L2 = Z2 / w;

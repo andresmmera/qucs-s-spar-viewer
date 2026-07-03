@@ -46,7 +46,7 @@ void EllipticFilter::EllipticTypeS() {
   // Resize elliptic network parameters
   std::vector<double> E(N), F(M - 1);
   E[N - 1] = tan(w);
-  double a0 = 1 / tan(u * (as + log(2)) / M_PI);
+  double a0;// = 1 / tan(u * (as + log(2)) / M_PI);
 
   // Calculation of the natural frequencies = Sn(M*u, j*u) j \in [1, M-1]
   for (int j = 1; j < M; j++) {

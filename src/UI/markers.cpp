@@ -16,7 +16,12 @@ void Qucs_S_SPAR_Viewer::removeMarker() {
   MarkerProperties mkr_prop;
   QString mkr_name;
   for (int i = 0; i < nmarkers; i++) {
-    getMarkerByPosition(i, mkr_name, mkr_prop);
+
+    // Check if mkr_prop is null
+    if (!getMarkerByPosition(i, mkr_name, mkr_prop)) {
+          continue;
+    }
+
     if (mkr_prop.deleteButton->objectName() == ID) {
       break;
     }
@@ -67,7 +72,9 @@ void Qucs_S_SPAR_Viewer::updateMarkerNames() {
     MarkerProperties mkr_props;
     QString mkr_name;
 
-    getMarkerByPosition(i, mkr_name, mkr_props);
+    if (!getMarkerByPosition(i, mkr_name, mkr_props)) {
+        continue;
+    }
 
     QLabel *MarkerLabel = mkr_props.nameLabel;
     MarkerLabel->setText(QStringLiteral("Mkr%1").arg(i + 1));
@@ -230,8 +237,12 @@ void Qucs_S_SPAR_Viewer::updateMarkerData(QTableWidget &table, DisplayMode mode,
     for (int r = 0; r < n_markers; r++) { // Marker
       QString markerName;
       MarkerProperties mkr_props;
-      getMarkerByPosition(r, markerName,
-                          mkr_props); // Get the whole marker given the position
+
+      // Get the whole marker given the position
+      // It's needed to check if it returns null
+      if (!getMarkerByPosition(r, markerName, mkr_props)) {
+          continue;  // skip this row; position was invalid
+      }
 
       // Compose the marker text
       freq_marker = QStringLiteral("%1 ").arg(QString::number(

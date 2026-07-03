@@ -172,7 +172,7 @@ double SeriesCapacitorsDialog::parseCapacitance(const QString &valueStr) const {
 
   if (unitIndex >= 0 && multiplier != 1.0) {
     // Format like "2p2" or "0p5" - combine prefix and suffix with multiplier
-    bool okPrefix, okSuffix;
+    bool okPrefix=true, okSuffix=true;
     double prefixValue = prefix.isEmpty() ? 0.0 : prefix.toDouble(&okPrefix);
     double suffixValue = 0.0;
 
