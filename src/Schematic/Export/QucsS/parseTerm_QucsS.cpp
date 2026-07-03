@@ -38,7 +38,7 @@ QString QucsSExporter::parseTerm_QucsS(ComponentInfo Comp) {
 
   int x_text = 25;
   int y_text = 0;
-  int Num = Comp.ID.mid(1).toInt(); // Returns all but "T". Port number
+  int Num = QStringView(Comp.ID).mid(1).toInt(); // Returns all but "T". Port number
   int Num_Visibility = 1;           // Visibility of the port number
   int rotation = 1;                 // Fixed. Always in vertical position
   QString Z0 = Comp.val["Z"];
