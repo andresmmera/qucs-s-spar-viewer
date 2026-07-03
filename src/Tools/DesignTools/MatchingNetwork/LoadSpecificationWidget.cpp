@@ -569,7 +569,7 @@ void LoadSpecificationWidget::onBrowseFile() {
     if (closestIdx != -1) {
       for (const QString &key : keysToRetrieve) {
         if (loadData.contains(key) && loadData.value(key).size() > closestIdx) {
-          result[key] = loadData.value(key)[closestIdx];
+          result[key] = loadData.value(key).at(closestIdx);
         }
       }
     }
