@@ -60,7 +60,7 @@ void EndCoupled::buildFilter_IdealTL(const std::deque<double> &gi) {
     theta = M_PI - .5 * (atan(2 * Baux) + atan(2 * B));
 
     Baux = B;
-    J /= Z0;
+    //J /= Z0;
     B /= Z0;
 
     C = B / w0;
