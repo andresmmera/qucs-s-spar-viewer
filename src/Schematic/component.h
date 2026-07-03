@@ -170,6 +170,6 @@ private:
 signals:
   /// @brief Emitted when component is double-clicked
   /// @param CI Component information
-  void DoubleClicked(struct ComponentInfo);
+  void DoubleClicked(ComponentInfo);
 };
 #endif
