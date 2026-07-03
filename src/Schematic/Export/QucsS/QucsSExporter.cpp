@@ -229,7 +229,7 @@ QString QucsSExporter::processComponents_QucsS(QString backend_simulator) {
       ComponentType type = pair.second;
 
       QString line =
-          QString("• %1 (Type: %2)").arg(id).arg(ComponentTypeToString(type));
+          QString("• %1 (Type: %2)").arg(id, ComponentTypeToString(type));
       messageLines << line;
     }
 
@@ -249,8 +249,8 @@ QString QucsSExporter::processComponents_QucsS(QString backend_simulator) {
               "\"%5\" 1 \"no\" 0 \"1\" 0 \"2\" 0 \"no\" 0 \"no\" 0>\n")
           .arg(x_bottom)
           .arg(y_bottom)
-          .arg(schematic.f_start)
-          .arg(schematic.f_stop)
+          .arg(schematic.f_start,
+               schematic.f_stop)
           .arg(schematic.n_points);
 
   // NGspice requires a minimum of two ports for S-parameter analysis.
@@ -343,14 +343,12 @@ QString QucsSExporter::addSubstrateBox(QList<MS_Substrate> subs_list,
             .arg(i + 1)
             .arg(x_bottom)
             .arg(y_bottom)
-            .arg(QString::number(s.er, 'g', 8))
-            .arg(QString::number(s.height * 1000.0, 'g', 8)) // convert m to mm
-            .arg(QString::number(s.MetalThickness * 1e6, 'g',
-                                 8)) // convert m to um
-            .arg(QString::number(s.tand, 'g', 8))
-            .arg(QString::number(s.MetalConductivity, 'g', 8))
-            .arg(QString::number(0.15e-6, 'g',
-                                 8)); // Roughness
+            .arg(QString::number(s.er, 'g', 8),
+            QString::number(s.height * 1000.0, 'g', 8), // convert m to mm
+            QString::number(s.MetalThickness * 1e6, 'g', 8), // convert m to um
+            QString::number(s.tand, 'g', 8),
+            QString::number(s.MetalConductivity, 'g', 8),
+            QString::number(0.15e-6, 'g',8)); // Roughness
     netlist_subs_box += line + "\n";
   }
   return netlist_subs_box;
