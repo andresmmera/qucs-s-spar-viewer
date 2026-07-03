@@ -246,7 +246,7 @@ double ParallelResistorsDialog::parseResistance(const QString &valueStr) const {
 
   if (unitIndex >= 0) {
     // Format like "2k2" or "0k5" - combine prefix and suffix with multiplier
-    bool okPrefix, okSuffix;
+    bool okPrefix=true, okSuffix=true;
     double prefixValue = prefix.isEmpty() ? 0.0 : prefix.toDouble(&okPrefix);
     double suffixValue = 0.0;
 
