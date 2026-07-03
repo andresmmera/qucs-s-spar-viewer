@@ -11,7 +11,7 @@
 
 QucsSExporter::QucsSExporter(SchematicContent &sch)
     : schematic(sch), // store the reference
-      x_offset(0.0), y_offset(0.0), scale_x(2.0), scale_y(1.2) {
+      x_offset(0.0), y_offset(0.0), scale_x(2.0), scale_y(1) {
   // Start with a clean map – Qt containers are empty by default,
   // but clearing makes the intention obvious.
   Export_Blacklists.clear();

@@ -59,8 +59,8 @@ private:
         int y_offset; ///< y-axis offset
 
         // General schematic scaling versus the tool's schematic
-        int scale_x; ///< x-axis scale factor
-        int scale_y; ///< y-axis scale factor
+        double scale_x; ///< x-axis scale factor
+        double scale_y; ///< y-axis scale factor
 
         // Wires, components and paintings are processed at different points
         // Needed by the complex load component. It requires a wire to join
