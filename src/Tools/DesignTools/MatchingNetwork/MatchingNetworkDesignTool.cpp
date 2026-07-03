@@ -105,9 +105,6 @@ MatchingNetworkDesignTool::~MatchingNetworkDesignTool() {
   delete InputMatchingSetupWidget;
   delete LoadSpecWidget;
   delete OutputMatchingSetupWidget;
-  delete f_match_Label;
-  delete f_match_Spinbox;
-  delete f_match_Scale_Combo;
   delete traceNameLabel;
   delete traceNameLineEdit;
 }
