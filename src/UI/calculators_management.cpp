@@ -142,80 +142,93 @@ QMenu *Qucs_S_SPAR_Viewer::CreateCalculatorsMenu() {
 
 // 1.1.1) Gamma → Z / SWR / S11 (dB)
 void Qucs_S_SPAR_Viewer::slotGammaCalculator() {
-  GammaCalculatorDialog dlg(this);
-  dlg.exec();
+  GammaCalculatorDialog *dlg = new GammaCalculatorDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
 
 // 1.1.2) Z → Γ / SWR / S11 (dB)
 void Qucs_S_SPAR_Viewer::slotImpedanceCalculator() {
-  ImpedanceCalculatorDialog dlg(this);
-  dlg.exec();
+  ImpedanceCalculatorDialog *dlg = new ImpedanceCalculatorDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
 
 // 1.1.3) VSWR ↔ S11 ↔ |Γ|
-void Qucs_S_SPAR_Viewer::slotSwrS11Calculator() {
-  SwrS11CalculatorDialog dlg(this);
-  dlg.exec();
+void Qucs_S_SPAR_Viewer::slotSwrS11Calculator() { 
+  SwrS11CalculatorDialog *dlg = new SwrS11CalculatorDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
 
 // 1.2) Octaves and decades from corner frequencies
 void Qucs_S_SPAR_Viewer::slotOctaveBWCalculator() {
-  OctaveBWCalculatorDialog dlg(this);
-  dlg.exec();
+  OctaveBWCalculatorDialog *dlg = new OctaveBWCalculatorDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
 
 // 1.3) RF power unit converter
-void Qucs_S_SPAR_Viewer::slotRFPowerUnitCalculator() {
-  RFPowerConverterDialog dlg(this);
-  dlg.exec();
+void Qucs_S_SPAR_Viewer::slotRFPowerUnitCalculator() { 
+  RFPowerConverterDialog *dlg = new RFPowerConverterDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
 
 // 1.4) Frequency to wavelength converter
 void Qucs_S_SPAR_Viewer::slotFrequencyToWavelengthCalculator() {
-  FreqWavelengthConverterDialog dlg(this);
-  dlg.exec();
+  FreqWavelengthConverterDialog *dlg = new FreqWavelengthConverterDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
 
 // 1.5) Free space loss calculator
-void Qucs_S_SPAR_Viewer::slotFreeSpaceLossCalculator() {
-  FreeSpaceAttenuationDialog dlg(this);
-  dlg.exec();
+void Qucs_S_SPAR_Viewer::slotFreeSpaceLossCalculator() { 
+  FreeSpaceAttenuationDialog *dlg = new FreeSpaceAttenuationDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
 
 // 1.6.1) Image frequency calculator
 void Qucs_S_SPAR_Viewer::slotImageFrequencyCalculator() {
-  ImageFrequencyCalculatorDialog dlg(this);
-  dlg.exec();
+  ImageFrequencyCalculatorDialog *dlg = new ImageFrequencyCalculatorDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
 
 // 1.6.2) Secondary image frequency calculator
-void Qucs_S_SPAR_Viewer::slotSecondaryImageFrequencyCalculator() {
-  SecondaryImageCalculatorDialog dlg(this);
-  dlg.exec();
+void Qucs_S_SPAR_Viewer::slotSecondaryImageFrequencyCalculator() { 
+  SecondaryImageCalculatorDialog *dlg = new SecondaryImageCalculatorDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
 
 // 2) General electronics calculators
 // 2.1) Voltage divider calculator
 void Qucs_S_SPAR_Viewer::slotVoltageDividerCalculator() {
-  VoltageDividerDialog dlg(this);
-  dlg.exec();
+  VoltageDividerDialog *dlg = new VoltageDividerDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
 
 // 2.2) Equivalent calculators
 // 2.2.1) Parallel resistors equivalent
-void Qucs_S_SPAR_Viewer::slotParallelResistorsCalculator() {
-  ParallelResistorsDialog dlg(this);
-  dlg.exec();
+void Qucs_S_SPAR_Viewer::slotParallelResistorsCalculator() { 
+  ParallelResistorsDialog *dlg = new ParallelResistorsDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
 
 // 2.2.2) Parallel capacitors equivalent
 void Qucs_S_SPAR_Viewer::slotSeriesCapacitorsCalculator() {
-  SeriesCapacitorsDialog dlg(this);
-  dlg.exec();
+  SeriesCapacitorsDialog *dlg = new SeriesCapacitorsDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
 
 // 2.2.3) Parallel inductors equivalent
 void Qucs_S_SPAR_Viewer::slotParallelInductorsCalculator() {
-  ParallelInductorsDialog dlg(this);
-  dlg.exec();
+  ParallelInductorsDialog *dlg = new ParallelInductorsDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->show();
 }
